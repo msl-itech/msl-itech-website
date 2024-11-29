@@ -1,0 +1,14 @@
+<app-header></app-header>
+<main>
+  <ngx-spinner 
+  bdColor="rgba(0, 0, 0, 1)" 
+  [fullScreen]="true"
+  class="custom-spinner">
+  <div class="spinner-content">
+    <img src="../assets/img/MSL.gif" alt="Chargement..." class="spinner-gif">
+  </div>
+</ngx-spinner>
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>
+

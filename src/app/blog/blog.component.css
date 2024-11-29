@@ -1,0 +1,198 @@
+/* Styles de base (Desktop) */
+.section-header {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: baseline;
+    gap: 180px;
+    width: 100%;
+}
+
+.section-header--text {
+    text-align: left;
+    width: 50%;
+}
+
+.section-header h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 1em;
+    color: #555;
+    width: 80%;
+}
+
+.articles {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.article-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 24rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-card img {
+    width: 100%;
+    height: auto;
+}
+
+.article-info {
+    padding: 20px;
+}
+
+.article-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.article-info h3 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.article-info p {
+    font-size: 1em;
+    color: #555;
+    margin: 0 0 20px;
+}
+
+.learn-more {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+.see-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-see-more {
+    background-color: #114D5A;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.8em;
+    height: 200px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-see-more:hover {
+    background-color: #114D5A;
+}
+
+/* Responsive Styles */
+
+/* Tablettes et écrans moyens */
+@media (max-width: 1024px) {
+    .section-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .section-header--text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-header p {
+        width: 100%;
+    }
+
+    .btn-see-more {
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .articles {
+        gap: 30px;
+    }
+
+    .article-card {
+        width: 45%;
+    }
+}
+
+/* Mobiles et petits écrans */
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 20px;
+    }
+
+    .section-header--text h2 {
+        font-size: 1.5em;
+    }
+
+    .section-header--text p {
+        font-size: 0.9em;
+    }
+
+    .articles {
+        gap: 20px;
+    }
+
+    .article-card {
+        width: 100%;
+    }
+
+    .btn-see-more {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .section-header h2 {
+        font-size: 1.2em;
+    }
+
+    .section-header p {
+        font-size: 0.8em;
+    }
+
+    .article-info h3 {
+        font-size: 1em;
+    }
+
+    .article-info p {
+        font-size: 0.9em;
+    }
+
+    .learn-more {
+        font-size: 0.9em;
+    }
+
+    .btn-see-more {
+        font-size: 0.7em;
+        padding: 8px 16px;
+    }
+}

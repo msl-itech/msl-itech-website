@@ -1,0 +1,224 @@
+<style>
+    /* Style général pour les cartes */
+    .card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 24px;
+      border: 2px solid #114D5A; /* Bordure principale */
+      height: 100%;
+      margin-bottom: 30px; /* Marges entre les cartes */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important         ; /* Ombre légère */
+    }
+  
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important ; /* Ombre au survol */
+    }
+  
+    /* Carte du milieu */
+    .middle-card {
+      background-color: #114D5A; /* Fond vert */
+      color: white; /* Texte en blanc */
+    }
+  
+    .middle-card .card-title {
+      font-size: 1.8rem; /* Titre plus grand */
+      color: white; /* Titre en blanc */
+    }
+  
+    .middle-card .price {
+      color: white; /* Prix en blanc */
+    }
+  
+    .middle-card .card-text {
+      color: white; /* Texte en blanc */
+    }
+  
+    .middle-card .time {
+      color: #ffdd57; /* Temps en jaune */
+    }
+  
+    .middle-card .list-group-item {
+      background-color: transparent; /* Pas de fond pour les items */
+      border: none;
+      color: white; /* Texte en blanc */
+    }
+  
+    .middle-card .list-group-item i {
+      color: #ffdd57; /* Icônes en jaune */
+    }
+  
+    .middle-card .btn-primary {
+      background-color: #ffdd57;
+      border: none;
+      border-radius: 12px;
+    }
+  
+    .middle-card .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  
+    /* Style pour les cartes blanches */
+    .card:not(.middle-card) .card-title {
+      font-size: 1.8rem; /* Titre plus grand */
+      color: #114D5A; /* Titre en bleu foncé */
+    }
+  
+    .card:not(.middle-card) .time {
+      color: #114D5A; /* Temps en bleu foncé */
+    }
+  
+    .card:not(.middle-card) .list-group-item {
+      background-color: transparent; /* Pas de fond pour les items */
+      border: none;
+      color: #114D5A; /* Texte en bleu foncé */
+    }
+  
+    .card:not(.middle-card) .list-group-item i {
+      color: #114D5A; /* Icônes en bleu foncé */
+    }
+  
+    .card:not(.middle-card) .btn-primary {
+      background-color: #114D5A;
+      border: none;
+      border-radius: 12px;
+    }
+  
+    .card:not(.middle-card) .btn-primary:hover {
+      background-color: #0d3a44;
+    }
+  
+    /* Suppression des couleurs de fond des en-têtes */
+    .card-header {
+      background-color: transparent !important;
+      border-bottom: none;
+      font-size: 1.8rem; /* Titre des en-têtes plus grand */
+      font-weight: bold;
+    }
+  </style>
+  
+  <div class="container mt-5 mb-4">
+    <!-- Titre -->
+    <div class="text-center mb-5">
+      <h1 class="display-4">Nos Offres</h1>
+      <p class="lead text-muted">Choisissez le pack qui vous convient le mieux</p>
+    </div>
+    
+    <!-- Boutons de Toggle -->
+    <div class="d-flex justify-content-center mb-4">
+      <div class="btn-group" role="group" aria-label="Toggle Packages">
+        <label
+          class="btn"
+          [ngClass]="{
+            'btn-primary': activePackage === 'wordpress',
+            'btn-outline-primary': activePackage !== 'wordpress'
+          }"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="togglePackages"
+            id="wordpressPackages"
+            autocomplete="off"
+            [checked]="activePackage === 'wordpress'"
+            (change)="switchPackage('wordpress')"
+          />
+          WordPress Packages
+        </label>
+  
+        <label
+          class="btn"
+          [ngClass]="{
+            'btn-primary': activePackage === 'javascript',
+            'btn-outline-primary': activePackage !== 'javascript'
+          }"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="togglePackages"
+            id="javascriptPackages"
+            autocomplete="off"
+            [checked]="activePackage === 'javascript'"
+            (change)="switchPackage('javascript')"
+          />
+          JavaScript Packages
+        </label>
+      </div>
+    </div>
+  
+    <!-- Affichage des Packages -->
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-4">
+      <!-- Packages WordPress -->
+      <ng-container *ngIf="activePackage === 'wordpress'">
+        <div
+          class="col"
+          *ngFor="let pack of wordpressPackages; let i = index"
+          [style.animationDelay]="(i * 0.2) + 's'"
+        >
+          <div
+            class="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp"
+            [ngClass]="{ 'middle-card': i === 1 }"
+          >
+            <div class="card-header text-center">
+              <h5 class="card-title mb-0">{{ pack.title }}</h5>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="card-text">{{ pack.description }}</p>
+              <div class="mt-auto">
+                <div class="price display-2 text-center">{{ pack.price }} €</div>
+                <div class="time fs-6 text-center mb-3">
+                  Temps : ± {{ pack.time }} heures
+                </div>
+                <ul class="list-group list-group-flush mb-3">
+                  <li
+                    *ngFor="let feature of pack.features"
+                    class="list-group-item"
+                  >
+                    <i class="fas fa-check-circle me-2"></i>{{ feature }}
+                  </li>
+                </ul>
+                <button class="btn btn-primary w-100">Voir plus</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+  
+      <!-- Packages JavaScript -->
+      <ng-container *ngIf="activePackage === 'javascript'">
+        <div
+          class="col"
+          *ngFor="let pack of javascriptPackages; let i = index"
+          [style.animationDelay]="(i * 0.2) + 's'"
+        >
+          <div
+            class="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp"
+            [ngClass]="{ 'middle-card': i === 1 }"
+          >
+            <div class="card-header text-center">
+              <h5 class="card-title mb-0">{{ pack.title }}</h5>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <p class="card-text">{{ pack.description }}</p>
+              <div class="mt-auto">
+                <div class="price display-2 text-center">{{ pack.price }} €</div>
+                <div class="time fs-6 text-center mb-3">
+                  Temps : ± {{ pack.time }} heures
+                </div>
+                <ul class="list-group list-group-flush mb-3">
+                  <li
+                    *ngFor="let feature of pack.features"
+                    class="list-group-item"
+                  >
+                    <i class="fas fa-check-circle me-2"></i>{{ feature }}
+                  </li>
+                </ul>
+                <button class="btn btn-primary w-100">Voir plus</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  

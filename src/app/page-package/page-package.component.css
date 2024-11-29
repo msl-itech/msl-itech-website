@@ -1,0 +1,157 @@
+
+.main {
+    margin-top: 100px;
+}
+
+/* Section Hero */
+.hero {
+    background: #F6FFFE;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 90px; /* 140.625% */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.sub-text h1 {
+    margin-top: -60px;
+}
+
+.svg-container {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-svg {
+    position: absolute;
+    right: 0;
+    bottom: 50px; /* Ajustez cette valeur selon l'espacement souhaité */
+    z-index: 0;
+    transform: translateX(10%); /* Centrage du SVG par rapport à la fin du texte */
+}
+
+.text-content2 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 55px;
+}
+
+/* Avantages */
+.advantages {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.advantage-item {
+    display: flex;
+    align-items: baseline;
+    font-size: 1rem;
+    color: #333;
+}
+
+.check-icon {
+    color: #ffcc00;
+    margin-right: 10px;
+}
+
+/* Responsive: Desktop */
+@media (min-width: 1025px) {
+    .hero h1 {
+        font-size: 51px;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .advantages {
+        justify-content: space-around;
+        gap: 32px;
+    }
+
+    .advantage-item {
+        font-size: 1rem;
+    }
+
+    .svg-container {
+        width: 60%;
+    }
+
+    .highlight-svg {
+        transform: translateX(10%);
+    }
+}
+
+/* Responsive: Tablette */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .advantages {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .advantage-item {
+        font-size: 0.9rem;
+    }
+
+    .svg-container {
+        width: 50%;
+    }
+
+    .highlight-svg {
+        bottom: 40px;
+    }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 30px;
+        line-height: 48px;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .sub-text h1 {
+        margin-top: -30px;
+    }
+
+    .advantages {
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advantage-item {
+        font-size: 0.9rem;
+    }
+
+    .svg-container {
+        width: 80%;
+    }
+
+    .highlight-svg {
+        bottom: 20px;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,63 @@
+<header>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="language-selector">
+        <button aria-label="Changer la langue">Français</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="logo">
+        <a routerLink="/">
+          <img src="../../assets/img/accueil/logoMSL.png" alt="Logo MSL" />
+        </a>
+      </div>
+
+      <!-- Menu Burger avec icône fa-bars/fa-times -->
+      <button class="burger" (click)="toggleMenu()" [ngClass]="{'active': isMenuOpen}" aria-label="Ouvrir le menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" [ngClass]="{'active': isMenuOpen}">
+        <!-- Bouton Fermer (Mobile) -->
+        <li class="close-btn">
+          <button (click)="toggleMenu()" aria-label="Fermer le menu">
+            <i class="fas fa-times"></i>
+          </button>
+        </li>
+
+        <li><a routerLink="/accueil" routerLinkActive="actived">Accueil</a></li>
+        <li class="dropdown" (click)="toggleDropdown()" [ngClass]="{'open': isDropdownOpen}">
+          <a aria-haspopup="true" [attr.aria-expanded]="isDropdownOpen">
+            Vos besoins <i class="fas" [ngClass]="{'fa-chevron-down': !isDropdownOpen, 'fa-chevron-up': isDropdownOpen}"></i>
+          </a>
+          <ul class="dropdown-menu" *ngIf="isDropdownOpen">
+            <li><a routerLink="/serviceOdoo" routerLinkActive="actived">Application Odoo</a></li>
+            <li><a routerLink="/service2" routerLinkActive="actived">Finances</a></li>
+            <li><a routerLink="/service3" routerLinkActive="actived">Ventes</a></li>
+            <li><a routerLink="#" routerLinkActive="actived">Fabrications</a></li>
+            <li><a routerLink="#" routerLinkActive="actived">Site Internet</a></li>
+            <li><a routerLink="#" routerLinkActive="actived">Services</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/package-metier" routerLinkActive="actived">Package Métier</a></li>
+        <li><a routerLink="/about" routerLinkActive="actived">À propos</a></li>
+        <li class="mobile-actions">
+          <a routerLink="/besoin" class="btn"style="color:white; text-align:center" >Soumettre un besoin</a>
+          <a routerLink="/contact" class="btn2" style="color:white; text-align:center">Contactez-nous</a>
+        </li>
+      </ul>
+
+      <!-- Actions (Desktop) -->
+      <div class="actions">
+        <a routerLink="/besoin" class="btn">Soumettre un besoin</a>
+        <a routerLink="/contact" class="btn2">Contactez-nous</a>
+      </div>
+    </div>
+  </nav>
+</header>

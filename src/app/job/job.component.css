@@ -1,0 +1,108 @@
+main {
+    margin-top: 100px;
+}
+
+.hero {
+    background:#F6FFFE;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.text-content2 {
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero h1 {
+
+    text-align: center;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 90px; /* 140.625% */
+    }
+    
+    .hero p {
+        font-size: 1.2em;
+        margin: 10px 0 0;
+    }
+
+
+.form-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    margin: 64px auto;
+}
+
+.form-container h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #1c4e61;
+    text-align: left;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container button {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box; /* Important pour inclure padding et border dans la largeur totale */
+}
+
+.form-container input[type="file"] {
+    padding: 5px;
+}
+
+.form-container textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.form-container p {
+    margin-top: -10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.form-container button {
+    background-color: #1c4e61;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    color: #ffc107;
+}
+
+.form-container button:hover {
+    background-color: #173847;
+}
+.svg-container {
+    position: relative;
+    display: inline-block;
+}
+.highlight-svg {
+    position: absolute;
+    right: 0;
+    bottom: -5px; /* Ajustez cette valeur selon l'espacement souhaité */
+    z-index: 0;
+    transform: translateX(10%); /* Centrage du SVG par rapport à la fin du texte */
+}

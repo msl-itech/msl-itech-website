@@ -1,0 +1,33 @@
+<section>
+    <div class="blog-articles">
+      <div class="section-header">
+        <div class="section-header--text">
+          <h2>Blog & Article</h2>
+          <p>
+            Plongez dans l’univers de l’innovation et de la technologie. Découvrez des insights précieux, des tendances émergentes, et des solutions pratiques pour booster votre productivité et atteindre vos objectifs professionnels avec succès.
+          </p>
+          
+        </div>
+        <div class="see-more">
+          <a href="#" class="btn-see-more">Voir plus</a>
+        </div>
+      </div>
+  
+      <div class="articles">
+        <div 
+          class="article-card" 
+          *ngFor="let article of articles">
+          <img [src]="article.img" alt="Article Image">
+          <div class="article-info">
+            <span class="article-date">
+              <i class="fa fa-calendar" aria-hidden="true"></i> {{ article.date }}
+            </span>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.description }}</p>
+            <a [href]="article.link" class="learn-more">Voir plus →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

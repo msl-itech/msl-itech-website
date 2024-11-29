@@ -1,0 +1,201 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* Supprime tout scroll horizontal */
+}
+
+/* Slider Styles */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 95vh; /* Hauteur du slider */
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animation fluide */
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centre horizontalement le contenu */
+  align-items: center; /* Centre verticalement le contenu */
+  text-align: center;
+  overflow: hidden;
+  opacity: 0; /* Par défaut, invisible */
+  transform: scale(0.95); /* Légèrement réduit */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1; /* Slide actif visible */
+  transform: scale(1); /* Taille normale */
+  z-index: 2; /* Priorité au slide actif */
+}
+
+.slide.inactive {
+  opacity: 0; /* Slide inactif invisible */
+  transform: scale(0.95); /* Légèrement réduit pour un effet de sortie */
+  z-index: 1;
+}
+
+.slider-content {
+  position: relative;
+  z-index: 3; /* Le texte est au-dessus des autres éléments */
+  color: #fff;
+  max-width: 80%; /* Limite la largeur du contenu */
+  margin: auto;
+}
+
+/* Images */
+img {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:cover; 
+  background-position:top;
+  z-index: 1;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sombre le fond */
+  z-index: 2;
+}
+
+/* Text Overlay */
+.text-overlay {
+  opacity: 0;
+  transform: translateY(20px); /* Glisse légèrement vers le haut */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.slide.active .text-overlay {
+  opacity: 1; /* Texte visible */
+  transform: translateY(0); /* Position normale */
+}
+
+.text-overlay h2 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem); /* Texte responsive */
+  margin-bottom: 1rem;
+}
+
+.text-overlay p {
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem; /* Espacement entre les boutons */
+  flex-wrap: wrap;
+  justify-content: center; /* Centre les boutons */
+}
+
+.buttons .btn-yellow {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.buttons .btn-yellow:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation dots */
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ccc;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s, background-color 0.3s, transform 0.3s ease;
+}
+
+.dot.active-dot {
+  background: #ffcc00; /* Couleur du dot actif */
+  opacity: 1;
+  transform: scale(1.2); /* Mise en évidence */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .slider {
+    height: 80vh; /* Réduction de la hauteur */
+  }
+
+  .slider-content {
+    max-width: 90%; /* Moins large */
+  }
+
+  .text-overlay h2 {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+  }
+
+  .text-overlay p {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  }
+
+  .buttons .btn-yellow {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 70vh; /* Réduction pour mobiles */
+  }
+
+  .text-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-overlay p {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px; /* Espacement vertical */
+  }
+
+  .buttons .btn-yellow {
+    width: 100%; /* Pleine largeur pour les mobiles */
+    text-align: center;
+  }
+}

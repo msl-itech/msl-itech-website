@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://www.msl-itech.com/accueil</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Package Métier -->
+  <url>
+    <loc>https://www.msl-itech.com/package-metier</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Service Odoo -->
+  <url>
+    <loc>https://www.msl-itech.com/serviceOdoo</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Service 2 -->
+  <url>
+    <loc>https://www.msl-itech.com/service2</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Service 3 -->
+  <url>
+    <loc>https://www.msl-itech.com/service3</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Réserver une démo -->
+  <url>
+    <loc>https://www.msl-itech.com/reserve-demo</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- À propos -->
+  <url>
+    <loc>https://www.msl-itech.com/about</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Offres d'emploi -->
+  <url>
+    <loc>https://www.msl-itech.com/jobb</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Contact -->
+  <url>
+    <loc>https://www.msl-itech.com/contact</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Page de redirection par défaut (Accueil) -->
+  <url>
+    <loc>https://www.msl-itech.com/</loc>
+    <lastmod>2024-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+</urlset>

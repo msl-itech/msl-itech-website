@@ -1,0 +1,104 @@
+<app-slider data-aos="fade-up"></app-slider>
+<app-text-slide data-aos="fade-up"></app-text-slide>
+
+<!-- Texte et Vidéo Section -->
+<section class="text-video-section" data-aos="fade-up">
+  <div class="container text-video-container">
+    <div class="text-section" data-aos="fade-right">
+      <h1 style="margin-bottom: 20px;">
+        Optimisez votre activité avec <br><span class="highlight">MSL-ITECH</span>
+      </h1>
+      <ul>
+        <li><span class="bullet yellow"></span> Integration d'Odoo</li>
+        <li><span class="bullet green"></span> Support Technique Odoo 24/6</li>
+        <li><span class="bullet blue"></span> Intégrations Systèmes avec Odoo</li>
+        <li><span class="bullet yellow"></span> Audit de Système ERP Odoo</li>
+        <li><span class="bullet green"></span> Solutions Cloud Odoo pour PME</li>
+      </ul>
+    </div>
+    <div class="video-section" data-aos="fade-left">
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/ID_DE_VOTRE_VIDEO"
+          title="Vidéo YouTube de démonstration"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+      <img src="../../assets/img/accueil/graphic-1.jpg.png" alt="Graphique illustrant les services Odoo de MSL Itech" class="decoration-image decoration-image-1" data-aos="zoom-in">
+      <img src="../../assets/img/accueil/graphic-2.jpg.png" alt="Décoration visuelle des solutions Odoo" class="decoration-image decoration-image-2" data-aos="zoom-in">
+    </div>
+    <div class="decorations">
+      <div class="decoration middle-left green" data-aos="fade-right"></div>
+      <div class="decoration top-right yellow" data-aos="fade-left"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Accordion Image -->
+<section class="accordion-image-section" data-aos="fade-up">
+  <div class="container accordion-image-container">
+    <div class="accordion-section" data-aos="fade-right">
+      <h2>POURQUOI ODOO</h2>
+      <div class="underline"></div>
+      <h1>Odoo, le logiciel complet pour la gestion de votre entreprise</h1>
+
+      <div class="accordion">
+        <div *ngFor="let item of accordionItems" class="accordion-item" data-aos="fade-up">
+          <button 
+            class="accordion-button" 
+            [attr.aria-expanded]="item.isExpanded" 
+            (click)="toggleAccordion(item)">
+            <span class="accordion-title">{{ item.title }}</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div 
+            class="accordion-content" 
+            [ngStyle]="{
+              'max-height': item.isExpanded ? item.content.length + 'px' : '0',
+              'padding': item.isExpanded ? '0 15px 15px' : '0'
+            }">
+            <p>{{ item.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-section" data-aos="zoom-in">
+      <img src="../../assets/img/accueil/Odoo-Themes-Development.png.png" alt="Développement de thèmes Odoo par MSL Itech" />
+    </div>
+  </div>
+</section>
+
+<!-- Section Experts -->
+<section class="experts-section">
+  <div>
+    <h2 data-aos="fade-up">Nos Experts</h2>
+    <h1 data-aos="fade-up">Nous vous mettons en relation avec des experts Odoo</h1>
+    <div class="experts-container">
+      <div class="expert" data-aos="fade-up">
+        <img src="../../assets/img/accueil/Rectangle 31.png" alt="Expert en Business Analytics Odoo" />
+        <div class="expert-info">
+          <h3>Business Analytics Odoo</h3>
+        </div>
+      </div>
+      <div class="expert" data-aos="fade-up" data-aos-delay="200">
+        <img src="../../assets/img/accueil/Rectangle 32.png" alt="Développeur Odoo Certifié" />
+        <div class="expert-info">
+          <h3>Développeur Odoo</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-feature></app-feature>
+
+<!-- Section Package Métier -->
+<app-package-metier></app-package-metier>
+
+<app-avantages ></app-avantages>
+<app-blog ></app-blog>
+<app-certification ></app-certification>

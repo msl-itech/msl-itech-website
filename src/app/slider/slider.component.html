@@ -1,0 +1,40 @@
+<div class="slider">
+  <div 
+    class="slider-container" 
+    [ngStyle]="{ transform: getTransform() }">
+    <div
+      class="slide"
+      *ngFor="let slide of slides; let i = index"
+      [class.active]="currentSlide === i"
+      [id]="slide.id"
+    >
+      <img [src]="slide.img" [alt]="slide.title" />
+      <div class="overlay"></div>
+      <div class="slider-content">
+        <div class="text-overlay">
+          <h2>{{ slide.title }} <span>{{ slide.highlight }}</span></h2>
+          <p>{{ slide.description }}</p>
+          <div class="buttons" *ngIf="slide.buttons.length > 0">
+            <button
+              *ngFor="let button of slide.buttons"
+              class="btn-yellow"
+              [ngStyle]="{ 'background-color': button.color, 'color': button.textColor }"
+              (click)="navigateTo(button.link)"
+            >
+              {{ button.text }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <span
+      class="dot"
+      *ngFor="let slide of slides; let i = index"
+      [class.active-dot]="currentSlide === i"
+      (click)="showSlide(i)"
+    ></span>
+  </div>
+</div>

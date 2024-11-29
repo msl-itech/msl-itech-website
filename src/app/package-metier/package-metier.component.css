@@ -1,0 +1,166 @@
+
+/* Package */
+.packages-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.packages-section h1 {
+    font-size: 2em;
+    color: #114D5A;
+    margin-bottom: 10px;
+}
+
+.packages-section h2 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.packages {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.package-card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: left;
+    width: 350px;
+height: 35rem;
+}
+
+.package-card .package-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.package-card .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.basic-icon {
+    background-color: #ECEBFF;
+}
+
+.pro-icon {
+    background-color: #fbfbfb;
+}
+
+.enterprise-icon {
+    background-color: #ECEBFF;
+}
+
+.package-card h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.package-card h3 span {
+    display: block;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.package-card p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.pro h4 {
+    color: #ffdd57;
+    margin-bottom: 10px;
+}
+
+.package-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.package-card ul li {
+    color: #555;
+    margin-bottom: 24px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.check-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ffdd57;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.basic .check-icon {
+    background-color: #114D5A;
+}
+
+.pro .check-icon {
+    background-color: #ffdd57;
+}
+
+.enterprise .check-icon {
+    background-color: #114D5A;
+}
+
+.package-card button {
+    background-color: #114D5A;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    height: 60px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.pro{
+    background-color: #114D5A;
+    color: #fff;
+}
+.pro p, .pro ul li{
+    color: #fff;
+}
+.pro button {
+    background-color: #ffdd57;
+    color: #114D5A;
+}
+
+.enterprise button {
+    background-color: #114D5A;
+    color: #ffffff;
+}
+
+.package-card button:hover {
+    opacity: 0.9;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

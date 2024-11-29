@@ -1,0 +1,184 @@
+.trust-section {
+    padding: 0;
+    background-color: #114D5A;
+    display: flex;
+    align-items: stretch; /* Étire les enfants sur toute la hauteur */
+    justify-content: center;
+    background-image: url('../../assets/img/accueil/Section.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Réduction de la hauteur */
+}
+
+.trust-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(2, 43, 58, 0.8); /* Overlay */
+}
+
+.trust-section .container {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+    gap: 20px;
+}
+
+.content-left {
+    flex: 0 0 40%; /* L'image occupe 40% de la largeur du conteneur */
+    display: flex;
+    align-items: flex-end; /* Aligne l'image en bas */
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Empêche les débordements */
+}
+
+.content-left img {
+    width: 100%;
+    height: 100%;
+    height: 650px; 
+    object-fit: cover; /* Garde les proportions de l'image */
+    object-position: bottom; /* Aligne l'image vers le bas */
+}
+
+.content-right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-align: left;
+}
+
+.content-right h3 {
+    font-size: 18px;
+    color: #ffc107;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 272px;
+    height: 4px;
+    background-color: #ffc107;
+    margin: 10px 0 20px 0;
+}
+
+.content-right h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content-right p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ffc107;
+    color: #114D5A;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e0a806;
+}
+
+/* Responsive Design */
+
+/* Tablette */
+@media (max-width: 1024px) {
+    .trust-section {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .trust-section .container {
+        flex-direction: column;
+    }
+
+    .content-left {
+        display: none;
+        order: 2; /* Place l'image après le texte */
+        flex: 0 0 60%; /* Réduction de la taille */
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .content-left img {
+        max-height: 600px; /* Réduction de la hauteur maximale */
+    }
+
+    .content-right {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .content-right h1 {
+        font-size: 28px;
+    }
+
+    .content-right p {
+        font-size: 16px;
+    }
+
+    .underline {
+        width: 200px;
+        height: 3px;
+        margin: 10px auto 20px auto;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .content-left {
+        display: none; /* Masque l'image sur mobile */
+    }
+
+    .content-right {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .content-right h1 {
+        font-size: 24px;
+    }
+
+    .content-right p {
+        font-size: 14px;
+    }
+
+    .underline {
+        width: 150px;
+        margin: 10px auto 20px auto;
+    }
+
+    .cta-button {
+        width: 100%; /* Bouton pleine largeur */
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

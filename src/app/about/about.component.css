@@ -1,0 +1,458 @@
+h1, h2, p, span {
+    margin: 0;
+    padding: 0;
+}
+
+/* Section Hero */
+.hero-section2 {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.hero-image2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/img/accueil/hom1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content span {
+    font-size: 1.2em;
+}
+
+/* Section About Us */
+.about-us {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container2--text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container2--text h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s;
+}
+
+.container2--text p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+    animation: fadeIn 1s;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s;
+}
+
+.team, .ceo-message {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.team {
+    position: relative;
+    width: 48%;
+    animation: fadeIn 1.5s;
+}
+
+.team-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.team-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeInLeft 1s;
+}
+
+.team-card h2 {
+    color: #33475b;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    color: #555;
+    font-size: 0.9em;
+}
+
+.ceo-message {
+    background-color: #114D5A;
+    color: white;
+    padding: 30px;
+    border-left: 5px solid #FAC83B;
+    width: 48%;
+    animation: fadeInRight 1s;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.ceo-message h2 {
+    color: #FAC83B;
+    margin-bottom: 15px;
+}
+
+.ceo-message p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Media Queries */
+
+/* Tablettes */
+@media (max-width: 992px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team, .ceo-message {
+        width: 90%;
+    }
+
+    .team-card {
+        position: static;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+    .hero-section2 {
+        height: 40vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content span {
+        font-size: 1em;
+    }
+
+    .container2--text h1 {
+        font-size: 2em;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team, .ceo-message {
+        width: 100%;
+    }
+
+    .ceo-message {
+        padding: 20px;
+    }
+
+    .ceo-message p {
+        font-size: 0.9em;
+    }
+}
+
+.carousel-section {
+    background-color: #114D5A;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 25%; /* 4 cards visible */
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    margin-right: 24px;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 1);
+    color: #114D5A;
+    padding: 10px;
+    text-align: center;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FAC83B;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.carousel-button.prev {
+    left: -0.5px;
+}
+
+.carousel-button.next {
+    right: 1px;
+}
+
+.carousel-button:hover {
+    background-color: #E0A800;
+}
+
+/* Section Team */
+/* Section Team */
+.team-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.team-title {
+    font-size: 2em;
+    color: #114D5A;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #FAC83B;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.card-team {
+    background-color: #114D5A;
+    border-radius: 30px;
+    box-shadow: 0px 6px 12px 0px rgba(169, 169, 169, 0.32);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card-team:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.team-image3 {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-image2 {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.card-team h3 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.card-team p {
+    color: #FAC83B;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #FAC83B;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .carousel-slide {
+        min-width: 50%; /* 4 cards visible */
+        box-sizing: border-box;
+        text-align: center;
+        position: relative;
+        margin-right: 24px;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .carousel-slide {
+        min-width: 48%; /* 2 cards visibles */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .carousel-slide {
+        min-width: 100%; /* 1 card visible */
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,13 @@
+.custom-spinner .spinner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .spinner-gif {
+    width: 800px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+  }
+  

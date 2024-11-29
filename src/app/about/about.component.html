@@ -1,0 +1,120 @@
+<!-- Section Hero -->
+<section class="hero-section2" data-aos="fade-up">
+  <div class="hero-image2">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 data-aos="fade-right">A propos de nous</h1>
+      <span data-aos="fade-left">Tout savoir sur nous et notre equipe</span>
+    </div>
+  </div>
+</section>
+
+<!-- Section About Us -->
+<section class="about-us">
+  <div class="container2">
+    <div class="container2--text" data-aos="fade-up">
+      <h1>Qui sommes-nous ?</h1>
+      <p>
+        Nous disposons des bureaux en Belgique, au Canada et au Maroc. Nous sommes certifiés Odoo.
+        Nous proposons des solutions ERP robustes et personnalisées pour les PME, en appliquant des
+        standards internationaux reconnus pour leur fiabilité. Notre mission est d’accompagner les
+        entreprises dans leur transformation digitale en restant agiles face à un environnement
+        économique en constante évolution.
+      </p>
+    </div>
+
+    <div class="content">
+      <div class="team" data-aos="fade-right">
+        <img src="../../assets/img/accueil/about1.png" alt="Notre équipe" class="team-image">
+        <div class="team-card">
+          <h2>Notre équipe</h2>
+          <p>
+            Notre équipe est notre force. Composée d'experts certifiés Odoo, elle partage une même
+            vision : offrir des solutions simples, puissantes et connectées pour transformer la gestion
+            d’entreprise. Chaque membre de l’équipe est dédié à autonomiser nos clients, en les aidant à
+            simplifier leurs processus et à grandir. Ensemble, nous sommes engagés à créer un impact, à
+            chaque étape de votre transformation digitale.
+          </p>
+        </div>
+      </div>
+
+      <div class="ceo-message" data-aos="fade-left">
+        <h2>Mot du CEO</h2>
+        <p>
+          Chez MSL Itech, nous croyons que les PME ont le pouvoir de transformer le monde. Avec Odoo,
+          nous offrons des solutions qui non seulement simplifient vos processus, mais qui vous
+          permettent aussi de connecter vos équipes et vos opérations de manière fluide et efficace. Nous
+          ne fournissons pas qu’un logiciel, nous créons une plateforme qui autonomise les entreprises
+          pour qu’elles puissent grandir et atteindre leur plein potentiel.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Carousel -->
+<section class="carousel-section" data-aos="zoom-in">
+  <div>
+    <h1 style="color: #FAC83B; margin-bottom: 24px;" data-aos="fade-up">Nos solutions Odoo</h1>
+    <p class="description" data-aos="fade-up" data-aos-delay="200">
+      Odoo propose un ensemble de solutions ERP intégrées et modulables,<br />
+      conçues pour simplifier et optimiser tous les aspects de la gestion d'entreprise.
+    </p>
+    <div class="carousel-container">
+      <button class="carousel-button prev" (click)="moveCarousel(-1)" data-aos="fade-left">
+        &#8249;
+      </button>
+      <div class="carousel-track-container">
+        <div class="carousel-track" [style.transform]="translateX">
+          <div class="carousel-slide" #carouselSlide *ngFor="let slide of slides" data-aos="flip-left">
+            <div class="card">
+              <img [src]="slide.img" [alt]="slide.alt" class="card-image" />
+              <div class="card-overlay">
+                <p>{{ slide.text }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-button next" (click)="moveCarousel(1)" data-aos="fade-right">
+        &#8250;
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Section Team -->
+<section class="team-section">
+  <div>
+    <h2 class="team-title" data-aos="fade-up">
+      Team <span class="highlight">Expert</span>
+    </h2>
+    <div class="team-grid p-2">
+      <div class="card-team" data-aos="fade-up" data-aos-delay="100">
+        <img src="../../assets/img/accueil/Mika_teams.png" alt="MIKA MUNSUNGAYI" class="team-image3">
+        <h3>MIKA MUNSUNGAYI</h3>
+        <p>Expert Comptable</p>
+      </div>
+      <div class="card-team" data-aos="fade-up" data-aos-delay="200">
+        <img src="../../assets/img/accueil/Arnaud_Teams.jpg" alt="ARNAUD AHOUO" class="team-image2">
+        <h3>ARNAUD AHOUO</h3>
+        <p>Ingenieur logiciel/ Senior Backend Developper</p>
+      </div>
+      <div class="card-team" data-aos="fade-up" data-aos-delay="300">
+        <img src="../../assets/img/accueil/Romeo_teams.png" alt="ROMEO" class="team-image3">
+        <h3>ROMEO KAHOU</h3>
+        <p>Project Manager</p>
+      </div>
+      <div class="card-team" data-aos="fade-up" data-aos-delay="400">
+        <img src="../../assets/img/accueil/Elohim_teams.png" alt="ELOHIM TAGNE" class="team-image3">
+        <h3>ELOHIM TAGNE</h3>
+        <p>Ingenieur logiciel/ Fullstack Developer</p>
+      </div>
+      <div class="card-team" data-aos="fade-up" data-aos-delay="500">
+        <img src="../../assets/img/accueil/Houssine_teams.jpg" alt="EL HOUSSINE" class="team-image3">
+        <h3>EL HOUSSINE</h3>
+        <p>Consultant Odoo</p>
+      </div>
+    </div>
+  </div>
+</section>
