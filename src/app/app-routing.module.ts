@@ -12,6 +12,7 @@ import { TextSlideComponent } from './text-slide/text-slide.component';
 import { ContactComponent } from './contact/contact.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
+import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'besoin', component: SoumettreBesoinComponent },
   { path: 'tarif', component: TarifsComponent },
+  { path: 'pricing', component: PricingOdooComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
 ];
 @NgModule({

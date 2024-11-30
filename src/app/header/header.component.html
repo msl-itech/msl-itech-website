@@ -47,6 +47,15 @@
         </li>
         <li><a routerLink="/package-metier" routerLinkActive="actived">Package Métier</a></li>
         <li><a routerLink="/about" routerLinkActive="actived">À propos</a></li>
+        <li class="dropdown" (click)="toggleTarifsDropdown()" [ngClass]="{'open': isTarifsDropdownOpen}">
+          <a aria-haspopup="true" [attr.aria-expanded]="isTarifsDropdownOpen">
+            Tarifs <i class="fas" [ngClass]="{'fa-chevron-down': !isTarifsDropdownOpen, 'fa-chevron-up': isTarifsDropdownOpen}"></i>
+          </a>
+          <ul class="dropdown-menu" *ngIf="isTarifsDropdownOpen">
+            <li><a routerLink="/pricing" routerLinkActive="actived">Tarif odoo</a></li>
+            <li><a routerLink="/tarif" routerLinkActive="actived">Tarif code</a></li>
+          </ul>
+        </li>        
         <li class="mobile-actions">
           <a routerLink="/besoin" class="btn"style="color:white; text-align:center" >Soumettre un besoin</a>
           <a routerLink="/contact" class="btn2" style="color:white; text-align:center">Contactez-nous</a>

@@ -1,0 +1,373 @@
+/* Typographie et Couleurs Générales */
+.pricing-page {
+    color: #333;
+  }
+  
+  /* Banner Section */
+  .banner-section {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+  }
+  
+  .banner-section img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ombre pour améliorer la lisibilité du texte */
+  }
+  
+  .overlay-text .text-center {
+    max-width: 800px;
+  }
+  
+  .overlay-text h1 {
+    font-weight: 900;
+    font-size: 3rem;
+  }
+  
+  .overlay-text p {
+    font-size: 1.25rem;
+  }
+  
+  /* Introduction Section */
+  .intro-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* Pricing Cards */
+  .card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .price {
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .original-price {
+    color: #888;
+    font-size: 1rem;
+  }
+  
+  .discounted-price {
+    color: #28a745;
+    margin: 0;
+  }
+  
+  .discount {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff4757;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .card ul li {
+    padding: 8px 0;
+    font-size: 1rem;
+  }
+  
+  .card ul li i {
+    margin-right: 10px;
+  }
+  
+  .card-footer {
+    background-color: #f8f9fa;
+  }
+  
+  .btn-block {
+    width: 100%;
+  }
+  
+  .btn-primary, .btn-success, .btn-danger {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .btn-primary:hover, .btn-success:hover, .btn-danger:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  /* International Pricing */
+  .international-pricing .pricing-box {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .international-pricing .pricing-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .international-pricing .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #17a2b8;
+  }
+  
+  /* Features Section */
+  .features-section h2, .cta-section h3 {
+    font-weight: 700;
+  }
+  
+  .features-section p, .cta-section p {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Call to Action */
+  .cta-section button {
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .cta-section button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  /* Section Image & Texte */
+.container {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  img.rounded-custom {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  img.rounded-custom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  h2.text-primary {
+    font-weight: 700;
+  }
+  
+  p.lead {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .btn-primary {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+  
+  .table thead th {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+  }
+  
+  .table tbody td {
+    vertical-align: middle;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+  }
+  
+  .text-start {
+    text-align: left !important;
+  }
+  
+  .table th.bg-warning {
+    background-color: #f0ad4e !important;
+  }
+  
+  .table th.bg-primary {
+    background-color: #0275d8 !important;
+  }
+  
+  .table th.bg-danger {
+    background-color: #d9534f !important;
+  }
+  
+  .table th.bg-success {
+    background-color: #5cb85c !important;
+  }
+  
+  .table th.bg-info {
+    background-color: #5bc0de !important;
+  }
+  
+  .fas {
+    font-size: 1rem;
+  }
+
+  
+  /* Responsive Adjustments */
+  @media (max-width: 767px) {
+    .overlay-text h1 {
+      font-size: 2rem;
+    }
+  
+    .overlay-text p {
+      font-size: 1rem;
+    }
+  
+    .price {
+      font-size: 1.5rem;
+    }
+  
+    .card-header h3 {
+      font-size: 1.25rem;
+    }
+  
+    .international-pricing .price {
+      font-size: 1.25rem;
+    }
+  }
+  
+
+
+  .bg-custom {
+    background-color: #114D5A;
+  }
+  
+  /* .container {
+    color: #fff;
+  } */
+  
+  /* Texte et Liste */
+  h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  ul li i {
+    font-size: 1.2rem;
+  }
+  
+  /* Image */
+  img {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .text-custom {
+    color: #FAC83B;
+  } 
+.color-white {
+    color: white;
+}
+.text-primary--custom{
+    color: #114D5A;
+}
+
+.btn-bg-primary{
+    background-color:#114D5A ;
+    color:#FAC83B ;
+}
+
+.info-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: white;
+  }
+  
+  .info-icon i {
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .info-icon:hover i {
+    color: #ffc107; /* Couleur jaune en hover */
+  }
+
+  .table th {
+    font-size: 1.25rem; /* Taille de police augmentée */
+    padding: 1rem; /* Padding augmenté pour plus d'espace */
+  }
+
+  /* Suppression des traits horizontaux */
+  .table td, .table th {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  /* Conservation des traits verticaux */
+  .table td, .table th {
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+  }
+
+  /* Supprimer les bordures supplémentaires du conteneur */
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+
+  /* Application des bordures uniquement sur les cellules */
+  .table-bordered > :not(caption) > * > * {
+    border-top: none;
+    border-bottom: none;
+   
+  }
+
+  .bg-warning-subtle {
+    background-color: #114D5A !important;
+  }
+  .bg-primary-subtle {
+    background-color: #11185a !important;
+  }
+  .bg-danger-subtle {
+    background-color: #5a111d !important;
+  }
+  .bg-success-subtle {
+    background-color: rgb(78, 25, 135) !important
+  }
+  .bg-info-subtle {
+    background-color: #4d115a !important;
+  }
+  th{
+    color: white;
+  }

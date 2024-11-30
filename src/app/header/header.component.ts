@@ -8,7 +8,7 @@ import { Component, HostListener } from '@angular/core';
 export class HeaderComponent {
   isMenuOpen = false;
   isDropdownOpen = false;
-
+  isTarifsDropdownOpen = false;
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
@@ -16,7 +16,10 @@ export class HeaderComponent {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
-
+  toggleTarifsDropdown() {
+    this.isTarifsDropdownOpen = !this.isTarifsDropdownOpen;
+    this.isDropdownOpen = false;
+  }
   // Optionnel : Fermer le menu lorsqu'un lien est cliqué (mobile)
   closeMenu() {
     this.isMenuOpen = false;

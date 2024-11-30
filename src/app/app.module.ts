@@ -28,6 +28,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TarifsComponent } from './tarifs/tarifs.component';
+import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { TarifsComponent } from './tarifs/tarifs.component';
     AvantagesComponent,
     ContactComponent,
     SoumettreBesoinComponent,
-    TarifsComponent
+    TarifsComponent,
+    PricingOdooComponent
   ],
   imports: [
     BrowserModule,
