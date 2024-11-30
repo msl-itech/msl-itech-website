@@ -74,6 +74,7 @@ nav {
   display: flex;
   gap: 20px;
   align-items: center;
+  margin-bottom: 0px !important;
 }
 
 .nav-links li {
