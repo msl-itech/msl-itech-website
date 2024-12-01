@@ -29,6 +29,7 @@ import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.co
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
     AppRoutingModule,
     FontAwesomeModule,
     NgxSpinnerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

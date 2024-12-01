@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { SeoService } from '../seo.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-job',
@@ -14,10 +15,18 @@ export class JobComponent {
 
   constructor(
     private seoService: SeoService,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private spinner: NgxSpinnerService
   ) {}
+ 
 
   ngOnInit(): void {
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 3000);
     // Mise à jour du SEO avec SeoService
     this.seoService.updateTitle(this.pageTitle);
     this.seoService.updateMetaTags([

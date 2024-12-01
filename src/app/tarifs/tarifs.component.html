@@ -109,8 +109,8 @@
         <label
           class="btn"
           [ngClass]="{
-            'btn-primary': activePackage === 'wordpress',
-            'btn-outline-primary': activePackage !== 'wordpress'
+            'bg-custom-primary': activePackage === 'wordpress',
+            'btn-outline-custom-primary': activePackage !== 'wordpress'
           }"
         >
           <input
@@ -128,8 +128,8 @@
         <label
           class="btn"
           [ngClass]="{
-            'btn-primary': activePackage === 'javascript',
-            'btn-outline-primary': activePackage !== 'javascript'
+            'bg-custom-primary': activePackage === 'javascript',
+            'btn-outline-custom-primary': activePackage !== 'javascript'
           }"
         >
           <input
@@ -165,10 +165,20 @@
             <div class="card-body d-flex flex-column">
               <p class="card-text">{{ pack.description }}</p>
               <div class="mt-auto">
-                <div class="price display-2 text-center">{{ pack.price }} €</div>
-                <div class="time fs-6 text-center mb-3">
-                  Temps : ± {{ pack.time }} heures
+                <!-- Affichage conditionnel des prix -->
+                <div *ngIf="showPrices; else noPrice">
+                  <div class="price display-2 text-center">
+                    {{ pack.price | number:'1.0-2' }} {{ currencySymbol }}
+                  </div>
+                  <div class="time fs-6 text-center mb-3">
+                    Temps : ± {{ pack.time }} heures
+                  </div>
                 </div>
+                <ng-template #noPrice>
+                  <div class="price display-6 text-center">
+                    Contactez-nous pour un devis
+                  </div>
+                </ng-template>
                 <ul class="list-group list-group-flush mb-3">
                   <li
                     *ngFor="let feature of pack.features"
@@ -185,40 +195,49 @@
       </ng-container>
   
       <!-- Packages JavaScript -->
-      <ng-container *ngIf="activePackage === 'javascript'">
-        <div
-          class="col"
-          *ngFor="let pack of javascriptPackages; let i = index"
-          [style.animationDelay]="(i * 0.2) + 's'"
-        >
-          <div
-            class="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp"
-            [ngClass]="{ 'middle-card': i === 1 }"
-          >
-            <div class="card-header text-center">
-              <h5 class="card-title mb-0">{{ pack.title }}</h5>
+     <!-- Affichage des Packages JavaScript -->
+<ng-container *ngIf="activePackage === 'javascript'">
+  <div
+    class="col"
+    *ngFor="let pack of javascriptPackages; let i = index"
+    [style.animationDelay]="(i * 0.2) + 's'"
+  >
+    <div
+      class="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp"
+      [ngClass]="{ 'middle-card': i === 1 }"
+    >
+      <div class="card-header text-center">
+        <h5 class="card-title mb-0">{{ pack.title }}</h5>
+      </div>
+      <div class="card-body d-flex flex-column">
+        <p class="card-text">{{ pack.description }}</p>
+        <div class="mt-auto">
+          <!-- Affichage conditionnel des prix -->
+          <div *ngIf="showPrices; else noPrice">
+            <div class="price display-2 text-center">
+              {{ pack.price | number:'1.0-2' }} {{ currencySymbol }}
             </div>
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">{{ pack.description }}</p>
-              <div class="mt-auto">
-                <div class="price display-2 text-center">{{ pack.price }} €</div>
-                <div class="time fs-6 text-center mb-3">
-                  Temps : ± {{ pack.time }} heures
-                </div>
-                <ul class="list-group list-group-flush mb-3">
-                  <li
-                    *ngFor="let feature of pack.features"
-                    class="list-group-item"
-                  >
-                    <i class="fas fa-check-circle me-2"></i>{{ feature }}
-                  </li>
-                </ul>
-                <button class="btn btn-primary w-100">Voir plus</button>
-              </div>
+            <div class="time fs-6 text-center mb-3">
+              Temps : ± {{ pack.time }} heures
             </div>
           </div>
+          <ng-template #noPrice>
+            <div class="price display-6 text-center">
+              Contactez-nous pour un devis
+            </div>
+          </ng-template>
+          <ul class="list-group list-group-flush mb-3">
+            <li *ngFor="let feature of pack.features" class="list-group-item">
+              <i class="fas fa-check-circle me-2"></i>{{ feature }}
+            </li>
+          </ul>
+          <button class="btn btn-primary w-100">Voir plus</button>
         </div>
-      </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
     </div>
   </div>
   

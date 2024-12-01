@@ -93,7 +93,9 @@ nav {
 .nav-links a:hover {
   color: #FAC83B;
 }
-
+.dropdown{
+  cursor: pointer;
+}
 /* Dropdown Menu */
 .dropdown-menu {
   position: absolute;

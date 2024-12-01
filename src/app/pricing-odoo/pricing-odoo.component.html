@@ -1,3 +1,101 @@
+<style>
+     /* Style général pour les cartes */
+     .card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 24px;
+      border: 2px solid #114D5A; /* Bordure principale */
+      height: 100%;
+      margin-bottom: 30px; /* Marges entre les cartes */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+      width:400px
+    }
+  
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important ; /* Ombre au survol */
+    }
+  
+    /* Carte du milieu */
+    .middle-card {
+      background-color: #114D5A; /* Fond vert */
+      color: white; /* Texte en blanc */
+    }
+  
+    .middle-card .card-title {
+      font-size: 1.8rem; /* Titre plus grand */
+      color: white; /* Titre en blanc */
+    }
+  
+    .middle-card .price {
+      color: white; /* Prix en blanc */
+    }
+  
+    .middle-card .card-text {
+      color: white; /* Texte en blanc */
+    }
+  
+    .middle-card .time {
+      color: #ffdd57; /* Temps en jaune */
+    }
+  
+    .middle-card .list-group-item {
+      background-color: transparent; /* Pas de fond pour les items */
+      border: none;
+      color: white; /* Texte en blanc */
+    }
+  
+    .middle-card .list-group-item i {
+      color: #ffdd57; /* Icônes en jaune */
+    }
+  
+    .middle-card .btn-primary {
+      background-color: #ffdd57;
+      border: none;
+      border-radius: 12px;
+    }
+  
+    .middle-card .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  
+    /* Style pour les cartes blanches */
+    .card:not(.middle-card) .card-title {
+      font-size: 1.8rem; /* Titre plus grand */
+      color: #114D5A; /* Titre en bleu foncé */
+    }
+  
+    .card:not(.middle-card) .time {
+      color: #114D5A; /* Temps en bleu foncé */
+    }
+  
+    .card:not(.middle-card) .list-group-item {
+      background-color: transparent; /* Pas de fond pour les items */
+      border: none;
+      color: #114D5A; /* Texte en bleu foncé */
+    }
+  
+    .card:not(.middle-card) .list-group-item i {
+      color: #114D5A; /* Icônes en bleu foncé */
+    }
+  
+    .card:not(.middle-card) .btn-primary {
+      background-color: #114D5A;
+      border: none;
+      border-radius: 12px;
+    }
+  
+    .card:not(.middle-card) .btn-primary:hover {
+      background-color: #0d3a44;
+    }
+  
+    /* Suppression des couleurs de fond des en-têtes */
+    .card-header {
+      background-color: transparent !important;
+      border-bottom: none;
+      font-size: 1.8rem; /* Titre des en-têtes plus grand */
+      font-weight: bold;
+    }
+</style>
 <div class="pricing-page container-fluid p-0">
     <!-- Banner Section -->
     <div class="banner-section position-relative">
@@ -201,66 +299,81 @@
               </table>
         </div>
         <div class="mt-2">
+          <p class="styled-line">
+            <strong>MSL Conseils - Belgique:</strong>
+            <span>135 € HTVA par heure</span>
+            <span>Teams / Google Meet / déplacement facturé</span>
+        </p>
+        <p class="styled-line">
+          <strong> MSL Canada - Canada:</strong>
+          <span>150 CAD HTVA per heure</span>
+          <span>Teams / Google Meet / déplacement facturé</span>
+      </p>
             <p>* Consultance sur place : Disponible dans certains pays.</p>
             <p>** Personnalisation : Sujette à des frais supplémentaires selon la demande.</p>
           </div>
+          
       </div>
-      
-      
-
-    <div class="container my-5">
-    
-      <div class="international-pricing text-center mt-5" >
-        <h2 class="text-secondary">Nos Tarifs Internationaux</h2>
-        <div class="row mt-4">
-          <!-- Belgique -->
-          <div class="col-md-4 mb-3">
-            <div class="pricing-box p-3 shadow-sm">
-              <h4>Belgique</h4>
-              <p class="price">125 €/h HTVA</p>
-              <p class="mt-2">Selon les packs achetés</p>
-            </div>
+      <section class="bg-custom">
+        <div class="container py-5">
+          <div class="text-center mb-4">
+            <h2 class="text-custom">Payroll Belgique et Canada</h2>
+            <p class="text-white">
+              Nous vous offrons des solutions de paie en Belgique et au Canada.
+            </p>
           </div>
-          <!-- Canada -->
-          <div class="col-md-4 mb-3">
-            <div class="pricing-box p-3 shadow-sm">
-              <h4>Canada</h4>
-              <p class="price">185 CAD/h HTVA</p>
-              <p class="mt-2">Selon les packs achetés</p>
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <!-- Carte Belgique -->
+            <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+              <div class="card-header text-center">
+                <h5 class="card-title mb-0">MSL Conseils - Belgique</h5>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <div class="price display-2 text-center">135 € HTVA</div>
+                <div class="time fs-6 text-center mb-3">Par Heure</div>
+                <p class="card-text">Prise de contact</p>
+                <ul class="list-group list-group-flush mb-3">
+                  <li class="list-group-item">
+                    <i class="fas fa-check-circle me-2"></i>Teams
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-check-circle me-2"></i>Google Meet
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-check-circle me-2"></i>Déplacement facturé
+                  </li>
+                </ul>
+                <button class="btn btn-primary w-100">Choisir ce plan</button>
+              </div>
             </div>
-          </div>
-          <!-- Maroc -->
-          <div class="col-md-4 mb-3">
-            <div class="pricing-box p-3 shadow-sm">
-              <h4>Maroc</h4>
-              <p class="price">50 €/h HTVA</p>
-              <p class="mt-2">Selon les packs achetés</p>
+        
+            <!-- Carte Canada -->
+            <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+              <div class="card-header text-center">
+                <h5 class="card-title mb-0">MSL Canada - Canada</h5>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <div class="price display-2 text-center">150 CAD HTVA</div>
+                <div class="time fs-6 text-center mb-3">Par Heure</div>
+                <p class="card-text">Prise de contact</p>
+                <ul class="list-group list-group-flush mb-3">
+                  <li class="list-group-item">
+                    <i class="fas fa-check-circle me-2"></i>Teams
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-check-circle me-2"></i>Google Meet
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-check-circle me-2"></i>Déplacement facturé
+                  </li>
+                </ul>
+                <button class="btn btn-primary w-100">Choisir ce plan</button>
+              </div>
             </div>
           </div>
         </div>
-        <p class="mt-4 text-muted">
-          Une offre internationale, adaptée à vos besoins locaux. Profitez d'un support fluide à distance ou sur site, selon vos préférences.
-        </p>
-      </div>
-  
-      <!-- Features Section
-      <div class="features-section text-center mt-5">
-        <h2 class="text-secondary">Des tarifs compétitifs, une qualité Odoo garantie</h2>
-        <p class="mt-3 text-muted">
-          Chacun de nos packs inclut les meilleures pratiques d’Odoo : personnalisation, conformité, et intégration de modules sur mesure. Nous vous aidons à tirer le meilleur parti de chaque heure investie, avec un service au-dessus des standards du marché.
-        </p>
-      </div>
-  
-     
-      <div class="cta-section text-center mt-5" >
-        <h3>Prêts à intégrer Odoo avec des tarifs ajustés à vos objectifs ?</h3>
-        <p class="mt-2 text-muted">
-          Avec MSL Itech, vous bénéficiez d’un rapport qualité-prix inégalé. Faites le choix de l’excellence à prix maîtrisé !
-        </p>
-        <button class="btn btn-primary btn-lg mt-3">Contactez-nous</button>
-      </div>
-    </div> -->
+        
 
+        
+      </section>
       
-  </div>
-  
