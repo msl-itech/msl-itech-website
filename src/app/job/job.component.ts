@@ -26,7 +26,7 @@ export class JobComponent {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 3000);
+    }, 1000);
     // Mise à jour du SEO avec SeoService
     this.seoService.updateTitle(this.pageTitle);
     this.seoService.updateMetaTags([

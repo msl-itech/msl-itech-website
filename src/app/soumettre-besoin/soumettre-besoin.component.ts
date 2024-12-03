@@ -14,6 +14,6 @@ export class SoumettreBesoinComponent {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 3000);
+    }, 1000);
   }
 }

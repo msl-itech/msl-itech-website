@@ -10,7 +10,7 @@ export class SliderComponent {
   slides = [
     {
       id: 'slide1',
-      img: '../../assets/img/accueil/Slide1.jpg',
+      img: '../../assets/img/accueil/Slide1-min.jpg',
       title: 'Gérez simplement, innovez différemment avec',
       highlight: 'Odoo',
       description: 'Réinventez votre activité grâce à des solutions logicielles conçues pour répondre à votre marché.',
