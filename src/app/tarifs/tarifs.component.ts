@@ -12,6 +12,7 @@ export class TarifsComponent implements OnInit{
   showPrices: boolean = true;
   currencySymbol: string = '';
   exchangeRate: number = 1;
+  pricesUpdated: boolean = false; // Indique si les prix sont calculés
 
   // Packages WordPress avec le prix de base en euros
   wordpressPackages = [
@@ -72,7 +73,7 @@ export class TarifsComponent implements OnInit{
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getUserLocation();
+    this.getUserLocation(); // Charger la localisation de l'utilisateur
   }
 
   getUserLocation() {
@@ -83,7 +84,7 @@ export class TarifsComponent implements OnInit{
       },
       error => {
         console.error('Erreur lors de la géolocalisation, affichage par défaut en euros.');
-        // En cas d'erreur, on définit un pays par défaut
+        // En cas d'erreur, définir un pays par défaut
         this.userCountryCode = 'FR';
         this.adjustPricing();
       }
@@ -91,10 +92,10 @@ export class TarifsComponent implements OnInit{
   }
 
   adjustPricing() {
-    const euroZoneCountries = ['FR', 'DE', 'ES', 'IT', 'BE', 'NL', 'LU', 'IE', 'PT', 'GR', 'AT', 'FI', 'SK', 'SI', 'LV', 'LT', 'EE', 'CY', 'MT'];
-    const americanContinentCountries = ['US', 'CA', 'MX', 'BR', 'AR', 'CL', 'PE', 'CO', 'VE', 'UY', 'PY', 'BO', 'EC', 'GY', 'SR', 'GF', 'BZ', 'GT', 'HN', 'SV', 'NI', 'CR', 'PA', 'BS', 'CU', 'JM', 'HT', 'DO', 'PR', 'TT', 'BB', 'LC', 'GD', 'AG', 'DM', 'KN', 'VC'];
-  
-    if (euroZoneCountries.includes(this.userCountryCode)) {
+    const euroZoneRegex = /^(FR|DE|ES|IT|BE|NL|LU|IE|PT|GR|AT|FI|SK|SI|LV|LT|EE|CY|MT)$/;
+    const americanContinentRegex = /^(US|CA|MX|BR|AR|CL|PE|CO|VE|UY|PY|BO|EC|GY|SR|GF|BZ|GT|HN|SV|NI|CR|PA|BS|CU|JM|HT|DO|PR|TT|BB|LC|GD|AG|DM|KN|VC)$/;
+
+    if (euroZoneRegex.test(this.userCountryCode)) {
       this.currencySymbol = '€';
       this.exchangeRate = 1; // Pas de conversion, prix en euros
       this.showPrices = true;
@@ -106,17 +107,16 @@ export class TarifsComponent implements OnInit{
       this.currencySymbol = 'XAF'; // Franc CFA
       this.exchangeRate = 655.957; // Taux de conversion fixe EUR -> XAF (parité officielle)
       this.showPrices = true;
-    } else if (americanContinentCountries.includes(this.userCountryCode)) {
+    } else if (americanContinentRegex.test(this.userCountryCode)) {
       this.currencySymbol = '$';
       this.exchangeRate = 1.5; // Taux de conversion EUR -> CAD (exemple)
       this.showPrices = true;
     } else {
       this.showPrices = false; // Ne pas afficher les prix pour les autres pays
     }
-  
+
     this.updatePackagePrices();
   }
-  
 
   updatePackagePrices() {
     this.wordpressPackages.forEach(pack => {
@@ -126,9 +126,15 @@ export class TarifsComponent implements OnInit{
     this.javascriptPackages.forEach(pack => {
       pack.price = pack.basePrice * this.exchangeRate;
     });
+
+    this.pricesUpdated = true; // Indiquer que les prix sont prêts
   }
 
   switchPackage(packageType: string) {
     this.activePackage = packageType;
+    this.pricesUpdated = false; // Réinitialiser le drapeau pour relancer l'animation
+    setTimeout(() => {
+      this.pricesUpdated = true; // Marquer les prix comme prêts après un court délai
+    }, 10); // Attendre pour garantir le redémarrage de l'animation
   }
 }

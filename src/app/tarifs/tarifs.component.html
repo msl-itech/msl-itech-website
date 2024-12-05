@@ -212,9 +212,17 @@
               <div class="m-2">
                 <!-- Affichage conditionnel des prix -->
                 <div *ngIf="showPrices; else noPrice">
-                  <div class="price display-3 text-center mb-1">
-                    {{ pack.price | number:'1.0-2' }} {{ currencySymbol }}
+                  <div *ngIf="pricesUpdated; else loading">
+                    <div class="price display-3 text-center mb-1">
+                      <span [appCountUp]="pack.price" [duration]="2000"></span> {{ currencySymbol }}
+                    </div>
                   </div>
+                  <ng-template #loading>
+                    <div class="price display-6 text-center mb-2">
+                      Chargement des prix...
+                    </div>
+                  </ng-template>
+                  
                   <div class="time fs-6 text-center mb-3">
                     Temps : ± {{ pack.time }} heures
                   </div>
@@ -260,7 +268,7 @@
           <!-- Affichage conditionnel des prix -->
           <div *ngIf="showPrices; else noPrice">
             <div class="price display-3 text-center">
-              {{ pack.price | number:'1.0-2' }} {{ currencySymbol }}
+              <span [appCountUp]="pack.price" [duration]="2000"></span> {{ currencySymbol }}
             </div>
             <div class="time fs-6 text-center mb-3">
               Temps : ± {{ pack.time }} heures

@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { SeoService } from '../seo.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { SeoService } from '../seo.service';
   templateUrl: './page-package.component.html',
   styleUrl: './page-package.component.css'
 })
-export class PagePackageComponent {
+export class PagePackageComponent implements OnInit{
   pageTitle: string = 'Offres Tarifaires Flexibles | MSL Itech - Partenaire Odoo';
   pageDescription: string = 'Découvrez nos offres tarifaires flexibles et adaptées à vos besoins métier avec MSL Itech, partenaire certifié Odoo.';
   pageKeywords: string = 'offres tarifaires, MSL Itech, Odoo, ERP, tarifs flexibles, développeur Odoo, respect des délais, qualité 100%';

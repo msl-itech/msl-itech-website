@@ -30,6 +30,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CountUpModule } from 'ngx-countup';
+import { CountUpDirective } from './count-up.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,14 +57,16 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     SoumettreBesoinComponent,
     TarifsComponent,
-    PricingOdooComponent
+    PricingOdooComponent,
+    CountUpDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    CountUpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

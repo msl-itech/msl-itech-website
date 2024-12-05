@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../seo.service';
 import AOS from 'aos';
 @Component({
@@ -6,7 +6,7 @@ import AOS from 'aos';
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.css'
 })
-export class AccueilComponent {
+export class AccueilComponent implements OnInit{
 
   constructor(private seoService: SeoService) { }
     // Gérer l'état d'expansion des éléments de l'accordéon
