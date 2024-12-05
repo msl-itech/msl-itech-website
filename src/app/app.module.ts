@@ -32,6 +32,7 @@ import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CountUpModule } from 'ngx-countup';
 import { CountUpDirective } from './count-up.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +67,6 @@ import { CountUpDirective } from './count-up.directive';
     FontAwesomeModule,
     NgxSpinnerModule,
     HttpClientModule,
-    CountUpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
