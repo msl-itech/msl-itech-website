@@ -16,6 +16,7 @@ import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
+  { path: 'sitemap', redirectTo: '/sitemap.xml', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
   { path: 'package-metier', component: PagePackageComponent },
   { path: 'serviceOdoo', component: Service1Component },

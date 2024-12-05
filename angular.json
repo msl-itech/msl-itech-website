@@ -33,8 +33,16 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/robots.txt",
-              "src/sitemap.xml"
+              {
+                "glob": "robots.txt",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "src/assets",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.css",
@@ -99,8 +107,16 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/robots.txt",
-              "src/sitemap.xml"
+              {
+                "glob": "robots.txt",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "src/assets",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.css",
