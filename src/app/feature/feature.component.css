@@ -4,7 +4,7 @@
     display: flex;
     align-items: stretch; /* Étire les enfants sur toute la hauteur */
     justify-content: center;
-    background-image: url('../../assets/img/accueil/Section.png');
+    background-image: url('../../assets/img/accueiL/Section.png');
     background-size: cover;
     background-position: center;
     position: relative;
