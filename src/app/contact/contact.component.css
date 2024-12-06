@@ -12,3 +12,26 @@
     100% { transform: rotate(360deg); }
   }
   
+  /* Par défaut pour mobile */
+#iframeContainer iframe {
+  min-height: 175vh; /* Mode mobile */
+}
+
+/* Pour les écrans de tablette */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #iframeContainer iframe {
+    min-height: 120vh; /* Ajustement pour tablette */
+  }
+}
+
+/* Pour les écrans desktop */
+@media (width: 1024px) {
+  #iframeContainer iframe {
+    min-height: 90vh; /* Mode desktop */
+  }
+}
+@media (min-width: 1025px) {
+  #iframeContainer iframe {
+    min-height: 120vh; /* Mode desktop */
+  }
+}
