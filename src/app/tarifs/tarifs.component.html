@@ -1,4 +1,4 @@
-<!-- <style>
+<style>
     /* Style général pour les cartes */
     .card {
       transition: transform 0.3s, box-shadow 0.3s;
@@ -142,13 +142,13 @@
   </style>
   
   <div class="container mt-5 mb-4">
-   
+    <!-- Titre -->
     <div class="text-center mb-5">
       <h1 class="display-4">Nos Offres</h1>
       <p class="lead text-muted">Choisissez le pack qui vous convient le mieux</p>
     </div>
     
-  
+    <!-- Boutons de Toggle -->
     <div class="d-flex justify-content-center mb-4">
       <div class="btn-group" role="group" aria-label="Toggle Packages">
         <label
@@ -191,8 +191,9 @@
       </div>
     </div>
   
+    <!-- Affichage des Packages -->
     <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-4">
-     
+      <!-- Packages WordPress -->
       <ng-container *ngIf="activePackage === 'wordpress'">
         <div
           class="col"
@@ -209,7 +210,7 @@
             <div class="card-body d-flex flex-column">
               <p class="card-text">{{ pack.description }}</p>
               <div class="m-2">
-           
+                <!-- Affichage conditionnel des prix -->
                 <div *ngIf="showPrices; else noPrice">
                   <div *ngIf="pricesUpdated; else loading">
                     <div class="price display-3 text-center mb-1">
@@ -246,8 +247,8 @@
         </div>
       </ng-container>
   
-
-
+      <!-- Packages JavaScript -->
+     <!-- Affichage des Packages JavaScript -->
 <ng-container *ngIf="activePackage === 'javascript'">
   <div
     class="col"
@@ -264,7 +265,7 @@
       <div class="card-body d-flex flex-column">
         <p class="card-text">{{ pack.description }}</p>
         <div class="m-2">
-    
+          <!-- Affichage conditionnel des prix -->
           <div *ngIf="showPrices; else noPrice">
             <div class="price display-3 text-center">
               <span [appCountUp]="pack.price" [duration]="2000"></span> {{ currencySymbol }}
@@ -292,4 +293,4 @@
 
     </div>
   </div>
-    -->
+  
