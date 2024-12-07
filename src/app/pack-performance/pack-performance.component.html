@@ -1,0 +1,484 @@
+<style>
+.highlight {
+  background-color: #e63946; /* Rouge pour accent */
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+  background-color: #114D5A; /* Couleur de la carte */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #ffdd57; /* Bleu pour les icônes */
+  margin-right: 1rem;
+}
+
+.card-item h5 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-item p {
+  margin: 0;
+  color: #fff; 
+  font-size:14px
+}
+
+.text-muted {
+  color: #6c757d; /* Texte légèrement atténué */
+}
+
+.content{
+    color: white;
+}
+
+
+
+
+
+
+
+/* Base des timelines */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Timeline Left */
+.timeline-left {
+  border-left: 2px solid #007bff; /* Barre verticale */
+  padding-left: 2rem; /* Distance depuis la gauche */
+}
+
+.timeline-left .timeline-item {
+  display: flex;
+  justify-content: flex-start; /* Alignement à gauche */
+  margin-bottom: 2rem;
+}
+
+.timeline-left .timeline-item .content {
+  background: #ffffff;
+  color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Limite la largeur */
+  margin-left: 0; /* Annule le centrage */
+}
+
+/* Timeline Right */
+.timeline-right {
+  border-right: 2px solid #e63946; /* Barre verticale */
+  padding-right: 2rem; /* Distance depuis la droite */
+}
+
+.timeline-right .timeline-item {
+  display: flex;
+  justify-content: flex-end; /* Alignement à droite */
+  margin-bottom: 2rem;
+}
+
+.timeline-right .timeline-item .content {
+  background: #ffffff;
+  color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Limite la largeur */
+  margin-right: 0; /* Annule le centrage */
+}
+
+/* Icônes */
+.timeline-item .content i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+
+</style>
+<div class="my-5">
+    <!-- Titre Principal avec Image de Couverture -->
+  
+    <div class="banner-section position-relative">
+        <img src="../../assets/img/pricing/Section.png" alt="MSL Itech Banner" class="w-100">
+        <div class="overlay-text d-flex align-items-center justify-content-center">
+          <div class="text-center text-white px-3">
+            <h1 class="display-4">Boostez les Performances de Votre Équipe Commerciale avec Odoo CRM</h1>
+            <p class="lead"> Vous avez besoin d'augmenter les performances de votre équipe commerciale pour augmenter vos bénéfices ?</p>
+          </div>
+        </div>
+      </div>
+    <!-- Section Gestion des Prospects avec Card -->
+    <section class=" mb-5 ">
+        <div class="container my-5" >
+            <div class="row align-items-center">
+              <div class="col-md-6 order-md-2 text-center">
+                <img src="../../assets/img/perf/perf1.jpg" alt="Intégration Odoo" class="img-fluid rounded-custom shadow-sm">
+              </div>
+              <div class="col-md-6 order-md-1" >
+                <h2 class="text-primary--custom">Gestion Intelligente des Prospects</h2>
+                <p >
+                    Cela commence par une gestion intelligente de vos prospects. Pourtant, beaucoup d’entreprises négligent une étape cruciale : s’assurer que leurs efforts se concentrent sur les prospects ayant un réel potentiel d’achat.
+                  </p>
+                  <p >
+                    Ne serait-ce pas frustrant de voir vos efforts commerciaux échouer simplement à cause d’un mauvais ciblage ?
+                  </p>
+                  <p>
+                    Mais savez-vous réellement ce que cela signifie de qualifier un prospect ? Et pourquoi cette étape est-elle essentielle pour réussir dans vos activités commerciales ?
+                  </p>
+              </div>
+            </div>
+          </div>
+    </section>
+  
+    <!-- Défi Commun avec Image et Card -->
+    <section class="mb-5">
+        <div class="container-fluid bg-custom py-5">
+            <div class="container color-white">
+              <div class="row align-items-center">
+                <div class="col-md-6" >
+                    <img src="../../assets/img/pricing/image_section.png" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
+                  </div>
+                <!-- Texte avec liste -->
+                <div class="col-md-6" >
+                  <h2 class="text-custom">Un Défi Commun : Transformer Vos Efforts en Résultats</h2>
+                  <p>
+                    Imaginez ceci : vous passez des heures à contacter des clients potentiels, mais seuls quelques-uns semblent réellement intéressés par vos services. Résultat ? Du temps perdu, des ventes stagnantes, et une frustration croissante.
+                  </p>
+                  <p class="fw-bold p-3 border-start border-4 border-warning">
+                    👉 Que diriez-vous si vous pouviez concentrer vos efforts uniquement sur les prospects ayant un réel potentiel d'achat ? C’est là qu’intervient la qualification des prospects.
+                  </p>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </section>
+  
+    <!-- Qualification des Prospects avec Card -->
+    <section class="mb-5">
+        <div class="container my-5" > 
+              <div class="container py-5">
+                <div class="row align-items-center">
+                  <!-- Texte principal -->
+                  <div class="col-md-6">
+                    <h2 class="text-primary--custom">Qualifier un prospect, ça ne s’improvise pas </h2>
+                    <p class="text-muted">
+                        Qualifier vos prospects n’est pas une question de chance ou de feeling : c’est une démarche méthodique qui repose sur des critères précis. 
+                    </p>
+                    <p class="text-muted">
+                        Ces questions vous permettent de distinguer les "curieux" des prospects réellement qualifiés, et c’est cette différence qui transforme vos efforts en contrats signés. 
+                    </p>
+                  </div>
+              
+                  <!-- Cartes -->
+                  <div class="col-md-6">
+                    <div class="card-list">
+                      <div class="card-item">
+                        <div class="icon">
+                          <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="content">
+                          <h5>Quels sont leurs besoins ?</h5>
+                          <p>Identifiez précisément ce que vos prospects recherchent pour répondre efficacement à leurs attentes.</p>
+                        </div>
+                      </div>
+                      <div class="card-item">
+                        <div class="icon">
+                          <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="content">
+                          <h5>Ont-ils le budget ?</h5>
+                          <p>Assurez-vous que vos prospects ont les ressources nécessaires pour investir dans vos solutions.</p>
+                        </div>
+                      </div>
+                      <div class="card-item">
+                        <div class="icon">
+                          <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="content">
+                          <h5>Sont-ils décisionnaires ?</h5>
+                          <p>Vérifiez si la personne que vous contactez peut prendre la décision finale ou s’il s’agit d’un intermédiaire.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+              </div>  
+        </div>    
+    </section>
+  
+    <!-- Forme Section avec Image -->
+    <section class="mb-5">
+        <div class="container-fluid py-5 bg-custom ">
+            <div class="container">
+                    <!-- Timeline 1: Pourquoi les entreprises réussissent -->
+            <h2 class="text-white mb-5">Pourquoi Certaines Entreprises Réussissent ?</h2>
+            <div class="timeline-left">
+              <!-- Item 1 -->
+              <div class="timeline-item">
+                <div class="content">
+                  <i class="fas fa-tools text-primary"></i>
+                  <h5>Outils Performants</h5>
+                  <p>Elles utilisent des outils performants pour automatiser la collecte des informations clés.</p>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="timeline-item">
+                <div class="content">
+                  <i class="fas fa-lightbulb text-primary"></i>
+                  <h5>Méthode Claire</h5>
+                  <p>Elles adoptent une méthode claire pour prioriser leurs efforts.</p>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div class="timeline-item">
+                <div class="content">
+                  <i class="fas fa-bullseye text-primary"></i>
+                  <h5>Opportunités Prometteuses</h5>
+                  <p>Elles se concentrent sur les opportunités les plus prometteuses.</p>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Timeline 2: Cependant -->
+            <h2 class="text-white mt-5 mb-5">Cependant, beaucoup hésitent encore. Pourquoi ?</h2>
+            <div class="timeline-right">
+              <!-- Item 1 -->
+              <div class="timeline-item">
+                <div class="content">
+                  <i class="fas fa-clock text-danger"></i>
+                  <h5 class="text-danger">Chronophage</h5>
+                  <p>La qualification peut sembler chronophage.</p>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="timeline-item">
+                <div class="content">
+                  <i class="fas fa-tools text-danger"></i>
+                  <h5 class="text-danger">Manque d'Outils</h5>
+                  <p>Les équipes commerciales manquent souvent de structure ou d’outils adaptés.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+        
+          </div>
+          
+    </section>
+  
+    <!-- Odoo CRM Section avec Cards et Images -->
+    <section class="mb-5">
+        <div class="container-fluid py-5">
+            <div class="container">
+                <div>
+                    <h2 class="text-center mb-4">Ne Laissez Plus Vos Ventes au Hasard avec Odoo CRM</h2>
+                    <p class="fw-bold text-center mb-5">
+                      📈 Avec Odoo CRM, transformez votre gestion commerciale grâce à :
+                    </p>
+                
+                    <!-- Alignement Alterné -->
+                    <div class="row align-items-center mb-4">
+                      <div class="col-md-6 order-md-2">
+                        <img src="../../assets/img/perf/qualification-course-2023-11-27-04-54-59-utc.jpg" class="img-fluid rounded shadow" alt="Qualification Automatisée">
+                      </div>
+                      <div class="col-md-6 order-md-1">
+                        <h5 class="fw-bold">Qualification Automatisée</h5>
+                        <p>
+                          Analysez rapidement les besoins, budgets, et décideurs pour concentrer vos efforts sur les contacts les plus prometteurs.
+                        </p>
+                      </div>
+                    </div>
+                
+                    <div class="row align-items-center mb-4">
+                      <div class="col-md-6">
+                        <img src="../../assets/img/perf/completing-the-first-task-set-priority-to-first-2023-11-27-05-32-10-utc.jpg" class="img-fluid rounded shadow" alt="Gestion des Priorités">
+                      </div>
+                      <div class="col-md-6">
+                        <h5 class="fw-bold">Gestion des Priorités</h5>
+                        <p>
+                          Identifiez les opportunités à fort potentiel pour maximiser vos chances de conclure.
+                        </p>
+                      </div>
+                    </div>
+                
+                    <div class="row align-items-center mb-4">
+                      <div class="col-md-6 order-md-2">
+                        <img src="../../assets/img/perf/success-follows-hard-work-2023-11-27-05-26-19-utc.jpg" class="img-fluid rounded shadow" alt="Suivi Structuré">
+                      </div>
+                      <div class="col-md-6 order-md-1">
+                        <h5 class="fw-bold">Suivi Structuré</h5>
+                        <p>
+                          Planifiez vos relances et rendez-vous sans rien oublier, pour toujours être au bon moment au bon endroit.
+                        </p>
+                      </div>
+                    </div>
+                
+                    <p class="mt-5 fw-bold">
+                      <strong>Résultat :</strong>
+                    </p>
+                    <ul class="list-unstyled">
+                      <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i> Un gain de temps considérable pour votre équipe.
+                      </li>
+                      <li>
+                        <i class="fas fa-check-circle text-success me-2"></i> Une augmentation rapide de votre taux de conversion grâce à des efforts ciblés et méthodiques.
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+      </section>
+      
+      <section class="mb-5">
+        <div class="container-fluid bg-custom py-5">
+            <div class="container color-white">
+              <div class="row align-items-center">
+                <div class="col-md-6" >
+                    <img src="../../assets/img/pricing/image_section.png" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
+                  </div>
+                <!-- Texte avec liste -->
+                <div class="col-md-6">
+                    <!-- Section Title -->
+                    <h2 class="text-custom mb-4">Ventes : Accélérez et Standardisez Vos Processus</h2>
+                    
+                    <!-- Feature List -->
+                    <ul class="list-unstyled">
+                      <!-- Feature Item 1 -->
+                      <li class="d-flex align-items-start mb-4">
+                        <i class="fas fa-check-circle text-warning fs-4 me-3"></i>
+                        <div>
+                          <strong>Simplifiez l'importation de vos données :</strong>
+                          <p class="mb-0">
+                            Ajoutez facilement vos clients et produits existants, ou laissez-nous le faire pour vous grâce à nos packs d’heures.
+                          </p>
+                        </div>
+                      </li>
+                      
+                      <!-- Feature Item 2 -->
+                      <li class="d-flex align-items-start mb-4">
+                        <i class="fas fa-check-circle text-warning  fs-4 me-3"></i>
+                        <div>
+                          <strong>Accélérez vos devis :</strong>
+                          <p class="mb-0">
+                            Créez des modèles personnalisés en quelques clics et envoyez des propositions professionnelles en un rien de temps.
+                          </p>
+                        </div>
+                      </li>
+                      
+                      <!-- Feature Item 3 -->
+                      <li class="d-flex align-items-start mb-4">
+                        <i class="fas fa-check-circle text-warning fs-4 me-3"></i>
+                        <div>
+                          <strong>Boostez la validation des commandes :</strong>
+                          <p class="mb-0">
+                            Vos clients signent en ligne et paient directement via des plateformes sécurisées comme Stripe ou PayPal.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                    
+                    <!-- Highlighted Note -->
+                    <p class="fw-bold p-4 border-start border-4 border-warning rounded">
+                      👉Moins de temps perdu, plus de contrats signés.
+                    </p>
+                  </div>
+                  
+              </div>
+            </div>
+          </div>
+
+    </section>
+    
+    <section class="py-5 bg-white text-dark">
+        <div class="container">
+          <!-- Titre et Sous-titre -->
+          <div class="text-center mb-5">
+            <h2 >Passez à l’Action : Boostez Votre Chiffre d’Affaires avec Odoo</h2>
+            <p class="lead">
+              Ne laissez pas des processus inefficaces freiner votre croissance. Avec notre Pack d’Implémentation Odoo (CRM, Ventes, Facturation), vous obtenez :
+            </p>
+          </div>
+      
+          <!-- Cartes avec Icônes -->
+          <div class="row text-center">
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm bg-custom">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-cogs fa-3x text-custom"></i>
+                  </div>
+                  <h5 class="card-title text-custom">Configuration sur Mesure</h5>
+                  <p class="card-text text-white">Optimisée pour répondre à vos besoins spécifiques.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm bg-custom">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-chalkboard-teacher fa-3x text-custom"></i>
+                  </div>
+                  <h5 class="card-title text-custom">Formation Pratique</h5>
+                  <p class="card-text text-white">Pour que votre équipe soit opérationnelle dès le premier jour.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm bg-custom">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-headset fa-3x text-custom"></i>
+                  </div>
+                  <h5 class="card-title text-custom">Support Dédié</h5>
+                  <p class="card-text text-white">Pour garantir une utilisation optimale dès la mise en œuvre.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Offre Spéciale -->
+          <div class="text-center mt-5">
+            <p class="fw-bold fs-5">
+              📌 Offre spéciale : Profitez d’une <span class="text-warning">démonstration gratuite</span> et découvrez comment augmenter vos revenus dès le premier mois grâce à Odoo.
+            </p>
+            <!-- Boutons d'Appel à l'Action -->
+            <div class="d-flex justify-content-center gap-3 mb-4">
+              <a href="mailto:votre-email@example.com" class="btn bg-custom btn-lg text-custom"><i class="fas fa-envelope me-2 text-custom"></i>Email</a>
+              <a href="tel:votre-numéro" class="btn bg-custom btn-lg text-custom"><i class="fas fa-phone me-2 text-custom"></i>Téléphone</a>
+              <a href="https://votre-site-web.com" target="_blank" class="btn bg-custom text-custom btn-lg"><i class="fas fa-globe me-2 text-custom"></i>Site web</a>
+            </div>
+            <p>
+              Avec Odoo, faites de vos objectifs commerciaux une réalité. Vos ventes n’attendent plus. 🚀
+            </p>
+          </div>
+        </div>
+      </section>
+      <app-tableau-crm-vente></app-tableau-crm-vente>
+  </div>
+  

@@ -1,0 +1,46 @@
+<style>
+    .scrollable-container {
+      width: 100%; /* Prend toute la largeur disponible */
+      height: 100vh; /* Adapte à la hauteur de l'écran */
+      overflow-x: auto; /* Active le scroll horizontal si nécessaire */
+      overflow-y: auto; /* Active le scroll vertical si nécessaire */
+      display: block;
+      background-color: #f8f9fa; /* Fond optionnel */
+      padding: 16px;
+      position: relative;
+    }
+    
+    .scrollable-container img {
+      width: 900px; /* Taille par défaut pour mobile */
+      height: auto; /* Conserve le ratio de l'image */
+      display: block;
+      position: absolute; /* Positionnement absolu pour centrer */
+    top: 50%; /* Aligne au centre verticalement */
+    left: 50%; /* Aligne au centre horizontalement */
+    transform: translate(-50%, -50%);
+    }
+    
+    @media (min-width: 768px) {
+     
+      .scrollable-container img {
+        width: 900px; /* Taille pour tablette */
+        height: auto;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .scrollable-container img {
+        width: 1200px; /* Taille pour desktop */
+        height: auto;
+      }
+    }
+    
+    
+      </style>
+      
+      <div class="text-center">
+        <h1>Tableau comparatif</h1>
+      </div>
+      <div class="scrollable-container">
+        <img src="../../assets/img/accueil/Group 39548.png" alt="Tableau des packs commerciaux">
+      </div>

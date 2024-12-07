@@ -1,0 +1,117 @@
+/* sales-pitch.component.css */
+
+
+/* Banner Section */
+.banner-section {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+  }
+  
+  .banner-section img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay-text .text-center {
+    max-width: 800px;
+    padding: 0 15px;
+  }
+  
+  .overlay-text h1 {
+    font-weight: 900;
+    font-size: 3rem;
+  }
+  
+  .overlay-text p {
+    font-size: 1.25rem;
+  }
+  
+  /* Introduction Section */
+  .intro-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  
+/* Style pour les sections */
+
+  
+  /* Style pour les images de couverture */
+  img.img-fluid {
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  /* Style pour les cartes */
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    color: #007bff;
+  }
+  
+  .bg-primary {
+    background-color: #007bff !important;
+  }
+  
+  .text-primary {
+    color: #007bff !important;
+  }
+  
+  /* Style pour les boutons */
+  .btn-light.text-primary {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Ajustement des images dans les cartes */
+  .card-img-top,
+  .card-img-start,
+  .card-img-end {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .text-primary--custom {
+    color: #114D5A;
+  }
+
+  /* Image */
+img {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .bg-custom {
+    background-color: #114D5A;
+  }
+
+  .text-custom {
+    color: #FAC83B;
+  }
+  
+  .color-white {
+    color: white;
+  }
+  
+  

@@ -33,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CountUpModule } from 'ngx-countup';
 import { CountUpDirective } from './count-up.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PackPerformanceComponent } from './pack-performance/pack-performance.component';
+import { TableauCRMVENTEComponent } from './tableau-crm-vente/tableau-crm-vente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SoumettreBesoinComponent,
     TarifsComponent,
     PricingOdooComponent,
-    CountUpDirective
+    CountUpDirective,
+    PackPerformanceComponent,
+    TableauCRMVENTEComponent
   ],
   imports: [
     BrowserModule,
