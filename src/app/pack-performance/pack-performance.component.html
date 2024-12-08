@@ -118,7 +118,123 @@
   display: block;
 }
 
+/* sales-pitch.component.css */
 
+
+/* Banner Section */
+.banner-section {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+  }
+  
+  .banner-section img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay-text .text-center {
+    max-width: 800px;
+    padding: 0 15px;
+  }
+  
+  .overlay-text h1 {
+    font-weight: 900;
+    font-size: 3rem;
+  }
+  
+  .overlay-text p {
+    font-size: 1.25rem;
+  }
+  
+  /* Introduction Section */
+  .intro-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  
+/* Style pour les sections */
+
+  
+  /* Style pour les images de couverture */
+  img.img-fluid {
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  /* Style pour les cartes */
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    color: #007bff;
+  }
+  
+  .bg-primary {
+    background-color: #007bff !important;
+  }
+  
+  .text-primary {
+    color: #007bff !important;
+  }
+  
+  /* Style pour les boutons */
+  .btn-light.text-primary {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Ajustement des images dans les cartes */
+  .card-img-top,
+  .card-img-start,
+  .card-img-end {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .text-primary--custom {
+    color: #114D5A;
+  }
+
+  /* Image */
+img {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .bg-custom {
+    background-color: #114D5A;
+  }
+
+  .text-custom {
+    color: #FAC83B;
+  }
+  
+  .color-white {
+    color: white;
+  }
+  
+  
 </style>
 <div class="my-5">
     <!-- Titre Principal avec Image de Couverture -->
@@ -305,7 +421,7 @@
                     <!-- Alignement Alterné -->
                     <div class="row align-items-center mb-4">
                       <div class="col-md-6 order-md-2">
-                        <img src="../../assets/img/perf/qualification-course-2023-11-27-04-54-59-utc.jpg" class="img-fluid rounded shadow" alt="Qualification Automatisée">
+                        <img src="../../assets/img/perf/qualification-course-2023-11-27-04-54-59-utc-min.jpg" class="img-fluid rounded shadow" alt="Qualification Automatisée">
                       </div>
                       <div class="col-md-6 order-md-1">
                         <h5 class="fw-bold">Qualification Automatisée</h5>
@@ -317,7 +433,7 @@
                 
                     <div class="row align-items-center mb-4">
                       <div class="col-md-6">
-                        <img src="../../assets/img/perf/completing-the-first-task-set-priority-to-first-2023-11-27-05-32-10-utc.jpg" class="img-fluid rounded shadow" alt="Gestion des Priorités">
+                        <img src="../../assets/img/perf/completing-the-first-task-set-priority-to-first-2023-11-27-05-32-10-utc-min.jpg" class="img-fluid rounded shadow" alt="Gestion des Priorités">
                       </div>
                       <div class="col-md-6">
                         <h5 class="fw-bold">Gestion des Priorités</h5>
@@ -329,7 +445,7 @@
                 
                     <div class="row align-items-center mb-4">
                       <div class="col-md-6 order-md-2">
-                        <img src="../../assets/img/perf/success-follows-hard-work-2023-11-27-05-26-19-utc.jpg" class="img-fluid rounded shadow" alt="Suivi Structuré">
+                        <img src="../../assets/img/perf/success-follows-hard-work-2023-11-27-05-26-19.jpg" class="img-fluid rounded shadow" alt="Suivi Structuré">
                       </div>
                       <div class="col-md-6 order-md-1">
                         <h5 class="fw-bold">Suivi Structuré</h5>
@@ -360,7 +476,7 @@
             <div class="container color-white">
               <div class="row align-items-center">
                 <div class="col-md-6" >
-                    <img src="../../assets/img/pricing/image_section.png" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
+                    <img src="../../assets/img/perf/white-sale-banner-lying-on-green-grass-house-for-2024-11-18-09-42-12-utc-min.jpg" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
                   </div>
                 <!-- Texte avec liste -->
                 <div class="col-md-6">
@@ -469,7 +585,7 @@
             </p>
             <!-- Boutons d'Appel à l'Action -->
             <div class="d-flex justify-content-center gap-3 mb-4">
-              <a href="mailto:votre-email@example.com" class="btn bg-custom btn-lg text-custom"><i class="fas fa-envelope me-2 text-custom"></i>Email</a>
+              <a href="mailto:info@msl-itech.com" class="btn bg-custom btn-lg text-custom"><i class="fas fa-envelope me-2 text-custom"></i>Email</a>
               <a href="tel:votre-numéro" class="btn bg-custom btn-lg text-custom"><i class="fas fa-phone me-2 text-custom"></i>Téléphone</a>
               <a href="https://votre-site-web.com" target="_blank" class="btn bg-custom text-custom btn-lg"><i class="fas fa-globe me-2 text-custom"></i>Site web</a>
             </div>
