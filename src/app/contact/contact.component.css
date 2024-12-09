@@ -1,4 +1,4 @@
-.spinner {
+/* .spinner {
     border: 16px solid #f3f3f3;
     border-top: 16px solid #3498db;
     border-radius: 50%;
@@ -12,26 +12,23 @@
     100% { transform: rotate(360deg); }
   }
   
-  /* Par défaut pour mobile */
 #iframeContainer iframe {
-  min-height: 180vh; /* Mode mobile */
+  min-height: 180vh;
 }
 
-/* Pour les écrans de tablette */
 @media (min-width: 768px) and (max-width: 1023px) {
   #iframeContainer iframe {
-    min-height: 120vh; /* Ajustement pour tablette */
+    min-height: 120vh;
   }
 }
 
-/* Pour les écrans desktop */
 @media (width: 1024px) {
   #iframeContainer iframe {
-    min-height: 90vh; /* Mode desktop */
+    min-height: 90vh; 
   }
 }
 @media (min-width: 1025px) {
   #iframeContainer iframe {
-    min-height: 120vh; /* Mode desktop */
+    min-height: 120vh; 
   }
-}
+} */
