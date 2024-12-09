@@ -172,6 +172,7 @@ nav .container {
 
 .btn:hover {
   background: #0f3b46;
+  color: #ffcc00;
 }
 
 .btn2 {
@@ -216,6 +217,9 @@ nav .container {
 }
 /* Responsive Styles */
 @media (max-width: 1024px) {
+  a.btn2 {
+    text-align: center;
+}
   .burger {
     display: block;
   }
@@ -288,6 +292,10 @@ nav .container {
 /* Responsive Styles */
 @media (max-width: 768px) {
   /* Afficher le menu burger */
+  a.btn2 {
+    text-align: center;
+}
+
   .burger {
     display: block;
   }
@@ -358,6 +366,9 @@ nav .container {
 }
 
 @media (max-width: 480px) {
+  a.btn2 {
+    text-align: center;
+}
   .logo {
     width: 80px;
   }
@@ -473,14 +484,14 @@ nav .container {
         </li>        
         <!-- Actions Mobile -->
         <li class="mobile-actions">
-          <a routerLink="/besoin" class="btn">Soumettre un besoin</a>
+          <a routerLink="/besoin" class="btn" style="text-align: center; color: #FAC83B !important">Soumettre un besoin</a>
           <a routerLink="/contact" class="btn2">Contactez-nous</a>
         </li>
       </ul>
 
       <!-- Actions (Desktop) -->
       <div class="actions">
-        <a routerLink="/besoin" class="btn " style="text-align: center; color: #FAC83B;">Soumettre un besoin</a>
+        <a routerLink="/besoin" class="btn " >Soumettre un besoin</a>
         <a routerLink="/contact" class="btn2" style="text-align: center;">Contactez-nous</a>
       </div>
     </div>
