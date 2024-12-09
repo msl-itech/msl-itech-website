@@ -36,3 +36,21 @@
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 } */
+
+app-header {
+  flex: 0 0 auto; /* Le header prend sa hauteur normale, pas extensible */
+}
+
+app-footer {
+  flex: 0 0 auto; /* Le footer également */
+}
+
+#iframeContainer {
+  width: 100%;
+  overflow: hidden; /* Empêche les scrollbars au niveau du conteneur */
+}
+
+iframe {
+  width: 100%;
+  border: none;
+}
