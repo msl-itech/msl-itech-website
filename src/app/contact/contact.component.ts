@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -9,19 +9,20 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ContactComponent {
   isLoading: boolean = true; // Indicateur de chargement
   constructor(private spinner: NgxSpinnerService) {}
-  @ViewChild('odooIframe', { static: false }) iframe!: ElementRef; // Référence à l'iframe
   ngOnInit(): void {
     this.spinner.show();
-
+    this.adjustHeight();  
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 1000);
   }
-  ngAfterViewInit() {
-    // Écouter l'événement onload de l'iframe
-    this.iframe.nativeElement.onload = () => {
-      this.isLoading = false; // Cacher le loader une fois l'iframe chargé
-    };
+ 
+  @HostListener('window:resize')
+  adjustHeight() {
+    const iframeContainer = document.getElementById('iframeContainer');
+    if (iframeContainer) {
+      iframeContainer.style.height = `${window.innerHeight}px`;
+    }
   }
 }
