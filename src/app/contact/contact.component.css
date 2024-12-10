@@ -47,7 +47,7 @@ app-footer {
 
 #iframeContainer {
   width: 100%;
-  overflow: hidden; /* Empêche les scrollbars au niveau du conteneur */
+
 }
 
 iframe {
