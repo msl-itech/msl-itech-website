@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../seo.service';
-import AOS from 'aos';
+
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
@@ -48,12 +48,7 @@ export class AccueilComponent implements OnInit{
     }
 
     ngOnInit(): void {
-      AOS.init({
-        duration: 1000, // Durée de l'animation en millisecondes
-        easing: 'ease-in-out', // Type d'animation
-        once: true, // Si true, l'animation ne se répète qu'une seule fois
-        mirror: false // Si true, les éléments sont animés lors du défilement vers le haut
-      });
+      
       this.seoService.updateTitle('MSL Itech - Partenaire Certifié Odoo en Belgique, Canada et Maroc');
       this.seoService.updateMetaTags([
         { name: 'description', content: 'MSL Itech est un partenaire certifié Odoo offrant des services d’implémentation, de personnalisation et de support ERP en Belgique, Canada et Maroc pour les PME et les entreprises en croissance.' },

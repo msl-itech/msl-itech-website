@@ -1,4 +1,76 @@
 <style>
+   .recommendation-section {
+            color: #ffffff; /* Texte blanc */
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .recommendation-section h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .highlighted {
+            background-color: #FFDD57; /* Fond jaune */
+            color: #114D5A; /* Texte vert foncé */
+            border-radius: 4px;
+            padding: 4px 8px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .content-container {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr; /* Deux colonnes avec un séparateur */
+            gap: 20px;
+            align-items: start;
+        }
+
+        .contentt {
+            text-align: left;
+            padding: 20px;
+        }
+
+        .contentt h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #FFDD57; /* Titre en jaune */
+        }
+
+        .contentt p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #ffffff; /* Texte blanc */
+        }
+
+        .icon {
+            color: #FFDD57; /* Icône jaune */
+            font-size: 1rem;
+            display: block;
+            margin: 20px 0;
+        }
+
+        .divider {
+            background-color: #FFDD57; /* Ligne séparatrice jaune */
+            height: 100%;
+            width: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .divider {
+                display: none;
+            }
+            .content {
+                text-align: center;
+            }
+        }
+
     /* Style général pour les cartes */
     .card {
       transition: transform 0.3s, box-shadow 0.3s;
@@ -140,16 +212,198 @@
   }
   
   </style>
-  
-  <div class="container mt-5 mb-4" >
-    <!-- Titre -->
-    <div class="text-center mb-5" style="margin-top: 180px;">
-      <h1 >Nos Offres</h1>
-      <p class="lead text-muted">Choisissez le pack qui vous convient le mieux</p>
+
+   <div class="banner-section position-relative" style="margin-top: 142px;">
+    <img src="../../assets/img/pricing/Section.png" alt="MSL Itech Banner" class="img-fluid w-100">
+    <div class="overlay-text d-flex align-items-center justify-content-center">
+      <div class="text-center text-white px-3">
+        <h1 class="display-4">Nos Offres Site internet</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="200">Des tarifs site internet qui défient la concurrence, sans compromis sur la qualité !</p>
+      </div>
     </div>
-    
+  </div>
+  <div class="container my-5" >
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-2 text-center rounded" data-aos="fade-left">
+        <img src="../../assets/img/pricing/image_section2.jpg" alt="Intégration Odoo" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6 order-md-1" data-aos="fade-right">
+        <h2 class="text-primary--custom">Pourquoi choisir MSL Itech ?</h2>
+        <p>
+          Créer un site web, c’est comme construire une maison : le choix des outils et des matériaux est crucial pour obtenir un résultat qui correspond à vos besoins. 
+        </p>
+        <p>
+          Si vous êtes chef d’entreprise, entrepreneur ou professionnel, il est normal de se sentir perdu face à des termes techniques comme Angular ou WordPress.
+        </p>
+        <p>
+          Pas de panique ! Voici un guide simple et explicatif pour vous aider à faire le bon choix. 
+        </p>
+        <!-- <button class="btn btn-bg-primary mt-3" data-aos="zoom-in">Découvrir nos packs</button> -->
+      </div>
+    </div>
+  </div>
+  <div class=" bg-custom p-3">
+    <div class="container">
+      <h2 class="text-center text-white">
+        Comprendre <span class="text-warning">Javascript</span> et <span class="text-warning">WordPress</span><br> en quelques mots
+      </h2>
+  
+      <div class="row g-4 justify-content-center mt-4 mb-5">
+        <div class="col-md-5">
+          <div class="card-custom">
+            <div class="card-number">01</div>
+            <div class="card-title">Javascript Moderne</div>
+            <p>
+              Imaginez un architecte qui construit une maison sur mesure pour répondre à vos attentes les plus spécifiques. 
+              Javascript moderne est idéal pour des projets complexes, comme des plateformes en ligne nécessitant des fonctionnalités 
+              interactives avancées (par exemple, un espace client dynamique ou un outil collaboratif).
+            </p>
+          </div>
+        </div>
+  
+        <div class="col-md-5">
+          <div class="card-custom">
+            <div class="card-number">02</div>
+            <div class="card-title">WordPress</div>
+            <p>
+              C’est l’équivalent d’un kit de maison préfabriquée. Rapide à assembler, facile à personnaliser, et parfait 
+              pour des projets standards comme des blogs, des sites vitrine ou des boutiques en ligne simples.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>  
+   
+  </div>
+
+  <div class="container">
+    <div class="container my-4">
+      <h3 class="text-center mb-4">Comparaison Javascript moderne vs WordPress</h3>
+      <div class="table-responsive">
+        <table class="flat-table">
+          <thead>
+            <tr>
+              <th>Crit&egrave;re</th>
+              <th>Angular (sur-mesure)</th>
+              <th>WordPress (pr&ecirc;t &agrave; l'emploi)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vos besoins</td>
+              <td>Solution unique et complexe</td>
+              <td>Site rapide, simple et fonctionnel</td>
+            </tr>
+            <tr>
+              <td>Co&ucirc;t</td>
+              <td>&Eacute;lev&eacute;</td>
+              <td>Mod&eacute;r&eacute;</td>
+            </tr>
+            <tr>
+              <td>Temps de cr&eacute;ation</td>
+              <td>Long</td>
+              <td>Rapide</td>
+            </tr>
+            <tr>
+              <td>Personnalisation</td>
+              <td>Totale</td>
+              <td>Facile</td>
+            </tr>
+            <tr>
+              <td>Performance</td>
+              <td>Excellente</td>
+              <td>Variable</td>
+            </tr>
+            <tr>
+              <td>Maintenance</td>
+              <td>Requiert un d&eacute;veloppeur</td>
+              <td>Facile &agrave; g&eacute;rer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="section-wrapper">
+    <!-- Section 1 : Angular -->
+    <div class="image-placeholder">
+        <img src="../../assets/img/tarif/1-min.png" alt="Javascript moderne" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    <div class="content">
+        <h3>Choisissez Javascript moderne</h3>
+        <h1>Pourquoi Javascript moderne est fait pour vous ?</h1>
+        <p>
+            Vous voulez un projet hautement personnalisé qui répond parfaitement à vos besoins professionnels spécifiques.
+        </p>
+        <p>
+            Vous avez un budget conséquent et êtes prêt à investir pour une solution performante et évolutive.
+        </p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Performant et évolutif</li>
+            <li><i class="fas fa-check-circle"></i> Solution personnalisée</li>
+        </ul>
+    </div>
+
+    <!-- Section 2 : WordPress -->
+    <div class="content">
+        <h3>Choisissez WordPress</h3>
+        <h1>Pourquoi WordPress est idéal ?</h1>
+        <p>
+            Vous avez besoin d’un site rapidement opérationnel pour promouvoir vos services ou produits.
+        </p>
+        <p>
+            Vous recherchez une solution économique et facile à gérer.
+        </p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Rapidement opérationnel</li>
+            <li><i class="fas fa-check-circle"></i> Économique et simple</li>
+        </ul>
+    </div>
+    <div class="image-placeholder">
+        <img src="../../assets/img/tarif/2-min.png" alt="WordPress" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+</div>
+
+  <div class="bg-custom">
+   <section class="container recommendation-section">
+        <h1>Notre recommandation : <span class="highlighted">ce qui convient à votre projet</span></h1>
+        <div class="content-container">
+            <!-- Partie gauche -->
+            <div class="contentt">
+                <h2>Choisissez Angular si :</h2>
+                <div class="icon d-flex align-items-baseline gap-2">
+                  <i class="fas fa-star"></i><p>Vous voulez un projet hautement personnalisé qui répond parfaitement à vos besoins professionnels spécifiques.</p>
+                </div>
+                <div class="icon d-flex align-items-baseline gap-2">
+                <i class="fas fa-star"></i><p>Vous avez un budget conséquent et êtes prêt à investir pour une solution performante et évolutive.</p>
+
+                </div>
+            </div>
+            <!-- Ligne verticale -->
+            <div class="divider"></div>
+            <!-- Partie droite -->
+            <div class="contentt">
+                <h2>Choisissez WordPress si :</h2>
+                <div class="icon d-flex align-items-baseline gap-2">
+                  <i class="fas fa-star"></i><p>Vous avez besoin d’un site rapidement opérationnel pour promouvoir vos services ou produits.</p>
+                </div>
+                <div class="icon d-flex align-items-baseline gap-2">
+                  <i class="fas fa-star"></i><p>Vous recherchez une solution économique et facile à gérer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>
+
+
+  <div class="container mt-5 mb-4" >
+   
+   
     <!-- Boutons de Toggle -->
-    <div class="d-flex justify-content-center mb-4">
+     <div class="text-center">
+      <h1>Choisissez un tarif et commencez l'aventure</h1>
+     </div>
+    <div class="d-flex justify-content-center  mb-4">
       <div class="btn-group" role="group" aria-label="Toggle Packages">
         <label
           class="btn"

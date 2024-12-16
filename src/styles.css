@@ -14,6 +14,40 @@ body {
     height: 100%;
   }
   
-
+  .banner-section {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+  }
+  
+  .banner-section img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay-text .text-center {
+    max-width: 800px;
+    padding: 0 15px;
+  }
+  
+  .overlay-text h1 {
+    font-weight: 900;
+    font-size: 3rem;
+  }
+  
+  .overlay-text p {
+    font-size: 1.25rem;
+  }
+  
 
 

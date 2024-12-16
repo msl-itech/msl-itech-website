@@ -471,15 +471,23 @@ nav .container {
             <li><a routerLink="#" routerLinkActive="actived">Services</a></li>
           </ul>
         </li>
-        <li><a routerLink="/package-metier" routerLinkActive="actived">Package Métier</a></li>
+        <li class="dropdown" (click)="togglePackageDropdown()" [ngClass]="{'open': isPackageDropdownOpen}">
+          <a routerLink="/package-metier" routerLinkActive="actived" aria-haspopup="true" [attr.aria-expanded]="isPackageDropdownOpen">
+            Package Métier <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/package-metier/performance" routerLinkActive="actived">Commerciale</a></li>
+            <li><a routerLink="/package-metier/solution2" routerLinkActive="actived">Administratif</a></li>
+          </ul>
+        </li>
         <li><a routerLink="/about" routerLinkActive="actived">À propos</a></li>
         <li class="dropdown" (click)="toggleTarifsDropdown()" [ngClass]="{'open': isTarifsDropdownOpen}">
           <a aria-haspopup="true" [attr.aria-expanded]="isTarifsDropdownOpen">
             Tarifs <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/pricing" routerLinkActive="actived">Tarif Odoo</a></li>
-            <li><a routerLink="/tarif" routerLinkActive="actived">Tarif Code</a></li>
+            <li><a routerLink="/pricing" routerLinkActive="actived">Odoo</a></li>
+            <li><a routerLink="/tarif" routerLinkActive="actived">Site Internet</a></li>
           </ul>
         </li>        
         <!-- Actions Mobile -->

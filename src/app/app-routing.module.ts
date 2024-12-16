@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'besoin', component: SoumettreBesoinComponent },
   { path: 'tarif', component: TarifsComponent },
   { path: 'pricing', component: PricingOdooComponent },
-  { path: 'performance', component: PackPerformanceComponent },
+  { path: 'package-metier/performance', component: PackPerformanceComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
 ];
 @NgModule({

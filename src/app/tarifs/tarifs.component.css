@@ -2,8 +2,141 @@
     background-color: #114D5A;
     color: #FFCC00;
 }
+.bg-custom{
+    background-color: #114D5A;
+}
 .btn-outline-custom-primary{
     border-color: #114D5A;
     color: #114D5A;
 }
 
+.card-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFC107; /* Couleur accent pour les numéros */
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .card-custom {
+    background: #fff;
+    color: #000;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  .bg-custom {
+    background-color: #114D5A;
+  }
+
+
+
+  .modern-table {
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .modern-table thead {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+  .modern-table th, .modern-table td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .modern-table tbody tr {
+    transition: all 0.3s ease;
+  }
+  .modern-table tbody tr:nth-child(odd) {
+    background-color: #f4f4f4;
+  }
+  .modern-table tbody tr:hover {
+    background-color: #e9ecef;
+  }
+  .modern-table td:first-child {
+    text-align: left;
+    font-weight: bold;
+    background-color: #f8f9fa;
+  }
+  .responsive-table {
+    display: block;
+    overflow-x: auto;
+  }
+  .flat-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .flat-table th {
+    background: #114D5A;
+    color: #fff;
+    padding: 15px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .flat-table td {
+    padding: 15px;
+    text-align: center;
+  }
+  .flat-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  .flat-table tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+  .section-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.content {
+    padding: 20px;
+}
+.content h3 {
+    font-size: 0.9rem;
+    color: #777;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.content h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+.content ul li {
+    margin-bottom: 10px;
+}
+.content ul li i {
+    color: #114D5A;
+    margin-right: 10px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #114D5A;
+    color: #FFC107;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}

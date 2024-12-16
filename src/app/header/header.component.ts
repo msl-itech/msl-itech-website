@@ -9,6 +9,7 @@ export class HeaderComponent {
   isMenuOpen = false;
   isDropdownOpen = false;
   isTarifsDropdownOpen = false;
+  isPackageDropdownOpen: boolean = false; // Sous-menu "Package Métier"
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
@@ -44,6 +45,13 @@ export class HeaderComponent {
       }
     }
     this.activeSubmenus[menu] = !this.activeSubmenus[menu];
+  }
+
+ 
+
+  // Méthode pour toggler le sous-menu "Package Métier"
+  togglePackageDropdown(): void {
+    this.isPackageDropdownOpen = !this.isPackageDropdownOpen;
   }
 
   isMobile: boolean = false;
