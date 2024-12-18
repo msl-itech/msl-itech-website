@@ -35,6 +35,7 @@ import { CountUpDirective } from './count-up.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PackPerformanceComponent } from './pack-performance/pack-performance.component';
 import { TableauCRMVENTEComponent } from './tableau-crm-vente/tableau-crm-vente.component';
+import { CodePromoComponent } from './code-promo/code-promo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { TableauCRMVENTEComponent } from './tableau-crm-vente/tableau-crm-vente.
     PricingOdooComponent,
     CountUpDirective,
     PackPerformanceComponent,
-    TableauCRMVENTEComponent
+    TableauCRMVENTEComponent,
+    CodePromoComponent
   ],
   imports: [
     BrowserModule,

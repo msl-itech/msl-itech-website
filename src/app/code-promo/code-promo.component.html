@@ -1,0 +1,99 @@
+<div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-7">
+        <h2 class="fw-bold">BOOSTEZ VOTRE ENTREPRISE AVEC</h2>
+        <h3 class="fw-bold mb-4">LE CODE PROMO <span class="text-warning" style="font-style: italic;">{{ promoCode }}</span></h3>
+        
+        <ul class="list-unstyled">
+          <li class="mb-3 d-flex align-items-start">
+            <div class="me-2" style="background-color: #114D5A; width: 40px; height: 40px; border-radius: 0.25rem; display:flex; justify-content:center; align-items:center;">
+              <i class="fas fa-check text-warning"></i>
+            </div>
+            <div>
+              <strong>Réduction de {{reduction}}% sur notre pack Commercial</strong>
+              <p>Accédez aux meilleurs outils pour automatiser vos ventes et améliorer votre relation client.</p>
+            </div>
+          </li>
+          <li class="mb-3 d-flex align-items-start">
+            <div class="me-2" style="background-color: #114D5A; width: 40px; height: 40px; border-radius: 0.25rem; display:flex; justify-content:center; align-items:center;">
+              <i class="fas fa-check text-warning"></i>
+            </div>
+            <div>
+                <strong>Simplifiez la gestion de vos prospects</strong>
+              <p>Organisez vos opportunités commerciales en un seul endroit pour maximiser vos conversions.</p>
+            </div>
+          </li>
+          <li class="mb-3 d-flex align-items-start">
+            <div class="me-2" style="background-color: #114D5A; width: 40px; height: 40px; border-radius: 0.25rem; display:flex; justify-content:center; align-items:center;">
+              <i class="fas fa-check text-warning"></i>
+            </div>
+            <div>
+              <strong>Suivi détaillé de vos performances</strong>
+              <p>Des rapports avancés pour analyser vos ventes et prendre des décisions stratégiques.</p>
+            </div>
+          </li>
+        </ul>
+  
+        <!-- Compteur de la promo -->
+        <!-- Compteur de la promo -->
+<div class="mt-4">
+    <h5 class="fw-bold mb-3">Temps restant avant la fin de la promo :</h5>
+    <div class="d-flex  gap-3">
+      <div class="counter-box">
+        <div class="counter-number">{{ remainingTime.days | number:'2.0' }}</div>
+        <div class="counter-label">Jours</div>
+      </div>
+      <div class="counter-box">
+        <div class="counter-number">{{ remainingTime.hours | number:'2.0' }}</div>
+        <div class="counter-label">Heures</div>
+      </div>
+      <div class="counter-box">
+        <div class="counter-number">{{ remainingTime.minutes | number:'2.0' }}</div>
+        <div class="counter-label">Minutes</div>
+      </div>
+      <div class="counter-box">
+        <div class="counter-number">{{ remainingTime.seconds | number:'2.0' }}</div>
+        <div class="counter-label">Secondes</div>
+      </div>
+    </div>
+  
+    <!-- Message si l'offre est expirée -->
+    <div *ngIf="isPromoExpired" class="mt-3 text-muted">
+      <h5 class="text-danger fw-bold">L'offre Promotionnelle A Expiré</h5>
+    </div>
+  </div>
+  
+      </div>
+  
+      <div class="col-12 col-md-5 mt-5 mt-md-0">
+        <div class="card shadow" style="border-radius: 1rem; max-width: 380px;">
+            <img src="../../assets/img/service/promo.png" 
+                 class="card-img-top" alt="Produit" 
+                 style="border-radius: 1rem 1rem 0 0;">
+            <div class="card-body text-center">
+              <h2 class="text-custom fw-bold">{{ prixApresPromo }}$</h2>
+              <!-- Liste des fonctionnalités avec icônes cerclées -->
+              <ul class="list-unstyled text-start my-4">
+                <li class="d-flex align-items-center mb-3">
+                  <div class="icon-circle me-3">
+                    <i class="fas fa-shopping-cart"></i>
+                  </div>
+                  Automatisation des ventes simplifiée
+                </li>
+                <li class="d-flex align-items-center mb-3">
+                  <div class="icon-circle me-3">
+                    <i class="fas fa-calendar-alt"></i>
+                  </div>
+                  Gestion optimale de vos relances clients
+                </li>
+              </ul>
+              <!-- Bouton stylisé -->
+              <button class="btn btn-custom px-4 py-2">
+                PROFITEZ-EN!
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  

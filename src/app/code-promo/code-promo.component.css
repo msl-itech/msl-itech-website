@@ -1,0 +1,67 @@
+/* Style des icônes cerclées */
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #114D5A; /* Couleur du cercle */
+    border-radius: 50%; /* Forme circulaire */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #114D5A; /* Couleur de l'icône */
+    font-size: 1.2rem;
+  }
+  
+  /* Style du bouton */
+  .btn-custom {
+    background-color: #114D5A; /* Couleur de fond */
+    color: #ffc107; /* Couleur du texte */
+    border-radius: 0.5rem; /* Coins arrondis */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+  }
+  
+  .btn-custom:hover {
+    background-color: #114D5A; /* Légère variation au survol */
+    transform: scale(1.05); /* Effet d'agrandissement */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .text-custom{
+    color: #114D5A;
+  }
+  /* Conteneur du compteur */
+.counter-box {
+    background-color: #114D5A; /* Fond bleu foncé */
+    color: #ffc107; /* Chiffres en rouge */
+    border-radius: 0.5rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style des nombres */
+  .counter-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  /* Labels (Jours, Heures, etc.) */
+  .counter-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white; /* Texte en blanc */
+    margin-top: 0.2rem;
+  }
+  
+  /* Texte de fin de promo */
+  .text-danger {
+    font-size: 1.2rem;
+  }
+  
