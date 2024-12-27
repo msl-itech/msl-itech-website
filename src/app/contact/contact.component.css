@@ -55,15 +55,36 @@ iframe {
   border: none;
 } */
 
+/* Base styles: applies to all screens unless overridden */
 .iframe-container {
   width: 100%;
-  height: 85vh; 
-  overflow: hidden; 
+  height: 100vh; /* Default height (e.g., for large screens) */
+  overflow: hidden;
 }
 
 .iframe-container iframe {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   border: none;
 }
 
+/* Example: Small screens (phones) — up to 767px width */
+@media screen and (max-width: 767px) {
+  .iframe-container {
+    height: 210vh; /* Increase if you want more scroll space on small devices */
+  }
+}
+
+/* Example: Tablets — between 768px and 1023px width */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .iframe-container {
+    height: 200vh; /* A bit less than mobile, but more than desktop */
+  }
+}
+
+/* Example: Larger desktops — 1024px width and above */
+@media screen and (min-width: 1024px) {
+  .iframe-container {
+    height: 100vh; /* Default or your preferred height for big screens */
+  }
+}
