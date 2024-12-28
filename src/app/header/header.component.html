@@ -457,15 +457,15 @@ nav .container {
           </button>
         </li>
 
-        <li><a routerLink="/accueil" routerLinkActive="actived">Accueil</a></li>
+        <li><a routerLink="/accueil" routerLinkActive="actived"  (click)="closeMenu()">Accueil</a></li>
         <li class="dropdown" (click)="toggleDropdown()" [ngClass]="{'open': isDropdownOpen}">
           <a aria-haspopup="true" [attr.aria-expanded]="isDropdownOpen">
             Vos besoins <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/serviceOdoo" routerLinkActive="actived">Application Odoo</a></li>
-            <li><a routerLink="/service2" routerLinkActive="actived">Finances</a></li>
-            <li><a routerLink="/service3" routerLinkActive="actived">Ventes</a></li>
+            <li><a routerLink="/serviceOdoo" routerLinkActive="actived"  (click)="closeMenu()">Application Odoo</a></li>
+            <li><a routerLink="/service2" routerLinkActive="actived"  (click)="closeMenu()">Finances</a></li>
+            <li><a routerLink="/service3" routerLinkActive="actived"  (click)="closeMenu()">Ventes</a></li>
             <li><a routerLink="#" routerLinkActive="actived">Fabrications</a></li>
             <li><a routerLink="#" routerLinkActive="actived">Site Internet</a></li>
             <li><a routerLink="#" routerLinkActive="actived">Services</a></li>
@@ -476,8 +476,8 @@ nav .container {
             Package Métier <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/package-metier/performance" routerLinkActive="actived">Commerciale</a></li>
-            <li><a routerLink="/package-metier/solution2" routerLinkActive="actived">Administratif</a></li>
+            <li><a routerLink="/package-metier/performance" routerLinkActive="actived"  (click)="closeMenu()">Commerciale</a></li>
+            <li><a routerLink="/package-metier/solution2" routerLinkActive="actived"  (click)="closeMenu()">Administratif</a></li>
           </ul>
         </li>
         <li><a routerLink="/about" routerLinkActive="actived">À propos</a></li>
@@ -486,14 +486,14 @@ nav .container {
             Tarifs <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/pricing" routerLinkActive="actived">Odoo</a></li>
-            <li><a routerLink="/tarif" routerLinkActive="actived">Site Internet</a></li>
+            <li><a routerLink="/pricing" routerLinkActive="actived"  (click)="closeMenu()">Odoo</a></li>
+            <li><a routerLink="/tarif" routerLinkActive="actived"  (click)="closeMenu()">Site Internet</a></li>
           </ul>
         </li>        
         <!-- Actions Mobile -->
         <li class="mobile-actions">
-          <a routerLink="/besoin" class="btn" style="text-align: center; color: #FAC83B !important">Soumettre un besoin</a>
-          <a routerLink="/contact" class="btn2">Contactez-nous</a>
+          <a routerLink="/besoin" class="btn" style="text-align: center; color: #FAC83B !important"  (click)="closeMenu()">Soumettre un besoin</a>
+          <a routerLink="/contact" class="btn2"  (click)="closeMenu()">Contactez-nous</a>
         </li>
       </ul>
 

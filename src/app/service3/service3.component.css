@@ -1,298 +1,346 @@
- /* Section avec background vert et texte */
- .header-section {
-    background-color: #004b62; /* Couleur verte */
-    color: white;
-    height: 78vh; /* Augmentation légère de la hauteur */
-    position: relative;
-    text-align: center;
-    display: flex;
-    align-items: center; /* Centre verticalement */
-    justify-content: center;
-    overflow: visible; /* Permet à la vidéo de déborder */
-  
+/* ======================================= */
+/*             SECTION HEADER              */
+/* ======================================= */
+.header-section {
+  background-color: #114d5a;
+  color: white;
+  /* Hauteur initiale, peut être modifiée en vh ou en auto */
+  min-height: 50vh;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* Un peu de padding en bas pour éviter que la vidéo ne colle trop */
+  padding-bottom: 2rem;
 }
 
 .header-section h1 {
-    font-size:2.5rem;
-    margin: 0;
-    position: relative;
-    z-index: 1; /* Texte en dessous de la vidéo */
-    margin-bottom: 82px; /* Ajout d'espace entre le texte et la vidéo */
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2rem; /* Ajustez selon vos besoins */
 }
-.video{
-   
+
+/* ======================================= */
+/*                VIDEO AREA               */
+/* ======================================= */
+.video {
+  /* Conteneur flex pour centrer la figure + la vidéo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .figure {
-    position: absolute;
-    left: 23%;
-    bottom: 36%;
+  /* Image / SVG si besoin. Actuellement vide. */
+  position: relative;
+  margin-bottom: 2rem;
 }
-/* Vidéo en position absolue */
+
+/* Nouvelle approche fluide pour la vidéo */
 .video-wrapper {
-    position: absolute;
-    bottom: -10vh; /* La vidéo déborde légèrement de la section */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 800px;
-    z-index: 2; /* Vidéo au-dessus du texte */
-    
-   
+  /* Ne plus utiliser position:absolute ni transform */
+  position: relative;
+  width: 100%;
+  /* Largeur max sur desktop */
+  max-width: 800px;
+  margin: 0 auto;  /* Centre l’élément */
+  padding: 0 1rem; /* Légers espaces sur les côtés pour respirer */
 }
 
-.video-wrapper video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 20px;
+
+.video-wrapper iframe {
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: block;
 }
 
-/* Section de contenu après la vidéo */
+/* ======================================= */
+/*           SECTION DE CONTENU            */
+/* ======================================= */
 .content-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    padding: 50px 20px;
-    color: #111;
-    text-align: center;
-    font-size: 29px;
-    font-weight: 700;
-    line-height: 48px; /* 165.517% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  color: #111;
+  text-align: center;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-top: 24px;
 }
-.content-section p  {
-    display: flex;
-    width: 1070px;
-    height: 379px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    padding: 0 20px;
-    color: #111;
-    text-align: center;
-    font-size: 29px;
-    font-weight: 700;
-    line-height: 48px; /* 165.517% */
+.content-section p {
+  max-width: 1070px;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 48px;
 }
 
-/* Pour que le texte devienne fixe uniquement dans la section */
-.header-section.sticky h1 {
-    position:sticky;
-    top: 140px; /* Ajusté pour ne pas chevaucher le header */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-/* Assurez-vous que le texte reste dans sa section */
-.header-section.sticky {
-    position: relative;
-    z-index: 1;
-}
-
-
-.scroll-header-section {
-    background-color: #004b62;
-    color: white;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.scroll-header-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.scroll-image-wrapper {
-    position: relative;
-    width: 60%;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.scroll-image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.scroll-content-section {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-    min-height: 100vh;
-}
-
-.scroll-content-section section {
-    padding: 50px 0;
-}
-
-.scroll-content-section h2 {
-    font-size: 24px;
-    color: #111;
-    margin-bottom: 10px;
-}
-
-.scroll-content-section p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
-}
-/* Ajoutez ce style à votre fichier CSS */
-.scroll-header-section.sticky {
-    position: fixed;
-   
-}
-
-
-/* animation special service */
-
-
-
+/* ======================================= */
+/*          CONTAINER PRINCIPAL            */
+/* ======================================= */
 .container-wrapper {
-    display: flex;
-    min-height: 100vh;
-    
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg-green {
+  position: absolute;
+  background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
+  height: 600px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .left-column {
-    width: 40%;
-    background-color: #ffffff;
-    position: relative;
+  width: 40%;
+  background-color: #ffffff;
+  position: relative;
 }
 
 .right-column {
-    width: 60%;
-    position: sticky;
-    top: 0rem;
-    margin-top: 10rem;
+  width: 60%;
+  position: sticky;
+  top: 0;
+  margin-top: 10rem;
 }
 
 .image-container {
-    position: sticky;
-    top: 20px;
-    margin-top: 0;
+  position: sticky;
+  top: 20px;
+  margin-top: 0;
 }
 
 .image-container img {
-    max-width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* ======================================= */
+/*         SECTIONS INDIVIDUELLES          */
+/* ======================================= */
 .section {
-    margin-bottom: 60vh; /* Ensure enough space for scrolling */
-    padding-bottom: 20px;
-    margin-left: 100px;
-    width: 371px;
+  margin-bottom: 60vh;
+  padding-bottom: 20px;
+  margin-left: 100px;
+  width: 371px;
+}
+.section h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 10px;
 }
 .section p {
-color: #999;
-font-family: Helvetica;
-font-size: 21.75px;
-font-style: normal;
-font-weight: 700;
-line-height: 28px; /* 128.736% */
-letter-spacing: 0.216px;
+  color: #999;
+  font-size: 21.75px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.216px;
+}
+.section .section-image {
+  display: none; /* Caché en mode desktop */
+  max-width: 100%;
+  margin-top: 20px;
 }
 
-.bg-green{
-    position: absolute;
-    background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
-    height: 600px;
-    width: 100%;
+/* ======================================= */
+/*               STARTER                   */
+/* ======================================= */
+.starter {
+  background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
+  padding-left: 100px;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
 }
-.starter{
-    background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
-    margin: 0;
-    padding-left: 100px;
-   width: 100%;
-    height: 600px;  
-    flex-shrink: 0;
-}
-
 .starter h1 {
-    color: #FFF;
-font-family: "Open Sans";
-font-size: 75px;
-font-style: normal;
-font-weight: 700;
-line-height: 100px; /* 121.951% */
-width: 600px;
+  color: #FFF;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 100px;
+  width: 600px;
 }
 
+/* ======================================= */
+/*            MEDIA QUERIES                */
+/* ======================================= */
 
-.heading-text{
-    color: white;
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 52.02px; 
-    padding-left: 20px;
-    margin-bottom: 16px;
-}
-
-/* Pour les tablettes */
+/* ========== Tablettes (<= 1024px) ========== */
 @media (max-width: 1024px) {
-    .header-section h1 {
-      font-size: 2rem;
-    }
-  
-    .figure {
-      width: 80px;
-    }
-  
-    .left-column,
-    .right-column {
-      max-width: 100%;
-    }
-  
-    .starter h1 {
-      font-size: 2rem;
-    }
+  .header-section {
+    /* Ajustements : 
+       on passe en hauteur auto, on rajoute un peu de padding 
+       pour ne pas trop coller le header */
+    height: auto;
+    min-height: 50vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
   }
-  
-  /* Pour les mobiles */
-  @media (max-width: 768px) {
-    .header-section {
-      padding: 10px;
-    }
-  
-    .header-section h1 {
-      font-size: 1.5rem;
-    }
-  
-    .figure {
-      bottom: 85%;
-    }
-  
-    .content-section p {
-      font-size: 1rem;
-    }
-  
-    .video-wrapper {
-      width: 100%;
-    }
-  
-    .starter {
-      padding: 20px;
-    }
-  
-    .starter h1 {
-      font-size: 1.8rem;
-    }
-  
-    .section h2 {
-      font-size: 1.5rem;
-    }
-  
-    .section p {
-      font-size: 16px;
-    }
+  .header-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
-  
+
+  .figure {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+
+  /* Video wrapper */
+  .video-wrapper {
+    max-width: 700px; /* On réduit un peu la largeur max */
+  }
+
+  .video-wrapper iframe {
+    border-radius: 15px;
+  }
+
+  /* Colonnes */
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+  .starter h1 {
+    font-size: 2rem;
+    width: auto;
+  }
+  .section {
+    margin-left: 20px;
+    width: auto;
+  }
+}
+
+/* ========== Mobiles (<= 768px) ========== */
+@media (max-width: 768px) {
+  .header-section {
+    height: auto;
+    min-height: 30vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .header-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  /* On limite encore plus la max-width */
+  .video-wrapper {
+    max-width: 90%;
+    padding: 0; /* on peut enlever le padding horizontal si on veut */
+  }
+
+  .video-wrapper iframe {
+    border-radius: 12px;
+    width: 400px;
+    height: 250px;
+  }
+
+  .figure {
+    display: none;
+  }
+
+  .content-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .header-section {
+    padding: 10px;
+  }
+  .header-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .starter {
+    padding: 20px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .starter h1 {
+    font-size: 1.8rem;
+    width: auto;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  .section p {
+    font-size: 16px;
+  }
+
+  /* Ajustements pour empiler les colonnes */
+  .container-wrapper {
+    flex-direction: column;
+  }
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+  .right-column {
+    display: none; /* Cache la colonne de droite en mode mobile */
+  }
+  .section {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+  .section .section-image {
+    display: block; /* Affiche les images dans les sections */
+  }
+}
+
+/* ========== Petits Mobiles (<= 540px) ========== */
+@media (max-width: 540px) {
+  .header-section {
+    height: auto;
+    min-height: 60vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .header-section h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .video-wrapper {
+    /* Sur très petits écrans, on peut aller jusqu’à 100% */
+    max-width: 100%;
+  }
+
+  .video-wrapper iframe {
+    border-radius: 10px;
+  }
+
+  .content-section p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .starter h1 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    text-align: center;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+  }
+  .section p {
+    font-size: 14px;
+  }
+  .section .section-image {
+    max-width: 100%;
+  }
+}

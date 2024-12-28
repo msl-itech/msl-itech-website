@@ -621,6 +621,10 @@ video {
 
 /* Mobiles et petits écrans */
 @media (max-width: 768px) {
+
+    .decoration{
+        display: none;
+     }
     .presence-section {
         padding: 20px;
     }

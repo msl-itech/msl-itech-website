@@ -1,4 +1,354 @@
-<div class="header-section" id="header">
+<style>
+/* ======================================= */
+/*             SECTION HEADER              */
+/* ======================================= */
+.header-section {
+  background-color: #114d5a;
+  color: white;
+  /* Hauteur initiale, peut être modifiée en vh ou en auto */
+  min-height: 50vh;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* Un peu de padding en bas pour éviter que la vidéo ne colle trop */
+  padding-bottom: 2rem;
+}
+
+.header-section h1 {
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2rem; /* Ajustez selon vos besoins */
+}
+
+/* ======================================= */
+/*                VIDEO AREA               */
+/* ======================================= */
+.video {
+  /* Conteneur flex pour centrer la figure + la vidéo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figure {
+  /* Image / SVG si besoin. Actuellement vide. */
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Nouvelle approche fluide pour la vidéo */
+.video-wrapper {
+  /* Ne plus utiliser position:absolute ni transform */
+  position: relative;
+  width: 100%;
+  /* Largeur max sur desktop */
+  max-width: 800px;
+  margin: 0 auto;  /* Centre l’élément */
+  padding: 0 1rem; /* Légers espaces sur les côtés pour respirer */
+}
+
+
+.video-wrapper iframe {
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: block;
+}
+
+/* ======================================= */
+/*           SECTION DE CONTENU            */
+/* ======================================= */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  color: #111;
+  text-align: center;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-top: 24px;
+}
+.content-section p {
+  max-width: 1070px;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+/* ======================================= */
+/*          CONTAINER PRINCIPAL            */
+/* ======================================= */
+.container-wrapper {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg-green {
+  position: absolute;
+  background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
+  height: 600px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.left-column {
+  width: 40%;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.right-column {
+  width: 60%;
+  position: sticky;
+  top: 0;
+  margin-top: 10rem;
+}
+
+.image-container {
+  position: sticky;
+  top: 20px;
+  margin-top: 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================= */
+/*         SECTIONS INDIVIDUELLES          */
+/* ======================================= */
+.section {
+  margin-bottom: 60vh;
+  padding-bottom: 20px;
+  margin-left: 100px;
+  width: 371px;
+}
+.section h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+.section p {
+  color: #999;
+  font-size: 21.75px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.216px;
+}
+.section .section-image {
+  display: none; /* Caché en mode desktop */
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+/* ======================================= */
+/*               STARTER                   */
+/* ======================================= */
+.starter {
+  background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
+  padding-left: 100px;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+.starter h1 {
+  color: #FFF;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 100px;
+  width: 600px;
+}
+
+/* ======================================= */
+/*            MEDIA QUERIES                */
+/* ======================================= */
+
+/* ========== Tablettes (<= 1024px) ========== */
+@media (max-width: 1024px) {
+  .header-section {
+    /* Ajustements : 
+       on passe en hauteur auto, on rajoute un peu de padding 
+       pour ne pas trop coller le header */
+    height: auto;
+    min-height: 50vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .header-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .figure {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+
+  /* Video wrapper */
+  .video-wrapper {
+    max-width: 700px; /* On réduit un peu la largeur max */
+  }
+
+  .video-wrapper iframe {
+    border-radius: 15px;
+  }
+
+  /* Colonnes */
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+  .starter h1 {
+    font-size: 2rem;
+    width: auto;
+  }
+  .section {
+    margin-left: 20px;
+    width: auto;
+  }
+}
+
+/* ========== Mobiles (<= 768px) ========== */
+@media (max-width: 768px) {
+  .header-section {
+    height: auto;
+    min-height: 30vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .header-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  /* On limite encore plus la max-width */
+  .video-wrapper {
+    max-width: 90%;
+    padding: 0; /* on peut enlever le padding horizontal si on veut */
+  }
+
+  .video-wrapper iframe {
+    border-radius: 12px;
+    width: 400px;
+    height: 250px;
+  }
+
+  .figure {
+    display: none;
+  }
+
+  .content-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .header-section {
+    padding: 10px;
+  }
+  .header-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .starter {
+    padding: 20px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .starter h1 {
+    font-size: 1.8rem;
+    width: auto;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  .section p {
+    font-size: 16px;
+  }
+
+  /* Ajustements pour empiler les colonnes */
+  .container-wrapper {
+    flex-direction: column;
+  }
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+  .right-column {
+    display: none; /* Cache la colonne de droite en mode mobile */
+  }
+  .section {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+  .section .section-image {
+    display: block; /* Affiche les images dans les sections */
+  }
+}
+
+/* ========== Petits Mobiles (<= 540px) ========== */
+@media (max-width: 540px) {
+  .header-section {
+    height: auto;
+    min-height: 60vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .header-section h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .video-wrapper {
+    /* Sur très petits écrans, on peut aller jusqu’à 100% */
+    max-width: 100%;
+  }
+
+  .video-wrapper iframe {
+    border-radius: 10px;
+  }
+
+  .content-section p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .starter h1 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    text-align: center;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+  }
+  .section p {
+    font-size: 14px;
+  }
+  .section .section-image {
+    max-width: 100%;
+  }
+}
+
+</style>
+
+<div class="header-section" id="header" style="padding-top: 172px;">
     <h1 id="sticky-title">Un Besoin, Une Application:<br>Transformez Vos Idées en Réalité</h1>
     <div class="video">
         <!-- <div class="figure">
@@ -34,7 +384,7 @@
     <div class="bg-green"></div>
     <div class="left-column">
         <div class="starter">
-            <h1>La vente facile avec Odoo</h1>
+            <h1>La finance facile avec Odoo</h1>
         </div>
         <section id="crm" class="section">
             <h2>CRM</h2>
