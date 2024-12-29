@@ -1,6 +1,7 @@
 <style>
-/* Variables de Couleurs pour une Maintenance Facilitée */
-
+  /* ----------------------------------------------
+   RESET & BASE STYLES
+---------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@ header {
 .top-bar {
   background: #114D5A;
   color: #fff;
-  padding: 10px 0;
+  padding: 8px 0; /* Réduit le padding */
 }
 
 .top-bar .container {
@@ -36,8 +37,8 @@ header {
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 1em;
-  padding: 5px 10px;
+  font-size: 0.9em; /* Réduit la taille de la police */
+  padding: 4px 8px; /* Réduit le padding */
   transition: color 0.3s;
 }
 
@@ -45,10 +46,12 @@ header {
   color: #FAC83B;
 }
 
-/* Navigation */
+/* ----------------------------------------------
+   NAVIGATION
+---------------------------------------------- */
 nav {
   background: #fff;
-  padding: 10px 0;
+  padding: 8px 0; /* Réduit le padding */
 }
 
 nav .container {
@@ -60,7 +63,7 @@ nav .container {
 }
 
 .logo {
-  width: 120px;
+  width: 100px; /* Réduit la taille du logo en desktop */
 }
 
 .logo img {
@@ -69,9 +72,11 @@ nav .container {
   object-fit: contain;
 }
 
-/* Burger Menu */
+/* ----------------------------------------------
+   BURGER MENU
+---------------------------------------------- */
 .burger {
-  display: none;
+  display: none; /* S’affiche en mobile/tablette */
   background: none;
   border: none;
   cursor: pointer;
@@ -84,12 +89,15 @@ nav .container {
   color: #FAC83B;
 }
 
-/* Navigation Links */
+/* ----------------------------------------------
+   NAV LINKS (DESKTOP & MOBILE)
+---------------------------------------------- */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-links li {
@@ -109,38 +117,35 @@ nav .container {
   color: #FAC83B;
 }
 
-/* Dropdown */
+/* ----------------------------------------------
+   DROPDOWN
+---------------------------------------------- */
 .dropdown {
   position: relative;
 }
 
 .dropdown-menu {
   position: absolute;
-  top: 40px;
+  top: 100%; /* Aligner le sous-menu en bas du parent */
   left: 0;
   background-color: #fff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   list-style: none;
-  padding: 10px 0;
+  padding: 8px 0; /* Réduit le padding */
   margin: 0;
-  min-width: 180px;
+  min-width: 160px; /* Réduit la largeur minimale */
   border-radius: 4px;
   display: none;
-  transition: opacity 0.3s;
   opacity: 0;
   visibility: hidden;
-  z-index: 1000;
-}
-
-.dropdown.open .dropdown-menu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 9999;
 }
 
 .dropdown-menu li a {
   display: block;
-  padding: 10px 20px;
+  padding: 8px 16px; /* Réduit le padding */
   color: #333;
   font-weight: 400;
   transition: background-color 0.3s;
@@ -150,19 +155,29 @@ nav .container {
   background-color: #f4f4f4;
 }
 
-/* Actions (Desktop) */
+/* Quand la classe .open est présente (mobile), le menu s'affiche */
+.dropdown.open .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ----------------------------------------------
+   ACTIONS (DESKTOP)
+---------------------------------------------- */
 .actions {
   display: flex;
-  gap: 10px;
+  gap: 8px; /* Réduit le gap */
 }
 
 .btn,
 .btn2 {
-  padding: 10px 20px;
+  padding: 8px 16px; /* Réduit le padding */
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px; /* Réduit le border-radius */
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
+  text-align: center; /* Aligne le texte au centre */
 }
 
 .btn {
@@ -184,20 +199,22 @@ nav .container {
   background: #e6b800;
 }
 
-/* Mobile Menu */
+/* ----------------------------------------------
+   MOBILE MENU
+---------------------------------------------- */
 .mobile-actions {
   display: none;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-  padding: 15px;
+  gap: 8px; /* Réduit le gap */
+  margin-top: 16px; /* Réduit le margin */
+  padding: 10px 15px; /* Réduit le padding */
 }
 
 .close-btn {
   display: none;
   justify-content: flex-end;
   padding: 0 20px;
-  margin-bottom: 20px;
+  margin-bottom: 16px; /* Réduit le margin */
 }
 
 .close-btn button {
@@ -215,33 +232,44 @@ nav .container {
 .close-btn button:hover {
   color: #FAC83B;
 }
-/* Responsive Styles */
+
+/* Logo Mobile */
+.mobile-logo {
+  display: none; /* Masqué par défaut */
+  text-align: center;
+  margin: 16px 0; /* Réduit le margin */
+}
+
+.mobile-logo img {
+  width: 80px; /* Réduit la taille du logo mobile */
+  height: auto;
+}
+
+/* ----------------------------------------------
+   RESPONSIVE QUERIES
+---------------------------------------------- */
+/* TABLETTE & MOBILE - max-width: 1024px */
 @media (max-width: 1024px) {
-  a.btn2 {
-    text-align: center;
-}
   .burger {
     display: block;
   }
-
-  /* Masquer les actions desktop */
   .actions {
-    display: none;
+    display: none; /* Masquer les actions desktop */
   }
 
-  /* Modifier l'affichage des liens de navigation */
+  /* Le menu occupe toute la taille de l'écran */
   .nav-links {
     position: fixed;
-    top: 60px;
+    top: 0;             /* Collé en haut */
     left: -100%;
+    width: 100vw;       /* Toute la largeur de l'écran */
+    height: 100vh;      /* Toute la hauteur de l'écran */
     flex-direction: column;
     background-color: #fff;
-    width: 80%;
-    height: 100%;
-    padding-top: 20px;
-    transition: left 0.3s ease-in-out;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
+    overflow-y: auto;   /* Scroll si contenu trop long */
+    transition: left 0.3s ease-in-out;
+    padding-top: 50px;  /* Réduit le padding-top pour moins d'espace */
   }
 
   .nav-links.active {
@@ -250,16 +278,17 @@ nav .container {
 
   .nav-links li {
     width: 100%;
-    text-align: left;
+    text-align: left; /* Aligne le texte des liens à gauche */
   }
 
   .nav-links li a {
     display: block;
-    padding: 15px 20px;
-    font-size: 1em;
+    padding: 12px 20px; /* Réduit le padding */
+    font-size: 0.95em; /* Réduit la taille de la police */
+    text-align: left; /* Assure l'alignement à gauche */
   }
 
-  /* Dropdown pour mobile */
+  /* Positionnement "statique" des sous-menus */
   .dropdown-menu {
     position: static;
     box-shadow: none;
@@ -268,6 +297,8 @@ nav .container {
     min-width: 0;
     display: none;
     border: none !important;
+    opacity: 1;
+    visibility: visible;
   }
 
   .dropdown.open .dropdown-menu {
@@ -275,49 +306,51 @@ nav .container {
   }
 
   .dropdown-menu li a {
-    padding: 10px 20px;
+    padding: 8px 20px; /* Réduit le padding */
+    font-size: 0.9em; /* Réduit la taille de la police */
   }
 
-  /* Afficher les actions mobile */
   .mobile-actions {
     display: flex;
+    margin-bottom: 16px; /* Réduit le margin */
+    justify-content: center; /* Centre les boutons */
   }
 
-  /* Afficher le bouton fermer */
   .close-btn {
     display: flex;
+    position: absolute;       /* Positionné dans le menu mobile */
+    top: 10px;                /* Ajustez selon vos goûts */
+    right: 20px;             /* Ajustez selon vos goûts */
+  }
+
+  .mobile-logo {
+    display: block; /* Affiché uniquement en mobile */
+    width: 100%;
+    text-align: center; /* Centre le logo */
   }
 }
 
-/* Responsive Styles */
+/* SMARTPHONE - max-width: 768px */
 @media (max-width: 768px) {
-  /* Afficher le menu burger */
-  a.btn2 {
-    text-align: center;
-}
-
   .burger {
     display: block;
   }
-
-  /* Masquer les actions desktop */
   .actions {
     display: none;
   }
 
-  /* Modifier l'affichage des liens de navigation */
   .nav-links {
     position: fixed;
-    top: 60px;
+    top: 0;
     left: -100%;
+    width: 100vw;
+    height: 100vh;
     flex-direction: column;
     background-color: #fff;
-    width: 80%;
-    height: 100%;
-    padding-top: 20px;
     transition: left 0.3s ease-in-out;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+    padding-top: 50px; /* Réduit le padding-top pour moins d'espace */
   }
 
   .nav-links.active {
@@ -326,16 +359,16 @@ nav .container {
 
   .nav-links li {
     width: 100%;
-    text-align: left;
+    text-align: left; /* Aligne le texte des liens à gauche */
   }
 
   .nav-links li a {
     display: block;
-    padding: 15px 20px;
-    font-size: 1em;
+    padding: 12px 20px; /* Réduit le padding */
+    font-size: 0.95em; /* Réduit la taille de la police */
+    text-align: left; /* Assure l'alignement à gauche */
   }
 
-  /* Dropdown pour mobile */
   .dropdown-menu {
     position: static;
     box-shadow: none;
@@ -344,6 +377,8 @@ nav .container {
     min-width: 0;
     display: none;
     border: none !important;
+    opacity: 1;
+    visibility: visible;
   }
 
   .dropdown.open .dropdown-menu {
@@ -351,52 +386,84 @@ nav .container {
   }
 
   .dropdown-menu li a {
-    padding: 10px 20px;
+    padding: 8px 20px; /* Réduit le padding */
+    font-size: 0.9em; /* Réduit la taille de la police */
   }
 
-  /* Afficher les actions mobile */
   .mobile-actions {
     display: flex;
+    margin-bottom: 16px; /* Réduit le margin */
+    justify-content: center; /* Centre les boutons */
   }
 
-  /* Afficher le bouton fermer */
   .close-btn {
     display: flex;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  .mobile-logo {
+    display: block; /* Affiché uniquement en mobile */
+    width: 100%;
+    text-align: center; /* Centre le logo */
   }
 }
 
+/* TÉLÉPHONE PETIT ÉCRAN - max-width: 480px */
 @media (max-width: 480px) {
-  a.btn2 {
-    text-align: center;
-}
   .logo {
-    width: 80px;
+    width: 70px; /* Réduit davantage la taille du logo desktop */
   }
 
   .nav-links li a {
-    font-size: 0.9em;
+    font-size: 0.85em; /* Réduit davantage la taille de la police */
   }
 
   .btn,
   .btn2 {
-    padding: 8px 16px;
-    font-size: 0.9em;
+    padding: 6px 12px; /* Réduit le padding */
+    font-size: 0.85em; /* Réduit davantage la taille de la police */
   }
 
-  .dropdown-menu {
-    border: none !important;
+  .mobile-logo img {
+    width: 60px; /* Réduit davantage la taille du logo mobile */
   }
 }
 
-/* Améliorations Esthétiques Supplémentaires */
+/* ----------------------------------------------
+   HOVER (DESKTOP)
+   On utilise le hover pour afficher le sous-menu
+   quand la largeur est >= 1025px
+---------------------------------------------- */
+@media (min-width: 1025px) {
+  .nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
 
-/* Transition Douce pour le Menu */
+  .dropdown.open .dropdown-menu {
+    display: none; /* Éviter la duplication d'ouverture */
+  }
+
+  .nav-links li {
+    text-align: left; /* Aligne le texte à gauche en desktop */
+  }
+
+  .nav-links li a {
+    text-align: left; /* Aligne le texte à gauche en desktop */
+  }
+}
+
+/* ----------------------------------------------
+   TRANSITIONS & EFFETS
+---------------------------------------------- */
 .nav-links,
 .dropdown-menu {
   transition: all 0.3s ease-in-out;
 }
 
-/* Animation pour le Burger Menu */
 .burger i {
   transition: transform 0.3s, color 0.3s;
 }
@@ -405,13 +472,11 @@ nav .container {
   transform: rotate(90deg);
 }
 
-/* Effet de Survol sur les Liens de Navigation */
 .nav-links a:hover,
 .nav-links a.actived {
   color: #FAC83B;
 }
 
-/* Style pour les Icons dans les Dropdowns */
 .nav-links .dropdown a i {
   margin-left: 5px;
   transition: transform 0.3s;
@@ -421,8 +486,17 @@ nav .container {
   transform: rotate(180deg);
 }
 
+/* ----------------------------------------------
+   COULEUR DU TEXTE DU BOUTON "Soumettre un besoin"
+---------------------------------------------- */
+.mobile-actions .btn {
+  color: #FAC83B !important; /* Jaune */
+}
 
 </style>
+
+<!-- header.component.html -->
+<!-- header.component.html -->
 <header>
   <!-- Top Bar -->
   <div class="top-bar">
@@ -436,15 +510,20 @@ nav .container {
   <!-- Navigation -->
   <nav>
     <div class="container">
-      <!-- Logo -->
+      <!-- Logo Principal (Desktop) -->
       <div class="logo">
         <a routerLink="/">
           <img src="../../assets/img/accueil/logoMSL.png" alt="Logo MSL" />
         </a>
       </div>
 
-      <!-- Menu Burger avec icône fa-bars/fa-times -->
-      <button class="burger" (click)="toggleMenu()" [ngClass]="{'active': isMenuOpen}" aria-label="Ouvrir le menu">
+      <!-- Menu Burger -->
+      <button 
+        class="burger" 
+        (click)="toggleMenu()" 
+        [ngClass]="{'active': isMenuOpen}" 
+        aria-label="Ouvrir le menu"
+      >
         <i class="fas fa-bars"></i>
       </button>
 
@@ -457,51 +536,112 @@ nav .container {
           </button>
         </li>
 
-        <li><a routerLink="/accueil" routerLinkActive="actived"  (click)="closeMenu()">Accueil</a></li>
-        <li class="dropdown" (click)="toggleDropdown()" [ngClass]="{'open': isDropdownOpen}">
-          <a aria-haspopup="true" [attr.aria-expanded]="isDropdownOpen">
+        <!-- Logo Mobile -->
+        <!-- <li class="mobile-logo">
+          <a routerLink="/" (click)="closeMenu()">
+            <img src="../../assets/img/accueil/logoMSL.png" alt="Logo Mobile MSL" />
+          </a>
+        </li> -->
+
+        <!-- Liens de Navigation -->
+        <li>
+          <a 
+            routerLink="/accueil" 
+            routerLinkActive="actived"  
+            (click)="closeMenu()"
+          >
+            Accueil
+          </a>
+        </li>
+
+        <!-- Dropdown "Vos besoins" -->
+        <li 
+          class="dropdown" 
+          [ngClass]="{'open': isDropdownOpen('vosBesoins')}" 
+          (click)="isMobile && toggleDropdown('vosBesoins')"
+        >
+          <a aria-haspopup="true" [attr.aria-expanded]="isDropdownOpen('vosBesoins')">
             Vos besoins <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/serviceOdoo" routerLinkActive="actived"  (click)="closeMenu()">Application Odoo</a></li>
-            <li><a routerLink="/service2" routerLinkActive="actived"  (click)="closeMenu()">Finances</a></li>
-            <li><a routerLink="/service3" routerLinkActive="actived"  (click)="closeMenu()">Ventes</a></li>
-            <li><a routerLink="#" routerLinkActive="actived">Fabrications</a></li>
-            <li><a routerLink="#" routerLinkActive="actived">Site Internet</a></li>
-            <li><a routerLink="#" routerLinkActive="actived">Services</a></li>
+            <li><a routerLink="/serviceOdoo" (click)="isMobile && closeMenu()">Application Odoo</a></li>
+            <li><a routerLink="/service2" (click)="isMobile && closeMenu()">Finances</a></li>
+            <li><a routerLink="/service3" (click)="isMobile && closeMenu()">Ventes</a></li>
+            <li><a routerLink="#" (click)="isMobile && closeMenu()">Fabrications</a></li>
+            <li><a routerLink="#" (click)="isMobile && closeMenu()">Site Internet</a></li>
+            <li><a routerLink="#" (click)="isMobile && closeMenu()">Services</a></li>
           </ul>
         </li>
-        <li class="dropdown" (click)="togglePackageDropdown()" [ngClass]="{'open': isPackageDropdownOpen}">
-          <a routerLink="/package-metier" routerLinkActive="actived" aria-haspopup="true" [attr.aria-expanded]="isPackageDropdownOpen">
+
+        <!-- Dropdown "Package Métier" -->
+        <li 
+          class="dropdown" 
+          [ngClass]="{'open': isDropdownOpen('packageMetier')}" 
+          (click)="isMobile && toggleDropdown('packageMetier')"
+        >
+          <a 
+            routerLink="/package-metier" 
+            routerLinkActive="actived" 
+            aria-haspopup="true" 
+            [attr.aria-expanded]="isDropdownOpen('packageMetier')"
+          >
             Package Métier <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/package-metier/performance" routerLinkActive="actived"  (click)="closeMenu()">Commerciale</a></li>
-            <li><a routerLink="/package-metier/solution2" routerLinkActive="actived"  (click)="closeMenu()">Administratif</a></li>
+            <li><a routerLink="/package-metier/performance" (click)="isMobile && closeMenu()">Commerciale</a></li>
+            <li><a routerLink="/package-metier/solution2" (click)="isMobile && closeMenu()">Administratif</a></li>
           </ul>
         </li>
-        <li><a routerLink="/about" routerLinkActive="actived">À propos</a></li>
-        <li class="dropdown" (click)="toggleTarifsDropdown()" [ngClass]="{'open': isTarifsDropdownOpen}">
-          <a aria-haspopup="true" [attr.aria-expanded]="isTarifsDropdownOpen">
+
+        <li>
+          <a 
+            routerLink="/about" 
+            routerLinkActive="actived" 
+            (click)="closeMenu()"
+          >
+            À propos
+          </a>
+        </li>
+
+        <!-- Dropdown "Tarifs" -->
+        <li 
+          class="dropdown" 
+          [ngClass]="{'open': isDropdownOpen('tarifs')}" 
+          (click)="isMobile && toggleDropdown('tarifs')"
+        >
+          <a aria-haspopup="true" [attr.aria-expanded]="isDropdownOpen('tarifs')">
             Tarifs <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/pricing" routerLinkActive="actived"  (click)="closeMenu()">Odoo</a></li>
-            <li><a routerLink="/tarif" routerLinkActive="actived"  (click)="closeMenu()">Site Internet</a></li>
+            <li><a routerLink="/pricing" (click)="isMobile && closeMenu()">Odoo</a></li>
+            <li><a routerLink="/tarif" (click)="isMobile && closeMenu()">Site Internet</a></li>
           </ul>
-        </li>        
+        </li>
+
         <!-- Actions Mobile -->
         <li class="mobile-actions">
-          <a routerLink="/besoin" class="btn" style="text-align: center; color: #FAC83B !important"  (click)="closeMenu()">Soumettre un besoin</a>
-          <a routerLink="/contact" class="btn2"  (click)="closeMenu()">Contactez-nous</a>
+          <a 
+            routerLink="/besoin" 
+            class="btn text-center" 
+            (click)="closeMenu()"
+          >
+            Soumettre un besoin
+          </a>
+          <a 
+            routerLink="/contact" 
+            class="btn2 text-center" 
+            (click)="closeMenu()"
+          >
+            Contactez-nous
+          </a>
         </li>
       </ul>
 
       <!-- Actions (Desktop) -->
       <div class="actions">
-        <a routerLink="/besoin" class="btn " >Soumettre un besoin</a>
-        <a routerLink="/contact" class="btn2" style="text-align: center;">Contactez-nous</a>
+        <a routerLink="/besoin" class="btn">Soumettre un besoin</a>
+        <a routerLink="/contact" class="btn2">Contactez-nous</a>
       </div>
-    </div>
-  </nav>
+      </div>
+    </nav>
 </header>

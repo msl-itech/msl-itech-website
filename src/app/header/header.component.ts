@@ -7,65 +7,49 @@ import { Component, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   isMenuOpen = false;
-  isDropdownOpen = false;
-  isTarifsDropdownOpen = false;
-  isPackageDropdownOpen: boolean = false; // Sous-menu "Package Métier"
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
-  }
-  toggleTarifsDropdown() {
-    this.isTarifsDropdownOpen = !this.isTarifsDropdownOpen;
-    this.isDropdownOpen = false;
-  }
-  // Optionnel : Fermer le menu lorsqu'un lien est cliqué (mobile)
-  closeMenu() {
-    this.isMenuOpen = false;
-    this.isDropdownOpen = false;
-  }
-
-  onDropdownClick(event: Event): void {
-    event.preventDefault();
-    this.toggleDropdown();
-  }
-  isSidebarActive: boolean = false;
-  activeSubmenus: { [key: string]: boolean } = {};
-
-  toggleSidebar(): void {
-    this.isSidebarActive = !this.isSidebarActive;
-  }
-
-  toggleSubmenu(menu: string): void {
-    for (let key in this.activeSubmenus) {
-      if (key !== menu) {
-        this.activeSubmenus[key] = false;
-      }
-    }
-    this.activeSubmenus[menu] = !this.activeSubmenus[menu];
-  }
-
- 
-
-  // Méthode pour toggler le sous-menu "Package Métier"
-  togglePackageDropdown(): void {
-    this.isPackageDropdownOpen = !this.isPackageDropdownOpen;
-  }
-
+  activeDropdown: string | null = null; // Pour gérer quel sous-menu est ouvert
   isMobile: boolean = false;
 
-ngOnInit() {
-  this.checkScreenSize();
-  window.addEventListener('resize', () => this.checkScreenSize());
-}
+  constructor() {}
 
-checkScreenSize() {
-  this.isMobile = window.innerWidth < 768; // Ajustez la valeur selon vos besoins
-}
+  ngOnInit() {
+    this.checkScreenSize();
+    window.addEventListener('resize', this.checkScreenSize.bind(this));
+  }
 
-ngOnDestroy() {
-  window.removeEventListener('resize', () => this.checkScreenSize());
-}
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.checkScreenSize.bind(this));
+  }
+
+  checkScreenSize() {
+    this.isMobile = window.innerWidth < 1025; // Ajustez la valeur selon vos besoins
+    if (!this.isMobile) {
+      this.isMenuOpen = false;
+      this.activeDropdown = null;
+    }
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    if (!this.isMenuOpen) {
+      this.activeDropdown = null; // Fermer tous les sous-menus lorsque le menu principal est fermé
+    }
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    this.activeDropdown = null;
+  }
+
+  toggleDropdown(menu: string) {
+    if (this.activeDropdown === menu) {
+      this.activeDropdown = null; // Fermer si déjà ouvert
+    } else {
+      this.activeDropdown = menu; // Ouvrir le nouveau sous-menu et fermer les autres
+    }
+  }
+
+  isDropdownOpen(menu: string): boolean {
+    return this.activeDropdown === menu;
+  }
 }
