@@ -11,3 +11,10 @@
     height: auto;
   }
   
+  .nav{
+    height: 40px;
+  }
+  main {
+    margin-top: 40px; /* Correspond à la hauteur du header */
+    flex: 1;
+  }

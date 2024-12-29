@@ -13,7 +13,7 @@ body {
 .slider {
   position: relative;
   width: 100%;
-  height: 95vh; /* Hauteur du slider */
+  height: 90vh; /* Hauteur du slider */
   overflow: hidden;
 }
 
@@ -62,12 +62,11 @@ body {
 /* Images */
 img {
   position: absolute;
-  top: 100px;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit:cover; 
-  background-position:top;
+  background-position:center;
   z-index: 1;
 }
 
