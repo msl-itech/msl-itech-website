@@ -93,6 +93,12 @@
     .animate-btn {
       animation: pulse 5s infinite;
     }
+   
+    .package-card-yellow-border {
+  border: 2px solid #ffc107; /* Bordure jaune */
+}
+
+
   </style>
 <div class="container py-5" style="max-width: 1200px; margin: 0 auto;">
     <div class="row package-container g-2 align-items-center justify-content-center">
@@ -119,7 +125,7 @@
       </div>
       <!-- Package Commerciale (carte blanche plus grande, ombre, et animation sur le bouton) -->
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="package-card package-card-white text-dark position-relative">
+        <div class="package-card package-card-white text-dark position-relative package-card-yellow-border">
           <div class="badge-populaire">Populaire</div>
           <div>
             <div class="package-title mt-3">Package Commerciale</div>
@@ -137,6 +143,7 @@
           </div>
         </div>
       </div>
+      
       <!-- Package Heroca -->
       <div class="col-12 col-md-6 col-lg-3">
         <div class="package-card bg-dark-teal text-light">
