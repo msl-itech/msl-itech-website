@@ -36,6 +36,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PackPerformanceComponent } from './pack-performance/pack-performance.component';
 import { TableauCRMVENTEComponent } from './tableau-crm-vente/tableau-crm-vente.component';
 import { CodePromoComponent } from './code-promo/code-promo.component';
+import { PackAdministratifComponent } from './pack-administratif/pack-administratif.component';
+import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
+import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +68,10 @@ import { CodePromoComponent } from './code-promo/code-promo.component';
     CountUpDirective,
     PackPerformanceComponent,
     TableauCRMVENTEComponent,
-    CodePromoComponent
+    CodePromoComponent,
+    PackAdministratifComponent,
+    PackHorecaComponent,
+    TimelineHorecaComponent
   ],
   imports: [
     BrowserModule,
