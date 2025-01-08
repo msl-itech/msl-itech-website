@@ -1,0 +1,501 @@
+<style>
+    .highlight {
+      background-color: #e63946; /* Rouge pour accent */
+      color: #ffffff;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .card-item {
+      display: flex;
+      align-items: center;
+      background-color: #114D5A; /* Couleur de la carte */
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      color: #ffffff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    
+    .icon {
+      font-size: 2.5rem;
+      color: #ffdd57; /* Bleu pour les icônes */
+      margin-right: 1rem;
+    }
+    
+    .card-item h5 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+    }
+    
+    .card-item p {
+      margin: 0;
+      color: #fff; 
+      font-size:14px
+    }
+    
+    .text-muted {
+      color: #6c757d; /* Texte légèrement atténué */
+    }
+    
+    .content{
+        color: white;
+    }
+    
+    
+    
+    
+    
+    
+    
+    /* Base des timelines */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+    
+    /* Timeline Left */
+    .timeline-left {
+      border-left: 2px solid #007bff; /* Barre verticale */
+      padding-left: 2rem; /* Distance depuis la gauche */
+    }
+    
+    .timeline-left .timeline-item {
+      display: flex;
+      justify-content: flex-start; /* Alignement à gauche */
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-left .timeline-item .content {
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px; /* Limite la largeur */
+      margin-left: 0; /* Annule le centrage */
+    }
+    
+    /* Timeline Right */
+    .timeline-right {
+      border-right: 2px solid #e63946; /* Barre verticale */
+      padding-right: 2rem; /* Distance depuis la droite */
+    }
+    
+    .timeline-right .timeline-item {
+      display: flex;
+      justify-content: flex-end; /* Alignement à droite */
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-right .timeline-item .content {
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px; /* Limite la largeur */
+      margin-right: 0; /* Annule le centrage */
+    }
+    
+    /* Icônes */
+    .timeline-item .content i {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    /* sales-pitch.component.css */
+    
+    
+    /* Banner Section */
+    .banner-section {
+        position: relative;
+        height: 60vh;
+        overflow: hidden;
+      }
+      
+      .banner-section img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+      
+      .overlay-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      
+      .overlay-text .text-center {
+        max-width: 800px;
+        padding: 0 15px;
+      }
+      
+      .overlay-text h1 {
+        font-weight: 900;
+        font-size: 3rem;
+      }
+      
+      .overlay-text p {
+        font-size: 1.25rem;
+      }
+      
+      /* Introduction Section */
+      .intro-section p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+    
+      
+    /* Style pour les sections */
+    
+      
+      /* Style pour les images de couverture */
+      img.img-fluid {
+        max-height: 300px;
+        object-fit: cover;
+      }
+      
+      /* Style pour les cartes */
+      .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .card-title {
+        color: #007bff;
+      }
+      
+      .bg-primary {
+        background-color: #007bff !important;
+      }
+      
+      .text-primary {
+        color: #007bff !important;
+      }
+      
+      /* Style pour les boutons */
+      .btn-light.text-primary {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      
+      /* Ajustement des images dans les cartes */
+      .card-img-top,
+      .card-img-start,
+      .card-img-end {
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .text-primary--custom {
+        color: #114D5A;
+      }
+    
+      /* Image */
+    img {
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        max-width: 100%;
+        height: auto;
+      }
+      
+      img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+    
+      .bg-custom {
+        background-color: #114D5A;
+      }
+    
+      .text-custom {
+        color: #FAC83B;
+      }
+      
+      .color-white {
+        color: white;
+      }
+      
+     
+    
+    </style>
+    <div class="my-5">
+        <!-- Titre Principal avec Image de Couverture -->
+      
+        <div class="banner-section position-relative">
+            <img src="../../assets/img/perf/Business_Center.jpg" alt="MSL Itech Banner" class="w-100">
+            <div class="overlay-text d-flex align-items-center justify-content-center">
+              <div class="text-center text-white px-3">
+                <h2>Relevez Vos Défis dans la Communication et le Reporting</h2>
+                <p class="lead"> Votre entreprise a besoin d’envoyer des e-mails impactants et professionnels tout en générant des rapports personnalisés ? Gérer ces tâches manuellement, sans outils adaptés, peut devenir un véritable casse-tête. </p>
+              </div>
+            </div>
+          </div>
+        <!-- Section Gestion des Prospects avec Card -->
+        <section class="mb-5" data-aos="fade-up">
+          <div class="container my-5">
+            <div class="row align-items-center">
+              <div class="col-md-6 order-md-2 text-center" data-aos="zoom-in">
+                <img src="../../assets/img/perf/perf1.jpg" alt="Intégration Odoo" class="img-fluid rounded-custom shadow-sm">
+              </div>
+              <div class="col-md-6 order-md-1" data-aos="fade-right">
+                <h2 class="text-primary--custom">Gestion Intelligente des Prospects</h2>
+                <p>
+                  Vous devez envoyer des e-mails à des centaines de clients et leur joindre des rapports spécifiques à chacun. Vous perdez des heures à rédiger des messages, structurer vos données, et tester chaque envoi pour éviter les erreurs.
+                </p>
+                <p class="fw-bold p-4 border-start border-4 border-warning rounded" data-aos="fade-left">
+                  <strong class="text-custom">Résultat ?</strong> Une communication longue, complexe et peu efficace, qui ne reflète pas votre professionnalisme.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Défi Commun avec Image et Card -->
+        <section class="mb-5" data-aos="fade-up">
+          <div class="container-fluid bg-custom py-5">
+            <div class="container text-white">
+              <div class="row align-items-center">
+                <div class="col-md-6" data-aos="zoom-in">
+                  <img src="../../assets/img/webp/grande15.webp" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                  <h2 class="text-custom">Pourquoi un Pack Publipostage Complet Est Indispensable ?</h2>
+                  <p>Automatisation et professionnalisme à portée de main. Avec une solution adaptée, vous pouvez :</p>
+                  <ul class="list-unstyled">
+                    <li class="d-flex align-items-start mb-4">
+                      <i class="fas fa-check-circle text-warning fs-4 me-3"></i>
+                      <p class="mb-0">Créer des modèles d’e-mails en HTML sur mesure, pour des campagnes engageantes.</p>
+                    </li>
+                    <li class="d-flex align-items-start mb-4">
+                      <i class="fas fa-check-circle text-warning fs-4 me-3"></i>
+                      <p class="mb-0">Générer des rapports PDF dynamiques et personnalisés.</p>
+                    </li>
+                    <li class="d-flex align-items-start mb-4">
+                      <i class="fas fa-check-circle text-warning fs-4 me-3"></i>
+                      <p class="mb-0">Attacher automatiquement ces rapports aux e-mails, sans effort supplémentaire.</p>
+                    </li>
+                    <li class="d-flex align-items-start mb-4">
+                      <i class="fas fa-check-circle text-warning fs-4 me-3"></i>
+                      <p class="mb-0">Cibler précisément vos clients, grâce à une segmentation avancée.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Qualification des Prospects avec Card -->
+        <section class="mb-5" data-aos="fade-up">
+          <div class="container my-5">
+            <div class="row align-items-center">
+              <div class="col-md-6" data-aos="fade-right">
+                <h2 class="text-primary--custom">Ce que Notre Pack Publipostage Peut Faire pour Vous</h2>
+                <p class="text-muted">Qualifier vos prospects n’est pas une question de chance ou de feeling : c’est une démarche méthodique qui repose sur des critères précis.</p>
+                <p class="text-muted">Ces questions vous permettent de distinguer les "curieux" des prospects réellement qualifiés, et c’est cette différence qui transforme vos efforts en contrats signés.</p>
+              </div>
+              <div class="col-md-6" data-aos="fade-left">
+                <div class="card-list">
+                  <div class="card-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="content">
+                      <h5>Modèles d’E-mails en HTML : Un Impact Visuel et Professionnel</h5>
+                      <p>Conception de modèles d’e-mails dynamiques pour des campagnes sur mesure.</p>
+                    </div>
+                  </div>
+                  <div class="card-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon"><i class="fas fa-wallet"></i></div>
+                    <div class="content">
+                      <h5>Rapports PDF Dynamiques : Une Présentation Précise et Ciblée</h5>
+                      <p>Création de modèles de rapports PDF liés à vos données CRM.</p>
+                    </div>
+                  </div>
+                  <div class="card-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="content">
+                      <h5>Automatisation Complète des Envois</h5>
+                      <p>Intégration des rapports PDF comme pièces jointes aux e-mails.</p>
+                    </div>
+                  </div>
+                  <div class="card-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="content">
+                      <h5>Gestion et Organisation Optimales</h5>
+                      <p>Segmentation avancée de vos clients grâce à des filtres intelligents.</p>
+                    </div>
+                  </div>
+                  <div class="card-item" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="content">
+                      <h5>Formation et Accompagnement</h5>
+                      <p>Formation continue de votre équipe pour garantir leur autonomie dans l’utilisation des outils CRM et Marketing.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Forme Section avec Image -->
+        <section class="mb-5" data-aos="fade-up">
+          <div class="container-fluid py-5 bg-custom">
+            <div class="container">
+              <h2 class="text-center mb-4 text-white">Les Résultats pour Votre Entreprise</h2>
+              <p class="text-center mb-5 text-white">Modernisez vos processus dès le premier jour.</p>
+              <div class="row text-center">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                  <i class="text-custom fas fa-hourglass-half fa-3x mb-3"></i>
+                  <h4 class="mb-3 text-white">Gagnez du temps</h4>
+                  <p class="text-white">Économisez des heures en automatisant vos envois et la génération de rapports.</p>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                  <i class="text-custom fas fa-check-circle fa-3x mb-3"></i>
+                  <h4 class="mb-3 text-white">0 % d’erreurs manuelles</h4>
+                  <p class="text-white">Grâce à des modèles standardisés et des processus fiables.</p>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                  <i class="text-custom fas fa-chart-bar fa-3x mb-3"></i>
+                  <h4 class="mb-3 text-white">Une communication percutante</h4>
+                  <p class="text-white">Offrez une expérience client unique avec des e-mails et rapports sur mesure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="mb-5" data-aos="fade-up">
+          <div class="container-fluid">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-6 custom-img" data-aos="fade-right">
+                  <img src="../../assets/img/webp/12.webp" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                  <h2>Pourquoi Choisir Notre Pack Publipostage ?</h2>
+                  <p>
+                    Contrairement aux solutions génériques, notre service s’adapte à vos besoins spécifiques. En combinant expertise technique, accompagnement humain et outils puissants comme Odoo, nous vous aidons à moderniser vos communications tout en renforçant votre image professionnelle.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Nos Packs de Services</h2>
+      <div class="table-responsive">
+          <table class="table pricing-table table-bordered align-middle table-hover">
+              <thead>
+                  <tr>
+                      <th>Fonctionnalités</th>
+                      <th style="background-color: #114D5A; color: #ffffff;">Pack 10h <br><span class="duration">(10 heures)</span></th>
+                      <th style="background-color: #ffc107; color: #ffffff;">Pack 25h <br><span class="duration">(25 heures)</span></th>
+                      <th style="background-color: #631712; color: #ffffff;">Pack 50h <br><span class="duration">(50 heures)</span></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Analyse des besoins et planification</td>
+                      <td>✓ (2.5h)</td>
+                      <td>✓ (3h)</td>
+                      <td>✓ (3h)</td>
+                  </tr>
+                  <tr>
+                      <td>Configuration des modules CRM et e-mail</td>
+                      <td>Modules basiques</td>
+                      <td>Modules avancés</td>
+                      <td>Modules complets avec personnalisation</td>
+                  </tr>
+                  <tr>
+                      <td>Activation des tags et filtres</td>
+                      <td>Basique</td>
+                      <td>Avancé</td>
+                      <td>Complet (segmentation précise)</td>
+                  </tr>
+                  <tr>
+                      <td>Création de modèles d’e-mails HTML</td>
+                      <td>Non inclus</td>
+                      <td>1 modèle personnalisé</td>
+                      <td>5 modèles HTML personnalisés</td>
+                  </tr>
+                  <tr>
+                      <td>Création de rapports PDF dynamiques</td>
+                      <td>Non inclus</td>
+                      <td>1 modèle PDF dynamique</td>
+                      <td>5 modèles PDF dynamiques</td>
+                  </tr>
+                  <tr>
+                      <td>Rapports PDF attachés aux e-mails</td>
+                      <td>Non inclus</td>
+                      <td>1 modèle PDF dynamique</td>
+                      <td>5 modèles PDF dynamiques</td>
+                  </tr>
+                  <tr>
+                      <td>Ciblage et segmentation avancée</td>
+                      <td>✓ (1.5h)</td>
+                      <td>✓ (2.5h)</td>
+                      <td>✓ (3h)</td>
+                  </tr>
+                  <tr>
+                      <td>Envoi des e-mails en masse</td>
+                      <td>Basique</td>
+                      <td>Avancé</td>
+                      <td>Complet (nettoyage et migration)</td>
+                  </tr>
+                  <tr>
+                      <td>Démonstration et validation client</td>
+                      <td>✓</td>
+                      <td>✓</td>
+                      <td>✓</td>
+                  </tr>
+                  <tr>
+                      <td>Formation des utilisateurs</td>
+                      <td>1h basique</td>
+                      <td>2h avancée</td>
+                      <td>3h complète et détaillée</td>
+                  </tr>
+                  <tr>
+                      <td>Support initial et accompagnement</td>
+                      <td>✓</td>
+                      <td>✓</td>
+                      <td>✓</td>
+                  </tr>
+                  <tr>
+                      <td>Améliorations et feedback Go-Live</td>
+                      <td>Basique (0.5h)</td>
+                      <td>Avancé (1h)</td>
+                      <td>Approfondi (3h)</td>
+                  </tr>
+                  <tr class="footer-row">
+                      <td>Durée Totale</td>
+                      <td style="background-color: #114D5A; color: #ffffff;">10 heures</td>
+                      <td style="background-color: #ffc107; color: #ffffff;">25 heures</td>
+                      <td style="background-color: #631712; color: #ffffff;">50 heures</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+  
+  

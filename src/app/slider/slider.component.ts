@@ -10,7 +10,7 @@ export class SliderComponent {
   slides = [
     {
       id: 'slide1',
-      img: '../../assets/img/accueil/Slide1-min.jpg',
+      img: '../../assets/img/accueil/Slide1-min.webp',
       title: 'Gérez simplement, innovez différemment avec',
       highlight: 'Odoo',
       description: 'Réinventez votre activité grâce à des solutions logicielles conçues pour répondre à votre marché.',
@@ -18,7 +18,7 @@ export class SliderComponent {
     },
     {
       id: 'slide2',
-      img: '../../assets/img/accueil/femme_slide2.png',
+      img: '../../assets/img/accueil/femme_slide2.webp',
       title: 'Nous sommes partenaire',
       highlight: 'Odoo',
       description: 'Prenez contact avec un de nos experts Odoo dès maintenant pour discuter de vos besoins.',
