@@ -16,6 +16,7 @@ import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 import { PackPerformanceComponent } from './pack-performance/pack-performance.component';
 import { PackAdministratifComponent } from './pack-administratif/pack-administratif.component';
 import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
+import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'besoin', component: SoumettreBesoinComponent },
   { path: 'tarif', component: TarifsComponent },
+  { path: 'tarif-Odoo', component: TarifOdooComponent },
   { path: 'pricing', component: PricingOdooComponent },
   { path: 'package-metier/performance', component: PackPerformanceComponent },
   { path: 'package-metier/horeca', component: PackHorecaComponent },

@@ -39,6 +39,7 @@ import { CodePromoComponent } from './code-promo/code-promo.component';
 import { PackAdministratifComponent } from './pack-administratif/pack-administratif.component';
 import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
+import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,8 @@ import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.compo
     CodePromoComponent,
     PackAdministratifComponent,
     PackHorecaComponent,
-    TimelineHorecaComponent
+    TimelineHorecaComponent,
+    TarifOdooComponent
   ],
   imports: [
     BrowserModule,
