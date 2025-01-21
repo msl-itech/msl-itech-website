@@ -40,6 +40,7 @@ import { PackAdministratifComponent } from './pack-administratif/pack-administra
 import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
 import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,10 +78,13 @@ import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
     NgxSpinnerModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
