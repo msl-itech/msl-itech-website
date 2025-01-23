@@ -63,20 +63,25 @@
             class="file-upload"
             (dragover)="onDragOver($event)"
             (dragleave)="onDragLeave($event)"
-            (drop)="onDrop($event)">
+            (drop)="onDrop($event)"
+          >
             <label for="fileInput" class="file-label">
-              <i class="fas fa-cloud-upload-alt upload-icon"></i>
-              <span>Glissez &amp; déposez des fichiers ici <br> ou cliquez pour sélectionner</span>
+              Glissez et déposez des fichiers ici ou cliquez pour sélectionner
             </label>
-            <input 
-              type="file" 
-              id="fileInput" 
-              multiple 
-              (change)="onFileChange($event)" 
-              hidden
-            />
+            <input type="file" id="fileInput" multiple (change)="onFileChange($event)" hidden />
+            
+            <!-- Liste des fichiers sélectionnés -->
+            <div class="file-list" *ngIf="selectedFiles.length > 0">
+              <div class="file-item" *ngFor="let file of selectedFiles; let i = index">
+                {{ file.name }}
+                <button type="button" class="remove-file-btn" (click)="removeFile(i)">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+
         <!-- DESCRIPTION -->
         <div class="form-group">
           <textarea id="description" formControlName="description" class="form-control" rows="4" required></textarea>
