@@ -77,7 +77,7 @@ nav .container {
    BURGER MENU
 ---------------------------------------------- */
 .burger {
-  display: none; /* S’affiche en mobile/tablette */
+  display: none; /* S'affiche en mobile/tablette */
   background: none;
   border: none;
   cursor: pointer;
@@ -494,6 +494,59 @@ nav .container {
   color: #FAC83B !important; /* Jaune */
 }
 
+/* Styles pour le sous-menu Horeca */
+.sub-dropdown-menu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  min-width: 200px;
+  border-radius: 4px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.dropdown-menu li:hover .sub-dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Badge PRO */
+.pro-badge {
+  background-color: #FAC83B;
+  color: #114D5A;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* Ajustements pour mobile */
+@media (max-width: 1024px) {
+  .sub-dropdown-menu {
+    position: static;
+    box-shadow: none;
+    padding-left: 20px;
+    min-width: 100%;
+  }
+  
+  .dropdown-menu li:hover .sub-dropdown-menu {
+    display: none;
+  }
+  
+  .dropdown-menu li.open .sub-dropdown-menu {
+    display: block;
+  }
+}
+
 </style>
 
 <!-- header.component.html -->
@@ -591,7 +644,20 @@ nav .container {
           <ul class="dropdown-menu">
             <li><a routerLink="/package-metier/performance" (click)="isMobile && closeMenu()">Commerciale</a></li>
             <li><a routerLink="/package-metier/administratif" (click)="isMobile && closeMenu()">Administratif</a></li>
-            <li><a routerLink="/package-metier/horeca" (click)="isMobile && closeMenu()">Horeca</a></li>
+            <li>
+              <a routerLink="/package-metier/horeca" (click)="isMobile && closeMenu()">
+                Horeca <i class="fas fa-chevron-right"></i>
+              </a>
+              <ul class="sub-dropdown-menu">
+                <li><a routerLink="/package-metier/horeca/formules" (click)="isMobile && closeMenu()">Nos formules</a></li>
+                <li>
+                  <a routerLink="/package-metier/horeca/smartAlert" (click)="isMobile && closeMenu()">
+                    SmartAlert <span class="pro-badge">PRO</span>
+                  </a>
+                </li>
+                <li><a routerLink="/package-metier/horeca/services-exclusifs" (click)="isMobile && closeMenu()">Services Exclusifs</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
 

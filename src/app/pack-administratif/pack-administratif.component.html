@@ -235,6 +235,184 @@
       }
       
      
+.cta {
+    background: linear-gradient(135deg, #114D5A 0%, #1a6275 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background pattern */
+.cta::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: moveBackground 30s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50%, -50%); }
+}
+
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to right, #ffdd57, #ffe584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-intro {
+    color: #e5e7eb;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.cta-list li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 16px;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cta-list li:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cta-list .icon {
+    background: #ffdd57;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #114D5A;
+}
+
+.cta-list .content {
+    flex: 1;
+}
+
+.cta-list strong {
+    display: block;
+    color: #93c5fd;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, #ffdd57 0%, #ffe584 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    margin: 3rem 0;
+    color: #114D5A;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-box p {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.cta-footer {
+    text-align: center;
+    color: #e5e7eb;
+    font-size: 1.25rem;
+}
+
+.cta-footer em {
+    display: block;
+    margin-top: 1rem;
+    color: #93c5fd;
+    font-style: normal;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .cta {
+        padding: 60px 0;
+    }
+
+    .cta-content {
+        padding: 30px;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .cta-list {
+        gap: 1rem;
+    }
+
+    .cta-list li {
+        padding: 20px;
+    }
+}
+.highlight {
+    color: #ffdd57;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .qualification-content {
+        flex-direction: column;
+    }
+
+    .hero::after {
+        width: 100%;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+}
     
     </style>
     <div class="my-5">
@@ -383,25 +561,6 @@
           </div>
         </section>
         
-        <section class="mb-5" data-aos="fade-up">
-          <div class="container-fluid">
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-md-6 custom-img" data-aos="fade-right">
-                  <img src="../../assets/img/webp/12.webp" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
-                </div>
-                <div class="col-md-6" data-aos="fade-left">
-                  <h2>Pourquoi Choisir Notre Pack Publipostage ?</h2>
-                  <p>
-                    Contrairement aux solutions génériques, notre service s’adapte à vos besoins spécifiques. En combinant expertise technique, accompagnement humain et outils puissants comme Odoo, nous vous aidons à moderniser vos communications tout en renforçant votre image professionnelle.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-
     <div class="container my-5">
       <h2 class="text-center mb-4">Nos Packs de Services</h2>
       <div class="table-responsive">
@@ -498,4 +657,15 @@
       </div>
   </div>
   
-  
+  <section class="cta">
+    <div class="cta-container">
+        <div class="cta-content">
+            <h2>Passez à l'Action</h2>
+            <p class="cta-intro">Ne laissez plus les défis de la communication et du reporting freiner votre croissance. 
+            Avec notre Pack Publipostage Complet, transformez vos contraintes en opportunités.</p>
+            <div class="text-center mt-4">
+                <p class="lead text-white">📌 Contactez-nous dès aujourd'hui pour une démonstration gratuite et sans engagement</p>
+            </div>
+        </div>
+    </div>
+</section>

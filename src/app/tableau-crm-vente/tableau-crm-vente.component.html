@@ -1,46 +1,198 @@
 <style>
-    .scrollable-container {
-      width: 100%; /* Prend toute la largeur disponible */
-      height: 100vh; /* Adapte à la hauteur de l'écran */
-      overflow-x: auto; /* Active le scroll horizontal si nécessaire */
-      overflow-y: auto; /* Active le scroll vertical si nécessaire */
-      display: block;
-      background-color: #f8f9fa; /* Fond optionnel */
-      padding: 16px;
-      position: relative;
-    }
-    
-    .scrollable-container img {
-      width: 900px; /* Taille par défaut pour mobile */
-      height: auto; /* Conserve le ratio de l'image */
-      display: block;
-      position: absolute; /* Positionnement absolu pour centrer */
-    top: 50%; /* Aligne au centre verticalement */
-    left: 50%; /* Aligne au centre horizontalement */
-    transform: translate(-50%, -50%);
-    }
-    
-    @media (min-width: 768px) {
-     
-      .scrollable-container img {
-        width: 900px; /* Taille pour tablette */
-        height: auto;
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .scrollable-container img {
-        width: 1200px; /* Taille pour desktop */
-        height: auto;
-      }
-    }
-    
-    
-      </style>
+ .comparison-table {
+            margin: 100px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(17, 77, 90, 0.1);
+            background: white;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .highlight-column {
+            background-color: rgba(17, 77, 90, 0.02);
+            position: relative;
+        }
+
       
-      <div class="text-center">
-        <h1>Tableau comparatif</h1>
-      </div>
-      <div class="scrollable-container">
-        <img src="../../assets/img/accueil/Group 39548.png" alt="Tableau des packs commerciaux">
-      </div>
+
+        .table-header {
+            position: relative;
+            padding: 2rem 1rem !important;
+            background: linear-gradient(45deg, #114D5A, #165e6e);
+            color: white;
+            border: none !important;
+            text-align: center;
+        }
+
+        .highlight-header {
+            background: linear-gradient(45deg, #114D5A, #1a7185);
+        }
+
+        .pack-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pack-hours {
+            color: #ffc107;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .module-header {
+            background-color: #114D5A;
+            color: #ffc107;
+            font-weight: 600;
+            text-align: center;
+            padding: 1.5rem !important;
+            font-size: 1.1rem;
+            border: none !important;
+        }
+
+        td {
+            padding: 1.2rem !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(17, 77, 90, 0.1) !important;
+            vertical-align: middle;
+        }
+
+        .time-badge {
+            background-color: rgba(255, 193, 7, 0.15);
+            color: #114D5A;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .highlight-badge {
+            background-color: #ffc107;
+            color: #114D5A;
+        }
+
+        .empty-cell {
+            color: #9aa0a6;
+            font-style: italic;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(17, 77, 90, 0.02);
+        }
+
+        .feature-name {
+            font-weight: 500;
+            color: #114D5A;
+        }
+</style>
+
+<div class="comparison-table">
+  <table class="table table-responsive">
+      <thead>
+          <tr>
+              <th class="table-header" style="width: 15%">Modules</th>
+              <th class="table-header" style="width: 30%">
+                  <div class="pack-title">Pack Performance</div>
+                  <div class="pack-hours">10 heures</div>
+              </th>
+              <th class="table-header" style="width: 10%">Temps</th>
+              <th class="table-header highlight-header highlight-column" style="width: 30%">
+                  <div class="pack-title">Pack Réussite</div>
+                  <div class="pack-hours">25 heures</div>
+              </th>
+              <th class="table-header highlight-header" style="width: 10%">Temps</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- CRM Section -->
+          <tr>
+              <td class="module-header" rowspan="3">CRM</td>
+              <td class="feature-name">Configuration des étapes du pipeline de vente</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Configuration des étapes du pipeline de vente</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Définition des types d'activités</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Définition des types d'activités</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Paramétrage des notifications</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Paramétrage des notifications</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+
+          <!-- Ventes Section -->
+          <tr>
+              <td class="module-header" rowspan="2">Ventes</td>
+              <td class="feature-name">Configuration des produits et prix</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Configuration des produits et prix</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="empty-cell">Non inclus</td>
+              <td class="text-center">-</td>
+              <td class="feature-name highlight-column">Création 10 modèles de devis</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+
+          <!-- Facturation Section -->
+          <tr>
+              <td class="module-header" rowspan="3">Facturation</td>
+              <td class="feature-name">Paramétrage des taxes et devises</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Paramétrage des taxes et devises</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Création des modèles de factures</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Création des modèles de factures</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Configuration des relances</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Configuration des relances</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+
+          <!-- Supports Section -->
+          <tr>
+              <td class="module-header" rowspan="4">Supports</td>
+              <td class="feature-name">Importation des données</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Préparation et importation des données</td>
+              <td class="text-center"><span class="time-badge highlight-badge">3h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Support premier jour</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Support premier jour</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="empty-cell">Non inclus</td>
+              <td class="text-center">-</td>
+              <td class="feature-name highlight-column">Formation et documentation</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="empty-cell">Non inclus</td>
+              <td class="text-center">-</td>
+              <td class="feature-name highlight-column">Réunion de revue de projet</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+      </tbody>
+  </table>
+</div>

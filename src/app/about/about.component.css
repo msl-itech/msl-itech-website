@@ -1,3 +1,251 @@
+.engagement-section {
+    background-color: #114D5A;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.engagement-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.content-wrapper {
+    flex: 1;
+    color: white;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+}
+
+.features-list li::before {
+    content: "→";
+    color: #FFD700;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.feature-title {
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.cta-section {
+    margin-top: 3rem;
+}
+
+.cta-title {
+    font-size: 1.75rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.cta-text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* Decorative elements */
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    right: -150px;
+}
+
+.circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    left: -100px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .engagement-container {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .engagement-section {
+        padding: 60px 20px;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section styles */
+.container section {
+    padding: 80px 20px;
+}
+
+.section-alternate {
+    background-color: #f8f9fa;
+}
+
+.section-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.section-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Text styles */
+.text-content {
+    flex: 1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: #114D5A;
+    font-weight: 600;
+}
+
+/* Image styles */
+.image-wrapper {
+    flex: 1;
+}
+
+.section-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Engagement cards */
+.engagements {
+    margin-top: 40px;
+}
+
+.engagement-cards {
+    display: grid;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.engagement-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background-color: #eff6ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    background-color: #114D5A;
+    border-radius: 8px;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .section-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .engagement-cards {
+        gap: 20px;
+    }
+}
+
+
+
 h1, h2, p, span {
     margin: 0;
     padding: 0;

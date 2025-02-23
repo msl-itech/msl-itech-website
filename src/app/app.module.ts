@@ -41,6 +41,10 @@ import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
 import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PackageMetierAccueilComponent } from './package-metier-accueil/package-metier-accueil.component';
+import { HorecaFormulesComponent } from './horeca-formules/horeca-formules.component';
+import { HorecaSmartAlertComponent } from './horeca-smart-alert/horeca-smart-alert.component';
+import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca-service-exclusif.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +78,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PackAdministratifComponent,
     PackHorecaComponent,
     TimelineHorecaComponent,
-    TarifOdooComponent
+    TarifOdooComponent,
+    PackageMetierAccueilComponent,
+    HorecaFormulesComponent,
+    HorecaSmartAlertComponent,
+    HorecaServiceExclusifComponent
   ],
   imports: [
     BrowserModule,

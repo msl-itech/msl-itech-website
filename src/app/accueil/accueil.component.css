@@ -1,4 +1,3 @@
-
 .text-video-section {
     position: relative;
     padding: 60px 0;
@@ -72,6 +71,7 @@
     align-items: center;
     position: relative;
     min-width: 300px; /* Garde une taille minimale sur petits écrans */
+    margin-top: 2rem;
 }
 
 video {
@@ -85,7 +85,7 @@ video {
 .decoration-image {
     position: absolute;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -137,9 +137,9 @@ video {
     max-width: 655px;
     padding-top: 56.25%; /* Ratio 16:9 */
     margin: 0 auto;
-    border-radius: 24px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .video-container iframe {
@@ -206,6 +206,18 @@ video {
 
     .decorations .decoration {
         display: none; /* Masque les éléments de décoration */
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .text-video-container {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        margin-bottom: 1rem;
     }
 }
 
@@ -701,4 +713,108 @@ video {
         border-radius: 10px;
         font-size: 0.7em;
     }
+}
+
+.main-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  color: #114D5A;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #114D5A, #ffc107);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  background: rgba(17, 77, 90, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(10px);
+  background: rgba(17, 77, 90, 0.1);
+}
+
+.feature-content {
+  margin-left: 1rem;
+}
+
+.feature-content h3 {
+  color: #114D5A;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.feature-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: 8px;
+}
+
+.bullet.yellow {
+  background-color: #ffc107;
+}
+
+.bullet.blue {
+  background-color: #114D5A;
+}
+
+.bullet.green {
+  background-color: #114D5A;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.check-icon {
+    font-size: 24px;
+    color: #ffc107;
+    margin-right: 15px;
+    margin-top: 8px;
+    animation: pulse 2s infinite;
+}
+
+/* Vous pouvez supprimer les styles .bullet qui ne sont plus nécessaires */
+.bullet,
+.bullet.yellow,
+.bullet.blue,
+.bullet.green {
+    display: none;
 }

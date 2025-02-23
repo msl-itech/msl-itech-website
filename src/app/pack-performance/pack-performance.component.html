@@ -227,7 +227,7 @@ img {
   }
 
   .text-custom {
-    color: #FAC83B;
+    color: #ffdd57;
   }
   
   .color-white {
@@ -236,6 +236,395 @@ img {
   
  
 
+/* Nouvelles styles modernes */
+:root {
+  --primary-color: #114D5A;
+  --secondary-color: #ffdd57;
+  --text-light: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+
+
+/* Améliorations des cartes */
+.card-item {
+  background: linear-gradient(145deg, #114D5A, #1a6275);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Amélioration de la bannière */
+.banner-section {
+  height: 80vh;
+}
+
+.overlay-text {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  backdrop-filter: blur(5px);
+}
+
+/* Nouveaux styles pour les sections */
+.section-padding {
+  padding: 6rem 0;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary-color), #1a6275);
+}
+
+/* Amélioration des images */
+.rounded-custom {
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* Animation de survol pour les cartes */
+.floating-card {
+  transition: var(--transition);
+}
+
+.floating-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Style moderne pour les titres */
+h2 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+
+/* Amélioration des boutons */
+.btn-custom {
+  padding: 12px 30px;
+  border-radius: 50px;
+  background: #ffdd57;
+  color: #114D5A;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline modernisé */
+.timeline-left, .timeline-right {
+  border-width: 3px;
+  border-image: linear-gradient(to bottom, #ffdd57, transparent) 1;
+}
+
+.timeline-item .content {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.timeline-item .content:hover {
+  transform: scale(1.03);
+}
+
+
+       /* Solution Section */
+       .solution {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 2px solid #114D5A;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: #114D5A;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #ffdd57;
+        }
+
+        /* Qualification Section */
+        .qualification {
+            padding: 80px 0;
+            background: #114D5A;
+            color: #ffffff;
+        }
+
+        .qualification-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .qualification-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .qualification-text {
+            flex: 1;
+        }
+
+        .numbered-list {
+            list-style: none;
+            counter-reset: item;
+            margin-top: 30px;
+        }
+
+        .numbered-list li {
+            counter-increment: item;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .numbered-list li::before {
+            content: counter(item);
+            background: #ffdd57;
+            color: #114D5A;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Sales Process Section */
+        .sales-process {
+            padding: 80px 0;
+            background: #ffffff;
+            color: #114D5A;
+        }
+
+        .process-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-card {
+            background: #114D5A;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #114D5A 0%, #1a6275 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background pattern */
+        .cta::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: moveBackground 30s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50%, -50%); }
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: linear-gradient(to right, #ffdd57, #ffe584);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-intro {
+            color: #e5e7eb;
+            font-size: 1.25rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cta-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 3rem 0;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .cta-list li {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            border-radius: 16px;
+            color: white;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-list li:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-list .icon {
+            background: #ffdd57;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #114D5A;
+        }
+
+        .cta-list .content {
+            flex: 1;
+        }
+
+        .cta-list strong {
+            display: block;
+            color: #93c5fd;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffdd57 0%, #ffe584 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 3rem 0;
+            color: #114D5A;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-box p {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .cta-footer {
+            text-align: center;
+            color: #e5e7eb;
+            font-size: 1.25rem;
+        }
+
+        .cta-footer em {
+            display: block;
+            margin-top: 1rem;
+            color: #93c5fd;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .cta {
+                padding: 60px 0;
+            }
+
+            .cta-content {
+                padding: 30px;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .cta-list {
+                gap: 1rem;
+            }
+
+            .cta-list li {
+                padding: 20px;
+            }
+        }
+        .highlight {
+            color: #ffdd57;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .qualification-content {
+                flex-direction: column;
+            }
+
+            .hero::after {
+                width: 100%;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+        }
+
 </style>
 <div class="my-5">
     <!-- Titre Principal avec Image de Couverture -->
@@ -243,14 +632,14 @@ img {
     <div class="banner-section position-relative">
         <img src="../../assets/img/pricing/Section.png" alt="MSL Itech Banner" class="w-100">
         <div class="overlay-text d-flex align-items-center justify-content-center">
-          <div class="text-center text-white px-3">
-            <h2>Boostez les Performances de Votre Équipe Commerciale avec Odoo CRM</h2>
-            <p class="lead"> Vous avez besoin d'augmenter les performances de votre équipe commerciale pour augmenter vos bénéfices ?</p>
+          <div class="text-center text-white px-3 fade-in">
+            <h2 class="fw-bold">Boostez les Performances de Votre Équipe Commerciale avec Odoo CRM</h2>
+            <p class="lead">Transformez vos prospects en clients et maximisez vos bénéfices.</p>
           </div>
         </div>
       </div>
     <!-- Section Gestion des Prospects avec Card -->
-    <section class=" mb-5 ">
+    <section class="section-padding">
         <div class="container my-5" >
             <div class="row align-items-center">
               <div class="col-md-6 order-md-2 text-center">
@@ -259,13 +648,13 @@ img {
               <div class="col-md-6 order-md-1" >
                 <h2 class="text-primary--custom">Gestion Intelligente des Prospects</h2>
                 <p >
-                    Cela commence par une gestion intelligente de vos prospects. Pourtant, beaucoup d’entreprises négligent une étape cruciale : s’assurer que leurs efforts se concentrent sur les prospects ayant un réel potentiel d’achat.
+                    Cela commence par une gestion intelligente de vos prospects. Pourtant, beaucoup d'entreprises négligent une étape cruciale : s'assurer que leurs efforts se concentrent sur les prospects ayant un réel potentiel d'achat.
                   </p>
                   <p >
-                    Ne serait-ce pas frustrant de voir vos efforts commerciaux échouer simplement à cause d’un mauvais ciblage ?
+                    Ne serait-ce pas frustrant de voir vos efforts commerciaux échouer simplement à cause d'un mauvais ciblage ?
                   </p>
                   <p>
-                    Mais savez-vous réellement ce que cela signifie de qualifier un prospect ? Et pourquoi cette étape est-elle essentielle pour réussir dans vos activités commerciales ?
+                    Mais savez-vous réellement ce que cela signifie de qualifier un prospect ? Et pourquoi cette étape est-elle essentielle pour réussir dans vos activités commerciales ?
                   </p>
               </div>
             </div>
@@ -282,317 +671,151 @@ img {
                   </div>
                 <!-- Texte avec liste -->
                 <div class="col-md-6" >
-                  <h2 class="text-custom">Un Défi Commun : Transformer Vos Efforts en Résultats</h2>
-                  <p>
-                    Imaginez ceci : vous passez des heures à contacter des clients potentiels, mais seuls quelques-uns semblent réellement intéressés par vos services. Résultat ? Du temps perdu, des ventes stagnantes, et une frustration croissante.
-                  </p>
+                  <h2 class="text-custom">Le Défi : Transformer Vos Efforts en Résultats</h2>
+                  <p>Imaginez ceci :</p>
+                  <ul>
+                    <li>Vous passez des heures à contacter des prospects, mais peu se convertissent en clients.</li>
+                    <li>Vos ventes stagnent, malgré des efforts importants.</li>
+                    <li>Vous perdez du temps et de l'énergie sur des prospects peu qualifiés.</li>
+                  </ul>
                   <p class="fw-bold p-3 border-start border-4 border-warning">
-                    👉 Que diriez-vous si vous pouviez concentrer vos efforts uniquement sur les prospects ayant un réel potentiel d'achat ? C’est là qu’intervient la qualification des prospects.
+                     Et si vous pouviez concentrer vos efforts uniquement sur les prospects ayant un réel potentiel d'achat ?
                   </p>
-      
                 </div>
               </div>
             </div>
           </div>
     </section>
  
-    <section class="mb-5">
-        <div class="container my-5" > 
-              <div class="container py-5">
-                <div class="row align-items-center">
-                  <!-- Texte principal -->
-                  <div class="col-md-6">
-                    <h2 class="text-primary--custom">Qualifier un prospect, ça ne s’improvise pas </h2>
-                    <p class="text-muted">
-                        Qualifier vos prospects n’est pas une question de chance ou de feeling : c’est une démarche méthodique qui repose sur des critères précis. 
-                    </p>
-                    <p class="text-muted">
-                        Ces questions vous permettent de distinguer les "curieux" des prospects réellement qualifiés, et c’est cette différence qui transforme vos efforts en contrats signés. 
-                    </p>
-                  </div>
-              
-                  <!-- Cartes -->
-                  <div class="col-md-6">
-                    <div class="card-list">
-                      <div class="card-item">
-                        <div class="icon">
-                          <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <div class="content">
-                          <h5>Quels sont leurs besoins ?</h5>
-                          <p>Identifiez précisément ce que vos prospects recherchent pour répondre efficacement à leurs attentes.</p>
-                        </div>
-                      </div>
-                      <div class="card-item">
-                        <div class="icon">
-                          <i class="fas fa-wallet"></i>
-                        </div>
-                        <div class="content">
-                          <h5>Ont-ils le budget ?</h5>
-                          <p>Assurez-vous que vos prospects ont les ressources nécessaires pour investir dans vos solutions.</p>
-                        </div>
-                      </div>
-                      <div class="card-item">
-                        <div class="icon">
-                          <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="content">
-                          <h5>Sont-ils décisionnaires ?</h5>
-                          <p>Vérifiez si la personne que vous contactez peut prendre la décision finale ou s’il s’agit d’un intermédiaire.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>  
-                </div>
-              </div>  
-        </div>    
-    </section>
-  
-    <section class="mb-5">
-        <div class="container-fluid py-5 bg-custom ">
-            <div class="container">
-                    <!-- Timeline 1: Pourquoi les entreprises réussissent -->
-            <h2 class="text-white mb-5">Pourquoi Certaines Entreprises Réussissent ?</h2>
-            <div class="timeline-left">
-              <!-- Item 1 -->
-              <div class="timeline-item">
-                <div class="content">
-                  <i class="fas fa-tools text-primary"></i>
-                  <h5>Outils Performants</h5>
-                  <p>Elles utilisent des outils performants pour automatiser la collecte des informations clés.</p>
-                </div>
-              </div>
-              <!-- Item 2 -->
-              <div class="timeline-item">
-                <div class="content">
-                  <i class="fas fa-lightbulb text-primary"></i>
-                  <h5>Méthode Claire</h5>
-                  <p>Elles adoptent une méthode claire pour prioriser leurs efforts.</p>
-                </div>
-              </div>
-              <!-- Item 3 -->
-              <div class="timeline-item">
-                <div class="content">
-                  <i class="fas fa-bullseye text-primary"></i>
-                  <h5>Opportunités Prometteuses</h5>
-                  <p>Elles se concentrent sur les opportunités les plus prometteuses.</p>
-                </div>
-              </div>
-            </div>
+    <section class="solution">
+      <div class="container">
+          <h2>La Solution : Une Gestion Intelligente des Prospects avec Odoo CRM</h2>
+          <p>Chez <strong>MSL-ITECH</strong>, nous vous aidons à qualifier vos prospects de manière méthodique et efficace.</p>
           
-            <!-- Timeline 2: Cependant -->
-            <h2 class="text-white mt-5 mb-5">Cependant, beaucoup hésitent encore. Pourquoi ?</h2>
-            <div class="timeline-right">
-              <!-- Item 1 -->
-              <div class="timeline-item">
-                <div class="content">
-                  <i class="fas fa-clock text-danger"></i>
-                  <h5 class="text-danger">Chronophage</h5>
-                  <p>La qualification peut sembler chronophage.</p>
-                </div>
+          <div class="solution-grid">
+              <div class="solution-card">
+                  <div class="card-icon">🎯</div>
+                  <h3>Qualification Automatisée</h3>
+                  <p>Analysez rapidement les besoins, budgets et décideurs pour cibler les prospects les plus prometteurs.</p>
               </div>
-              <!-- Item 2 -->
-              <div class="timeline-item">
-                <div class="content">
-                  <i class="fas fa-tools text-danger"></i>
-                  <h5 class="text-danger">Manque d'Outils</h5>
-                  <p>Les équipes commerciales manquent souvent de structure ou d’outils adaptés.</p>
-                </div>
+              <div class="solution-card">
+                  <div class="card-icon">⭐</div>
+                  <h3>Gestion des Priorités</h3>
+                  <p>Identifiez les opportunités à fort potentiel et maximisez vos chances de conclure.</p>
               </div>
-            </div>
-            </div>
-        
+              <div class="solution-card">
+                  <div class="card-icon">📅</div>
+                  <h3>Suivi Structuré</h3>
+                  <p>Planifiez vos relances et rendez-vous sans rien oublier, pour toujours être au bon moment au bon endroit.</p>
+              </div>
           </div>
-          
-    </section>
-  
-    <!-- Odoo CRM Section avec Cards et Images -->
-    <section class="mb-5">
-        <div class="container-fluid py-5">
-            <div class="container">
-                <div>
-                    <h2 class="text-center mb-4">Ne Laissez Plus Vos Ventes au Hasard avec Odoo CRM</h2>
-                    <p class="fw-bold text-center mb-5">
-                      📈 Avec Odoo CRM, transformez votre gestion commerciale grâce à :
-                    </p>
-                
-                    <!-- Alignement Alterné -->
-                    <div class="row align-items-center mb-4">
-                      <div class="col-md-6 order-md-2">
-                        <img src="../../assets/img/perf/qualification-course-2023-11-27-04-54-59-utc-min.jpg" class="img-fluid rounded shadow" alt="Qualification Automatisée">
-                      </div>
-                      <div class="col-md-6 order-md-1">
-                        <h5 class="fw-bold">Qualification Automatisée</h5>
-                        <p>
-                          Analysez rapidement les besoins, budgets, et décideurs pour concentrer vos efforts sur les contacts les plus prometteurs.
-                        </p>
-                      </div>
-                    </div>
-                
-                    <div class="row align-items-center mb-4">
-                      <div class="col-md-6">
-                        <img src="../../assets/img/perf/completing-the-first-task-set-priority-to-first-2023-11-27-05-32-10-utc-min.jpg" class="img-fluid rounded shadow" alt="Gestion des Priorités">
-                      </div>
-                      <div class="col-md-6">
-                        <h5 class="fw-bold">Gestion des Priorités</h5>
-                        <p>
-                          Identifiez les opportunités à fort potentiel pour maximiser vos chances de conclure.
-                        </p>
-                      </div>
-                    </div>
-                
-                    <div class="row align-items-center mb-4">
-                      <div class="col-md-6 order-md-2">
-                        <img src="../../assets/img/perf/success-follows-hard-work-2023-11-27-05-26-19.jpg" class="img-fluid rounded shadow" alt="Suivi Structuré">
-                      </div>
-                      <div class="col-md-6 order-md-1">
-                        <h5 class="fw-bold">Suivi Structuré</h5>
-                        <p>
-                          Planifiez vos relances et rendez-vous sans rien oublier, pour toujours être au bon moment au bon endroit.
-                        </p>
-                      </div>
-                    </div>
-                
-                    <p class="mt-5 fw-bold">
-                      <strong>Résultat :</strong>
-                    </p>
-                    <ul class="list-unstyled">
-                      <li class="mb-2">
-                        <i class="fas fa-check-circle text-success me-2"></i> Un gain de temps considérable pour votre équipe.
-                      </li>
-                      <li>
-                        <i class="fas fa-check-circle text-success me-2"></i> Une augmentation rapide de votre taux de conversion grâce à des efforts ciblés et méthodiques.
-                      </li>
-                    </ul>
-                  </div>
-            </div>
-        </div>
-      </section>
-      
-      <section class="mb-5">
-        <div class="container-fluid bg-custom py-5">
-            <div class="container color-white">
-              <div class="row align-items-center">
-                <div class="col-md-6" >
-                    <img src="../../assets/img/perf/white-sale-banner-lying-on-green-grass-house-for-2024-11-18-09-42-12-utc-min.jpg" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
-                  </div>
-                <!-- Texte avec liste -->
-                <div class="col-md-6">
-                    <!-- Section Title -->
-                    <h2 class="text-custom mb-4">Ventes : Accélérez et Standardisez Vos Processus</h2>
-                    
-                    <!-- Feature List -->
-                    <ul class="list-unstyled">
-                      <!-- Feature Item 1 -->
-                      <li class="d-flex align-items-start mb-4">
-                        <i class="fas fa-check-circle text-warning fs-4 me-3"></i>
-                        <div>
-                          <strong>Simplifiez l'importation de vos données :</strong>
-                          <p class="mb-0">
-                            Ajoutez facilement vos clients et produits existants, ou laissez-nous le faire pour vous grâce à nos packs d’heures.
-                          </p>
-                        </div>
-                      </li>
-                      
-                      <!-- Feature Item 2 -->
-                      <li class="d-flex align-items-start mb-4">
-                        <i class="fas fa-check-circle text-warning  fs-4 me-3"></i>
-                        <div>
-                          <strong>Accélérez vos devis :</strong>
-                          <p class="mb-0">
-                            Créez des modèles personnalisés en quelques clics et envoyez des propositions professionnelles en un rien de temps.
-                          </p>
-                        </div>
-                      </li>
-                      
-                      <!-- Feature Item 3 -->
-                      <li class="d-flex align-items-start mb-4">
-                        <i class="fas fa-check-circle text-warning fs-4 me-3"></i>
-                        <div>
-                          <strong>Boostez la validation des commandes :</strong>
-                          <p class="mb-0">
-                            Vos clients signent en ligne et paient directement via des plateformes sécurisées comme Stripe ou PayPal.
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
-                    
-                    <!-- Highlighted Note -->
-                    <p class="fw-bold p-4 border-start border-4 border-warning rounded">
-                      👉Moins de temps perdu, plus de contrats signés.
-                    </p>
-                  </div>
-                  
-              </div>
-            </div>
-          </div>
+      </div>
+  </section>
 
-    </section>
-    
-    <section class="py-5 bg-white text-dark">
-        <div class="container">
-          <!-- Titre et Sous-titre -->
-          <div class="text-center mb-5">
-            <h2 >Passez à l’Action : Boostez Votre Chiffre d’Affaires avec Odoo</h2>
-            <p class="lead">
-              Ne laissez pas des processus inefficaces freiner votre croissance. Avec notre Pack d’Implémentation Odoo (CRM, Ventes, Facturation), vous obtenez :
-            </p>
-          </div>
-      
-          <!-- Cartes avec Icônes -->
-          <div class="row text-center">
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm bg-custom">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <i class="fas fa-cogs fa-3x text-custom"></i>
-                  </div>
-                  <h5 class="card-title text-custom">Configuration sur Mesure</h5>
-                  <p class="card-text text-white">Optimisée pour répondre à vos besoins spécifiques.</p>
-                </div>
+  <!-- Qualification Section -->
+  <section class="qualification">
+      <div class="container">
+          <div class="qualification-content">
+              <div class="qualification-image">
+                  <img src="/api/placeholder/600/400" alt="Qualification process" style="width: 100%; height: auto;">
               </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm bg-custom">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <i class="fas fa-chalkboard-teacher fa-3x text-custom"></i>
-                  </div>
-                  <h5 class="card-title text-custom">Formation Pratique</h5>
-                  <p class="card-text text-white">Pour que votre équipe soit opérationnelle dès le premier jour.</p>
-                </div>
+              <div class="qualification-text">
+                  <h2>Pourquoi Qualifier Vos Prospects ?</h2>
+                  <p>Qualifier un prospect, ce n'est pas du hasard. C'est une démarche stratégique qui repose sur des critères clés :</p>
+                  <ul class="numbered-list">
+                      <li><strong>Leurs besoins</strong> : Identifiez précisément ce qu'ils recherchent.</li>
+                      <li><strong>Leur budget</strong> : Assurez-vous qu'ils ont les moyens d'investir.</li>
+                      <li><strong>Leur pouvoir de décision</strong> : Vérifiez s'ils peuvent signer un contrat.</li>
+                  </ul>
               </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm bg-custom">
-                <div class="card-body">
-                  <div class="mb-3">
-                    <i class="fas fa-headset fa-3x text-custom"></i>
-                  </div>
-                  <h5 class="card-title text-custom">Support Dédié</h5>
-                  <p class="card-text text-white">Pour garantir une utilisation optimale dès la mise en œuvre.</p>
-                </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Sales Process Section -->
+  <section class="sales-process">
+      <div class="container">
+          <h2>Ventes : Accélérez et Standardisez Vos Processus</h2>
+          <p>Avec <strong>Odoo CRM</strong>, simplifiez et optimisez chaque étape de votre processus commercial :</p>
+          
+          <div class="process-cards">
+              <div class="process-card">
+                  <h3>Importation de données</h3>
+                  <p>Ajoutez facilement vos clients et produits existants.</p>
               </div>
-            </div>
+              <div class="process-card">
+                  <h3>Devis professionnels</h3>
+                  <p>Créez des modèles personnalisés en quelques clics.</p>
+              </div>
+              <div class="process-card">
+                  <h3>Validation des commandes</h3>
+                  <p>Faites signer et payer vos clients en ligne via des plateformes sécurisées.</p>
+              </div>
           </div>
-      
-          <!-- Offre Spéciale -->
-          <div class="text-center mt-5">
-            <p class="fw-bold fs-5">
-              📌 Offre spéciale : Profitez d’une <span class="text-warning">démonstration gratuite</span> et découvrez comment augmenter vos revenus dès le premier mois grâce à Odoo.
-            </p>
-            <!-- Boutons d'Appel à l'Action -->
-            <div class="d-flex justify-content-center gap-3 mb-4">
-              <a href="mailto:info@msl-itech.com" class="btn bg-custom btn-lg text-custom"><i class="fas fa-envelope me-2 text-custom"></i>Email</a>
-              <a href="tel:votre-numéro" class="btn bg-custom btn-lg text-custom"><i class="fas fa-phone me-2 text-custom"></i>Téléphone</a>
-              <a href="https://votre-site-web.com" target="_blank" class="btn bg-custom text-custom btn-lg"><i class="fas fa-globe me-2 text-custom"></i>Site web</a>
+      </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="cta-container">
+        <div class="cta-content">
+            <h2>Passez à l'Action : Boostez Votre Chiffre d'Affaires avec Odoo</h2>
+            <p class="cta-intro">Ne laissez pas des processus inefficaces freiner votre croissance. Avec notre <strong>Pack d'Implémentation Odoo</strong>, vous obtenez :</p>
+            
+            <ul class="cta-list">
+                <li>
+                    <div class="icon">⚙️</div>
+                    <div class="content">
+                        <strong>Configuration sur mesure</strong>
+                        Optimisée pour répondre à vos besoins spécifiques.
+                    </div>
+                </li>
+                <li>
+                    <div class="icon">📚</div>
+                    <div class="content">
+                        <strong>Formation pratique</strong>
+                        Pour une équipe opérationnelle dès le premier jour.
+                    </div>
+                </li>
+                <li>
+                    <div class="icon">🎯</div>
+                    <div class="content">
+                        <strong>Support dédié</strong>
+                        Pour une utilisation optimale dès la mise en œuvre.
+                    </div>
+                </li>
+            </ul>
+
+            <div class="highlight-box">
+                <p>Offre spéciale : Profitez d'une démonstration gratuite et découvrez comment augmenter vos revenus dès le premier mois grâce à Odoo.</p>
             </div>
-            <p>
-              Avec Odoo, faites de vos objectifs commerciaux une réalité. Vos ventes n’attendent plus. 🚀
-            </p>
-          </div>
+
+            <div class="cta-footer">
+                <p>Avec Odoo et MSL-ITECH, faites de vos objectifs commerciaux une réalité.</p>
+                <em>Vos ventes n'attendent plus. 🚀</em>
+            </div>
         </div>
-      </section>
+    </div>
+</section>
+
       <app-tableau-crm-vente></app-tableau-crm-vente>
   </div>
+  
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fadeElements = document.querySelectorAll('.fade-in');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+  
+  fadeElements.forEach(element => {
+    observer.observe(element);
+  });
+});
+</script>
   
