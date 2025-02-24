@@ -517,8 +517,9 @@
 
 .recommendation-image {
   position: relative;
-  height: 100%;
-  min-height: 300px;
+  height: 350px;
+  width: 100%;
+  /* min-height: 300px; */
 }
 
 .recommendation-image img {
@@ -551,6 +552,10 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(17, 77, 90, 0.2);
 }
+
+.btn-primary:hover i{
+   color: #ffd700;
+  }
 
 .btn-outline-primary {
   border: 2px solid #114D5A;
