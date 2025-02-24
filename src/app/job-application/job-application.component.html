@@ -2,13 +2,12 @@
   <img src="../../assets/img/webp/30.webp" alt="MSL Itech Banner" class="w-100">
   <div class="overlay-text d-flex align-items-center justify-content-center">
     <div class="text-center text-white px-3">
-      <h2>Avez vous un besoin?</h2>
+      <h2>Rejoignez notre équipe</h2>
     </div>
   </div>
 </div>
 
 <div class="contact-page">
-  <!-- Section Contact -->
   <div class="contact-container">
     <!-- Informations de contact -->
     <div class="contact-info">
@@ -31,8 +30,8 @@
 
     <!-- Formulaire -->
     <div class="contact-form-container">
-      <h2 class="form-title">Soumettre un besoin</h2>
-      <p class="form-subtitle">Merci de remplir le formulaire ci-dessous. Nous vous contacterons dans les plus brefs délais.</p>
+      <h2 class="form-title">Postuler</h2>
+      <p class="form-subtitle">Merci de remplir le formulaire ci-dessous. Nous étudierons votre candidature avec attention.</p>
       
       <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -61,31 +60,43 @@
         </div>
 
         <div class="form-group">
-          <input type="text" 
-                 id="company" 
-                 formControlName="company" 
-                 class="form-control">
-          <label for="company">Votre société</label>
-        </div>
-
-        <div class="form-group full-width">
-          <input type="text" 
-                 id="subject" 
-                 formControlName="subject" 
+          <input type="tel" 
+                 id="phone" 
+                 formControlName="phone" 
                  class="form-control" 
                  required>
-          <label for="subject">Sujet *</label>
-          <small class="text-danger" *ngIf="jobForm.get('subject')?.invalid && jobForm.get('subject')?.touched">
+          <label for="phone">Numéro de téléphone *</label>
+          <small class="text-danger" *ngIf="jobForm.get('phone')?.invalid && jobForm.get('phone')?.touched">
             Ce champ est requis
           </small>
         </div>
 
         <div class="form-group">
-          <input type="date" 
-                 id="date" 
-                 formControlName="date" 
+          <input type="text" 
+                 id="poste" 
+                 formControlName="poste" 
+                 class="form-control" 
+                 required>
+          <label for="poste">Poste souhaité *</label>
+          <small class="text-danger" *ngIf="jobForm.get('poste')?.invalid && jobForm.get('poste')?.touched">
+            Ce champ est requis
+          </small>
+        </div>
+
+        <div class="form-group">
+          <input type="text" 
+                 id="experience" 
+                 formControlName="experience" 
                  class="form-control">
-          <label for="date" class="date-label">Date d'entretien souhaitée</label>
+          <label for="experience">Années d'expérience</label>
+        </div>
+
+        <div class="form-group">
+          <input type="date" 
+                 id="disponibilite" 
+                 formControlName="disponibilite" 
+                 class="form-control">
+          <label for="disponibilite" class="date-label">Date de disponibilité</label>
         </div>
 
         <div class="form-group">
@@ -95,7 +106,7 @@
                    id="fileInput" 
                    (change)="onFileChange($event)" 
                    class="form-control">
-            <label for="fileInput">Joindre un fichier</label>
+            <label for="fileInput">CV (PDF, DOC, DOCX) *</label>
             <div *ngIf="selectedFile" class="selected-file">
               <span>{{ selectedFile.name }}</span>
               <i class="fas fa-times" (click)="removeFile($event)"></i>
@@ -109,14 +120,14 @@
                     class="form-control" 
                     rows="4" 
                     required></textarea>
-          <label for="description">Description détaillée *</label>
+          <label for="description">Lettre de motivation *</label>
           <small class="text-danger" *ngIf="jobForm.get('description')?.invalid && jobForm.get('description')?.touched">
             Ce champ est requis
           </small>
         </div>
 
         <button type="submit" class="submit-btn" [disabled]="jobForm.invalid || isLoading">
-          <span *ngIf="!isLoading">Soumettre</span>
+          <span *ngIf="!isLoading">Envoyer ma candidature</span>
           <span *ngIf="isLoading" class="loading-spinner">
             <i class="fas fa-spinner fa-spin"></i>
             Envoi en cours...
@@ -125,4 +136,4 @@
       </form>
     </div>
   </div>
-</div>
+</div> 

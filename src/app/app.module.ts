@@ -45,6 +45,9 @@ import { PackageMetierAccueilComponent } from './package-metier-accueil/package-
 import { HorecaFormulesComponent } from './horeca-formules/horeca-formules.component';
 import { HorecaSmartAlertComponent } from './horeca-smart-alert/horeca-smart-alert.component';
 import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca-service-exclusif.component';
+import { ToastrModule } from 'ngx-toastr';
+import { JobApplicationComponent } from './job-application/job-application.component';
+import { DemoReservationComponent } from './demo-reservation/demo-reservation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,7 +85,9 @@ import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca
     PackageMetierAccueilComponent,
     HorecaFormulesComponent,
     HorecaSmartAlertComponent,
-    HorecaServiceExclusifComponent
+    HorecaServiceExclusifComponent,
+    JobApplicationComponent,
+    DemoReservationComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +97,8 @@ import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca
     NgxSpinnerModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

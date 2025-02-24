@@ -1,0 +1,352 @@
+.contact-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f6f9fc 0%, #f1f4f8 100%);
+    padding: 4rem 2rem;
+  }
+  
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info {
+    background: #114D5A;
+    padding: 3rem 2rem;
+    color: white;
+  }
+  
+  .info-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .info-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #f0c300;
+  }
+  
+  .info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .info-item i {
+    color: #f0c300;
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+  
+  .info-item p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .contact-form-container {
+    padding: 3rem;
+  }
+  
+  .form-title {
+    color: #114D5A;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .form-subtitle {
+    color: #114D5A;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+  
+  .modern-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group:nth-last-child(2) {
+    grid-column: 1 / -1;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: transparent;
+  }
+  
+  textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #f0c300;
+    box-shadow: 0 0 0 4px #f0c4009b;
+  }
+  
+  .form-control:focus + label,
+  .form-control:not(:placeholder-shown) + label {
+    transform: translateY(-25px) scale(0.8);
+    color: #114D5A;
+  }
+  
+  .form-group label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #114D5A;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background: white;
+    padding: 0 0.5rem;
+  }
+  
+  .submit-btn {
+    grid-column: 1 / -1;
+    background: #114D5A;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.2);
+  }
+  
+  .submit-btn i {
+    transition: transform 0.3s ease;
+  }
+  
+  .submit-btn:hover i {
+    transform: translateX(5px);
+  }
+  
+  .banner-section2 {
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+  }
+  
+  .banner-section2 img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  @media (max-width: 968px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .modern-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .contact-page {
+      padding: 2rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-form-container {
+      padding: 2rem 1.5rem;
+    }
+    
+    .form-title {
+      font-size: 1.75rem;
+    }
+  }
+  
+  .full-width {
+      grid-column: 1 / -1;
+    }
+
+/* Styles pour la section des modules */
+.modules-section {
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+}
+
+.modules-title {
+  color: #114D5A;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.module-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.module-checkbox:hover {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.module-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #114D5A;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.module-checkbox input[type="checkbox"]:checked {
+  background-color: #114D5A;
+  border-color: #114D5A;
+}
+
+.module-checkbox input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.module-checkbox label {
+  color: #114D5A;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: static;
+  background: transparent;
+  padding: 0;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .modules-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .modules-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Ajout des styles pour les champs pleine largeur */
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Modification des styles existants pour les checkboxes */
+.modules-section {
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+}
+
+/* Styles pour le loader */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #114D5A;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Style pour le bouton pendant le chargement */
+.submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}

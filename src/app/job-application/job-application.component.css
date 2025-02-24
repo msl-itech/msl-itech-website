@@ -80,19 +80,9 @@
   line-height: 1.6;
 }
 
-.modern-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
 .form-group {
   position: relative;
   margin-bottom: 1rem;
-}
-
-.form-group:nth-last-child(2) {
-  grid-column: 1 / -1;
 }
 
 .form-control {
@@ -134,7 +124,7 @@ textarea.form-control {
 }
 
 .submit-btn {
-  grid-column: 1 / -1;
+  width: 100%;
   background: #114D5A;
   color: white;
   border: none;
@@ -148,74 +138,22 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.2);
-}
-
-.submit-btn i {
-  transition: transform 0.3s ease;
-}
-
-.submit-btn:hover i {
-  transform: translateX(5px);
-}
-
-.banner-section2 {
-  position: relative;
-  height: 40vh;
-  overflow: hidden;
-}
-
-.banner-section2 img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-@media (max-width: 968px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-
-  .modern-form {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-page {
-    padding: 2rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-form-container {
-    padding: 2rem 1.5rem;
-  }
-  
-  .form-title {
-    font-size: 1.75rem;
-  }
-}
-
-.full-width {
-    grid-column: 1 / -1;
-  }
-
-.loading-spinner {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.loading-spinner i {
-  font-size: 16px;
+  background: #0d3a44;
 }
 
 .submit-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+
+.loading-spinner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .file-upload-container {
@@ -242,3 +180,39 @@ textarea.form-control {
 .selected-file i:hover {
   color: #c82333;
 }
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.banner-section2 {
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+}
+
+.banner-section2 img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 968px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-title {
+    font-size: 1.75rem;
+  }
+} 

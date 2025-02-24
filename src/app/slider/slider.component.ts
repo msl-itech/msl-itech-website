@@ -24,7 +24,7 @@ export class SliderComponent {
       description: 'Prenez contact avec un de nos experts Odoo dès maintenant pour discuter de vos besoins.',
       buttons: [
         { text: 'Contactez-nous', link: 'contact', color: '#ffcc00', textColor: '#000000' },
-        { text: 'Réserver une démo', link: 'reserve-demo', color: '#114D5A', textColor: '#ffffff' }
+        { text: 'Réserver une démo', link: 'reserver-demo', color: '#114D5A', textColor: '#ffffff' }
       ]
     },
     {

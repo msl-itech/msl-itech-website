@@ -4,11 +4,11 @@ import { OdooService } from '../services/odoo.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-soumettre-besoin',
-  templateUrl: './soumettre-besoin.component.html',
-  styleUrls: ['./soumettre-besoin.component.css']
+  selector: 'app-job-application',
+  templateUrl: './job-application.component.html',
+  styleUrls: ['./job-application.component.css']
 })
-export class SoumettreBesoinComponent implements OnInit {
+export class JobApplicationComponent implements OnInit {
   jobForm: FormGroup;
   selectedFile: File | null = null;
   isLoading: boolean = false;
@@ -21,42 +21,39 @@ export class SoumettreBesoinComponent implements OnInit {
     this.jobForm = this.fb.group({
       name: ['', Validators.required],
       email_from: ['', [Validators.required, Validators.email]],
-      company: [''],
-      subject: ['', Validators.required],
-      date: [''],
+      phone: ['', Validators.required],
+      poste: ['', Validators.required],
+      experience: [''],
+      disponibilite: [''],
       description: ['', Validators.required]
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit(): void {
     if (this.jobForm.valid) {
       this.isLoading = true;
       this.toastr.info('Envoi en cours...', 'Patientez');
       
-      // Préparer la description complète avec tous les champs additionnels
+      // Préparer la description complète
       const additionalInfo = `
-Société: ${this.jobForm.get('company')?.value || 'Non spécifié'}
-Sujet: ${this.jobForm.get('subject')?.value}
-Date souhaitée: ${this.jobForm.get('date')?.value || 'Non spécifiée'}
+Poste souhaité: ${this.jobForm.get('poste')?.value}
+Expérience: ${this.jobForm.get('experience')?.value || 'Non spécifiée'}
+Disponibilité: ${this.jobForm.get('disponibilite')?.value || 'Non spécifiée'}
 
-Description détaillée:
+Lettre de motivation:
 ${this.jobForm.get('description')?.value}
 `;
 
-      // Créer un objet FormData pour envoyer les données et le fichier
       const formData = new FormData();
       
-      // Ajouter les données directement dans le FormData
       formData.append('name', this.jobForm.get('name')?.value);
       formData.append('email_from', this.jobForm.get('email_from')?.value);
-      formData.append('phone', 'false');
+      formData.append('phone', this.jobForm.get('phone')?.value);
       formData.append('stage_id', '6');
       formData.append('description', additionalInfo);
       
-      // Ajouter le fichier s'il existe
       if (this.selectedFile) {
         formData.append('file', this.selectedFile);
       }
@@ -64,7 +61,7 @@ ${this.jobForm.get('description')?.value}
       this.odooService.createLeadWithFile(formData).subscribe({
         next: (response) => {
           this.toastr.clear();
-          this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès', {
+          this.toastr.success('Votre candidature a été envoyée avec succès!', 'Succès', {
             timeOut: 3000,
             progressBar: true
           });
@@ -74,11 +71,11 @@ ${this.jobForm.get('description')?.value}
         },
         error: (error) => {
           this.toastr.clear();
-          this.toastr.error('Une erreur est survenue lors de l\'envoi de la demande.', 'Erreur', {
+          this.toastr.error('Une erreur est survenue lors de l\'envoi de la candidature.', 'Erreur', {
             timeOut: 4000,
             progressBar: true
           });
-          console.error('Erreur lors de la création du lead:', error);
+          console.error('Erreur lors de l\'envoi:', error);
           this.isLoading = false;
         }
       });
@@ -90,7 +87,6 @@ ${this.jobForm.get('description')?.value}
     }
   }
 
-  // Simplification des méthodes liées aux fichiers
   onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
@@ -101,10 +97,9 @@ ${this.jobForm.get('description')?.value}
   removeFile(event: Event): void {
     event.stopPropagation();
     this.selectedFile = null;
-    // Réinitialiser l'input file
     const fileInput = document.getElementById('fileInput') as HTMLInputElement;
     if (fileInput) {
       fileInput.value = '';
     }
   }
-}
+} 

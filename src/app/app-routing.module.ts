@@ -20,6 +20,8 @@ import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { HorecaFormulesComponent } from './horeca-formules/horeca-formules.component';
 import { HorecaSmartAlertComponent } from './horeca-smart-alert/horeca-smart-alert.component';
 import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca-service-exclusif.component';
+import { JobApplicationComponent } from './job-application/job-application.component';
+import { DemoReservationComponent } from './demo-reservation/demo-reservation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -43,6 +45,8 @@ const routes: Routes = [
   { path: 'package-metier/horeca/smartAlert', component: HorecaSmartAlertComponent },
   { path: 'package-metier/horeca/services-exclusifs', component: HorecaServiceExclusifComponent },
   { path: 'package-metier/administratif', component: PackAdministratifComponent },
+  { path: 'careers', component: JobApplicationComponent },
+  { path: 'reserver-demo', component: DemoReservationComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
 ];
 @NgModule({

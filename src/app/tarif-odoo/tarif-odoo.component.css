@@ -265,7 +265,6 @@
   
   /* Section Image & Texte */
   .container {
-    font-family: 'Roboto', sans-serif;
   }
   
   img.rounded-custom {
@@ -576,7 +575,6 @@
     background-color: #f8f9fa;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    font-family: Arial, sans-serif;
     font-size: 1rem;
     color: #333;
     margin-bottom: 10px;
