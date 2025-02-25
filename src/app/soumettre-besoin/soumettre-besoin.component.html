@@ -1,3 +1,120 @@
- <div class="iframe-container">
-    <iframe src="https://msl-itech.odoo.com/besoin" frameborder="0"  style="width: 100%; height: 100; border: none; overflow: auto;" allowfullscreen></iframe>
+<div class="banner-section2 position-relative">
+  <img src="../../assets/img/webp/30.webp" alt="MSL Itech Banner" class="w-100">
+  <div class="overlay-text d-flex align-items-center justify-content-center">
+    <div class="text-center text-white px-3">
+      <h2>Avez vous un besoin?</h2>
+    </div>
   </div>
+</div>
+
+<div class="contact-page">
+  <!-- Section Contact -->
+  <div class="contact-container">
+    <!-- Informations de contact -->
+    <div class="contact-info">
+      <h2 class="info-title">MSL-iTECH</h2>
+      <div class="info-items">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>951 Q.I. AL MASSAR N° 2, ROUTE DE SAFI, MAROC</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+         <p>+32 2 886 05 49 <br> +1 204 650 0765</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>info&#64;msl-itech.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="contact-form-container">
+      <h2 class="form-title">Soumettre un besoin</h2>
+      <p class="form-subtitle">Merci de remplir le formulaire ci-dessous. Nous vous contacterons dans les plus brefs délais.</p>
+      
+      <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" 
+                 id="name" 
+                 formControlName="name" 
+                 class="form-control" 
+                 required>
+          <label for="name">Votre nom *</label>
+          <small class="text-danger" *ngIf="jobForm.get('name')?.invalid && jobForm.get('name')?.touched">
+            Ce champ est requis
+          </small>
+        </div>
+
+        <div class="form-group">
+          <input type="email" 
+                 id="email" 
+                 formControlName="email_from" 
+                 class="form-control" 
+                 required>
+          <label for="email">Votre e-mail *</label>
+          <small class="text-danger" *ngIf="jobForm.get('email_from')?.invalid && jobForm.get('email_from')?.touched">
+            <span *ngIf="jobForm.get('email_from')?.errors?.['required']">Ce champ est requis</span>
+            <span *ngIf="jobForm.get('email_from')?.errors?.['email']">Veuillez entrer une adresse email valide</span>
+          </small>
+        </div>
+
+        <div class="form-group">
+          <input type="text" 
+                 id="company" 
+                 formControlName="company" 
+                 class="form-control">
+          <label for="company">Votre société</label>
+        </div>
+
+        <div class="form-group full-width">
+          <input type="text" 
+                 id="subject" 
+                 formControlName="subject" 
+                 class="form-control" 
+                 required>
+          <label for="subject">Sujet *</label>
+          <small class="text-danger" *ngIf="jobForm.get('subject')?.invalid && jobForm.get('subject')?.touched">
+            Ce champ est requis
+          </small>
+        </div>
+
+        <div class="form-group">
+          <div class="file-upload-container">
+            <input type="file" 
+                   #fileInput
+                   id="fileInput" 
+                   (change)="onFileChange($event)" 
+                   class="form-control">
+            <label for="fileInput">Joindre un fichier</label>
+            <div *ngIf="selectedFile" class="selected-file">
+              <span>{{ selectedFile.name }}</span>
+              <i class="fas fa-times" (click)="removeFile($event)"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <textarea id="description" 
+                    formControlName="description" 
+                    class="form-control" 
+                    rows="4" 
+                    required></textarea>
+          <label for="description">Description détaillée *</label>
+          <small class="text-danger" *ngIf="jobForm.get('description')?.invalid && jobForm.get('description')?.touched">
+            Ce champ est requis
+          </small>
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="jobForm.invalid || isLoading">
+          <span *ngIf="!isLoading">Soumettre</span>
+          <span *ngIf="isLoading" class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            Envoi en cours...
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

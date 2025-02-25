@@ -1,0 +1,265 @@
+.pack-selection-page {
+  background-color: #f8f9fa;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  color: white;
+  padding: 4rem 0;
+}
+
+.form-section {
+  margin-top: -3rem;
+}
+
+.card {
+  border: none;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.progress-bar {
+  transition: width 0.3s ease;
+}
+
+.option-card {
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.option-card:hover {
+  border-color: #114D5A;
+  transform: translateY(-2px);
+}
+
+.option-input {
+  display: none;
+}
+
+.option-input:checked + .option-label {
+  border-color: #114D5A;
+  background-color: rgba(17, 77, 90, 0.05);
+}
+
+.feature-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+.form-control-lg {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+}
+
+.form-check-input:checked {
+  background-color: #114D5A;
+  border-color: #114D5A;
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.shadow-xl {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+}
+
+.badge.rounded-circle {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  line-height: 24px;
+  text-align: center;
+}
+
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transition-hover {
+  transition: all 0.3s ease;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+}
+
+.option-input {
+  display: none;
+}
+
+.option-input:checked + .option-label {
+  border-color: var(--bs-primary) !important;
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+.btn-check:checked + .btn-outline-primary {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.08);
+}
+
+.form-title {
+  color: #114D5A;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.form-subtitle {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.modern-form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #114D5A;
+  box-shadow: 0 0 0 0.2rem rgba(17, 77, 90, 0.25);
+}
+
+label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 0.5rem;
+  color: #6c757d;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.875rem;
+  color: #114D5A;
+}
+
+textarea + label {
+  top: 1rem;
+  transform: none;
+}
+
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+  top: -0.5rem;
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+  background: #114D5A;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #0d3a44;
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .modern-form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .contact-form-container {
+    padding: 3rem;
+  }
+}
+
+.banner-section2 {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-section2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+} 

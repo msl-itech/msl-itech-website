@@ -1,10 +1,9 @@
-
 <section class="hero-section">
     <div class="hero-image">
         <div class="overlay"></div>
         <div class="hero-content">
-            <h1>Un Besoin, Une Application: <br>Transformez Vos Idées en Réalité avec <span>MSL-ITECH</span></h1>
-            <a href="#" class="btn-yellow">Passer un rendez-vous</a>
+            <h1>Solutions Odoo sur Mesure pour Votre Entreprise</h1>
+            <a href="/contact" class="btn-yellow">FAITES-NOUS CONFIANCE</a>
         </div>
     </div>
 </section>
@@ -12,11 +11,8 @@
 <section class="apps-section">
     <div class="container2">
         <div class="text-content">
-            <h2>Nous vous Installons des applications <span>Odoo</span></h2>
-            <p>Chez MSL-ITECH, nous transformons vos idées en projets concrets grâce à notre expertise et à la flexibilité d’Odoo.
-                Nous analysons vos besoins et personnalisons des solutions adaptées à vos attentes.
-                Chaque module est conçu pour optimiser vos opérations et garantir des résultats efficaces.
-            </p>
+            <h3>Nous vous Installons des applications Odoo</h3>
+            <p>Chez MSL-ITECH, nous transformons vos besoins en solutions concrètes grâce à l'expertise d'Odoo. Chaque application est conçue sur mesure pour optimiser vos opérations et délivrer des résultats tangibles et stratégiques. </p>
         </div>
         <div>
             <div class="apps-grid">
@@ -95,4 +91,244 @@
     </div>
 
 </section>
-<app-feature></app-feature>
+
+<section class="expertise-section">
+    <div class="container">
+        <div class="expertise-header">
+            <h2>Une expertise multiculturelle et technique au service de vos projets</h2>
+            <p class="lead-text">
+                Chez MSL-ITECH, nous mettons à votre disposition l'outil puissant et polyvalent d'Odoo, combiné à notre savoir-faire technique 
+                et à notre approche globale. Nous vous accompagnons pour optimiser vos processus, booster votre productivité et accélérer votre croissance.
+            </p>
+        </div>
+
+        <div class="engagement-section">
+            <h3 class="engagement-title">Notre engagement ?</h3>
+            <div class="engagement-cards">
+                <div class="engagement-card">
+                    <div class="card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Professionnalisme</h4>
+                    <p>Des solutions Odoo sur mesure, adaptées à vos besoins métiers.</p>
+                </div>
+                <div class="engagement-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Efficacité</h4>
+                    <p>Une intégration fluide et un support réactif pour maximiser votre retour sur investissement.</p>
+                </div>
+                <div class="engagement-card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>Une expertise multiculturelle et technologique pour des projets qui repoussent les limites.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="closing-statement">
+            <p>Avec MSL-ITECH et Odoo, transformez vos défis en opportunités.</p>
+            <p class="tagline">Parce que chaque entreprise mérite une solution ERP qui évolue avec elle.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+.expertise-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7f9 100%);
+    color: #114D5A;
+    position: relative;
+    overflow: hidden;
+}
+
+.expertise-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 193, 7, 0.2);
+    border-radius: 50%;
+    transform: translate(150px, -150px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.expertise-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.expertise-header h2 {
+    font-size: 2.8rem;
+    color: #114D5A;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lead-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.engagement-section {
+    margin: 80px 0;
+}
+
+.engagement-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #114D5A;
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+.engagement-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.engagement-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid #e1e8ed;
+}
+
+.engagement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: #ffc107;
+}
+
+.card-icon {
+    width: 90px;
+    height: 90px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    border: 2px solid #ffc107;
+    transition: all 0.3s ease;
+}
+
+.engagement-card:hover .card-icon {
+    background: #ffc107;
+}
+
+.card-icon i {
+    font-size: 35px;
+    color: #114D5A;
+    transition: all 0.3s ease;
+}
+
+.engagement-card:hover .card-icon i {
+    color: white;
+}
+
+.engagement-card h4 {
+    color: #114D5A;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.engagement-card p {
+    color: #2c3e50;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.closing-statement {
+    text-align: center;
+    margin-top: 80px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    border: 2px solid #ffc107;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.closing-statement p {
+    font-size: 1.6rem;
+    color: #114D5A;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tagline {
+    font-style: italic;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .expertise-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .engagement-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .closing-statement p {
+        font-size: 1.3rem;
+    }
+    
+    .expertise-section {
+        padding: 60px 0;
+    }
+    
+    .card-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.expertise-header, .engagement-card, .closing-statement {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.engagement-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.engagement-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+</style>

@@ -1,46 +1,369 @@
 <style>
-    .scrollable-container {
-      width: 100%; /* Prend toute la largeur disponible */
-      height: 100vh; /* Adapte à la hauteur de l'écran */
-      overflow-x: auto; /* Active le scroll horizontal si nécessaire */
-      overflow-y: auto; /* Active le scroll vertical si nécessaire */
-      display: block;
-      background-color: #f8f9fa; /* Fond optionnel */
-      padding: 16px;
-      position: relative;
-    }
-    
-    .scrollable-container img {
-      width: 900px; /* Taille par défaut pour mobile */
-      height: auto; /* Conserve le ratio de l'image */
-      display: block;
-      position: absolute; /* Positionnement absolu pour centrer */
-    top: 50%; /* Aligne au centre verticalement */
-    left: 50%; /* Aligne au centre horizontalement */
-    transform: translate(-50%, -50%);
-    }
-    
-    @media (min-width: 768px) {
-     
-      .scrollable-container img {
-        width: 900px; /* Taille pour tablette */
-        height: auto;
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .scrollable-container img {
-        width: 1200px; /* Taille pour desktop */
-        height: auto;
-      }
-    }
-    
-    
-      </style>
-      
-      <div class="text-center">
-        <h1>Tableau comparatif</h1>
+ .comparison-table {
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            background: white;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .highlight-column {
+            background-color: rgba(17, 77, 90, 0.02);
+            position: relative;
+        }
+
+        .highlight-column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-left: 2px solid rgba(255, 213, 79, 0.5);
+            border-right: 2px solid rgba(255, 213, 79, 0.5);
+        }
+
+        .table-header {
+            padding: 2rem 1rem !important;
+            background-color: #114D5A;
+            color: white;
+            border: none !important;
+            text-align: center;
+            position: relative;
+        }
+
+        .table-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 213, 79, 0.3);
+        }
+
+        .highlight-header {
+            background-color: #0d3f4a;
+        }
+
+        .pack-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .pack-hours {
+            color: #ffd54f;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: rgba(255, 213, 79, 0.1);
+        }
+
+        .module-header {
+            background-color: #f8f9fa;
+            color: #114D5A;
+            font-weight: 700;
+            text-align: left;
+            padding: 1.5rem !important;
+            font-size: 1.2rem;
+            border: none !important;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Nouvelle classe pour la séparation entre les modules */
+        tr:first-child td[rowspan] {
+            border-top: 2px solid #e0e0e0 !important;
+        }
+
+        /* Amélioration de la séparation entre les sections */
+        tbody tr:last-child td {
+            border-bottom: 2px solid #e0e0e0 !important;
+        }
+
+        /* Ajout d'une légère ombre pour la séparation */
+        .module-header::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Modification du style des cellules pour une meilleure séparation */
+        td {
+            padding: 1rem !important;
+            border: none !important;
+            border-bottom: 1px solid #eee !important;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .time-badge {
+            background-color: #f8f9fa;
+            color: #114D5A;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 60px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-badge {
+            background-color: #ffd54f;
+            color: #114D5A;
+            font-weight: 700;
+        }
+
+        .empty-cell {
+            color: #95a5a6;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(17, 77, 90, 0.02);
+            transition: background-color 0.2s ease;
+        }
+
+        .feature-name {
+            font-weight: 500;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+            padding: 0.8rem;
+            border-radius: 8px;
+        }
+
+        .feature-name:hover {
+            background-color: rgba(17, 77, 90, 0.05);
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                margin: 20px;
+                border-radius: 12px;
+            }
+            
+            .pack-title {
+                font-size: 1.2rem;
+            }
+            
+            .pack-hours {
+                font-size: 1rem;
+            }
+
+            .pack-actions {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .action-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Ajout des lignes de séparation pour les modules */
+        .module-section {
+            border-top: 2px solid #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        /* Espacement entre les sections */
+        .module-section + .module-section {
+            border-top: none;
+        }
+
+        /* Style pour les boutons d'action */
+        .pack-actions {
+            display: grid;
+            grid-template-columns: 15% 30% 10% 30% 10%;
+            padding: 2rem 0;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-performance-wrapper {
+            grid-column: 2;
+            text-align: center;
+        }
+
+        .btn-reussite-wrapper {
+            grid-column: 4;
+            text-align: center;
+        }
+
+        .action-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+        }
+
+        .btn-performance {
+            background-color: #114D5A;
+            color: white;
+            border: 2px solid #114D5A;
+        }
+
+        .btn-performance:hover {
+            background-color: white;
+            color: #114D5A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(17, 77, 90, 0.2);
+        }
+
+        .btn-reussite {
+            background-color: #ffd54f;
+            color: #114D5A;
+            border: 2px solid #ffd54f;
+        }
+
+        .btn-reussite:hover {
+            background-color: white;
+            color: #114D5A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 213, 79, 0.4);
+        }
+</style>
+
+<div class="comparison-table">
+  <table class="table table-responsive">
+      <thead>
+          <tr>
+              <th class="table-header" style="width: 15%">Modules</th>
+              <th class="table-header" style="width: 30%">
+                  <div class="pack-title">Pack Performance</div>
+                  <div class="pack-hours">10 heures</div>
+              </th>
+              <th class="table-header" style="width: 10%">Temps</th>
+              <th class="table-header highlight-header highlight-column" style="width: 30%">
+                  <div class="pack-title">Pack Réussite</div>
+                  <div class="pack-hours">25 heures</div>
+              </th>
+              <th class="table-header highlight-header" style="width: 10%">Temps</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- CRM Section -->
+          <tr class="module-section">
+              <td class="module-header" rowspan="3">CRM</td>
+              <td class="feature-name">Configuration des étapes du pipeline de vente</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Configuration des étapes du pipeline de vente</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Définition des types d'activités</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Définition des types d'activités</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Paramétrage des notifications</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Paramétrage des notifications</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+
+          <!-- Ventes Section -->
+          <tr class="module-section">
+              <td class="module-header" rowspan="2">Ventes</td>
+              <td class="feature-name">Configuration des produits et prix</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Configuration des produits et prix</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="empty-cell">Non inclus</td>
+              <td class="text-center">-</td>
+              <td class="feature-name highlight-column">Création 10 modèles de devis</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+
+          <!-- Facturation Section -->
+          <tr class="module-section">
+              <td class="module-header" rowspan="3">Facturation</td>
+              <td class="feature-name">Paramétrage des taxes et devises</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Paramétrage des taxes et devises</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Création des modèles de factures</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Création des modèles de factures</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Configuration des relances</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Configuration des relances</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+
+          <!-- Supports Section -->
+          <tr class="module-section">
+              <td class="module-header" rowspan="4">Supports</td>
+              <td class="feature-name">Importation des données</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Préparation et importation des données</td>
+              <td class="text-center"><span class="time-badge highlight-badge">3h</span></td>
+          </tr>
+          <tr>
+              <td class="feature-name">Support premier jour</td>
+              <td class="text-center"><span class="time-badge">1h</span></td>
+              <td class="feature-name highlight-column">Support premier jour</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="empty-cell">Non inclus</td>
+              <td class="text-center">-</td>
+              <td class="feature-name highlight-column">Formation et documentation</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+          <tr>
+              <td class="empty-cell">Non inclus</td>
+              <td class="text-center">-</td>
+              <td class="feature-name highlight-column">Réunion de revue de projet</td>
+              <td class="text-center"><span class="time-badge highlight-badge">2h</span></td>
+          </tr>
+      </tbody>
+  </table>
+  
+  <div class="pack-actions">
+      <div class="btn-performance-wrapper">
+          <a href="/contact?pack=performance" class="action-btn btn-performance">
+              Choisir Pack Performance
+          </a>
       </div>
-      <div class="scrollable-container">
-        <img src="../../assets/img/accueil/Group 39548.png" alt="Tableau des packs commerciaux">
+      <div class="btn-reussite-wrapper">
+          <a href="/contact?pack=reussite" class="action-btn btn-reussite">
+              Choisir Pack Réussite
+          </a>
       </div>
+  </div>
+</div>

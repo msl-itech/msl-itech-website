@@ -41,11 +41,11 @@ export class HeaderComponent {
     this.activeDropdown = null;
   }
 
-  toggleDropdown(menu: string) {
-    if (this.activeDropdown === menu) {
-      this.activeDropdown = null; // Fermer si déjà ouvert
+  toggleDropdown(dropdownName: string) {
+    if (this.activeDropdown === dropdownName) {
+      this.activeDropdown = null;
     } else {
-      this.activeDropdown = menu; // Ouvrir le nouveau sous-menu et fermer les autres
+      this.activeDropdown = dropdownName;
     }
   }
 

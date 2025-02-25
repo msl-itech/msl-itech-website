@@ -1,0 +1,65 @@
+.container2--text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.team-card {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.team-card ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.team-card li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.team-card li:before {
+  content: "•";
+  color: #FAC83B;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.ceo-message {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+}
+
+.ceo-message ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.ceo-message li {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.call-to-action {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #FAC83B;
+  border-radius: 8px;
+  color: #333;
+}
+
+.call-to-action h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+} 

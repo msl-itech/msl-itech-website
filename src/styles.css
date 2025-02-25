@@ -1,18 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/aos/dist/aos.css';
+:root {
+  --font-size-small: 0.875rem; /* Taille pour le texte secondaire */
+  --font-size-base: 1rem; /* Taille standard */
+  --font-size-large: 1.25rem; /* Pour les titres */
+  --font-size-xlarge: 2rem; /* Titres principaux */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  font-size: 16px; /* Taille de base standard */
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    height: 100%;
-  }
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-size: 1rem; /* Utilisez des unités relatives */
+  line-height: 1.6; /* Pour améliorer la lisibilité */
+  height: 100%;
+}
+
+h1 {
+  font-size: var(--font-size-xlarge);
+}
+
+h2 {
+  font-size: var(--font-size-large);
+}
+
+p {
+  font-size: var(--font-size-base);
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+
   
   .banner-section {
     position: relative;

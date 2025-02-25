@@ -1,0 +1,176 @@
+<style>
+ .bg-dark-teal {
+      background-color: #114D5A;
+    }
+    .text-gold {
+      color: #ffc107;
+    }
+    .btn-gold {
+      background-color: #ffc107;
+      color: #333;
+      border: none;
+    }
+    .btn-gold:hover {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    .feature-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .feature-list li {
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .feature-icon {
+      color: #ffc107;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .package-card {
+      border-radius: 0.5rem;
+      padding: 1.75rem 1.25rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .badge-populaire {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #ffc107;
+      color: #000;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 0.25rem;
+    }
+
+    .package-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .package-subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .package-feature-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Carte blanche plus grande et avec une ombre */
+    .package-card-white {
+      background-color: #ffffff;
+      color: #000;
+      position: relative;
+      min-height: 650px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Animation du bouton toutes les 5s (effet pulse) */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .animate-btn {
+      animation: pulse 5s infinite;
+    }
+   
+    .package-card-yellow-border {
+  border: 2px solid #ffc107; /* Bordure jaune */
+}
+
+/* Ajout du style pour centrer les boutons */
+.btn-center {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+  </style>
+<div class="container py-5" style="max-width: 1200px; margin: 0 auto;">
+    <div class="row package-container g-2 align-items-center justify-content-center">
+      <!-- Package Administratif -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="package-card bg-dark-teal text-light">
+          <div>
+            <div class="package-title">Package Administratif</div>
+            <div class="package-subtitle">
+              Centralisez et automatisez vos tâches administratives pour gagner en productivité
+            </div>
+            <a routerLink="/package-metier/administratif" class="btn btn-gold mb-4 btn-center">Voir plus en détails</a>
+            <div class="package-feature-title">Fonctionnalités incluses :</div>
+            <ul class="feature-list">
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Gestion des documents</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Automatisation des workflows</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Gestion des congés et absences</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Gestion des notes de frais</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Gestion de la paie</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Webhook Secret</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Package Commerciale (carte blanche plus grande, ombre, et animation sur le bouton) -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="package-card package-card-white text-dark position-relative package-card-yellow-border">
+          <div class="badge-populaire">Populaire</div>
+          <div>
+            <div class="package-title mt-3">Package Commercial</div>
+            <div class="package-subtitle">
+              Améliorez votre gestion commerciale avec les outils performants pour optimiser vos ventes, vos clients et vos campagnes.
+            </div>
+            <a routerLink="/package-metier/performance" class="btn btn-gold mb-4 animate-btn btn-center">Voir plus en détails</a>
+            <div class="package-feature-title">Fonctionnalités incluses :</div>
+            <ul class="feature-list">
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Suivi efficace des opportunités et prospects.</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Automatisations des ventes</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Optimisation des relances clients</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Reporting avancé</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Package Heroca -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="package-card bg-dark-teal text-light">
+          <div>
+            <div class="package-title">Package Horeca</div>
+            <div class="package-subtitle">
+              Profitez d'une solution complète pour vos besoins en hébergement, gestion de la sécurité et maintenance des plateformes.
+            </div>
+            <a routerLink="/package-metier/horeca" class="btn btn-gold mb-4 btn-center">Voir plus en détails</a>
+            <div class="package-feature-title">Fonctionnalités incluses :</div>
+            <ul class="feature-list">
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Segmentation avancée pour vos utilisateurs.</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Optimisation des performances</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Historique détaillé des activités.</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> Gestion des rôles et permissions.</li>
+              <li><span class="feature-icon"><i class="fas fa-check"></i></span> 500 GB Traffic/month</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

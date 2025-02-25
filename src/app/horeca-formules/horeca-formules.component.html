@@ -1,0 +1,615 @@
+<style>
+  /* Ajout des styles pour améliorer la lisibilité */
+  p {
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+  }
+
+  h2, h3, h4, h5 {
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  .lead {
+    line-height: 1.8;
+    letter-spacing: 0.4px;
+  }
+
+  .pack-features ul li {
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-desc {
+    margin-top: 0.5rem;
+  }
+
+  .pack-content {
+    padding: 2rem !important;
+  }
+
+  .accordion-body {
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    padding: 1.5rem;
+  }
+
+  /* Ajout des styles pour l'alignement des boutons */
+  .pack-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pack-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pack-features {
+    flex: 1;
+  }
+
+  .pack-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+
+  /* Style pour les boutons des packs */
+  .pack-footer .btn {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .pack-footer .btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid #114D5A;
+    color: #114D5A;
+  }
+
+  .pack-footer .btn-outline-primary:hover {
+    background-color: #114D5A;
+    color: white;
+  }
+
+  .pack-footer .btn-primary {
+    background-color: #114D5A;
+    border: 2px solid #114D5A;
+  }
+
+  .pack-footer .btn-primary:hover {
+    background-color: #0f677a;
+    border-color: #10768d;
+  }
+</style>
+
+<!-- Hero Section -->
+
+<div class="banner-section position-relative">
+    <img src="../../assets/img/horeca/1.webp" alt="MSL Itech Banner" class="w-100">
+    <div class="overlay-text d-flex align-items-center justify-content-center">
+      <div class="text-center text-white px-3 fade-in">
+        <h2 class="fw-bold">Transformez votre établissement avec nos packs sur mesure !</h2>
+        <p class="lead">Des solutions intelligentes pour chaque taille d'établissement, conçues pour simplifier votre quotidien et booster vos résultats.</p>
+      </div>
+    </div>
+  </div>
+
+<!-- Avantages Section -->
+<section class="advantages-section py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="badge badge-primary mb-3">Nos Avantages</span>
+      <h2 class="fw-bold">Pourquoi choisir nos solutions ?</h2>
+      <div class="separator"></div>
+      <p class="lead text-muted">Des fonctionnalités pensées pour votre réussite</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
+          <i class="fas fa-chart-line mb-3 fa-2x"></i>
+          <h3 class="h5 mb-3">Une solution scalable</h3>
+          <p class="mb-0">Des outils adaptés aux petits établissements, restaurants moyens et grands restaurants, pour une gestion optimale à chaque étape de croissance.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
+          <i class="fas fa-hands-helping mb-3 fa-2x"></i>
+          <h3 class="h5 mb-3">Engagement flexible</h3>
+          <p class="mb-0">Contrats de 12 mois avec préavis de 3 mois, conçus pour s'adapter à vos besoins et à votre rythme.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
+          <i class="fas fa-headset mb-3 fa-2x"></i>
+          <h3 class="h5 mb-3">Support technique intégré</h3>
+          <p class="mb-0">Accompagnement personnalisé avec un Help Desk gratuit (1 à 3 mois selon le pack) pour une intégration rapide et sans tracas.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
+          <i class="fas fa-arrow-up mb-3 fa-2x"></i>
+          <h3 class="h5 mb-3">Évolutivité transparente</h3>
+          <p class="mb-0">Passez d'un pack à l'autre sans perdre vos données ni vos fonctionnalités, pour une croissance continue et sans friction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Packs Section -->
+<section class="packs-section py-5 bg-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="badge badge-primary mb-3">Nos Solutions</span>
+      <h2 class="fw-bold">Choisissez le pack qui vous correspond</h2>
+      <div class="separator"></div>
+      <p class="lead text-muted">Des solutions adaptées à chaque étape de votre croissance</p>
+    </div>
+    
+    <div class="row g-4 justify-content-center">
+      <!-- Pack Essentiel -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pack-card h-100 bg-white rounded-xl shadow-hover p-0">
+          <div class="pack-header text-center p-4 bg-light-blue">
+            <div class="icon-wrapper mb-4">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3 class="h4 mb-2">Pack Essentiel</h3>
+            <div class="target-audience">
+              <span class="users-badge">1-3 utilisateurs</span>
+              <p class="mt-2">Petits établissements</p>
+            </div>
+          </div>
+          <div class="pack-content p-4">
+            <div class="features-title mb-3">Fonctionnalités :</div>
+            <div class="pack-features">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-check-circle me-2"></i>
+                  <div>
+                    <strong>Gestion des tables et commandes</strong>
+                    <p class="feature-desc">Organisez vos tables, suivez les commandes en temps réel et gérez les paiements facilement</p>
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle me-2"></i>
+                  <div>
+                    <strong>Help Desk gratuit</strong>
+                    <p class="feature-desc">Support technique dédié pendant 1 mois pour une prise en main rapide</p>
+                  </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle me-2"></i>
+                  <div>
+                    <strong>Engagement flexible</strong>
+                    <p class="feature-desc">Contrat de 12 mois avec reconduction tacite et préavis de 3 mois</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="pack-footer text-center mt-4">
+              <button class="btn btn-outline-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
+              <p class="pack-benefit mt-3">Idéal pour les petits établissements qui veulent simplifier leur gestion sans se ruiner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pack Premium (au milieu) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pack-card premium h-100 bg-white rounded-xl shadow-hover p-0 scale-up">
+          <div class="popular-badge">Recommandé</div>
+          <div class="pack-header text-center p-4 bg-premium">
+            <div class="icon-wrapper mb-4">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3 class="h4 mb-2">Pack Premium</h3>
+            <div class="target-audience">
+              <span class="users-badge">8-15 utilisateurs</span>
+              <p class="mt-2">Grands restaurants</p>
+            </div>
+          </div>
+          <div class="pack-content p-4">
+            <div class="features-title mb-3">Fonctionnalités :</div>
+            <div class="pack-features">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-star me-2"></i>
+                  <div>
+                    <strong>Toutes les fonctionnalités</strong>
+                    <p class="feature-desc">Inclut toutes les fonctionnalités des packs Essentiel et Performance</p>
+                  </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle me-2"></i>
+                  <div>
+                    <strong>Réservation en ligne</strong>
+                    <p class="feature-desc">Permettez à vos clients de réserver directement via votre site ou application</p>
+                  </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle me-2"></i>
+                  <div>
+                    <strong>Help Desk Premium</strong>
+                    <p class="feature-desc">3 mois de support technique offerts</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="pack-footer text-center mt-4">
+              <button class="btn btn-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
+              <p class="pack-benefit mt-3">La solution ultime pour les grands restaurants qui veulent offrir une expérience client premium</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pack Performance -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pack-card h-100 bg-white rounded-xl shadow-hover p-0">
+          <div class="pack-header text-center p-4 bg-light-blue">
+            <div class="icon-wrapper mb-4">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="h4 mb-2">Pack Performance</h3>
+            <div class="target-audience">
+              <span class="users-badge">4-7 utilisateurs</span>
+              <p class="mt-2">Établissements moyens</p>
+            </div>
+          </div>
+          <div class="pack-content p-4">
+            <div class="features-title mb-3">Fonctionnalités :</div>
+            <div class="pack-features">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-check-circle me-2"></i>
+                  <div>
+                    <strong>Pack Essentiel inclus</strong>
+                    <p class="feature-desc">Toutes les fonctionnalités du pack Essentiel</p>
+                  </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle me-2"></i>
+                  <div>
+                    <strong>Gestion des stocks</strong>
+                    <p class="feature-desc">Suivez vos stocks en temps réel, recevez des alertes de rupture et optimisez vos commandes</p>
+                  </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle me-2"></i>
+                  <div>
+                    <strong>Help Desk étendu</strong>
+                    <p class="feature-desc">2 mois de support technique offerts</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="pack-footer text-center mt-4">
+              <button class="btn btn-outline-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
+              <p class="pack-benefit mt-3">Parfait pour les établissements en croissance qui veulent gagner en efficacité</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="cta-main text-center mb-5">
+          <div class="section-header text-white">
+            <span class="badge badge-warning mb-3">Démarrez maintenant</span>
+            <h2 class="fw-bold mb-4">Prêt à transformer votre établissement ?</h2>
+            <p class="lead text-white-50 mb-4">Découvrez comment nos solutions peuvent optimiser votre gestion</p>
+            <button class="btn btn-warning btn-lg px-5" routerLink="/reservation-horeca">
+              <i class="fas fa-calendar-check me-2"></i>Réservez votre démo gratuite
+            </button>
+          </div>
+        </div>
+
+        <div class="recommendation-card bg-white rounded-xl p-0 shadow-lg overflow-hidden">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-5">
+              <div class="recommendation-image">
+                <img src="../../assets/img/newImage/12.webp" alt="Besoin d'aide" class="img-fluid">
+                <div class="image-overlay d-flex align-items-center justify-content-center">
+                  <h3 class="h4 text-white mb-0">Besoin d'aide ?</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="p-4 p-lg-5">
+                <h4 class="h5 mb-3">Vous ne savez pas quel pack choisir ?</h4>
+                <p class="text-muted mb-4">Remplissez le formulaire et nous vous recommandons la solution idéale pour votre établissement !</p>
+                <button class="btn btn-primary btn-lg" routerLink="/pack-selection">
+                  <i class="fas fa-clipboard-list me-2"></i>Commencer l'évaluation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Réservation -->
+<div class="modal fade" id="reservationModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-xl">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title">Réservez votre démo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form class="needs-validation" novalidate>
+          <div class="row g-4">
+            <!-- Informations de base -->
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label class="form-label">Nom de l'établissement *</label>
+                <input type="text" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label class="form-label">Nom du responsable *</label>
+                <input type="text" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label class="form-label">Adresse email *</label>
+                <input type="email" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label class="form-label">Téléphone *</label>
+                <input type="tel" class="form-control" required>
+              </div>
+            </div>
+
+            <!-- Format de la démo -->
+            <div class="col-12">
+              <label class="form-label d-block mb-3">Format de la démo *</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="demoFormat" id="online" value="online" required>
+                <label class="form-check-label" for="online">En ligne</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="demoFormat" id="onsite" value="onsite">
+                <label class="form-check-label" for="onsite">Sur place</label>
+              </div>
+            </div>
+
+            <!-- Lieu (affiché uniquement si "Sur place" est sélectionné) -->
+            <div class="col-12 location-details" style="display: none;">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Pays *</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Ville *</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="form-label">Adresse de l'établissement *</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 text-center mt-4">
+              <button type="submit" class="btn btn-primary btn-lg px-5">
+                <i class="fas fa-calendar-check me-2"></i>Voir les créneaux disponibles
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Formulaire de Sélection de Pack -->
+<div class="modal fade" id="recommendationModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-xl">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title">Sélection de votre pack</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form class="needs-validation" novalidate>
+          <!-- 1. Informations de Base -->
+          <div class="section mb-4">
+            <h6 class="section-title mb-3">1. Informations de Base</h6>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Nom de l'établissement *</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Nom du responsable *</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Adresse email *</label>
+                <input type="email" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Téléphone *</label>
+                <input type="tel" class="form-control" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Taille de l'établissement -->
+          <div class="section mb-4">
+            <h6 class="section-title mb-3">2. Taille de l'établissement</h6>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="userCount" id="users1" value="essential">
+              <label class="form-check-label" for="users1">1-3 utilisateurs (Pack Essentiel)</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="userCount" id="users2" value="performance">
+              <label class="form-check-label" for="users2">4-7 utilisateurs (Pack Performance)</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="userCount" id="users3" value="premium">
+              <label class="form-check-label" for="users3">8-15 utilisateurs (Pack Premium)</label>
+            </div>
+          </div>
+
+          <!-- 3. Fonctionnalités Requises -->
+          <div class="section mb-4">
+            <h6 class="section-title mb-3">3. Fonctionnalités Requises</h6>
+            <div class="mb-3">
+              <label class="form-label d-block">Gestion des tables et commandes</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tableManagement" id="tableYes" value="yes">
+                <label class="form-check-label" for="tableYes">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tableManagement" id="tableNo" value="no">
+                <label class="form-check-label" for="tableNo">Non</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label d-block">Gestion des stocks</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="stockManagement" id="stockYes" value="yes">
+                <label class="form-check-label" for="stockYes">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="stockManagement" id="stockNo" value="no">
+                <label class="form-check-label" for="stockNo">Non</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label d-block">Réservation en ligne</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="onlineBooking" id="bookingYes" value="yes">
+                <label class="form-check-label" for="bookingYes">Oui</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Commentaires -->
+          <div class="section mb-4">
+            <h6 class="section-title mb-3">4. Commentaires ou Besoins Spécifiques</h6>
+            <textarea class="form-control" rows="4" placeholder="Décrivez vos besoins spécifiques..."></textarea>
+          </div>
+
+          <!-- 5. Options de Contact -->
+          <div class="section mb-4">
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="moreInfo">
+              <label class="form-check-label" for="moreInfo">
+                Je souhaite recevoir plus d'informations sur les packs
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="contact">
+              <label class="form-check-label" for="contact">
+                Je souhaite être contacté par un représentant pour discuter de mes besoins
+              </label>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg px-5">
+              <i class="fas fa-paper-plane me-2"></i>Soumettre
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="badge badge-primary mb-3">FAQ</span>
+      <h2 class="fw-bold">Tout ce que vous devez savoir</h2>
+      <div class="separator"></div>
+    </div>
+    
+    <div class="row align-items-center">
+      <!-- Image à gauche -->
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="faq-image-container">
+          <img src="../../assets/img/newImage/10.webp" alt="FAQ" class="img-fluid rounded-xl shadow-lg">
+          
+        </div>
+      </div>
+
+      <!-- Accordéon à droite -->
+      <div class="col-lg-7">
+        <div class="accordion custom-accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Puis-je changer de pack plus tard si mon établissement grandit ?
+                <i class="fas fa-chevron-down ms-auto"></i>
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Absolument ! Nos packs sont conçus pour évoluer avec vous. Vous pouvez passer d'un pack à un autre à tout moment, sans perdre vos données ni vos fonctionnalités. Notre équipe vous accompagne pour une transition fluide et sans interruption.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Les packs incluent-ils des mises à jour et des nouvelles fonctionnalités ?
+                <i class="fas fa-chevron-down ms-auto"></i>
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Oui, tous nos packs incluent des mises à jour régulières et l'accès aux nouvelles fonctionnalités. Nous améliorons constamment nos solutions pour répondre aux besoins changeants du marché et vous offrir une expérience toujours plus performante.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Puis-je essayer un pack avant de m'engager ?
+                <i class="fas fa-chevron-down ms-auto"></i>
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Nous proposons une démonstration gratuite pour vous permettre de découvrir nos packs et leurs fonctionnalités. Réservez votre démo en ligne ou sur place, et notre équipe vous guidera pour trouver la solution idéale.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

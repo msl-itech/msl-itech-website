@@ -265,7 +265,6 @@
   
   /* Section Image & Texte */
   .container {
-    font-family: 'Roboto', sans-serif;
   }
   
   img.rounded-custom {
@@ -475,23 +474,24 @@
   }
   
   .bg-warning-subtle {
-    background-color: #114D5A !important;
+    background-color: #17a2b8 !important;
+    /* color: #17a2b8; */
   }
   
   .bg-primary-subtle {
-    background-color: #11185a !important;
+    background-color: #17b817 !important;
   }
   
   .bg-danger-subtle {
-    background-color: #5a111d !important;
+    background-color: #d27126 !important;
   }
   
   .bg-success-subtle {
-    background-color: rgb(78, 25, 135) !important;
+    background-color: #b81717 !important;
   }
   
   .bg-info-subtle {
-    background-color: #4d115a !important;
+    background: linear-gradient(135deg, #FFD700, #DAA520, #B8860B) !important;
   }
   
   th {
@@ -575,7 +575,6 @@
     background-color: #f8f9fa;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    font-family: Arial, sans-serif;
     font-size: 1rem;
     color: #333;
     margin-bottom: 10px;

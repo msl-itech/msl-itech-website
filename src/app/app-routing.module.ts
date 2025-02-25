@@ -17,6 +17,13 @@ import { PackPerformanceComponent } from './pack-performance/pack-performance.co
 import { PackAdministratifComponent } from './pack-administratif/pack-administratif.component';
 import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
 import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
+import { HorecaFormulesComponent } from './horeca-formules/horeca-formules.component';
+import { HorecaSmartAlertComponent } from './horeca-smart-alert/horeca-smart-alert.component';
+import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca-service-exclusif.component';
+import { JobApplicationComponent } from './job-application/job-application.component';
+import { DemoReservationComponent } from './demo-reservation/demo-reservation.component';
+import { PackSelectionComponent } from './pack-selection/pack-selection.component';
+import { ReservationHorecaComponent } from './reservation-horeca/reservation-horeca.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -36,7 +43,14 @@ const routes: Routes = [
   { path: 'pricing', component: PricingOdooComponent },
   { path: 'package-metier/performance', component: PackPerformanceComponent },
   { path: 'package-metier/horeca', component: PackHorecaComponent },
+  { path: 'package-metier/horeca/formules', component: HorecaFormulesComponent },
+  { path: 'package-metier/horeca/smartAlert', component: HorecaSmartAlertComponent },
+  { path: 'package-metier/horeca/services-exclusifs', component: HorecaServiceExclusifComponent },
   { path: 'package-metier/administratif', component: PackAdministratifComponent },
+  { path: 'careers', component: JobApplicationComponent },
+  { path: 'reserver-demo', component: DemoReservationComponent },
+  { path: 'pack-selection', component: PackSelectionComponent },
+  { path: 'reservation-horeca', component: ReservationHorecaComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
 ];
 @NgModule({
