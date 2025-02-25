@@ -329,6 +329,25 @@ nav .container {
     width: 100%;
     text-align: center; /* Centre le logo */
   }
+
+  .sub-dropdown-menu {
+    position: static;
+    box-shadow: none;
+    padding-left: 20px;
+    min-width: 100%;
+    display: none; /* Caché par défaut */
+  }
+  
+  .dropdown-menu li.open .sub-dropdown-menu {
+    display: block; /* S'affiche quand le parent a la classe .open */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Ajuster le padding pour une meilleure hiérarchie visuelle */
+  .sub-dropdown-menu li a {
+    padding-left: 40px;
+  }
 }
 
 /* SMARTPHONE - max-width: 768px */
@@ -408,6 +427,25 @@ nav .container {
     display: block; /* Affiché uniquement en mobile */
     width: 100%;
     text-align: center; /* Centre le logo */
+  }
+
+  .sub-dropdown-menu {
+    position: static;
+    box-shadow: none;
+    padding-left: 20px;
+    min-width: 100%;
+    display: none; /* Caché par défaut */
+  }
+  
+  .dropdown-menu li.open .sub-dropdown-menu {
+    display: block; /* S'affiche quand le parent a la classe .open */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Ajuster le padding pour une meilleure hiérarchie visuelle */
+  .sub-dropdown-menu li a {
+    padding-left: 40px;
   }
 }
 
@@ -536,14 +574,18 @@ nav .container {
     box-shadow: none;
     padding-left: 20px;
     min-width: 100%;
-  }
-  
-  .dropdown-menu li:hover .sub-dropdown-menu {
-    display: none;
+    display: none; /* Caché par défaut */
   }
   
   .dropdown-menu li.open .sub-dropdown-menu {
-    display: block;
+    display: block; /* S'affiche quand le parent a la classe .open */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Ajuster le padding pour une meilleure hiérarchie visuelle */
+  .sub-dropdown-menu li a {
+    padding-left: 40px;
   }
 }
 
@@ -637,8 +679,8 @@ nav .container {
           <ul class="dropdown-menu">
             <li><a routerLink="/package-metier/performance" (click)="isMobile && closeMenu()">Commerciale</a></li>
             <li><a routerLink="/package-metier/administratif" (click)="isMobile && closeMenu()">Administratif</a></li>
-            <li>
-              <a routerLink="/package-metier/horeca" (click)="isMobile && closeMenu()">
+            <li [ngClass]="{'open': isDropdownOpen('horeca')}" (click)="$event.stopPropagation(); isMobile && toggleDropdown('horeca')">
+              <a>
                 Horeca <i class="fas fa-chevron-right"></i>
               </a>
               <ul class="sub-dropdown-menu">
