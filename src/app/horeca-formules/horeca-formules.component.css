@@ -257,8 +257,8 @@
 .icon-wrapper {
   width: 80px;
   height: 80px;
-  background: rgba(255, 221, 87, 0.15);
   border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,7 +266,7 @@
 }
 
 .icon-wrapper i {
-  font-size: 2rem;
+  font-size: 32px;
   color: #114D5A;
 }
 
