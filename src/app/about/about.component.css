@@ -237,10 +237,6 @@ p {
         gap: 40px;
     }
 
-    section {
-        padding: 60px 20px;
-    }
-
     h2 {
         font-size: 2rem;
     }
@@ -829,5 +825,42 @@ h1, h2, p, span {
 
     .role {
         font-size: 1.1rem;
+    }
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .section-content {
+        flex-direction: column;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card-team {
+        width: 100%;
+    }
+
+    .team-image {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .team-image {
+        height: 250px;
     }
 }
