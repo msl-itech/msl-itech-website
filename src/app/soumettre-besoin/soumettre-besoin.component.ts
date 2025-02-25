@@ -23,7 +23,6 @@ export class SoumettreBesoinComponent implements OnInit {
       email_from: ['', [Validators.required, Validators.email]],
       company: [''],
       subject: ['', Validators.required],
-      date: [''],
       description: ['', Validators.required]
     });
   }
@@ -40,7 +39,6 @@ export class SoumettreBesoinComponent implements OnInit {
       const additionalInfo = `
 Société: ${this.jobForm.get('company')?.value || 'Non spécifié'}
 Sujet: ${this.jobForm.get('subject')?.value}
-Date souhaitée: ${this.jobForm.get('date')?.value || 'Non spécifiée'}
 
 Description détaillée:
 ${this.jobForm.get('description')?.value}

@@ -22,6 +22,8 @@ import { HorecaSmartAlertComponent } from './horeca-smart-alert/horeca-smart-ale
 import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca-service-exclusif.component';
 import { JobApplicationComponent } from './job-application/job-application.component';
 import { DemoReservationComponent } from './demo-reservation/demo-reservation.component';
+import { PackSelectionComponent } from './pack-selection/pack-selection.component';
+import { ReservationHorecaComponent } from './reservation-horeca/reservation-horeca.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path: 'package-metier/administratif', component: PackAdministratifComponent },
   { path: 'careers', component: JobApplicationComponent },
   { path: 'reserver-demo', component: DemoReservationComponent },
+  { path: 'pack-selection', component: PackSelectionComponent },
+  { path: 'reservation-horeca', component: ReservationHorecaComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
 ];
 @NgModule({

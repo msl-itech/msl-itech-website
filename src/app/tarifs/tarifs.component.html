@@ -211,6 +211,53 @@
     }
   }
   
+  /* Style pour le bouton Contactez-nous */
+  .btn-primary {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+  }
+
+  /* Style spécifique pour le bouton de la carte du milieu */
+  .middle-card .btn-primary {
+    background-color: #FFDD57;
+    color: #114D5A;
+    border: none;
+  }
+
+  .middle-card .btn-primary:hover {
+    background-color: #FFE57F;
+    color: #114D5A;
+  }
+
+  /* Ajustement pour les écrans mobiles */
+  @media (max-width: 576px) {
+    .btn-primary {
+      padding: 12px 24px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Style pour le conteneur de la carte */
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Style pour le conteneur du bouton */
+  .button-container {
+    margin-top: auto;
+    padding: 20px;
+    width: 100%;
+  }
+  
   </style>
 
    <div class="banner-section position-relative">
@@ -230,10 +277,10 @@
       <div class="col-md-6 order-md-1" data-aos="fade-right">
         <h2 class="text-primary--custom">Pourquoi choisir MSL Itech ?</h2>
         <p>
-          Créer un site web, c’est comme construire une maison : le choix des outils et des matériaux est crucial pour obtenir un résultat qui correspond à vos besoins. 
+          Créer un site web, c'est comme construire une maison : le choix des outils et des matériaux est crucial pour obtenir un résultat qui correspond à vos besoins. 
         </p>
         <p>
-          Si vous êtes chef d’entreprise, entrepreneur ou professionnel, il est normal de se sentir perdu face à des termes techniques comme Angular ou WordPress.
+          Si vous êtes chef d'entreprise, entrepreneur ou professionnel, il est normal de se sentir perdu face à des termes techniques comme Angular ou WordPress.
         </p>
         <p>
           Pas de panique ! Voici un guide simple et explicatif pour vous aider à faire le bon choix. 
@@ -254,9 +301,10 @@
             <div class="card-number">01</div>
             <div class="card-title">Javascript Moderne</div>
             <p>
-              Imaginez un architecte qui construit une maison sur mesure pour répondre à vos attentes les plus spécifiques. 
-              Javascript moderne est idéal pour des projets complexes, comme des plateformes en ligne nécessitant des fonctionnalités 
-              interactives avancées (par exemple, un espace client dynamique ou un outil collaboratif).
+              Imaginez un architecte qui construit une maison sur mesure. Javascript moderne 
+              est idéal pour des projets complexes nécessitant des fonctionnalités 
+              interactives avancées. Parfait pour les applications web sophistiquées, 
+              les espaces clients dynamiques et les outils collaboratifs.
             </p>
           </div>
         </div>
@@ -266,8 +314,9 @@
             <div class="card-number">02</div>
             <div class="card-title">WordPress</div>
             <p>
-              C’est l’équivalent d’un kit de maison préfabriquée. Rapide à assembler, facile à personnaliser, et parfait 
-              pour des projets standards comme des blogs, des sites vitrine ou des boutiques en ligne simples.
+              Pensez à un kit de maison préfabriquée : rapide à assembler et facile à personnaliser. 
+              WordPress est la solution idéale pour les sites vitrine, les blogs et les boutiques 
+              en ligne simples. Une plateforme éprouvée qui allie simplicité et efficacité.
             </p>
           </div>
         </div>
@@ -284,7 +333,7 @@
           <thead>
             <tr>
               <th>Crit&egrave;re</th>
-              <th>Angular (sur-mesure)</th>
+              <th>Javascri (sur-mesure)</th>
               <th>WordPress (pr&ecirc;t &agrave; l'emploi)</th>
             </tr>
           </thead>
@@ -349,7 +398,7 @@
         <h3>Choisissez WordPress</h3>
         <h1>Pourquoi WordPress est idéal ?</h1>
         <p>
-            Vous avez besoin d’un site rapidement opérationnel pour promouvoir vos services ou produits.
+            Vous avez besoin d'un site rapidement opérationnel pour promouvoir vos services ou produits.
         </p>
         <p>
             Vous recherchez une solution économique et facile à gérer.
@@ -385,7 +434,7 @@
             <div class="contentt">
                 <h2>Choisissez WordPress si :</h2>
                 <div class="icon d-flex align-items-baseline gap-2">
-                  <i class="fas fa-star"></i><p>Vous avez besoin d’un site rapidement opérationnel pour promouvoir vos services ou produits.</p>
+                  <i class="fas fa-star"></i><p>Vous avez besoin d'un site rapidement opérationnel pour promouvoir vos services ou produits.</p>
                 </div>
                 <div class="icon d-flex align-items-baseline gap-2">
                   <i class="fas fa-star"></i><p>Vous recherchez une solution économique et facile à gérer.</p>
@@ -494,7 +543,9 @@
                     <i class="fas fa-check-circle me-2"></i>{{ feature }}
                   </li>
                 </ul>
-                <button class="btn btn-primary w-100">Voir plus</button>
+              </div>
+              <div class="button-container">
+                <button class="btn btn-primary" [routerLink]="['/contact']">Contactez-nous</button>
               </div>
             </div>
           </div>
@@ -538,7 +589,9 @@
               <i class="fas fa-check-circle me-2"></i>{{ feature }}
             </li>
           </ul>
-          <button class="btn btn-primary w-100">Voir plus</button>
+        </div>
+        <div class="button-container">
+          <button class="btn btn-primary" [routerLink]="['/contact']">Contactez-nous</button>
         </div>
       </div>
     </div>

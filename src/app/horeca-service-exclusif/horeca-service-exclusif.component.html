@@ -11,6 +11,13 @@
 <!-- Services Section -->
 <section class="services-section py-5">
   <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="badge badge-primary mb-3">Nos Services Premium</span>
+      <h2 class="fw-bold">Solutions Innovantes pour votre Établissement</h2>
+      <p class="lead text-muted">Des outils modernes pour optimiser votre activité</p>
+      <div class="separator"></div>
+    </div>
+
     <div class="row g-4">
       <!-- Système de fidélisation -->
       <div class="col-md-6">
@@ -26,9 +33,15 @@
           </div>
           <h3 class="h4 mb-3">Système de fidélisation client</h3>
           <p class="text-muted mb-4">Mettez en place un programme de fidélité personnalisable avec des points échangeables contre des réductions ou des cadeaux.</p>
-          <div class="benefit-tag">
+          <div class="benefit-tag mb-4">
             <i class="fas fa-check-circle me-2"></i>
             Fidélisez vos clients et augmentez vos ventes récurrentes
+          </div>
+          <div class="card-actions">
+            <a routerLink="/contact" class="demo-button">
+              <span>Réservez votre démo gratuite</span>
+              <i class="fas fa-arrow-right ms-2"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -47,9 +60,15 @@
           </div>
           <h3 class="h4 mb-3">Gestion des équipes</h3>
           <p class="text-muted mb-4">Optimisez l'organisation de votre personnel avec des plannings clairs et partagés.</p>
-          <div class="benefit-tag">
+          <div class="benefit-tag mb-4">
             <i class="fas fa-check-circle me-2"></i>
             Évitez les conflits d'horaires et améliorez la productivité de vos équipes
+          </div>
+          <div class="card-actions">
+            <a routerLink="/contact" class="demo-button">
+              <span>Réservez votre démo gratuite</span>
+              <i class="fas fa-arrow-right ms-2"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -68,9 +87,15 @@
           </div>
           <h3 class="h4 mb-3">Menu digital avec QR Code</h3>
           <p class="text-muted mb-4">Digitalisez l'expérience client avec un menu interactif accessible via QR Code.</p>
-          <div class="benefit-tag">
+          <div class="benefit-tag mb-4">
             <i class="fas fa-check-circle me-2"></i>
             Réduisez les coûts d'impression et offrez une expérience moderne à vos clients
+          </div>
+          <div class="card-actions">
+            <a routerLink="/contact" class="demo-button">
+              <span>Réservez votre démo gratuite</span>
+              <i class="fas fa-arrow-right ms-2"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -89,9 +114,15 @@
           </div>
           <h3 class="h4 mb-3">Gestion des événements privés</h3>
           <p class="text-muted mb-4">Attirez plus de réservations pour des événements privés avec une solution adaptée.</p>
-          <div class="benefit-tag">
+          <div class="benefit-tag mb-4">
             <i class="fas fa-check-circle me-2"></i>
             Maximisez vos revenus avec des événements haut de gamme
+          </div>
+          <div class="card-actions">
+            <a routerLink="/contact" class="demo-button">
+              <span>Réservez votre démo gratuite</span>
+              <i class="fas fa-arrow-right ms-2"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -99,54 +130,31 @@
   </div>
 </section>
 
-<!-- CTA Section -->
 <section class="cta-section py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="cta-main text-center mb-5">
-          <div class="section-header text-white">
-            <span class="badge badge-warning mb-3">Besoin d'aide ?</span>
-            <h2 class="fw-bold mb-4">Nos experts vous accompagnent</h2>
-            <p class="lead text-white-50">Découvrez les options les mieux adaptées à vos besoins</p>
-          </div>
-          
-          <div class="demo-options mt-5">
-            <div class="row g-4">
-              <div class="col-md-6">
-                <div class="demo-card h-100 p-4 bg-white rounded-xl shadow-hover">
-                  <div class="icon-wrapper-alt mb-3">
-                    <i class="fas fa-video"></i>
-                  </div>
-                  <h3 class="h5 mb-3">Consultation en ligne</h3>
-                  <p class="text-muted mb-4">Échangez avec nos experts depuis votre bureau</p>
-                  <button class="btn btn-outline-primary btn-lg w-100">Réserver en ligne</button>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="demo-card h-100 p-4 bg-white rounded-xl shadow-hover">
-                  <div class="icon-wrapper-alt mb-3">
-                    <i class="fas fa-handshake"></i>
-                  </div>
-                  <h3 class="h5 mb-3">Rencontre sur place</h3>
-                  <p class="text-muted mb-4">Discutez en personne avec nos conseillers</p>
-                  <button class="btn btn-outline-primary btn-lg w-100">Réserver sur place</button>
-                </div>
-              </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="cta-main text-center mb-5">
+            <div class="section-header text-white">
+              <span class="badge badge-warning mb-3">Besoin d’orientation ?</span>
+              <h2 class="fw-bold mb-4"> Nos experts vous accompagnent pour choisir les options les mieux adaptées à vos besoins</h2>
+              <button class="btn btn-warning btn-lg px-5" routerLink="/reservation-horeca">
+                <i class="fas fa-calendar-check me-2"></i> Optenir une orientation
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
 
 <!-- FAQ Section -->
 <section class="faq-section py-5 bg-light">
   <div class="container">
     <div class="section-header text-center mb-5">
       <span class="badge badge-primary mb-3">FAQ</span>
-      <h2 class="fw-bold">Questions fréquentes</h2>
+      <h2 class="fw-bold">Tout ce que vous devez savoir</h2>
       <div class="separator"></div>
     </div>
     

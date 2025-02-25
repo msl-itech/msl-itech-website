@@ -1,0 +1,184 @@
+<div class="banner-section2 position-relative">
+    <img src="../../assets/img/webp/30.webp" alt="MSL Itech Banner">
+    <div class="overlay-text d-flex align-items-center justify-content-center">
+      <div class="text-center text-white px-3">
+        <h2>Réservation de démonstration</h2>
+      </div>
+    </div>
+  </div>
+
+  
+<section class="reservation-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-header text-center mb-5">
+          <span class="badge mb-3" style="background-color: #114D5A; color: #ffc107; border-radius: 50px; padding: 8px 16px;">Réservation</span>
+          <h1 class="fw-bold mb-4">Réservez votre démonstration</h1>
+          <p class="lead text-muted">Découvrez comment nos solutions peuvent transformer votre établissement</p>
+        </div>
+
+        <div class="card shadow-lg rounded-xl">
+          <div class="card-body p-4 p-md-5">
+            <form #demoForm="ngForm" (ngSubmit)="onSubmit(demoForm)" class="needs-validation" novalidate>
+              <div class="row g-4">
+                <!-- Informations de base -->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Nom de l'établissement *</label>
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      [(ngModel)]="formData.establishment_name"
+                      name="establishment_name"
+                      required
+                      #establishmentInput="ngModel">
+                    <small class="text-danger" *ngIf="establishmentInput.invalid && (establishmentInput.dirty || establishmentInput.touched)">
+                      Ce champ est requis
+                    </small>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Nom du responsable *</label>
+                    <input 
+                      type="text" 
+                      class="form-control"
+                      [(ngModel)]="formData.contact_name"
+                      name="contact_name"
+                      required
+                      #contactInput="ngModel">
+                    <small class="text-danger" *ngIf="contactInput.invalid && (contactInput.dirty || contactInput.touched)">
+                      Ce champ est requis
+                    </small>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Email *</label>
+                    <input 
+                      type="email" 
+                      class="form-control"
+                      [(ngModel)]="formData.email"
+                      name="email"
+                      required
+                      #emailInput="ngModel">
+                    <small class="text-danger" *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+                      Veuillez entrer une adresse email valide
+                    </small>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Téléphone *</label>
+                    <input 
+                      type="tel" 
+                      class="form-control"
+                      [(ngModel)]="formData.phone"
+                      name="phone"
+                      required
+                      #phoneInput="ngModel">
+                    <small class="text-danger" *ngIf="phoneInput.invalid && (phoneInput.dirty || phoneInput.touched)">
+                      Ce champ est requis
+                    </small>
+                  </div>
+                </div>
+
+                <!-- Format de la démo -->
+                <div class="col-12">
+                  <label class="form-label">Format de la démo *</label>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="form-check card shadow-hover p-3">
+                        <input 
+                          class="form-check-input" 
+                          type="radio" 
+                          [(ngModel)]="formData.demo_format"
+                          name="demo_format" 
+                          value="online"
+                          id="online" 
+                          required>
+                        <label class="form-check-label w-100" for="online">
+                          <i class="fas fa-laptop me-2"></i>Démo en ligne
+                          <small class="d-block text-muted">30 minutes depuis votre bureau</small>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check card shadow-hover p-3">
+                        <input 
+                          class="form-check-input" 
+                          type="radio" 
+                          [(ngModel)]="formData.demo_format"
+                          name="demo_format" 
+                          value="onsite"
+                          id="onsite">
+                        <label class="form-check-label w-100" for="onsite">
+                          <i class="fas fa-building me-2"></i>Démo sur place
+                          <small class="d-block text-muted">Dans votre établissement</small>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Informations de localisation (conditionnelles) -->
+                <div class="col-12" *ngIf="formData.demo_format === 'onsite'">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="form-label">Pays *</label>
+                        <input 
+                          type="text" 
+                          class="form-control"
+                          [(ngModel)]="formData.country"
+                          name="country"
+                          [required]="formData.demo_format === 'onsite'">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="form-label">Ville *</label>
+                        <input 
+                          type="text" 
+                          class="form-control"
+                          [(ngModel)]="formData.city"
+                          name="city"
+                          [required]="formData.demo_format === 'onsite'">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label class="form-label">Adresse complète *</label>
+                        <input 
+                          type="text" 
+                          class="form-control"
+                          [(ngModel)]="formData.address"
+                          name="address"
+                          [required]="formData.demo_format === 'onsite'">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                  <button 
+                    type="submit" 
+                    class="btn btn-lg px-5"
+                    style="background-color: #114D5A; color: white;"
+                    [disabled]="demoForm.invalid || isLoading">
+                    <i class="fas fa-calendar-check me-2"></i>
+                    {{ isLoading ? 'Envoi en cours...' : 'Voir les créneaux disponibles' }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

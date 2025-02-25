@@ -48,6 +48,8 @@ import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca
 import { ToastrModule } from 'ngx-toastr';
 import { JobApplicationComponent } from './job-application/job-application.component';
 import { DemoReservationComponent } from './demo-reservation/demo-reservation.component';
+import { PackSelectionComponent } from './pack-selection/pack-selection.component';
+import { ReservationHorecaComponent } from './reservation-horeca/reservation-horeca.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,7 +89,9 @@ import { DemoReservationComponent } from './demo-reservation/demo-reservation.co
     HorecaSmartAlertComponent,
     HorecaServiceExclusifComponent,
     JobApplicationComponent,
-    DemoReservationComponent
+    DemoReservationComponent,
+    PackSelectionComponent,
+    ReservationHorecaComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@
 
 .shadow-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(17, 77, 90, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(17, 77, 90, 0.1);
 }
 
 /* Premium Pack */
@@ -137,7 +137,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(17, 77, 90, 0.6);
+  /* background: rgba(17, 77, 90, 0.4); */
 }
 
 .fade-in {
@@ -166,7 +166,7 @@
 /* Pack Cards */
 .pack-card {
   transition: all 0.3s ease;
-  border: 1px solid rgba(17, 77, 90, 0.1);
+  border: 1px solid rgba(17, 77, 90, 0.08);
 }
 
 .pack-card:hover {
@@ -209,7 +209,7 @@
 
 /* Packs Section Styling */
 .section-header .badge-primary {
-  background-color: rgba(17, 77, 90, 0.1);
+  background-color: rgba(17, 77, 90, 0.08);
   color: #114D5A;
   padding: 8px 16px;
   font-size: 0.9rem;
@@ -230,7 +230,7 @@
 }
 
 .pack-card {
-  border: 1px solid rgba(17, 77, 90, 0.1);
+  border: 1px solid rgba(17, 77, 90, 0.08);
   transition: all 0.3s ease;
   overflow: hidden;
 }
@@ -246,7 +246,7 @@
 
 /* Pack Headers */
 .bg-light-blue {
-  background: linear-gradient(145deg, rgba(17, 77, 90, 0.05), rgba(17, 77, 90, 0.1));
+  background: linear-gradient(145deg, rgba(17, 77, 90, 0.03), rgba(17, 77, 90, 0.07));
 }
 
 .bg-premium {
@@ -257,7 +257,7 @@
 .icon-wrapper {
   width: 80px;
   height: 80px;
-  background: rgba(255, 221, 87, 0.1);
+  background: rgba(255, 221, 87, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -361,7 +361,7 @@
   color: #114D5A;
   font-weight: 600;
   font-size: 1.1rem;
-  border-bottom: 2px solid rgba(17, 77, 90, 0.1);
+  border-bottom: 2px solid rgba(17, 77, 90, 0.08);
   padding-bottom: 0.5rem;
 }
 
@@ -449,7 +449,7 @@
 
 /* CTA Section Styling */
 .cta-section {
-  background: #114D5A;
+  background: linear-gradient(45deg, #114D5A, #165d6c);
   position: relative;
   overflow: hidden;
 }
@@ -474,9 +474,9 @@
 }
 
 .demo-card {
-  background: white;
+  background: #ffffff;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(17, 77, 90, 0.08);
 }
 
 .demo-card:hover {
@@ -589,7 +589,7 @@
 
 /* FAQ Section Styling */
 .faq-section {
-  background: linear-gradient(135deg, rgba(17, 77, 90, 0.03), rgba(255, 221, 87, 0.05));
+  background: linear-gradient(135deg, rgba(17, 77, 90, 0.02), rgba(255, 221, 87, 0.03));
 }
 
 .faq-image-container {
@@ -674,4 +674,59 @@
     max-width: 600px;
     margin: 0 auto;
   }
+}
+
+/* Éclaircir le fond général */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* Éclaircir le fond des cartes */
+.advantage-card, .pack-card, .demo-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(17, 77, 90, 0.08);
+}
+
+/* Éclaircir les headers des packs */
+.bg-light-blue {
+  background: linear-gradient(145deg, rgba(17, 77, 90, 0.03), rgba(17, 77, 90, 0.07));
+}
+
+/* Éclaircir le fond de la section CTA */
+.cta-section {
+  background: linear-gradient(45deg, #114D5A, #165d6c);
+}
+
+/* Éclaircir les ombres */
+.shadow-hover:hover {
+  box-shadow: 0 0.5rem 1rem rgba(17, 77, 90, 0.1);
+}
+
+/* Éclaircir le fond de la section FAQ */
+.faq-section {
+  background: linear-gradient(135deg, rgba(17, 77, 90, 0.02), rgba(255, 221, 87, 0.03));
+}
+
+/* Éclaircir les textes sombres */
+.text-muted {
+  color: #6c757d !important;
+}
+
+.feature-desc {
+  color: #6c757d;
+}
+
+/* Éclaircir l'overlay de la bannière */
+/* .overlay-text {
+  background: rgba(17, 77, 90, 0.4);
+} */
+
+/* Éclaircir les badges */
+.badge-primary {
+  background-color: rgba(17, 77, 90, 0.08);
+}
+
+/* Éclaircir les icônes */
+.icon-wrapper {
+  background: rgba(255, 221, 87, 0.15);
 }

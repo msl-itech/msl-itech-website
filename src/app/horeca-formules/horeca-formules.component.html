@@ -1,7 +1,96 @@
+<style>
+  /* Ajout des styles pour améliorer la lisibilité */
+  p {
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+  }
+
+  h2, h3, h4, h5 {
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  .lead {
+    line-height: 1.8;
+    letter-spacing: 0.4px;
+  }
+
+  .pack-features ul li {
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-desc {
+    margin-top: 0.5rem;
+  }
+
+  .pack-content {
+    padding: 2rem !important;
+  }
+
+  .accordion-body {
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    padding: 1.5rem;
+  }
+
+  /* Ajout des styles pour l'alignement des boutons */
+  .pack-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pack-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pack-features {
+    flex: 1;
+  }
+
+  .pack-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+
+  /* Style pour les boutons des packs */
+  .pack-footer .btn {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .pack-footer .btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid #114D5A;
+    color: #114D5A;
+  }
+
+  .pack-footer .btn-outline-primary:hover {
+    background-color: #114D5A;
+    color: white;
+  }
+
+  .pack-footer .btn-primary {
+    background-color: #114D5A;
+    border: 2px solid #114D5A;
+  }
+
+  .pack-footer .btn-primary:hover {
+    background-color: #0f677a;
+    border-color: #10768d;
+  }
+</style>
+
 <!-- Hero Section -->
 
 <div class="banner-section position-relative">
-    <img src="./../assets/img/webp/30.webp" alt="MSL Itech Banner" class="w-100">
+    <img src="../../assets/img/horeca/1.webp" alt="MSL Itech Banner" class="w-100">
     <div class="overlay-text d-flex align-items-center justify-content-center">
       <div class="text-center text-white px-3 fade-in">
         <h2 class="fw-bold">Transformez votre établissement avec nos packs sur mesure !</h2>
@@ -13,6 +102,13 @@
 <!-- Avantages Section -->
 <section class="advantages-section py-5">
   <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="badge badge-primary mb-3">Nos Avantages</span>
+      <h2 class="fw-bold">Pourquoi choisir nos solutions ?</h2>
+      <div class="separator"></div>
+      <p class="lead text-muted">Des fonctionnalités pensées pour votre réussite</p>
+    </div>
+
     <div class="row g-4">
       <div class="col-md-6 col-lg-3">
         <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
@@ -98,7 +194,7 @@
               </ul>
             </div>
             <div class="pack-footer text-center mt-4">
-              <button class="btn btn-outline-primary btn-lg w-100">Choisir ce pack</button>
+              <button class="btn btn-outline-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
               <p class="pack-benefit mt-3">Idéal pour les petits établissements qui veulent simplifier leur gestion sans se ruiner</p>
             </div>
           </div>
@@ -147,7 +243,7 @@
               </ul>
             </div>
             <div class="pack-footer text-center mt-4">
-              <button class="btn btn-primary btn-lg w-100">Choisir ce pack</button>
+              <button class="btn btn-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
               <p class="pack-benefit mt-3">La solution ultime pour les grands restaurants qui veulent offrir une expérience client premium</p>
             </div>
           </div>
@@ -195,7 +291,7 @@
               </ul>
             </div>
             <div class="pack-footer text-center mt-4">
-              <button class="btn btn-outline-primary btn-lg w-100">Choisir ce pack</button>
+              <button class="btn btn-outline-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
               <p class="pack-benefit mt-3">Parfait pour les établissements en croissance qui veulent gagner en efficacité</p>
             </div>
           </div>
@@ -214,32 +310,10 @@
           <div class="section-header text-white">
             <span class="badge badge-warning mb-3">Démarrez maintenant</span>
             <h2 class="fw-bold mb-4">Prêt à transformer votre établissement ?</h2>
-            <p class="lead text-white-50">Choisissez le mode de démonstration qui vous convient le mieux</p>
-          </div>
-          
-          <div class="demo-options mt-5">
-            <div class="row g-4">
-              <div class="col-md-6">
-                <div class="demo-card h-100 p-4 bg-white rounded-xl shadow-hover">
-                  <div class="icon-wrapper-alt mb-3">
-                    <i class="fas fa-video"></i>
-                  </div>
-                  <h3 class="h5 mb-3">Démo en ligne</h3>
-                  <p class="text-muted mb-4">Découvrez nos solutions depuis votre bureau en 30 minutes</p>
-                  <button class="btn btn-outline-primary btn-lg w-100">Réserver en ligne</button>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="demo-card h-100 p-4 bg-white rounded-xl shadow-hover">
-                  <div class="icon-wrapper-alt mb-3">
-                    <i class="fas fa-handshake"></i>
-                  </div>
-                  <h3 class="h5 mb-3">Démo sur place</h3>
-                  <p class="text-muted mb-4">Rencontrez nos experts pour une démonstration personnalisée</p>
-                  <button class="btn btn-outline-primary btn-lg w-100">Réserver sur place</button>
-                </div>
-              </div>
-            </div>
+            <p class="lead text-white-50 mb-4">Découvrez comment nos solutions peuvent optimiser votre gestion</p>
+            <button class="btn btn-warning btn-lg px-5" routerLink="/reservation-horeca">
+              <i class="fas fa-calendar-check me-2"></i>Réservez votre démo gratuite
+            </button>
           </div>
         </div>
 
@@ -256,8 +330,8 @@
             <div class="col-md-7">
               <div class="p-4 p-lg-5">
                 <h4 class="h5 mb-3">Vous ne savez pas quel pack choisir ?</h4>
-                <p class="text-muted mb-4">Remplissez notre formulaire intelligent et nous vous recommanderons la solution idéale pour votre établissement.</p>
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#recommendationModal">
+                <p class="text-muted mb-4">Remplissez le formulaire et nous vous recommandons la solution idéale pour votre établissement !</p>
+                <button class="btn btn-primary btn-lg" routerLink="/pack-selection">
                   <i class="fas fa-clipboard-list me-2"></i>Commencer l'évaluation
                 </button>
               </div>
@@ -269,51 +343,202 @@
   </div>
 </section>
 
-<!-- Modal Formulaire -->
-<div class="modal fade" id="recommendationModal" tabindex="-1">
+<!-- Modal Réservation -->
+<div class="modal fade" id="reservationModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content rounded-xl">
       <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title">Trouvez votre solution idéale</h5>
+        <h5 class="modal-title">Réservez votre démo</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body p-4">
         <form class="needs-validation" novalidate>
-          <div class="form-steps">
-            <div class="step active">
-              <div class="mb-4">
-                <label class="form-label">Quel type d'établissement gérez-vous ?</label>
-                <select class="form-select form-select-lg">
-                  <option selected disabled>Choisissez une option</option>
-                  <option>Restaurant</option>
-                  <option>Bar</option>
-                  <option>Café</option>
-                  <option>Autre</option>
-                </select>
+          <div class="row g-4">
+            <!-- Informations de base -->
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label class="form-label">Nom de l'établissement *</label>
+                <input type="text" class="form-control" required>
               </div>
-              <div class="mb-4">
-                <label class="form-label">Combien d'employés avez-vous ?</label>
-                <input type="number" class="form-control form-control-lg" placeholder="Nombre d'employés">
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label class="form-label">Nom du responsable *</label>
+                <input type="text" class="form-control" required>
               </div>
-              <div class="mb-4">
-                <label class="form-label">Quels sont vos principaux défis ?</label>
-                <div class="form-check mb-2">
-                  <input class="form-check-input" type="checkbox" id="challenge1">
-                  <label class="form-check-label" for="challenge1">Gestion des commandes</label>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label class="form-label">Adresse email *</label>
+                <input type="email" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label class="form-label">Téléphone *</label>
+                <input type="tel" class="form-control" required>
+              </div>
+            </div>
+
+            <!-- Format de la démo -->
+            <div class="col-12">
+              <label class="form-label d-block mb-3">Format de la démo *</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="demoFormat" id="online" value="online" required>
+                <label class="form-check-label" for="online">En ligne</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="demoFormat" id="onsite" value="onsite">
+                <label class="form-check-label" for="onsite">Sur place</label>
+              </div>
+            </div>
+
+            <!-- Lieu (affiché uniquement si "Sur place" est sélectionné) -->
+            <div class="col-12 location-details" style="display: none;">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Pays *</label>
+                    <input type="text" class="form-control">
+                  </div>
                 </div>
-                <div class="form-check mb-2">
-                  <input class="form-check-input" type="checkbox" id="challenge2">
-                  <label class="form-check-label" for="challenge2">Gestion des stocks</label>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Ville *</label>
+                    <input type="text" class="form-control">
+                  </div>
                 </div>
-                <div class="form-check mb-2">
-                  <input class="form-check-input" type="checkbox" id="challenge3">
-                  <label class="form-check-label" for="challenge3">Réservations</label>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="form-label">Adresse de l'établissement *</label>
+                    <input type="text" class="form-control">
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div class="col-12 text-center mt-4">
+              <button type="submit" class="btn btn-primary btn-lg px-5">
+                <i class="fas fa-calendar-check me-2"></i>Voir les créneaux disponibles
+              </button>
+            </div>
           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Formulaire de Sélection de Pack -->
+<div class="modal fade" id="recommendationModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-xl">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title">Sélection de votre pack</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form class="needs-validation" novalidate>
+          <!-- 1. Informations de Base -->
+          <div class="section mb-4">
+            <h6 class="section-title mb-3">1. Informations de Base</h6>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Nom de l'établissement *</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Nom du responsable *</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Adresse email *</label>
+                <input type="email" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Téléphone *</label>
+                <input type="tel" class="form-control" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Taille de l'établissement -->
+          <div class="section mb-4">
+            <h6 class="section-title mb-3">2. Taille de l'établissement</h6>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="userCount" id="users1" value="essential">
+              <label class="form-check-label" for="users1">1-3 utilisateurs (Pack Essentiel)</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="userCount" id="users2" value="performance">
+              <label class="form-check-label" for="users2">4-7 utilisateurs (Pack Performance)</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="userCount" id="users3" value="premium">
+              <label class="form-check-label" for="users3">8-15 utilisateurs (Pack Premium)</label>
+            </div>
+          </div>
+
+          <!-- 3. Fonctionnalités Requises -->
+          <div class="section mb-4">
+            <h6 class="section-title mb-3">3. Fonctionnalités Requises</h6>
+            <div class="mb-3">
+              <label class="form-label d-block">Gestion des tables et commandes</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tableManagement" id="tableYes" value="yes">
+                <label class="form-check-label" for="tableYes">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tableManagement" id="tableNo" value="no">
+                <label class="form-check-label" for="tableNo">Non</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label d-block">Gestion des stocks</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="stockManagement" id="stockYes" value="yes">
+                <label class="form-check-label" for="stockYes">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="stockManagement" id="stockNo" value="no">
+                <label class="form-check-label" for="stockNo">Non</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label d-block">Réservation en ligne</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="onlineBooking" id="bookingYes" value="yes">
+                <label class="form-check-label" for="bookingYes">Oui</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Commentaires -->
+          <div class="section mb-4">
+            <h6 class="section-title mb-3">4. Commentaires ou Besoins Spécifiques</h6>
+            <textarea class="form-control" rows="4" placeholder="Décrivez vos besoins spécifiques..."></textarea>
+          </div>
+
+          <!-- 5. Options de Contact -->
+          <div class="section mb-4">
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="moreInfo">
+              <label class="form-check-label" for="moreInfo">
+                Je souhaite recevoir plus d'informations sur les packs
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="contact">
+              <label class="form-check-label" for="contact">
+                Je souhaite être contacté par un représentant pour discuter de mes besoins
+              </label>
+            </div>
+          </div>
+
           <div class="text-center mt-4">
-            <button type="submit" class="btn btn-primary btn-lg px-5">Obtenir ma recommandation</button>
+            <button type="submit" class="btn btn-primary btn-lg px-5">
+              <i class="fas fa-paper-plane me-2"></i>Soumettre
+            </button>
           </div>
         </form>
       </div>
@@ -326,7 +551,7 @@
   <div class="container">
     <div class="section-header text-center mb-5">
       <span class="badge badge-primary mb-3">FAQ</span>
-      <h2 class="fw-bold">Questions fréquentes</h2>
+      <h2 class="fw-bold">Tout ce que vous devez savoir</h2>
       <div class="separator"></div>
     </div>
     
