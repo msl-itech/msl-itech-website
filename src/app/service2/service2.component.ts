@@ -65,10 +65,10 @@ export class Service2Component {
     const image = document.getElementById('dynamic-image') as HTMLImageElement;
     const images: { [key: string]: string } = {
       'crm': '../../assets/img/servicePage/hero_image.jpg',
-      'ventes': '../../assets/img/servicePage/interface.jpg',
-      'pos': '../../assets/img/servicePage/rental_product.jpg',
-      'abonnements': '../../assets/img/servicePage/hero_image.jpg',
-      'location': '../../assets/img/servicePage/interface.jpg'
+      'ventes': '../../assets/img/serviceOdoo/vente2.webp',
+      'pos': '../../assets/img/serviceOdoo/pos.webp',
+      'abonnements': '../../assets/img/serviceOdoo/abonement.png',
+      'location': '../../assets/img/serviceOdoo/location.webp'
     };
 
     let lastSection: string | undefined;

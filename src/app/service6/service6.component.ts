@@ -1,20 +1,13 @@
 import { Component, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-service3',
-  templateUrl: './service3.component.html',
-  styleUrl: './service3.component.css'
+  selector: 'app-service6',
+  templateUrl: './service6.component.html',
+  styleUrl: './service6.component.css'
 })
-export class Service3Component {
+export class Service6Component {
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const header = document.getElementById('header');
-    if (window.pageYOffset > header!.offsetTop) {
-      header!.classList.add('sticky');
-    } else {
-      header!.classList.remove('sticky');
-    }
-
     this.updateDynamicImage();
   }
 
@@ -22,11 +15,12 @@ export class Service3Component {
     const sections = document.querySelectorAll('.section');
     const image = document.getElementById('dynamic-image') as HTMLImageElement;
     const images: { [key: string]: string } = {
-      "Comptabilité": "../../assets/img/serviceOdoo/comptabilite.webp",
-      "Facturation": "../../assets/img/serviceOdoo/facturation.webp",
-      "Note-de-Frais": "../../assets/img/serviceOdoo/Note_frais.webp",
-      "Document": "../../assets/img/serviceOdoo/Document.webp",
-      "Feuille-de-calcul": "../../assets/img/serviceOdoo/Feuille_calcul.webp"
+      "AutomatisationMarketing": "../../assets/img/serviceOdoo/automatisation_marketing.gif",
+      "EmailMarketing": "../../assets/img/serviceOdoo/Email_Marketing.png",
+      "SMSMarketing": "../../assets/img/serviceOdoo/sms-marketing.gif",
+      "SocialMarketing": "../../assets/img/serviceOdoo/Social_Marketing.gif",
+      "Evenements": "../../assets/img/serviceOdoo/Evenement.png",
+      "Sondage": "../../assets/img/serviceOdoo/Sondage.png"
     };
 
     let lastSection: string | undefined;
@@ -42,5 +36,4 @@ export class Service3Component {
       image.src = images[lastSection];
     }
   }
-
 }

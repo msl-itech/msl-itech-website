@@ -50,6 +50,9 @@ import { JobApplicationComponent } from './job-application/job-application.compo
 import { DemoReservationComponent } from './demo-reservation/demo-reservation.component';
 import { PackSelectionComponent } from './pack-selection/pack-selection.component';
 import { ReservationHorecaComponent } from './reservation-horeca/reservation-horeca.component';
+import { Service5Component } from './service5/service5.component';
+import { Service6Component } from './service6/service6.component';
+import { Service7Component } from './service7/service7.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +94,10 @@ import { ReservationHorecaComponent } from './reservation-horeca/reservation-hor
     JobApplicationComponent,
     DemoReservationComponent,
     PackSelectionComponent,
-    ReservationHorecaComponent
+    ReservationHorecaComponent,
+    Service5Component,
+    Service6Component,
+    Service7Component
   ],
   imports: [
     BrowserModule,

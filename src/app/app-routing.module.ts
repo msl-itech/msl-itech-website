@@ -24,6 +24,10 @@ import { JobApplicationComponent } from './job-application/job-application.compo
 import { DemoReservationComponent } from './demo-reservation/demo-reservation.component';
 import { PackSelectionComponent } from './pack-selection/pack-selection.component';
 import { ReservationHorecaComponent } from './reservation-horeca/reservation-horeca.component';
+import { Service4Component } from './service4/service4.component';
+import { Service5Component } from './service5/service5.component';
+import { Service6Component } from './service6/service6.component';
+import { Service7Component } from './service7/service7.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -33,6 +37,10 @@ const routes: Routes = [
   { path: 'serviceOdoo', component: Service1Component },
   { path: 'service2', component: Service2Component },
   { path: 'service3', component: Service3Component },
+  { path: 'fabrication', component: Service4Component },
+  { path: 'ressources-humaines', component: Service5Component },
+  { path: 'marketing-digital', component: Service6Component },
+  { path: 'services-professionnels', component: Service7Component },
   { path: 'reserve-demo', component: ReserveDemoComponent },
   { path: 'about', component: AboutComponent },
   { path: 'job', component: JobComponent },
