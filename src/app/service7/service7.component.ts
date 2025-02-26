@@ -1,20 +1,13 @@
 import { Component, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-service3',
-  templateUrl: './service3.component.html',
-  styleUrl: './service3.component.css'
+  selector: 'app-service7',
+  templateUrl: './service7.component.html',
+  styleUrl: './service7.component.css'
 })
-export class Service3Component {
+export class Service7Component {
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const header = document.getElementById('header');
-    if (window.pageYOffset > header!.offsetTop) {
-      header!.classList.add('sticky');
-    } else {
-      header!.classList.remove('sticky');
-    }
-
     this.updateDynamicImage();
   }
 
@@ -22,11 +15,12 @@ export class Service3Component {
     const sections = document.querySelectorAll('.section');
     const image = document.getElementById('dynamic-image') as HTMLImageElement;
     const images: { [key: string]: string } = {
-      "Comptabilité": "../../assets/img/serviceOdoo/comptabilite.webp",
-      "Facturation": "../../assets/img/serviceOdoo/facturation.webp",
-      "Note-de-Frais": "../../assets/img/serviceOdoo/Note_frais.webp",
-      "Document": "../../assets/img/serviceOdoo/Document.webp",
-      "Feuille-de-calcul": "../../assets/img/serviceOdoo/Feuille_calcul.webp"
+      "GestionProjet": "../../assets/img/serviceOdoo/project.webp",
+      "FeuilleTemps": "../../assets/img/serviceOdoo/feuille_temps.webp",
+      "ServicesSurSite": "../../assets/img/serviceOdoo/service-sur-site.webp",
+      "Assistance": "../../assets/img/serviceOdoo/helpdesk-dashboard.webp",
+      "Planification": "../../assets/img/serviceOdoo/planning.webp",
+      "RendezVous": "../../assets/img/serviceOdoo/rendez-vous.webp"
     };
 
     let lastSection: string | undefined;
@@ -42,5 +36,4 @@ export class Service3Component {
       image.src = images[lastSection];
     }
   }
-
 }
