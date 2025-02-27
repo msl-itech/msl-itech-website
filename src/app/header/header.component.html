@@ -2,706 +2,705 @@
   /* ----------------------------------------------
    RESET & BASE STYLES
 ---------------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Style Général pour l'En-tête */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 80px;
-}
-
-/* Top Bar */
-.top-bar {
-  background: #114D5A;
-  color: #fff;
-  padding: 8px 0; /* Réduit le padding */
-}
-
-.top-bar .container {
-  display: flex;
-  justify-content: flex-end;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.language-selector button {
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.9em; /* Réduit la taille de la police */
-  padding: 4px 8px; /* Réduit le padding */
-  transition: color 0.3s;
-}
-
-.language-selector button:hover {
-  color: #FAC83B;
-}
-
-/* ----------------------------------------------
-   NAVIGATION
----------------------------------------------- */
-nav {
-  background: #fff;
-  padding: 8px 0; /* Réduit le padding */
-}
-
-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.logo {
-  width: 100px; /* Réduit la taille du logo en desktop */
-}
-
-.logo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* ----------------------------------------------
-   BURGER MENU
----------------------------------------------- */
-.burger {
-  display: none; /* S'affiche en mobile/tablette */
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5em;
-  color: #333;
-  transition: color 0.3s;
-}
-
-.burger.active {
-  color: #FAC83B;
-}
-
-/* ----------------------------------------------
-   NAV LINKS (DESKTOP & MOBILE)
----------------------------------------------- */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-links li {
-  position: relative;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1em;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.nav-links a.actived,
-.nav-links a:hover {
-  color: #FAC83B;
-}
-
-/* ----------------------------------------------
-   DROPDOWN
----------------------------------------------- */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%; /* Aligner le sous-menu en bas du parent */
-  left: 0;
-  background-color: #fff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 8px 0; /* Réduit le padding */
-  margin: 0;
-  min-width: 160px; /* Réduit la largeur minimale */
-  border-radius: 4px;
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: auto;
-  transition: opacity 0.3s, visibility 0.3s;
-  z-index: 9999;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 8px 16px; /* Réduit le padding */
-  color: #333;
-  font-weight: 400;
-  transition: background-color 0.3s;
-}
-
-.dropdown-menu li a:hover {
-  background-color: #f4f4f4;
-}
-
-/* Quand la classe .open est présente (mobile), le menu s'affiche */
-.dropdown.open .dropdown-menu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-/* ----------------------------------------------
-   ACTIONS (DESKTOP)
----------------------------------------------- */
-.actions {
-  display: flex;
-  gap: 8px; /* Réduit le gap */
-}
-
-.btn,
-.btn2 {
-  padding: 8px 16px; /* Réduit le padding */
-  text-decoration: none;
-  border-radius: 6px; /* Réduit le border-radius */
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
-  text-align: center; /* Aligne le texte au centre */
-}
-
-.btn {
-  background: #114D5A;
-  color: #ffcc00;
-}
-
-.btn:hover {
-  background: #0f3b46;
-  color: #ffcc00;
-}
-
-.btn2 {
-  background: #ffcc00;
-  color: #000;
-}
-
-.btn2:hover {
-  background: #e6b800;
-}
-
-/* ----------------------------------------------
-   MOBILE MENU
----------------------------------------------- */
-.mobile-actions {
-  display: none;
-  flex-direction: column;
-  gap: 8px; /* Réduit le gap */
-  margin-top: 16px; /* Réduit le margin */
-  padding: 10px 15px; /* Réduit le padding */
-}
-
-.close-btn {
-  display: none;
-  justify-content: flex-end;
-  padding: 0 20px;
-  margin-bottom: 16px; /* Réduit le margin */
-}
-
-.close-btn button {
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: color 0.3s;
-}
-
-.close-btn button:hover {
-  color: #FAC83B;
-}
-
-/* Logo Mobile */
-.mobile-logo {
-  display: none; /* Masqué par défaut */
-  text-align: center;
-  margin: 16px 0; /* Réduit le margin */
-}
-
-.mobile-logo img {
-  width: 80px; /* Réduit la taille du logo mobile */
-  height: auto;
-}
-
-/* ----------------------------------------------
-   RESPONSIVE QUERIES
----------------------------------------------- */
-/* TABLETTE & MOBILE - max-width: 1024px */
-@media (max-width: 1024px) {
-  .burger {
-    display: block;
-  }
-  .actions {
-    display: none; /* Masquer les actions desktop */
-  }
-
-  /* Le menu occupe toute la taille de l'écran */
-  .nav-links {
-    position: fixed;
-    top: 0;             /* Collé en haut */
-    left: -100%;
-    width: 100vw;       /* Toute la largeur de l'écran */
-    height: 100vh;      /* Toute la hauteur de l'écran */
-    flex-direction: column;
-    background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;   /* Scroll si contenu trop long */
-    transition: left 0.3s ease-in-out;
-    padding-top: 70px;
-  }
-
-  .nav-links.active {
-    left: 0;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: left; /* Aligne le texte des liens à gauche */
-  }
-
-  .nav-links li a {
-    padding: 15px 25px;
-    font-size: 1.1em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-  }
-
-  .nav-links li a:active {
-    background-color: #f0f0f0;
-  }
-
-  /* Positionnement "statique" des sous-menus */
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
+  * {
+    margin: 0;
     padding: 0;
-    margin: 0;
-    min-width: 0;
-    display: none;
-    border: none !important;
-    opacity: 1;
-    visibility: visible;
-    background-color: #f5f5f5;
-    margin: 0;
-    border-radius: 0;
+    box-sizing: border-box;
   }
 
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu li a {
-    padding-left: 35px;
-    font-size: 1em;
-    color: #444;
-  }
-
-  .mobile-actions {
-    padding: 20px;
-    gap: 12px;
-    background-color: #f9f9f9;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-  }
-
-  .mobile-actions .btn,
-  .mobile-actions .btn2 {
-    width: 100%;
-    padding: 12px 20px;
-    font-size: 1em;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
-  }
-
-  .mobile-actions .btn:active,
-  .mobile-actions .btn2:active {
-    transform: scale(0.98);
-  }
-
-  .nav-links .dropdown a i,
-  .dropdown-menu li a i {
-    font-size: 0.8em;
-    opacity: 0.7;
-  }
-
-  .dropdown.open > a i {
-    transform: rotate(180deg);
-  }
-
-  .dropdown-menu li.open > a i {
-    transform: rotate(90deg);
-  }
-
-  .pro-badge {
-    font-size: 0.7em;
-    padding: 3px 8px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #FAC83B 0%, #ffdb6b 100%);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .burger {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #f5f5f5;
-    transition: all 0.3s ease;
-  }
-
-  .burger:active {
-    background-color: #e5e5e5;
-    transform: scale(0.95);
-  }
-
-  .close-btn button {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-
-  .close-btn button:active {
-    background-color: #e5e5e5;
-    transform: scale(0.95);
-  }
-
-  .mobile-logo {
-    display: block; /* Affiché uniquement en mobile */
-    width: 100%;
-    text-align: center; /* Centre le logo */
-  }
-
-  .sub-dropdown-menu {
-    position: static;
-    box-shadow: none;
-    padding-left: 20px;
-    min-width: 100%;
-    display: none; /* Caché par défaut */
-  }
-  
-  .dropdown-menu li.open .sub-dropdown-menu {
-    display: block; /* S'affiche quand le parent a la classe .open */
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* Ajuster le padding pour une meilleure hiérarchie visuelle */
-  .sub-dropdown-menu li a {
-    padding-left: 40px;
-  }
-}
-
-/* SMARTPHONE - max-width: 768px */
-@media (max-width: 768px) {
-  .burger {
-    display: block;
-  }
-  .actions {
-    display: none;
-  }
-
-  .nav-links {
+  /* Style Général pour l'En-tête */
+  header {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-    background-color: #fff;
-    transition: left 0.3s ease-in-out;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    padding-top: 50px; /* Réduit le padding-top pour moins d'espace */
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 80px;
   }
 
-  .nav-links.active {
-    left: 0;
+  /* Top Bar */
+  .top-bar {
+    background: #114d5a;
+    color: #fff;
+    padding: 8px 0; /* Réduit le padding */
+  }
+
+  .top-bar .container {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .language-selector button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em; /* Réduit la taille de la police */
+    padding: 4px 8px; /* Réduit le padding */
+    transition: color 0.3s;
+  }
+
+  .language-selector button:hover {
+    color: #fac83b;
+  }
+
+  /* ----------------------------------------------
+   NAVIGATION
+---------------------------------------------- */
+  nav {
+    background: #fff;
+    padding: 8px 0; /* Réduit le padding */
+  }
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 100px; /* Réduit la taille du logo en desktop */
+  }
+
+  .logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* ----------------------------------------------
+   BURGER MENU
+---------------------------------------------- */
+  .burger {
+    display: none; /* S'affiche en mobile/tablette */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333;
+    transition: color 0.3s;
+  }
+
+  .burger.active {
+    color: #fac83b;
+  }
+
+  /* ----------------------------------------------
+   NAV LINKS (DESKTOP & MOBILE)
+---------------------------------------------- */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
   }
 
   .nav-links li {
-    width: 100%;
-    text-align: left; /* Aligne le texte des liens à gauche */
+    position: relative;
   }
 
-  .nav-links li a {
-    display: block;
-    padding: 12px 20px; /* Réduit le padding */
-    font-size: 0.95em; /* Réduit la taille de la police */
-    text-align: left; /* Assure l'alignement à gauche */
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .nav-links a.actived,
+  .nav-links a:hover {
+    color: #fac83b;
+  }
+
+  /* ----------------------------------------------
+   DROPDOWN
+---------------------------------------------- */
+  .dropdown {
+    position: relative;
   }
 
   .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    padding: 0;
+    position: absolute;
+    top: 100%; /* Aligner le sous-menu en bas du parent */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 8px 0; /* Réduit le padding */
     margin: 0;
-    min-width: 0;
+    min-width: 160px; /* Réduit la largeur minimale */
+    border-radius: 4px;
     display: none;
-    border: none !important;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 9999;
   }
 
   .dropdown-menu li a {
-    padding: 8px 20px; /* Réduit le padding */
-    font-size: 0.9em; /* Réduit la taille de la police */
+    display: block;
+    padding: 8px 16px; /* Réduit le padding */
+    color: #333;
+    font-weight: 400;
+    transition: background-color 0.3s;
   }
 
-  .mobile-actions {
-    display: flex;
-    margin-bottom: 16px; /* Réduit le margin */
-    justify-content: center; /* Centre les boutons */
+  .dropdown-menu li a:hover {
+    background-color: #f4f4f4;
   }
 
-  .close-btn {
-    display: flex;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-  }
-
-  .mobile-logo {
-    display: block; /* Affiché uniquement en mobile */
-    width: 100%;
-    text-align: center; /* Centre le logo */
-  }
-
-  .sub-dropdown-menu {
-    position: static;
-    box-shadow: none;
-    padding-left: 20px;
-    min-width: 100%;
-    display: none; /* Caché par défaut */
-  }
-  
-  .dropdown-menu li.open .sub-dropdown-menu {
-    display: block; /* S'affiche quand le parent a la classe .open */
+  /* Quand la classe .open est présente (mobile), le menu s'affiche */
+  .dropdown.open .dropdown-menu {
+    display: block;
     opacity: 1;
     visibility: visible;
   }
 
-  /* Ajuster le padding pour une meilleure hiérarchie visuelle */
-  .sub-dropdown-menu li a {
-    padding-left: 40px;
-  }
-}
-
-/* TÉLÉPHONE PETIT ÉCRAN - max-width: 480px */
-@media (max-width: 480px) {
-  .logo {
-    width: 70px; /* Réduit davantage la taille du logo desktop */
-  }
-
-  .nav-links li a {
-    font-size: 0.85em; /* Réduit davantage la taille de la police */
+  /* ----------------------------------------------
+   ACTIONS (DESKTOP)
+---------------------------------------------- */
+  .actions {
+    display: flex;
+    gap: 8px; /* Réduit le gap */
   }
 
   .btn,
   .btn2 {
-    padding: 6px 12px; /* Réduit le padding */
-    font-size: 0.85em; /* Réduit davantage la taille de la police */
+    padding: 8px 16px; /* Réduit le padding */
+    text-decoration: none;
+    border-radius: 6px; /* Réduit le border-radius */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center; /* Aligne le texte au centre */
+  }
+
+  .btn {
+    background: #114d5a;
+    color: #ffcc00;
+  }
+
+  .btn:hover {
+    background: #0f3b46;
+    color: #ffcc00;
+  }
+
+  .btn2 {
+    background: #ffcc00;
+    color: #000;
+  }
+
+  .btn2:hover {
+    background: #e6b800;
+  }
+
+  /* ----------------------------------------------
+   MOBILE MENU
+---------------------------------------------- */
+  .mobile-actions {
+    display: none;
+    flex-direction: column;
+    gap: 8px; /* Réduit le gap */
+    margin-top: 16px; /* Réduit le margin */
+    padding: 10px 15px; /* Réduit le padding */
+  }
+
+  .close-btn {
+    display: none;
+    justify-content: flex-end;
+    padding: 0 20px;
+    margin-bottom: 16px; /* Réduit le margin */
+  }
+
+  .close-btn button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s;
+  }
+
+  .close-btn button:hover {
+    color: #fac83b;
+  }
+
+  /* Logo Mobile */
+  .mobile-logo {
+    display: none; /* Masqué par défaut */
+    text-align: center;
+    margin: 16px 0; /* Réduit le margin */
   }
 
   .mobile-logo img {
-    width: 60px; /* Réduit davantage la taille du logo mobile */
+    width: 80px; /* Réduit la taille du logo mobile */
+    height: auto;
   }
-}
 
-/* ----------------------------------------------
+  /* ----------------------------------------------
+   RESPONSIVE QUERIES
+---------------------------------------------- */
+  /* TABLETTE & MOBILE - max-width: 1024px */
+  @media (max-width: 1024px) {
+    .burger {
+      display: block;
+    }
+    .actions {
+      display: none; /* Masquer les actions desktop */
+    }
+
+    /* Le menu occupe toute la taille de l'écran */
+    .nav-links {
+      position: fixed;
+      top: 0; /* Collé en haut */
+      left: -100%;
+      width: 100vw; /* Toute la largeur de l'écran */
+      height: 100vh; /* Toute la hauteur de l'écran */
+      flex-direction: column;
+      background-color: #fff;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      overflow-y: auto; /* Scroll si contenu trop long */
+      transition: left 0.3s ease-in-out;
+      padding-top: 70px;
+    }
+
+    .nav-links.active {
+      left: 0;
+    }
+
+    .nav-links li {
+      width: 100%;
+      text-align: left; /* Aligne le texte des liens à gauche */
+    }
+
+    .nav-links li a {
+      padding: 15px 25px;
+      font-size: 1.1em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links li a:active {
+      background-color: #f0f0f0;
+    }
+
+    /* Positionnement "statique" des sous-menus */
+    .dropdown-menu {
+      position: static;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      min-width: 0;
+      display: none;
+      border: none !important;
+      opacity: 1;
+      visibility: visible;
+      background-color: #f5f5f5;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .dropdown.open .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      padding-left: 35px;
+      font-size: 1em;
+      color: #444;
+    }
+
+    .mobile-actions {
+      padding: 20px;
+      gap: 12px;
+      background-color: #f9f9f9;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-actions .btn,
+    .mobile-actions .btn2 {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .mobile-actions .btn:active,
+    .mobile-actions .btn2:active {
+      transform: scale(0.98);
+    }
+
+    .nav-links .dropdown a i,
+    .dropdown-menu li a i {
+      font-size: 0.8em;
+      opacity: 0.7;
+    }
+
+    .dropdown.open > a i {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu li.open > a i {
+      transform: rotate(90deg);
+    }
+
+    .pro-badge {
+      font-size: 0.7em;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #fac83b 0%, #ffdb6b 100%);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .burger {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #f5f5f5;
+      transition: all 0.3s ease;
+    }
+
+    .burger:active {
+      background-color: #e5e5e5;
+      transform: scale(0.95);
+    }
+
+    .close-btn button {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .close-btn button:active {
+      background-color: #e5e5e5;
+      transform: scale(0.95);
+    }
+
+    .mobile-logo {
+      display: block; /* Affiché uniquement en mobile */
+      width: 100%;
+      text-align: center; /* Centre le logo */
+    }
+
+    .sub-dropdown-menu {
+      position: static;
+      box-shadow: none;
+      padding-left: 20px;
+      min-width: 100%;
+      display: none; /* Caché par défaut */
+    }
+
+    .dropdown-menu li.open .sub-dropdown-menu {
+      display: block; /* S'affiche quand le parent a la classe .open */
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Ajuster le padding pour une meilleure hiérarchie visuelle */
+    .sub-dropdown-menu li a {
+      padding-left: 40px;
+    }
+  }
+
+  /* SMARTPHONE - max-width: 768px */
+  @media (max-width: 768px) {
+    .burger {
+      display: block;
+    }
+    .actions {
+      display: none;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #fff;
+      transition: left 0.3s ease-in-out;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+      padding-top: 50px; /* Réduit le padding-top pour moins d'espace */
+    }
+
+    .nav-links.active {
+      left: 0;
+    }
+
+    .nav-links li {
+      width: 100%;
+      text-align: left; /* Aligne le texte des liens à gauche */
+    }
+
+    .nav-links li a {
+      display: block;
+      padding: 12px 20px; /* Réduit le padding */
+      font-size: 0.95em; /* Réduit la taille de la police */
+      text-align: left; /* Assure l'alignement à gauche */
+    }
+
+    .dropdown-menu {
+      position: static;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      min-width: 0;
+      display: none;
+      border: none !important;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown.open .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      padding: 8px 20px; /* Réduit le padding */
+      font-size: 0.9em; /* Réduit la taille de la police */
+    }
+
+    .mobile-actions {
+      display: flex;
+      margin-bottom: 16px; /* Réduit le margin */
+      justify-content: center; /* Centre les boutons */
+    }
+
+    .close-btn {
+      display: flex;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+
+    .mobile-logo {
+      display: block; /* Affiché uniquement en mobile */
+      width: 100%;
+      text-align: center; /* Centre le logo */
+    }
+
+    .sub-dropdown-menu {
+      position: static;
+      box-shadow: none;
+      padding-left: 20px;
+      min-width: 100%;
+      display: none; /* Caché par défaut */
+    }
+
+    .dropdown-menu li.open .sub-dropdown-menu {
+      display: block; /* S'affiche quand le parent a la classe .open */
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Ajuster le padding pour une meilleure hiérarchie visuelle */
+    .sub-dropdown-menu li a {
+      padding-left: 40px;
+    }
+  }
+
+  /* TÉLÉPHONE PETIT ÉCRAN - max-width: 480px */
+  @media (max-width: 480px) {
+    .logo {
+      width: 70px; /* Réduit davantage la taille du logo desktop */
+    }
+
+    .nav-links li a {
+      font-size: 0.85em; /* Réduit davantage la taille de la police */
+    }
+
+    .btn,
+    .btn2 {
+      padding: 6px 12px; /* Réduit le padding */
+      font-size: 0.85em; /* Réduit davantage la taille de la police */
+    }
+
+    .mobile-logo img {
+      width: 60px; /* Réduit davantage la taille du logo mobile */
+    }
+  }
+
+  /* ----------------------------------------------
    HOVER (DESKTOP)
    On utilise le hover pour afficher le sous-menu
    quand la largeur est >= 1025px
 ---------------------------------------------- */
-@media (min-width: 1025px) {
-  .nav-links .dropdown:hover .dropdown-menu {
+  @media (min-width: 1025px) {
+    .nav-links .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown.open .dropdown-menu {
+      display: none; /* Éviter la duplication d'ouverture */
+    }
+
+    .nav-links li {
+      text-align: left; /* Aligne le texte à gauche en desktop */
+    }
+
+    .nav-links li a {
+      text-align: left; /* Aligne le texte à gauche en desktop */
+    }
+  }
+
+  /* ----------------------------------------------
+   TRANSITIONS & EFFETS
+---------------------------------------------- */
+  .nav-links,
+  .dropdown-menu {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .burger i {
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .burger.active i {
+    transform: rotate(90deg);
+  }
+
+  .nav-links a:hover,
+  .nav-links a.actived {
+    color: #fac83b;
+  }
+
+  .nav-links .dropdown a i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+  }
+
+  .nav-links .dropdown.open a i {
+    transform: rotate(180deg);
+  }
+
+  /* ----------------------------------------------
+   COULEUR DU TEXTE DU BOUTON "Soumettre un besoin"
+---------------------------------------------- */
+  .mobile-actions .btn {
+    color: #fac83b !important; /* Jaune */
+  }
+
+  /* Styles pour le sous-menu Horeca */
+  .sub-dropdown-menu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+    min-width: 200px;
+    border-radius: 4px;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .dropdown-menu li:hover .sub-dropdown-menu {
     display: block;
     opacity: 1;
     visibility: visible;
   }
 
-  .dropdown.open .dropdown-menu {
-    display: none; /* Éviter la duplication d'ouverture */
+  /* Badge PRO */
+  .pro-badge {
+    background-color: #fac83b;
+    color: #114d5a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 8px;
   }
 
-  .nav-links li {
-    text-align: left; /* Aligne le texte à gauche en desktop */
+  /* Ajustements pour mobile */
+  @media (max-width: 1024px) {
+    .sub-dropdown-menu {
+      position: static;
+      box-shadow: none;
+      padding-left: 20px;
+      min-width: 100%;
+      display: none; /* Caché par défaut */
+    }
+
+    .dropdown-menu li.open .sub-dropdown-menu {
+      display: block; /* S'affiche quand le parent a la classe .open */
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Ajuster le padding pour une meilleure hiérarchie visuelle */
+    .sub-dropdown-menu li a {
+      padding-left: 40px;
+    }
   }
 
-  .nav-links li a {
-    text-align: left; /* Aligne le texte à gauche en desktop */
-  }
-}
-
-/* ----------------------------------------------
-   TRANSITIONS & EFFETS
----------------------------------------------- */
-.nav-links,
-.dropdown-menu {
-  transition: all 0.3s ease-in-out;
-}
-
-.burger i {
-  transition: transform 0.3s, color 0.3s;
-}
-
-.burger.active i {
-  transform: rotate(90deg);
-}
-
-.nav-links a:hover,
-.nav-links a.actived {
-  color: #FAC83B;
-}
-
-.nav-links .dropdown a i {
-  margin-left: 5px;
-  transition: transform 0.3s;
-}
-
-.nav-links .dropdown.open a i {
-  transform: rotate(180deg);
-}
-
-/* ----------------------------------------------
-   COULEUR DU TEXTE DU BOUTON "Soumettre un besoin"
----------------------------------------------- */
-.mobile-actions .btn {
-  color: #FAC83B !important; /* Jaune */
-}
-
-/* Styles pour le sous-menu Horeca */
-.sub-dropdown-menu {
-  position: absolute;
-  left: 100%;
-  top: 0;
-  background-color: #fff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  padding: 8px 0;
-  margin: 0;
-  min-width: 200px;
-  border-radius: 4px;
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
-}
-
-.dropdown-menu li:hover .sub-dropdown-menu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Badge PRO */
-.pro-badge {
-  background-color: #FAC83B;
-  color: #114D5A;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.8em;
-  font-weight: bold;
-  margin-left: 8px;
-}
-
-/* Ajustements pour mobile */
-@media (max-width: 1024px) {
-  .sub-dropdown-menu {
-    position: static;
-    box-shadow: none;
-    padding-left: 20px;
-    min-width: 100%;
-    display: none; /* Caché par défaut */
-  }
-  
-  .dropdown-menu li.open .sub-dropdown-menu {
-    display: block; /* S'affiche quand le parent a la classe .open */
-    opacity: 1;
-    visibility: visible;
+  /* Nouveau style pour le chevron right d'Horeca */
+  .dropdown-menu li a i {
+    margin-left: 5px;
+    transition: transform 0.3s;
   }
 
-  /* Ajuster le padding pour une meilleure hiérarchie visuelle */
-  .sub-dropdown-menu li a {
-    padding-left: 40px;
-  }
-}
-
-/* Nouveau style pour le chevron right d'Horeca */
-.dropdown-menu li a i {
-  margin-left: 5px;
-  transition: transform 0.3s;
-}
-
-/* Rotation du chevron right quand le sous-menu est ouvert */
-.dropdown-menu li.open > a i {
-  transform: rotate(90deg);
-}
-
-/* Ajustement pour mobile */
-@media (max-width: 1024px) {
+  /* Rotation du chevron right quand le sous-menu est ouvert */
   .dropdown-menu li.open > a i {
     transform: rotate(90deg);
   }
-}
 
-/* Ajustements spécifiques pour les très petits écrans */
-@media (max-width: 360px) {
-  .nav-links li a {
-    font-size: 1em;
-    padding: 12px 20px;
+  /* Ajustement pour mobile */
+  @media (max-width: 1024px) {
+    .dropdown-menu li.open > a i {
+      transform: rotate(90deg);
+    }
   }
 
-  .dropdown-menu li a {
-    font-size: 0.9em;
-  }
+  /* Ajustements spécifiques pour les très petits écrans */
+  @media (max-width: 360px) {
+    .nav-links li a {
+      font-size: 1em;
+      padding: 12px 20px;
+    }
 
-  .sub-dropdown-menu li a {
-    font-size: 0.85em;
-  }
+    .dropdown-menu li a {
+      font-size: 0.9em;
+    }
 
-  .mobile-actions .btn,
-  .mobile-actions .btn2 {
-    padding: 10px 16px;
-    font-size: 0.9em;
-  }
-}
+    .sub-dropdown-menu li a {
+      font-size: 0.85em;
+    }
 
+    .mobile-actions .btn,
+    .mobile-actions .btn2 {
+      padding: 10px 16px;
+      font-size: 0.9em;
+    }
+  }
 </style>
 
 <!-- header.component.html -->
@@ -727,29 +726,29 @@ nav .container {
       </div>
 
       <!-- Menu Burger -->
-      <button 
-        class="burger" 
-        (click)="toggleMenu()" 
-        [ngClass]="{'active': isMenuOpen}" 
+      <button
+        class="burger"
+        (click)="toggleMenu()"
+        [ngClass]="{ active: isMenuOpen }"
         aria-label="Ouvrir le menu"
       >
         <i class="fas fa-bars"></i>
       </button>
 
       <!-- Navigation Links -->
-      <ul class="nav-links" [ngClass]="{'active': isMenuOpen}">
+      <ul class="nav-links" [ngClass]="{ active: isMenuOpen }">
         <!-- Bouton Fermer (Mobile) -->
         <li class="close-btn">
           <button (click)="toggleMenu()" aria-label="Fermer le menu">
             <i class="fas fa-times"></i>
           </button>
         </li>
-        
+
         <!-- Liens de Navigation -->
         <li>
-          <a 
-            routerLink="/accueil" 
-            routerLinkActive="actived"  
+          <a
+            routerLink="/accueil"
+            routerLinkActive="actived"
             (click)="closeMenu()"
           >
             Accueil
@@ -757,63 +756,130 @@ nav .container {
         </li>
 
         <!-- Dropdown "Vos besoins" -->
-        <li 
-          class="dropdown" 
-          [ngClass]="{'open': isDropdownOpen('vosBesoins')}" 
+        <li
+          class="dropdown"
+          [ngClass]="{ open: isDropdownOpen('vosBesoins') }"
           (click)="isMobile && toggleDropdown('vosBesoins')"
         >
-          <a aria-haspopup="true" [attr.aria-expanded]="isDropdownOpen('vosBesoins')">
+          <a
+            aria-haspopup="true"
+            [attr.aria-expanded]="isDropdownOpen('vosBesoins')"
+          >
             Vos besoins <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/serviceOdoo" (click)="isMobile && closeMenu()">Application Odoo</a></li>
-            <li><a routerLink="/service2" (click)="isMobile && closeMenu()">Finances</a></li>
-            <li><a routerLink="/service3" (click)="isMobile && closeMenu()">Ventes</a></li>
-            <li><a routerLink="/fabrication" (click)="isMobile && closeMenu()">Fabrications</a></li>
-            <li><a routerLink="/ressources-humaines" (click)="isMobile && closeMenu()">Ressources Humaines</a></li>
-            <li><a routerLink="/marketing-digital" (click)="isMobile && closeMenu()">Marketing Digital</a></li>
-            <li><a routerLink="/services-professionnels" (click)="isMobile && closeMenu()">Services Professionnels</a></li>
+            <li>
+              <a routerLink="/serviceOdoo" (click)="isMobile && closeMenu()"
+                >Application Odoo</a
+              >
+            </li>
+            <li>
+              <a routerLink="/service2" (click)="isMobile && closeMenu()"
+                >Finances</a
+              >
+            </li>
+            <li>
+              <a routerLink="/service3" (click)="isMobile && closeMenu()"
+                >Ventes</a
+              >
+            </li>
+            <li>
+              <a routerLink="/fabrication" (click)="isMobile && closeMenu()"
+                >Fabrications</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/ressources-humaines"
+                (click)="isMobile && closeMenu()"
+                >Ressources Humaines</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/marketing-digital"
+                (click)="isMobile && closeMenu()"
+                >Marketing Digital</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/services-professionnels"
+                (click)="isMobile && closeMenu()"
+                >Services Professionnels</a
+              >
+            </li>
           </ul>
         </li>
 
         <!-- Dropdown "Package Métier" -->
-        <li 
-          class="dropdown" 
-          [ngClass]="{'open': isDropdownOpen('packageMetier')}" 
+        <li
+          class="dropdown"
+          [ngClass]="{ open: isDropdownOpen('packageMetier') }"
           (click)="isMobile && toggleDropdown('packageMetier')"
         >
-          <a 
-            routerLink="/package-metier" 
-            routerLinkActive="actived" 
-            aria-haspopup="true" 
+          <a
+            routerLink="/package-metier"
+            routerLinkActive="actived"
+            aria-haspopup="true"
             [attr.aria-expanded]="isDropdownOpen('packageMetier')"
           >
             Package Métier <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/package-metier/performance" (click)="isMobile && closeMenu()">Commerciale</a></li>
-            <li><a routerLink="/package-metier/administratif" (click)="isMobile && closeMenu()">Administratif</a></li>
-            <li [ngClass]="{'open': isDropdownOpen('horeca')}" (click)="$event.stopPropagation(); isMobile && toggleDropdown('horeca')">
-              <a>
-                Horeca <i class="fas fa-chevron-right"></i>
-              </a>
+            <li>
+              <a
+                routerLink="/package-metier/performance"
+                (click)="isMobile && closeMenu()"
+                >Commerciale</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/package-metier/administratif"
+                (click)="isMobile && closeMenu()"
+                >Administratif</a
+              >
+            </li>
+            <li
+              [ngClass]="{ open: isDropdownOpen('horeca') }"
+              (click)="
+                $event.stopPropagation(); isMobile && toggleDropdown('horeca')
+              "
+            >
+              <a> Horeca <i class="fas fa-chevron-right"></i> </a>
               <ul class="sub-dropdown-menu">
-                <li><a routerLink="/package-metier/horeca/formules" (click)="isMobile && closeMenu()">Nos formules</a></li>
                 <li>
-                  <a routerLink="/package-metier/horeca/smartAlert" (click)="isMobile && closeMenu()">
+                  <a
+                    routerLink="/package-metier/horeca/formules"
+                    (click)="isMobile && closeMenu()"
+                    >Nos formules</a
+                  >
+                </li>
+                <li>
+                  <a
+                    routerLink="/package-metier/horeca/smartAlert"
+                    (click)="isMobile && closeMenu()"
+                  >
                     SmartAlert <span class="pro-badge">PRO</span>
                   </a>
                 </li>
-                <li><a routerLink="/package-metier/horeca/services-exclusifs" (click)="isMobile && closeMenu()">Services Exclusifs</a></li>
+                <li>
+                  <a
+                    routerLink="/package-metier/horeca/services-exclusifs"
+                    (click)="isMobile && closeMenu()"
+                    >Services Exclusifs</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>
         </li>
 
         <li>
-          <a 
-            routerLink="/about" 
-            routerLinkActive="actived" 
+          <a
+            routerLink="/about"
+            routerLinkActive="actived"
             (click)="closeMenu()"
           >
             À propos
@@ -821,32 +887,46 @@ nav .container {
         </li>
 
         <!-- Dropdown "Tarifs" -->
-        <li 
-          class="dropdown" 
-          [ngClass]="{'open': isDropdownOpen('tarifs')}" 
+        <li
+          class="dropdown"
+          [ngClass]="{ open: isDropdownOpen('tarifs') }"
           (click)="isMobile && toggleDropdown('tarifs')"
         >
-          <a aria-haspopup="true" [attr.aria-expanded]="isDropdownOpen('tarifs')">
+          <a
+            aria-haspopup="true"
+            [attr.aria-expanded]="isDropdownOpen('tarifs')"
+          >
             Tarifs <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/tarif-Odoo" (click)="isMobile && closeMenu()">Odoo</a></li>
-            <li><a routerLink="/tarif" (click)="isMobile && closeMenu()">Site Internet</a></li>
+            <li>
+              <a routerLink="/tarif-Odoo" (click)="isMobile && closeMenu()"
+                >Odoo</a
+              >
+            </li>
+            <li>
+              <a routerLink="/tarif" (click)="isMobile && closeMenu()"
+                >Site Internet</a
+              >
+            </li>
           </ul>
+        </li>
+
+        <!-- Ajout du lien Support dans le menu de navigation -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/support" routerLinkActive="active"
+            >Support</a
+          >
         </li>
 
         <!-- Actions Mobile -->
         <li class="mobile-actions">
-          <a 
-            routerLink="/besoin" 
-            class="btn text-center" 
-            (click)="closeMenu()"
-          >
+          <a routerLink="/besoin" class="btn text-center" (click)="closeMenu()">
             Soumettre un besoin
           </a>
-          <a 
-            routerLink="/contact" 
-            class="btn2 text-center" 
+          <a
+            routerLink="/contact"
+            class="btn2 text-center"
             (click)="closeMenu()"
           >
             Contactez-nous
@@ -859,6 +939,6 @@ nav .container {
         <a routerLink="/besoin" class="btn">Soumettre un besoin</a>
         <a routerLink="/contact" class="btn2">Contactez-nous</a>
       </div>
-      </div>
-    </nav>
+    </div>
+  </nav>
 </header>
