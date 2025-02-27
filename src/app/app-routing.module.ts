@@ -8,7 +8,6 @@ import { AboutComponent } from './about/about.component';
 import { JobComponent } from './job/job.component';
 import { Service3Component } from './service3/service3.component';
 import { ReserveDemoComponent } from './reserve-demo/reserve-demo.component';
-import { TextSlideComponent } from './text-slide/text-slide.component';
 import { ContactComponent } from './contact/contact.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
@@ -28,6 +27,7 @@ import { Service4Component } from './service4/service4.component';
 import { Service5Component } from './service5/service5.component';
 import { Service6Component } from './service6/service6.component';
 import { Service7Component } from './service7/service7.component';
+import { SupportComponent } from './support/support.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -51,24 +51,35 @@ const routes: Routes = [
   { path: 'pricing', component: PricingOdooComponent },
   { path: 'package-metier/performance', component: PackPerformanceComponent },
   { path: 'package-metier/horeca', component: PackHorecaComponent },
-  { path: 'package-metier/horeca/formules', component: HorecaFormulesComponent },
-  { path: 'package-metier/horeca/smartAlert', component: HorecaSmartAlertComponent },
-  { path: 'package-metier/horeca/services-exclusifs', component: HorecaServiceExclusifComponent },
-  { path: 'package-metier/administratif', component: PackAdministratifComponent },
+  {
+    path: 'package-metier/horeca/formules',
+    component: HorecaFormulesComponent,
+  },
+  {
+    path: 'package-metier/horeca/smartAlert',
+    component: HorecaSmartAlertComponent,
+  },
+  {
+    path: 'package-metier/horeca/services-exclusifs',
+    component: HorecaServiceExclusifComponent,
+  },
+  {
+    path: 'package-metier/administratif',
+    component: PackAdministratifComponent,
+  },
   { path: 'careers', component: JobApplicationComponent },
   { path: 'reserver-demo', component: DemoReservationComponent },
   { path: 'pack-selection', component: PackSelectionComponent },
   { path: 'reservation-horeca', component: ReservationHorecaComponent },
-  { path: '**', redirectTo: 'accueil', pathMatch: 'full' }
+  { path: 'support', component: SupportComponent },
+  { path: '**', redirectTo: 'accueil', pathMatch: 'full' },
 ];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'enabled',
-    })
+    }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { 
-  
-}
+export class AppRoutingModule {}
