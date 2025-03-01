@@ -551,6 +551,20 @@ h6 {
     top: -5px;
     right: -5px;
   }
+
+  .mt-5 .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .mt-5 .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .mt-5 .me-3 {
+    margin-right: 0 !important;
+  }
 }
 
 .contact-link {
