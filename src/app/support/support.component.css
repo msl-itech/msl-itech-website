@@ -3,6 +3,8 @@
   font-family: "Poppins", sans-serif;
   color: #495057;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 /* Hero Section */
@@ -33,6 +35,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index: -1;
 }
 
 .particles-container::before {
@@ -547,5 +550,163 @@ h6 {
     font-size: 0.8rem;
     top: -5px;
     right: -5px;
+  }
+}
+
+.contact-link {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #114d5a;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(17, 77, 90, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  background: rgba(17, 77, 90, 0.03);
+  transform: translateX(8px);
+  border-color: #ffdd57;
+  box-shadow: 0 4px 15px rgba(255, 221, 87, 0.15);
+  text-decoration: none;
+  color: #114d5a;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #114d5a, #165d6c);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-icon::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffdd57, transparent);
+  opacity: 0.2;
+  border-radius: inherit;
+}
+
+.contact-icon i {
+  color: #ffffff;
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info {
+  margin-left: 16px;
+}
+
+.contact-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #114d5a;
+  display: block;
+  margin-top: 2px;
+}
+
+.contact-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  color: #114d5a;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+/* Assurer que les conteneurs de boutons sont aussi cliquables */
+.mt-5,
+.card-body,
+.text-center {
+  position: relative;
+  z-index: 2;
+}
+
+.download-buttons {
+  max-width: 400px;
+  margin: 0 auto;
+  background: rgba(17, 77, 90, 0.03);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(17, 77, 90, 0.1);
+}
+
+.download-title {
+  color: #114d5a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-title i {
+  font-size: 1.3rem;
+  color: #114d5a;
+}
+
+.download-link {
+  display: block;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 12px;
+  background: white;
+}
+
+.download-link:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  box-shadow: 0 4px 15px rgba(17, 77, 90, 0.1);
+}
+
+.windows-download img,
+.mac-download img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.windows-download,
+.mac-download {
+  padding: 10px;
+}
+
+.separator-light {
+  width: 60%;
+  height: 1px;
+  background: rgba(17, 77, 90, 0.1);
+  margin: 0 auto;
+}
+
+/* Ajout d'un effet de hover sur les titres */
+.download-title:hover i {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Style responsive */
+@media (max-width: 576px) {
+  .download-buttons {
+    padding: 15px;
+  }
+
+  .download-title {
+    font-size: 1rem;
   }
 }
