@@ -914,7 +914,11 @@
 
         <!-- Ajout du lien Support dans le menu de navigation -->
         <li class="nav-item">
-          <a class="nav-link" routerLink="/support" routerLinkActive="active"
+          <a
+            class="nav-link"
+            routerLink="/support"
+            (click)="isMobile && closeMenu()"
+            routerLinkActive="active"
             >Support</a
           >
         </li>
