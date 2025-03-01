@@ -53,6 +53,7 @@ import { ReservationHorecaComponent } from './reservation-horeca/reservation-hor
 import { Service5Component } from './service5/service5.component';
 import { Service6Component } from './service6/service6.component';
 import { Service7Component } from './service7/service7.component';
+import { SupportComponent } from './support/support.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +98,8 @@ import { Service7Component } from './service7/service7.component';
     ReservationHorecaComponent,
     Service5Component,
     Service6Component,
-    Service7Component
+    Service7Component,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
