@@ -1,0 +1,198 @@
+<div class="banner-section2 position-relative">
+  <img src="../../assets/img/horeca/1.webp" alt="MSL Itech Banner" />
+  <div class="overlay-text d-flex align-items-center justify-content-center">
+    <div class="text-center text-white px-3">
+      <h2>Commander une option</h2>
+    </div>
+  </div>
+</div>
+
+<div class="option-form-page py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-lg rounded-xl overflow-hidden">
+          <div class="card-header bg-primary text-white p-4">
+            <h3 class="mb-0">{{ optionName }}</h3>
+            <p class="mb-0 mt-2">
+              Prix: <strong>{{ optionPrice }} MAD</strong>/mois
+            </p>
+          </div>
+          <div class="card-body p-4">
+            <div class="option-details mb-4">
+              <h4 class="mb-3">Détails de l'option</h4>
+              <div class="option-description p-3 bg-light rounded">
+                <div *ngIf="optionCode === 'gestion-equipes'">
+                  <p>
+                    La <strong>Gestion des équipes</strong> vous permet
+                    d'optimiser l'organisation de votre personnel avec une
+                    gestion simplifiée des plannings.
+                  </p>
+                  <ul class="mb-0">
+                    <li>Planification automatisée des horaires</li>
+                    <li>Gestion des congés et absences</li>
+                    <li>Suivi du temps de travail</li>
+                    <li>Rapports de productivité</li>
+                  </ul>
+                </div>
+                <div *ngIf="optionCode === 'menu-digital'">
+                  <p>
+                    Le <strong>Menu digital avec QR Code</strong> vous permet de
+                    digitaliser l'expérience client avec un menu interactif
+                    accessible via QR Code.
+                  </p>
+                  <ul class="mb-0">
+                    <li>Création de menus numériques personnalisés</li>
+                    <li>Mise à jour en temps réel</li>
+                    <li>Intégration de photos et descriptions</li>
+                    <li>Statistiques de consultation</li>
+                  </ul>
+                </div>
+                <div *ngIf="optionCode === 'gestion-evenements'">
+                  <p>
+                    La <strong>Gestion des événements privés</strong> vous
+                    permet d'attirer plus de réservations pour des événements
+                    privés avec une solution adaptée.
+                  </p>
+                  <ul class="mb-0">
+                    <li>Gestion des réservations de groupes</li>
+                    <li>Planification des événements</li>
+                    <li>Suivi des paiements et acomptes</li>
+                    <li>Personnalisation des offres</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="mb-3">Formulaire de commande</h4>
+            <form (ngSubmit)="onSubmit(optionForm)" #optionForm="ngForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Nom complet *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="contact_name"
+                      [(ngModel)]="formData.contact_name"
+                      required
+                      class="form-control"
+                      #nameInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        nameInput.invalid &&
+                        (nameInput.dirty || nameInput.touched)
+                      "
+                    >
+                      Ce champ est requis
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      [(ngModel)]="formData.email"
+                      required
+                      email
+                      class="form-control"
+                      #emailInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        emailInput.invalid &&
+                        (emailInput.dirty || emailInput.touched)
+                      "
+                    >
+                      Veuillez entrer une adresse email valide
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="phone">Téléphone *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      [(ngModel)]="formData.phone"
+                      required
+                      class="form-control"
+                      #phoneInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        phoneInput.invalid &&
+                        (phoneInput.dirty || phoneInput.touched)
+                      "
+                    >
+                      Ce champ est requis
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="company">Nom de l'établissement *</label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      [(ngModel)]="formData.company"
+                      required
+                      class="form-control"
+                      #companyInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        companyInput.invalid &&
+                        (companyInput.dirty || companyInput.touched)
+                      "
+                    >
+                      Ce champ est requis
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="additionalInfo"
+                      >Informations supplémentaires</label
+                    >
+                    <textarea
+                      id="additionalInfo"
+                      name="additionalInfo"
+                      [(ngModel)]="formData.additionalInfo"
+                      class="form-control"
+                      rows="4"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-12 mt-4">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg w-100"
+                    [disabled]="optionForm.invalid || isLoading"
+                  >
+                    <i class="fas fa-shopping-cart me-2"></i>
+                    {{
+                      isLoading
+                        ? "Traitement en cours..."
+                        : "Commander maintenant"
+                    }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,10 @@
     letter-spacing: 0.3px;
   }
 
-  h2, h3, h4, h5 {
+  h2,
+  h3,
+  h4,
+  h5 {
     letter-spacing: 0.5px;
     line-height: 1.4;
   }
@@ -67,37 +70,398 @@
 
   .pack-footer .btn-outline-primary {
     background-color: transparent;
-    border: 2px solid #114D5A;
-    color: #114D5A;
+    border: 2px solid #114d5a;
+    color: #114d5a;
   }
 
   .pack-footer .btn-outline-primary:hover {
-    background-color: #114D5A;
+    background-color: #114d5a;
     color: white;
   }
 
   .pack-footer .btn-primary {
-    background-color: #114D5A;
-    border: 2px solid #114D5A;
+    background-color: #114d5a;
+    border: 2px solid #114d5a;
   }
 
   .pack-footer .btn-primary:hover {
     background-color: #0f677a;
     border-color: #10768d;
   }
+
+  /* Style pour les prix des packs */
+  .price-tag {
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .price {
+    font-size: 1.5rem;
+    color: #114d5a;
+  }
+
+  .premium .price {
+    color: #ffc107; /* Couleur jaune pour le prix du pack premium */
+  }
+
+  .period {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  .period:nth-child(2) {
+    font-size: 0.9rem;
+    color: #ffc107;
+  }
+
+  /* Styles pour la section des options supplémentaires */
+  .additional-options-section {
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .additional-options-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(17, 77, 90, 0.05) 0%,
+      rgba(17, 77, 90, 0) 70%
+    );
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .table-options {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .table-options thead {
+    background: linear-gradient(135deg, #114d5a 0%, #0d3c47 100%);
+    color: white;
+  }
+
+  .table-options th {
+    padding: 1.5rem;
+    font-weight: 700;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .table-options th::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+  }
+
+  .table-options th.service-col {
+    text-align: left;
+  }
+
+  .table-options th.service-col::after {
+    left: 20px;
+    transform: none;
+  }
+
+  .table-options th.desc-col::after {
+    left: 20px;
+    transform: none;
+  }
+
+  .table-options td {
+    padding: 1.8rem 1.5rem;
+    vertical-align: middle;
+    border-top: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .table-options tbody tr {
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+
+  .table-options tbody tr:hover {
+    background-color: rgba(17, 77, 90, 0.03);
+    transform: translateY(-2px);
+  }
+
+  .table-options tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .service-col {
+    width: 25%;
+  }
+
+  .price-col {
+    width: 15%;
+    text-align: center;
+  }
+
+  .desc-col {
+    width: 60%;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(
+      135deg,
+      rgba(17, 77, 90, 0.1) 0%,
+      rgba(17, 77, 90, 0.2) 100%
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #114d5a;
+    box-shadow: 0 4px 10px rgba(17, 77, 90, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  tr:hover .service-icon {
+    transform: scale(1.1);
+    background: linear-gradient(
+      135deg,
+      rgba(17, 77, 90, 0.15) 0%,
+      rgba(17, 77, 90, 0.25) 100%
+    );
+  }
+
+  .price-badge {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #114d5a;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+
+  .price-badge::after {
+    content: "MAD/mois";
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 0.2rem;
+  }
+
+  .service-description ul li {
+    position: relative;
+    padding-left: 0.5rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .service-description .fas {
+    color: #ffc107;
+    font-size: 1.1rem;
+  }
+
+  .additional-options-btn {
+    margin-top: 2.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(17, 77, 90, 0.15);
+  }
+
+  .additional-options-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(17, 77, 90, 0.2);
+  }
+
+  .service-name h5 {
+    font-weight: 600;
+    color: #114d5a;
+    margin-bottom: 0.3rem;
+  }
+
+  .service-name .service-subtitle {
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+
+  /* Styles pour les boutons d'action dans le tableau */
+  .action-btn {
+    background-color: #114d5a;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .action-btn:hover {
+    background-color: #0d3c47;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .action-btn:hover .fas {
+    color: #ffc107;
+    transform: scale(1.2);
+  }
+
+  .action-btn .fas {
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .table-options .action-col {
+    width: 15%;
+    text-align: center;
+  }
+
+  /* Amélioration de la responsivité du tableau */
+  @media (max-width: 991px) {
+    .table-options {
+      display: block;
+      width: 100%;
+    }
+
+    .table-options thead {
+      display: none; /* Masquer l'en-tête sur mobile */
+    }
+
+    .table-options tbody,
+    .table-options tr,
+    .table-options td {
+      display: block;
+      width: 100%;
+    }
+
+    .table-options tr {
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .table-options td {
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .table-options td:before {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      width: 45%;
+      font-weight: 700;
+      color: #114d5a;
+    }
+
+    .table-options td.service-name {
+      padding-left: 1.5rem;
+      background-color: #f8f9fa;
+      border-bottom: 2px solid #114d5a;
+    }
+
+    .table-options td.price-value {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .table-options td.service-description {
+      padding: 1.5rem;
+    }
+
+    .table-options td.text-center {
+      text-align: center !important;
+      padding: 1.5rem;
+    }
+
+    /* Ajout d'étiquettes pour les colonnes sur mobile */
+    .table-options td.price-value:before {
+      content: "Prix:";
+      position: static;
+      display: block;
+      transform: none;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .table-options td.service-description:before {
+      content: "Description:";
+      position: static;
+      display: block;
+      transform: none;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* Ajustements supplémentaires pour les très petits écrans */
+  @media (max-width: 576px) {
+    .price-badge {
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .action-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .service-name h5 {
+      font-size: 1.1rem;
+    }
+  }
 </style>
 
 <!-- Hero Section -->
 
 <div class="banner-section position-relative">
-    <img src="../../assets/img/horeca/1.webp" alt="MSL Itech Banner" class="w-100">
-    <div class="overlay-text d-flex align-items-center justify-content-center">
-      <div class="text-center text-white px-3 fade-in">
-        <h2 class="fw-bold">Transformez votre établissement avec nos packs sur mesure !</h2>
-        <p class="lead">Des solutions intelligentes pour chaque taille d'établissement, conçues pour simplifier votre quotidien et booster vos résultats.</p>
-      </div>
+  <img
+    src="../../assets/img/horeca/1.webp"
+    alt="MSL Itech Banner"
+    class="w-100"
+  />
+  <div class="overlay-text d-flex align-items-center justify-content-center">
+    <div class="text-center text-white px-3 fade-in">
+      <h2 class="fw-bold">
+        Transformez votre établissement avec nos packs sur mesure !
+      </h2>
+      <p class="lead">
+        Des solutions intelligentes pour chaque taille d'établissement, conçues
+        pour simplifier votre quotidien et booster vos résultats.
+      </p>
     </div>
   </div>
+</div>
 
 <!-- Avantages Section -->
 <section class="advantages-section py-5">
@@ -106,7 +470,9 @@
       <span class="badge badge-primary mb-3">Nos Avantages</span>
       <h2 class="fw-bold">Pourquoi choisir nos solutions ?</h2>
       <div class="separator"></div>
-      <p class="lead text-muted">Des fonctionnalités pensées pour votre réussite</p>
+      <p class="lead text-muted">
+        Des fonctionnalités pensées pour votre réussite
+      </p>
     </div>
 
     <div class="row g-4">
@@ -114,28 +480,41 @@
         <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
           <i class="fas fa-chart-line mb-3 fa-2x"></i>
           <h3 class="h5 mb-3">Une solution scalable</h3>
-          <p class="mb-0">Des outils adaptés aux petits établissements, restaurants moyens et grands restaurants, pour une gestion optimale à chaque étape de croissance.</p>
+          <p class="mb-0">
+            Des outils adaptés aux petits établissements, restaurants moyens et
+            grands restaurants, pour une gestion optimale à chaque étape de
+            croissance.
+          </p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
           <i class="fas fa-hands-helping mb-3 fa-2x"></i>
           <h3 class="h5 mb-3">Engagement flexible</h3>
-          <p class="mb-0">Contrats de 12 mois avec préavis de 3 mois, conçus pour s'adapter à vos besoins et à votre rythme.</p>
+          <p class="mb-0">
+            Contrats de 12 mois avec préavis de 3 mois, conçus pour s'adapter à
+            vos besoins et à votre rythme.
+          </p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
           <i class="fas fa-headset mb-3 fa-2x"></i>
           <h3 class="h5 mb-3">Support technique intégré</h3>
-          <p class="mb-0">Accompagnement personnalisé avec un Help Desk gratuit (1 à 3 mois selon le pack) pour une intégration rapide et sans tracas.</p>
+          <p class="mb-0">
+            Accompagnement personnalisé avec un Help Desk gratuit (1 à 3 mois
+            selon le pack) pour une intégration rapide et sans tracas.
+          </p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="advantage-card h-100 p-4 bg-white rounded-lg shadow-hover">
           <i class="fas fa-arrow-up mb-3 fa-2x"></i>
           <h3 class="h5 mb-3">Évolutivité transparente</h3>
-          <p class="mb-0">Passez d'un pack à l'autre sans perdre vos données ni vos fonctionnalités, pour une croissance continue et sans friction.</p>
+          <p class="mb-0">
+            Passez d'un pack à l'autre sans perdre vos données ni vos
+            fonctionnalités, pour une croissance continue et sans friction.
+          </p>
         </div>
       </div>
     </div>
@@ -149,9 +528,11 @@
       <span class="badge badge-primary mb-3">Nos Solutions</span>
       <h2 class="fw-bold">Choisissez le pack qui vous correspond</h2>
       <div class="separator"></div>
-      <p class="lead text-muted">Des solutions adaptées à chaque étape de votre croissance</p>
+      <p class="lead text-muted">
+        Des solutions adaptées à chaque étape de votre croissance
+      </p>
     </div>
-    
+
     <div class="row g-4 justify-content-center">
       <!-- Pack Essentiel -->
       <div class="col-md-6 col-lg-4">
@@ -165,6 +546,10 @@
               <span class="users-badge">1-3 utilisateurs</span>
               <p class="mt-2">Petits établissements</p>
             </div>
+            <div class="price-tag mt-3">
+              <span class="price">4000 MAD</span>
+              <span class="period">/mois</span>
+            </div>
           </div>
           <div class="pack-content p-4">
             <div class="features-title mb-3">Fonctionnalités :</div>
@@ -174,28 +559,45 @@
                   <i class="fas fa-check-circle me-2"></i>
                   <div>
                     <strong>Gestion des tables et commandes</strong>
-                    <p class="feature-desc">Organisez vos tables, suivez les commandes en temps réel et gérez les paiements facilement</p>
+                    <p class="feature-desc">
+                      Organisez vos tables, suivez les commandes en temps réel
+                      et gérez les paiements facilement
+                    </p>
                   </div>
                 </li>
                 <li>
                   <i class="fas fa-check-circle me-2"></i>
                   <div>
                     <strong>Help Desk gratuit</strong>
-                    <p class="feature-desc">Support technique dédié pendant 1 mois pour une prise en main rapide</p>
+                    <p class="feature-desc">
+                      Support technique dédié pendant 1 mois pour une prise en
+                      main rapide
+                    </p>
                   </div>
                 </li>
                 <li>
-                    <i class="fas fa-check-circle me-2"></i>
+                  <i class="fas fa-check-circle me-2"></i>
                   <div>
                     <strong>Engagement flexible</strong>
-                    <p class="feature-desc">Contrat de 12 mois avec reconduction tacite et préavis de 3 mois</p>
+                    <p class="feature-desc">
+                      Contrat de 12 mois avec reconduction tacite et préavis de
+                      3 mois
+                    </p>
                   </div>
                 </li>
               </ul>
             </div>
             <div class="pack-footer text-center mt-4">
-              <button class="btn btn-outline-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
-              <p class="pack-benefit mt-3">Idéal pour les petits établissements qui veulent simplifier leur gestion sans se ruiner</p>
+              <button
+                class="btn btn-outline-primary btn-lg w-100"
+                routerLink="/pack-selection"
+              >
+                Choisir ce pack
+              </button>
+              <p class="pack-benefit mt-3">
+                Idéal pour les petits établissements qui veulent simplifier leur
+                gestion sans se ruiner
+              </p>
             </div>
           </div>
         </div>
@@ -203,7 +605,9 @@
 
       <!-- Pack Premium (au milieu) -->
       <div class="col-md-6 col-lg-4">
-        <div class="pack-card premium h-100 bg-white rounded-xl shadow-hover p-0 scale-up">
+        <div
+          class="pack-card premium h-100 bg-white rounded-xl shadow-hover p-0 scale-up"
+        >
           <div class="popular-badge">Recommandé</div>
           <div class="pack-header text-center p-4 bg-premium">
             <div class="icon-wrapper mb-4">
@@ -214,6 +618,10 @@
               <span class="users-badge">8-15 utilisateurs</span>
               <p class="mt-2">Grands restaurants</p>
             </div>
+            <div class="price-tag mt-3">
+              <span class="price">10 000 MAD</span>
+              <span class="period">/mois</span>
+            </div>
           </div>
           <div class="pack-content p-4">
             <div class="features-title mb-3">Fonctionnalités :</div>
@@ -223,28 +631,44 @@
                   <i class="fas fa-star me-2"></i>
                   <div>
                     <strong>Toutes les fonctionnalités</strong>
-                    <p class="feature-desc">Inclut toutes les fonctionnalités des packs Essentiel et Performance</p>
+                    <p class="feature-desc">
+                      Inclut toutes les fonctionnalités des packs Essentiel et
+                      Performance
+                    </p>
                   </div>
                 </li>
                 <li>
-                    <i class="fas fa-check-circle me-2"></i>
+                  <i class="fas fa-check-circle me-2"></i>
                   <div>
                     <strong>Réservation en ligne</strong>
-                    <p class="feature-desc">Permettez à vos clients de réserver directement via votre site ou application</p>
+                    <p class="feature-desc">
+                      Permettez à vos clients de réserver directement via votre
+                      site ou application
+                    </p>
                   </div>
                 </li>
                 <li>
-                    <i class="fas fa-check-circle me-2"></i>
+                  <i class="fas fa-check-circle me-2"></i>
                   <div>
                     <strong>Help Desk Premium</strong>
-                    <p class="feature-desc">3 mois de support technique offerts</p>
+                    <p class="feature-desc">
+                      3 mois de support technique offerts
+                    </p>
                   </div>
                 </li>
               </ul>
             </div>
             <div class="pack-footer text-center mt-4">
-              <button class="btn btn-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
-              <p class="pack-benefit mt-3">La solution ultime pour les grands restaurants qui veulent offrir une expérience client premium</p>
+              <button
+                class="btn btn-primary btn-lg w-100"
+                routerLink="/pack-selection"
+              >
+                Choisir ce pack
+              </button>
+              <p class="pack-benefit mt-3">
+                La solution ultime pour les grands restaurants qui veulent
+                offrir une expérience client premium
+              </p>
             </div>
           </div>
         </div>
@@ -262,6 +686,10 @@
               <span class="users-badge">4-7 utilisateurs</span>
               <p class="mt-2">Établissements moyens</p>
             </div>
+            <div class="price-tag mt-3">
+              <span class="price">7000 MAD</span>
+              <span class="period">/mois</span>
+            </div>
           </div>
           <div class="pack-content p-4">
             <div class="features-title mb-3">Fonctionnalités :</div>
@@ -271,28 +699,43 @@
                   <i class="fas fa-check-circle me-2"></i>
                   <div>
                     <strong>Pack Essentiel inclus</strong>
-                    <p class="feature-desc">Toutes les fonctionnalités du pack Essentiel</p>
+                    <p class="feature-desc">
+                      Toutes les fonctionnalités du pack Essentiel
+                    </p>
                   </div>
                 </li>
                 <li>
-                    <i class="fas fa-check-circle me-2"></i>
+                  <i class="fas fa-check-circle me-2"></i>
                   <div>
                     <strong>Gestion des stocks</strong>
-                    <p class="feature-desc">Suivez vos stocks en temps réel, recevez des alertes de rupture et optimisez vos commandes</p>
+                    <p class="feature-desc">
+                      Suivez vos stocks en temps réel, recevez des alertes de
+                      rupture et optimisez vos commandes
+                    </p>
                   </div>
                 </li>
                 <li>
-                    <i class="fas fa-check-circle me-2"></i>
+                  <i class="fas fa-check-circle me-2"></i>
                   <div>
                     <strong>Help Desk étendu</strong>
-                    <p class="feature-desc">2 mois de support technique offerts</p>
+                    <p class="feature-desc">
+                      2 mois de support technique offerts
+                    </p>
                   </div>
                 </li>
               </ul>
             </div>
             <div class="pack-footer text-center mt-4">
-              <button class="btn btn-outline-primary btn-lg w-100" routerLink="/pack-selection">Choisir ce pack</button>
-              <p class="pack-benefit mt-3">Parfait pour les établissements en croissance qui veulent gagner en efficacité</p>
+              <button
+                class="btn btn-outline-primary btn-lg w-100"
+                routerLink="/pack-selection"
+              >
+                Choisir ce pack
+              </button>
+              <p class="pack-benefit mt-3">
+                Parfait pour les établissements en croissance qui veulent gagner
+                en efficacité
+              </p>
             </div>
           </div>
         </div>
@@ -309,20 +752,36 @@
         <div class="cta-main text-center mb-5">
           <div class="section-header text-white">
             <span class="badge badge-warning mb-3">Démarrez maintenant</span>
-            <h2 class="fw-bold mb-4">Prêt à transformer votre établissement ?</h2>
-            <p class="lead text-white-50 mb-4">Découvrez comment nos solutions peuvent optimiser votre gestion</p>
-            <button class="btn btn-warning btn-lg px-5" routerLink="/reservation-horeca">
-              <i class="fas fa-calendar-check me-2"></i>Réservez votre démo gratuite
+            <h2 class="fw-bold mb-4">
+              Prêt à transformer votre établissement ?
+            </h2>
+            <p class="lead text-white-50 mb-4">
+              Découvrez comment nos solutions peuvent optimiser votre gestion
+            </p>
+            <button
+              class="btn btn-warning btn-lg px-5"
+              routerLink="/reservation-horeca"
+            >
+              <i class="fas fa-calendar-check me-2"></i>Réservez votre démo
+              gratuite
             </button>
           </div>
         </div>
 
-        <div class="recommendation-card bg-white rounded-xl p-0 shadow-lg overflow-hidden">
+        <div
+          class="recommendation-card bg-white rounded-xl p-0 shadow-lg overflow-hidden"
+        >
           <div class="row g-0 align-items-center">
             <div class="col-md-5">
               <div class="recommendation-image">
-                <img src="../../assets/img/newImage/12.webp" alt="Besoin d'aide" class="img-fluid">
-                <div class="image-overlay d-flex align-items-center justify-content-center">
+                <img
+                  src="../../assets/img/newImage/12.webp"
+                  alt="Besoin d'aide"
+                  class="img-fluid"
+                />
+                <div
+                  class="image-overlay d-flex align-items-center justify-content-center"
+                >
                   <h3 class="h4 text-white mb-0">Besoin d'aide ?</h3>
                 </div>
               </div>
@@ -330,9 +789,16 @@
             <div class="col-md-7">
               <div class="p-4 p-lg-5">
                 <h4 class="h5 mb-3">Vous ne savez pas quel pack choisir ?</h4>
-                <p class="text-muted mb-4">Remplissez le formulaire et nous vous recommandons la solution idéale pour votre établissement !</p>
-                <button class="btn btn-primary btn-lg" routerLink="/pack-selection">
-                  <i class="fas fa-clipboard-list me-2"></i>Commencer l'évaluation
+                <p class="text-muted mb-4">
+                  Remplissez le formulaire et nous vous recommandons la solution
+                  idéale pour votre établissement !
+                </p>
+                <button
+                  class="btn btn-primary btn-lg"
+                  routerLink="/pack-selection"
+                >
+                  <i class="fas fa-clipboard-list me-2"></i>Commencer
+                  l'évaluation
                 </button>
               </div>
             </div>
@@ -349,7 +815,11 @@
     <div class="modal-content rounded-xl">
       <div class="modal-header border-0 pb-0">
         <h5 class="modal-title">Réservez votre démo</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
       </div>
       <div class="modal-body p-4">
         <form class="needs-validation" novalidate>
@@ -358,25 +828,25 @@
             <div class="col-md-6">
               <div class="form-group mb-3">
                 <label class="form-label">Nom de l'établissement *</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" required />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group mb-3">
                 <label class="form-label">Nom du responsable *</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" required />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group mb-3">
                 <label class="form-label">Adresse email *</label>
-                <input type="email" class="form-control" required>
+                <input type="email" class="form-control" required />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group mb-3">
                 <label class="form-label">Téléphone *</label>
-                <input type="tel" class="form-control" required>
+                <input type="tel" class="form-control" required />
               </div>
             </div>
 
@@ -384,34 +854,49 @@
             <div class="col-12">
               <label class="form-label d-block mb-3">Format de la démo *</label>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="demoFormat" id="online" value="online" required>
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="demoFormat"
+                  id="online"
+                  value="online"
+                  required
+                />
                 <label class="form-check-label" for="online">En ligne</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="demoFormat" id="onsite" value="onsite">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="demoFormat"
+                  id="onsite"
+                  value="onsite"
+                />
                 <label class="form-check-label" for="onsite">Sur place</label>
               </div>
             </div>
 
             <!-- Lieu (affiché uniquement si "Sur place" est sélectionné) -->
-            <div class="col-12 location-details" style="display: none;">
+            <div class="col-12 location-details" style="display: none">
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="form-label">Pays *</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="form-label">Ville *</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <label class="form-label">Adresse de l'établissement *</label>
-                    <input type="text" class="form-control">
+                    <label class="form-label"
+                      >Adresse de l'établissement *</label
+                    >
+                    <input type="text" class="form-control" />
                   </div>
                 </div>
               </div>
@@ -419,7 +904,8 @@
 
             <div class="col-12 text-center mt-4">
               <button type="submit" class="btn btn-primary btn-lg px-5">
-                <i class="fas fa-calendar-check me-2"></i>Voir les créneaux disponibles
+                <i class="fas fa-calendar-check me-2"></i>Voir les créneaux
+                disponibles
               </button>
             </div>
           </div>
@@ -435,7 +921,11 @@
     <div class="modal-content rounded-xl">
       <div class="modal-header border-0 pb-0">
         <h5 class="modal-title">Sélection de votre pack</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
       </div>
       <div class="modal-body p-4">
         <form class="needs-validation" novalidate>
@@ -445,19 +935,19 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">Nom de l'établissement *</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" required />
               </div>
               <div class="col-md-6">
                 <label class="form-label">Nom du responsable *</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" required />
               </div>
               <div class="col-md-6">
                 <label class="form-label">Adresse email *</label>
-                <input type="email" class="form-control" required>
+                <input type="email" class="form-control" required />
               </div>
               <div class="col-md-6">
                 <label class="form-label">Téléphone *</label>
-                <input type="tel" class="form-control" required>
+                <input type="tel" class="form-control" required />
               </div>
             </div>
           </div>
@@ -466,16 +956,40 @@
           <div class="section mb-4">
             <h6 class="section-title mb-3">2. Taille de l'établissement</h6>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="userCount" id="users1" value="essential">
-              <label class="form-check-label" for="users1">1-3 utilisateurs (Pack Essentiel)</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="userCount"
+                id="users1"
+                value="essential"
+              />
+              <label class="form-check-label" for="users1"
+                >1-3 utilisateurs (Pack Essentiel)</label
+              >
             </div>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="userCount" id="users2" value="performance">
-              <label class="form-check-label" for="users2">4-7 utilisateurs (Pack Performance)</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="userCount"
+                id="users2"
+                value="performance"
+              />
+              <label class="form-check-label" for="users2"
+                >4-7 utilisateurs (Pack Performance)</label
+              >
             </div>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="userCount" id="users3" value="premium">
-              <label class="form-check-label" for="users3">8-15 utilisateurs (Pack Premium)</label>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="userCount"
+                id="users3"
+                value="premium"
+              />
+              <label class="form-check-label" for="users3"
+                >8-15 utilisateurs (Pack Premium)</label
+              >
             </div>
           </div>
 
@@ -483,31 +997,63 @@
           <div class="section mb-4">
             <h6 class="section-title mb-3">3. Fonctionnalités Requises</h6>
             <div class="mb-3">
-              <label class="form-label d-block">Gestion des tables et commandes</label>
+              <label class="form-label d-block"
+                >Gestion des tables et commandes</label
+              >
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="tableManagement" id="tableYes" value="yes">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="tableManagement"
+                  id="tableYes"
+                  value="yes"
+                />
                 <label class="form-check-label" for="tableYes">Oui</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="tableManagement" id="tableNo" value="no">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="tableManagement"
+                  id="tableNo"
+                  value="no"
+                />
                 <label class="form-check-label" for="tableNo">Non</label>
               </div>
             </div>
             <div class="mb-3">
               <label class="form-label d-block">Gestion des stocks</label>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="stockManagement" id="stockYes" value="yes">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="stockManagement"
+                  id="stockYes"
+                  value="yes"
+                />
                 <label class="form-check-label" for="stockYes">Oui</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="stockManagement" id="stockNo" value="no">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="stockManagement"
+                  id="stockNo"
+                  value="no"
+                />
                 <label class="form-check-label" for="stockNo">Non</label>
               </div>
             </div>
             <div class="mb-3">
               <label class="form-label d-block">Réservation en ligne</label>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="onlineBooking" id="bookingYes" value="yes">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="onlineBooking"
+                  id="bookingYes"
+                  value="yes"
+                />
                 <label class="form-check-label" for="bookingYes">Oui</label>
               </div>
             </div>
@@ -515,22 +1061,29 @@
 
           <!-- 4. Commentaires -->
           <div class="section mb-4">
-            <h6 class="section-title mb-3">4. Commentaires ou Besoins Spécifiques</h6>
-            <textarea class="form-control" rows="4" placeholder="Décrivez vos besoins spécifiques..."></textarea>
+            <h6 class="section-title mb-3">
+              4. Commentaires ou Besoins Spécifiques
+            </h6>
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Décrivez vos besoins spécifiques..."
+            ></textarea>
           </div>
 
           <!-- 5. Options de Contact -->
           <div class="section mb-4">
             <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="moreInfo">
+              <input class="form-check-input" type="checkbox" id="moreInfo" />
               <label class="form-check-label" for="moreInfo">
                 Je souhaite recevoir plus d'informations sur les packs
               </label>
             </div>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="contact">
+              <input class="form-check-input" type="checkbox" id="contact" />
               <label class="form-check-label" for="contact">
-                Je souhaite être contacté par un représentant pour discuter de mes besoins
+                Je souhaite être contacté par un représentant pour discuter de
+                mes besoins
               </label>
             </div>
           </div>
@@ -546,6 +1099,171 @@
   </div>
 </div>
 
+<!-- Section Options Supplémentaires -->
+<section class="additional-options-section py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="badge badge-primary mb-3">Options Supplémentaires</span>
+      <h2 class="fw-bold">Des services sur mesure pour votre établissement</h2>
+      <div class="separator"></div>
+      <p class="lead text-muted px-md-5 mx-md-5">
+        Découvrez nos services sur mesure conçus pour simplifier la gestion de
+        votre établissement tout en améliorant l'expérience de vos clients.
+      </p>
+      <p class="text-muted">
+        Chaque service est pensé pour répondre à vos besoins spécifiques et vous
+        aider à optimiser votre activité.
+      </p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="table-responsive">
+          <table
+            class="table table-options custom-table rounded-xl overflow-hidden"
+          >
+            <thead class="table-header">
+              <tr>
+                <th class="service-col">Service</th>
+                <th class="price-col">Prix</th>
+                <th class="desc-col">Description détaillée</th>
+                <th class="action-col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Option 1 -->
+              <tr>
+                <td class="service-name">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <h5 class="mb-0">Gestion des équipes</h5>
+                      <span class="service-subtitle"
+                        >Optimisez vos plannings</span
+                      >
+                    </div>
+                  </div>
+                </td>
+                <td class="price-value text-center">
+                  <span class="price-badge">400</span>
+                </td>
+                <td class="service-description">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle me-2"></i>
+                      Optimiser l'organisation du personnel avec une gestion
+                      simplifiée des plannings.
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle me-2"></i>
+                      Gagner du temps, éviter les conflits d'horaires et
+                      améliorer la productivité des équipes.
+                    </li>
+                  </ul>
+                </td>
+                <td class="text-center">
+                  <button
+                    class="action-btn"
+                    routerLink="/option-form"
+                    [queryParams]="{ option: 'gestion-equipes', price: '400' }"
+                  >
+                    <i class="fas fa-plus-circle"></i>
+                    Commander
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Option 2 -->
+              <tr>
+                <td class="service-name">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <h5 class="mb-0">Menu digital avec QR Code</h5>
+                      <span class="service-subtitle"
+                        >Expérience client moderne</span
+                      >
+                    </div>
+                  </div>
+                </td>
+                <td class="price-value text-center">
+                  <span class="price-badge">600</span>
+                </td>
+                <td class="service-description">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle me-2"></i>
+                      Digitaliser l'expérience client avec un menu interactif
+                      accessible via QR Code.
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle me-2"></i>
+                      Réduire les coûts d'impression, mettre à jour la carte en
+                      un clic et améliorer le parcours client.
+                    </li>
+                  </ul>
+                </td>
+                <td class="text-center">
+                  <button
+                    class="action-btn"
+                    routerLink="/option-form"
+                    [queryParams]="{ option: 'menu-digital', price: '600' }"
+                  >
+                    <i class="fas fa-plus-circle"></i>
+                    Commander
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Option 3 -->
+              <tr>
+                <td class="service-name">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <h5 class="mb-0">Gestion des événements privés</h5>
+                      <span class="service-subtitle"
+                        >Maximisez vos revenus</span
+                      >
+                    </div>
+                  </div>
+                </td>
+                <td class="price-value text-center">
+                  <span class="price-badge">700</span>
+                </td>
+                <td class="service-description">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle me-2"></i>
+                      Attirer plus de réservations pour des événements privés
+                      avec une solution adaptée.
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle me-2"></i>
+                      Optimiser la gestion des demandes, maximiser les revenus
+                      et offrir une expérience haut de gamme.
+                    </li>
+                  </ul>
+                </td>
+                <td class="text-center">
+                  <button
+                    class="action-btn"
+                    routerLink="/option-form"
+                    [queryParams]="{
+                      option: 'gestion-evenements',
+                      price: '700'
+                    }"
+                  >
+                    <i class="fas fa-plus-circle"></i>
+                    Commander
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ Section -->
 <section class="faq-section py-5">
   <div class="container">
@@ -554,13 +1272,16 @@
       <h2 class="fw-bold">Tout ce que vous devez savoir</h2>
       <div class="separator"></div>
     </div>
-    
+
     <div class="row align-items-center">
       <!-- Image à gauche -->
       <div class="col-lg-5 mb-4 mb-lg-0">
         <div class="faq-image-container">
-          <img src="../../assets/img/newImage/10.webp" alt="FAQ" class="img-fluid rounded-xl shadow-lg">
-          
+          <img
+            src="../../assets/img/newImage/10.webp"
+            alt="FAQ"
+            class="img-fluid rounded-xl shadow-lg"
+          />
         </div>
       </div>
 
@@ -569,42 +1290,80 @@
         <div class="accordion custom-accordion" id="faqAccordion">
           <div class="accordion-item">
             <h3 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
                 Puis-je changer de pack plus tard si mon établissement grandit ?
                 <i class="fas fa-chevron-down ms-auto"></i>
               </button>
             </h3>
-            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div
+              id="faq1"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#faqAccordion"
+            >
               <div class="accordion-body">
-                Absolument ! Nos packs sont conçus pour évoluer avec vous. Vous pouvez passer d'un pack à un autre à tout moment, sans perdre vos données ni vos fonctionnalités. Notre équipe vous accompagne pour une transition fluide et sans interruption.
+                Absolument ! Nos packs sont conçus pour évoluer avec vous. Vous
+                pouvez passer d'un pack à un autre à tout moment, sans perdre
+                vos données ni vos fonctionnalités. Notre équipe vous accompagne
+                pour une transition fluide et sans interruption.
               </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                Les packs incluent-ils des mises à jour et des nouvelles fonctionnalités ?
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                Les packs incluent-ils des mises à jour et des nouvelles
+                fonctionnalités ?
                 <i class="fas fa-chevron-down ms-auto"></i>
               </button>
             </h3>
-            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div
+              id="faq2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
               <div class="accordion-body">
-                Oui, tous nos packs incluent des mises à jour régulières et l'accès aux nouvelles fonctionnalités. Nous améliorons constamment nos solutions pour répondre aux besoins changeants du marché et vous offrir une expérience toujours plus performante.
+                Oui, tous nos packs incluent des mises à jour régulières et
+                l'accès aux nouvelles fonctionnalités. Nous améliorons
+                constamment nos solutions pour répondre aux besoins changeants
+                du marché et vous offrir une expérience toujours plus
+                performante.
               </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq3"
+              >
                 Puis-je essayer un pack avant de m'engager ?
                 <i class="fas fa-chevron-down ms-auto"></i>
               </button>
             </h3>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div
+              id="faq3"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
               <div class="accordion-body">
-                Nous proposons une démonstration gratuite pour vous permettre de découvrir nos packs et leurs fonctionnalités. Réservez votre démo en ligne ou sur place, et notre équipe vous guidera pour trouver la solution idéale.
+                Nous proposons une démonstration gratuite pour vous permettre de
+                découvrir nos packs et leurs fonctionnalités. Réservez votre
+                démo en ligne ou sur place, et notre équipe vous guidera pour
+                trouver la solution idéale.
               </div>
             </div>
           </div>
