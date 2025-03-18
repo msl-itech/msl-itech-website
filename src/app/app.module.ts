@@ -56,6 +56,7 @@ import { Service5Component } from './service5/service5.component';
 import { Service6Component } from './service6/service6.component';
 import { Service7Component } from './service7/service7.component';
 import { SliderComponent } from './slider/slider.component';
+import { SmartAlertOrderComponent } from './smart-alert-order/smart-alert-order.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 import { SupportComponent } from './support/support.component';
 import { TableauCRMVENTEComponent } from './tableau-crm-vente/tableau-crm-vente.component';
@@ -110,6 +111,7 @@ import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.compo
     Service7Component,
     SupportComponent,
     OptionFormComponent,
+    SmartAlertOrderComponent,
   ],
   imports: [
     BrowserModule,
