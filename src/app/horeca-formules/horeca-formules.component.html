@@ -58,35 +58,79 @@
   }
 
   /* Style pour les boutons des packs */
-  .pack-footer .btn {
-    min-height: 48px;
-    display: flex;
+  .pack-btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    gap: 0.5rem;
+    min-width: 180px;
+  }
+
+  .pack-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .pack-btn .fas {
     transition: all 0.3s ease;
   }
 
-  .pack-footer .btn-outline-primary {
-    background-color: transparent;
-    border: 2px solid #114d5a;
+  .pack-btn:hover .fas {
+    transform: scale(1.2);
+  }
+
+  .pack-btn-essential {
+    background-color: #114d5a;
+    color: #ffffff;
+  }
+
+  .pack-btn-essential:hover {
+    background-color: #0d3c47;
+  }
+
+  .pack-btn-performance {
+    background-color: #ffc107;
     color: #114d5a;
   }
 
-  .pack-footer .btn-outline-primary:hover {
-    background-color: #114d5a;
-    color: white;
+  .pack-btn-performance:hover {
+    background-color: #ffdb4d;
   }
 
-  .pack-footer .btn-primary {
-    background-color: #114d5a;
-    border: 2px solid #114d5a;
+  .pack-btn-premium {
+    background-color: #631712;
+    color: #ffffff;
   }
 
-  .pack-footer .btn-primary:hover {
-    background-color: #0f677a;
-    border-color: #10768d;
+  .pack-btn-premium:hover {
+    background-color: #8b1f17;
+  }
+
+  .comparison-table .pack-price {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 991px) {
+    .comparison-table .pack-price {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .comparison-table .pack-price {
+      font-size: 0.8rem;
+    }
+
+    .pack-btn {
+      width: 100%;
+    }
   }
 
   /* Style pour les prix des packs */
@@ -440,6 +484,79 @@
       font-size: 1.1rem;
     }
   }
+
+  /* Styles pour le tableau comparatif des packs */
+  .comparison-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    vertical-align: middle;
+  }
+
+  .comparison-table .table-header {
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border: none;
+  }
+
+  .comparison-table .pack-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .comparison-table .feature-name {
+    font-weight: 600;
+    color: #114d5a;
+  }
+
+  .comparison-table tbody tr:hover {
+    background-color: rgba(17, 77, 90, 0.03);
+  }
+
+  /* Styles pour les marques de vérification */
+  .comparison-table .text-center {
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* Styles responsifs pour le tableau */
+  @media (max-width: 991px) {
+    .comparison-table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .comparison-table .pack-title {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.8rem;
+    }
+
+    .comparison-table .pack-title {
+      font-size: 0.9rem;
+    }
+
+    .comparison-table .feature-name {
+      font-size: 0.9rem;
+    }
+  }
 </style>
 
 <!-- Hero Section -->
@@ -521,223 +638,143 @@
   </div>
 </section>
 
-<!-- Packs Section -->
-<section class="packs-section py-5 bg-light">
+<!-- Section des packs -->
+<section class="pricing-section py-5">
   <div class="container">
     <div class="section-header text-center mb-5">
-      <span class="badge badge-primary mb-3">Nos Solutions</span>
-      <h2 class="fw-bold">Choisissez le pack qui vous correspond</h2>
+      <span class="badge badge-primary mb-3">Nos Packs</span>
+      <h2 class="fw-bold">Choisissez la formule adaptée à vos besoins</h2>
       <div class="separator"></div>
-      <p class="lead text-muted">
-        Des solutions adaptées à chaque étape de votre croissance
+      <p class="lead text-muted px-md-5 mx-md-5">
+        Découvrez nos packs spécialement conçus pour les établissements HoReCa,
+        offrant des fonctionnalités essentielles pour optimiser votre gestion
+        quotidienne.
       </p>
     </div>
 
-    <div class="row g-4 justify-content-center">
-      <!-- Pack Essentiel -->
-      <div class="col-md-6 col-lg-4">
-        <div class="pack-card h-100 bg-white rounded-xl shadow-hover p-0">
-          <div class="pack-header text-center p-4 bg-light-blue">
-            <div class="icon-wrapper mb-4">
-              <i class="fas fa-store"></i>
-            </div>
-            <h3 class="h4 mb-2">Pack Essentiel</h3>
-            <div class="target-audience">
-              <span class="users-badge">1-3 utilisateurs</span>
-              <p class="mt-2">Petits établissements</p>
-            </div>
-            <div class="price-tag mt-3">
-              <span class="price">4000 MAD</span>
-              <span class="period">/mois</span>
-            </div>
-          </div>
-          <div class="pack-content p-4">
-            <div class="features-title mb-3">Fonctionnalités :</div>
-            <div class="pack-features">
-              <ul class="list-unstyled">
-                <li>
-                  <i class="fas fa-check-circle me-2"></i>
-                  <div>
-                    <strong>Gestion des tables et commandes</strong>
-                    <p class="feature-desc">
-                      Organisez vos tables, suivez les commandes en temps réel
-                      et gérez les paiements facilement
-                    </p>
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-bordered comparison-table">
+            <thead>
+              <tr>
+                <th
+                  class="table-header"
+                  style="background: linear-gradient(45deg, #114d5a, #165e6e)"
+                >
+                  <div class="pack-title">Fonctionnalités</div>
+                </th>
+                <th
+                  class="table-header"
+                  style="background: linear-gradient(45deg, #114d5a, #165e6e)"
+                >
+                  <div class="pack-title">Essentiel</div>
+                  <div class="pack-price">4 000,00 MAD/mois</div>
+                </th>
+                <th
+                  class="table-header"
+                  style="background: linear-gradient(45deg, #ffc107, #ffdb4d)"
+                >
+                  <div class="pack-title">Performance</div>
+                  <div class="pack-price" style="color: #114d5a">
+                    7 000,00 MAD/mois
                   </div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle me-2"></i>
-                  <div>
-                    <strong>Help Desk gratuit</strong>
-                    <p class="feature-desc">
-                      Support technique dédié pendant 1 mois pour une prise en
-                      main rapide
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle me-2"></i>
-                  <div>
-                    <strong>Engagement flexible</strong>
-                    <p class="feature-desc">
-                      Contrat de 12 mois avec reconduction tacite et préavis de
-                      3 mois
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="pack-footer text-center mt-4">
-              <button
-                class="btn btn-outline-primary btn-lg w-100"
-                routerLink="/pack-selection"
-              >
-                Choisir ce pack
-              </button>
-              <p class="pack-benefit mt-3">
-                Idéal pour les petits établissements qui veulent simplifier leur
-                gestion sans se ruiner
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pack Premium (au milieu) -->
-      <div class="col-md-6 col-lg-4">
-        <div
-          class="pack-card premium h-100 bg-white rounded-xl shadow-hover p-0 scale-up"
-        >
-          <div class="popular-badge">Recommandé</div>
-          <div class="pack-header text-center p-4 bg-premium">
-            <div class="icon-wrapper mb-4">
-              <i class="fas fa-crown"></i>
-            </div>
-            <h3 class="h4 mb-2">Pack Premium</h3>
-            <div class="target-audience">
-              <span class="users-badge">8-15 utilisateurs</span>
-              <p class="mt-2">Grands restaurants</p>
-            </div>
-            <div class="price-tag mt-3">
-              <span class="price">10 000 MAD</span>
-              <span class="period">/mois</span>
-            </div>
-          </div>
-          <div class="pack-content p-4">
-            <div class="features-title mb-3">Fonctionnalités :</div>
-            <div class="pack-features">
-              <ul class="list-unstyled">
-                <li>
-                  <i class="fas fa-star me-2"></i>
-                  <div>
-                    <strong>Toutes les fonctionnalités</strong>
-                    <p class="feature-desc">
-                      Inclut toutes les fonctionnalités des packs Essentiel et
-                      Performance
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle me-2"></i>
-                  <div>
-                    <strong>Réservation en ligne</strong>
-                    <p class="feature-desc">
-                      Permettez à vos clients de réserver directement via votre
-                      site ou application
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle me-2"></i>
-                  <div>
-                    <strong>Help Desk Premium</strong>
-                    <p class="feature-desc">
-                      3 mois de support technique offerts
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="pack-footer text-center mt-4">
-              <button
-                class="btn btn-primary btn-lg w-100"
-                routerLink="/pack-selection"
-              >
-                Choisir ce pack
-              </button>
-              <p class="pack-benefit mt-3">
-                La solution ultime pour les grands restaurants qui veulent
-                offrir une expérience client premium
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pack Performance -->
-      <div class="col-md-6 col-lg-4">
-        <div class="pack-card h-100 bg-white rounded-xl shadow-hover p-0">
-          <div class="pack-header text-center p-4 bg-light-blue">
-            <div class="icon-wrapper mb-4">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3 class="h4 mb-2">Pack Performance</h3>
-            <div class="target-audience">
-              <span class="users-badge">4-7 utilisateurs</span>
-              <p class="mt-2">Établissements moyens</p>
-            </div>
-            <div class="price-tag mt-3">
-              <span class="price">7000 MAD</span>
-              <span class="period">/mois</span>
-            </div>
-          </div>
-          <div class="pack-content p-4">
-            <div class="features-title mb-3">Fonctionnalités :</div>
-            <div class="pack-features">
-              <ul class="list-unstyled">
-                <li>
-                  <i class="fas fa-check-circle me-2"></i>
-                  <div>
-                    <strong>Pack Essentiel inclus</strong>
-                    <p class="feature-desc">
-                      Toutes les fonctionnalités du pack Essentiel
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle me-2"></i>
-                  <div>
-                    <strong>Gestion des stocks</strong>
-                    <p class="feature-desc">
-                      Suivez vos stocks en temps réel, recevez des alertes de
-                      rupture et optimisez vos commandes
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle me-2"></i>
-                  <div>
-                    <strong>Help Desk étendu</strong>
-                    <p class="feature-desc">
-                      2 mois de support technique offerts
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="pack-footer text-center mt-4">
-              <button
-                class="btn btn-outline-primary btn-lg w-100"
-                routerLink="/pack-selection"
-              >
-                Choisir ce pack
-              </button>
-              <p class="pack-benefit mt-3">
-                Parfait pour les établissements en croissance qui veulent gagner
-                en efficacité
-              </p>
-            </div>
-          </div>
+                </th>
+                <th
+                  class="table-header"
+                  style="background: linear-gradient(45deg, #631712, #8b1f17)"
+                >
+                  <div class="pack-title">Premium</div>
+                  <div class="pack-price">10 000,00 MAD/mois</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-name">
+                  Gestion des tables et des commandes
+                </td>
+                <td class="text-center">✓</td>
+                <td class="text-center">✓</td>
+                <td class="text-center">✓</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Gestion des stocks</td>
+                <td class="text-center">-</td>
+                <td class="text-center">✓</td>
+                <td class="text-center">✓</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Réservation en ligne</td>
+                <td class="text-center">-</td>
+                <td class="text-center">-</td>
+                <td class="text-center">✓</td>
+              </tr>
+              <tr>
+                <td class="feature-name">HelpDesk offert</td>
+                <td class="text-center">1 Mois</td>
+                <td class="text-center">2 Mois</td>
+                <td class="text-center">3 Mois</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Nombre d'utilisateurs</td>
+                <td class="text-center">1 à 3</td>
+                <td class="text-center">4 à 7</td>
+                <td class="text-center">8 à 15</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Prix mensuel</td>
+                <td
+                  class="text-center"
+                  style="background-color: #114d5a; color: #ffffff"
+                >
+                  4 000,00 MAD
+                </td>
+                <td
+                  class="text-center"
+                  style="background-color: #ffc107; color: #114d5a"
+                >
+                  7 000,00 MAD
+                </td>
+                <td
+                  class="text-center"
+                  style="background-color: #631712; color: #ffffff"
+                >
+                  10 000,00 MAD
+                </td>
+              </tr>
+              <tr>
+                <td class="feature-name"></td>
+                <td class="text-center">
+                  <a
+                    href="/reservation-horeca"
+                    class="pack-btn pack-btn-essential"
+                  >
+                    <i class="fas fa-rocket" style="color: #ffc107"></i>
+                    Choisir ce pack
+                  </a>
+                </td>
+                <td class="text-center">
+                  <a
+                    href="/reservation-horeca"
+                    class="pack-btn pack-btn-performance"
+                  >
+                    <i class="fas fa-star"></i>
+                    Choisir ce pack
+                  </a>
+                </td>
+                <td class="text-center">
+                  <a
+                    href="/reservation-horeca"
+                    class="pack-btn pack-btn-premium"
+                  >
+                    <i class="fas fa-crown" style="color: #ffc107"></i>
+                    Choisir ce pack
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
