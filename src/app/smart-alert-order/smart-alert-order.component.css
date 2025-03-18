@@ -1,0 +1,85 @@
+.banner-section2 {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-section2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.order-form-page {
+  background-color: #f8f9fa;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #114d5a 0%, #0d3c47 100%);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #114d5a;
+  box-shadow: 0 0 0 0.25rem rgba(17, 77, 90, 0.25);
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #114d5a;
+  border-color: #114d5a;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0d3c47;
+  border-color: #0d3c47;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:disabled {
+  background-color: #114d5a;
+  border-color: #114d5a;
+  opacity: 0.7;
+}
+
+.pack-description {
+  border-left: 4px solid #ffc107;
+}
+
+.feature-item {
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(5px);
+}
+
+.form-check-input:checked {
+  background-color: #114d5a;
+  border-color: #114d5a;
+}

@@ -1,0 +1,292 @@
+<div class="banner-section2 position-relative">
+  <img src="../../assets/img/horeca/2.webp" alt="Smart Alert Banner" />
+  <div class="overlay-text d-flex align-items-center justify-content-center">
+    <div class="text-center text-white px-3">
+      <h2>Commander Smart Alert</h2>
+    </div>
+  </div>
+</div>
+
+<div class="order-form-page py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-lg rounded-xl overflow-hidden">
+          <div class="card-header text-white p-4">
+            <h3 class="mb-0">Pack Smart Alert</h3>
+            <p class="mb-0 mt-2">
+              Prix: <strong>7.500 DHS</strong> (paiement unique)
+            </p>
+          </div>
+          <div class="card-body p-4">
+            <div class="pack-details mb-4">
+              <h4 class="mb-3">Détails du pack</h4>
+              <div class="pack-description p-3 bg-light rounded">
+                <p>
+                  Le pack <strong>Smart Alert</strong> vous offre une solution
+                  complète pour optimiser la gestion quotidienne de votre
+                  établissement.
+                </p>
+                <div class="row g-3 mt-2">
+                  <div class="col-md-6">
+                    <div class="feature-item d-flex align-items-start">
+                      <i
+                        class="fas fa-bell fa-lg me-3 mt-1"
+                        style="color: #114d5a"
+                      ></i>
+                      <div>
+                        <h5 class="h6 mb-1">Alertes intelligentes</h5>
+                        <p class="mb-0 small">
+                          Anticipez les problèmes avant qu'ils n'arrivent
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-item d-flex align-items-start">
+                      <i
+                        class="fas fa-chart-bar fa-lg me-3 mt-1"
+                        style="color: #114d5a"
+                      ></i>
+                      <div>
+                        <h5 class="h6 mb-1">Tableaux de bord</h5>
+                        <p class="mb-0 small">
+                          Visualisez vos données en un coup d'œil
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-item d-flex align-items-start">
+                      <i
+                        class="fas fa-box-open fa-lg me-3 mt-1"
+                        style="color: #114d5a"
+                      ></i>
+                      <div>
+                        <h5 class="h6 mb-1">Gestion des stocks</h5>
+                        <p class="mb-0 small">Évitez les ruptures de stock</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-item d-flex align-items-start">
+                      <i
+                        class="fas fa-user-tie fa-lg me-3 mt-1"
+                        style="color: #114d5a"
+                      ></i>
+                      <div>
+                        <h5 class="h6 mb-1">Expert dédié</h5>
+                        <p class="mb-0 small">
+                          Pour vous accompagner dans la prise en main
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="mb-3">Formulaire de commande</h4>
+            <form (ngSubmit)="onSubmit(orderForm)" #orderForm="ngForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Nom complet *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="contact_name"
+                      [(ngModel)]="formData.contact_name"
+                      required
+                      class="form-control"
+                      #nameInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        nameInput.invalid &&
+                        (nameInput.dirty || nameInput.touched)
+                      "
+                    >
+                      Ce champ est requis
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      [(ngModel)]="formData.email"
+                      required
+                      email
+                      class="form-control"
+                      #emailInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        emailInput.invalid &&
+                        (emailInput.dirty || emailInput.touched)
+                      "
+                    >
+                      Veuillez entrer une adresse email valide
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="phone">Téléphone *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      [(ngModel)]="formData.phone"
+                      required
+                      class="form-control"
+                      #phoneInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        phoneInput.invalid &&
+                        (phoneInput.dirty || phoneInput.touched)
+                      "
+                    >
+                      Ce champ est requis
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="company">Nom de l'établissement *</label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      [(ngModel)]="formData.company"
+                      required
+                      class="form-control"
+                      #companyInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        companyInput.invalid &&
+                        (companyInput.dirty || companyInput.touched)
+                      "
+                    >
+                      Ce champ est requis
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label for="address">Adresse *</label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      [(ngModel)]="formData.address"
+                      required
+                      class="form-control"
+                      #addressInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        addressInput.invalid &&
+                        (addressInput.dirty || addressInput.touched)
+                      "
+                    >
+                      Ce champ est requis
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="employees">Nombre d'employés *</label>
+                    <input
+                      type="number"
+                      id="employees"
+                      name="employees"
+                      [(ngModel)]="formData.employees"
+                      required
+                      class="form-control"
+                      #employeesInput="ngModel"
+                    />
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        employeesInput.invalid &&
+                        (employeesInput.dirty || employeesInput.touched)
+                      "
+                    >
+                      Ce champ est requis
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="additionalInfo"
+                      >Informations supplémentaires</label
+                    >
+                    <textarea
+                      id="additionalInfo"
+                      name="additionalInfo"
+                      [(ngModel)]="formData.additionalInfo"
+                      class="form-control"
+                      rows="4"
+                      placeholder="Précisez vos besoins spécifiques ou questions"
+                    ></textarea>
+                  </div>
+                </div>
+                <!-- <div class="col-12">
+                  <div class="form-check mb-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="terms"
+                      required
+                      #termsInput="ngModel"
+                      ngModel
+                      name="terms"
+                    />
+                    <label class="form-check-label" for="terms">
+                      J'accepte les conditions générales de vente *
+                    </label>
+                    <div
+                      class="invalid-feedback"
+                      [class.d-block]="
+                        termsInput.invalid &&
+                        (termsInput.dirty || termsInput.touched)
+                      "
+                    >
+                      Vous devez accepter les conditions générales
+                    </div>
+                  </div>
+                </div> -->
+                <div class="col-12 mt-4">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg w-100"
+                    [disabled]="orderForm.invalid || isLoading"
+                  >
+                    <i class="fas fa-shopping-cart me-2"></i>
+                    {{
+                      isLoading
+                        ? "Traitement en cours..."
+                        : "Commander maintenant"
+                    }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,6 +25,7 @@ import { Service4Component } from './service4/service4.component';
 import { Service5Component } from './service5/service5.component';
 import { Service6Component } from './service6/service6.component';
 import { Service7Component } from './service7/service7.component';
+import { SmartAlertOrderComponent } from './smart-alert-order/smart-alert-order.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 import { SupportComponent } from './support/support.component';
 import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
@@ -74,6 +75,7 @@ const routes: Routes = [
   { path: 'reservation-horeca', component: ReservationHorecaComponent },
   { path: 'support', component: SupportComponent },
   { path: 'option-form', component: OptionFormComponent },
+  { path: 'smart-alert-order', component: SmartAlertOrderComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' },
 ];
 @NgModule({
