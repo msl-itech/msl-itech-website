@@ -1,77 +1,50 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
-import { SeoService } from '../seo.service';
-import { NgxSpinnerService } from 'ngx-spinner';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-job',
   templateUrl: './job.component.html',
-  styleUrl: './job.component.css'
+  styleUrl: './job.component.css',
 })
-export class JobComponent {
-  pageTitle: string = 'Rejoignez notre Équipe | Offres d’Emploi | MSL Itech';
-  pageDescription: string = 'Découvrez nos offres d’emploi chez MSL Itech et rejoignez notre équipe dynamique, partenaire certifié Odoo en Belgique, Canada et Maroc.';
-  pageKeywords: string = 'emploi MSL Itech, job Odoo, recrutement Odoo, carrière ERP, Belgique, Canada, Maroc, partenaire Odoo';
+export class JobComponent implements OnInit, AfterViewInit, OnDestroy {
+  constructor(private el: ElementRef) {}
 
-  constructor(
-    private seoService: SeoService,
-    @Inject(DOCUMENT) private document: Document,
-    private spinner: NgxSpinnerService
-  ) {}
- 
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.spinner.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 1000);
-    // Mise à jour du SEO avec SeoService
-    this.seoService.updateTitle(this.pageTitle);
-    this.seoService.updateMetaTags([
-      { name: 'description', content: this.pageDescription },
-      { name: 'keywords', content: this.pageKeywords },
-      { name: 'robots', content: 'index, follow' },
-      { name: 'author', content: 'MSL Itech' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    ]);
-
-    // Ajouter les données structurées JSON-LD
-    this.addStructuredData();
+  ngAfterViewInit(): void {
+    this.adjustIframeHeight();
   }
 
-  // Méthode pour ajouter des données structurées JSON-LD
-  private addStructuredData(): void {
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "JobPosting",
-      "title": "Offres d’emploi chez MSL Itech",
-      "description": "Rejoignez notre équipe et découvrez des opportunités de carrière dans le domaine ERP avec MSL Itech, partenaire Odoo en Belgique, Canada et Maroc.",
-      "datePosted": new Date().toISOString(),
-      "hiringOrganization": {
-        "@type": "Organization",
-        "name": "MSL Itech",
-        "logo": "https://www.msl-itech.com/assets/img/accueil/logoMSL.png",
-        "url": "https://www.msl-itech.com",
-      },
-      "jobLocation": [
-        { "@type": "Place", "addressCountry": "Belgium" },
-        { "@type": "Place", "addressCountry": "Canada" },
-        { "@type": "Place", "addressCountry": "Morocco" }
-      ],
-      "employmentType": "Full-time",
-      "validThrough": "2025-12-31T23:59:59Z",
-      "baseSalary": {
-        "@type": "MonetaryAmount",
-        "currency": "MAD",
-        "value": { "@type": "QuantitativeValue", "value": 50000 }
-      }
-    };
+  @HostListener('window:resize')
+  onResize(): void {
+    this.adjustIframeHeight();
+  }
 
-    const script = this.document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(structuredData);
-    this.document.head.appendChild(script);
+  ngOnDestroy(): void {
+    // Pas besoin de supprimer l'écouteur car nous utilisons @HostListener
+  }
+
+  private adjustIframeHeight(): void {
+    const headerHeight =
+      document.querySelector('app-header')?.clientHeight || 0;
+    const footerHeight =
+      document.querySelector('app-footer')?.clientHeight || 0;
+    const windowHeight = window.innerHeight;
+
+    // Calculer la hauteur disponible
+    const availableHeight = windowHeight - headerHeight - footerHeight - 40; // 40px pour les marges
+
+    // Appliquer la hauteur à l'iframe container
+    const iframeContainer =
+      this.el.nativeElement.querySelector('.iframe-container');
+    if (iframeContainer) {
+      iframeContainer.style.height = `${availableHeight}px`;
+    }
   }
 }
