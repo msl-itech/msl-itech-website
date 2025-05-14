@@ -1,47 +1,44 @@
 /* odoo-jobs.component.scss */
-/* .iframe-container {
-  position: relative;
-  width: 100%;
-  /* 56.25 % = 16:9 – adapte à 75 % pour du 4:3 ou utilise aspect-ratio */
-/* padding-top: 56.25%;
-  margin-top: 80px;
-  overflow: hidden;
-} */
+/* Styles pour une meilleure intégration de l'iframe */
 
 .iframe-container {
   position: relative;
   width: 100%;
-  height: calc(
-    100vh - 120px
-  ); /* Hauteur calculée en fonction de la fenêtre moins header et footer */
-  margin-top: 80px;
-  overflow: hidden;
+  margin-top: 30px; /* Réduit pour une meilleure intégration avec le header */
+  margin-bottom: 50px;
+  overflow: visible; /* Permet au contenu de déborder naturellement */
+  min-height: 200px; /* Hauteur minimale pour éviter le collapse */
 }
 
 .odoo-iframe {
   width: 100%;
-  height: 100%;
+  min-height: 800px; /* Hauteur de base */
   border: none;
-  overflow: auto;
+  /* Propriétés pour améliorer les transitions de défilement */
+  overflow: visible;
+  display: block;
+  transition: height 0.3s ease; /* Transition douce si la hauteur change */
+  scroll-behavior: smooth; /* Défilement fluide */
+  will-change: scroll-position; /* Optimisation des performances de défilement */
 }
 
 /* Pour les grands écrans */
 @media screen and (min-width: 992px) {
-  .iframe-container {
+  .odoo-iframe {
     min-height: 800px;
   }
 }
 
 /* Pour les tablettes */
 @media screen and (max-width: 991px) and (min-width: 768px) {
-  .iframe-container {
-    height: calc(100vh - 100px);
+  .odoo-iframe {
+    min-height: 600px;
   }
 }
 
 /* Pour les mobiles */
 @media screen and (max-width: 767px) {
-  .iframe-container {
-    height: calc(100vh - 80px);
+  .odoo-iframe {
+    min-height: 500px;
   }
 }
