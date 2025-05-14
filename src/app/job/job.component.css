@@ -11,10 +11,12 @@
 .iframe-container {
   position: relative;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 80px;
   margin-bottom: 30px;
   overflow: hidden; /* Contrôler le défilement via JS */
   will-change: transform; /* Optimisation des performances */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1; /* S'assurer que l'iframe est au-dessus des autres éléments */
 }
 
 .odoo-iframe {
@@ -22,23 +24,32 @@
   min-height: 700px;
   border: none;
   display: block;
-  transition: height 0.3s ease; /* Animation douce lors des changements de hauteur */
+  transition: height 0.3s ease, opacity 0.2s ease; /* Animation douce */
   will-change: transform, height; /* Optimisation des performances */
 }
 
 /* Style pour améliorer la perception visuelle du défilement */
 body.is-scrolling .iframe-container {
-  pointer-events: none; /* Désactiver les interactions pendant le défilement */
+  pointer-events: none; /* Désactiver temporairement les interactions */
 }
 
 body.is-scrolling .odoo-iframe {
-  opacity: 0.95; /* Légère réduction de l'opacité pendant le défilement */
+  opacity: 0.95; /* Légère réduction de l'opacité */
+}
+
+/* Transitions élégantes pour les défilements aux limites */
+html.smooth-scroll .iframe-container {
+  transition: opacity 0.3s ease;
 }
 
 /* Pour les grands écrans */
 @media screen and (min-width: 992px) {
   .odoo-iframe {
     min-height: 800px;
+  }
+
+  .iframe-container {
+    margin-bottom: 40px; /* Plus d'espace en bas sur grands écrans */
   }
 }
 
@@ -55,9 +66,9 @@ body.is-scrolling .odoo-iframe {
     min-height: 500px;
   }
 
-  /* Amélioration pour les mobiles où le défilement est plus problématique */
+  /* Ajustements pour mobiles */
   .iframe-container {
-    margin-top: 20px;
+    margin-top: 60px; /* Marge du haut légèrement réduite */
     margin-bottom: 20px;
   }
 }

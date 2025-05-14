@@ -19,61 +19,166 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <script>
-      // Variables pour la gestion du défilement fluide
-      let lastScrollTime = 0;
-      let scrollingTimer = null;
-      let scrollLock = false;
+      (function () {
+        // Configuration
+        const CONFIG = {
+          scrollLockTime: 400, // Durée du verrouillage après un défilement
+          scrollThreshold: 200, // Temps minimal entre deux défilements
+          scrollAmountTop: -150, // Montant de défilement vers le haut aux limites
+          scrollAmountBottom: 150, // Montant de défilement vers le bas aux limites
+          scrollAmplifier: 2.5, // Amplification du défilement aux limites
+        };
 
-      // Gestionnaire global pour la communication entre iframes et la page principale
-      window.addEventListener("message", function (event) {
-        if (event.data && event.data.type === "scrollBoundary") {
-          // Éviter les défilements trop rapprochés
-          const now = Date.now();
-          if (now - lastScrollTime < 200) return;
-          lastScrollTime = now;
+        // Variables d'état
+        let lastScrollTime = 0;
+        let scrollingTimer = null;
+        let scrollLock = false;
+        let iframeScrolling = false;
+        let activeIframes = new Set();
 
-          // Déverrouiller le défilement après un court délai
-          clearTimeout(scrollLock);
-          scrollLock = true;
-
-          // Permettre le défilement fluide lorsqu'un iframe atteint ses limites
-          if (event.data.direction === "top") {
-            // Défilement vers le haut plus agressif
-            const scrollAmount = event.data.deltaY
-              ? Math.min(-80, event.data.deltaY * 2)
-              : -80;
-            window.scrollBy({
-              top: scrollAmount,
-              behavior: "smooth",
-            });
-          } else if (event.data.direction === "bottom") {
-            // Défilement vers le bas
-            const scrollAmount = event.data.deltaY
-              ? Math.max(80, event.data.deltaY * 2)
-              : 80;
-            window.scrollBy({
-              top: scrollAmount,
-              behavior: "smooth",
-            });
+        // Ajouter une classe spéciale pour aider au CSS
+        const style = document.createElement("style");
+        style.textContent = `
+          body.is-scrolling .iframe-container { 
+            pointer-events: none; 
+            transition: opacity 0.1s ease;
           }
+          body.is-scrolling .odoo-iframe { 
+            opacity: 0.95; 
+          }
+          body.iframe-scrolling {
+            overflow-y: hidden;
+          }
+          iframe {
+            transition: opacity 0.2s ease;
+          }
+          .smooth-scroll {
+            scroll-behavior: smooth;
+          }
+        `;
+        document.head.appendChild(style);
 
-          // Réinitialiser le verrou après un délai
-          setTimeout(function () {
-            scrollLock = false;
+        // Gestionnaire de messages entre iframe et page principale
+        window.addEventListener("message", function (event) {
+          if (!event.data || !event.data.type) return;
+
+          const now = Date.now();
+
+          // Gérer les limites de défilement
+          if (event.data.type === "scrollBoundary") {
+            // Éviter les défilements trop rapprochés
+            if (now - lastScrollTime < CONFIG.scrollThreshold) return;
+
+            lastScrollTime = now;
+            document.body.classList.add("is-scrolling");
+
+            // Activer le défilement fluide temporairement
+            document.documentElement.classList.add("smooth-scroll");
+
+            // Permettre de traverser la limite de l'iframe
+            if (event.data.direction === "top") {
+              // Vers le haut plus aggressif
+              const scrollAmount = event.data.deltaY
+                ? Math.min(
+                    CONFIG.scrollAmountTop,
+                    event.data.deltaY * CONFIG.scrollAmplifier
+                  )
+                : CONFIG.scrollAmountTop;
+
+              window.scrollBy({
+                top: scrollAmount,
+                behavior: "smooth",
+              });
+            } else if (event.data.direction === "bottom") {
+              // Vers le bas
+              const scrollAmount = event.data.deltaY
+                ? Math.max(
+                    CONFIG.scrollAmountBottom,
+                    event.data.deltaY * CONFIG.scrollAmplifier
+                  )
+                : CONFIG.scrollAmountBottom;
+
+              window.scrollBy({
+                top: scrollAmount,
+                behavior: "smooth",
+              });
+            }
+
+            // Réinitialiser le défilement fluide
+            setTimeout(function () {
+              document.documentElement.classList.remove("smooth-scroll");
+            }, 800);
+
+            // Réinitialiser le verrou après un délai
+            setTimeout(function () {
+              document.body.classList.remove("is-scrolling");
+            }, CONFIG.scrollLockTime);
+          }
+          // Suivi des iframes actifs
+          else if (event.data.type === "iframeActive") {
+            if (event.source && event.source.frameElement) {
+              activeIframes.add(event.source.frameElement);
+            }
+          }
+          // Gestion du défilement dans l'iframe
+          else if (event.data.type === "iframeScroll") {
+            iframeScrolling = true;
+            clearTimeout(scrollingTimer);
+            scrollingTimer = setTimeout(function () {
+              iframeScrolling = false;
+            }, 300);
+          }
+        });
+
+        // Suivi du défilement de la page
+        window.addEventListener("scroll", function () {
+          document.body.classList.add("is-scrolling");
+          lastScrollTime = Date.now();
+
+          clearTimeout(scrollingTimer);
+          scrollingTimer = setTimeout(function () {
+            document.body.classList.remove("is-scrolling");
           }, 300);
-        }
-      });
+        });
 
-      // Ajouter une classe au corps lorsque l'utilisateur fait défiler
-      window.addEventListener("scroll", function () {
-        document.body.classList.add("is-scrolling");
-        lastScrollTime = Date.now();
+        // Optimisation du défilement avec la roue de souris
+        window.addEventListener(
+          "wheel",
+          function (event) {
+            lastScrollTime = Date.now();
 
-        clearTimeout(scrollingTimer);
-        scrollingTimer = setTimeout(function () {
-          document.body.classList.remove("is-scrolling");
-        }, 300);
-      });
+            // Si un iframe est en cours de défilement, vérifier s'il est encore visible
+            if (iframeScrolling) {
+              // Laisser l'event se propager naturellement
+            }
+          },
+          { passive: true }
+        );
+
+        // Amélioration pour le défilement au clavier
+        window.addEventListener("keydown", function (event) {
+          // Touches de navigation (flèches, page up/down, home, end, spacebar)
+          const navKeys = [
+            "ArrowUp",
+            "ArrowDown",
+            "PageUp",
+            "PageDown",
+            "Home",
+            "End",
+            " ",
+          ];
+
+          if (navKeys.includes(event.key)) {
+            lastScrollTime = Date.now();
+            document.body.classList.add("is-scrolling");
+
+            clearTimeout(scrollingTimer);
+            scrollingTimer = setTimeout(function () {
+              document.body.classList.remove("is-scrolling");
+            }, 300);
+          }
+        });
+      })();
     </script>
   </head>
   <body>
