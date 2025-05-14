@@ -1,16 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>MSLWebsite</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="W0jek0lsqRk5dGTvH7Gb-yh_t6KDF5KgI_t92E_2oIU" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>MSLWebsite</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="google-site-verification"
+      content="W0jek0lsqRk5dGTvH7Gb-yh_t6KDF5KgI_t92E_2oIU"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      // Variables pour la gestion du défilement fluide
+      let lastScrollTime = 0;
+      let scrollingTimer = null;
+      let scrollLock = false;
+
+      // Gestionnaire global pour la communication entre iframes et la page principale
+      window.addEventListener("message", function (event) {
+        if (event.data && event.data.type === "scrollBoundary") {
+          // Éviter les défilements trop rapprochés
+          const now = Date.now();
+          if (now - lastScrollTime < 200) return;
+          lastScrollTime = now;
+
+          // Déverrouiller le défilement après un court délai
+          clearTimeout(scrollLock);
+          scrollLock = true;
+
+          // Permettre le défilement fluide lorsqu'un iframe atteint ses limites
+          if (event.data.direction === "top") {
+            // Défilement vers le haut plus agressif
+            const scrollAmount = event.data.deltaY
+              ? Math.min(-80, event.data.deltaY * 2)
+              : -80;
+            window.scrollBy({
+              top: scrollAmount,
+              behavior: "smooth",
+            });
+          } else if (event.data.direction === "bottom") {
+            // Défilement vers le bas
+            const scrollAmount = event.data.deltaY
+              ? Math.max(80, event.data.deltaY * 2)
+              : 80;
+            window.scrollBy({
+              top: scrollAmount,
+              behavior: "smooth",
+            });
+          }
+
+          // Réinitialiser le verrou après un délai
+          setTimeout(function () {
+            scrollLock = false;
+          }, 300);
+        }
+      });
+
+      // Ajouter une classe au corps lorsque l'utilisateur fait défiler
+      window.addEventListener("scroll", function () {
+        document.body.classList.add("is-scrolling");
+        lastScrollTime = Date.now();
+
+        clearTimeout(scrollingTimer);
+        scrollingTimer = setTimeout(function () {
+          document.body.classList.remove("is-scrolling");
+        }, 300);
+      });
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

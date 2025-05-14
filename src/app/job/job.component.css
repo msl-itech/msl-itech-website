@@ -1,25 +1,38 @@
 /* odoo-jobs.component.scss */
-/* Styles pour une meilleure intégration de l'iframe */
+/* .iframe-container {
+  position: relative;
+  width: 100%;
+  /* 56.25 % = 16:9 – adapte à 75 % pour du 4:3 ou utilise aspect-ratio */
+/* padding-top: 56.25%;
+  margin-top: 80px;
+  overflow: hidden;
+} */
 
 .iframe-container {
   position: relative;
   width: 100%;
-  margin-top: 30px; /* Réduit pour une meilleure intégration avec le header */
-  margin-bottom: 50px;
-  overflow: visible; /* Permet au contenu de déborder naturellement */
-  min-height: 200px; /* Hauteur minimale pour éviter le collapse */
+  margin-top: 30px;
+  margin-bottom: 30px;
+  overflow: hidden; /* Contrôler le défilement via JS */
+  will-change: transform; /* Optimisation des performances */
 }
 
 .odoo-iframe {
   width: 100%;
-  min-height: 800px; /* Hauteur de base */
+  min-height: 700px;
   border: none;
-  /* Propriétés pour améliorer les transitions de défilement */
-  overflow: visible;
   display: block;
-  transition: height 0.3s ease; /* Transition douce si la hauteur change */
-  scroll-behavior: smooth; /* Défilement fluide */
-  will-change: scroll-position; /* Optimisation des performances de défilement */
+  transition: height 0.3s ease; /* Animation douce lors des changements de hauteur */
+  will-change: transform, height; /* Optimisation des performances */
+}
+
+/* Style pour améliorer la perception visuelle du défilement */
+body.is-scrolling .iframe-container {
+  pointer-events: none; /* Désactiver les interactions pendant le défilement */
+}
+
+body.is-scrolling .odoo-iframe {
+  opacity: 0.95; /* Légère réduction de l'opacité pendant le défilement */
 }
 
 /* Pour les grands écrans */
@@ -40,5 +53,11 @@
 @media screen and (max-width: 767px) {
   .odoo-iframe {
     min-height: 500px;
+  }
+
+  /* Amélioration pour les mobiles où le défilement est plus problématique */
+  .iframe-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
