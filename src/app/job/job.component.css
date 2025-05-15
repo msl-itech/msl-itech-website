@@ -1,57 +1,35 @@
 /* job.component.scss */
-.iframe-container {
+.iframe-wrapper {
   position: relative;
   width: 100%;
   height: calc(100vh - 80px);
-  margin: 0;
   margin-top: 80px;
-  overflow: hidden; /* Éviter tout débordement indésirable */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  -webkit-overflow-scrolling: touch; /* Améliorer le défilement sur iOS */
+}
+
+.iframe-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .odoo-iframe {
   width: 100%;
   height: 100%;
-  min-height: 600px;
   border: none;
-  transition: all 0.2s ease-in-out;
-  overflow: auto;
+  display: block;
   background-color: white;
-  will-change: height, transform;
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-  -webkit-overflow-scrolling: touch; /* Améliorer le défilement sur iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Optimisations spécifiques pour les appareils mobiles */
+/* Mobile optimizations */
 @media (max-width: 768px) {
-  .iframe-container {
+  .iframe-wrapper {
     height: calc(100vh - 60px);
-    margin: 0;
-    padding: 0;
-    position: relative;
+    margin-top: 60px;
+  }
+
+  /* Only disable body scroll when iframe is focused on mobile */
+  .iframe-focused body {
     overflow: hidden;
-    width: 100vw; /* Utiliser toute la largeur de l'écran */
-  }
-
-  .odoo-iframe {
-    min-height: 500px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-/* Optimisation spécifique pour iOS */
-@supports (-webkit-touch-callout: none) {
-  .iframe-container,
-  .odoo-iframe {
-    -webkit-overflow-scrolling: touch;
   }
 }

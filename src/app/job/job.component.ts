@@ -2,11 +2,11 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  HostListener,
   OnDestroy,
+  Renderer2,
   ViewChild,
 } from '@angular/core';
-import { iframeResizer } from 'iframe-resizer';
+import { HeightCalculationMethod, iframeResizer } from 'iframe-resizer';
 
 @Component({
   selector: 'app-job',
@@ -17,77 +17,69 @@ export class JobComponent implements AfterViewInit, OnDestroy {
   @ViewChild('jobIframe', { static: true })
   iframeRef!: ElementRef<HTMLIFrameElement>;
   iframeResizer: any;
-  isMobile: boolean = false;
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.checkDeviceType();
-    this.reinitializeResizer();
-  }
+  constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
-    this.checkDeviceType();
-    setTimeout(() => {
-      this.initializeResizer();
-    }, 100);
+    this.initializeResizer();
+    this.setupIframeEvents();
   }
 
   ngOnDestroy(): void {
-    if (this.iframeResizer && this.iframeResizer.close) {
+    if (this.iframeResizer?.close) {
       this.iframeResizer.close();
     }
   }
 
-  private checkDeviceType(): void {
-    this.isMobile = window.innerWidth <= 768;
-  }
+  private setupIframeEvents(): void {
+    const iframe = this.iframeRef.nativeElement;
 
-  private reinitializeResizer(): void {
-    if (this.iframeResizer && this.iframeResizer.close) {
-      this.iframeResizer.close();
-    }
-    setTimeout(() => {
-      this.initializeResizer();
-    }, 100);
-  }
+    // Gestion du focus sur l'iframe
+    this.renderer.listen(iframe, 'mouseenter', () => {
+      if (window.innerWidth <= 768) {
+        // Seulement sur mobile
+        this.renderer.addClass(document.body, 'iframe-focused');
+      }
+    });
 
+    this.renderer.listen(iframe, 'mouseleave', () => {
+      this.renderer.removeClass(document.body, 'iframe-focused');
+    });
+
+    // Pour les appareils tactiles
+    this.renderer.listen(iframe, 'touchstart', () => {
+      this.renderer.addClass(document.body, 'iframe-focused');
+    });
+
+    this.renderer.listen(iframe, 'touchend', () => {
+      setTimeout(() => {
+        this.renderer.removeClass(document.body, 'iframe-focused');
+      }, 500);
+    });
+  }
   private initializeResizer(): void {
     try {
-      console.log('Initialisation du iframe resizer...');
-
-      // Configuration adaptée selon le type d'appareil
-      const config: any = {
-        log: false, // Désactiver les logs en production
+      const config = {
+        log: false,
         checkOrigin: false,
-        heightCalculationMethod: this.isMobile
-          ? 'documentElementOffset'
-          : 'bodyOffset',
+        heightCalculationMethod: 'bodyScroll' as HeightCalculationMethod,
         sizeWidth: false,
         autoResize: true,
         scrolling: true,
-        inPageLinks: true,
-        resizeFrom: 'child',
         bodyMargin: 0,
         bodyPadding: 0,
         tolerance: 0,
-        onResized: () => {
-          console.log('iframe redimensionné');
+        onResized: (data: any) => {
+          this.iframeRef.nativeElement.style.height = `${data.height}px`;
         },
         onInit: () => {
-          console.log('iframe initialisé');
-          // Force un recalcul initial de la taille
-          if (this.iframeRef && this.iframeRef.nativeElement) {
-            this.iframeRef.nativeElement.style.height = '100%';
-          }
+          this.iframeRef.nativeElement.style.visibility = 'visible';
         },
       };
 
       this.iframeResizer = iframeResizer(config, this.iframeRef.nativeElement);
     } catch (error) {
-      console.error(
-        "Erreur lors de l'initialisation du iframe resizer:",
-        error
-      );
+      console.error('Erreur iframe resizer:', error);
     }
   }
 }
