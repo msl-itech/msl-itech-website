@@ -180,19 +180,7 @@
         });
       })();
     </script>
-    <!-- Script de contentWindow optimisé pour la performance -->
-    <script>
-      // Configurer la page pour le iframe-resizer
-      window.iFrameResizer = {
-        targetOrigin: "*",
-        heightCalculationMethod: "bodyOffset",
-        initCallback: function () {
-          console.log("Le script contentWindow est initialisé");
-        },
-      };
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.6/js/iframeResizer.contentWindow.min.js"></script>
-    <script src="assets/check-load.js"></script>
   </head>
   <body>
     <app-root></app-root>

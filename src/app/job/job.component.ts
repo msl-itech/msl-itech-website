@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
   OnDestroy,
   ViewChild,
 } from '@angular/core';
@@ -15,49 +16,73 @@ import { iframeResizer } from 'iframe-resizer';
 export class JobComponent implements AfterViewInit, OnDestroy {
   @ViewChild('jobIframe', { static: true })
   iframeRef!: ElementRef<HTMLIFrameElement>;
-  iframeResizer: any; // Pour stocker l'instance du resizer
+  iframeResizer: any;
+  isMobile: boolean = false;
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.checkDeviceType();
+    this.reinitializeResizer();
+  }
 
   ngAfterViewInit(): void {
-    // Court délai pour assurer que la page soit prête
+    this.checkDeviceType();
     setTimeout(() => {
       this.initializeResizer();
     }, 100);
   }
 
   ngOnDestroy(): void {
-    // Nettoyage du resizer quand le composant est détruit
     if (this.iframeResizer && this.iframeResizer.close) {
       this.iframeResizer.close();
     }
   }
 
+  private checkDeviceType(): void {
+    this.isMobile = window.innerWidth <= 768;
+  }
+
+  private reinitializeResizer(): void {
+    if (this.iframeResizer && this.iframeResizer.close) {
+      this.iframeResizer.close();
+    }
+    setTimeout(() => {
+      this.initializeResizer();
+    }, 100);
+  }
+
   private initializeResizer(): void {
     try {
       console.log('Initialisation du iframe resizer...');
-      // Configuration optimisée pour la fluidité
-      this.iframeResizer = iframeResizer(
-        {
-          log: false, // Désactiver les logs en production
-          checkOrigin: false,
-          heightCalculationMethod: 'bodyOffset', // Méthode plus fluide
-          sizeWidth: true, // Gérer également la largeur
-          autoResize: true,
-          scrolling: 'auto', // Permettre le défilement naturel
-          inPageLinks: true,
-          warningTimeout: 0, // Désactiver le timeout d'avertissement
-          bodyMargin: 0, // Pas de marge pour le corps
-          bodyPadding: 0, // Pas de padding pour le corps
-          tolerance: 0, // Tolérance minimale pour les changements
-          onResized: function () {
-            // Callback quand redimensionné
-            console.log('iframe redimensionné');
-          },
-          onInit: function () {
-            console.log('iframe initialisé');
-          },
+
+      // Configuration adaptée selon le type d'appareil
+      const config: any = {
+        log: false, // Désactiver les logs en production
+        checkOrigin: false,
+        heightCalculationMethod: this.isMobile
+          ? 'documentElementOffset'
+          : 'bodyOffset',
+        sizeWidth: false,
+        autoResize: true,
+        scrolling: true,
+        inPageLinks: true,
+        resizeFrom: 'child',
+        bodyMargin: 0,
+        bodyPadding: 0,
+        tolerance: 0,
+        onResized: () => {
+          console.log('iframe redimensionné');
         },
-        this.iframeRef.nativeElement
-      );
+        onInit: () => {
+          console.log('iframe initialisé');
+          // Force un recalcul initial de la taille
+          if (this.iframeRef && this.iframeRef.nativeElement) {
+            this.iframeRef.nativeElement.style.height = '100%';
+          }
+        },
+      };
+
+      this.iframeResizer = iframeResizer(config, this.iframeRef.nativeElement);
     } catch (error) {
       console.error(
         "Erreur lors de l'initialisation du iframe resizer:",
