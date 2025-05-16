@@ -1,15 +1,11 @@
-/* job.component.scss */
-.iframe-wrapper {
+/* Styles de base (mobile-first) */
+.iframe-mobile-container {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px);
-  margin-top: 80px;
-}
-
-.iframe-container {
-  width: 100%;
-  height: 100%;
+  height: calc(100vh - 120px); /* 60px header + 60px footer */
+  margin-top: 60px;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .odoo-iframe {
@@ -18,18 +14,26 @@
   border: none;
   display: block;
   background-color: white;
-  -webkit-overflow-scrolling: touch;
 }
 
-/* Mobile optimizations */
-@media (max-width: 768px) {
-  .iframe-wrapper {
-    height: calc(100vh - 60px);
-    margin-top: 60px;
+.mobile-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  background: white; /* Adaptez à votre design */
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .iframe-mobile-container {
+    height: calc(100vh - 140px); /* 80px header + 60px footer */
+    margin-top: 80px;
   }
 
-  /* Only disable body scroll when iframe is focused on mobile */
-  .iframe-focused body {
-    overflow: hidden;
+  .mobile-footer {
+    position: static;
+    height: auto;
   }
 }
