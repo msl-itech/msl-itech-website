@@ -16,20 +16,20 @@
     z-index: 1000;
     background: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 80px;
+    height: 90px;
   }
 
   /* Top Bar */
   .top-bar {
     background: #114d5a;
     color: #fff;
-    padding: 8px 0; /* Réduit le padding */
+    padding: 6px 0;
   }
 
   .top-bar .container {
     display: flex;
     justify-content: flex-end;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
   }
 
@@ -38,8 +38,8 @@
     border: none;
     color: #fff;
     cursor: pointer;
-    font-size: 0.9em; /* Réduit la taille de la police */
-    padding: 4px 8px; /* Réduit le padding */
+    font-size: 0.9em;
+    padding: 4px 8px;
     transition: color 0.3s;
   }
 
@@ -52,19 +52,19 @@
 ---------------------------------------------- */
   nav {
     background: #fff;
-    padding: 8px 0; /* Réduit le padding */
+    padding: 10px 0;
   }
 
   nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
   }
 
   .logo {
-    width: 100px; /* Réduit la taille du logo en desktop */
+    width: 100px;
   }
 
   .logo img {
@@ -77,7 +77,7 @@
    BURGER MENU
 ---------------------------------------------- */
   .burger {
-    display: none; /* S'affiche en mobile/tablette */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
@@ -96,7 +96,7 @@
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
     transition: all 0.3s ease-in-out;
   }
@@ -108,9 +108,10 @@
   .nav-links a {
     text-decoration: none;
     color: #333;
-    font-size: 1em;
+    font-size: 0.95em;
     font-weight: bold;
     transition: color 0.3s;
+    white-space: nowrap;
   }
 
   .nav-links a.actived,
@@ -127,14 +128,14 @@
 
   .dropdown-menu {
     position: absolute;
-    top: 100%; /* Aligner le sous-menu en bas du parent */
-    left: 0;
+    top: 100%;
+    left: -15px;
     background-color: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     list-style: none;
-    padding: 8px 0; /* Réduit le padding */
+    padding: 10px 0;
     margin: 0;
-    min-width: 160px; /* Réduit la largeur minimale */
+    min-width: 200px;
     border-radius: 4px;
     display: none;
     opacity: 0;
@@ -146,7 +147,7 @@
 
   .dropdown-menu li a {
     display: block;
-    padding: 8px 16px; /* Réduit le padding */
+    padding: 10px 20px;
     color: #333;
     font-weight: 400;
     transition: background-color 0.3s;
@@ -168,17 +169,20 @@
 ---------------------------------------------- */
   .actions {
     display: flex;
-    gap: 8px; /* Réduit le gap */
+    gap: 12px;
+    margin-left: 25px;
   }
 
   .btn,
   .btn2 {
-    padding: 8px 16px; /* Réduit le padding */
+    padding: 8px 16px;
     text-decoration: none;
-    border-radius: 6px; /* Réduit le border-radius */
+    border-radius: 6px;
     font-weight: bold;
+    font-size: 0.9em;
     transition: background-color 0.3s, color 0.3s;
-    text-align: center; /* Aligne le texte au centre */
+    text-align: center;
+    white-space: nowrap;
   }
 
   .btn {
@@ -206,16 +210,16 @@
   .mobile-actions {
     display: none;
     flex-direction: column;
-    gap: 8px; /* Réduit le gap */
-    margin-top: 16px; /* Réduit le margin */
-    padding: 10px 15px; /* Réduit le padding */
+    gap: 8px;
+    margin-top: 16px;
+    padding: 10px 15px;
   }
 
   .close-btn {
     display: none;
     justify-content: flex-end;
     padding: 0 20px;
-    margin-bottom: 16px; /* Réduit le margin */
+    margin-bottom: 16px;
   }
 
   .close-btn button {
@@ -236,13 +240,13 @@
 
   /* Logo Mobile */
   .mobile-logo {
-    display: none; /* Masqué par défaut */
+    display: none;
     text-align: center;
-    margin: 16px 0; /* Réduit le margin */
+    margin: 16px 0;
   }
 
   .mobile-logo img {
-    width: 80px; /* Réduit la taille du logo mobile */
+    width: 80px;
     height: auto;
   }
 
@@ -261,16 +265,17 @@
     /* Le menu occupe toute la taille de l'écran */
     .nav-links {
       position: fixed;
-      top: 0; /* Collé en haut */
+      top: 0;
       left: -100%;
-      width: 100vw; /* Toute la largeur de l'écran */
-      height: 100vh; /* Toute la hauteur de l'écran */
+      width: 100vw;
+      height: 100vh;
       flex-direction: column;
       background-color: #fff;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      overflow-y: auto; /* Scroll si contenu trop long */
+      overflow-y: auto;
       transition: left 0.3s ease-in-out;
       padding-top: 70px;
+      gap: 0; /* Reset gap for mobile */
     }
 
     .nav-links.active {
@@ -279,7 +284,7 @@
 
     .nav-links li {
       width: 100%;
-      text-align: left; /* Aligne le texte des liens à gauche */
+      text-align: left;
     }
 
     .nav-links li a {
@@ -327,6 +332,7 @@
       gap: 12px;
       background-color: #f9f9f9;
       border-top: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
     }
 
     .mobile-actions .btn,
@@ -398,9 +404,9 @@
     }
 
     .mobile-logo {
-      display: block; /* Affiché uniquement en mobile */
+      display: block;
       width: 100%;
-      text-align: center; /* Centre le logo */
+      text-align: center;
     }
 
     .sub-dropdown-menu {
@@ -408,11 +414,11 @@
       box-shadow: none;
       padding-left: 20px;
       min-width: 100%;
-      display: none; /* Caché par défaut */
+      display: none;
     }
 
     .dropdown-menu li.open .sub-dropdown-menu {
-      display: block; /* S'affiche quand le parent a la classe .open */
+      display: block;
       opacity: 1;
       visibility: visible;
     }
@@ -443,7 +449,7 @@
       transition: left 0.3s ease-in-out;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       overflow-y: auto;
-      padding-top: 50px; /* Réduit le padding-top pour moins d'espace */
+      padding-top: 50px;
     }
 
     .nav-links.active {
@@ -452,14 +458,14 @@
 
     .nav-links li {
       width: 100%;
-      text-align: left; /* Aligne le texte des liens à gauche */
+      text-align: left;
     }
 
     .nav-links li a {
       display: block;
-      padding: 12px 20px; /* Réduit le padding */
-      font-size: 0.95em; /* Réduit la taille de la police */
-      text-align: left; /* Assure l'alignement à gauche */
+      padding: 12px 20px;
+      font-size: 0.95em;
+      text-align: left;
     }
 
     .dropdown-menu {
@@ -479,14 +485,14 @@
     }
 
     .dropdown-menu li a {
-      padding: 8px 20px; /* Réduit le padding */
-      font-size: 0.9em; /* Réduit la taille de la police */
+      padding: 8px 20px;
+      font-size: 0.9em;
     }
 
     .mobile-actions {
       display: flex;
-      margin-bottom: 16px; /* Réduit le margin */
-      justify-content: center; /* Centre les boutons */
+      margin-bottom: 16px;
+      justify-content: center;
     }
 
     .close-btn {
@@ -497,9 +503,9 @@
     }
 
     .mobile-logo {
-      display: block; /* Affiché uniquement en mobile */
+      display: block;
       width: 100%;
-      text-align: center; /* Centre le logo */
+      text-align: center;
     }
 
     .sub-dropdown-menu {
@@ -507,11 +513,11 @@
       box-shadow: none;
       padding-left: 20px;
       min-width: 100%;
-      display: none; /* Caché par défaut */
+      display: none;
     }
 
     .dropdown-menu li.open .sub-dropdown-menu {
-      display: block; /* S'affiche quand le parent a la classe .open */
+      display: block;
       opacity: 1;
       visibility: visible;
     }
@@ -525,21 +531,21 @@
   /* TÉLÉPHONE PETIT ÉCRAN - max-width: 480px */
   @media (max-width: 480px) {
     .logo {
-      width: 70px; /* Réduit davantage la taille du logo desktop */
+      width: 70px;
     }
 
     .nav-links li a {
-      font-size: 0.85em; /* Réduit davantage la taille de la police */
+      font-size: 0.85em;
     }
 
     .btn,
     .btn2 {
-      padding: 6px 12px; /* Réduit le padding */
-      font-size: 0.85em; /* Réduit davantage la taille de la police */
+      padding: 6px 12px;
+      font-size: 0.85em;
     }
 
     .mobile-logo img {
-      width: 60px; /* Réduit davantage la taille du logo mobile */
+      width: 60px;
     }
   }
 
@@ -560,11 +566,23 @@
     }
 
     .nav-links li {
-      text-align: left; /* Aligne le texte à gauche en desktop */
+      text-align: left;
     }
 
     .nav-links li a {
-      text-align: left; /* Aligne le texte à gauche en desktop */
+      text-align: left;
+    }
+
+    /* Style spécifique pour écrans larges */
+    nav .container {
+      max-width: 1400px; /* Limite la largeur sur très grands écrans */
+    }
+  }
+
+  /* Adaptation pour écrans larges */
+  @media (min-width: 1200px) {
+    .nav-links {
+      gap: 40px; /* Encore plus d'espace sur grands écrans */
     }
   }
 
@@ -615,7 +633,7 @@
     list-style: none;
     padding: 8px 0;
     margin: 0;
-    min-width: 200px;
+    min-width: 220px;
     border-radius: 4px;
     display: none;
     opacity: 0;
@@ -765,7 +783,7 @@
             aria-haspopup="true"
             [attr.aria-expanded]="isDropdownOpen('vosBesoins')"
           >
-            Vos besoins <i class="fas fa-chevron-down"></i>
+            Solutions digitales <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
             <li>
@@ -824,7 +842,7 @@
             aria-haspopup="true"
             [attr.aria-expanded]="isDropdownOpen('packageMetier')"
           >
-            Package Métier <i class="fas fa-chevron-down"></i>
+            Modules organisationnels <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
             <li>
@@ -896,7 +914,7 @@
             aria-haspopup="true"
             [attr.aria-expanded]="isDropdownOpen('tarifs')"
           >
-            Tarifs <i class="fas fa-chevron-down"></i>
+            Tarifs personnalisés <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
             <li>

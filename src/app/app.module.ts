@@ -64,6 +64,7 @@ import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { TextSlideComponent } from './text-slide/text-slide.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
+import { PrendreRendezVousComponent } from './prendre-rendez-vous/prendre-rendez-vous.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -112,6 +113,7 @@ import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.compo
     SupportComponent,
     OptionFormComponent,
     SmartAlertOrderComponent,
+    PrendreRendezVousComponent,
   ],
   imports: [
     BrowserModule,

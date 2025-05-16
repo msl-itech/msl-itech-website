@@ -1,0 +1,37 @@
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: calc(
+    100vh - 120px
+  ); /* Hauteur calculée en fonction de la fenêtre moins header et footer */
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.odoo-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: auto;
+}
+
+/* Pour les grands écrans */
+@media screen and (min-width: 992px) {
+  .iframe-container {
+    min-height: 800px;
+  }
+}
+
+/* Pour les tablettes */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .iframe-container {
+    height: calc(100vh - 100px);
+  }
+}
+
+/* Pour les mobiles */
+@media screen and (max-width: 767px) {
+  .iframe-container {
+    height: calc(100vh - 80px);
+  }
+}

@@ -15,9 +15,9 @@ import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
 import { PackPerformanceComponent } from './pack-performance/pack-performance.component';
 import { PackSelectionComponent } from './pack-selection/pack-selection.component';
 import { PagePackageComponent } from './page-package/page-package.component';
+import { PrendreRendezVousComponent } from './prendre-rendez-vous/prendre-rendez-vous.component';
 import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 import { ReservationHorecaComponent } from './reservation-horeca/reservation-horeca.component';
-import { ReserveDemoComponent } from './reserve-demo/reserve-demo.component';
 import { Service1Component } from './service1/service1.component';
 import { Service2Component } from './service2/service2.component';
 import { Service3Component } from './service3/service3.component';
@@ -30,7 +30,6 @@ import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.co
 import { SupportComponent } from './support/support.component';
 import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
-
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'sitemap', redirectTo: '/sitemap.xml', pathMatch: 'full' },
@@ -43,7 +42,6 @@ const routes: Routes = [
   { path: 'ressources-humaines', component: Service5Component },
   { path: 'marketing-digital', component: Service6Component },
   { path: 'services-professionnels', component: Service7Component },
-  { path: 'reserve-demo', component: ReserveDemoComponent },
   { path: 'about', component: AboutComponent },
   { path: 'job', component: JobComponent },
   { path: 'contact', component: ContactComponent },
@@ -69,6 +67,7 @@ const routes: Routes = [
     path: 'package-metier/administratif',
     component: PackAdministratifComponent,
   },
+  { path: 'prendre-rendez-vous', component: PrendreRendezVousComponent },
   { path: 'careers', component: JobApplicationComponent },
   { path: 'reserver-demo', component: DemoReservationComponent },
   { path: 'pack-selection', component: PackSelectionComponent },
