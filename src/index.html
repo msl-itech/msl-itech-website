@@ -1,16 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>MSLWebsite</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="W0jek0lsqRk5dGTvH7Gb-yh_t6KDF5KgI_t92E_2oIU" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>MSLWebsite</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="google-site-verification"
+      content="W0jek0lsqRk5dGTvH7Gb-yh_t6KDF5KgI_t92E_2oIU"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      (function () {
+        // Configuration
+        const CONFIG = {
+          scrollLockTime: 400, // Durée du verrouillage après un défilement
+          scrollThreshold: 200, // Temps minimal entre deux défilements
+          scrollAmountTop: -150, // Montant de défilement vers le haut aux limites
+          scrollAmountBottom: 150, // Montant de défilement vers le bas aux limites
+          scrollAmplifier: 2.5, // Amplification du défilement aux limites
+        };
+
+        // Variables d'état
+        let lastScrollTime = 0;
+        let scrollingTimer = null;
+        let scrollLock = false;
+        let iframeScrolling = false;
+        let activeIframes = new Set();
+
+        // Ajouter une classe spéciale pour aider au CSS
+        const style = document.createElement("style");
+        style.textContent = `
+          body.is-scrolling .iframe-container { 
+            pointer-events: none; 
+            transition: opacity 0.1s ease;
+          }
+          body.is-scrolling .odoo-iframe { 
+            opacity: 0.95; 
+          }
+          body.iframe-scrolling {
+            overflow-y: hidden;
+          }
+          iframe {
+            transition: opacity 0.2s ease;
+          }
+          .smooth-scroll {
+            scroll-behavior: smooth;
+          }
+        `;
+        document.head.appendChild(style);
+
+        // Gestionnaire de messages entre iframe et page principale
+        window.addEventListener("message", function (event) {
+          if (!event.data || !event.data.type) return;
+
+          const now = Date.now();
+
+          // Gérer les limites de défilement
+          if (event.data.type === "scrollBoundary") {
+            // Éviter les défilements trop rapprochés
+            if (now - lastScrollTime < CONFIG.scrollThreshold) return;
+
+            lastScrollTime = now;
+            document.body.classList.add("is-scrolling");
+
+            // Activer le défilement fluide temporairement
+            document.documentElement.classList.add("smooth-scroll");
+
+            // Permettre de traverser la limite de l'iframe
+            if (event.data.direction === "top") {
+              // Vers le haut plus aggressif
+              const scrollAmount = event.data.deltaY
+                ? Math.min(
+                    CONFIG.scrollAmountTop,
+                    event.data.deltaY * CONFIG.scrollAmplifier
+                  )
+                : CONFIG.scrollAmountTop;
+
+              window.scrollBy({
+                top: scrollAmount,
+                behavior: "smooth",
+              });
+            } else if (event.data.direction === "bottom") {
+              // Vers le bas
+              const scrollAmount = event.data.deltaY
+                ? Math.max(
+                    CONFIG.scrollAmountBottom,
+                    event.data.deltaY * CONFIG.scrollAmplifier
+                  )
+                : CONFIG.scrollAmountBottom;
+
+              window.scrollBy({
+                top: scrollAmount,
+                behavior: "smooth",
+              });
+            }
+
+            // Réinitialiser le défilement fluide
+            setTimeout(function () {
+              document.documentElement.classList.remove("smooth-scroll");
+            }, 800);
+
+            // Réinitialiser le verrou après un délai
+            setTimeout(function () {
+              document.body.classList.remove("is-scrolling");
+            }, CONFIG.scrollLockTime);
+          }
+          // Suivi des iframes actifs
+          else if (event.data.type === "iframeActive") {
+            if (event.source && event.source.frameElement) {
+              activeIframes.add(event.source.frameElement);
+            }
+          }
+          // Gestion du défilement dans l'iframe
+          else if (event.data.type === "iframeScroll") {
+            iframeScrolling = true;
+            clearTimeout(scrollingTimer);
+            scrollingTimer = setTimeout(function () {
+              iframeScrolling = false;
+            }, 300);
+          }
+        });
+
+        // Suivi du défilement de la page
+        window.addEventListener("scroll", function () {
+          document.body.classList.add("is-scrolling");
+          lastScrollTime = Date.now();
+
+          clearTimeout(scrollingTimer);
+          scrollingTimer = setTimeout(function () {
+            document.body.classList.remove("is-scrolling");
+          }, 300);
+        });
+
+        // Optimisation du défilement avec la roue de souris
+        window.addEventListener(
+          "wheel",
+          function (event) {
+            lastScrollTime = Date.now();
+
+            // Si un iframe est en cours de défilement, vérifier s'il est encore visible
+            if (iframeScrolling) {
+              // Laisser l'event se propager naturellement
+            }
+          },
+          { passive: true }
+        );
+
+        // Amélioration pour le défilement au clavier
+        window.addEventListener("keydown", function (event) {
+          // Touches de navigation (flèches, page up/down, home, end, spacebar)
+          const navKeys = [
+            "ArrowUp",
+            "ArrowDown",
+            "PageUp",
+            "PageDown",
+            "Home",
+            "End",
+            " ",
+          ];
+
+          if (navKeys.includes(event.key)) {
+            lastScrollTime = Date.now();
+            document.body.classList.add("is-scrolling");
+
+            clearTimeout(scrollingTimer);
+            scrollingTimer = setTimeout(function () {
+              document.body.classList.remove("is-scrolling");
+            }, 300);
+          }
+        });
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.6/js/iframeResizer.contentWindow.min.js"></script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

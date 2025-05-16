@@ -1,77 +1,85 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
-import { SeoService } from '../seo.service';
-import { NgxSpinnerService } from 'ngx-spinner';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
+import { HeightCalculationMethod, iframeResizer } from 'iframe-resizer';
 
 @Component({
   selector: 'app-job',
   templateUrl: './job.component.html',
-  styleUrl: './job.component.css'
+  styleUrls: ['./job.component.css'],
 })
-export class JobComponent {
-  pageTitle: string = 'Rejoignez notre Équipe | Offres d’Emploi | MSL Itech';
-  pageDescription: string = 'Découvrez nos offres d’emploi chez MSL Itech et rejoignez notre équipe dynamique, partenaire certifié Odoo en Belgique, Canada et Maroc.';
-  pageKeywords: string = 'emploi MSL Itech, job Odoo, recrutement Odoo, carrière ERP, Belgique, Canada, Maroc, partenaire Odoo';
+export class JobComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('jobIframe', { static: true })
+  iframeRef!: ElementRef<HTMLIFrameElement>;
+  iframeResizer: any;
 
-  constructor(
-    private seoService: SeoService,
-    @Inject(DOCUMENT) private document: Document,
-    private spinner: NgxSpinnerService
-  ) {}
- 
+  constructor(private renderer: Renderer2) {}
 
-  ngOnInit(): void {
-    this.spinner.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 1000);
-    // Mise à jour du SEO avec SeoService
-    this.seoService.updateTitle(this.pageTitle);
-    this.seoService.updateMetaTags([
-      { name: 'description', content: this.pageDescription },
-      { name: 'keywords', content: this.pageKeywords },
-      { name: 'robots', content: 'index, follow' },
-      { name: 'author', content: 'MSL Itech' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    ]);
-
-    // Ajouter les données structurées JSON-LD
-    this.addStructuredData();
+  ngAfterViewInit(): void {
+    this.initializeResizer();
+    this.setupIframeEvents();
   }
 
-  // Méthode pour ajouter des données structurées JSON-LD
-  private addStructuredData(): void {
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "JobPosting",
-      "title": "Offres d’emploi chez MSL Itech",
-      "description": "Rejoignez notre équipe et découvrez des opportunités de carrière dans le domaine ERP avec MSL Itech, partenaire Odoo en Belgique, Canada et Maroc.",
-      "datePosted": new Date().toISOString(),
-      "hiringOrganization": {
-        "@type": "Organization",
-        "name": "MSL Itech",
-        "logo": "https://www.msl-itech.com/assets/img/accueil/logoMSL.png",
-        "url": "https://www.msl-itech.com",
-      },
-      "jobLocation": [
-        { "@type": "Place", "addressCountry": "Belgium" },
-        { "@type": "Place", "addressCountry": "Canada" },
-        { "@type": "Place", "addressCountry": "Morocco" }
-      ],
-      "employmentType": "Full-time",
-      "validThrough": "2025-12-31T23:59:59Z",
-      "baseSalary": {
-        "@type": "MonetaryAmount",
-        "currency": "MAD",
-        "value": { "@type": "QuantitativeValue", "value": 50000 }
-      }
-    };
+  ngOnDestroy(): void {
+    if (this.iframeResizer?.close) {
+      this.iframeResizer.close();
+    }
+  }
 
-    const script = this.document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(structuredData);
-    this.document.head.appendChild(script);
+  private setupIframeEvents(): void {
+    const iframe = this.iframeRef.nativeElement;
+
+    // Gestion du focus sur l'iframe
+    this.renderer.listen(iframe, 'mouseenter', () => {
+      if (window.innerWidth <= 768) {
+        // Seulement sur mobile
+        this.renderer.addClass(document.body, 'iframe-focused');
+      }
+    });
+
+    this.renderer.listen(iframe, 'mouseleave', () => {
+      this.renderer.removeClass(document.body, 'iframe-focused');
+    });
+
+    // Pour les appareils tactiles
+    this.renderer.listen(iframe, 'touchstart', () => {
+      this.renderer.addClass(document.body, 'iframe-focused');
+    });
+
+    this.renderer.listen(iframe, 'touchend', () => {
+      setTimeout(() => {
+        this.renderer.removeClass(document.body, 'iframe-focused');
+      }, 500);
+    });
+  }
+  private initializeResizer(): void {
+    try {
+      const config = {
+        log: false,
+        checkOrigin: false,
+        heightCalculationMethod: 'bodyScroll' as HeightCalculationMethod,
+        sizeWidth: false,
+        autoResize: true,
+        scrolling: true,
+        bodyMargin: 0,
+        bodyPadding: 0,
+        tolerance: 0,
+        onResized: (data: any) => {
+          this.iframeRef.nativeElement.style.height = `${data.height}px`;
+        },
+        onInit: () => {
+          this.iframeRef.nativeElement.style.visibility = 'visible';
+        },
+      };
+
+      this.iframeResizer = iframeResizer(config, this.iframeRef.nativeElement);
+    } catch (error) {
+      console.error('Erreur iframe resizer:', error);
+    }
   }
 }
