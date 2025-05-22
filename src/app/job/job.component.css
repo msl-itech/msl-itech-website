@@ -1,11 +1,3 @@
-/* job.component.scss */
-.iframe-wrapper {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 80px);
-  margin-top: 80px;
-}
-
 .iframe-container {
   width: 100%;
   height: 100%;
