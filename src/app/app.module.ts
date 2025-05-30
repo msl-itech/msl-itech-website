@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   FaIconLibrary,
@@ -45,6 +45,7 @@ import { PackSelectionComponent } from './pack-selection/pack-selection.componen
 import { PackageMetierAccueilComponent } from './package-metier-accueil/package-metier-accueil.component';
 import { PackageMetierComponent } from './package-metier/package-metier.component';
 import { PagePackageComponent } from './page-package/page-package.component';
+import { PrendreRendezVousComponent } from './prendre-rendez-vous/prendre-rendez-vous.component';
 import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 import { ReservationHorecaComponent } from './reservation-horeca/reservation-horeca.component';
 import { ReserveDemoComponent } from './reserve-demo/reserve-demo.component';
@@ -64,7 +65,7 @@ import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { TextSlideComponent } from './text-slide/text-slide.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
-import { PrendreRendezVousComponent } from './prendre-rendez-vous/prendre-rendez-vous.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -122,9 +123,13 @@ import { PrendreRendezVousComponent } from './prendre-rendez-vous/prendre-rendez
     FontAwesomeModule,
     NgxSpinnerModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot(),
+    FormsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      timeOut: 3000,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
