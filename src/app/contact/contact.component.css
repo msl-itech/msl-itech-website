@@ -1,7 +1,60 @@
 .contact-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f6f9fc 0%, #f1f4f8 100%);
   padding: 4rem 2rem;
+}
+
+/* Styles pour les boutons de réservation */
+.reservation-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: -2rem auto 2rem;
+  position: relative;
+  z-index: 10;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.reservation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+  min-width: 240px;
+}
+
+.reservation-button i {
+  font-size: 1.3rem;
+}
+
+.demo-button {
+  background: #114d5a;
+}
+
+.rdv-button {
+  background: #f0c300;
+  color: #333;
+}
+
+.reservation-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-button.demo-button:hover {
+  background: #0e3c47;
+}
+
+.reservation-button.rdv-button:hover {
+  background: #e0b700;
 }
 
 .contact-container {
@@ -91,16 +144,52 @@
   margin-bottom: 1rem;
 }
 
-app-footer {
-  flex: 0 0 auto;
+.form-group:nth-last-child(2) {
+  grid-column: 1 / -1;
 }
 
-#iframeContainer {
+.form-control {
   width: 100%;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
-iframe {
-  width: 100%;
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #f0c300;
+  box-shadow: 0 0 0 4px #f0c4009b;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+  transform: translateY(-25px) scale(0.8);
+  color: #114d5a;
+}
+
+.form-group label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: #114d5a;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: white;
+  padding: 0 0.5rem;
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+  background: #114d5a;
+  color: white;
   border: none;
   padding: 1rem 2rem;
   border-radius: 8px;
@@ -139,23 +228,42 @@ iframe {
   width: 100%;
 }
 
-/* Example: Small screens (phones) — up to 767px width */
-@media screen and (max-width: 767px) {
-  .iframe-container {
-    height: 210vh; /* Increase if you want more scroll space on small devices */
+@media (max-width: 968px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .modern-form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page {
+    padding: 2rem 1rem;
+  }
+
+  .reservation-buttons-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .reservation-button {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
-/* Example: Tablets — between 768px and 1023px width */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .iframe-container {
-    height: 100vh; /* A bit less than mobile, but more than desktop */
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.75rem;
   }
 }
 
-/* Example: Larger desktops — 1024px width and above */
-@media screen and (min-width: 1024px) {
-  .iframe-container {
-    height: 100vh; /* Default or your preferred height for big screens */
-  }
+.full-width {
+  grid-column: 1 / -1;
 }

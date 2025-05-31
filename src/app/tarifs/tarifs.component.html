@@ -1,217 +1,692 @@
 <style>
-   .recommendation-section {
-            color: #ffffff; /* Texte blanc */
-            padding: 60px 20px;
-            text-align: center;
-        }
+  .recommendation-section {
+    color: #ffffff; /* Texte blanc */
+    padding: 60px 20px;
+    text-align: center;
+  }
 
-        .recommendation-section h1 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 40px;
-            color: #ffffff;
-        }
+  .recommendation-section h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #ffffff;
+  }
 
-        .highlighted {
-            background-color: #FFDD57; /* Fond jaune */
-            color: #114D5A; /* Texte vert foncé */
-            border-radius: 4px;
-            padding: 4px 8px;
-            display: inline-block;
-            font-weight: bold;
-        }
+  .highlighted {
+    background-color: #ffdd57; /* Fond jaune */
+    color: #114d5a; /* Texte vert foncé */
+    border-radius: 4px;
+    padding: 4px 8px;
+    display: inline-block;
+    font-weight: bold;
+  }
 
-        .content-container {
-            display: grid;
-            grid-template-columns: 1fr 1px 1fr; /* Deux colonnes avec un séparateur */
-            gap: 20px;
-            align-items: start;
-        }
+  .content-container {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr; /* Deux colonnes avec un séparateur */
+    gap: 20px;
+    align-items: start;
+  }
 
-        .contentt {
-            text-align: left;
-            padding: 20px;
-        }
+  .contentt {
+    text-align: left;
+    padding: 20px;
+  }
 
-        .contentt h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #FFDD57; /* Titre en jaune */
-        }
+  .contentt h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffdd57; /* Titre en jaune */
+  }
 
-        .contentt p {
-            line-height: 1.6;
-            margin-bottom: 10px;
-            color: #ffffff; /* Texte blanc */
-        }
+  .contentt p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texte blanc */
+  }
 
-        .icon {
-            color: #FFDD57; /* Icône jaune */
-            font-size: 1rem;
-            display: block;
-            margin: 20px 0;
-        }
+  .icon {
+    color: #ffdd57; /* Icône jaune */
+    font-size: 1rem;
+    display: block;
+    margin: 20px 0;
+  }
 
-        .divider {
-            background-color: #FFDD57; /* Ligne séparatrice jaune */
-            height: 100%;
-            width: 1px;
-        }
+  .divider {
+    background-color: #ffdd57; /* Ligne séparatrice jaune */
+    height: 100%;
+    width: 1px;
+  }
 
-        @media (max-width: 768px) {
-            .content-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .divider {
-                display: none;
-            }
-            .content {
-                text-align: center;
-            }
-        }
-
-    /* Style général pour les cartes */
-    .card {
-      transition: transform 0.3s, box-shadow 0.3s;
-      border-radius: 24px;
-      border: 2px solid #114D5A; /* Bordure principale */
-      height: 100%;
-      margin-bottom: 30px; /* Marges entre les cartes */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important         ; /* Ombre légère */
+  @media (max-width: 768px) {
+    .content-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
     }
-  
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important ; /* Ombre au survol */
+    .divider {
+      display: none;
     }
-  
-    /* Carte du milieu */
-    .middle-card {
-      background-color: #114D5A; /* Fond vert */
-      color: white; /* Texte en blanc */
-    }
-  
-    .middle-card .card-title {
-      font-size: 1.8rem; /* Titre plus grand */
-      color: white; /* Titre en blanc */
-    }
-  
-    .middle-card .price {
-      color: white; /* Prix en blanc */
-    }
-  
-    .middle-card .card-text {
-      color: white; /* Texte en blanc */
-    }
-  
-    .middle-card .time {
-      color: #ffdd57; /* Temps en jaune */
-    }
-  
-    .middle-card .list-group-item {
-      background-color: transparent; /* Pas de fond pour les items */
-      border: none;
-      color: white; /* Texte en blanc */
-    }
-  
-    .middle-card .list-group-item i {
-      color: #ffdd57; /* Icônes en jaune */
-    }
-  
-    .middle-card .btn-primary {
-      background-color: #ffdd57;
-      border: none;
-      border-radius: 12px;
-    }
-  
-    .middle-card .btn-primary:hover {
-      background-color: #0056b3;
-    }
-  
-    /* Style pour les cartes blanches */
-    .card:not(.middle-card) .card-title {
-      font-size: 1.8rem; /* Titre plus grand */
-      color: #114D5A; /* Titre en bleu foncé */
-    }
-  
-    .card:not(.middle-card) .time {
-      color: #114D5A; /* Temps en bleu foncé */
-    }
-  
-    .card:not(.middle-card) .list-group-item {
-      background-color: transparent; /* Pas de fond pour les items */
-      border: none;
-      color: #114D5A; /* Texte en bleu foncé */
-    }
-  
-    .card:not(.middle-card) .list-group-item i {
-      color: #114D5A; /* Icônes en bleu foncé */
-    }
-  
-    .card:not(.middle-card) .btn-primary {
-      background-color: #114D5A;
-      border: none;
-      border-radius: 12px;
-    }
-  
-    .card:not(.middle-card) .btn-primary:hover {
-      background-color: #0d3a44;
-    }
-  
-    /* Suppression des couleurs de fond des en-têtes */
-    .card-header {
-      background-color: transparent !important;
-      border-bottom: none;
-      font-size: 1.8rem; /* Titre des en-têtes plus grand */
-      font-weight: bold;
-    }
-
-    /* Style spécifique pour petits écrans */
-  @media (max-width: 576px) {
-    .card {
-      margin-bottom: 20px; /* Réduction de la marge entre les cartes */
-    }
-    .card .card-title {
-      font-size: 1.4rem; /* Réduction de la taille du texte */
-    }
-    .card .price {
-      font-size: 2rem; /* Ajustement des prix */
-    }
-    .card .time {
-      font-size: 0.9rem; /* Réduction de la taille des temps */
-    }
-    .card .btn-primary {
-      font-size: 0.9rem; /* Bouton plus petit */
-      padding: 0.5rem 1rem;
+    .content {
+      text-align: center;
     }
   }
 
-  @media (min-width: 577px) and (max-width: 768px) {
-    .card .card-title {
-      font-size: 1.6rem;
+  /* Styles modernes et cohérents */
+  .hero-section {
+    background: linear-gradient(135deg, #114d5a 0%, #1a6675 100%);
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="80" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="40" cy="60" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ffdd57;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-section .lead {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.95;
+  }
+
+  .section-divider {
+    height: 6px;
+    background: linear-gradient(90deg, #114d5a 0%, #ffdd57 50%, #114d5a 100%);
+    margin: 0;
+  }
+
+  .modern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 60px 0;
+  }
+
+  .feature-block {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(17, 77, 90, 0.1);
+    border-top: 4px solid #ffdd57;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .feature-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(17, 77, 90, 0.15);
+  }
+
+  .feature-block .icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #114d5a, #1a6675);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: #ffdd57;
+    font-size: 1.8rem;
+  }
+
+  .feature-block h3 {
+    color: #114d5a;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .feature-block p {
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+  }
+
+  .pricing-section {
+    background: #f8fafc;
+    padding: 80px 0;
+  }
+
+  .pricing-comparison {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 60px rgba(17, 77, 90, 0.08);
+    margin: 40px 0;
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+
+  .price-tier {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 15px;
+    position: relative;
+  }
+
+  .price-tier.basic {
+    background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
+    border: 2px solid #e0e0e0;
+  }
+
+  .price-tier.pro {
+    background: linear-gradient(135deg, #114d5a, #1a6675);
+    color: white;
+    transform: scale(1.05);
+    border: 2px solid #ffdd57;
+  }
+
+  .price-tier.business {
+    background: linear-gradient(135deg, #fff3c4, #ffeb9c);
+    border: 2px solid #ffdd57;
+  }
+
+  .price-tier h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .price-tier .price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .price-tier .description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  /* Styles pour la nouvelle interface de comparaison */
+  .currency-selector {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(17, 77, 90, 0.1);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .currency-selector h3 {
+    color: #114d5a;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .currency-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .currency-btn {
+    background: #f8fafc;
+    border: 2px solid #e0e7ff;
+    color: #114d5a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 80px;
+    justify-content: center;
+  }
+
+  .currency-btn:hover {
+    background: #e0e7ff;
+    transform: translateY(-2px);
+  }
+
+  .currency-btn.active {
+    background: #114d5a;
+    color: white;
+    border-color: #114d5a;
+  }
+
+  .pricing-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+  }
+
+  .solution-column {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 40px rgba(17, 77, 90, 0.08);
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .solution-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(17, 77, 90, 0.15);
+  }
+
+  .solution-column.recommended {
+    border-color: #ffdd57;
+    background: linear-gradient(135deg, #114d5a 0%, #1a6675 100%);
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .solution-column.recommended::before {
+    content: "RECOMMANDÉ";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffdd57;
+    color: #114d5a;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .solution-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .solution-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #114d5a;
+  }
+
+  .solution-column.recommended .solution-title {
+    color: #ffdd57;
+  }
+
+  .solution-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .solution-column.recommended .solution-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .price-comparison {
+    margin-bottom: 30px;
+  }
+
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border-left: 4px solid #114d5a;
+  }
+
+  .solution-column.recommended .price-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: #ffdd57;
+  }
+
+  .tech-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .price-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #114d5a;
+  }
+
+  .solution-column.recommended .price-value {
+    color: #ffdd57;
+  }
+
+  .price-difference {
+    font-size: 0.8rem;
+    color: #28a745;
+    margin-top: 5px;
+  }
+
+  .solution-column.recommended .price-difference {
+    color: #ffdd57;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .solution-column.recommended .feature-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .feature-item:last-child {
+    border-bottom: none;
+  }
+
+  .feature-icon {
+    color: #28a745;
+    font-size: 0.8rem;
+  }
+
+  .solution-column.recommended .feature-icon {
+    color: #ffdd57;
+  }
+
+  @media (max-width: 992px) {
+    .pricing-comparison-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
-    .card .price {
-      font-size: 2.5rem;
+
+    .solution-column.recommended {
+      transform: none;
     }
-    .card .time {
-      font-size: 1rem;
+
+    .currency-selector {
+      flex-direction: column;
+      text-align: center;
     }
   }
 
-  @media (min-width: 769px) {
-    .card .card-title {
-      font-size: 1.8rem;
+  @media (max-width: 768px) {
+    .currency-buttons {
+      justify-content: center;
     }
-    .card .price {
-      font-size: 3rem;
-    }
-    .card .time {
-      font-size: 1.1rem;
+
+    .currency-btn {
+      min-width: 70px;
+      padding: 8px 15px;
+      font-size: 0.9rem;
     }
   }
-  
-  /* Style pour le bouton Contactez-nous */
+
+  .stats-banner {
+    background: linear-gradient(135deg, #ffdd57 0%, #ffd700 100%);
+    color: #114d5a;
+    padding: 60px 0;
+    margin: 80px 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+  }
+
+  .stat-item {
+    padding: 20px;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .tech-comparison {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(17, 77, 90, 0.08);
+    margin: 60px 0;
+  }
+
+  .tech-comparison table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .tech-comparison th {
+    background: #114d5a;
+    color: white;
+    padding: 20px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .tech-comparison td {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+  }
+
+  .tech-comparison tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  .tech-comparison .tech-name {
+    font-weight: 600;
+    color: #114d5a;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, #114d5a 0%, #1a6675 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ffdd57;
+  }
+
+  .cta-section .lead {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+  }
+
+  .cta-button {
+    background: #ffdd57;
+    color: #114d5a;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cta-button:hover {
+    background: #ffd700;
+    color: #114d5a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 221, 87, 0.4);
+  }
+
+  .image-text-section {
+    padding: 80px 0;
+  }
+
+  .image-text-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .image-text-content img {
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(17, 77, 90, 0.1);
+  }
+
+  .image-text-content h2 {
+    color: #114d5a;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  .image-text-content p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  /* Style général pour les cartes de tarifs */
+  .card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 24px;
+    border: 2px solid #114d5a;
+    height: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .middle-card {
+    background-color: #114d5a;
+    color: white;
+  }
+
+  .middle-card .card-title {
+    font-size: 1.8rem;
+    color: white;
+  }
+
+  .middle-card .price {
+    color: white;
+  }
+
+  .middle-card .card-text {
+    color: white;
+  }
+
+  .middle-card .time {
+    color: #ffdd57;
+  }
+
+  .middle-card .list-group-item {
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+
+  .middle-card .list-group-item i {
+    color: #ffdd57;
+  }
+
+  .middle-card .btn-primary {
+    background-color: #ffdd57;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .middle-card .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .card:not(.middle-card) .card-title {
+    font-size: 1.8rem;
+    color: #114d5a;
+  }
+
+  .card:not(.middle-card) .time {
+    color: #114d5a;
+  }
+
+  .card:not(.middle-card) .list-group-item {
+    background-color: transparent;
+    border: none;
+    color: #114d5a;
+  }
+
+  .card:not(.middle-card) .list-group-item i {
+    color: #114d5a;
+  }
+
+  .card:not(.middle-card) .btn-primary {
+    background-color: #114d5a;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .card:not(.middle-card) .btn-primary:hover {
+    background-color: #0d3a44;
+  }
+
+  .card-header {
+    background-color: transparent !important;
+    border-bottom: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
   .btn-primary {
     padding: 15px 30px;
     font-size: 1.2rem;
@@ -224,235 +699,657 @@
     transform: scale(1.05);
   }
 
-  /* Style spécifique pour le bouton de la carte du milieu */
   .middle-card .btn-primary {
-    background-color: #FFDD57;
-    color: #114D5A;
+    background-color: #ffdd57;
+    color: #114d5a;
     border: none;
   }
 
   .middle-card .btn-primary:hover {
-    background-color: #FFE57F;
-    color: #114D5A;
+    background-color: #ffe57f;
+    color: #114d5a;
   }
 
-  /* Ajustement pour les écrans mobiles */
-  @media (max-width: 576px) {
-    .btn-primary {
-      padding: 12px 24px;
-      font-size: 1rem;
-    }
-  }
-  
-  /* Style pour le conteneur de la carte */
   .card-body {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
-  /* Style pour le conteneur du bouton */
   .button-container {
     margin-top: auto;
     padding: 20px;
     width: 100%;
   }
-  
-  </style>
 
-   <div class="banner-section position-relative">
-    <img src="../../assets/img/webp/grande15.webp" alt="MSL Itech Banner" class="img-fluid w-100">
-    <div class="overlay-text d-flex align-items-center justify-content-center">
-      <div class="text-center text-white px-3">
-        <h1 class="display-4">Nos Offres Site internet</h1>
-        <p class="lead" data-aos="fade-up" data-aos-delay="200">Des tarifs site internet qui défient la concurrence, sans compromis sur la qualité !</p>
-      </div>
-    </div>
-  </div>
-  <div class="container my-5" >
-    <div class="row align-items-center">
-      <div class="col-md-6 order-md-2 text-center rounded" data-aos="fade-left">
-        <img src="../../assets/img/webp/12.webp" alt="Intégration Odoo" class="img-fluid rounded">
-      </div>
-      <div class="col-md-6 order-md-1" data-aos="fade-right">
-        <h2 class="text-primary--custom">Pourquoi choisir MSL Itech ?</h2>
-        <p>
-          Créer un site web, c'est comme construire une maison : le choix des outils et des matériaux est crucial pour obtenir un résultat qui correspond à vos besoins. 
-        </p>
-        <p>
-          Si vous êtes chef d'entreprise, entrepreneur ou professionnel, il est normal de se sentir perdu face à des termes techniques comme Angular ou WordPress.
-        </p>
-        <p>
-          Pas de panique ! Voici un guide simple et explicatif pour vous aider à faire le bon choix. 
-        </p>
-        <!-- <button class="btn btn-bg-primary mt-3" data-aos="zoom-in">Découvrir nos packs</button> -->
-      </div>
-    </div>
-  </div>
-  <div class=" bg-custom p-3">
-    <div class="container">
-      <h2 class="text-center text-white">
-        Comprendre <span class="text-warning">Javascript</span> et <span class="text-warning">WordPress</span><br> en quelques mots
-      </h2>
-  
-      <div class="row g-4 justify-content-center mt-4 mb-5">
-        <div class="col-md-5">
-          <div class="card-custom">
-            <div class="card-number">01</div>
-            <div class="card-title">Javascript Moderne</div>
-            <p>
-              Imaginez un architecte qui construit une maison sur mesure. Javascript moderne 
-              est idéal pour des projets complexes nécessitant des fonctionnalités 
-              interactives avancées. Parfait pour les applications web sophistiquées, 
-              les espaces clients dynamiques et les outils collaboratifs.
-            </p>
-          </div>
-        </div>
-  
-        <div class="col-md-5">
-          <div class="card-custom">
-            <div class="card-number">02</div>
-            <div class="card-title">WordPress</div>
-            <p>
-              Pensez à un kit de maison préfabriquée : rapide à assembler et facile à personnaliser. 
-              WordPress est la solution idéale pour les sites vitrine, les blogs et les boutiques 
-              en ligne simples. Une plateforme éprouvée qui allie simplicité et efficacité.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>  
-   
-  </div>
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.2rem;
+    }
 
-  <div class="container">
-    <div class="container my-4">
-      <h3 class="text-center mb-4">Comparaison Javascript moderne vs WordPress</h3>
-      <div class="table-responsive">
-        <table class="flat-table">
-          <thead>
-            <tr>
-              <th>Crit&egrave;re</th>
-              <th>Javascri (sur-mesure)</th>
-              <th>WordPress (pr&ecirc;t &agrave; l'emploi)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Vos besoins</td>
-              <td>Solution unique et complexe</td>
-              <td>Site rapide, simple et fonctionnel</td>
-            </tr>
-            <tr>
-              <td>Co&ucirc;t</td>
-              <td>&Eacute;lev&eacute;</td>
-              <td>Mod&eacute;r&eacute;</td>
-            </tr>
-            <tr>
-              <td>Temps de cr&eacute;ation</td>
-              <td>Long</td>
-              <td>Rapide</td>
-            </tr>
-            <tr>
-              <td>Personnalisation</td>
-              <td>Totale</td>
-              <td>Facile</td>
-            </tr>
-            <tr>
-              <td>Performance</td>
-              <td>Excellente</td>
-              <td>Variable</td>
-            </tr>
-            <tr>
-              <td>Maintenance</td>
-              <td>Requiert un d&eacute;veloppeur</td>
-              <td>Facile &agrave; g&eacute;rer</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    .image-text-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .comparison-row {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .price-tier.pro {
+      transform: none;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .modern-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card {
+      margin-bottom: 20px;
+    }
+    .card .card-title {
+      font-size: 1.4rem;
+    }
+    .card .price {
+      font-size: 2rem;
+    }
+    .card .time {
+      font-size: 0.9rem;
+    }
+    .card .btn-primary {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .hero-section {
+      padding: 60px 0;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="banner-section position-relative">
+  <img
+    src="../../assets/img/webp/grande15.webp"
+    alt="MSL Itech Banner"
+    class="img-fluid w-100"
+  />
+  <div class="overlay-text d-flex align-items-center justify-content-center">
+    <div class="text-center text-white px-3">
+      <h1 class="display-4">Nos Offres Site internet</h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="200">
+        Des tarifs site internet qui défient la concurrence, sans compromis sur
+        la qualité !
+      </p>
     </div>
   </div>
-  <div class="section-wrapper">
-    <!-- Section 1 : Angular -->
-    <div class="image-placeholder">
-        <img src="../../assets/img/tarif/1-min.webp" alt="Javascript moderne" style="width: 100%; height: auto; border-radius: 8px;">
-    </div>
-    <div class="content">
-        <h3>Choisissez Javascript moderne</h3>
-        <h1>Pourquoi Javascript moderne est fait pour vous ?</h1>
-        <p>
-            Vous voulez un projet hautement personnalisé qui répond parfaitement à vos besoins professionnels spécifiques.
-        </p>
-        <p>
-            Vous avez un budget conséquent et êtes prêt à investir pour une solution performante et évolutive.
-        </p>
-        <ul>
-            <li><i class="fas fa-check-circle"></i> Performant et évolutif</li>
-            <li><i class="fas fa-check-circle"></i> Solution personnalisée</li>
-        </ul>
-    </div>
-
-    <!-- Section 2 : WordPress -->
-    <div class="content">
-        <h3>Choisissez WordPress</h3>
-        <h1>Pourquoi WordPress est idéal ?</h1>
-        <p>
-            Vous avez besoin d'un site rapidement opérationnel pour promouvoir vos services ou produits.
-        </p>
-        <p>
-            Vous recherchez une solution économique et facile à gérer.
-        </p>
-        <ul>
-            <li><i class="fas fa-check-circle"></i> Rapidement opérationnel</li>
-            <li><i class="fas fa-check-circle"></i> Économique et simple</li>
-        </ul>
-    </div>
-    <div class="image-placeholder">
-        <img src="../../assets/img/tarif/2-min.webp" alt="WordPress" style="width: 100%; height: auto; border-radius: 8px;">
-    </div>
 </div>
 
-  <div class="bg-custom">
-   <section class="container recommendation-section">
-        <h1>Notre recommandation : <span class="highlighted">ce qui convient à votre projet</span></h1>
-        <div class="content-container">
-            <!-- Partie gauche -->
-            <div class="contentt">
-                <h2>Choisissez Angular si :</h2>
-                <div class="icon d-flex align-items-baseline gap-2">
-                  <i class="fas fa-star"></i><p>Vous voulez un projet hautement personnalisé qui répond parfaitement à vos besoins professionnels spécifiques.</p>
-                </div>
-                <div class="icon d-flex align-items-baseline gap-2">
-                <i class="fas fa-star"></i><p>Vous avez un budget conséquent et êtes prêt à investir pour une solution performante et évolutive.</p>
+<div class="section-divider"></div>
 
-                </div>
-            </div>
-            <!-- Ligne verticale -->
-            <div class="divider"></div>
-            <!-- Partie droite -->
-            <div class="contentt">
-                <h2>Choisissez WordPress si :</h2>
-                <div class="icon d-flex align-items-baseline gap-2">
-                  <i class="fas fa-star"></i><p>Vous avez besoin d'un site rapidement opérationnel pour promouvoir vos services ou produits.</p>
-                </div>
-                <div class="icon d-flex align-items-baseline gap-2">
-                  <i class="fas fa-star"></i><p>Vous recherchez une solution économique et facile à gérer.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="image-text-section">
+  <div class="container">
+    <div class="image-text-content" data-aos="fade-up">
+      <div>
+        <h2>
+          Créer un site web, c'est poser les fondations de votre croissance
+        </h2>
+        <p>
+          Chez MSL-iTECH, nous ne vendons pas simplement des sites web. Nous
+          vous aidons à construire une présence en ligne stratégique.
+        </p>
+        <p>
+          Un site, c'est bien plus qu'un outil technique : c'est un levier pour
+          convaincre, attirer et fidéliser.
+        </p>
+      </div>
+      <div>
+        <img
+          src="../../assets/img/webp/12.webp"
+          alt="Expertise MSL Itech"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="video-section">
+  <div class="video-container">
+    <img
+      src="../../assets/img/webp/12.webp"
+      alt="Présentation MSL Itech"
+      class="img-fluid rounded-3 shadow-lg"
+      style="width: 100%; height: auto; object-fit: cover"
+    />
   </div>
 
+  <img
+    src="../../assets/img/accueil/graphic-1.jpg.png"
+    alt="Graphique illustrant les services MSL Itech"
+    class="decoration-image decoration-image-1"
+    data-aos="zoom-in"
+  />
+  <img
+    src="../../assets/img/accueil/graphic-2.jpg.png"
+    alt="Décoration visuelle des solutions"
+    class="decoration-image decoration-image-2"
+    data-aos="zoom-in"
+  />
+</div>
 
-  <div class="container mt-5 mb-4" >
-   
-   
-    <!-- Boutons de Toggle -->
+<section class="pricing-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2
+          style="color: #114d5a; font-size: 2.5rem; font-weight: 700"
+          data-aos="fade-up"
+        >
+          Comparaison des technologies et tarifs
+        </h2>
+        <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">
+          Comparez visuellement WordPress et JavaScript moderne selon votre
+          budget
+        </p>
+      </div>
+    </div>
+
+    <!-- Sélecteur de devise -->
+    <div class="currency-selector" data-aos="fade-up">
+      <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+        <h3 class="mb-0">
+          <i class="fas fa-globe-americas me-2"></i>
+          Devise détectée automatiquement :
+        </h3>
+        <div class="d-flex align-items-center gap-2" *ngIf="userCountryCode">
+          <span
+            class="badge"
+            style="
+              background: #114d5a;
+              color: white;
+              padding: 8px 12px;
+              border-radius: 15px;
+            "
+          >
+            <i class="fas fa-map-marker-alt me-1"></i>
+            {{ getCountryName(userCountryCode) }}
+          </span>
+          <span class="text-muted">→</span>
+          <span
+            class="badge"
+            style="
+              background: #ffdd57;
+              color: #114d5a;
+              padding: 8px 12px;
+              border-radius: 15px;
+              font-weight: bold;
+            "
+          >
+            {{ currencySymbol }} {{ getCurrencyName(currentCurrency) }}
+          </span>
+        </div>
+      </div>
+
+      <!-- <div class="currency-buttons mt-3">
+        <small class="text-muted d-block mb-2"
+          >Ou choisissez manuellement :</small
+        >
+        <div class="d-flex gap-2 flex-wrap justify-content-center">
+          <div
+            class="currency-btn"
+            [class.active]="currentCurrency === 'EUR'"
+            data-currency="EUR"
+          >
+            <i class="fas fa-euro-sign"></i>
+            EUR
+          </div>
+          <div
+            class="currency-btn"
+            [class.active]="currentCurrency === 'USD'"
+            data-currency="USD"
+          >
+            <i class="fas fa-dollar-sign"></i>
+            USD
+          </div>
+          <div
+            class="currency-btn"
+            [class.active]="currentCurrency === 'CAD'"
+            data-currency="CAD"
+          >
+            <i class="fas fa-dollar-sign"></i>
+            CAD
+          </div>
+          <div
+            class="currency-btn"
+            [class.active]="currentCurrency === 'MAD'"
+            data-currency="MAD"
+          >
+            <span style="font-weight: bold">DH</span>
+            MAD
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- Comparaison des prix -->
+    <div
+      class="pricing-comparison-grid"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <!-- Solution Basique -->
+      <div class="solution-column">
+        <div class="solution-header">
+          <h3 class="solution-title">Solution Basique</h3>
+          <p class="solution-subtitle">
+            Idéale pour débuter votre présence en ligne
+          </p>
+        </div>
+
+        <div class="price-comparison">
+          <div class="price-item">
+            <div>
+              <div class="tech-label">
+                <i class="fab fa-wordpress me-1"></i>
+                WordPress
+              </div>
+            </div>
+            <div class="text-end">
+              <div class="price-value" data-wp-price="900">
+                900<span class="currency-symbol">€</span>
+              </div>
+              <div class="price-difference">Économie de base</div>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <div>
+              <div class="tech-label">
+                <i class="fab fa-js me-1"></i>
+                JavaScript
+              </div>
+            </div>
+            <div class="text-end">
+              <div class="price-value" data-js-price="3750">
+                3 750<span class="currency-symbol">€</span>
+              </div>
+              <div class="price-difference">+317% vs WordPress</div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Site vitrine professionnel</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Design responsive</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Optimisation SEO de base</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Formulaire de contact</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Solution Professionnelle -->
+      <div class="solution-column recommended">
+        <div class="solution-header">
+          <h3 class="solution-title">Solution Professionnelle</h3>
+          <p class="solution-subtitle">
+            Le meilleur rapport qualité/prix pour votre croissance
+          </p>
+        </div>
+
+        <div class="price-comparison">
+          <div class="price-item">
+            <div>
+              <div class="tech-label">
+                <i class="fab fa-wordpress me-1"></i>
+                WordPress
+              </div>
+            </div>
+            <div class="text-end">
+              <div class="price-value" data-wp-price="2000">
+                2 000<span class="currency-symbol">€</span>
+              </div>
+              <div class="price-difference">Solution équilibrée</div>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <div>
+              <div class="tech-label">
+                <i class="fab fa-js me-1"></i>
+                JavaScript
+              </div>
+            </div>
+            <div class="text-end">
+              <div class="price-value" data-js-price="5250">
+                5 250<span class="currency-symbol">€</span>
+              </div>
+              <div class="price-difference">+163% vs WordPress</div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Tout de la solution basique</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Intégration CRM</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Analytics avancées</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Optimisation conversion</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Support prioritaire</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Solution Business -->
+      <div class="solution-column">
+        <div class="solution-header">
+          <h3 class="solution-title">Solution Business</h3>
+          <p class="solution-subtitle">Pour les entreprises ambitieuses</p>
+        </div>
+
+        <div class="price-comparison">
+          <div class="price-item">
+            <div>
+              <div class="tech-label">
+                <i class="fab fa-wordpress me-1"></i>
+                WordPress
+              </div>
+            </div>
+            <div class="text-end">
+              <div class="price-value" data-wp-price="4500">
+                4 500<span class="currency-symbol">€</span>
+              </div>
+              <div class="price-difference">WordPress avancé</div>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <div>
+              <div class="tech-label">
+                <i class="fab fa-js me-1"></i>
+                JavaScript
+              </div>
+            </div>
+            <div class="text-end">
+              <div class="price-value" data-js-price="7500">
+                7 500<span class="currency-symbol">€</span>
+              </div>
+              <div class="price-difference">+67% vs WordPress</div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Tout de la solution pro</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>E-commerce intégré</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Automatisation marketing</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Performance maximale</span>
+          </li>
+          <li class="feature-item">
+            <i class="fas fa-check feature-icon"></i>
+            <span>Support dédié 24/7</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Information supplémentaire -->
+    <div class="row mt-5" data-aos="fade-up">
+      <div class="col-12">
+        <div
+          style="
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 4px solid #114d5a;
+          "
+        >
+          <div class="row align-items-center">
+            <div class="col-md-2 text-center">
+              <i
+                class="fas fa-info-circle"
+                style="font-size: 3rem; color: #114d5a"
+              ></i>
+            </div>
+            <div class="col-md-10">
+              <h4 style="color: #114d5a; margin-bottom: 15px">
+                <i class="fas fa-lightbulb me-2"></i>
+                Comment choisir ?
+              </h4>
+              <p style="margin-bottom: 10px; color: #666">
+                <strong>WordPress</strong> : Parfait si vous recherchez une
+                solution rapide, économique et facilement gérable avec un
+                excellent rapport qualité/prix.
+              </p>
+              <p style="margin: 0; color: #666">
+                <strong>JavaScript moderne</strong> : Idéal pour des projets
+                sur-mesure nécessitant des performances maximales et des
+                fonctionnalités uniques.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h2 style="font-size: 2.2rem; font-weight: 700">
+          Résultats concrets selon votre solution
+        </h2>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">40+</span>
+        <span class="stat-label"
+          >leads mensuels potentiels avec une solution optimisée</span
+        >
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">8%</span>
+        <span class="stat-label">taux de conversion maximum atteignable</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Top 5</span>
+        <span class="stat-label">positionnement Google possible</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24h/7j</span>
+        <span class="stat-label"
+          >machine à clients qui travaille pour vous</span
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5">
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <h2
+        style="color: #114d5a; font-size: 2.5rem; font-weight: 700"
+        data-aos="fade-up"
+      >
+        Notre rôle : être votre partenaire de croissance
+      </h2>
+      <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">
+        Votre site n'est pas une fin en soi. C'est le début d'une stratégie
+        durable.
+      </p>
+    </div>
+  </div>
+
+  <div class="modern-grid">
+    <div class="feature-block" data-aos="fade-up" data-aos-delay="100">
+      <div class="icon">
+        <i class="fas fa-key"></i>
+      </div>
+      <h3>Autonomie</h3>
+      <p>
+        Vous rendre indépendant dans l'usage et la gestion de votre site web.
+      </p>
+    </div>
+
+    <div class="feature-block" data-aos="fade-up" data-aos-delay="200">
+      <div class="icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <h3>Conversion</h3>
+      <p>
+        Logique de conversion mesurable et optimisée pour maximiser vos
+        résultats.
+      </p>
+    </div>
+
+    <div class="feature-block" data-aos="fade-up" data-aos-delay="300">
+      <div class="icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <h3>Trafic qualifié</h3>
+      <p>Stratégies pour attirer des visiteurs intéressés par vos services.</p>
+    </div>
+
+    <div class="feature-block" data-aos="fade-up" data-aos-delay="400">
+      <div class="icon">
+        <i class="fas fa-bullhorn"></i>
+      </div>
+      <h3>Message clair</h3>
+      <p>Clarifier votre offre et votre proposition de valeur unique.</p>
+    </div>
+  </div>
+</section>
+
+<div class="bg-custom">
+  <section class="container recommendation-section">
+    <h1>
+      Notre recommandation :
+      <span class="highlighted">ce qui convient à votre projet</span>
+    </h1>
+    <div class="content-container">
+      <div class="contentt">
+        <h2>Choisissez JavaScript moderne si :</h2>
+        <div class="icon d-flex align-items-baseline gap-2">
+          <i class="fas fa-star"></i>
+          <p>
+            Vous voulez un projet hautement personnalisé qui répond parfaitement
+            à vos besoins professionnels spécifiques.
+          </p>
+        </div>
+        <div class="icon d-flex align-items-baseline gap-2">
+          <i class="fas fa-star"></i>
+          <p>
+            Vous avez un budget conséquent et êtes prêt à investir pour une
+            solution performante et évolutive.
+          </p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="contentt">
+        <h2>Choisissez WordPress si :</h2>
+        <div class="icon d-flex align-items-baseline gap-2">
+          <i class="fas fa-star"></i>
+          <p>
+            Vous avez besoin d'un site rapidement opérationnel pour promouvoir
+            vos services ou produits.
+          </p>
+        </div>
+        <div class="icon d-flex align-items-baseline gap-2">
+          <i class="fas fa-star"></i>
+          <p>Vous recherchez une solution économique et facile à gérer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 data-aos="fade-up">
+          La vraie question n'est pas "Combien coûte un site web ?"
+        </h2>
+        <p class="lead" data-aos="fade-up" data-aos-delay="200">
+          La vraie question : "Combien d'opportunités perdez-vous aujourd'hui
+          sans un site qui soutient vos objectifs de croissance ?"
+        </p>
+        <div data-aos="fade-up" data-aos-delay="400">
+          <a href="/contact" class="cta-button">
+            <i class="fas fa-rocket"></i>
+            Commencer mon projet dès maintenant
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="container mt-5 mb-4">
      <div class="text-center">
       <h1>Choisissez un tarif et commencez l'aventure</h1>
      </div>
-    <div class="d-flex justify-content-center  mb-4">
+  <div class="d-flex justify-content-center mb-4">
       <div class="btn-group" role="group" aria-label="Toggle Packages">
         <label
           class="btn"
@@ -494,14 +1391,12 @@
       </div>
     </div>
   
-    <!-- Affichage des Packages -->
     <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-4">
-      <!-- Packages WordPress -->
       <ng-container *ngIf="activePackage === 'wordpress'">
         <div
           class="col"
           *ngFor="let pack of wordpressPackages; let i = index"
-          [style.animationDelay]="(i * 0.2) + 's'"
+        [style.animationDelay]="i * 0.2 + 's'"
         >
           <div
             class="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp"
@@ -513,11 +1408,11 @@
             <div class="card-body d-flex flex-column">
               <p class="card-text">{{ pack.description }}</p>
               <div class="m-2">
-                <!-- Affichage conditionnel des prix -->
                 <div *ngIf="showPrices; else noPrice">
                   <div *ngIf="pricesUpdated; else loading">
                     <div class="price display-3 text-center mb-1">
-                      <span [appCountUp]="pack.price" [duration]="2000"></span> {{ currencySymbol }}
+                    <span [appCountUp]="pack.price" [duration]="2000"></span>
+                    {{ currencySymbol }}
                     </div>
                   </div>
                   <ng-template #loading>
@@ -545,20 +1440,20 @@
                 </ul>
               </div>
               <div class="button-container">
-                <button class="btn btn-primary" [routerLink]="['/contact']">Contactez-nous</button>
+              <button class="btn btn-primary" [routerLink]="['/contact']">
+                Contactez-nous
+              </button>
               </div>
             </div>
           </div>
         </div>
       </ng-container>
   
-      <!-- Packages JavaScript -->
-     <!-- Affichage des Packages JavaScript -->
 <ng-container *ngIf="activePackage === 'javascript'">
   <div
     class="col"
     *ngFor="let pack of javascriptPackages; let i = index"
-    [style.animationDelay]="(i * 0.2) + 's'"
+        [style.animationDelay]="i * 0.2 + 's'"
   >
     <div
       class="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp"
@@ -570,10 +1465,10 @@
       <div class="card-body d-flex flex-column">
         <p class="card-text">{{ pack.description }}</p>
         <div class="m-2">
-          <!-- Affichage conditionnel des prix -->
           <div *ngIf="showPrices; else noPrice">
             <div class="price display-3 text-center">
-              <span [appCountUp]="pack.price" [duration]="2000"></span> {{ currencySymbol }}
+                  <span [appCountUp]="pack.price" [duration]="2000"></span>
+                  {{ currencySymbol }}
             </div>
             <div class="time fs-6 text-center mb-3">
               Temps : ± {{ pack.time }} heures
@@ -585,19 +1480,266 @@
             </div>
           </ng-template>
           <ul class="list-group list-group-flush mb-3">
-            <li *ngFor="let feature of pack.features" class="list-group-item">
+                <li
+                  *ngFor="let feature of pack.features"
+                  class="list-group-item"
+                >
               <i class="fas fa-check-circle me-2"></i>{{ feature }}
             </li>
           </ul>
         </div>
         <div class="button-container">
-          <button class="btn btn-primary" [routerLink]="['/contact']">Contactez-nous</button>
+              <button class="btn btn-primary" [routerLink]="['/contact']">
+                Contactez-nous
+              </button>
         </div>
       </div>
     </div>
   </div>
 </ng-container>
+  </div>
+</div> -->
 
+<section class="container my-5">
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <h2
+        style="color: #114d5a; font-size: 2.5rem; font-weight: 700"
+        data-aos="fade-up"
+      >
+        WordPress vs JavaScript moderne : Les différences clés
+      </h2>
+      <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">
+        Comprendre les technologies pour faire le bon choix
+      </p>
     </div>
   </div>
-  
+
+  <div class="tech-comparison" data-aos="fade-up">
+    <table>
+      <thead>
+        <tr>
+          <th>Critère</th>
+          <th>
+            <i class="fab fa-js me-2"></i>
+            JavaScript moderne (sur-mesure)
+          </th>
+          <th>
+            <i class="fab fa-wordpress me-2"></i>
+            WordPress (prêt à l'emploi)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Vos besoins</strong></td>
+          <td>Solution unique et complexe</td>
+          <td>Site rapide, simple et fonctionnel</td>
+        </tr>
+        <tr>
+          <td><strong>Coût</strong></td>
+          <td><span style="color: #114d5a; opacity: 0.8">Plus élevé</span></td>
+          <td><span style="color: #114d5a">Modéré</span></td>
+        </tr>
+        <tr>
+          <td><strong>Temps de création</strong></td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8">Long (2-6 mois)</span>
+          </td>
+          <td><span style="color: #114d5a">Rapide (2-6 semaines)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Personnalisation</strong></td>
+          <td><span style="color: #114d5a">Totale et illimitée</span></td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8"
+              >Facile mais limitée</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Performance</strong></td>
+          <td><span style="color: #114d5a">Excellente et optimisée</span></td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8"
+              >Variable selon plugins</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Maintenance</strong></td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8"
+              >Requiert un développeur</span
+            >
+          </td>
+          <td><span style="color: #114d5a">Facile à gérer soi-même</span></td>
+        </tr>
+        <tr>
+          <td><strong>Évolutivité</strong></td>
+          <td><span style="color: #114d5a">Très élevée</span></td>
+          <td><span style="color: #114d5a; opacity: 0.8">Modérée</span></td>
+        </tr>
+        <tr>
+          <td><strong>Sécurité</strong></td>
+          <td><span style="color: #114d5a">Très sécurisé</span></td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8"
+              >Dépend des mises à jour</span
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Résumé visuel -->
+  <div class="row mt-5" data-aos="fade-up" data-aos-delay="300">
+    <div class="col-md-6">
+      <div
+        style="
+          background: linear-gradient(135deg, #e8f5e8, #f0f9f0);
+          border: 2px solid #28a745;
+          border-radius: 15px;
+          padding: 30px;
+          height: 100%;
+        "
+      >
+        <div class="text-center mb-3">
+          <i
+            class="fab fa-wordpress"
+            style="font-size: 3rem; color: #114d5a"
+          ></i>
+        </div>
+        <h4 style="color: #114d5a; text-align: center; margin-bottom: 20px">
+          <strong>WordPress - Le choix pratique</strong>
+        </h4>
+        <ul style="list-style: none; padding: 0">
+          <li style="margin-bottom: 10px">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong>Rapide à déployer</strong>
+          </li>
+          <li style="margin-bottom: 10px">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong>Budget maîtrisé</strong>
+          </li>
+          <li style="margin-bottom: 10px">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong>Facile à gérer</strong>
+          </li>
+          <li style="margin-bottom: 10px">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong>Parfait pour PME</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div
+        style="
+          background: linear-gradient(135deg, #fff9e6, #fffbf0);
+          border: 2px solid #ffdd57;
+          border-radius: 15px;
+          padding: 30px;
+          height: 100%;
+        "
+      >
+        <div class="text-center mb-3">
+          <i class="fab fa-js" style="font-size: 3rem; color: #114d5a"></i>
+        </div>
+        <h4 style="color: #114d5a; text-align: center; margin-bottom: 20px">
+          <strong>JavaScript - Le choix premium</strong>
+        </h4>
+        <ul style="list-style: none; padding: 0">
+          <li style="margin-bottom: 10px">
+            <i class="fas fa-star text-warning me-2"></i>
+            <strong>Solutions sur-mesure</strong>
+          </li>
+          <li style="margin-bottom: 10px">
+            <i class="fas fa-star text-warning me-2"></i>
+            <strong>Performances maximales</strong>
+          </li>
+          <li style="margin-bottom: 10px">
+            <i class="fas fa-star text-warning me-2"></i>
+            <strong>Évolutivité illimitée</strong>
+          </li>
+          <li style="margin-bottom: 10px">
+            <i class="fas fa-star text-warning me-2"></i>
+            <strong>Idéal pour scale-ups</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Gestion des boutons de devise pour changement manuel
+    const currencyButtons = document.querySelectorAll(".currency-btn");
+
+    currencyButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Supprimer la classe active de tous les boutons
+        currencyButtons.forEach((btn) => btn.classList.remove("active"));
+        // Ajouter la classe active au bouton cliqué
+        this.classList.add("active");
+
+        // Appeler la méthode Angular pour changer la devise
+        const currency = this.dataset.currency;
+        if (window.angular && window.angular.getTestability) {
+          // Méthode pour communiquer avec Angular depuis le JavaScript vanilla
+          const element = document.querySelector("app-tarifs");
+          if (element) {
+            const scope = window.angular.element(element).scope();
+            if (scope && scope.$ctrl && scope.$ctrl.changeCurrency) {
+              scope.$ctrl.changeCurrency(currency);
+              scope.$apply();
+            }
+          }
+        }
+
+        // Alternative : déclencher un événement personnalisé
+        const event = new CustomEvent("currencyChanged", {
+          detail: { currency: currency },
+        });
+        document.dispatchEvent(event);
+      });
+    });
+
+    // Effet de survol sur les colonnes
+    const solutionColumns = document.querySelectorAll(".solution-column");
+    solutionColumns.forEach((column) => {
+      column.addEventListener("mouseenter", function () {
+        this.style.transform = this.classList.contains("recommended")
+          ? "scale(1.08) translateY(-8px)"
+          : "translateY(-8px)";
+      });
+
+      column.addEventListener("mouseleave", function () {
+        this.style.transform = this.classList.contains("recommended")
+          ? "scale(1.05)"
+          : "translateY(0)";
+      });
+    });
+
+    // Animation des changements de prix
+    function animatePriceChange(element) {
+      element.style.transform = "scale(1.1)";
+      element.style.transition = "transform 0.2s ease";
+
+      setTimeout(() => {
+        element.style.transform = "scale(1)";
+      }, 200);
+    }
+
+    // Écouter les changements de devise depuis Angular
+    document.addEventListener("currencyChanged", function (event) {
+      // Animer tous les éléments de prix lors du changement
+      document.querySelectorAll(".price-value").forEach((el) => {
+        animatePriceChange(el);
+      });
+    });
+  });
+</script>
