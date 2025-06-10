@@ -1,20 +1,20 @@
 .custom-spinner .spinner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .spinner-gif {
-    width: 380px; /* Ajustez la taille selon vos besoins */
-    height: auto;
-  }
-  
-  .nav{
-    height: 40px;
-  }
-  main {
-    margin-top: 40px; /* Correspond à la hauteur du header */
-    flex: 1;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.spinner-gif {
+  width: 380px; /* Ajustez la taille selon vos besoins */
+  height: auto;
+}
+
+.nav {
+  height: 40px;
+}
+main {
+  margin-top: 40px; /* Correspond à la hauteur du header */
+  flex: 1;
+}

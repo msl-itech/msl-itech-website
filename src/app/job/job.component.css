@@ -1,7 +1,27 @@
+/* Container principal pour l'iframe */
+.iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: calc(
+    100vh - 40px - 200px
+  ); /* 100vh - hauteur header - hauteur footer approximative */
+  min-height: 500px; /* Hauteur minimale pour éviter un iframe trop petit */
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
 .iframe-container {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-top: 30px;
 }
 
 .odoo-iframe {
@@ -9,19 +29,69 @@
   height: 100%;
   border: none;
   display: block;
-  background-color: white;
+  background-color: transparent;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Mobile optimizations */
+/* Responsive pour écrans larges (desktop) */
+@media (min-width: 1200px) {
+  .iframe-wrapper {
+    height: calc(100vh - 40px - 180px);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .iframe-wrapper {
+    height: calc(100vh - 40px - 220px);
+    padding: 0;
+  }
+}
+
+/* Responsive pour tablettes en mode portrait et petits écrans */
 @media (max-width: 768px) {
   .iframe-wrapper {
-    height: calc(100vh - 60px);
-    margin-top: 60px;
+    height: calc(
+      100vh - 40px - 280px
+    ); /* Plus d'espace pour le footer mobile */
+    padding: 0;
+    min-height: 400px;
   }
+}
 
-  /* Only disable body scroll when iframe is focused on mobile */
-  .iframe-focused body {
-    overflow: hidden;
+/* Responsive pour mobiles */
+@media (max-width: 480px) {
+  .iframe-wrapper {
+    height: calc(
+      100vh - 40px - 320px
+    ); /* Encore plus d'espace pour le footer mobile */
+    padding: 0;
+    min-height: 350px;
+  }
+}
+
+/* Pour les très petits écrans en mode paysage */
+@media (max-height: 500px) and (orientation: landscape) {
+  .iframe-wrapper {
+    height: calc(100vh - 40px - 100px);
+    min-height: 250px;
+  }
+}
+
+/* Amélioration de la performance pour les appareils tactiles */
+@media (pointer: coarse) {
+  .odoo-iframe {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+  }
+}
+
+/* Support pour les préférences d'animation réduites */
+@media (prefers-reduced-motion: reduce) {
+  .iframe-container {
+    box-shadow: none;
   }
 }

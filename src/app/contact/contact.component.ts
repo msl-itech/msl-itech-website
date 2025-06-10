@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { OdooService } from '../services/odoo.service';
 import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../services/odoo.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrl: './contact.component.css',
 })
 export class ContactComponent {
   isLoading: boolean = false;
@@ -35,7 +35,7 @@ export class ContactComponent {
     const descriptionParts = [
       `Société: ${formValue.company}`,
       `Sujet: ${formValue.subject}`,
-      `Message: ${formValue.description}`
+      `Message: ${formValue.description}`,
     ];
 
     const fullDescription = descriptionParts.join('\n');
@@ -44,7 +44,7 @@ export class ContactComponent {
       name: formValue.contact_name,
       phone: formValue.phone,
       email_from: formValue.email_from,
-      description: fullDescription
+      description: fullDescription,
     };
 
     this.odooService.createLead(leadData).subscribe({
@@ -54,9 +54,12 @@ export class ContactComponent {
         this.isLoading = false;
       },
       error: (error) => {
-        this.toastr.error('Une erreur est survenue lors de l\'envoi du message', 'Erreur');
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi du message",
+          'Erreur'
+        );
         this.isLoading = false;
-      }
+      },
     });
   }
 }

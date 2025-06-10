@@ -1,421 +1,479 @@
 <style>
-/* ======================================= */
-/*             SECTION HEADER              */
-/* ======================================= */
-.header-section {
-  background-color: #114d5a;
-  color: white;
-  /* Hauteur initiale, peut être modifiée en vh ou en auto */
-  min-height: 50vh;
-  position: relative;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /* Un peu de padding en bas pour éviter que la vidéo ne colle trop */
-  padding-bottom: 2rem;
-}
-
-.header-section h1 {
-  font-size: 2.5rem;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 2rem; /* Ajustez selon vos besoins */
-}
-
-/* ======================================= */
-/*                VIDEO AREA               */
-/* ======================================= */
-.video {
-  /* Conteneur flex pour centrer la figure + la vidéo */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.figure {
-  /* Image / SVG si besoin. Actuellement vide. */
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-/* Nouvelle approche fluide pour la vidéo */
-.video-wrapper {
-  /* Ne plus utiliser position:absolute ni transform */
-  position: relative;
-  width: 100%;
-  /* Largeur max sur desktop */
-  max-width: 800px;
-  margin: 0 auto;  /* Centre l'élément */
-  padding: 0 1rem; /* Légers espaces sur les côtés pour respirer */
-}
-
-
-.video-wrapper iframe {
-  width: 600px;
-  height: 350px;
-  border-radius: 20px;
-  display: block;
-}
-
-/* ======================================= */
-/*           SECTION DE CONTENU            */
-/* ======================================= */
-.content-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 20px;
-  color: #111;
-  text-align: center;
-  font-size: 29px;
-  font-weight: 700;
-  line-height: 48px;
-  margin-top: 24px;
-}
-.content-section p {
-  max-width: 1070px;
-  font-size: 29px;
-  font-weight: 700;
-  line-height: 48px;
-}
-
-/* ======================================= */
-/*          CONTAINER PRINCIPAL            */
-/* ======================================= */
-.container-wrapper {
-  display: flex;
-  min-height: 100vh;
-  position: relative;
-}
-
-.bg-green {
-  position: absolute;
-  background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
-  height: 600px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.left-column {
-  width: 40%;
-  background-color: #ffffff;
-  position: relative;
-}
-
-.right-column {
-  width: 60%;
-  position: sticky;
-  top: 0;
-  margin-top: 10rem;
-}
-
-.image-container {
-  position: sticky;
-  top: 20px;
-  margin-top: 0;
-}
-
-.image-container img {
-  max-width: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* ======================================= */
-/*         SECTIONS INDIVIDUELLES          */
-/* ======================================= */
-.section {
-  margin-bottom: 60vh;
-  padding-bottom: 20px;
-  margin-left: 100px;
-  width: 371px;
-}
-.section h2 {
-  font-size: 2rem;
-  color: #111;
-  margin-bottom: 10px;
-}
-.section p {
-  color: #999;
-  font-size: 21.75px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 0.216px;
-}
-.section .section-image {
-  display: none; /* Caché en mode desktop */
-  max-width: 100%;
-  margin-top: 20px;
-}
-
-/* ======================================= */
-/*               STARTER                   */
-/* ======================================= */
-.starter {
-  background: linear-gradient(0deg, #114D5A 0%, #114D5A 100%), #F4FDFF;
-  padding-left: 100px;
-  width: 100%;
-  height: 600px;
-  display: flex;
-  align-items: center;
-}
-.starter h1 {
-  color: #FFF;
-  font-size: 75px;
-  font-weight: 700;
-  line-height: 100px;
-  width: 600px;
-}
-
-/* ======================================= */
-/*            MEDIA QUERIES                */
-/* ======================================= */
-
-/* ========== Tablettes (<= 1024px) ========== */
-@media (max-width: 1024px) {
+  /* ======================================= */
+  /*             SECTION HEADER              */
+  /* ======================================= */
   .header-section {
-    /* Ajustements : 
-       on passe en hauteur auto, on rajoute un peu de padding 
-       pour ne pas trop coller le header */
-    height: auto;
+    background-color: #114d5a;
+    color: white;
+    /* Hauteur initiale, peut être modifiée en vh ou en auto */
     min-height: 50vh;
-    padding-top: 80px;
-    padding-bottom: 40px;
-  }
-  .header-section h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  .figure {
-    width: 80px;
-    margin-bottom: 1rem;
-  }
-
-  /* Video wrapper */
-  .video-wrapper {
-    max-width: 700px; /* On réduit un peu la largeur max */
-  }
-
-  .video-wrapper iframe {
-    border-radius: 15px;
-  }
-
-  /* Colonnes */
-  .left-column,
-  .right-column {
-    width: 100%;
-  }
-  .starter h1 {
-    font-size: 2rem;
-    width: auto;
-  }
-  .section {
-    margin-left: 20px;
-    width: auto;
-  }
-}
-
-/* ========== Mobiles (<= 768px) ========== */
-@media (max-width: 768px) {
-  .header-section {
-    height: auto;
-    min-height: 30vh;
-    padding-top: 80px;
-    padding-bottom: 40px;
-  }
-  .header-section h1 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  /* On limite encore plus la max-width */
-  .video-wrapper {
-    max-width: 90%;
-    padding: 0; /* on peut enlever le padding horizontal si on veut */
-  }
-
-  .video-wrapper iframe {
-    border-radius: 12px;
-    width: 400px;
-    height: 250px;
-  }
-
-  .figure {
-    display: none;
-  }
-
-  .content-section p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .header-section {
-    padding: 10px;
-  }
-  .header-section h1 {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-  }
-
-  .starter {
-    padding: 20px;
-    height: auto;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    /* Un peu de padding en bas pour éviter que la vidéo ne colle trop */
+    padding-bottom: 2rem;
+  }
+
+  .header-section h1 {
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem; /* Ajustez selon vos besoins */
+  }
+
+  /* ======================================= */
+  /*                VIDEO AREA               */
+  /* ======================================= */
+  .video {
+    /* Conteneur flex pour centrer la figure + la vidéo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .figure {
+    /* Image / SVG si besoin. Actuellement vide. */
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  /* Nouvelle approche fluide pour la vidéo */
+  .video-wrapper {
+    /* Ne plus utiliser position:absolute ni transform */
+    position: relative;
+    width: 100%;
+    /* Largeur max sur desktop */
+    max-width: 800px;
+    margin: 0 auto; /* Centre l'élément */
+    padding: 0 1rem; /* Légers espaces sur les côtés pour respirer */
+  }
+
+  .video-wrapper img.service-hero-image {
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* ======================================= */
+  /*           SECTION DE CONTENU            */
+  /* ======================================= */
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    color: #111;
+    text-align: center;
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 48px;
+    margin-top: 24px;
+  }
+  .content-section p {
+    max-width: 1070px;
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 48px;
+  }
+
+  /* ======================================= */
+  /*          CONTAINER PRINCIPAL            */
+  /* ======================================= */
+  .container-wrapper {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .bg-green {
+    position: absolute;
+    background: linear-gradient(0deg, #114d5a 0%, #114d5a 100%), #f4fdff;
+    height: 600px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .left-column {
+    width: 40%;
+    background-color: #ffffff;
+    position: relative;
+  }
+
+  .right-column {
+    width: 60%;
+    position: sticky;
+    top: 0;
+    margin-top: 10rem;
+  }
+
+  .image-container {
+    position: sticky;
+    top: 20px;
+    margin-top: 0;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ======================================= */
+  /*         SECTIONS INDIVIDUELLES          */
+  /* ======================================= */
+  .section {
+    margin-bottom: 60vh;
+    padding-bottom: 20px;
+    margin-left: 100px;
+    width: 371px;
+  }
+  .section h2 {
+    font-size: 2rem;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  .section p {
+    color: #999;
+    font-size: 21.75px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.216px;
+  }
+  .section .section-image {
+    display: none; /* Caché en mode desktop */
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  /* ======================================= */
+  /*               STARTER                   */
+  /* ======================================= */
+  .starter {
+    background: linear-gradient(0deg, #114d5a 0%, #114d5a 100%), #f4fdff;
+    padding-left: 100px;
+    width: 100%;
+    height: 600px;
+    display: flex;
     align-items: center;
   }
   .starter h1 {
-    font-size: 1.8rem;
-    width: auto;
-    line-height: 1.2;
-    text-align: center;
+    color: #fff;
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 100px;
+    width: 600px;
   }
 
-  .section h2 {
-    font-size: 1.5rem;
-  }
-  .section p {
-    font-size: 16px;
+  /* ======================================= */
+  /*            MEDIA QUERIES                */
+  /* ======================================= */
+
+  /* ========== Tablettes (<= 1024px) ========== */
+  @media (max-width: 1024px) {
+    .header-section {
+      /* Ajustements : 
+       on passe en hauteur auto, on rajoute un peu de padding 
+       pour ne pas trop coller le header */
+      height: auto;
+      min-height: 50vh;
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .header-section h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .figure {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+
+    /* Video wrapper */
+    .video-wrapper {
+      max-width: 700px; /* On réduit un peu la largeur max */
+    }
+
+    .video-wrapper img.service-hero-image {
+      width: 400px;
+      height: 250px;
+    }
+
+    /* Colonnes */
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+    .starter h1 {
+      font-size: 2rem;
+      width: auto;
+    }
+    .section {
+      margin-left: 20px;
+      width: auto;
+    }
   }
 
-  /* Ajustements pour empiler les colonnes */
-  .container-wrapper {
-    flex-direction: column;
-  }
-  .left-column,
-  .right-column {
-    width: 100%;
-  }
-  .right-column {
-    display: none; /* Cache la colonne de droite en mode mobile */
-  }
-  .section {
-    margin-left: 0;
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 40px;
-  }
-  .section .section-image {
-    display: block; /* Affiche les images dans les sections */
-  }
-}
+  /* ========== Mobiles (<= 768px) ========== */
+  @media (max-width: 768px) {
+    .header-section {
+      height: auto;
+      min-height: 30vh;
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .header-section h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
 
-/* ========== Petits Mobiles (<= 540px) ========== */
-@media (max-width: 540px) {
-  .header-section {
-    height: auto;
-    min-height: 60vh;
-    padding-top: 80px;
-    padding-bottom: 40px;
-  }
-  .header-section h1 {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin-bottom: 15px;
+    /* On limite encore plus la max-width */
+    .video-wrapper {
+      max-width: 90%;
+      padding: 0; /* on peut enlever le padding horizontal si on veut */
+    }
+
+    .video-wrapper img.service-hero-image {
+      width: 400px;
+      height: 250px;
+    }
+
+    .figure {
+      display: none;
+    }
+
+    .content-section p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .header-section {
+      padding: 10px;
+    }
+    .header-section h1 {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+    }
+
+    .starter {
+      padding: 20px;
+      height: auto;
+      justify-content: center;
+      align-items: center;
+    }
+    .starter h1 {
+      font-size: 1.8rem;
+      width: auto;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+    }
+    .section p {
+      font-size: 16px;
+    }
+
+    /* Ajustements pour empiler les colonnes */
+    .container-wrapper {
+      flex-direction: column;
+    }
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+    .right-column {
+      display: none; /* Cache la colonne de droite en mode mobile */
+    }
+    .section {
+      margin-left: 0;
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+    .section .section-image {
+      display: block; /* Affiche les images dans les sections */
+    }
   }
 
-  .video-wrapper {
-    /* Sur très petits écrans, on peut aller jusqu'à 100% */
-    max-width: 100%;
-  }
+  /* ========== Petits Mobiles (<= 540px) ========== */
+  @media (max-width: 540px) {
+    .header-section {
+      height: auto;
+      min-height: 60vh;
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .header-section h1 {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
 
-  .video-wrapper iframe {
-    border-radius: 10px;
-  }
+    .video-wrapper {
+      /* Sur très petits écrans, on peut aller jusqu'à 100% */
+      max-width: 100%;
+    }
 
-  .content-section p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-  .starter h1 {
-    font-size: 1.5rem;
-    line-height: 1.1;
-    text-align: center;
-  }
-  .section h2 {
-    font-size: 1.2rem;
-  }
-  .section p {
-    font-size: 14px;
-  }
-  .section .section-image {
-    max-width: 100%;
-  }
-}
+    .video-wrapper img.service-hero-image {
+      width: 100%;
+      height: auto;
+      min-height: 200px;
+    }
 
+    .content-section p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .starter h1 {
+      font-size: 1.5rem;
+      line-height: 1.1;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+    }
+    .section p {
+      font-size: 14px;
+    }
+    .section .section-image {
+      max-width: 100%;
+    }
+  }
 </style>
 
-<div class="header-section" id="header" style="padding-top: 172px;">
-    <h1 id="sticky-title">Un Besoin, Une Application:<br>Transformez Vos Idées en Réalité</h1>
-    <div class="video">
-        <!-- <div class="figure">
-            <img src="../../assets/img/figure/image 1.svg" alt="Figure"/>
-        </div> -->
-        <div class="figure"></div>
-        <div class="video-wrapper">
-            <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/votre_video_id" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+<div class="header-section" id="header">
+  <div class="animated-bg"></div>
+  <div class="header-content">
+    <div class="title-wrapper">
+      <div class="decorative-line left"></div>
+      <h1 id="sticky-title">
+        Un Besoin, Une Application
+        <div class="subtitle-wrapper">
+          <span class="highlight">Transformez Vos Idées en Réalité</span>
+          <div class="accent-bar"></div>
         </div>
-        
+      </h1>
+      <div class="decorative-line right"></div>
     </div>
+    <div class="video">
+      <div class="video-wrapper">
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+        <div class="image-overlay"></div>
+        <img
+          src="../../assets/img/servicePage/hero_image.jpg"
+          alt="Service illustration"
+          class="service-hero-image"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Section de Contenu -->
 <div class="content-section">
-    <p>
-        Chez MSL-ITECH, nous donnons vie à vos idées en les transformant en projets concrets grâce à notre expertise et à la flexibilité d'Odoo. Nous analysons vos besoins avec précision et personnalisons des solutions sur mesure pour répondre à vos attentes. Chaque module est conçu pour optimiser vos opérations, simplifier vos processus et garantir des résultats tangibles.
-    </p>
+  <p>
+    Chez MSL-ITECH, nous donnons vie à vos idées en les transformant en projets
+    concrets grâce à notre expertise et à la flexibilité d'Odoo. Nous analysons
+    vos besoins avec précision et personnalisons des solutions sur mesure pour
+    répondre à vos attentes. Chaque module est conçu pour optimiser vos
+    opérations, simplifier vos processus et garantir des résultats tangibles.
+  </p>
 </div>
 
 <!-- Container Principal -->
 <div class="container-wrapper">
-    <div class="bg-green"></div>
-    <div class="left-column">
-        <div class="starter">
-            <h1>La vente facile avec Odoo</h1>
-        </div>
-        <section id="crm" class="section">
-            <h2>CRM</h2>
-            <p>Odoo CRM est l'outil central pour répondre à tous vos besoins commerciaux. Suivez vos leads, gérez vos pipelines et boostez vos ventes avec une solution tout-en-un.</p>
-            <img src="../../assets/img/servicePage/hero_image.jpg" alt="CRM Image" class="section-image">
-        </section>
-        <section id="ventes" class="section">
-            <h2>Ventes</h2>
-            <p>Créez des devis clairs, professionnels et interactifs en quelques clics. Simplifiez votre processus de vente et maximisez votre taux de conversion.</p>
-            <img src="../../assets/img/serviceOdoo/vente2.webp" alt="Ventes Image" class="section-image">
-        </section>
-        <section id="pos" class="section">
-            <h2>Point de Vente (POS)</h2>
-              <p>Odoo POS est intuitif et polyvalent, que vous soyez en magasin ou en ligne. Gérez vos transactions en temps réel et offrez une expérience client exceptionnelle.</p>
-              <img src="../../assets/img/servicePage/rental_product.jpg" alt="Point de Ventes Image" class="section-image">
-        </section>
-        <section id="abonnements" class="section">
-            <h2>Abonnements</h2>
-            <p>Simplifiez la facturation récurrente et la gestion des abonnés avec des outils automatisés et flexibles.</p>
-            <img src="../../assets/img/serviceOdoo/abonement.png" alt="Abonnements Image" class="section-image">
-        </section>
-        <section id="location" class="section">
-            <h2>Location</h2>
-            <p>L'application Location d'Odoo vous permet de paramétrer facilement votre activité de location, de gérer les contrats et de suivre les revenus en temps réel.</p>
-            <img src="../../assets/img/serviceOdoo/location.webp" alt="Location Image" class="section-image">
-        </section>
+  <div class="bg-green"></div>
+  <div class="left-column">
+    <div class="starter">
+      <h1>La vente facile avec Odoo</h1>
     </div>
-    <!-- Colonne de droite pour le mode desktop -->
-    <div class="right-column">
-        <div class="image-container">
-            <img id="dynamic-image" src="../../assets/img/servicePage/hero_image.jpg" alt="Image Dynamique">
-        </div>
+    <section id="crm" class="section">
+      <h2>CRM</h2>
+      <p>
+        Odoo CRM est l'outil central pour répondre à tous vos besoins
+        commerciaux. Suivez vos leads, gérez vos pipelines et boostez vos ventes
+        avec une solution tout-en-un.
+      </p>
+      <img
+        src="../../assets/img/servicePage/hero_image.jpg"
+        alt="CRM Image"
+        class="section-image"
+      />
+    </section>
+    <section id="ventes" class="section">
+      <h2>Ventes</h2>
+      <p>
+        Créez des devis clairs, professionnels et interactifs en quelques clics.
+        Simplifiez votre processus de vente et maximisez votre taux de
+        conversion.
+      </p>
+      <img
+        src="../../assets/img/serviceOdoo/vente2.webp"
+        alt="Ventes Image"
+        class="section-image"
+      />
+    </section>
+    <section id="pos" class="section">
+      <h2>Point de Vente (POS)</h2>
+      <p>
+        Odoo POS est intuitif et polyvalent, que vous soyez en magasin ou en
+        ligne. Gérez vos transactions en temps réel et offrez une expérience
+        client exceptionnelle.
+      </p>
+      <img
+        src="../../assets/img/servicePage/rental_product.jpg"
+        alt="Point de Ventes Image"
+        class="section-image"
+      />
+    </section>
+    <section id="abonnements" class="section">
+      <h2>Abonnements</h2>
+      <p>
+        Simplifiez la facturation récurrente et la gestion des abonnés avec des
+        outils automatisés et flexibles.
+      </p>
+      <img
+        src="../../assets/img/serviceOdoo/abonement.png"
+        alt="Abonnements Image"
+        class="section-image"
+      />
+    </section>
+    <section id="location" class="section">
+      <h2>Location</h2>
+      <p>
+        L'application Location d'Odoo vous permet de paramétrer facilement votre
+        activité de location, de gérer les contrats et de suivre les revenus en
+        temps réel.
+      </p>
+      <img
+        src="../../assets/img/serviceOdoo/location.webp"
+        alt="Location Image"
+        class="section-image"
+      />
+    </section>
+  </div>
+  <!-- Colonne de droite pour le mode desktop -->
+  <div class="right-column">
+    <div class="image-container">
+      <img
+        id="dynamic-image"
+        src="../../assets/img/servicePage/hero_image.jpg"
+        alt="Image Dynamique"
+      />
     </div>
+  </div>
 </div>
 
 <!-- Composant Angular -->

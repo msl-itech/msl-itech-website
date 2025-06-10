@@ -49,7 +49,7 @@ const routes: Routes = [
   { path: 'tarif', component: TarifsComponent },
   { path: 'tarif-Odoo', component: TarifOdooComponent },
   { path: 'pricing', component: PricingOdooComponent },
-  { path: 'package-metier/performance', component: PackPerformanceComponent },
+  { path: 'package-metier/commerciale', component: PackPerformanceComponent },
   { path: 'package-metier/horeca', component: PackHorecaComponent },
   {
     path: 'package-metier/horeca/formules',

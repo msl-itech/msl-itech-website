@@ -1,91 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-@import "../node_modules/aos/dist/aos.css";
-:root {
-  --font-size-small: 0.875rem; /* Taille pour le texte secondaire */
-  --font-size-base: 1rem; /* Taille standard */
-  --font-size-large: 1.25rem; /* Pour les titres */
-  --font-size-xlarge: 2rem; /* Titres principaux */
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
-html {
-  font-size: 16px; /* Taille de base standard */
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  font-size: 1rem; /* Utilisez des unités relatives */
-  line-height: 1.6; /* Pour améliorer la lisibilité */
-  height: 100%;
-}
-
-h1 {
-  font-size: var(--font-size-xlarge);
-}
-
-h2 {
-  font-size: var(--font-size-large);
-}
-
-p {
-  font-size: var(--font-size-base);
-}
-
-small {
-  font-size: var(--font-size-small);
-}
-
-.banner-section {
-  position: relative;
-  height: 60vh;
-  overflow: hidden;
-}
-
-.banner-section img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.overlay-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.overlay-text .text-center {
-  max-width: 800px;
-  padding: 0 15px;
-}
-
-.overlay-text h1 {
-  font-weight: 900;
-  font-size: 3rem;
-}
-
-.overlay-text p {
-  font-size: 1.25rem;
-}
-
-/* Styles pour les headers des pages de service */
 .header-section {
-  background: linear-gradient(135deg, #2c1810 0%, #483019 100%) !important;
-  padding: 120px 20px 80px !important;
+  background: linear-gradient(135deg, #114d5a 0%, #114d5a 100%) !important;
+  padding: 80px 20px 60px !important;
   position: relative !important;
   overflow: hidden !important;
-  margin-top: -172px !important;
+  margin-top: -100px !important;
 }
 
 .animated-bg {
@@ -96,11 +14,11 @@ small {
   bottom: 0 !important;
   background: linear-gradient(
     45deg,
-    rgba(255, 215, 0, 0.1) 25%,
+    rgba(255, 204, 0, 0.1) 25%,
     transparent 25%,
     transparent 50%,
-    rgba(255, 215, 0, 0.1) 50%,
-    rgba(255, 215, 0, 0.1) 75%,
+    rgba(255, 204, 0, 0.1) 50%,
+    rgba(255, 204, 0, 0.1) 75%,
     transparent 75%,
     transparent
   ) !important;
@@ -125,13 +43,15 @@ small {
   text-align: center !important;
   position: relative !important;
   z-index: 2 !important;
+  padding-top: 40px !important;
 }
 
 .title-wrapper {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  margin-bottom: 3rem !important;
+  margin-bottom: 2rem !important;
+  margin-top: 32px !important;
   position: relative !important;
 }
 
@@ -141,7 +61,7 @@ small {
   background: linear-gradient(
     90deg,
     transparent,
-    #ffd700,
+    #ffcc00,
     transparent
   ) !important;
   margin: 0 20px !important;
@@ -149,7 +69,7 @@ small {
 
 .header-section h1 {
   font-size: 3.5rem !important;
-  color: #ffd700 !important;
+  color: #ffcc00 !important;
   line-height: 1.2 !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
@@ -175,7 +95,7 @@ small {
 .accent-bar {
   width: 80px !important;
   height: 4px !important;
-  background: linear-gradient(90deg, #ffd700, #ffa500) !important;
+  background: linear-gradient(90deg, #ffcc00, #ffcc00) !important;
   margin: 1rem auto !important;
   border-radius: 2px !important;
 }
@@ -190,20 +110,20 @@ small {
 .video-wrapper {
   position: relative !important;
   border-radius: 20px !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 204, 0, 0.2) !important;
   transition: all 0.5s ease !important;
   overflow: hidden !important;
   margin: 0 auto !important;
   max-width: 800px !important;
   padding: 10px !important;
-  background: linear-gradient(45deg, #2c1810, #483019) !important;
+  background: linear-gradient(45deg, #114d5a, #114d5a) !important;
 }
 
 .corner-decoration {
   position: absolute !important;
   width: 30px !important;
   height: 30px !important;
-  border: 2px solid #ffd700 !important;
+  border: 2px solid #ffcc00 !important;
   z-index: 2 !important;
 }
 
@@ -237,7 +157,7 @@ small {
 
 .video-wrapper:hover {
   transform: translateY(-5px) scale(1.02) !important;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.3) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 204, 0, 0.3) !important;
 }
 
 .image-overlay {
@@ -248,8 +168,8 @@ small {
   bottom: 0 !important;
   background: linear-gradient(
     180deg,
-    rgba(255, 215, 0, 0.2) 0%,
-    rgba(255, 165, 0, 0.1) 100%
+    rgba(255, 204, 0, 0.2) 0%,
+    rgba(255, 204, 0, 0.1) 100%
   ) !important;
   z-index: 1 !important;
   pointer-events: none !important;
