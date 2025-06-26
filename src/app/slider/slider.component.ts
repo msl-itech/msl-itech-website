@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrl: './slider.component.css'
+  styleUrl: './slider.component.css',
 })
 export class SliderComponent {
   slides = [
@@ -13,19 +13,31 @@ export class SliderComponent {
       img: '../../assets/img/accueil/Slide1-min.webp',
       title: 'Gérez simplement, innovez différemment avec',
       highlight: 'Odoo',
-      description: 'Réinventez votre activité grâce à des solutions logicielles conçues pour répondre à votre marché.',
-      buttons: []
+      description:
+        'Réinventez votre activité grâce à des solutions logicielles conçues pour répondre à votre marché.',
+      buttons: [
+        {
+          text: 'Contactez-nous',
+          link: 'contact',
+          color: '#ffcc00',
+          textColor: '#000000',
+        },
+        {
+          text: 'Réserver une démo',
+          link: 'reserver-demo',
+          color: '#114D5A',
+          textColor: '#ffffff',
+        },
+      ],
     },
     {
       id: 'slide2',
       img: '../../assets/img/accueil/femme_slide2.webp',
       title: 'Nous sommes partenaire',
       highlight: 'Odoo',
-      description: 'Prenez contact avec un de nos experts Odoo dès maintenant pour discuter de vos besoins.',
-      buttons: [
-        { text: 'Contactez-nous', link: 'contact', color: '#ffcc00', textColor: '#000000' },
-        { text: 'Réserver une démo', link: 'reserver-demo', color: '#114D5A', textColor: '#ffffff' }
-      ]
+      description:
+        'Prenez contact avec un de nos experts Odoo dès maintenant pour discuter de vos besoins.',
+      buttons: [],
     },
     {
       id: 'slide3',
@@ -34,9 +46,14 @@ export class SliderComponent {
       highlight: 'anticiper demain',
       description: 'Représenté dans 3 pays, même service, même standard',
       buttons: [
-        { text: 'Contactez-nous', link: 'about', color: '#ffcc00', textColor: '#000000' }
-      ]
-    }
+        {
+          text: 'Contactez-nous',
+          link: 'about',
+          color: '#ffcc00',
+          textColor: '#000000',
+        },
+      ],
+    },
   ];
 
   currentSlide = 0;

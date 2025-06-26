@@ -6,13 +6,16 @@
   />
   <div class="overlay-text d-flex align-items-center justify-content-center">
     <div class="text-center text-white px-3">
-      <h2>Réserver une démo</h2>
+      <h2>Découvrez Odoo avec nous</h2>
+      <p>
+        Répondez à quelques questions simples pour une démonstration
+        personnalisée
+      </p>
     </div>
   </div>
 </div>
 
 <div class="contact-page">
-  <!-- Section Contact -->
   <div class="contact-container">
     <!-- Informations de contact -->
     <div class="contact-info">
@@ -34,416 +37,572 @@
           <p>info&#64;msl-itech.com</p>
         </div>
       </div>
+
+      <div class="info-highlight">
+        <i class="fas fa-lightbulb"></i>
+        <p>Nous créons une démonstration sur mesure selon vos besoins réels</p>
+      </div>
+
+      <!-- Indicateur de progression -->
+      <div class="progress-indicator">
+        <div class="progress-header">
+          <h4>Progression</h4>
+          <span class="progress-text">{{ currentStep }}/{{ totalSteps }}</span>
+        </div>
+        <div class="progress-bar">
+          <div
+            class="progress-fill"
+            [style.width.%]="getProgressPercentage()"
+          ></div>
+        </div>
+        <div class="steps-list">
+          <div
+            *ngFor="let title of stepTitles; let i = index"
+            class="step-item"
+            [class.active]="i + 1 === currentStep"
+            [class.completed]="isStepCompleted(i + 1)"
+            (click)="goToStep(i + 1)"
+          >
+            <div class="step-number">
+              <i
+                class="fas fa-check"
+                *ngIf="isStepCompleted(i + 1) && i + 1 !== currentStep"
+              ></i>
+              <span *ngIf="!isStepCompleted(i + 1) || i + 1 === currentStep">{{
+                i + 1
+              }}</span>
+            </div>
+            <span class="step-title">{{ title }}</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Formulaire -->
+    <!-- Formulaire à étapes -->
     <div class="contact-form-container">
-      <h2 class="form-title">Réserver une démo</h2>
-      <p class="form-subtitle">
-        Remplissez le formulaire ci-dessous pour réserver une démonstration de
-        nos solutions.
-      </p>
+      <div class="step-header">
+        <h2 class="form-title">{{ stepTitles[currentStep - 1] }}</h2>
+        <div class="step-counter">
+          Étape {{ currentStep }} sur {{ totalSteps }}
+        </div>
+      </div>
 
       <form
-        class="modern-form"
+        class="step-form"
         (ngSubmit)="onSubmit(demoForm)"
         #demoForm="ngForm"
       >
-        <div class="form-group">
-          <input
-            type="text"
-            id="name"
-            name="contact_name"
-            [(ngModel)]="contact_name"
-            required
-            class="form-control"
-            #nameInput="ngModel"
-          />
-          <label for="name">Votre nom *</label>
-          <small
-            class="text-danger"
-            *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)"
-          >
-            Ce champ est requis
-          </small>
-        </div>
+        <!-- Étape 1: Coordonnées -->
+        <div class="step-content" *ngIf="currentStep === 1">
+          <div class="step-intro">
+            <i class="fas fa-user step-icon"></i>
+            <p>
+              Commençons par faire connaissance ! Partagez-nous vos coordonnées
+              pour que nous puissions vous recontacter.
+            </p>
+          </div>
 
-        <div class="form-group">
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            [(ngModel)]="phone"
-            required
-            class="form-control"
-            #phoneInput="ngModel"
-          />
-          <label for="phone">Numéro de téléphone</label>
-          <small
-            class="text-danger"
-            *ngIf="
-              phoneInput.invalid && (phoneInput.dirty || phoneInput.touched)
-            "
-          >
-            Ce champ est requis
-          </small>
-        </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                name="contact_name"
+                [(ngModel)]="contact_name"
+                required
+                class="form-control"
+                #nameInput="ngModel"
+              />
+              <label for="name">Votre nom *</label>
+              <small
+                class="text-danger"
+                *ngIf="
+                  nameInput.invalid && (nameInput.dirty || nameInput.touched)
+                "
+              >
+                Ce champ est requis
+              </small>
+            </div>
 
-        <div class="form-group">
-          <input
-            type="email"
-            id="email"
-            name="email_from"
-            [(ngModel)]="email_from"
-            required
-            email
-            class="form-control"
-            #emailInput="ngModel"
-          />
-          <label for="email">Votre e-mail *</label>
-          <small
-            class="text-danger"
-            *ngIf="
-              emailInput.invalid && (emailInput.dirty || emailInput.touched)
-            "
-          >
-            <span *ngIf="emailInput.errors?.['required']"
-              >Ce champ est requis</span
-            >
-            <span *ngIf="emailInput.errors?.['email']"
-              >Veuillez entrer une adresse email valide</span
-            >
-          </small>
-        </div>
+            <div class="form-group">
+              <input
+                type="text"
+                id="company"
+                name="company"
+                [(ngModel)]="company"
+                required
+                class="form-control"
+                #companyInput="ngModel"
+              />
+              <label for="company">Votre société *</label>
+              <small
+                class="text-danger"
+                *ngIf="
+                  companyInput.invalid &&
+                  (companyInput.dirty || companyInput.touched)
+                "
+              >
+                Ce champ est requis
+              </small>
+            </div>
 
-        <div class="form-group">
-          <input
-            type="text"
-            id="company"
-            name="company"
-            [(ngModel)]="company"
-            required
-            class="form-control"
-            #companyInput="ngModel"
-          />
-          <label for="company">Votre société *</label>
-          <small
-            class="text-danger"
-            *ngIf="
-              companyInput.invalid &&
-              (companyInput.dirty || companyInput.touched)
-            "
-          >
-            Ce champ est requis
-          </small>
-        </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email_from"
+                [(ngModel)]="email_from"
+                required
+                email
+                class="form-control"
+                #emailInput="ngModel"
+              />
+              <label for="email">Votre e-mail *</label>
+              <small
+                class="text-danger"
+                *ngIf="
+                  emailInput.invalid && (emailInput.dirty || emailInput.touched)
+                "
+              >
+                <span *ngIf="emailInput.errors?.['required']"
+                  >Ce champ est requis</span
+                >
+                <span *ngIf="emailInput.errors?.['email']"
+                  >Veuillez entrer une adresse email valide</span
+                >
+              </small>
+            </div>
 
-        <div class="form-group full-width">
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            [(ngModel)]="subject"
-            required
-            class="form-control"
-            #subjectInput="ngModel"
-          />
-          <label for="subject">Sujet *</label>
-          <small
-            class="text-danger"
-            *ngIf="
-              subjectInput.invalid &&
-              (subjectInput.dirty || subjectInput.touched)
-            "
-          >
-            Ce champ est requis
-          </small>
-        </div>
-
-        <div class="form-group full-width">
-          <textarea
-            id="message"
-            name="description"
-            [(ngModel)]="description"
-            required
-            class="form-control"
-            rows="4"
-            #messageInput="ngModel"
-          ></textarea>
-          <label for="message">Votre question *</label>
-          <small
-            class="text-danger"
-            *ngIf="
-              messageInput.invalid &&
-              (messageInput.dirty || messageInput.touched)
-            "
-          >
-            Ce champ est requis
-          </small>
-        </div>
-
-        <div class="form-group full-width">
-          <textarea
-            id="description_produits"
-            name="description_produits"
-            [(ngModel)]="description_produits"
-            class="form-control"
-            rows="4"
-            placeholder="Veuillez fournir une description de ce que votre compagnie fait/produit"
-            #descriptionProduitsInput="ngModel"
-          ></textarea>
-          <label for="description_produits"
-            >Description de vos produits & services</label
-          >
-        </div>
-
-        <div class="form-group full-width">
-          <textarea
-            id="contexte"
-            name="contexte"
-            [(ngModel)]="contexte"
-            class="form-control"
-            rows="4"
-            placeholder="Pourquoi la compagnie veut aller vers Odoo ou changer d'ERP. Quelle est la situation actuelle et les problèmes rencontrés que Arche TI devra résoudre. Quels sont les objectifs post-intégration et les résultats attendus"
-            #contexteInput="ngModel"
-          ></textarea>
-          <label for="contexte">Contexte *</label>
-        </div>
-
-        <div class="form-group full-width">
-          <textarea
-            id="scenario"
-            name="scenario"
-            [(ngModel)]="scenario"
-            class="form-control"
-            rows="4"
-            placeholder="Une journée dans la vie de la compagnie. Veuillez fournir une courte description de vos opérations, points douloureux et exceptions"
-            #scenarioInput="ngModel"
-          ></textarea>
-          <label for="scenario">Scénario *</label>
-        </div>
-
-        <div class="modules-section">
-          <label class="modules-title"
-            >Liste des applications à démontrer</label
-          >
-          <div class="modules-grid">
-            <div class="module-checkbox">
+            <div class="form-group">
               <input
-                type="checkbox"
-                id="crm"
-                name="crm"
-                [(ngModel)]="modules.crm"
+                type="tel"
+                id="phone"
+                name="phone"
+                [(ngModel)]="phone"
+                required
+                class="form-control"
+                #phoneInput="ngModel"
               />
-              <label for="crm">GRP (CRM)</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="comptabilite"
-                name="comptabilite"
-                [(ngModel)]="modules.comptabilite"
-              />
-              <label for="comptabilite">Comptabilité</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="pointVente"
-                name="pointVente"
-                [(ngModel)]="modules.pointVente"
-              />
-              <label for="pointVente">Point de Ventes</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="siteWeb"
-                name="siteWeb"
-                [(ngModel)]="modules.siteWeb"
-              />
-              <label for="siteWeb">Site web</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="evenements"
-                name="evenements"
-                [(ngModel)]="modules.evenements"
-              />
-              <label for="evenements">Événements</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="rh"
-                name="rh"
-                [(ngModel)]="modules.rh"
-              />
-              <label for="rh">RH</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="recrutement"
-                name="recrutement"
-                [(ngModel)]="modules.recrutement"
-              />
-              <label for="recrutement">Recrutement</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="ventes"
-                name="ventes"
-                [(ngModel)]="modules.ventes"
-              />
-              <label for="ventes">Ventes</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="inventaire"
-                name="inventaire"
-                [(ngModel)]="modules.inventaire"
-              />
-              <label for="inventaire">Inventaire</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="projets"
-                name="projets"
-                [(ngModel)]="modules.projets"
-              />
-              <label for="projets">Projets</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="ventesB2B"
-                name="ventesB2B"
-                [(ngModel)]="modules.ventesB2B"
-              />
-              <label for="ventesB2B">Ventes en Ligne B2B</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="sondages"
-                name="sondages"
-                [(ngModel)]="modules.sondages"
-              />
-              <label for="sondages">Sondages</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="depenses"
-                name="depenses"
-                [(ngModel)]="modules.depenses"
-              />
-              <label for="depenses">Dépenses</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="tableauxBords"
-                name="tableauxBords"
-                [(ngModel)]="modules.tableauxBords"
-              />
-              <label for="tableauxBords">Tableaux de Bords/KPIs</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="achats"
-                name="achats"
-                [(ngModel)]="modules.achats"
-              />
-              <label for="achats">Achats</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="mrp"
-                name="mrp"
-                [(ngModel)]="modules.mrp"
-              />
-              <label for="mrp">MRP</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="feuilleTemps"
-                name="feuilleTemps"
-                [(ngModel)]="modules.feuilleTemps"
-              />
-              <label for="feuilleTemps">Feuilles de Temps</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="ventesB2C"
-                name="ventesB2C"
-                [(ngModel)]="modules.ventesB2C"
-              />
-              <label for="ventesB2C">Ventes en Ligne B2C</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="formations"
-                name="formations"
-                [(ngModel)]="modules.formations"
-              />
-              <label for="formations">Formations</label>
-            </div>
-            <div class="module-checkbox">
-              <input
-                type="checkbox"
-                id="absencesConges"
-                name="absencesConges"
-                [(ngModel)]="modules.absencesConges"
-              />
-              <label for="absencesConges">Absences/Congés</label>
+              <label for="phone">Numéro de téléphone *</label>
+              <small
+                class="text-danger"
+                *ngIf="
+                  phoneInput.invalid && (phoneInput.dirty || phoneInput.touched)
+                "
+              >
+                Ce champ est requis
+              </small>
             </div>
           </div>
         </div>
 
-        <div class="form-group full-width">
-          <label for="fileUpload" class="file-upload-label"
-            >Données de démonstration</label
-          >
-          <div class="file-input-container">
+        <!-- Étape 2: Objectifs -->
+        <div class="step-content" *ngIf="currentStep === 2">
+          <div class="step-intro">
+            <i class="fas fa-bullseye step-icon"></i>
+            <h3>🎯 Quel est votre objectif principal avec Odoo ?</h3>
+            <p>
+              Sélectionnez une ou plusieurs options qui correspondent à vos
+              besoins
+            </p>
+          </div>
+
+          <div class="checkbox-grid">
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="automatiser"
+                name="automatiser"
+                [(ngModel)]="objectifs.automatiser"
+              />
+              <label for="automatiser" class="checkbox-label">
+                <i class="fas fa-cogs"></i>
+                <div>
+                  <strong>Automatiser les processus</strong>
+                  <span>factures, stocks, ventes</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="centraliser"
+                name="centraliser"
+                [(ngModel)]="objectifs.centraliser"
+              />
+              <label for="centraliser" class="checkbox-label">
+                <i class="fas fa-database"></i>
+                <div>
+                  <strong>Centraliser les données</strong>
+                  <span>CRM + Comptabilité + Projets</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="collaboration"
+                name="collaboration"
+                [(ngModel)]="objectifs.collaboration"
+              />
+              <label for="collaboration" class="checkbox-label">
+                <i class="fas fa-users"></i>
+                <div>
+                  <strong>Améliorer la collaboration</strong>
+                  <span>entre équipes</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="remplacer"
+                name="remplacer"
+                [(ngModel)]="objectifs.remplacer"
+              />
+              <label for="remplacer" class="checkbox-label">
+                <i class="fas fa-exchange-alt"></i>
+                <div>
+                  <strong>Remplacer un outil inefficace</strong>
+                  <span>précisez ci-dessous</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="conditional-input" *ngIf="objectifs.remplacer">
             <input
-              type="file"
-              id="fileUpload"
-              (change)="onFileSelected($event)"
-              class="form-control file-input"
+              type="text"
+              [(ngModel)]="objectifRemplacerDetail"
+              name="objectifRemplacerDetail"
+              placeholder="Quel outil souhaitez-vous remplacer ?"
+              class="form-control small-input"
             />
-            <div class="file-info">
-              <p class="file-instructions">
-                Si vous avez des fichiers qui pourraient aider à expliquer votre
-                contexte (clients, produits, exceptions, etc...) SVP les inclure
-                ici.
-              </p>
-              <p class="selected-file" *ngIf="selectedFile">
-                Fichier sélectionné: {{ selectedFile.name }}
-              </p>
+          </div>
+
+          <div class="checkbox-item autre-option">
+            <input
+              type="checkbox"
+              id="objectifAutre"
+              name="objectifAutre"
+              [(ngModel)]="objectifs.autre"
+            />
+            <label for="objectifAutre" class="checkbox-label">
+              <i class="fas fa-plus"></i>
+              <div>
+                <strong>Autre</strong>
+                <span>précisez ci-dessous</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="conditional-input" *ngIf="objectifs.autre">
+            <input
+              type="text"
+              [(ngModel)]="objectifAutreDetail"
+              name="objectifAutreDetail"
+              placeholder="Précisez votre objectif"
+              class="form-control small-input"
+            />
+          </div>
+        </div>
+
+        <!-- Étape 3: Processus -->
+        <div class="step-content" *ngIf="currentStep === 3">
+          <div class="step-intro">
+            <i class="fas fa-clock step-icon"></i>
+            <h3>
+              🔍 Quels processus vous prennent le plus de temps aujourd'hui ?
+            </h3>
+            <p>
+              Identifiez les tâches qui vous font perdre du temps au quotidien
+            </p>
+          </div>
+
+          <div class="checkbox-grid">
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="leadsDevis"
+                name="leadsDevis"
+                [(ngModel)]="processusTemps.leadsDevis"
+              />
+              <label for="leadsDevis" class="checkbox-label">
+                <i class="fas fa-handshake"></i>
+                <div>
+                  <strong>Gestion des leads/devis</strong>
+                  <span>ex : perte d'opportunités</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="suiviCommandes"
+                name="suiviCommandes"
+                [(ngModel)]="processusTemps.suiviCommandes"
+              />
+              <label for="suiviCommandes" class="checkbox-label">
+                <i class="fas fa-shopping-cart"></i>
+                <div>
+                  <strong>Suivi des commandes/clients</strong>
+                  <span>ex : relances manuelles</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="reporting"
+                name="reporting"
+                [(ngModel)]="processusTemps.reporting"
+              />
+              <label for="reporting" class="checkbox-label">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                  <strong>Reporting financier</strong>
+                  <span>ou d'activité</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="gestionStocks"
+                name="gestionStocks"
+                [(ngModel)]="processusTemps.gestionStocks"
+              />
+              <label for="gestionStocks" class="checkbox-label">
+                <i class="fas fa-boxes"></i>
+                <div>
+                  <strong>Gestion des stocks</strong>
+                  <span>ex : ruptures, surstocks</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkbox-item autre-option">
+            <input
+              type="checkbox"
+              id="processusAutre"
+              name="processusAutre"
+              [(ngModel)]="processusTemps.autre"
+            />
+            <label for="processusAutre" class="checkbox-label">
+              <i class="fas fa-plus"></i>
+              <div>
+                <strong>Autre</strong>
+                <span>précisez ci-dessous</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="conditional-input" *ngIf="processusTemps.autre">
+            <input
+              type="text"
+              [(ngModel)]="processusAutreDetail"
+              name="processusAutreDetail"
+              placeholder="Quel autre processus vous pose problème ?"
+              class="form-control small-input"
+            />
+          </div>
+        </div>
+
+        <!-- Étape 4: Outils actuels -->
+        <div class="step-content" *ngIf="currentStep === 4">
+          <div class="step-intro">
+            <i class="fas fa-tools step-icon"></i>
+            <h3>🛠️ Quels outils utilisez-vous actuellement ?</h3>
+            <p>
+              Dites-nous quels logiciels vous utilisez pour mieux comprendre
+              votre environnement
+            </p>
+          </div>
+
+          <div class="checkbox-grid tools-grid">
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="excel"
+                name="excel"
+                [(ngModel)]="outilsActuels.excel"
+              />
+              <label for="excel" class="checkbox-label">
+                <i class="fas fa-file-excel"></i>
+                <div>
+                  <strong>Excel</strong>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="zoho"
+                name="zoho"
+                [(ngModel)]="outilsActuels.zoho"
+              />
+              <label for="zoho" class="checkbox-label">
+                <i class="fas fa-laptop"></i>
+                <div>
+                  <strong>Zoho CRM</strong>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="sage"
+                name="sage"
+                [(ngModel)]="outilsActuels.sage"
+              />
+              <label for="sage" class="checkbox-label">
+                <i class="fas fa-calculator"></i>
+                <div>
+                  <strong>Sage Comptabilité</strong>
+                </div>
+              </label>
+            </div>
+
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="outilsAutre"
+                name="outilsAutre"
+                [(ngModel)]="outilsActuels.autre"
+              />
+              <label for="outilsAutre" class="checkbox-label">
+                <i class="fas fa-plus"></i>
+                <div>
+                  <strong>Autre</strong>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="conditional-input" *ngIf="outilsActuels.autre">
+            <input
+              type="text"
+              [(ngModel)]="outilsAutreDetail"
+              name="outilsAutreDetail"
+              placeholder="Quels autres outils utilisez-vous ?"
+              class="form-control small-input"
+            />
+          </div>
+        </div>
+
+        <!-- Étape 5: Finalisation -->
+        <div class="step-content" *ngIf="currentStep === 5">
+          <div class="step-intro">
+            <i class="fas fa-flag-checkered step-icon"></i>
+            <h3>🚧 Pour finir, quel est votre plus gros défi opérationnel ?</h3>
+            <p>
+              Identifiez votre problème principal pour que nous puissions vous
+              aider efficacement
+            </p>
+          </div>
+
+          <div class="form-group">
+            <select
+              [(ngModel)]="defiOperationnel"
+              name="defiOperationnel"
+              class="form-control select-control"
+              required
+              #defiInput="ngModel"
+            >
+              <option
+                *ngFor="let option of defisOptions"
+                [value]="option.value"
+              >
+                {{ option.label }}
+              </option>
+            </select>
+            <small
+              class="text-danger"
+              *ngIf="
+                defiInput.invalid && (defiInput.dirty || defiInput.touched)
+              "
+            >
+              Veuillez sélectionner un défi
+            </small>
+          </div>
+
+          <div class="conditional-input" *ngIf="defiOperationnel === 'autre'">
+            <input
+              type="text"
+              [(ngModel)]="defiAutreDetail"
+              name="defiAutreDetail"
+              placeholder="Précisez votre principal défi"
+              class="form-control small-input"
+              required
+            />
+          </div>
+
+          <!-- Question bonus -->
+          <div class="bonus-section">
+            <h4>✨ Question bonus (optionnelle)</h4>
+            <p>
+              Si Odoo pouvait résoudre UN seul problème pour vous, ce serait...
+            </p>
+
+            <div class="form-group">
+              <textarea
+                [(ngModel)]="problemePrincipal"
+                name="problemePrincipal"
+                class="form-control textarea-bonus"
+                rows="3"
+                placeholder="Décrivez en quelques mots le problème principal que vous aimeriez résoudre..."
+              ></textarea>
             </div>
           </div>
         </div>
 
-        <button
-          type="submit"
-          class="submit-btn"
-          [class.loading]="isLoading"
-          [disabled]="demoForm.invalid || isLoading"
-        >
-          <span>{{ isLoading ? "" : "Soumettre" }}</span>
-          <i class="fas fa-arrow-right" *ngIf="!isLoading"></i>
-        </button>
+        <!-- Navigation -->
+        <div class="step-navigation">
+          <button
+            type="button"
+            class="nav-btn prev-btn"
+            [disabled]="currentStep === 1"
+            (click)="prevStep()"
+            *ngIf="currentStep > 1"
+          >
+            <i class="fas fa-arrow-left"></i>
+            Précédent
+          </button>
+
+          <button
+            type="button"
+            class="nav-btn next-btn"
+            [disabled]="!validateCurrentStep()"
+            (click)="nextStep()"
+            *ngIf="currentStep < totalSteps"
+          >
+            Suivant
+            <i class="fas fa-arrow-right"></i>
+          </button>
+
+          <button
+            type="submit"
+            class="submit-btn"
+            [class.loading]="isLoading"
+            [disabled]="!validateStepsUpToSilent(totalSteps) || isLoading"
+            *ngIf="currentStep === totalSteps"
+          >
+            <span>{{
+              isLoading ? "Envoi en cours..." : "Réserver ma démonstration"
+            }}</span>
+            <i class="fas fa-paper-plane" *ngIf="!isLoading"></i>
+            <i class="fas fa-spinner fa-spin" *ngIf="isLoading"></i>
+          </button>
+        </div>
       </form>
     </div>
   </div>
