@@ -631,10 +631,10 @@
     <div class="overlay-text d-flex align-items-center justify-content-center">
       <div class="text-center text-white px-3 fade-in">
         <h2 class="fw-bold">
-          Boostez les Performances de Votre Équipe Commerciale avec Odoo CRM
+          {{ "PAGES.PACK_PERFORMANCE.BANNER.TITLE" | translate }}
         </h2>
         <p class="lead">
-          Transformez vos prospects en clients et maximisez vos bénéfices.
+          {{ "PAGES.PACK_PERFORMANCE.BANNER.SUBTITLE" | translate }}
         </p>
       </div>
     </div>
@@ -652,22 +652,25 @@
         </div>
         <div class="col-md-6 order-md-1">
           <h2 class="text-primary--custom">
-            Gestion Intelligente des Prospects
+            {{ "PAGES.PACK_PERFORMANCE.PROSPECT_MANAGEMENT.TITLE" | translate }}
           </h2>
           <p>
-            Cela commence par une gestion intelligente de vos prospects.
-            Pourtant, beaucoup d'entreprises négligent une étape cruciale :
-            s'assurer que leurs efforts se concentrent sur les prospects ayant
-            un réel potentiel d'achat.
+            {{
+              "PAGES.PACK_PERFORMANCE.PROSPECT_MANAGEMENT.DESCRIPTION1"
+                | translate
+            }}
           </p>
           <p>
-            Ne serait-ce pas frustrant de voir vos efforts commerciaux échouer
-            simplement à cause d'un mauvais ciblage ?
+            {{
+              "PAGES.PACK_PERFORMANCE.PROSPECT_MANAGEMENT.DESCRIPTION2"
+                | translate
+            }}
           </p>
           <p>
-            Mais savez-vous réellement ce que cela signifie de qualifier un
-            prospect ? Et pourquoi cette étape est-elle essentielle pour réussir
-            dans vos activités commerciales ?
+            {{
+              "PAGES.PACK_PERFORMANCE.PROSPECT_MANAGEMENT.DESCRIPTION3"
+                | translate
+            }}
           </p>
         </div>
       </div>
@@ -688,23 +691,31 @@
           <!-- Texte avec liste -->
           <div class="col-md-6">
             <h2 class="text-custom">
-              Le Défi : Transformer Vos Efforts en Résultats
+              {{ "PAGES.PACK_PERFORMANCE.CHALLENGE.TITLE" | translate }}
             </h2>
-            <p>Imaginez ceci :</p>
+            <p>{{ "PAGES.PACK_PERFORMANCE.CHALLENGE.INTRO" | translate }}</p>
             <ul>
               <li>
-                Vous passez des heures à contacter des prospects, mais peu se
-                convertissent en clients.
+                {{
+                  "PAGES.PACK_PERFORMANCE.CHALLENGE.PROBLEMS.PROBLEM1"
+                    | translate
+                }}
               </li>
-              <li>Vos ventes stagnent, malgré des efforts importants.</li>
               <li>
-                Vous perdez du temps et de l'énergie sur des prospects peu
-                qualifiés.
+                {{
+                  "PAGES.PACK_PERFORMANCE.CHALLENGE.PROBLEMS.PROBLEM2"
+                    | translate
+                }}
+              </li>
+              <li>
+                {{
+                  "PAGES.PACK_PERFORMANCE.CHALLENGE.PROBLEMS.PROBLEM3"
+                    | translate
+                }}
               </li>
             </ul>
             <p class="fw-bold p-3 border-start border-4 border-warning">
-              Et si vous pouviez concentrer vos efforts uniquement sur les
-              prospects ayant un réel potentiel d'achat ?
+              {{ "PAGES.PACK_PERFORMANCE.CHALLENGE.QUOTE" | translate }}
             </p>
           </div>
         </div>
@@ -715,36 +726,54 @@
   <section class="solution">
     <div class="container">
       <h2>
-        La Solution : Une Gestion Intelligente des Prospects avec Odoo CRM
+        {{ "PAGES.PACK_PERFORMANCE.SOLUTION.TITLE" | translate }}
       </h2>
-      <p>
-        Chez <strong>MSL-ITECH</strong>, nous vous aidons à qualifier vos
-        prospects de manière méthodique et efficace.
-      </p>
+      <p [innerHTML]="'PAGES.PACK_PERFORMANCE.SOLUTION.INTRO' | translate"></p>
 
       <div class="solution-grid">
         <div class="solution-card">
           <div class="card-icon">🎯</div>
-          <h3>Qualification Automatisée</h3>
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.AUTOMATED_QUALIFICATION.TITLE"
+                | translate
+            }}
+          </h3>
           <p>
-            Analysez rapidement les besoins, budgets et décideurs pour cibler
-            les prospects les plus prometteurs.
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.AUTOMATED_QUALIFICATION.DESCRIPTION"
+                | translate
+            }}
           </p>
         </div>
         <div class="solution-card">
           <div class="card-icon">⭐</div>
-          <h3>Gestion des Priorités</h3>
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.PRIORITY_MANAGEMENT.TITLE"
+                | translate
+            }}
+          </h3>
           <p>
-            Identifiez les opportunités à fort potentiel et maximisez vos
-            chances de conclure.
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.PRIORITY_MANAGEMENT.DESCRIPTION"
+                | translate
+            }}
           </p>
         </div>
         <div class="solution-card">
           <div class="card-icon">📅</div>
-          <h3>Suivi Structuré</h3>
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.STRUCTURED_TRACKING.TITLE"
+                | translate
+            }}
+          </h3>
           <p>
-            Planifiez vos relances et rendez-vous sans rien oublier, pour
-            toujours être au bon moment au bon endroit.
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.STRUCTURED_TRACKING.DESCRIPTION"
+                | translate
+            }}
           </p>
         </div>
       </div>
@@ -763,24 +792,31 @@
           />
         </div>
         <div class="qualification-text">
-          <h2>Pourquoi Qualifier Vos Prospects ?</h2>
+          <h2>
+            {{ "PAGES.PACK_PERFORMANCE.QUALIFICATION.TITLE" | translate }}
+          </h2>
           <p>
-            Qualifier un prospect, ce n'est pas du hasard. C'est une démarche
-            stratégique qui repose sur des critères clés :
+            {{ "PAGES.PACK_PERFORMANCE.QUALIFICATION.INTRO" | translate }}
           </p>
           <ul class="numbered-list">
-            <li>
-              <strong>Leurs besoins</strong> : Identifiez précisément ce qu'ils
-              recherchent.
-            </li>
-            <li>
-              <strong>Leur budget</strong> : Assurez-vous qu'ils ont les moyens
-              d'investir.
-            </li>
-            <li>
-              <strong>Leur pouvoir de décision</strong> : Vérifiez s'ils peuvent
-              signer un contrat.
-            </li>
+            <li
+              [innerHTML]="
+                'PAGES.PACK_PERFORMANCE.QUALIFICATION.CRITERIA.NEEDS'
+                  | translate
+              "
+            ></li>
+            <li
+              [innerHTML]="
+                'PAGES.PACK_PERFORMANCE.QUALIFICATION.CRITERIA.BUDGET'
+                  | translate
+              "
+            ></li>
+            <li
+              [innerHTML]="
+                'PAGES.PACK_PERFORMANCE.QUALIFICATION.CRITERIA.DECISION_POWER'
+                  | translate
+              "
+            ></li>
           </ul>
         </div>
       </div>
@@ -790,26 +826,52 @@
   <!-- Sales Process Section -->
   <section class="sales-process">
     <div class="container">
-      <h2>Ventes : Accélérez et Standardisez Vos Processus</h2>
-      <p>
-        Avec <strong>Odoo CRM</strong>, simplifiez et optimisez chaque étape de
-        votre processus commercial :
-      </p>
+      <h2>{{ "PAGES.PACK_PERFORMANCE.SALES_PROCESS.TITLE" | translate }}</h2>
+      <p
+        [innerHTML]="'PAGES.PACK_PERFORMANCE.SALES_PROCESS.INTRO' | translate"
+      ></p>
 
       <div class="process-cards">
         <div class="process-card">
-          <h3>Importation de données</h3>
-          <p>Ajoutez facilement vos clients et produits existants.</p>
-        </div>
-        <div class="process-card">
-          <h3>Devis professionnels</h3>
-          <p>Créez des modèles personnalisés en quelques clics.</p>
-        </div>
-        <div class="process-card">
-          <h3>Validation des commandes</h3>
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.DATA_IMPORT.TITLE"
+                | translate
+            }}
+          </h3>
           <p>
-            Faites signer et payer vos clients en ligne via des plateformes
-            sécurisées.
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.DATA_IMPORT.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+        <div class="process-card">
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.PROFESSIONAL_QUOTES.TITLE"
+                | translate
+            }}
+          </h3>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.PROFESSIONAL_QUOTES.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+        <div class="process-card">
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.ORDER_VALIDATION.TITLE"
+                | translate
+            }}
+          </h3>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.ORDER_VALIDATION.DESCRIPTION"
+                | translate
+            }}
           </p>
         </div>
       </div>
@@ -878,10 +940,12 @@
             🔎
           </div>
           <h2 style="color: #114d5a; font-weight: 800; margin-bottom: 10px">
-            Quel pack Odoo est fait pour vous ?
+            {{ "PAGES.PACK_PERFORMANCE.PACK_FINDER.TITLE" | translate }}
           </h2>
           <p style="color: #666; font-size: 1.1rem; margin-bottom: 0">
-            <em>(30 secondes max !)</em>
+            <em>{{
+              "PAGES.PACK_PERFORMANCE.PACK_FINDER.SUBTITLE" | translate
+            }}</em>
           </p>
         </div>
 
@@ -905,7 +969,10 @@
                 "
                 >1</span
               >
-              Quel est votre niveau d'accompagnement idéal ?
+              {{
+                "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.TITLE"
+                  | translate
+              }}
             </h4>
             <div
               class="options-grid"
@@ -936,9 +1003,15 @@
                 <div style="font-size: 1.5rem; margin-bottom: 10px">🚀</div>
                 <strong
                   style="color: #114d5a; display: block; margin-bottom: 5px"
-                  >Coup de pouce</strong
+                  >{{
+                    "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.COUP_POUCE.TITLE"
+                      | translate
+                  }}</strong
                 >
-                <small style="color: #666">Pour démarrer</small>
+                <small style="color: #666">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.COUP_POUCE.SUBTITLE"
+                    | translate
+                }}</small>
               </label>
               <label
                 class="option-card"
@@ -961,9 +1034,15 @@
                 <div style="font-size: 1.5rem; margin-bottom: 10px">🎯</div>
                 <strong
                   style="color: #114d5a; display: block; margin-bottom: 5px"
-                  >Prise en main complète</strong
+                  >{{
+                    "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.PRISE_EN_MAIN.TITLE"
+                      | translate
+                  }}</strong
                 >
-                <small style="color: #666">Accompagnement total</small>
+                <small style="color: #666">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.PRISE_EN_MAIN.SUBTITLE"
+                    | translate
+                }}</small>
               </label>
               <label
                 class="option-card"
@@ -986,9 +1065,15 @@
                 <div style="font-size: 1.5rem; margin-bottom: 10px">⚡</div>
                 <strong
                   style="color: #114d5a; display: block; margin-bottom: 5px"
-                  >Optimisation</strong
+                  >{{
+                    "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.OPTIMISATION.TITLE"
+                      | translate
+                  }}</strong
                 >
-                <small style="color: #666">Processus existants</small>
+                <small style="color: #666">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.OPTIMISATION.SUBTITLE"
+                    | translate
+                }}</small>
               </label>
               <label
                 class="option-card"
@@ -1011,9 +1096,15 @@
                 <div style="font-size: 1.5rem; margin-bottom: 10px">👑</div>
                 <strong
                   style="color: #114d5a; display: block; margin-bottom: 5px"
-                  >100% personnalisé</strong
+                  >{{
+                    "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.PERSONNALISE.TITLE"
+                      | translate
+                  }}</strong
                 >
-                <small style="color: #666">Solution prioritaire</small>
+                <small style="color: #666">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.PERSONNALISE.SUBTITLE"
+                    | translate
+                }}</small>
               </label>
             </div>
           </div>
@@ -1036,7 +1127,10 @@
                 "
                 >2</span
               >
-              Quel est votre budget mensuel pour l'accompagnement ?
+              {{
+                "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.TITLE"
+                  | translate
+              }}
             </h4>
             <div
               class="options-grid"
@@ -1065,7 +1159,10 @@
                   style="display: none"
                 />
                 <div style="font-size: 1.5rem; margin-bottom: 10px">💰</div>
-                <strong style="color: #114d5a">Moins de 500€</strong>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.OPTIONS.MOINS_500"
+                    | translate
+                }}</strong>
               </label>
               <label
                 class="option-card"
@@ -1086,7 +1183,10 @@
                   style="display: none"
                 />
                 <div style="font-size: 1.5rem; margin-bottom: 10px">💎</div>
-                <strong style="color: #114d5a">500€ - 1 500€</strong>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.OPTIONS.500_1500"
+                    | translate
+                }}</strong>
               </label>
               <label
                 class="option-card"
@@ -1107,7 +1207,10 @@
                   style="display: none"
                 />
                 <div style="font-size: 1.5rem; margin-bottom: 10px">💼</div>
-                <strong style="color: #114d5a">1 500€ - 3 000€</strong>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.OPTIONS.1500_3000"
+                    | translate
+                }}</strong>
               </label>
               <label
                 class="option-card"
@@ -1128,7 +1231,10 @@
                   style="display: none"
                 />
                 <div style="font-size: 1.5rem; margin-bottom: 10px">🏆</div>
-                <strong style="color: #114d5a">3 000€+</strong>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.OPTIONS.PLUS_3000"
+                    | translate
+                }}</strong>
               </label>
             </div>
           </div>
@@ -1151,7 +1257,10 @@
                 "
                 >3</span
               >
-              Quel est votre besoin principal ?
+              {{
+                "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.TITLE"
+                  | translate
+              }}
             </h4>
             <div
               class="options-grid"
@@ -1180,7 +1289,10 @@
                   style="display: none"
                 />
                 <div style="font-size: 1.5rem; margin-bottom: 10px">⏱️</div>
-                <strong style="color: #114d5a">Gagner du temps</strong>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.OPTIONS.GAGNER_TEMPS"
+                    | translate
+                }}</strong>
               </label>
               <label
                 class="option-card"
@@ -1201,7 +1313,10 @@
                   style="display: none"
                 />
                 <div style="font-size: 1.5rem; margin-bottom: 10px">📈</div>
-                <strong style="color: #114d5a">Évolutivité</strong>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.OPTIONS.EVOLUTIVITE"
+                    | translate
+                }}</strong>
               </label>
               <label
                 class="option-card"
@@ -1222,7 +1337,10 @@
                   style="display: none"
                 />
                 <div style="font-size: 1.5rem; margin-bottom: 10px">🎓</div>
-                <strong style="color: #114d5a">Expertise technique</strong>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.OPTIONS.EXPERTISE"
+                    | translate
+                }}</strong>
               </label>
               <label
                 class="option-card"
@@ -1243,7 +1361,10 @@
                   style="display: none"
                 />
                 <div style="font-size: 1.5rem; margin-bottom: 10px">🚑</div>
-                <strong style="color: #114d5a">Support prioritaire</strong>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.OPTIONS.SUPPORT_PRIORITAIRE"
+                    | translate
+                }}</strong>
               </label>
             </div>
           </div>
@@ -1340,14 +1461,13 @@
             -webkit-text-fill-color: initial;
           "
         >
-          Passez à l'Action : Boostez Votre Chiffre d'Affaires avec Odoo
+          {{ "PAGES.PACK_PERFORMANCE.CTA.TITLE" | translate }}
         </h2>
-        <p class="cta-intro" style="color: #666">
-          Ne laissez pas des processus inefficaces freiner votre croissance.
-          Avec notre
-          <strong style="color: #114d5a">Pack d'Implémentation Odoo</strong>,
-          vous obtenez :
-        </p>
+        <p
+          class="cta-intro"
+          style="color: #666"
+          [innerHTML]="'PAGES.PACK_PERFORMANCE.CTA.INTRO' | translate"
+        ></p>
 
         <ul class="cta-list">
           <li style="background: #f8f9fa; color: #333">
@@ -1355,9 +1475,15 @@
               ⚙️
             </div>
             <div class="content" style="color: #333">
-              <strong style="color: #114d5a">Configuration sur mesure</strong>
+              <strong style="color: #114d5a">{{
+                "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.CUSTOM_CONFIG.TITLE"
+                  | translate
+              }}</strong>
               <p style="color: #666; margin-top: 5px">
-                Optimisée pour répondre à vos besoins spécifiques.
+                {{
+                  "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.CUSTOM_CONFIG.DESCRIPTION"
+                    | translate
+                }}
               </p>
             </div>
           </li>
@@ -1366,9 +1492,15 @@
               📚
             </div>
             <div class="content" style="color: #333">
-              <strong style="color: #114d5a">Formation pratique</strong>
+              <strong style="color: #114d5a">{{
+                "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.PRACTICAL_TRAINING.TITLE"
+                  | translate
+              }}</strong>
               <p style="color: #666; margin-top: 5px">
-                Pour une équipe opérationnelle dès le premier jour.
+                {{
+                  "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.PRACTICAL_TRAINING.DESCRIPTION"
+                    | translate
+                }}
               </p>
             </div>
           </li>
@@ -1377,9 +1509,15 @@
               🎯
             </div>
             <div class="content" style="color: #333">
-              <strong style="color: #114d5a">Support dédié</strong>
+              <strong style="color: #114d5a">{{
+                "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.DEDICATED_SUPPORT.TITLE"
+                  | translate
+              }}</strong>
               <p style="color: #666; margin-top: 5px">
-                Pour une utilisation optimale dès la mise en œuvre.
+                {{
+                  "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.DEDICATED_SUPPORT.DESCRIPTION"
+                    | translate
+                }}
               </p>
             </div>
           </li>
@@ -1395,8 +1533,7 @@
           "
         >
           <p style="color: #114d5a; font-size: 1.1em; margin-bottom: 20px">
-            Offre spéciale : Profitez d'une démonstration gratuite et découvrez
-            comment augmenter vos revenus dès le premier mois grâce à Odoo.
+            {{ "PAGES.PACK_PERFORMANCE.CTA.SPECIAL_OFFER" | translate }}
           </p>
           <a
             href="/reserver-demo"
@@ -1412,18 +1549,17 @@
             "
           >
             <i class="fas fa-calendar-check me-2"></i>
-            Réserver ma démo gratuite
+            {{ "BUTTONS.BOOK_DEMO" | translate }}
           </a>
         </div>
 
         <div class="cta-footer">
           <p style="color: #666">
-            Avec Odoo et MSL-ITECH, faites de vos objectifs commerciaux une
-            réalité.
+            {{ "PAGES.PACK_PERFORMANCE.CTA.FOOTER" | translate }}
           </p>
-          <em style="color: #114d5a; font-weight: 600"
-            >Vos ventes n'attendent plus. 🚀</em
-          >
+          <em style="color: #114d5a; font-weight: 600">{{
+            "PAGES.PACK_PERFORMANCE.CTA.TAGLINE" | translate
+          }}</em>
         </div>
       </div>
     </div>

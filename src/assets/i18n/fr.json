@@ -1,0 +1,1504 @@
+{
+  "MENU": {
+    "ACCUEIL": "Accueil",
+    "SERVICES": "Services",
+    "PACKAGES": "Packages Métier",
+    "ABOUT": "À propos",
+    "CONTACT": "Contact",
+    "PRICING": "Tarifs",
+    "BLOG": "Blog",
+    "CAREERS": "Carrières"
+  },
+  "HEADER": {
+    "MENU": {
+      "HOME": "Accueil",
+      "DIGITAL_SOLUTIONS": "Solutions digitales",
+      "ODOO_APPS": "Application Odoo",
+      "FINANCE": "Finances",
+      "SALES": "Ventes",
+      "MANUFACTURING": "Fabrications",
+      "HR": "Ressources Humaines",
+      "MARKETING": "Marketing Digital",
+      "PROFESSIONAL_SERVICES": "Services Professionnels",
+      "ORGANIZATIONAL_MODULES": "Modules organisationnels",
+      "COMMERCIAL": "Commerciale",
+      "ADMINISTRATIVE": "Administratif",
+      "HORECA": "Horeca",
+      "OUR_FORMULAS": "Nos formules",
+      "SMART_ALERT": "SmartAlert",
+      "EXCLUSIVE_SERVICES": "Services Exclusifs",
+      "ABOUT": "À propos",
+      "CUSTOM_PRICING": "Tarifs personnalisés",
+      "ODOO": "Odoo",
+      "WEBSITE": "Site Internet",
+      "SUPPORT": "Support"
+    },
+    "ACTIONS": {
+      "SUBMIT_NEED": "Soumettre un besoin",
+      "CONTACT_US": "Contactez-nous",
+      "BOOK_DEMO": "Reserver une démo"
+    }
+  },
+  "BUTTONS": {
+    "CONTACT_US": "Nous contacter",
+    "LEARN_MORE": "En savoir plus",
+    "GET_QUOTE": "Obtenir un devis",
+    "BOOK_DEMO": "Réserver ma démo gratuite",
+    "SUBMIT": "Soumettre",
+    "CANCEL": "Annuler",
+    "SAVE": "Enregistrer",
+    "NEXT": "Suivant",
+    "PREVIOUS": "Précédent",
+    "CLOSE": "fermer",
+    "SUBMIT_NEED": "Soumettre mon besoin",
+    "RESERVE_DEMO": "Réserver ma démo"
+  },
+  "COMMON": {
+    "WELCOME": "Bienvenue",
+    "HELLO": "Bonjour",
+    "THANK_YOU": "Merci",
+    "LOADING": "Chargement...",
+    "ERROR": "Erreur",
+    "SUCCESS": "Succès",
+    "WARNING": "Attention",
+    "INFO": "Information",
+    "LANGUAGE": "Langue",
+    "FRENCH": "Français",
+    "ENGLISH": "Anglais"
+  },
+  "FOOTER": {
+    "DESCRIPTION": "Accélérez la transformation numérique de votre entreprise avec MSL-Itech, expert en implémentation et intégration d'Odoo.",
+    "NAVIGATION": {
+      "TITLE": "Navigation",
+      "HOME": "Accueil",
+      "SERVICES": "Nos services",
+      "JOBS": "Offres d'emploi"
+    },
+    "QUICK_LINKS": {
+      "TITLE": "Liens rapides",
+      "CONTACT": "Contactez-nous",
+      "FAQS": "FAQs",
+      "ABOUT": "À propos de nous",
+      "JOBS": "Offres d'emploi",
+      "APPOINTMENT": "Prendre rendez-vous",
+      "DEMO": "Réserver une démo"
+    },
+    "CONTACT": {
+      "OFFICES": "Bureaux internationaux : Belgique, Maroc, Canada"
+    },
+    "COPYRIGHT": "© 2024 MSL-ITECH • Tous droits réservés",
+    "FOLLOW_US": "Suivez-nous",
+    "NEWSLETTER": "Newsletter",
+    "SUBSCRIBE": "S'abonner"
+  },
+  "FORMS": {
+    "NAME": "Nom",
+    "EMAIL": "Email",
+    "PHONE": "Téléphone",
+    "MESSAGE": "Message",
+    "COMPANY": "Entreprise",
+    "REQUIRED_FIELD": "Ce champ est requis",
+    "INVALID_EMAIL": "Email invalide",
+    "SEND_MESSAGE": "Envoyer le message"
+  },
+  "COMPONENTS": {
+    "SLIDER": {
+      "SLIDE1": {
+        "TITLE": "Gérez simplement, innovez différemment avec",
+        "HIGHLIGHT": "Odoo",
+        "DESCRIPTION": "Réinventez votre activité grâce à des solutions logicielles conçues pour répondre à votre marché."
+      },
+      "SLIDE2": {
+        "TITLE": "Nous sommes partenaire",
+        "HIGHLIGHT": "Odoo",
+        "DESCRIPTION": "Prenez contact avec un de nos experts Odoo dès maintenant pour discuter de vos besoins."
+      },
+      "SLIDE3": {
+        "TITLE": "Support 6J/7 24/24 - Français/Anglais",
+        "HIGHLIGHT": "anticiper demain",
+        "DESCRIPTION": "Représenté dans 3 pays, même service, même standard"
+      }
+    },
+    "TEXT_SLIDE": {
+      "INTERNATIONAL_STANDARDS": "Nos bureaux appliquent les normes internationales",
+      "MOROCCO": "Maroc",
+      "BELGIUM": "Belgique",
+      "CANADA": "Canada"
+    },
+    "FEATURE": {
+      "BADGE": "FAITES-NOUS CONFIANCE",
+      "TITLE": "Une expertise multiculturelle au service de vos projets",
+      "DESCRIPTION": "Nous combinons des compétences diversifiées et une approche globale pour répondre à vos besoins avec professionnalisme et efficacité."
+    },
+    "AVANTAGES": {
+      "SECTION_TITLE": "Découvrez",
+      "HIGHLIGHT": "4 raisons",
+      "SUBTITLE": "de choisir MSL Itech",
+      "PARTNER_SUBTITLE": "Votre Partenaire Certifié Odoo",
+      "ADVANTAGES": {
+        "CERTIFIED_EXPERTISE": {
+          "TITLE": "Expertise Certifiée Odoo",
+          "DESCRIPTION": "En tant que Partenaire Certifié Odoo</strong>, MSL Itech vous assure un déploiement ERP de qualité, avec une maîtrise complète des modules Odoo et des bonnes pratiques."
+        },
+        "CUSTOM_PERSONALIZATION": {
+          "TITLE": "Personnalisation sur Mesure",
+          "DESCRIPTION": "Chaque entreprise est unique ! Nous adaptons Odoo à vos besoins spécifiques avec des fonctionnalités sur mesure et une intégration complèteà vos systèmes existants."
+        },
+        "INTERNATIONAL_PRESENCE": {
+          "TITLE": "Présence Internationale",
+          "DESCRIPTION": "MSL Itech, avec des bureaux en Belgique</strong>, Canadaet Maroc</strong>, applique un standard de qualité reconnue à l'échelle mondiale."
+        },
+        "COMPETITIVE_COSTS": {
+          "TITLE": "Coûts Compétitifs au Maroc",
+          "DESCRIPTION": "Nos services au Maroc offrent un excellent rapport qualité-prix, vous permettant de bénéficier de solutions Odoo performantes à un coût réduit."
+        }
+      }
+    },
+    "BLOG": {
+      "TITLE": "Blog / Astuces",
+      "SUBTITLE": "Astuces & Conseils pour optimiser votre gestion d'entreprise.",
+      "SEE_MORE": "Voir plus",
+      "LEARN_MORE": "Voir plus →",
+      "ARTICLES": {
+        "ARTICLE1": {
+          "TITLE": "Les atouts du pack gestion de projet",
+          "DESCRIPTION": "Découvrez comment ce pack peut transformer votre façon de travailler, avec des exemples concrets d'entreprises qui ont réussi."
+        },
+        "ARTICLE2": {
+          "TITLE": "Avant/Après",
+          "DESCRIPTION": "Visualisez l'impact de nos packs sur la productivité et l'organisation d'une entreprise."
+        },
+        "ARTICLE3": {
+          "TITLE": "Pourquoi choisir MSL-ITECH ?",
+          "DESCRIPTION": "Nous vous accompagnons à chaque étape, de l'analyse de vos besoins à la mise en place des solutions."
+        }
+      }
+    }
+  },
+  "PAGES": {
+    "HOME": {
+      "TITLE": "Solutions Odoo sur mesure",
+      "SUBTITLE": "Optimisez votre entreprise avec nos solutions digitales",
+      "MAIN_TITLE": "Optimisez votre activité avec",
+      "HIGHLIGHT": "MSL-ITECH",
+      "FEATURES": {
+        "INTERNATIONAL_PRESENCE": {
+          "TITLE": "Présence Internationale",
+          "DESCRIPTION": "MSL-Itech, avec des bureaux en Belgique, au Canada et au Maroc, garantit une qualité reconnue à l'échelle mondiale."
+        },
+        "COMPETITIVE_COSTS": {
+          "TITLE": "Coûts Compétitifs au Maroc",
+          "DESCRIPTION": "Bénéficiez de solutions Odoo performantes à des prix avantageux grâce à notre expertise au Maroc."
+        },
+        "CERTIFIED_EXPERTISE": {
+          "TITLE": "Expertise Certifiée",
+          "DESCRIPTION": "Notre équipe certifiée Odoo garantit des implémentations sur mesure, maximisant la valeur ajoutée d'Odoo pour votre entreprise."
+        }
+      },
+      "WHY_ODOO": {
+        "TITLE": "POURQUOI ODOO",
+        "SUBTITLE": "Odoo, le logiciel complet pour la gestion de votre entreprise"
+      },
+      "EXPERTS": {
+        "TITLE": "Nos Experts",
+        "SUBTITLE": "Nous vous mettons en relation avec des experts Odoo",
+        "BUSINESS_ANALYTICS": "Business Analytics Odoo",
+        "DEVELOPER": "Développeur Odoo"
+      }
+    },
+    "PACK_PERFORMANCE": {
+      "BANNER": {
+        "TITLE": "Boostez les Performances de Votre Équipe Commerciale avec Odoo CRM",
+        "SUBTITLE": "Transformez vos prospects en clients et maximisez vos bénéfices."
+      },
+      "PROSPECT_MANAGEMENT": {
+        "TITLE": "Gestion Intelligente des Prospects",
+        "DESCRIPTION1": "Cela commence par une gestion intelligente de vos prospects. Pourtant, beaucoup d'entreprises négligent une étape cruciale : s'assurer que leurs efforts se concentrent sur les prospects ayant un réel potentiel d'achat.",
+        "DESCRIPTION2": "Ne serait-ce pas frustrant de voir vos efforts commerciaux échouer simplement à cause d'un mauvais ciblage ?",
+        "DESCRIPTION3": "Mais savez-vous réellement ce que cela signifie de qualifier un prospect ? Et pourquoi cette étape est-elle essentielle pour réussir dans vos activités commerciales ?"
+      },
+      "CHALLENGE": {
+        "TITLE": "Le Défi : Transformer Vos Efforts en Résultats",
+        "INTRO": "Imaginez ceci :",
+        "PROBLEMS": {
+          "PROBLEM1": "Vous passez des heures à contacter des prospects, mais peu se convertissent en clients.",
+          "PROBLEM2": "Vos ventes stagnent, malgré des efforts importants.",
+          "PROBLEM3": "Vous perdez du temps et de l'énergie sur des prospects peu qualifiés."
+        },
+        "QUOTE": "Et si vous pouviez concentrer vos efforts uniquement sur les prospects ayant un réel potentiel d'achat ?"
+      },
+      "SOLUTION": {
+        "TITLE": "La Solution : Une Gestion Intelligente des Prospects avec Odoo CRM",
+        "INTRO": "Chez MSL-ITECH, nous vous aidons à qualifier vos prospects de manière méthodique et efficace.",
+        "FEATURES": {
+          "AUTOMATED_QUALIFICATION": {
+            "TITLE": "Qualification Automatisée",
+            "DESCRIPTION": "Analysez rapidement les besoins, budgets et décideurs pour cibler les prospects les plus prometteurs."
+          },
+          "PRIORITY_MANAGEMENT": {
+            "TITLE": "Gestion des Priorités",
+            "DESCRIPTION": "Identifiez les opportunités à fort potentiel et maximisez vos chances de conclure."
+          },
+          "STRUCTURED_TRACKING": {
+            "TITLE": "Suivi Structuré",
+            "DESCRIPTION": "Planifiez vos relances et rendez-vous sans rien oublier, pour toujours être au bon moment au bon endroit."
+          }
+        }
+      },
+      "QUALIFICATION": {
+        "TITLE": "Pourquoi Qualifier Vos Prospects ?",
+        "INTRO": "Qualifier un prospect, ce n'est pas du hasard. C'est une démarche stratégique qui repose sur des critères clés :",
+        "CRITERIA": {
+          "NEEDS": "Leurs besoins: Identifiez précisément ce qu'ils recherchent.",
+          "BUDGET": "Leur budget : Assurez-vous qu'ils ont les moyens d'investir.",
+          "DECISION_POWER": "Leur pouvoir de décision: Vérifiez s'ils peuvent signer un contrat."
+        }
+      },
+      "SALES_PROCESS": {
+        "TITLE": "Ventes : Accélérez et Standardisez Vos Processus",
+        "INTRO": "Avec Odoo CRM, simplifiez et optimisez chaque étape de votre processus commercial :",
+        "STEPS": {
+          "DATA_IMPORT": {
+            "TITLE": "Importation de données",
+            "DESCRIPTION": "Ajoutez facilement vos clients et produits existants."
+          },
+          "PROFESSIONAL_QUOTES": {
+            "TITLE": "Devis professionnels",
+            "DESCRIPTION": "Créez des modèles personnalisés en quelques clics."
+          },
+          "ORDER_VALIDATION": {
+            "TITLE": "Validation des commandes",
+            "DESCRIPTION": "Faites signer et payer vos clients en ligne via des plateformes sécurisées."
+          }
+        }
+      },
+      "PACK_FINDER": {
+        "TITLE": "Quel pack Odoo est fait pour vous ?",
+        "SUBTITLE": "(30 secondes max !)",
+        "QUESTIONS": {
+          "QUESTION1": {
+            "TITLE": "Quel est votre niveau d'accompagnement idéal ?",
+            "OPTIONS": {
+              "COUP_POUCE": {
+                "TITLE": "Coup de pouce",
+                "SUBTITLE": "Pour démarrer"
+              },
+              "PRISE_EN_MAIN": {
+                "TITLE": "Prise en main complète",
+                "SUBTITLE": "Accompagnement total"
+              },
+              "OPTIMISATION": {
+                "TITLE": "Optimisation",
+                "SUBTITLE": "Processus existants"
+              },
+              "PERSONNALISE": {
+                "TITLE": "100% personnalisé",
+                "SUBTITLE": "Solution prioritaire"
+              }
+            }
+          },
+          "QUESTION2": {
+            "TITLE": "Quel est votre budget mensuel pour l'accompagnement ?",
+            "OPTIONS": {
+              "MOINS_500": "Moins de 500€",
+              "500_1500": "500€ - 1 500€",
+              "1500_3000": "1 500€ - 3 000€",
+              "PLUS_3000": "3 000€+"
+            }
+          },
+          "QUESTION3": {
+            "TITLE": "Quel est votre besoin principal ?",
+            "OPTIONS": {
+              "GAGNER_TEMPS": "Gagner du temps",
+              "EVOLUTIVITE": "Évolutivité",
+              "EXPERTISE": "Expertise technique",
+              "SUPPORT_PRIORITAIRE": "Support prioritaire"
+            }
+          }
+        },
+        "RESULT": {
+          "TITLE": "Votre pack idéal :",
+          "CTA": "Réserver ma démonstration personnalisée"
+        },
+        "BUTTONS": {
+          "NEXT_QUESTION": "Question suivante",
+          "SHOW_PACK": "Voir mon pack idéal"
+        },
+        "PACKS": {
+          "PREMIUM": {
+            "NAME": "Pack Premium 👑",
+            "DESCRIPTION": "Solution haut de gamme avec accompagnement personnalisé, support prioritaire et optimisation complète de vos processus Odoo."
+          },
+          "ADVANCED": {
+            "NAME": "Pack Avancé ⚡",
+            "DESCRIPTION": "Solution complète pour développer votre activité avec Odoo. Configuration personnalisée, formation avancée et support technique inclus."
+          }
+        }
+      },
+      "CTA": {
+        "TITLE": "Passez à l'Action : Boostez Votre Chiffre d'Affaires avec Odoo",
+        "INTRO": "Ne laissez pas des processus inefficaces freiner votre croissance. Avec notre Pack d'Implémentation Odoo</strong>, vous obtenez :",
+        "BENEFITS": {
+          "CUSTOM_CONFIG": {
+            "TITLE": "Configuration sur mesure",
+            "DESCRIPTION": "Optimisée pour répondre à vos besoins spécifiques."
+          },
+          "PRACTICAL_TRAINING": {
+            "TITLE": "Formation pratique",
+            "DESCRIPTION": "Pour une équipe opérationnelle dès le premier jour."
+          },
+          "DEDICATED_SUPPORT": {
+            "TITLE": "Support dédié",
+            "DESCRIPTION": "Pour une utilisation optimale dès la mise en œuvre."
+          }
+        },
+        "SPECIAL_OFFER": "Offre spéciale : Profitez d'une démonstration gratuite et découvrez comment augmenter vos revenus dès le premier mois grâce à Odoo.",
+        "FOOTER": "Avec Odoo et MSL-ITECH, faites de vos objectifs commerciaux une réalité.",
+        "TAGLINE": "Vos ventes n'attendent plus. 🚀"
+      }
+    },
+    "ABOUT": {
+      "HERO": {
+        "TITLE": "A propos de nous",
+        "SUBTITLE": "Tout savoir sur nous et notre équipe"
+      },
+      "WHO_WE_ARE": {
+        "TITLE": "Qui Sommes-Nous ?",
+        "DESCRIPTION1": "Nous sommes MSL-ITECH, une entreprise certifiée Odoo avec des bureaux en Belgique, au Canada et au Maroc. Spécialistes des solutions ERP, nous accompagnons les PME dans leur transformation digitale en proposant des systèmes robustes, personnalisés et conformes aux standards internationaux.",
+        "DESCRIPTION2": "Notre mission ? Vous aidez à rester agile dans un environnement économique en constante évolution, tout en simplifiant et en optimisant vos processus métiers."
+      },
+      "OUR_TEAM": {
+        "TITLE": "Notre Équipe : Votre Partenaire de Confiance",
+        "DESCRIPTION": "Notre force réside dans notre équipe d'experts certifiés Odoo, passionnés par l'innovation et dédiés à votre succès. Ensemble, nous partageons une vision commune : offrir des solutions simples, puissantes et connectées pour transformer la gestion de votre entreprise.",
+        "ENGAGEMENTS": {
+          "EMPOWER_TEAMS": {
+            "TITLE": "Autonomiser vos équipes",
+            "DESCRIPTION": "En simplifiant vos processus"
+          },
+          "ACCELERATE_GROWTH": {
+            "TITLE": "Accélérer votre croissance",
+            "DESCRIPTION": "Grâce à des outils adaptés à vos besoins"
+          },
+          "CREATE_IMPACT": {
+            "TITLE": "Créer un impact durable",
+            "DESCRIPTION": "À chaque étape de votre transformation digitale"
+          }
+        }
+      },
+      "OUR_COMMITMENT": {
+        "TITLE": "Notre Engagement",
+        "FEATURES": {
+          "CUSTOM_SOLUTIONS": {
+            "TITLE": "Des solutions sur mesure",
+            "DESCRIPTION": "Adaptées à vos besoins spécifiques."
+          },
+          "PERSONALIZED_SUPPORT": {
+            "TITLE": "Un accompagnement personnalisé",
+            "DESCRIPTION": "De l'implémentation à la formation, nous sommes à vos côtés."
+          },
+          "RECOGNIZED_EXPERTISE": {
+            "TITLE": "Une expertise reconnue",
+            "DESCRIPTION": "Certifiés Odoo, nous appliquons les meilleures pratiques internationales."
+          }
+        },
+        "CTA": {
+          "TITLE": "Passez à l'Action",
+          "DESCRIPTION": "Découvrez comment MSL-ITECH peut transformer votre entreprise. Contactez-nous dès aujourd'huipour en savoir plus sur nos solutions et notre accompagnement."
+        }
+      },
+      "DREAM_TEAM": {
+        "TITLE": "Notre Dream Team",
+        "SUBTITLE": "Une équipe passionnée à votre service",
+        "MEMBERS": {
+          "ARNAUD": {
+            "NAME": "Arnaud AHOUO",
+            "ROLE": "Le Ninja du Backend"
+          },
+          "ELOHIM": {
+            "NAME": "Elohim TAGNE",
+            "ROLE": "Le Geek Polyvalent"
+          },
+          "OUMNIA": {
+            "NAME": "Oumnia OUAMIRA",
+            "ROLE": "La Stratège du Marketing"
+          },
+          "HOUSSINE": {
+            "NAME": "El Houssine BOUHMAIDA",
+            "ROLE": "Le Maestro d'Odoo"
+          },
+          "MIKA": {
+            "NAME": "Mika MUNSUGAYI",
+            "ROLE": "Le Stratège des Chiffres"
+          },
+          "ROMEO": {
+            "NAME": "Romeo KAHOU",
+            "ROLE": "Le Chef d'Orchestre des Projets"
+          }
+        }
+      }
+    },
+    "CONTACT": {
+      "TITLE": "Contactez-nous",
+      "DESCRIPTION": "N'hésitez pas à nous contacter pour vos projets"
+    },
+    "SUPPORT": {
+      "HERO": {
+        "BADGE": "Support Technique",
+        "TITLE": "AssisTech MSL-iTECH",
+        "DESCRIPTION": "Notre équipe d'experts est disponible pour résoudre vos problèmes techniques et vous accompagner dans l'utilisation de nos solutions.",
+        "CONTACT_SUPPORT": "Contacter le support",
+        "FAQ": "FAQ"
+      },
+      "STATS": {
+        "RESPONSE_TIME": {
+          "VALUE": "15 min",
+          "LABEL": "Temps de réponse moyen"
+        },
+        "SATISFACTION": {
+          "VALUE": "98%",
+          "LABEL": "Taux de satisfaction client"
+        },
+        "AVAILABILITY": {
+          "VALUE": "9h-18h",
+          "LABEL": "Support technique disponible"
+        }
+      },
+      "MAIN": {
+        "TITLE": "Comment pouvons-nous<br />vous aider ?",
+        "SUBTITLE": "Découvrez nos différentes options de support technique pour résoudre rapidement vos problèmes."
+      },
+      "REMOTE_SUPPORT": {
+        "TITLE": "Assistance à distance",
+        "DESCRIPTION": "Nous utilisons AnyDesk pour vous offrir une assistance technique à distance en toute sécurité et résoudre vos problèmes en temps réel.",
+        "STEPS": {
+          "DOWNLOAD": {
+            "TITLE": "Téléchargez AnyDesk",
+            "DESCRIPTION": "Choisissez votre version ci-dessous"
+          },
+          "LAUNCH": {
+            "TITLE": "Lancez l'application",
+            "DESCRIPTION": "Et notez votre identifiant AnyDesk"
+          },
+          "SHARE": {
+            "TITLE": "Partagez votre ID",
+            "DESCRIPTION": "Avec notre technicien pour démarrer la session"
+          }
+        }
+      },
+      "SUPPORT_TICKET": {
+        "BADGE": "Recommandé",
+        "TITLE": "Ticket de support",
+        "DESCRIPTION": "Pour un suivi optimal de votre demande, contactez-nous en nous envoyant un email détaillé.",
+        "EMAIL": "assistech@msl-itech.odoo.com",
+        "INCLUDE_TEXT": "Incluez dans votre demande :",
+        "REQUIREMENTS": {
+          "DESCRIPTION": {
+            "TITLE": "Description précise",
+            "DETAIL": "Détaillez le problème rencontré et les étapes pour le reproduire"
+          },
+          "CONTACT": {
+            "TITLE": "Vos coordonnées",
+            "DETAIL": "Nom, entreprise et numéro de téléphone"
+          },
+          "SCREENSHOTS": {
+            "TITLE": "Captures d'écran",
+            "DETAIL": "Pour nous aider à visualiser le problème"
+          }
+        },
+        "SEND_EMAIL": "Envoyer un email"
+      },
+      "CONTACT_INFO": {
+        "TITLE": "Nous contacter",
+        "PHONE_LABEL": "Téléphone",
+        "EMAIL_LABEL": "Email",
+        "ADDRESS_LABEL": "Adresse",
+        "ADDRESS_VALUE": "951 Q.I. AL MASSAR N° 2, ROUTE DE SAFI, MAROC",
+        "OPENING_HOURS": "Horaires d'ouverture",
+        "WEEKDAYS": "Lundi - Vendredi : 9h00 - 18h00",
+        "WEEKEND": "Samedi & Dimanche : Fermé",
+        "CALL_NOW": "Appeler maintenant"
+      },
+      "PROCESS": {
+        "TITLE": "Notre processus de gestion des tickets",
+        "SUBTITLE": "Découvrez comment nous traitons vos demandes d'assistance",
+        "STEPS": {
+          "CONTACT": {
+            "TITLE": "Contact",
+            "DESCRIPTION": "Vous nous contactez via notre adresse mail assistech@msl-itech.odoo.com"
+          },
+          "CONFIRMATION": {
+            "TITLE": "Confirmation",
+            "DESCRIPTION": "Vous recevez une confirmation avec un numéro de ticket sous 15 minutes"
+          },
+          "DIAGNOSTIC": {
+            "TITLE": "Diagnostic",
+            "DESCRIPTION": "Notre équipe examine votre problème en détail et identifie la solution la plus adaptée."
+          },
+          "RESOLUTION": {
+            "TITLE": "Résolution",
+            "DESCRIPTION": "Nous résolvons votre problème à distance ou vous accompagnons pas à pas pour une solution complète."
+          },
+          "VALIDATION": {
+            "TITLE": "Validation",
+            "DESCRIPTION": "Nous confirmons avec vous que le problème a été entièrement résolu"
+          }
+        }
+      },
+      "FAQ": {
+        "TITLE": "FAQ",
+        "SUBTITLE": "Trouvez rapidement des réponses aux questions les plus courantes",
+        "QUESTIONS": {
+          "RESOLUTION_TIME": {
+            "QUESTION": "Quels sont les délais de résolution habituels ?",
+            "ANSWER": "Notre équipe s'engage à répondre à votre demande sous 15 minutes pendant nos heures d'ouverture. Bien que le temps de résolution dépende de la complexité du problème, 80 % des cas sont résolus en moins de 4 heures, garantissant une intervention rapide et efficace."
+          },
+          "REMOTE_ASSISTANCE": {
+            "QUESTION": "Comment fonctionne l'assistance à distance ?",
+            "ANSWER": "L'assistance à distance utilise AnyDesk, un logiciel sécurisé qui permet à nos techniciens de se connecter à votre ordinateur avec votre permission. Vous pouvez observer toutes les actions effectuées et reprendre le contrôle à tout moment."
+          },
+          "SUPPORT_INCLUDED": {
+            "QUESTION": "Le support technique est-il inclus dans mon abonnement ?",
+            "ANSWER": "Oui, tous nos abonnements incluent un accès au support technique par email et téléphone pendant les heures d'ouverture. Les formules Premium bénéficient d'un support prioritaire et d'un accès 24/7 pour les urgences."
+          },
+          "TRACK_REQUEST": {
+            "QUESTION": "Comment puis-je suivre l'avancement de ma demande ?",
+            "ANSWER": "Lorsque vous ouvrez un ticket, vous recevez un email de confirmation avec un numéro de référence. Vous pouvez utiliser ce numéro pour suivre l'avancement de votre demande en contactant notre équipe. Nous vous tenons également informé par email à chaque étape importante."
+          }
+        }
+      },
+      "CTA": {
+        "TITLE": "Besoin d'aide rapidement ?",
+        "DESCRIPTION": "Notre équipe d'experts est prête à résoudre vos problèmes techniques et à vous accompagner dans l'utilisation de nos solutions.",
+        "CONTACT_SUPPORT": "Contacter le support",
+        "CALL_NOW": "Appeler maintenant"
+      }
+    },
+    "TARIF_ODOO": {
+      "BANNER": {
+        "TITLE": "MSL-itech",
+        "SUBTITLE": "Des tarifs Odoo qui défient la concurrence, sans compromis sur la qualité !"
+      },
+      "WHY_CHOOSE": {
+        "TITLE": "Pourquoi choisir MSL Itech ?",
+        "DESCRIPTION": "Vous cherchez à intégrer Odoo tout en maîtrisant vos coûts ? Chez MSL Itech, nous sommes convaincus que la performance ne doit pas rimer avec surcoût.",
+        "HIGHLIGHT": "C'est pourquoi nous avons conçu des packs horaires compétitifspour vous offrir une expertise Odoo de haut niveau à des tarifs imbattables.",
+        "BUTTON": "Découvrir nos packs"
+      },
+      "HOW_BENEFIT": {
+        "TITLE": "Comment en bénéficier ?",
+        "DESCRIPTION": "Notre offre est ouverte à tout nouveau client ou à toute souscription d'un abonnement annuel. Profitez d'une réduction avantageuse de 15 % à 35 %, vous permettant d'optimiser et de répartir vos dépenses sur la durée, tout en accédant à l'intégralité des normes et modules Odoo.",
+        "FEATURES": {
+          "COMPETITIVE_PACKS": "Packs horaires compétitifs",
+          "HIGH_EXPERTISE": "Expertise Odoo de haut niveau",
+          "DISCOUNTS": "Réductions avantageuses jusqu'à 35 %",
+          "FULL_ACCESS": "Accès à toutes les normes et modules Odoo"
+        }
+      },
+      "PACKAGES": {
+        "TITLE": "Découvrez nos différents packages",
+        "SUBTITLE": "Chez MSL-Itech, nous simplifions la gestion de votre entreprise grâce à des solutions sur-mesure, un accompagnement expert et des prix pensés pour vous.",
+        "EXPERT_DEDICATED": "Expert dédié",
+        "PACKAGES_TYPES": {
+          "ESSENTIAL": "Essentiel",
+          "STANDARD": "Standard",
+          "ADVANCED": "Avancé",
+          "PREMIUM": "Premium",
+          "VIP": "VIP"
+        },
+        "TOOLTIPS": {
+          "ESSENTIAL": "La solution de base pour démarrer avec Odoo, offrant les fonctionnalités essentielles pour une gestion efficace.",
+          "STANDARD": "Une offre complète pour gérer vos processus clés avec plus de flexibilité et d'optimisation.",
+          "ADVANCED": "Des fonctionnalités avancées pour des processus plus performants et un meilleur contrôle opérationnel.",
+          "PREMIUM": "Une solution premium pour une gestion optimisée, avec des outils puissants adaptés à vos besoins spécifiques.",
+          "VIP": "L'option haut de gamme, offrant une personnalisation complète et un accompagnement dédié pour une gestion d'entreprise optimale."
+        },
+        "RECOMMENDED_FOR": {
+          "TITLE": "Recommandé pour :",
+          "ESSENTIAL": "Support fondamental",
+          "STANDARD": "Découvrir Odoo",
+          "ADVANCED": "Booster votre activité",
+          "PREMIUM": "Solutions sur mesure",
+          "VIP": "Performance Optimale"
+        },
+        "FEATURES": {
+          "PROJECT_MANAGEMENT": "Gestion de Projet",
+          "MULTICHANNEL_SUPPORT": "Assistance multicanal(E-mail & Téléphone)",
+          "TOOL_TRAINING": "Formation à l'outil",
+          "CONFIGURATION": "Paramétrage",
+          "DATA_IMPORT": "Assistance à l'importation de données *",
+          "DATA_OPTIMIZATION": "Optimisation et structuration des données",
+          "APP_CUSTOMIZATION": "Personnalisation des Applications **",
+          "AUTOMATION": "Automatisation",
+          "CUSTOM_DEVELOPMENT": "Développement sur-mesure",
+          "MEMBERSHIP_OFFER": "Offre d'adhésion",
+          "OLD_CLIENT_PRICE": "Prix ancien client"
+        },
+        "NOTES": {
+          "DATA_CLEANING": "* Nettoyage de données: le nettoyage est fait par vous pour ce cas",
+          "CUSTOMIZATION": "** Personnalisation : Sujette à des frais supplémentaires selon la demande."
+        }
+      },
+      "PAYROLL": {
+        "TITLE": "Payroll Belge et Canadien",
+        "SUBTITLE": "Nous vous offrons des solutions de paie en Belgique et au Canada.",
+        "BELGIUM": "MSL Conseils - Belgique",
+        "CANADA": "MSL Canada - Canada",
+        "CONTACT_INFO": "Prise de contact",
+        "FEATURES": {
+          "TEAMS": "Teams",
+          "GOOGLE_MEET": "Google Meet",
+          "TRAVEL_BILLED": "Déplacement facturé"
+        },
+        "CHOOSE_PLAN": "Choisir ce plan"
+      }
+    },
+    "TARIFS": {
+      "BANNER": {
+        "TITLE": "Nos Offres Site internet",
+        "SUBTITLE": "Des tarifs site internet qui défient la concurrence, sans compromis sur la qualité !"
+      },
+      "FOUNDATION": {
+        "TITLE": "Créer un site web, c'est poser les fondations de votre croissance",
+        "DESCRIPTION1": "Chez MSL-iTECH, nous ne vendons pas simplement des sites web. Nous vous aidons à construire une présence en ligne stratégique.",
+        "DESCRIPTION2": "Un site, c'est bien plus qu'un outil technique : c'est un levier pour convaincre, attirer et fidéliser."
+      },
+      "COMPARISON": {
+        "TITLE": "Comparaison des technologies et tarifs",
+        "SUBTITLE": "Comparez visuellement WordPress et JavaScript moderne selon votre budget",
+        "CURRENCY_DETECTED": "Devise détectée automatiquement :",
+        "SOLUTIONS": {
+          "BASIC": {
+            "TITLE": "Solution Basique",
+            "SUBTITLE": "Idéale pour débuter votre présence en ligne",
+            "FEATURES": {
+              "PROFESSIONAL_SHOWCASE": "Site vitrine professionnel",
+              "RESPONSIVE_DESIGN": "Design responsive",
+              "BASIC_SEO": "Optimisation SEO de base",
+              "CONTACT_FORM": "Formulaire de contact"
+            }
+          },
+          "PROFESSIONAL": {
+            "TITLE": "Solution Professionnelle",
+            "SUBTITLE": "Le meilleur rapport qualité/prix pour votre croissance",
+            "FEATURES": {
+              "ALL_BASIC": "Tout de la solution basique",
+              "CRM_INTEGRATION": "Intégration CRM",
+              "ADVANCED_ANALYTICS": "Analytics avancées",
+              "CONVERSION_OPTIMIZATION": "Optimisation conversion",
+              "PRIORITY_SUPPORT": "Support prioritaire"
+            }
+          },
+          "BUSINESS": {
+            "TITLE": "Solution Business",
+            "SUBTITLE": "Pour les entreprises ambitieuses",
+            "FEATURES": {
+              "ALL_PRO": "Tout de la solution pro",
+              "INTEGRATED_ECOMMERCE": "E-commerce intégré",
+              "MARKETING_AUTOMATION": "Automatisation marketing",
+              "MAX_PERFORMANCE": "Performance maximale",
+              "DEDICATED_SUPPORT": "Support dédié 24/7"
+            }
+          }
+        },
+        "PRICE_DIFFERENCES": {
+          "BASE_ECONOMY": "Économie de base",
+          "BALANCED_SOLUTION": "Solution équilibrée",
+          "ADVANCED_WORDPRESS": "WordPress avancé"
+        },
+        "INFO_BOX": {
+          "TITLE": "Comment choisir ?",
+          "WORDPRESS": "WordPress: Parfait si vous recherchez une solution rapide, économique et facilement gérable avec un excellent rapport qualité/prix.",
+          "JAVASCRIPT": "JavaScript moderne: Idéal pour des projets sur-mesure nécessitant des performances maximales et des fonctionnalités uniques."
+        }
+      },
+      "STATS": {
+        "TITLE": "Résultats concrets selon votre solution",
+        "LEADS": "leads mensuels potentiels avec une solution optimisée",
+        "CONVERSION": "taux de conversion maximum atteignable",
+        "RANKING": "positionnement Google possible",
+        "MACHINE": "machine à clients qui travaille pour vous"
+      },
+      "PARTNER": {
+        "TITLE": "Notre rôle : être votre partenaire de croissance",
+        "SUBTITLE": "Votre site n'est pas une fin en soi. C'est le début d'une stratégie durable.",
+        "FEATURES": {
+          "AUTONOMY": {
+            "TITLE": "Autonomie",
+            "DESCRIPTION": "Vous rendre indépendant dans l'usage et la gestion de votre site web."
+          },
+          "CONVERSION": {
+            "TITLE": "Conversion",
+            "DESCRIPTION": "Logique de conversion mesurable et optimisée pour maximiser vos résultats."
+          },
+          "QUALIFIED_TRAFFIC": {
+            "TITLE": "Trafic qualifié",
+            "DESCRIPTION": "Stratégies pour attirer des visiteurs intéressés par vos services."
+          },
+          "CLEAR_MESSAGE": {
+            "TITLE": "Message clair",
+            "DESCRIPTION": "Clarifier votre offre et votre proposition de valeur unique."
+          }
+        }
+      },
+      "RECOMMENDATION": {
+        "TITLE": "Notre recommandation : ce qui convient à votre projet ",
+        "JAVASCRIPT": {
+          "TITLE": "Choisissez JavaScript moderne si :",
+          "FEATURE1": "Vous voulez un projet hautement personnalisé qui répond parfaitement à vos besoins professionnels spécifiques.",
+          "FEATURE2": "Vous avez un budget conséquent et êtes prêt à investir pour une solution performante et évolutive."
+        },
+        "WORDPRESS": {
+          "TITLE": "Choisissez WordPress si :",
+          "FEATURE1": "Vous avez besoin d'un site rapidement opérationnel pour promouvoir vos services ou produits.",
+          "FEATURE2": "Vous recherchez une solution économique et facile à gérer."
+        }
+      },
+      "CTA": {
+        "TITLE": "La vraie question n'est pas \"Combien coûte un site web ?\"",
+        "SUBTITLE": "La vraie question : \"Combien d'opportunités perdez-vous aujourd'hui sans un site qui soutient vos objectifs de croissance ?\"",
+        "BUTTON": "Commencer mon projet dès maintenant"
+      },
+      "TECH_COMPARISON": {
+        "TITLE": "WordPress vs JavaScript moderne : Les différences clés",
+        "SUBTITLE": "Comprendre les technologies pour faire le bon choix",
+        "CRITERIA": {
+          "NEEDS": "Vos besoins",
+          "COST": "Coût",
+          "CREATION_TIME": "Temps de création",
+          "CUSTOMIZATION": "Personnalisation",
+          "PERFORMANCE": "Performance",
+          "MAINTENANCE": "Maintenance",
+          "SCALABILITY": "Évolutivité",
+          "SECURITY": "Sécurité"
+        },
+        "JAVASCRIPT_VALUES": {
+          "NEEDS": "Solution unique et complexe",
+          "COST": "Plus élevé",
+          "CREATION_TIME": "Long (2-6 mois)",
+          "CUSTOMIZATION": "Totale et illimitée",
+          "PERFORMANCE": "Excellente et optimisée",
+          "MAINTENANCE": "Requiert un développeur",
+          "SCALABILITY": "Très élevée",
+          "SECURITY": "Très sécurisé"
+        },
+        "WORDPRESS_VALUES": {
+          "NEEDS": "Site rapide, simple et fonctionnel",
+          "COST": "Modéré",
+          "CREATION_TIME": "Rapide (2-6 semaines)",
+          "CUSTOMIZATION": "Facile mais limitée",
+          "PERFORMANCE": "Variable selon plugins",
+          "MAINTENANCE": "Facile à gérer soi-même",
+          "SCALABILITY": "Modérée",
+          "SECURITY": "Dépend des mises à jour"
+        },
+        "SUMMARY": {
+          "WORDPRESS": {
+            "TITLE": "WordPress - Le choix pratique",
+            "FEATURES": {
+              "QUICK_DEPLOY": "Rapide à déployer",
+              "CONTROLLED_BUDGET": "Budget maîtrisé",
+              "EASY_MANAGE": "Facile à gérer",
+              "PERFECT_SME": "Parfait pour PME"
+            }
+          },
+          "JAVASCRIPT": {
+            "TITLE": "JavaScript - Le choix premium",
+            "FEATURES": {
+              "CUSTOM_SOLUTIONS": "Solutions sur-mesure",
+              "MAX_PERFORMANCE": "Performances maximales",
+              "UNLIMITED_SCALABILITY": "Évolutivité illimitée",
+              "IDEAL_SCALEUPS": "Idéal pour scale-ups"
+            }
+          }
+        }
+      }
+    },
+    "PACK_ADMINISTRATIF": {
+      "BANNER": {
+        "TITLE": "Relevez Vos Défis dans la Communication et le Reporting",
+        "DESCRIPTION": "Votre entreprise a besoin d'envoyer des e-mails impactants et professionnels tout en générant des rapports personnalisés ? Gérer ces tâches manuellement, sans outils adaptés, peut devenir un véritable casse-tête."
+      },
+      "PROSPECT_MANAGEMENT": {
+        "TITLE": "Gestion Intelligente des Prospects",
+        "DESCRIPTION": "Vous devez envoyer des e-mails à des centaines de clients et leur joindre des rapports spécifiques à chacun. Vous perdez des heures à rédiger des messages, structurer vos données, et tester chaque envoi pour éviter les erreurs.",
+        "RESULT": "Résultat ?",
+        "CONSEQUENCE": "Une communication longue, complexe et peu efficace, qui ne reflète pas votre professionnalisme."
+      },
+      "WHY_COMPLETE_PACK": {
+        "TITLE": "Pourquoi un Pack Publipostage Complet Est Indispensable ?",
+        "DESCRIPTION": "Automatisation et professionnalisme à portée de main. Avec une solution adaptée, vous pouvez :",
+        "FEATURES": {
+          "HTML_TEMPLATES": "Créer des modèles d'e-mails en HTML sur mesure, pour des campagnes engageantes.",
+          "DYNAMIC_REPORTS": "Générer des rapports PDF dynamiques et personnalisés.",
+          "AUTO_ATTACH": "Attacher automatiquement ces rapports aux e-mails, sans effort supplémentaire.",
+          "PRECISE_TARGETING": "Cibler précisément vos clients, grâce à une segmentation avancée."
+        }
+      },
+      "COMPLETE_SOLUTION": {
+        "BADGE": "Notre Pack Publipostage",
+        "TITLE": "Une Solution Complète pour Votre Communication",
+        "DESCRIPTION": "Qualifier vos prospects n'est pas une question de chance ou de feeling : c'est une démarche méthodique qui repose sur des critères précis.",
+        "QUOTE": "Ces questions vous permettent de distinguer les \"curieux\" des prospects réellement qualifiés, et c'est cette différence qui transforme vos efforts en contrats signés.",
+        "CARDS": {
+          "HTML_EMAILS": {
+            "TITLE": "Modèles d'E-mails en HTML",
+            "DESCRIPTION": "Conception de modèles d'e-mails dynamiques pour des campagnes sur mesure.",
+            "TAG": "Premium"
+          },
+          "PDF_REPORTS": {
+            "TITLE": "Rapports PDF Dynamiques",
+            "DESCRIPTION": "Création de modèles de rapports PDF liés à vos données CRM.",
+            "TAG": "Automatisé"
+          },
+          "AUTOMATION": {
+            "TITLE": "Automatisation Complète",
+            "DESCRIPTION": "Intégration des rapports PDF comme pièces jointes aux e-mails."
+          },
+          "MANAGEMENT": {
+            "TITLE": "Gestion Optimale",
+            "DESCRIPTION": "Segmentation avancée de vos clients grâce à des filtres intelligents."
+          }
+        }
+      },
+      "RESULTS": {
+        "TITLE": "Les Résultats pour Votre Entreprise",
+        "SUBTITLE": "Modernisez vos processus dès le premier jour et constatez des résultats immédiats.",
+        "CARDS": {
+          "TIME_SAVING": {
+            "TITLE": "Gagnez du temps",
+            "DESCRIPTION": "Économisez jusqu'à <span class=\"highlight\">70%</span> de votre temps en automatisant vos envois et la génération de rapports.",
+            "BENEFITS": {
+              "AUTOMATION": "Automatisation des tâches répétitives",
+              "INSTANT_REPORTS": "Génération instantanée des rapports",
+              "OPTIMIZED_SENDING": "Envois en masse optimisés"
+            }
+          },
+          "ZERO_ERRORS": {
+            "TITLE": "0% d'erreurs manuelles",
+            "DESCRIPTION": "Éliminez les erreurs grâce à des processus <span class=\"highlight\">100% fiables</span> et standardisés.",
+            "BENEFITS": {
+              "STANDARDIZED": "Modèles standardisés",
+              "AUTO_VALIDATION": "Validation automatique",
+              "QUALITY_CONTROL": "Contrôle qualité intégré"
+            }
+          },
+          "IMPACTFUL_COMMUNICATION": {
+            "TITLE": "Communication percutante",
+            "DESCRIPTION": "Augmentez votre impact avec des communications <span class=\"highlight\">personnalisées</span> et professionnelles.",
+            "BENEFITS": {
+              "CUSTOM_EMAILS": "E-mails sur mesure",
+              "PERSONALIZED_REPORTS": "Rapports personnalisés",
+              "PERFORMANCE_TRACKING": "Suivi des performances"
+            }
+          }
+        }
+      },
+      "COMPARISON": {
+        "TITLE": "Comparaison des Packs",
+        "FEATURES": {
+          "FUNCTIONALITY": "Fonctionnalités",
+          "ANALYSIS_PLANNING": "Analyse des besoins et planification",
+          "CRM_EMAIL_CONFIG": "Configuration des modules CRM et e-mail",
+          "TAGS_FILTERS": "Activation des tags et filtres",
+          "HTML_EMAIL_TEMPLATES": "Création de modèles d'e-mails HTML",
+          "PDF_REPORTS_CREATION": "Création de rapports PDF dynamiques",
+          "PDF_EMAIL_ATTACHMENT": "Rapports PDF attachés aux e-mails",
+          "TARGETING_SEGMENTATION": "Ciblage et segmentation avancée",
+          "MASS_EMAIL_SENDING": "Envoi des e-mails en masse",
+          "DEMO_VALIDATION": "Démonstration et validation client",
+          "USER_TRAINING": "Formation des utilisateurs",
+          "SUPPORT": "Support et accompagnement",
+          "IMPROVEMENTS": "Améliorations et optimisations",
+          "SERVICE_LEVEL": "Niveau de service"
+        },
+        "PACKS": {
+          "ESSENTIAL": {
+            "TITLE": "Pack Essentiel",
+            "SUBTITLE": "Démarrage rapide",
+            "VALUES": {
+              "ANALYSIS": "Standard",
+              "CRM_CONFIG": "Configuration standard",
+              "FILTERS": "Filtres essentiels",
+              "HTML_EMAILS": "Non inclus",
+              "PDF_REPORTS": "Non inclus",
+              "PDF_ATTACHMENT": "Non inclus",
+              "SEGMENTATION": "Segmentation basique",
+              "MASS_SENDING": "Jusqu'à 1000 contacts",
+              "DEMO": "✓",
+              "TRAINING": "Formation initiale",
+              "SUPPORT": "Support standard",
+              "IMPROVEMENTS": "Basiques",
+              "SERVICE": "Standard"
+            },
+            "BUTTON": "Démarrer"
+          },
+          "BUSINESS": {
+            "TITLE": "Pack Business",
+            "SUBTITLE": "Solution complète",
+            "VALUES": {
+              "ANALYSIS": "Approfondie",
+              "CRM_CONFIG": "Configuration avancée",
+              "FILTERS": "Filtres avancés",
+              "HTML_EMAILS": "3 templates personnalisés",
+              "PDF_REPORTS": "3 modèles personnalisés",
+              "PDF_ATTACHMENT": "Configuration avancée",
+              "SEGMENTATION": "Segmentation avancée",
+              "MASS_SENDING": "Jusqu'à 5000 contacts",
+              "DEMO": "Premium",
+              "TRAINING": "Formation complète",
+              "SUPPORT": "Support prioritaire",
+              "IMPROVEMENTS": "Avancées",
+              "SERVICE": "Premium"
+            },
+            "BUTTON": "Choisir"
+          },
+          "ENTERPRISE": {
+            "TITLE": "Pack Enterprise",
+            "SUBTITLE": "Personnalisation totale",
+            "VALUES": {
+              "ANALYSIS": "Sur mesure",
+              "CRM_CONFIG": "Configuration premium",
+              "FILTERS": "Filtres illimités",
+              "HTML_EMAILS": "Templates illimités",
+              "PDF_REPORTS": "Modèles illimités",
+              "PDF_ATTACHMENT": "Configuration premium",
+              "SEGMENTATION": "Segmentation complète (nettoyage et migration)",
+              "MASS_SENDING": "Contacts illimités",
+              "DEMO": "VIP",
+              "TRAINING": "Formation sur mesure",
+              "SUPPORT": "Support dédié 24/7",
+              "IMPROVEMENTS": "Sur mesure",
+              "SERVICE": "Enterprise"
+            },
+            "BUTTON": "Contacter"
+          }
+        }
+      },
+      "CTA": {
+        "TITLE": "Passez à l'Action",
+        "DESCRIPTION": "Ne laissez plus les défis de la communication et du reporting freiner votre croissance. Avec notre Pack Publipostage Complet, transformez vos contraintes en opportunités.",
+        "BUTTON": "Démarrer votre démonstration gratuite",
+        "GUARANTEE": "Sans engagement - Réponse sous 24h"
+      }
+    },
+    "CERTIFICATION": {
+      "TITLE": "Certification",
+      "SUBTITLE": "Nous sommes certifiés <span>Odoo</span>",
+      "DESCRIPTION": "Notre équipe est certifiée Odoo, garantissant que tous nos travaux respectent ses standards internationaux pour une implémentation de qualité."
+    },
+    "PACKAGE_METIER_ACCUEIL": {
+      "POPULAR_BADGE": "Populaire",
+      "VIEW_DETAILS": "Voir plus en détails",
+      "FEATURES_INCLUDED": "Fonctionnalités incluses :",
+      "PACKAGES": {
+        "ADMINISTRATIF": {
+          "TITLE": "Package Administratif",
+          "SUBTITLE": "Centralisez et automatisez vos tâches administratives pour gagner en productivité",
+          "FEATURES": {
+            "DOCUMENT_MANAGEMENT": "Gestion des documents",
+            "WORKFLOW_AUTOMATION": "Automatisation des workflows",
+            "LEAVE_MANAGEMENT": "Gestion des congés et absences",
+            "EXPENSE_MANAGEMENT": "Gestion des notes de frais",
+            "PAYROLL_MANAGEMENT": "Gestion de la paie",
+            "WEBHOOK_SECRET": "Webhook Secret"
+          }
+        },
+        "COMMERCIAL": {
+          "TITLE": "Package Commercial",
+          "SUBTITLE": "Améliorez votre gestion commerciale avec les outils performants pour optimiser vos ventes, vos clients et vos campagnes.",
+          "FEATURES": {
+            "OPPORTUNITY_TRACKING": "Suivi efficace des opportunités et prospects.",
+            "SALES_AUTOMATION": "Automatisations des ventes",
+            "CLIENT_FOLLOW_UP": "Optimisation des relances clients",
+            "ADVANCED_REPORTING": "Reporting avancé"
+          }
+        },
+        "HORECA": {
+          "TITLE": "Package Horeca",
+          "SUBTITLE": "Profitez d'une solution complète pour vos besoins en hébergement, gestion de la sécurité et maintenance des plateformes.",
+          "FEATURES": {
+            "ADVANCED_SEGMENTATION": "Segmentation avancée pour vos utilisateurs.",
+            "PERFORMANCE_OPTIMIZATION": "Optimisation des performances",
+            "ACTIVITY_HISTORY": "Historique détaillé des activités.",
+            "ROLE_MANAGEMENT": "Gestion des rôles et permissions.",
+            "TRAFFIC_ALLOWANCE": "500 GB Traffic/month"
+          }
+        }
+      }
+    },
+    "CONTACT": {
+      "BANNER": {
+        "TITLE": "Contactez-Nous"
+      },
+      "RESERVATION_BUTTONS": {
+        "DEMO": "Réserver une démo",
+        "APPOINTMENT": "Prendre rendez-vous"
+      },
+      "INFO": {
+        "TITLE": "MSL-iTECH"
+      },
+      "FORM": {
+        "TITLE": "Contactez-nous",
+        "SUBTITLE": "Pour tout ce qui concerne notre entreprise ou nos services. Nous ferons de notre mieux pour vous répondre dans les plus brefs délais.",
+        "FIELDS": {
+          "NAME": "Votre nom *",
+          "PHONE": "Numéro de téléphone *",
+          "EMAIL": "Votre e-mail *",
+          "COMPANY": "Votre société *",
+          "SUBJECT": "Sujet",
+          "MESSAGE": "Votre question"
+        },
+        "VALIDATION": {
+          "REQUIRED": "Ce champ est requis",
+          "EMAIL_INVALID": "Veuillez entrer une adresse email valide"
+        },
+        "SUBMIT": {
+          "BUTTON": "Soumettre",
+          "LOADING": "Envoi en cours..."
+        }
+      }
+    },
+    "RESERVATION_HORECA": {
+      "BANNER": {
+        "TITLE": "Réservation de démonstration"
+      },
+      "SECTION": {
+        "BADGE": "Réservation",
+        "TITLE": "Réservez votre démonstration",
+        "SUBTITLE": "Découvrez comment nos solutions peuvent transformer votre établissement"
+      },
+      "FORM": {
+        "FIELDS": {
+          "ESTABLISHMENT_NAME": "Nom de l'établissement *",
+          "CONTACT_NAME": "Nom du responsable *",
+          "EMAIL": "Email *",
+          "PHONE": "Téléphone *",
+          "DEMO_FORMAT": "Format de la démo *",
+          "COUNTRY": "Pays *",
+          "CITY": "Ville *",
+          "ADDRESS": "Adresse complète *"
+        },
+        "DEMO_OPTIONS": {
+          "ONLINE": {
+            "TITLE": "Démo en ligne",
+            "DESCRIPTION": "30 minutes depuis votre bureau"
+          },
+          "ONSITE": {
+            "TITLE": "Démo sur place",
+            "DESCRIPTION": "Dans votre établissement"
+          }
+        },
+        "VALIDATION": {
+          "REQUIRED": "Ce champ est requis",
+          "EMAIL_INVALID": "Veuillez entrer une adresse email valide"
+        },
+        "SUBMIT": {
+          "BUTTON": "Envoyer sa demande de réservation",
+          "LOADING": "Envoi en cours..."
+        }
+      }
+    },
+    "DEMO_RESERVATION": {
+      "BANNER": {
+        "TITLE": "Obtenez votre audit gratuit",
+        "SUBTITLE": "Répondez à quelques questions simples pour une démonstration personnalisée"
+      },
+      "INFO": {
+        "TITLE": "MSL-iTECH",
+        "HIGHLIGHT": "Nous créons une démonstration sur mesure selon vos besoins réels"
+      },
+      "PROGRESS": {
+        "TITLE": "Progression",
+        "STEP_OF": "Étape {{current}} sur {{total}}"
+      },
+      "STEPS": {
+        "TITLES": {
+          "COORDINATES": "Vos coordonnées",
+          "OBJECTIVES": "Vos objectifs",
+          "PROCESSES": "Processus chronophages",
+          "TOOLS": "Outils actuels",
+          "CHALLENGES": "Défis & finalisation"
+        }
+      },
+      "STEP1": {
+        "INTRO": "Commençons par faire connaissance ! Partagez-nous vos coordonnées pour que nous puissions vous recontacter.",
+        "FIELDS": {
+          "NAME": "Votre nom *",
+          "COMPANY": "Votre société *",
+          "EMAIL": "Votre e-mail *",
+          "PHONE": "Numéro de téléphone *"
+        }
+      },
+      "STEP2": {
+        "TITLE": "🎯 Quel est votre objectif principal avec Odoo ?",
+        "SUBTITLE": "Sélectionnez une ou plusieurs options qui correspondent à vos besoins",
+        "OPTIONS": {
+          "AUTOMATE": {
+            "TITLE": "Automatiser les processus",
+            "SUBTITLE": "factures, stocks, ventes"
+          },
+          "CENTRALIZE": {
+            "TITLE": "Centraliser les données",
+            "SUBTITLE": "CRM + Comptabilité + Projets"
+          },
+          "COLLABORATION": {
+            "TITLE": "Améliorer la collaboration",
+            "SUBTITLE": "entre équipes"
+          },
+          "REPLACE": {
+            "TITLE": "Remplacer un outil inefficace",
+            "SUBTITLE": "précisez ci-dessous",
+            "PLACEHOLDER": "Quel outil souhaitez-vous remplacer ?"
+          },
+          "OTHER": {
+            "TITLE": "Autre",
+            "SUBTITLE": "précisez ci-dessous",
+            "PLACEHOLDER": "Précisez votre objectif"
+          }
+        }
+      },
+      "STEP3": {
+        "TITLE": "🔍 Quels processus vous prennent le plus de temps aujourd'hui ?",
+        "SUBTITLE": "Identifiez les tâches qui vous font perdre du temps au quotidien",
+        "OPTIONS": {
+          "LEADS": {
+            "TITLE": "Gestion des leads/devis",
+            "SUBTITLE": "ex : perte d'opportunités"
+          },
+          "ORDERS": {
+            "TITLE": "Suivi des commandes/clients",
+            "SUBTITLE": "ex : relances manuelles"
+          },
+          "REPORTING": {
+            "TITLE": "Reporting financier",
+            "SUBTITLE": "ou d'activité"
+          },
+          "STOCK": {
+            "TITLE": "Gestion des stocks",
+            "SUBTITLE": "ex : ruptures, surstocks"
+          },
+          "OTHER": {
+            "TITLE": "Autre",
+            "SUBTITLE": "précisez ci-dessous",
+            "PLACEHOLDER": "Quel autre processus vous pose problème ?"
+          }
+        }
+      },
+      "STEP4": {
+        "TITLE": "🛠️ Quels outils utilisez-vous actuellement ?",
+        "SUBTITLE": "Dites-nous quels logiciels vous utilisez pour mieux comprendre votre environnement",
+        "TOOLS": {
+          "EXCEL": "Excel",
+          "ZOHO": "Zoho CRM",
+          "SAGE": "Sage Comptabilité",
+          "OTHER": {
+            "TITLE": "Autre",
+            "PLACEHOLDER": "Quels autres outils utilisez-vous ?"
+          }
+        }
+      },
+      "STEP5": {
+        "TITLE": "🚧 Pour finir, quel est votre plus gros défi opérationnel ?",
+        "SUBTITLE": "Identifiez votre problème principal pour que nous puissions vous aider efficacement",
+        "VALIDATION": {
+          "SELECT_CHALLENGE": "Veuillez sélectionner un défi"
+        },
+        "OTHER_PLACEHOLDER": "Précisez votre principal défi",
+        "SELECT_CHALLENGE": "Sélectionnez votre principal défi...",
+        "CHALLENGES": {
+          "DUPLICATES": "Doublons de saisie",
+          "VISIBILITY": "Manque de visibilité en temps réel",
+          "COSTS": "Coûts cachés des outils multiples",
+          "MANUAL": "Processus trop manuels",
+          "OTHER": "Autre..."
+        },
+        "BONUS": {
+          "TITLE": "✨ Question bonus (optionnelle)",
+          "QUESTION": "Si Odoo pouvait résoudre UN seul problème pour vous, ce serait...",
+          "PLACEHOLDER": "Décrivez en quelques mots le problème principal que vous aimeriez résoudre..."
+        }
+      },
+      "VALIDATION": {
+        "REQUIRED": "Ce champ est requis",
+        "EMAIL_INVALID": "Veuillez entrer une adresse email valide",
+        "FILL_REQUIRED": "Veuillez remplir tous les champs requis",
+        "SELECT_OBJECTIVE": "Veuillez sélectionner au moins un objectif",
+        "FILL_REPLACEMENT": "Veuillez préciser l'outil à remplacer",
+        "FILL_OTHER_OBJECTIVE": "Veuillez préciser votre objectif",
+        "SELECT_PROCESS": "Veuillez sélectionner au moins un processus",
+        "FILL_OTHER_PROCESS": "Veuillez préciser votre processus",
+        "SELECT_TOOL": "Veuillez sélectionner au moins un outil",
+        "FILL_OTHER_TOOL": "Veuillez préciser vos autres outils"
+      },
+      "NAVIGATION": {
+        "PREVIOUS": "Précédent",
+        "NEXT": "Suivant",
+        "SUBMIT": {
+          "BUTTON": "Réserver ma démonstration",
+          "LOADING": "Envoi en cours..."
+        }
+      }
+    },
+    "SERVICES": {
+      "SERVICE1": {
+        "HERO": {
+          "TITLE": "Solutions Odoo sur Mesure pour Votre Entreprise",
+          "CTA": "FAITES-NOUS CONFIANCE"
+        },
+        "APPS": {
+          "TITLE": "Nous vous Installons des applications Odoo",
+          "DESCRIPTION": "Chez MSL-ITECH, nous transformons vos besoins en solutions concrètes grâce à l'expertise d'Odoo. Chaque application est conçue sur mesure pour optimiser vos opérations et délivrer des résultats tangibles et stratégiques.",
+          "VIEW_MORE": "Voir plus",
+          "ITEMS": {
+            "CRM": "CRM",
+            "ACCOUNTING": "Comptabilité",
+            "WEBSITE": "Site Web",
+            "POS": "Point de Vente",
+            "INVENTORY": "Inventaire",
+            "MANUFACTURING": "Fabrication",
+            "SOCIAL_MARKETING": "Marketing Social",
+            "TIMESHEET": "TimeSheet",
+            "PROJECT": "Projet",
+            "HR": "HR",
+            "DOCUMENTS": "Documents",
+            "HELPDESK": "Assistance",
+            "PURCHASE": "Achats",
+            "SUBSCRIPTION": "Abonnement",
+            "RENTAL": "Location",
+            "DISCUSS": "Discussion"
+          }
+        },
+        "EXPERTISE": {
+          "TITLE": "Une expertise multiculturelle et technique au service de vos projets",
+          "DESCRIPTION": "Chez MSL-ITECH, nous mettons à votre disposition l'outil puissant et polyvalent d'Odoo, combiné à notre savoir-faire technique et à notre approche globale. Nous vous accompagnons pour optimiser vos processus, booster votre productivité et accélérer votre croissance.",
+          "ENGAGEMENT_TITLE": "Notre engagement ?",
+          "CARDS": {
+            "PROFESSIONALISM": {
+              "TITLE": "Professionnalisme",
+              "DESCRIPTION": "Des solutions Odoo sur mesure, adaptées à vos besoins métiers."
+            },
+            "EFFICIENCY": {
+              "TITLE": "Efficacité",
+              "DESCRIPTION": "Une intégration fluide et un support réactif pour maximiser votre retour sur investissement."
+            },
+            "INNOVATION": {
+              "TITLE": "Innovation",
+              "DESCRIPTION": "Une expertise multiculturelle et technologique pour des projets qui repoussent les limites."
+            }
+          },
+          "CLOSING": {
+            "STATEMENT": "Avec MSL-ITECH et Odoo, transformez vos défis en opportunités.",
+            "TAGLINE": "Parce que chaque entreprise mérite une solution ERP qui évolue avec elle."
+          }
+        }
+      },
+      "SERVICE3": {
+        "HERO": {
+          "TITLE": "La Finance avec Odoo",
+          "SUBTITLE": "Transformez Vos Idées en Réalité"
+        },
+        "CONTENT": {
+          "DESCRIPTION": "Chez MSL-ITECH, nous transformons vos idées en projets concrets grâce à notre expertise et à la flexibilité d'Odoo. Nous analysons vos besoins et personnalisons des solutions adaptées à vos attentes. Chaque module est conçu pour optimiser vos opérations et garantir des résultats efficaces."
+        },
+        "SECTIONS": {
+          "ACCOUNTING": {
+            "TITLE": "Comptabilité",
+            "DESCRIPTION": "Odoo Comptabilité est le véritable outil central sur le chemin pour tous vos besoins commerciaux..."
+          },
+          "INVOICING": {
+            "TITLE": "Facturation",
+            "DESCRIPTION": "Créez instantanément des devis clairs, professionnels et interactifs..."
+          },
+          "EXPENSES": {
+            "TITLE": "Note de Frais",
+            "DESCRIPTION": "Odoo Point de vente est intuitif, donc peu importe où vous êtes..."
+          },
+          "DOCUMENTS": {
+            "TITLE": "Document",
+            "DESCRIPTION": "Simplifiez la facturation récurrente et la gestion des abonnés..."
+          },
+          "SPREADSHEET": {
+            "TITLE": "Feuille de calcul",
+            "DESCRIPTION": "L'application Location d'Odoo est un moyen simple de paramétrer l'activité de location..."
+          }
+        }
+      },
+      "SERVICE2": {
+        "HERO": {
+          "TITLE": "Un Besoin, Une Application",
+          "SUBTITLE": "Transformez Vos Idées en Réalité"
+        },
+        "CONTENT": {
+          "DESCRIPTION": "Chez MSL-ITECH, nous donnons vie à vos idées en les transformant en projets concrets grâce à notre expertise et à la flexibilité d'Odoo. Nous analysons vos besoins avec précision et personnalisons des solutions sur mesure pour répondre à vos attentes. Chaque module est conçu pour optimiser vos opérations, simplifier vos processus et garantir des résultats tangibles."
+        },
+        "STARTER_TITLE": "La vente facile avec Odoo",
+        "SECTIONS": {
+          "CRM": {
+            "TITLE": "CRM",
+            "DESCRIPTION": "Odoo CRM est l'outil central pour répondre à tous vos besoins commerciaux. Suivez vos leads, gérez vos pipelines et boostez vos ventes avec une solution tout-en-un."
+          },
+          "SALES": {
+            "TITLE": "Ventes",
+            "DESCRIPTION": "Créez des devis clairs, professionnels et interactifs en quelques clics. Simplifiez votre processus de vente et maximisez votre taux de conversion."
+          },
+          "POS": {
+            "TITLE": "Point de Vente (POS)",
+            "DESCRIPTION": "Odoo POS est intuitif et polyvalent, que vous soyez en magasin ou en ligne. Gérez vos transactions en temps réel et offrez une expérience client exceptionnelle."
+          },
+          "SUBSCRIPTIONS": {
+            "TITLE": "Abonnements",
+            "DESCRIPTION": "Simplifiez la facturation récurrente et la gestion des abonnés avec des outils automatisés et flexibles."
+          },
+          "RENTAL": {
+            "TITLE": "Location",
+            "DESCRIPTION": "L'application Location d'Odoo vous permet de paramétrer facilement votre activité de location, de gérer les contrats et de suivre les revenus en temps réel."
+          }
+        }
+      },
+      "SERVICE4": {
+        "HERO": {
+          "TITLE": "Inventaire & Fabrication",
+          "SUBTITLE": "Optimisez Votre Production"
+        },
+        "CONTENT": {
+          "DESCRIPTION": "Avec MSL-ITECH, optimisez votre chaîne de production grâce à nos solutions Odoo. De la gestion des stocks à la fabrication, en passant par la maintenance et la qualité, nous vous accompagnons dans la transformation digitale de vos processus industriels."
+        },
+        "STARTER_TITLE": "La production avec Odoo",
+        "SECTIONS": {
+          "INVENTORY": {
+            "TITLE": "Inventaire",
+            "DESCRIPTION": "Gérez efficacement vos stocks en temps réel avec une traçabilité complète et des prévisions précises..."
+          },
+          "MANUFACTURING": {
+            "TITLE": "Fabrication",
+            "DESCRIPTION": "Planifiez et suivez votre production avec des ordres de fabrication intelligents et une gestion optimisée des ressources..."
+          },
+          "PLM": {
+            "TITLE": "PLM",
+            "DESCRIPTION": "Gérez le cycle de vie complet de vos produits, de la conception à la production..."
+          },
+          "PURCHASE": {
+            "TITLE": "Achats",
+            "DESCRIPTION": "Optimisez vos approvisionnements et gérez vos relations fournisseurs efficacement..."
+          },
+          "MAINTENANCE": {
+            "TITLE": "Maintenance",
+            "DESCRIPTION": "Planifiez et suivez la maintenance préventive et corrective de vos équipements..."
+          },
+          "QUALITY": {
+            "TITLE": "Qualité",
+            "DESCRIPTION": "Assurez la qualité de vos produits avec des contrôles rigoureux et une traçabilité complète..."
+          }
+        }
+      },
+      "SERVICE5": {
+        "HERO": {
+          "TITLE": "Ressources Humaines",
+          "SUBTITLE": "Gérez Efficacement Votre Capital Humain"
+        },
+        "CONTENT": {
+          "DESCRIPTION": "Avec MSL-ITECH, optimisez la gestion de vos ressources humaines grâce à nos solutions Odoo. Du recrutement à la gestion des talents, en passant par la paie et les congés, nous vous accompagnons dans la digitalisation de vos processus RH."
+        },
+        "STARTER_TITLE": "Les RH avec Odoo",
+        "SECTIONS": {
+          "EMPLOYEES": {
+            "TITLE": "Employés",
+            "DESCRIPTION": "Centralisez et gérez efficacement toutes les informations de vos employés dans un espace unique et sécurisé..."
+          },
+          "RECRUITMENT": {
+            "TITLE": "Recrutement",
+            "DESCRIPTION": "Optimisez votre processus de recrutement avec un suivi complet des candidatures et une gestion simplifiée des entretiens..."
+          },
+          "LEAVE": {
+            "TITLE": "Congés",
+            "DESCRIPTION": "Gérez facilement les demandes de congés, les absences et le planning des équipes..."
+          },
+          "APPRAISALS": {
+            "TITLE": "Évaluations",
+            "DESCRIPTION": "Suivez la performance et le développement de vos employés avec des évaluations personnalisées..."
+          },
+          "REFERRALS": {
+            "TITLE": "Recommandation",
+            "DESCRIPTION": "Encouragez la cooptation et récompensez les recommandations pertinentes de vos collaborateurs..."
+          },
+          "FLEET": {
+            "TITLE": "Parc Automobile",
+            "DESCRIPTION": "Gérez votre flotte de véhicules d'entreprise et optimisez leur utilisation..."
+          }
+        }
+      },
+      "SERVICE6": {
+        "HERO": {
+          "TITLE": "Marketing Digital",
+          "SUBTITLE": "Boostez Votre Présence En Ligne"
+        },
+        "CONTENT": {
+          "DESCRIPTION": "Avec MSL-ITECH, transformez votre stratégie marketing grâce à nos solutions Odoo. De l'automatisation à l'analyse des données, en passant par les campagnes multicanales, nous vous accompagnons dans votre transformation digitale marketing."
+        },
+        "STARTER_TITLE": "Le Marketing avec Odoo",
+        "SECTIONS": {
+          "MARKETING_AUTOMATION": {
+            "TITLE": "Automatisation Marketing",
+            "DESCRIPTION": "Automatisez vos campagnes marketing et créez des parcours client personnalisés pour maximiser vos conversions..."
+          },
+          "EMAIL_MARKETING": {
+            "TITLE": "E-mail Marketing",
+            "DESCRIPTION": "Concevez et envoyez des campagnes e-mail percutantes avec des templates personnalisables et un suivi détaillé..."
+          },
+          "SMS_MARKETING": {
+            "TITLE": "Marketing par SMS",
+            "DESCRIPTION": "Touchez vos clients directement sur leur mobile avec des campagnes SMS ciblées et personnalisées..."
+          },
+          "SOCIAL_MARKETING": {
+            "TITLE": "Social Marketing",
+            "DESCRIPTION": "Gérez efficacement votre présence sur les réseaux sociaux et créez du contenu engageant..."
+          },
+          "EVENTS": {
+            "TITLE": "Événements",
+            "DESCRIPTION": "Organisez et gérez vos événements marketing de A à Z avec un suivi complet des participants..."
+          },
+          "SURVEYS": {
+            "TITLE": "Sondage",
+            "DESCRIPTION": "Créez des sondages interactifs pour recueillir les retours de vos clients et améliorer vos services..."
+          }
+        }
+      },
+      "SERVICE7": {
+        "HERO": {
+          "TITLE": "Services Professionnels",
+          "SUBTITLE": "Optimisez Vos Opérations"
+        },
+        "CONTENT": {
+          "DESCRIPTION": "MSL-ITECH vous accompagne dans la gestion complète de vos services avec Odoo. De la gestion de projet à la planification des ressources, nous optimisons vos processus pour une meilleure efficacité opérationnelle."
+        },
+        "STARTER_TITLE": "Les Services avec Odoo",
+        "SECTIONS": {
+          "PROJECT_MANAGEMENT": {
+            "TITLE": "Gestion de Projet",
+            "DESCRIPTION": "Pilotez vos projets efficacement avec des outils de suivi avancés, des tableaux de bord personnalisables et une vue d'ensemble claire de vos activités..."
+          },
+          "TIMESHEETS": {
+            "TITLE": "Feuille de Temps",
+            "DESCRIPTION": "Suivez et gérez le temps passé sur chaque projet avec précision, facilitez la facturation et optimisez l'allocation des ressources..."
+          },
+          "FIELD_SERVICE": {
+            "TITLE": "Services sur Site",
+            "DESCRIPTION": "Gérez efficacement vos interventions sur site, planifiez vos techniciens et assurez un suivi détaillé des prestations..."
+          },
+          "HELPDESK": {
+            "TITLE": "Assistance",
+            "DESCRIPTION": "Offrez un support client de qualité avec un système de tickets performant et un suivi en temps réel des demandes..."
+          },
+          "PLANNING": {
+            "TITLE": "Planification",
+            "DESCRIPTION": "Optimisez la planification de vos ressources et de vos équipes avec des outils visuels intuitifs..."
+          },
+          "APPOINTMENTS": {
+            "TITLE": "Rendez-vous",
+            "DESCRIPTION": "Gérez facilement vos rendez-vous clients avec un système de réservation en ligne intégré et des rappels automatiques..."
+          }
+        }
+      }
+    }
+  }
+}

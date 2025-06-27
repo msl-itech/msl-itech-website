@@ -4,9 +4,11 @@
     <div class="title-wrapper">
       <div class="decorative-line left"></div>
       <h1 id="sticky-title">
-        Services Professionnels
+        {{ "PAGES.SERVICES.SERVICE7.HERO.TITLE" | translate }}
         <div class="subtitle-wrapper">
-          <span class="highlight">Optimisez Vos Opérations</span>
+          <span class="highlight">{{
+            "PAGES.SERVICES.SERVICE7.HERO.SUBTITLE" | translate
+          }}</span>
           <div class="accent-bar"></div>
         </div>
       </h1>
@@ -31,9 +33,7 @@
 
 <div class="content-section">
   <p>
-    MSL-ITECH vous accompagne dans la gestion complète de vos services avec
-    Odoo. De la gestion de projet à la planification des ressources, nous
-    optimisons vos processus pour une meilleure efficacité opérationnelle.
+    {{ "PAGES.SERVICES.SERVICE7.CONTENT.DESCRIPTION" | translate }}
   </p>
 </div>
 
@@ -41,14 +41,20 @@
   <div class="bg-green"></div>
   <div class="left-column">
     <div class="starter">
-      <h1>Les Services avec Odoo</h1>
+      <h1>{{ "PAGES.SERVICES.SERVICE7.STARTER_TITLE" | translate }}</h1>
     </div>
     <section id="GestionProjet" class="section">
-      <h2>Gestion de Projet</h2>
+      <h2>
+        {{
+          "PAGES.SERVICES.SERVICE7.SECTIONS.PROJECT_MANAGEMENT.TITLE"
+            | translate
+        }}
+      </h2>
       <p>
-        Pilotez vos projets efficacement avec des outils de suivi avancés, des
-        tableaux de bord personnalisables et une vue d'ensemble claire de vos
-        activités...
+        {{
+          "PAGES.SERVICES.SERVICE7.SECTIONS.PROJECT_MANAGEMENT.DESCRIPTION"
+            | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/project.webp"
@@ -57,10 +63,13 @@
       />
     </section>
     <section id="FeuilleTemps" class="section">
-      <h2>Feuille de Temps</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE7.SECTIONS.TIMESHEETS.TITLE" | translate }}
+      </h2>
       <p>
-        Suivez et gérez le temps passé sur chaque projet avec précision,
-        facilitez la facturation et optimisez l'allocation des ressources...
+        {{
+          "PAGES.SERVICES.SERVICE7.SECTIONS.TIMESHEETS.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/feuille_temps.webp"
@@ -69,10 +78,14 @@
       />
     </section>
     <section id="ServicesSurSite" class="section">
-      <h2>Services sur Site</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE7.SECTIONS.FIELD_SERVICE.TITLE" | translate }}
+      </h2>
       <p>
-        Gérez efficacement vos interventions sur site, planifiez vos techniciens
-        et assurez un suivi détaillé des prestations...
+        {{
+          "PAGES.SERVICES.SERVICE7.SECTIONS.FIELD_SERVICE.DESCRIPTION"
+            | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/service-sur-site.webp"
@@ -81,10 +94,13 @@
       />
     </section>
     <section id="Assistance" class="section">
-      <h2>Assistance</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE7.SECTIONS.HELPDESK.TITLE" | translate }}
+      </h2>
       <p>
-        Offrez un support client de qualité avec un système de tickets
-        performant et un suivi en temps réel des demandes...
+        {{
+          "PAGES.SERVICES.SERVICE7.SECTIONS.HELPDESK.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/helpdesk-dashboard.webp"
@@ -93,10 +109,13 @@
       />
     </section>
     <section id="Planification" class="section">
-      <h2>Planification</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE7.SECTIONS.PLANNING.TITLE" | translate }}
+      </h2>
       <p>
-        Optimisez la planification de vos ressources et de vos équipes avec des
-        outils visuels intuitifs...
+        {{
+          "PAGES.SERVICES.SERVICE7.SECTIONS.PLANNING.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/planning.webp"
@@ -105,10 +124,14 @@
       />
     </section>
     <section id="RendezVous" class="section">
-      <h2>Rendez-vous</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE7.SECTIONS.APPOINTMENTS.TITLE" | translate }}
+      </h2>
       <p>
-        Gérez facilement vos rendez-vous clients avec un système de réservation
-        en ligne intégré et des rappels automatiques...
+        {{
+          "PAGES.SERVICES.SERVICE7.SECTIONS.APPOINTMENTS.DESCRIPTION"
+            | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/rendez-vous.webp"

@@ -6,37 +6,52 @@
   <div class="container text-video-container">
     <div class="text-section" data-aos="fade-right">
       <h1 class="main-title">
-        Optimisez votre activité avec
-        <span class="highlight gradient-text">MSL-ITECH</span>
+        {{ "PAGES.HOME.MAIN_TITLE" | translate }}
+        <span class="highlight gradient-text">{{
+          "PAGES.HOME.HIGHLIGHT" | translate
+        }}</span>
       </h1>
       <ul class="feature-list">
         <li class="feature-item">
           <i class="fas fa-check-circle check-icon"></i>
           <div class="feature-content">
-            <h3>Présence Internationale</h3>
+            <h3>
+              {{
+                "PAGES.HOME.FEATURES.INTERNATIONAL_PRESENCE.TITLE" | translate
+              }}
+            </h3>
             <p>
-              MSL-Itech, avec des bureaux en Belgique, au Canada et au Maroc,
-              garantit une qualité reconnue à l'échelle mondiale.
+              {{
+                "PAGES.HOME.FEATURES.INTERNATIONAL_PRESENCE.DESCRIPTION"
+                  | translate
+              }}
             </p>
           </div>
         </li>
         <li class="feature-item">
           <i class="fas fa-check-circle check-icon"></i>
           <div class="feature-content">
-            <h3>Coûts Compétitifs au Maroc</h3>
+            <h3>
+              {{ "PAGES.HOME.FEATURES.COMPETITIVE_COSTS.TITLE" | translate }}
+            </h3>
             <p>
-              Bénéficiez de solutions Odoo performantes à des prix avantageux
-              grâce à notre expertise au Maroc.
+              {{
+                "PAGES.HOME.FEATURES.COMPETITIVE_COSTS.DESCRIPTION" | translate
+              }}
             </p>
           </div>
         </li>
         <li class="feature-item">
           <i class="fas fa-check-circle check-icon"></i>
           <div class="feature-content">
-            <h3>Expertise Certifiée</h3>
+            <h3>
+              {{ "PAGES.HOME.FEATURES.CERTIFIED_EXPERTISE.TITLE" | translate }}
+            </h3>
             <p>
-              Notre équipe certifiée Odoo garantit des implémentations sur
-              mesure, maximisant la valeur ajoutée d'Odoo pour votre entreprise.
+              {{
+                "PAGES.HOME.FEATURES.CERTIFIED_EXPERTISE.DESCRIPTION"
+                  | translate
+              }}
             </p>
           </div>
         </li>
@@ -90,9 +105,9 @@
 <section class="accordion-image-section" data-aos="fade-up">
   <div class="container accordion-image-container">
     <div class="accordion-section" data-aos="fade-right">
-      <h2>POURQUOI ODOO</h2>
+      <h2>{{ "PAGES.HOME.WHY_ODOO.TITLE" | translate }}</h2>
       <div class="underline"></div>
-      <h1>Odoo, le logiciel complet pour la gestion de votre entreprise</h1>
+      <h1>{{ "PAGES.HOME.WHY_ODOO.SUBTITLE" | translate }}</h1>
 
       <div class="accordion">
         <div
@@ -133,9 +148,9 @@
 <!-- Section Experts -->
 <section class="experts-section">
   <div>
-    <h2 data-aos="fade-up">Nos Experts</h2>
+    <h2 data-aos="fade-up">{{ "PAGES.HOME.EXPERTS.TITLE" | translate }}</h2>
     <h1 data-aos="fade-up">
-      Nous vous mettons en relation avec des experts Odoo
+      {{ "PAGES.HOME.EXPERTS.SUBTITLE" | translate }}
     </h1>
     <div class="experts-container">
       <div class="expert" data-aos="fade-up">
@@ -143,14 +158,18 @@
           src="../../assets/img/newImage/6.webp"
           alt="Expert en Business Analytics Odoo"
         />
-        <p class="expert-title">Business Analytics Odoo</p>
+        <p class="expert-title">
+          {{ "PAGES.HOME.EXPERTS.BUSINESS_ANALYTICS" | translate }}
+        </p>
       </div>
       <div class="expert" data-aos="fade-up" data-aos-delay="200">
         <img
           src="../../assets/img/newImage/2.webp"
           alt="Développeur Odoo Certifié"
         />
-        <p class="expert-title">Développeur Odoo</p>
+        <p class="expert-title">
+          {{ "PAGES.HOME.EXPERTS.DEVELOPER" | translate }}
+        </p>
       </div>
     </div>
   </div>

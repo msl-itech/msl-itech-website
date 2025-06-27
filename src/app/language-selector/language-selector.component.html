@@ -1,0 +1,40 @@
+<div class="language-selector">
+  <div class="dropdown">
+    <button
+      class="btn btn-outline-light dropdown-toggle language-btn"
+      type="button"
+      id="languageDropdown"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <i class="fas fa-globe me-2"></i>
+      {{
+        currentLanguage === "fr"
+          ? ("COMMON.FRENCH" | translate)
+          : ("COMMON.ENGLISH" | translate)
+      }}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+      <li *ngFor="let lang of supportedLanguages">
+        <a
+          class="dropdown-item"
+          [class.active]="currentLanguage === lang.code"
+          (click)="onLanguageChange(lang.code)"
+        >
+          <span class="flag-icon me-2" [ngClass]="'flag-' + lang.code"></span>
+          {{ lang.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Version simple avec bouton toggle pour mobile -->
+  <button
+    class="btn btn-sm btn-outline-light language-toggle d-md-none"
+    (click)="toggleLanguage()"
+    [title]="'COMMON.LANGUAGE' | translate"
+  >
+    <i class="fas fa-language"></i>
+    {{ currentLanguage.toUpperCase() }}
+  </button>
+</div>

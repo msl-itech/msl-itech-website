@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   FaIconLibrary,
@@ -17,6 +17,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
+
+// Imports pour ngx-translate
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { AboutComponent } from './about/about.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +42,7 @@ import { HorecaServiceExclusifComponent } from './horeca-service-exclusif/horeca
 import { HorecaSmartAlertComponent } from './horeca-smart-alert/horeca-smart-alert.component';
 import { JobApplicationComponent } from './job-application/job-application.component';
 import { JobComponent } from './job/job.component';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 import { OptionFormComponent } from './option-form/option-form.component';
 import { PackAdministratifComponent } from './pack-administratif/pack-administratif.component';
 import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
@@ -65,6 +71,11 @@ import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { TextSlideComponent } from './text-slide/text-slide.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
+
+// Factory function pour le loader de traduction
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -115,6 +126,7 @@ import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.compo
     OptionFormComponent,
     SmartAlertOrderComponent,
     PrendreRendezVousComponent,
+    LanguageSelectorComponent,
   ],
   imports: [
     BrowserModule,
@@ -125,6 +137,14 @@ import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.compo
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    // Configuration de TranslateModule
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       preventDuplicates: true,

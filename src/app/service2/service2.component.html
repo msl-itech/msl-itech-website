@@ -356,9 +356,11 @@
     <div class="title-wrapper">
       <div class="decorative-line left"></div>
       <h1 id="sticky-title">
-        Un Besoin, Une Application
+        {{ "PAGES.SERVICES.SERVICE2.HERO.TITLE" | translate }}
         <div class="subtitle-wrapper">
-          <span class="highlight">Transformez Vos Idées en Réalité</span>
+          <span class="highlight">{{
+            "PAGES.SERVICES.SERVICE2.HERO.SUBTITLE" | translate
+          }}</span>
           <div class="accent-bar"></div>
         </div>
       </h1>
@@ -384,11 +386,7 @@
 <!-- Section de Contenu -->
 <div class="content-section">
   <p>
-    Chez MSL-ITECH, nous donnons vie à vos idées en les transformant en projets
-    concrets grâce à notre expertise et à la flexibilité d'Odoo. Nous analysons
-    vos besoins avec précision et personnalisons des solutions sur mesure pour
-    répondre à vos attentes. Chaque module est conçu pour optimiser vos
-    opérations, simplifier vos processus et garantir des résultats tangibles.
+    {{ "PAGES.SERVICES.SERVICE2.CONTENT.DESCRIPTION" | translate }}
   </p>
 </div>
 
@@ -397,14 +395,12 @@
   <div class="bg-green"></div>
   <div class="left-column">
     <div class="starter">
-      <h1>La vente facile avec Odoo</h1>
+      <h1>{{ "PAGES.SERVICES.SERVICE2.STARTER_TITLE" | translate }}</h1>
     </div>
     <section id="crm" class="section">
-      <h2>CRM</h2>
+      <h2>{{ "PAGES.SERVICES.SERVICE2.SECTIONS.CRM.TITLE" | translate }}</h2>
       <p>
-        Odoo CRM est l'outil central pour répondre à tous vos besoins
-        commerciaux. Suivez vos leads, gérez vos pipelines et boostez vos ventes
-        avec une solution tout-en-un.
+        {{ "PAGES.SERVICES.SERVICE2.SECTIONS.CRM.DESCRIPTION" | translate }}
       </p>
       <img
         src="../../assets/img/servicePage/hero_image.jpg"
@@ -413,11 +409,9 @@
       />
     </section>
     <section id="ventes" class="section">
-      <h2>Ventes</h2>
+      <h2>{{ "PAGES.SERVICES.SERVICE2.SECTIONS.SALES.TITLE" | translate }}</h2>
       <p>
-        Créez des devis clairs, professionnels et interactifs en quelques clics.
-        Simplifiez votre processus de vente et maximisez votre taux de
-        conversion.
+        {{ "PAGES.SERVICES.SERVICE2.SECTIONS.SALES.DESCRIPTION" | translate }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/vente2.webp"
@@ -426,11 +420,9 @@
       />
     </section>
     <section id="pos" class="section">
-      <h2>Point de Vente (POS)</h2>
+      <h2>{{ "PAGES.SERVICES.SERVICE2.SECTIONS.POS.TITLE" | translate }}</h2>
       <p>
-        Odoo POS est intuitif et polyvalent, que vous soyez en magasin ou en
-        ligne. Gérez vos transactions en temps réel et offrez une expérience
-        client exceptionnelle.
+        {{ "PAGES.SERVICES.SERVICE2.SECTIONS.POS.DESCRIPTION" | translate }}
       </p>
       <img
         src="../../assets/img/servicePage/rental_product.jpg"
@@ -439,10 +431,14 @@
       />
     </section>
     <section id="abonnements" class="section">
-      <h2>Abonnements</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE2.SECTIONS.SUBSCRIPTIONS.TITLE" | translate }}
+      </h2>
       <p>
-        Simplifiez la facturation récurrente et la gestion des abonnés avec des
-        outils automatisés et flexibles.
+        {{
+          "PAGES.SERVICES.SERVICE2.SECTIONS.SUBSCRIPTIONS.DESCRIPTION"
+            | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/abonement.png"
@@ -451,11 +447,9 @@
       />
     </section>
     <section id="location" class="section">
-      <h2>Location</h2>
+      <h2>{{ "PAGES.SERVICES.SERVICE2.SECTIONS.RENTAL.TITLE" | translate }}</h2>
       <p>
-        L'application Location d'Odoo vous permet de paramétrer facilement votre
-        activité de location, de gérer les contrats et de suivre les revenus en
-        temps réel.
+        {{ "PAGES.SERVICES.SERVICE2.SECTIONS.RENTAL.DESCRIPTION" | translate }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/location.webp"

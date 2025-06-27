@@ -6,10 +6,9 @@
   />
   <div class="overlay-text d-flex align-items-center justify-content-center">
     <div class="text-center text-white px-3">
-      <h2>Obtenez votre audit gratuit</h2>
+      <h2>{{ "PAGES.DEMO_RESERVATION.BANNER.TITLE" | translate }}</h2>
       <p>
-        Répondez à quelques questions simples pour une démonstration
-        personnalisée
+        {{ "PAGES.DEMO_RESERVATION.BANNER.SUBTITLE" | translate }}
       </p>
     </div>
   </div>
@@ -19,7 +18,9 @@
   <div class="contact-container">
     <!-- Informations de contact -->
     <div class="contact-info">
-      <h2 class="info-title">MSL-iTECH</h2>
+      <h2 class="info-title">
+        {{ "PAGES.DEMO_RESERVATION.INFO.TITLE" | translate }}
+      </h2>
       <div class="info-items">
         <div class="info-item">
           <i class="fas fa-map-marker-alt"></i>
@@ -41,13 +42,13 @@
 
       <div class="info-highlight">
         <i class="fas fa-lightbulb"></i>
-        <p>Nous créons une démonstration sur mesure selon vos besoins réels</p>
+        <p>{{ "PAGES.DEMO_RESERVATION.INFO.HIGHLIGHT" | translate }}</p>
       </div>
 
       <!-- Indicateur de progression -->
       <div class="progress-indicator">
         <div class="progress-header">
-          <h4>Progression</h4>
+          <h4>{{ "PAGES.DEMO_RESERVATION.PROGRESS.TITLE" | translate }}</h4>
           <span class="progress-text">{{ currentStep }}/{{ totalSteps }}</span>
         </div>
         <div class="progress-bar">
@@ -84,7 +85,10 @@
       <div class="step-header">
         <h2 class="form-title">{{ stepTitles[currentStep - 1] }}</h2>
         <div class="step-counter">
-          Étape {{ currentStep }} sur {{ totalSteps }}
+          {{
+            "PAGES.DEMO_RESERVATION.PROGRESS.STEP_OF"
+              | translate : { current: currentStep, total: totalSteps }
+          }}
         </div>
       </div>
 
@@ -98,8 +102,7 @@
           <div class="step-intro">
             <i class="fas fa-user step-icon"></i>
             <p>
-              Commençons par faire connaissance ! Partagez-nous vos coordonnées
-              pour que nous puissions vous recontacter.
+              {{ "PAGES.DEMO_RESERVATION.STEP1.INTRO" | translate }}
             </p>
           </div>
 
@@ -114,14 +117,16 @@
                 class="form-control"
                 #nameInput="ngModel"
               />
-              <label for="name">Votre nom *</label>
+              <label for="name">{{
+                "PAGES.DEMO_RESERVATION.STEP1.FIELDS.NAME" | translate
+              }}</label>
               <small
                 class="text-danger"
                 *ngIf="
                   nameInput.invalid && (nameInput.dirty || nameInput.touched)
                 "
               >
-                Ce champ est requis
+                {{ "PAGES.DEMO_RESERVATION.VALIDATION.REQUIRED" | translate }}
               </small>
             </div>
 
@@ -135,7 +140,9 @@
                 class="form-control"
                 #companyInput="ngModel"
               />
-              <label for="company">Votre société *</label>
+              <label for="company">{{
+                "PAGES.DEMO_RESERVATION.STEP1.FIELDS.COMPANY" | translate
+              }}</label>
               <small
                 class="text-danger"
                 *ngIf="
@@ -143,7 +150,7 @@
                   (companyInput.dirty || companyInput.touched)
                 "
               >
-                Ce champ est requis
+                {{ "PAGES.DEMO_RESERVATION.VALIDATION.REQUIRED" | translate }}
               </small>
             </div>
 
@@ -158,19 +165,21 @@
                 class="form-control"
                 #emailInput="ngModel"
               />
-              <label for="email">Votre e-mail *</label>
+              <label for="email">{{
+                "PAGES.DEMO_RESERVATION.STEP1.FIELDS.EMAIL" | translate
+              }}</label>
               <small
                 class="text-danger"
                 *ngIf="
                   emailInput.invalid && (emailInput.dirty || emailInput.touched)
                 "
               >
-                <span *ngIf="emailInput.errors?.['required']"
-                  >Ce champ est requis</span
-                >
-                <span *ngIf="emailInput.errors?.['email']"
-                  >Veuillez entrer une adresse email valide</span
-                >
+                <span *ngIf="emailInput.errors?.['required']">{{
+                  "PAGES.DEMO_RESERVATION.VALIDATION.REQUIRED" | translate
+                }}</span>
+                <span *ngIf="emailInput.errors?.['email']">{{
+                  "PAGES.DEMO_RESERVATION.VALIDATION.EMAIL_INVALID" | translate
+                }}</span>
               </small>
             </div>
 
@@ -184,14 +193,16 @@
                 class="form-control"
                 #phoneInput="ngModel"
               />
-              <label for="phone">Numéro de téléphone *</label>
+              <label for="phone">{{
+                "PAGES.DEMO_RESERVATION.STEP1.FIELDS.PHONE" | translate
+              }}</label>
               <small
                 class="text-danger"
                 *ngIf="
                   phoneInput.invalid && (phoneInput.dirty || phoneInput.touched)
                 "
               >
-                Ce champ est requis
+                {{ "PAGES.DEMO_RESERVATION.VALIDATION.REQUIRED" | translate }}
               </small>
             </div>
           </div>
@@ -201,10 +212,9 @@
         <div class="step-content" *ngIf="currentStep === 2">
           <div class="step-intro">
             <i class="fas fa-bullseye step-icon"></i>
-            <h3>🎯 Quel est votre objectif principal avec Odoo ?</h3>
+            <h3>{{ "PAGES.DEMO_RESERVATION.STEP2.TITLE" | translate }}</h3>
             <p>
-              Sélectionnez une ou plusieurs options qui correspondent à vos
-              besoins
+              {{ "PAGES.DEMO_RESERVATION.STEP2.SUBTITLE" | translate }}
             </p>
           </div>
 
@@ -219,8 +229,14 @@
               <label for="automatiser" class="checkbox-label">
                 <i class="fas fa-cogs"></i>
                 <div>
-                  <strong>Automatiser les processus</strong>
-                  <span>factures, stocks, ventes</span>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.AUTOMATE.TITLE"
+                      | translate
+                  }}</strong>
+                  <span>{{
+                    "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.AUTOMATE.SUBTITLE"
+                      | translate
+                  }}</span>
                 </div>
               </label>
             </div>
@@ -235,8 +251,14 @@
               <label for="centraliser" class="checkbox-label">
                 <i class="fas fa-database"></i>
                 <div>
-                  <strong>Centraliser les données</strong>
-                  <span>CRM + Comptabilité + Projets</span>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.CENTRALIZE.TITLE"
+                      | translate
+                  }}</strong>
+                  <span>{{
+                    "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.CENTRALIZE.SUBTITLE"
+                      | translate
+                  }}</span>
                 </div>
               </label>
             </div>
@@ -251,8 +273,14 @@
               <label for="collaboration" class="checkbox-label">
                 <i class="fas fa-users"></i>
                 <div>
-                  <strong>Améliorer la collaboration</strong>
-                  <span>entre équipes</span>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.COLLABORATION.TITLE"
+                      | translate
+                  }}</strong>
+                  <span>{{
+                    "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.COLLABORATION.SUBTITLE"
+                      | translate
+                  }}</span>
                 </div>
               </label>
             </div>
@@ -267,8 +295,14 @@
               <label for="remplacer" class="checkbox-label">
                 <i class="fas fa-exchange-alt"></i>
                 <div>
-                  <strong>Remplacer un outil inefficace</strong>
-                  <span>précisez ci-dessous</span>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.REPLACE.TITLE"
+                      | translate
+                  }}</strong>
+                  <span>{{
+                    "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.REPLACE.SUBTITLE"
+                      | translate
+                  }}</span>
                 </div>
               </label>
             </div>
@@ -279,7 +313,10 @@
               type="text"
               [(ngModel)]="objectifRemplacerDetail"
               name="objectifRemplacerDetail"
-              placeholder="Quel outil souhaitez-vous remplacer ?"
+              [placeholder]="
+                'PAGES.DEMO_RESERVATION.STEP2.OPTIONS.REPLACE.PLACEHOLDER'
+                  | translate
+              "
               class="form-control small-input"
             />
           </div>
@@ -294,8 +331,13 @@
             <label for="objectifAutre" class="checkbox-label">
               <i class="fas fa-plus"></i>
               <div>
-                <strong>Autre</strong>
-                <span>précisez ci-dessous</span>
+                <strong>{{
+                  "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.OTHER.TITLE" | translate
+                }}</strong>
+                <span>{{
+                  "PAGES.DEMO_RESERVATION.STEP2.OPTIONS.OTHER.SUBTITLE"
+                    | translate
+                }}</span>
               </div>
             </label>
           </div>
@@ -305,7 +347,10 @@
               type="text"
               [(ngModel)]="objectifAutreDetail"
               name="objectifAutreDetail"
-              placeholder="Précisez votre objectif"
+              [placeholder]="
+                'PAGES.DEMO_RESERVATION.STEP2.OPTIONS.OTHER.PLACEHOLDER'
+                  | translate
+              "
               class="form-control small-input"
             />
           </div>
@@ -316,10 +361,10 @@
           <div class="step-intro">
             <i class="fas fa-clock step-icon"></i>
             <h3>
-              🔍 Quels processus vous prennent le plus de temps aujourd'hui ?
+              {{ "PAGES.DEMO_RESERVATION.STEP3.TITLE" | translate }}
             </h3>
             <p>
-              Identifiez les tâches qui vous font perdre du temps au quotidien
+              {{ "PAGES.DEMO_RESERVATION.STEP3.SUBTITLE" | translate }}
             </p>
           </div>
 
@@ -334,8 +379,14 @@
               <label for="leadsDevis" class="checkbox-label">
                 <i class="fas fa-handshake"></i>
                 <div>
-                  <strong>Gestion des leads/devis</strong>
-                  <span>ex : perte d'opportunités</span>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.LEADS.TITLE"
+                      | translate
+                  }}</strong>
+                  <span>{{
+                    "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.LEADS.SUBTITLE"
+                      | translate
+                  }}</span>
                 </div>
               </label>
             </div>
@@ -350,8 +401,14 @@
               <label for="suiviCommandes" class="checkbox-label">
                 <i class="fas fa-shopping-cart"></i>
                 <div>
-                  <strong>Suivi des commandes/clients</strong>
-                  <span>ex : relances manuelles</span>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.ORDERS.TITLE"
+                      | translate
+                  }}</strong>
+                  <span>{{
+                    "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.ORDERS.SUBTITLE"
+                      | translate
+                  }}</span>
                 </div>
               </label>
             </div>
@@ -366,8 +423,14 @@
               <label for="reporting" class="checkbox-label">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                  <strong>Reporting financier</strong>
-                  <span>ou d'activité</span>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.REPORTING.TITLE"
+                      | translate
+                  }}</strong>
+                  <span>{{
+                    "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.REPORTING.SUBTITLE"
+                      | translate
+                  }}</span>
                 </div>
               </label>
             </div>
@@ -382,8 +445,14 @@
               <label for="gestionStocks" class="checkbox-label">
                 <i class="fas fa-boxes"></i>
                 <div>
-                  <strong>Gestion des stocks</strong>
-                  <span>ex : ruptures, surstocks</span>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.STOCK.TITLE"
+                      | translate
+                  }}</strong>
+                  <span>{{
+                    "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.STOCK.SUBTITLE"
+                      | translate
+                  }}</span>
                 </div>
               </label>
             </div>
@@ -399,8 +468,13 @@
             <label for="processusAutre" class="checkbox-label">
               <i class="fas fa-plus"></i>
               <div>
-                <strong>Autre</strong>
-                <span>précisez ci-dessous</span>
+                <strong>{{
+                  "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.OTHER.TITLE" | translate
+                }}</strong>
+                <span>{{
+                  "PAGES.DEMO_RESERVATION.STEP3.OPTIONS.OTHER.SUBTITLE"
+                    | translate
+                }}</span>
               </div>
             </label>
           </div>
@@ -410,7 +484,10 @@
               type="text"
               [(ngModel)]="processusAutreDetail"
               name="processusAutreDetail"
-              placeholder="Quel autre processus vous pose problème ?"
+              [placeholder]="
+                'PAGES.DEMO_RESERVATION.STEP3.OPTIONS.OTHER.PLACEHOLDER'
+                  | translate
+              "
               class="form-control small-input"
             />
           </div>
@@ -420,10 +497,9 @@
         <div class="step-content" *ngIf="currentStep === 4">
           <div class="step-intro">
             <i class="fas fa-tools step-icon"></i>
-            <h3>🛠️ Quels outils utilisez-vous actuellement ?</h3>
+            <h3>{{ "PAGES.DEMO_RESERVATION.STEP4.TITLE" | translate }}</h3>
             <p>
-              Dites-nous quels logiciels vous utilisez pour mieux comprendre
-              votre environnement
+              {{ "PAGES.DEMO_RESERVATION.STEP4.SUBTITLE" | translate }}
             </p>
           </div>
 
@@ -438,7 +514,9 @@
               <label for="excel" class="checkbox-label">
                 <i class="fas fa-file-excel"></i>
                 <div>
-                  <strong>Excel</strong>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP4.TOOLS.EXCEL" | translate
+                  }}</strong>
                 </div>
               </label>
             </div>
@@ -453,7 +531,9 @@
               <label for="zoho" class="checkbox-label">
                 <i class="fas fa-laptop"></i>
                 <div>
-                  <strong>Zoho CRM</strong>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP4.TOOLS.ZOHO" | translate
+                  }}</strong>
                 </div>
               </label>
             </div>
@@ -468,7 +548,9 @@
               <label for="sage" class="checkbox-label">
                 <i class="fas fa-calculator"></i>
                 <div>
-                  <strong>Sage Comptabilité</strong>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP4.TOOLS.SAGE" | translate
+                  }}</strong>
                 </div>
               </label>
             </div>
@@ -483,7 +565,9 @@
               <label for="outilsAutre" class="checkbox-label">
                 <i class="fas fa-plus"></i>
                 <div>
-                  <strong>Autre</strong>
+                  <strong>{{
+                    "PAGES.DEMO_RESERVATION.STEP4.TOOLS.OTHER.TITLE" | translate
+                  }}</strong>
                 </div>
               </label>
             </div>
@@ -494,7 +578,10 @@
               type="text"
               [(ngModel)]="outilsAutreDetail"
               name="outilsAutreDetail"
-              placeholder="Quels autres outils utilisez-vous ?"
+              [placeholder]="
+                'PAGES.DEMO_RESERVATION.STEP4.TOOLS.OTHER.PLACEHOLDER'
+                  | translate
+              "
               class="form-control small-input"
             />
           </div>
@@ -504,10 +591,9 @@
         <div class="step-content" *ngIf="currentStep === 5">
           <div class="step-intro">
             <i class="fas fa-flag-checkered step-icon"></i>
-            <h3>🚧 Pour finir, quel est votre plus gros défi opérationnel ?</h3>
+            <h3>{{ "PAGES.DEMO_RESERVATION.STEP5.TITLE" | translate }}</h3>
             <p>
-              Identifiez votre problème principal pour que nous puissions vous
-              aider efficacement
+              {{ "PAGES.DEMO_RESERVATION.STEP5.SUBTITLE" | translate }}
             </p>
           </div>
 
@@ -532,7 +618,10 @@
                 defiInput.invalid && (defiInput.dirty || defiInput.touched)
               "
             >
-              Veuillez sélectionner un défi
+              {{
+                "PAGES.DEMO_RESERVATION.STEP5.VALIDATION.SELECT_CHALLENGE"
+                  | translate
+              }}
             </small>
           </div>
 
@@ -541,7 +630,9 @@
               type="text"
               [(ngModel)]="defiAutreDetail"
               name="defiAutreDetail"
-              placeholder="Précisez votre principal défi"
+              [placeholder]="
+                'PAGES.DEMO_RESERVATION.STEP5.OTHER_PLACEHOLDER' | translate
+              "
               class="form-control small-input"
               required
             />
@@ -549,9 +640,11 @@
 
           <!-- Question bonus -->
           <div class="bonus-section">
-            <h4>✨ Question bonus (optionnelle)</h4>
+            <h4>
+              {{ "PAGES.DEMO_RESERVATION.STEP5.BONUS.TITLE" | translate }}
+            </h4>
             <p>
-              Si Odoo pouvait résoudre UN seul problème pour vous, ce serait...
+              {{ "PAGES.DEMO_RESERVATION.STEP5.BONUS.QUESTION" | translate }}
             </p>
 
             <div class="form-group">
@@ -560,7 +653,9 @@
                 name="problemePrincipal"
                 class="form-control textarea-bonus"
                 rows="3"
-                placeholder="Décrivez en quelques mots le problème principal que vous aimeriez résoudre..."
+                [placeholder]="
+                  'PAGES.DEMO_RESERVATION.STEP5.BONUS.PLACEHOLDER' | translate
+                "
               ></textarea>
             </div>
           </div>
@@ -576,7 +671,7 @@
             *ngIf="currentStep > 1"
           >
             <i class="fas fa-arrow-left"></i>
-            Précédent
+            {{ "PAGES.DEMO_RESERVATION.NAVIGATION.PREVIOUS" | translate }}
           </button>
 
           <button
@@ -586,7 +681,7 @@
             (click)="nextStep()"
             *ngIf="currentStep < totalSteps"
           >
-            Suivant
+            {{ "PAGES.DEMO_RESERVATION.NAVIGATION.NEXT" | translate }}
             <i class="fas fa-arrow-right"></i>
           </button>
 
@@ -598,7 +693,11 @@
             *ngIf="currentStep === totalSteps"
           >
             <span>{{
-              isLoading ? "Envoi en cours..." : "Réserver ma démonstration"
+              isLoading
+                ? ("PAGES.DEMO_RESERVATION.NAVIGATION.SUBMIT.LOADING"
+                  | translate)
+                : ("PAGES.DEMO_RESERVATION.NAVIGATION.SUBMIT.BUTTON"
+                  | translate)
             }}</span>
             <i class="fas fa-paper-plane" *ngIf="!isLoading"></i>
             <i class="fas fa-spinner fa-spin" *ngIf="isLoading"></i>

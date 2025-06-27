@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 import { OdooService } from '../services/odoo.service';
 
 @Component({
@@ -8,17 +10,12 @@ import { OdooService } from '../services/odoo.service';
   templateUrl: './demo-reservation.component.html',
   styleUrls: ['./demo-reservation.component.css'],
 })
-export class DemoReservationComponent implements OnInit {
+export class DemoReservationComponent implements OnInit, OnDestroy {
   // Gestion des étapes
   currentStep: number = 1;
   totalSteps: number = 5;
-  stepTitles = [
-    'Vos coordonnées',
-    'Vos objectifs',
-    'Vos processus',
-    'Vos outils',
-    'Finalisation',
-  ];
+  stepTitles: string[] = [];
+  private langChangeSubscription?: Subscription;
 
   // Informations de contact de base
   contact_name: string = '';
@@ -59,14 +56,7 @@ export class DemoReservationComponent implements OnInit {
 
   // Question 4: Plus gros défi opérationnel (menu déroulant)
   defiOperationnel: string = '';
-  defisOptions = [
-    { value: '', label: 'Sélectionnez votre principal défi...' },
-    { value: 'doublons', label: 'Doublons de saisie' },
-    { value: 'visibilite', label: 'Manque de visibilité en temps réel' },
-    { value: 'couts', label: 'Coûts cachés des outils multiples' },
-    { value: 'manuels', label: 'Processus trop manuels' },
-    { value: 'autre', label: 'Autre...' },
-  ];
+  defisOptions: Array<{ value: string; label: string }> = [];
   defiAutreDetail: string = '';
 
   // Question bonus
@@ -74,10 +64,73 @@ export class DemoReservationComponent implements OnInit {
 
   constructor(
     private odooService: OdooService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate: TranslateService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadTranslations();
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      this.loadTranslations();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+  }
+
+  private loadTranslations(): void {
+    // Charger les titres des étapes
+    this.stepTitles = [
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.COORDINATES'),
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.OBJECTIVES'),
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.PROCESSES'),
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.TOOLS'),
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.CHALLENGES'),
+    ];
+
+    // Charger les options de défis
+    this.defisOptions = [
+      {
+        value: '',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.SELECT_CHALLENGE'
+        ),
+      },
+      {
+        value: 'doublons',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.DUPLICATES'
+        ),
+      },
+      {
+        value: 'visibilite',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.VISIBILITY'
+        ),
+      },
+      {
+        value: 'couts',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.COSTS'
+        ),
+      },
+      {
+        value: 'manuels',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.MANUAL'
+        ),
+      },
+      {
+        value: 'autre',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.OTHER'
+        ),
+      },
+    ];
+  }
 
   // Navigation entre les étapes
   nextStep(): void {
@@ -184,7 +237,14 @@ export class DemoReservationComponent implements OnInit {
   validateContactInfoWithMessage(): boolean {
     const isValid = this.validateContactInfoSilent();
     if (!isValid) {
-      this.toastr.error('Veuillez remplir tous les champs requis', 'Étape 1');
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_REQUIRED'
+        ),
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEPS.TITLES.COORDINATES'
+        )
+      );
     }
     return isValid;
   }
@@ -193,17 +253,29 @@ export class DemoReservationComponent implements OnInit {
     const hasObjectif = Object.values(this.objectifs).some((value) => value);
     if (!hasObjectif) {
       this.toastr.error(
-        'Veuillez sélectionner au moins un objectif',
-        'Étape 2'
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.SELECT_OBJECTIVE'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.OBJECTIVES')
       );
       return false;
     }
     if (this.objectifs.remplacer && !this.objectifRemplacerDetail.trim()) {
-      this.toastr.error("Veuillez préciser l'outil à remplacer", 'Étape 2');
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_REPLACEMENT'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.OBJECTIVES')
+      );
       return false;
     }
     if (this.objectifs.autre && !this.objectifAutreDetail.trim()) {
-      this.toastr.error('Veuillez préciser votre objectif', 'Étape 2');
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_OTHER_OBJECTIVE'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.OBJECTIVES')
+      );
       return false;
     }
     return true;
@@ -215,13 +287,20 @@ export class DemoReservationComponent implements OnInit {
     );
     if (!hasProcessus) {
       this.toastr.error(
-        'Veuillez sélectionner au moins un processus',
-        'Étape 3'
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.SELECT_PROCESS'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.PROCESSES')
       );
       return false;
     }
     if (this.processusTemps.autre && !this.processusAutreDetail.trim()) {
-      this.toastr.error('Veuillez préciser le processus', 'Étape 3');
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_OTHER_PROCESS'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.PROCESSES')
+      );
       return false;
     }
     return true;
@@ -230,11 +309,19 @@ export class DemoReservationComponent implements OnInit {
   validateOutilsWithMessage(): boolean {
     const hasOutil = Object.values(this.outilsActuels).some((value) => value);
     if (!hasOutil) {
-      this.toastr.error('Veuillez sélectionner au moins un outil', 'Étape 4');
+      this.toastr.error(
+        this.translate.instant('PAGES.DEMO_RESERVATION.VALIDATION.SELECT_TOOL'),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.TOOLS')
+      );
       return false;
     }
     if (this.outilsActuels.autre && !this.outilsAutreDetail.trim()) {
-      this.toastr.error("Veuillez préciser l'outil", 'Étape 4');
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_OTHER_TOOL'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.TOOLS')
+      );
       return false;
     }
     return true;
@@ -243,13 +330,20 @@ export class DemoReservationComponent implements OnInit {
   validateDefiWithMessage(): boolean {
     if (!this.defiOperationnel) {
       this.toastr.error(
-        'Veuillez sélectionner votre principal défi',
-        'Étape 5'
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.VALIDATION.SELECT_CHALLENGE'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.CHALLENGES')
       );
       return false;
     }
     if (this.defiOperationnel === 'autre' && !this.defiAutreDetail.trim()) {
-      this.toastr.error('Veuillez préciser votre défi', 'Étape 5');
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.OTHER_PLACEHOLDER'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.CHALLENGES')
+      );
       return false;
     }
     return true;

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pack-performance',
@@ -6,6 +7,8 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
   styleUrl: './pack-performance.component.css',
 })
 export class PackPerformanceComponent implements OnInit, AfterViewInit {
+  constructor(private translate: TranslateService) {}
+
   ngOnInit() {
     // Initialisation du composant
   }
@@ -126,7 +129,10 @@ export class PackPerformanceComponent implements OnInit, AfterViewInit {
         // Changer le texte du bouton pour la dernière question
         if (currentQuestion === 3) {
           nextBtn.innerHTML =
-            '<i class="fas fa-magic me-2"></i>Voir mon pack idéal';
+            '<i class="fas fa-magic me-2"></i>' +
+            this.translate.instant(
+              'PAGES.PACK_PERFORMANCE.PACK_FINDER.BUTTONS.SHOW_PACK'
+            );
         }
       } else {
         // Afficher le résultat
@@ -204,17 +210,23 @@ export class PackPerformanceComponent implements OnInit, AfterViewInit {
       (budget === '1500-3000' && accompagnement === 'optimisation')
     ) {
       return {
-        name: 'Pack Premium 👑',
-        description:
-          'Solution haut de gamme avec accompagnement personnalisé, support prioritaire et optimisation complète de vos processus Odoo.',
+        name: this.translate.instant(
+          'PAGES.PACK_PERFORMANCE.PACKS.PREMIUM.NAME'
+        ),
+        description: this.translate.instant(
+          'PAGES.PACK_PERFORMANCE.PACKS.PREMIUM.DESCRIPTION'
+        ),
       };
     }
 
     // Toutes les autres combinaisons mènent au Pack Avancé
     return {
-      name: 'Pack Avancé ⚡',
-      description:
-        'Solution complète pour développer votre activité avec Odoo. Configuration personnalisée, formation avancée et support technique inclus.',
+      name: this.translate.instant(
+        'PAGES.PACK_PERFORMANCE.PACKS.ADVANCED.NAME'
+      ),
+      description: this.translate.instant(
+        'PAGES.PACK_PERFORMANCE.PACKS.ADVANCED.DESCRIPTION'
+      ),
     };
   }
 

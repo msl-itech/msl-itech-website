@@ -3,8 +3,10 @@
   <div class="hero-image2">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1 data-aos="fade-right">A propos de nous</h1>
-      <span data-aos="fade-left">Tout savoir sur nous et notre equipe</span>
+      <h1 data-aos="fade-right">{{ "PAGES.ABOUT.HERO.TITLE" | translate }}</h1>
+      <span data-aos="fade-left">{{
+        "PAGES.ABOUT.HERO.SUBTITLE" | translate
+      }}</span>
     </div>
   </div>
 </section>
@@ -14,18 +16,12 @@
   <section>
     <div class="section-content">
       <div class="text-content">
-        <h2>Qui Sommes-Nous ?</h2>
+        <h2>{{ "PAGES.ABOUT.WHO_WE_ARE.TITLE" | translate }}</h2>
         <p>
-          Nous sommes MSL-ITECH, une entreprise certifiée Odoo avec des bureaux
-          en Belgique, au Canada et au Maroc. Spécialistes des solutions ERP,
-          nous accompagnons les PME dans leur transformation digitale en
-          proposant des systèmes robustes, personnalisés et conformes aux
-          standards internationaux.
+          {{ "PAGES.ABOUT.WHO_WE_ARE.DESCRIPTION1" | translate }}
         </p>
         <p>
-          Notre mission ? Vous aidez à rester agile dans un environnement
-          économique en constante évolution, tout en simplifiant et en
-          optimisant vos processus métiers.
+          {{ "PAGES.ABOUT.WHO_WE_ARE.DESCRIPTION2" | translate }}
         </p>
       </div>
       <div class="image-wrapper">
@@ -42,13 +38,9 @@
   <section class="section-alternate">
     <div class="section-content section-reverse">
       <div class="text-content">
-        <h2>Notre Équipe : Votre Partenaire de Confiance</h2>
+        <h2>{{ "PAGES.ABOUT.OUR_TEAM.TITLE" | translate }}</h2>
         <p>
-          Notre force réside dans notre équipe d'experts certifiés Odoo,
-          passionnés par l'innovation et dédiés à votre succès. Ensemble, nous
-          partageons une vision commune : offrir des solutions simples,
-          puissantes et connectées pour transformer la gestion de votre
-          entreprise.
+          {{ "PAGES.ABOUT.OUR_TEAM.DESCRIPTION" | translate }}
         </p>
 
         <div class="engagements">
@@ -58,8 +50,18 @@
                 <div class="icon"></div>
               </div>
               <div class="card-content">
-                <h3>Autonomiser vos équipes</h3>
-                <p>En simplifiant vos processus</p>
+                <h3>
+                  {{
+                    "PAGES.ABOUT.OUR_TEAM.ENGAGEMENTS.EMPOWER_TEAMS.TITLE"
+                      | translate
+                  }}
+                </h3>
+                <p>
+                  {{
+                    "PAGES.ABOUT.OUR_TEAM.ENGAGEMENTS.EMPOWER_TEAMS.DESCRIPTION"
+                      | translate
+                  }}
+                </p>
               </div>
             </div>
             <div class="engagement-card">
@@ -67,8 +69,18 @@
                 <div class="icon"></div>
               </div>
               <div class="card-content">
-                <h3>Accélérer votre croissance</h3>
-                <p>Grâce à des outils adaptés à vos besoins</p>
+                <h3>
+                  {{
+                    "PAGES.ABOUT.OUR_TEAM.ENGAGEMENTS.ACCELERATE_GROWTH.TITLE"
+                      | translate
+                  }}
+                </h3>
+                <p>
+                  {{
+                    "PAGES.ABOUT.OUR_TEAM.ENGAGEMENTS.ACCELERATE_GROWTH.DESCRIPTION"
+                      | translate
+                  }}
+                </p>
               </div>
             </div>
             <div class="engagement-card">
@@ -76,8 +88,18 @@
                 <div class="icon"></div>
               </div>
               <div class="card-content">
-                <h3>Créer un impact durable</h3>
-                <p>À chaque étape de votre transformation digitale</p>
+                <h3>
+                  {{
+                    "PAGES.ABOUT.OUR_TEAM.ENGAGEMENTS.CREATE_IMPACT.TITLE"
+                      | translate
+                  }}
+                </h3>
+                <p>
+                  {{
+                    "PAGES.ABOUT.OUR_TEAM.ENGAGEMENTS.CREATE_IMPACT.DESCRIPTION"
+                      | translate
+                  }}
+                </p>
               </div>
             </div>
           </div>
@@ -101,36 +123,59 @@
 
   <div class="engagement-container">
     <div class="content-wrapper">
-      <h2 class="title">Notre Engagement</h2>
+      <h2 class="title">
+        {{ "PAGES.ABOUT.OUR_COMMITMENT.TITLE" | translate }}
+      </h2>
       <ul class="features-list">
         <li>
           <span>
-            <span class="feature-title">Des solutions sur mesure</span> :
-            Adaptées à vos besoins spécifiques.
+            <span class="feature-title">{{
+              "PAGES.ABOUT.OUR_COMMITMENT.FEATURES.CUSTOM_SOLUTIONS.TITLE"
+                | translate
+            }}</span>
+            :
+            {{
+              "PAGES.ABOUT.OUR_COMMITMENT.FEATURES.CUSTOM_SOLUTIONS.DESCRIPTION"
+                | translate
+            }}
           </span>
         </li>
         <li>
           <span>
-            <span class="feature-title">Un accompagnement personnalisé</span> :
-            De l'implémentation à la formation, nous sommes à vos côtés.
+            <span class="feature-title">{{
+              "PAGES.ABOUT.OUR_COMMITMENT.FEATURES.PERSONALIZED_SUPPORT.TITLE"
+                | translate
+            }}</span>
+            :
+            {{
+              "PAGES.ABOUT.OUR_COMMITMENT.FEATURES.PERSONALIZED_SUPPORT.DESCRIPTION"
+                | translate
+            }}
           </span>
         </li>
         <li>
           <span>
-            <span class="feature-title">Une expertise reconnue</span> :
-            Certifiés Odoo, nous appliquons les meilleures pratiques
-            internationales.
+            <span class="feature-title">{{
+              "PAGES.ABOUT.OUR_COMMITMENT.FEATURES.RECOGNIZED_EXPERTISE.TITLE"
+                | translate
+            }}</span>
+            :
+            {{
+              "PAGES.ABOUT.OUR_COMMITMENT.FEATURES.RECOGNIZED_EXPERTISE.DESCRIPTION"
+                | translate
+            }}
           </span>
         </li>
       </ul>
 
       <div class="cta-section">
-        <h3 class="cta-title">Passez à l'Action</h3>
-        <p class="cta-text text-white">
-          Découvrez comment MSL-ITECH peut transformer votre entreprise.
-          <strong>Contactez-nous dès aujourd'hui</strong> pour en savoir plus
-          sur nos solutions et notre accompagnement.
-        </p>
+        <h3 class="cta-title">
+          {{ "PAGES.ABOUT.OUR_COMMITMENT.CTA.TITLE" | translate }}
+        </h3>
+        <p
+          class="cta-text text-white"
+          [innerHTML]="'PAGES.ABOUT.OUR_COMMITMENT.CTA.DESCRIPTION' | translate"
+        ></p>
       </div>
     </div>
 
@@ -178,10 +223,13 @@
 <section class="team-section">
   <div class="team-container">
     <div class="team-header" data-aos="fade-up">
-      <h2 class="team-title">
-        Notre <span class="highlight">Dream Team</span>
-      </h2>
-      <p class="team-subtitle">Une équipe passionnée à votre service</p>
+      <h2
+        class="team-title"
+        [innerHTML]="'PAGES.ABOUT.DREAM_TEAM.TITLE' | translate"
+      ></h2>
+      <p class="team-subtitle">
+        {{ "PAGES.ABOUT.DREAM_TEAM.SUBTITLE" | translate }}
+      </p>
     </div>
 
     <div class="team-grid">
@@ -196,12 +244,12 @@
               />
             </div>
             <div class="team-member-info">
-              <h3>Arnaud AHOUO</h3>
-              <p class="role">Le Ninja du Backend</p>
-              <!-- <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-              </div> -->
+              <h3>
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.ARNAUD.NAME" | translate }}
+              </h3>
+              <p class="role">
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.ARNAUD.ROLE" | translate }}
+              </p>
             </div>
           </div>
         </div>
@@ -218,12 +266,12 @@
               />
             </div>
             <div class="team-member-info">
-              <h3>Elohim TAGNE</h3>
-              <p class="role">Le Geek Polyvalent</p>
-              <!-- <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-              </div> -->
+              <h3>
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.ELOHIM.NAME" | translate }}
+              </h3>
+              <p class="role">
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.ELOHIM.ROLE" | translate }}
+              </p>
             </div>
           </div>
         </div>
@@ -240,12 +288,12 @@
               />
             </div>
             <div class="team-member-info">
-              <h3>Oumnia OUAMIRA</h3>
-              <p class="role">La Stratège du Marketing</p>
-              <!-- <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-              </div> -->
+              <h3>
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.OUMNIA.NAME" | translate }}
+              </h3>
+              <p class="role">
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.OUMNIA.ROLE" | translate }}
+              </p>
             </div>
           </div>
         </div>
@@ -262,12 +310,12 @@
               />
             </div>
             <div class="team-member-info">
-              <h3>El Houssine BOUHMAIDA</h3>
-              <p class="role">Le Maestro d'Odoo</p>
-              <!-- <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-              </div> -->
+              <h3>
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.HOUSSINE.NAME" | translate }}
+              </h3>
+              <p class="role">
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.HOUSSINE.ROLE" | translate }}
+              </p>
             </div>
           </div>
         </div>
@@ -284,12 +332,12 @@
               />
             </div>
             <div class="team-member-info">
-              <h3>Mika MUNSUGAYI</h3>
-              <p class="role">Le Stratège des Chiffres</p>
-              <!-- <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-              </div> -->
+              <h3>
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.MIKA.NAME" | translate }}
+              </h3>
+              <p class="role">
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.MIKA.ROLE" | translate }}
+              </p>
             </div>
           </div>
         </div>
@@ -306,12 +354,12 @@
               />
             </div>
             <div class="team-member-info">
-              <h3>Romeo KAHOU</h3>
-              <p class="role">Le Chef d'Orchestre des Projets</p>
-              <!-- <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-              </div> -->
+              <h3>
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.ROMEO.NAME" | translate }}
+              </h3>
+              <p class="role">
+                {{ "PAGES.ABOUT.DREAM_TEAM.MEMBERS.ROMEO.ROLE" | translate }}
+              </p>
             </div>
           </div>
         </div>

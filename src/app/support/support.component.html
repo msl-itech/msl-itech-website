@@ -5,24 +5,29 @@
     <div class="container py-5">
       <div class="row align-items-center">
         <div class="col-lg-8 mx-auto text-center fade-in">
-          <span class="badge bg-accent mb-3">Support Technique</span>
-          <h1 class="display-4 fw-bold mb-4 text-white">AssisTech MSL-iTECH</h1>
+          <span class="badge bg-accent mb-3">{{
+            "PAGES.SUPPORT.HERO.BADGE" | translate
+          }}</span>
+          <h1 class="display-4 fw-bold mb-4 text-white">
+            {{ "PAGES.SUPPORT.HERO.TITLE" | translate }}
+          </h1>
           <p class="lead text-white-75">
-            Notre équipe d'experts est disponible pour résoudre vos problèmes
-            techniques et vous accompagner dans l'utilisation de nos solutions.
+            {{ "PAGES.SUPPORT.HERO.DESCRIPTION" | translate }}
           </p>
           <div class="mt-5">
             <a
               href="mailto:assistech@msl-itech.odoo.com"
               class="btn btn-light btn-lg me-3 shadow-sm"
             >
-              <i class="fas fa-headset me-2"></i>Contacter le support
+              <i class="fas fa-headset me-2"></i
+              >{{ "PAGES.SUPPORT.HERO.CONTACT_SUPPORT" | translate }}
             </a>
             <a
               (click)="scrollToFaq($event)"
               class="btn btn-outline-light btn-lg cursor-pointer"
             >
-              <i class="fas fa-question-circle me-2"></i>FAQ
+              <i class="fas fa-question-circle me-2"></i
+              >{{ "PAGES.SUPPORT.HERO.FAQ" | translate }}
             </a>
           </div>
         </div>
@@ -39,8 +44,12 @@
             <div class="stat-icon">
               <i class="fas fa-clock"></i>
             </div>
-            <h3 class="stat-number">15 min</h3>
-            <p class="stat-text">Temps de réponse moyen</p>
+            <h3 class="stat-number">
+              {{ "PAGES.SUPPORT.STATS.RESPONSE_TIME.VALUE" | translate }}
+            </h3>
+            <p class="stat-text">
+              {{ "PAGES.SUPPORT.STATS.RESPONSE_TIME.LABEL" | translate }}
+            </p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
@@ -48,8 +57,12 @@
             <div class="stat-icon">
               <i class="fas fa-check-circle"></i>
             </div>
-            <h3 class="stat-number">98%</h3>
-            <p class="stat-text">Taux de satisfaction client</p>
+            <h3 class="stat-number">
+              {{ "PAGES.SUPPORT.STATS.SATISFACTION.VALUE" | translate }}
+            </h3>
+            <p class="stat-text">
+              {{ "PAGES.SUPPORT.STATS.SATISFACTION.LABEL" | translate }}
+            </p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6">
@@ -57,8 +70,12 @@
             <div class="stat-icon">
               <i class="fas fa-users"></i>
             </div>
-            <h3 class="stat-number">9h-18h</h3>
-            <p class="stat-text">Support technique disponible</p>
+            <h3 class="stat-number">
+              {{ "PAGES.SUPPORT.STATS.AVAILABILITY.VALUE" | translate }}
+            </h3>
+            <p class="stat-text">
+              {{ "PAGES.SUPPORT.STATS.AVAILABILITY.LABEL" | translate }}
+            </p>
           </div>
         </div>
       </div>
@@ -70,14 +87,13 @@
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center">
-          <h2 class="section-title">
-            Comment pouvons-nous<br />
-            vous aider ?
-          </h2>
+          <h2
+            class="section-title"
+            [innerHTML]="'PAGES.SUPPORT.MAIN.TITLE' | translate"
+          ></h2>
           <div class="separator"></div>
           <p class="section-subtitle">
-            Découvrez nos différentes options de support technique pour résoudre
-            rapidement vos problèmes.
+            {{ "PAGES.SUPPORT.MAIN.SUBTITLE" | translate }}
           </p>
         </div>
       </div>
@@ -92,39 +108,57 @@
                 <div class="icon-wrapper-alt mb-3">
                   <i class="fas fa-desktop"></i>
                 </div>
-                <h3 class="h4 mb-3">Assistance à distance</h3>
+                <h3 class="h4 mb-3">
+                  {{ "PAGES.SUPPORT.REMOTE_SUPPORT.TITLE" | translate }}
+                </h3>
               </div>
               <div class="card-text">
                 <p>
-                  Nous utilisons AnyDesk pour vous offrir une assistance
-                  technique à distance en toute sécurité et résoudre vos
-                  problèmes en temps réel.
+                  {{ "PAGES.SUPPORT.REMOTE_SUPPORT.DESCRIPTION" | translate }}
                 </p>
                 <ol class="list-unstyled">
                   <li class="mb-2">
                     <i class="fas fa-check-circle me-2 text-primary"></i>
                     <div>
-                      <strong>Téléchargez AnyDesk</strong>
+                      <strong>{{
+                        "PAGES.SUPPORT.REMOTE_SUPPORT.STEPS.DOWNLOAD.TITLE"
+                          | translate
+                      }}</strong>
                       <p class="feature-desc">
-                        Choisissez votre version ci-dessous
+                        {{
+                          "PAGES.SUPPORT.REMOTE_SUPPORT.STEPS.DOWNLOAD.DESCRIPTION"
+                            | translate
+                        }}
                       </p>
                     </div>
                   </li>
                   <li class="mb-2">
                     <i class="fas fa-check-circle me-2 text-primary"></i>
                     <div>
-                      <strong>Lancez l'application</strong>
+                      <strong>{{
+                        "PAGES.SUPPORT.REMOTE_SUPPORT.STEPS.LAUNCH.TITLE"
+                          | translate
+                      }}</strong>
                       <p class="feature-desc">
-                        Et notez votre identifiant AnyDesk
+                        {{
+                          "PAGES.SUPPORT.REMOTE_SUPPORT.STEPS.LAUNCH.DESCRIPTION"
+                            | translate
+                        }}
                       </p>
                     </div>
                   </li>
                   <li class="mb-2">
                     <i class="fas fa-check-circle me-2 text-primary"></i>
                     <div>
-                      <strong>Partagez votre ID</strong>
+                      <strong>{{
+                        "PAGES.SUPPORT.REMOTE_SUPPORT.STEPS.SHARE.TITLE"
+                          | translate
+                      }}</strong>
                       <p class="feature-desc">
-                        Avec notre technicien pour démarrer la session
+                        {{
+                          "PAGES.SUPPORT.REMOTE_SUPPORT.STEPS.SHARE.DESCRIPTION"
+                            | translate
+                        }}
                       </p>
                     </div>
                   </li>
@@ -172,49 +206,71 @@
         <!-- Support Ticket Card -->
         <div class="col-lg-4">
           <div class="card shadow-hover h-100 rounded-4 border-0 premium-card">
-            <div class="popular-badge">Recommandé</div>
+            <div class="popular-badge">
+              {{ "PAGES.SUPPORT.SUPPORT_TICKET.BADGE" | translate }}
+            </div>
             <div class="card-body p-4">
               <div class="text-center mb-4">
                 <div class="icon-wrapper-alt mb-3">
                   <i class="fas fa-ticket-alt"></i>
                 </div>
-                <h3 class="h4 mb-3">Ticket de support</h3>
+                <h3 class="h4 mb-3">
+                  {{ "PAGES.SUPPORT.SUPPORT_TICKET.TITLE" | translate }}
+                </h3>
               </div>
               <div class="card-text">
                 <p>
-                  Pour un suivi optimal de votre demande, contactez-nous en nous
-                  envoyant un email détaillé.
+                  {{ "PAGES.SUPPORT.SUPPORT_TICKET.DESCRIPTION" | translate }}
                 </p>
                 <p class="text-primary fw-bold">
-                  assistech&#64;msl-itech.odoo.com
+                  {{ "PAGES.SUPPORT.SUPPORT_TICKET.EMAIL" | translate }}
                 </p>
-                <p>Incluez dans votre demande :</p>
+                <p>
+                  {{ "PAGES.SUPPORT.SUPPORT_TICKET.INCLUDE_TEXT" | translate }}
+                </p>
                 <ul class="list-unstyled">
                   <li class="mb-2">
                     <i class="fas fa-check-circle me-2 text-primary"></i>
                     <div>
-                      <strong>Description précise</strong>
+                      <strong>{{
+                        "PAGES.SUPPORT.SUPPORT_TICKET.REQUIREMENTS.DESCRIPTION.TITLE"
+                          | translate
+                      }}</strong>
                       <p class="feature-desc">
-                        Détaillez le problème rencontré et les étapes pour le
-                        reproduire
+                        {{
+                          "PAGES.SUPPORT.SUPPORT_TICKET.REQUIREMENTS.DESCRIPTION.DETAIL"
+                            | translate
+                        }}
                       </p>
                     </div>
                   </li>
                   <li class="mb-2">
                     <i class="fas fa-check-circle me-2 text-primary"></i>
                     <div>
-                      <strong>Vos coordonnées</strong>
+                      <strong>{{
+                        "PAGES.SUPPORT.SUPPORT_TICKET.REQUIREMENTS.CONTACT.TITLE"
+                          | translate
+                      }}</strong>
                       <p class="feature-desc">
-                        Nom, entreprise et numéro de téléphone
+                        {{
+                          "PAGES.SUPPORT.SUPPORT_TICKET.REQUIREMENTS.CONTACT.DETAIL"
+                            | translate
+                        }}
                       </p>
                     </div>
                   </li>
                   <li class="mb-2">
                     <i class="fas fa-check-circle me-2 text-primary"></i>
                     <div>
-                      <strong>Captures d'écran</strong>
+                      <strong>{{
+                        "PAGES.SUPPORT.SUPPORT_TICKET.REQUIREMENTS.SCREENSHOTS.TITLE"
+                          | translate
+                      }}</strong>
                       <p class="feature-desc">
-                        Pour nous aider à visualiser le problème
+                        {{
+                          "PAGES.SUPPORT.SUPPORT_TICKET.REQUIREMENTS.SCREENSHOTS.DETAIL"
+                            | translate
+                        }}
                       </p>
                     </div>
                   </li>
@@ -224,7 +280,8 @@
                     href="mailto:assistech@msl-itech.odoo.com"
                     class="btn btn-primary"
                   >
-                    <i class="fas fa-paper-plane me-2"></i>Envoyer un email
+                    <i class="fas fa-paper-plane me-2"></i
+                    >{{ "PAGES.SUPPORT.SUPPORT_TICKET.SEND_EMAIL" | translate }}
                   </a>
                 </div>
               </div>
@@ -240,7 +297,9 @@
                 <div class="icon-wrapper-alt mb-3">
                   <i class="fas fa-phone-alt"></i>
                 </div>
-                <h3 class="h4 mb-3">Nous contacter</h3>
+                <h3 class="h4 mb-3">
+                  {{ "PAGES.SUPPORT.CONTACT_INFO.TITLE" | translate }}
+                </h3>
               </div>
               <div class="card-text">
                 <div class="mb-4">
@@ -252,9 +311,9 @@
                       <i class="fas fa-phone"></i>
                     </div>
                     <div class="contact-info">
-                      <span class="contact-label d-block text-muted small"
-                        >Téléphone</span
-                      >
+                      <span class="contact-label d-block text-muted small">{{
+                        "PAGES.SUPPORT.CONTACT_INFO.PHONE_LABEL" | translate
+                      }}</span>
                       <span class="contact-value">+32 2 886 05 64</span>
                       <span class="contact-value">+1 204 650 0765</span>
                     </div>
@@ -268,9 +327,9 @@
                       <i class="fas fa-envelope"></i>
                     </div>
                     <div class="contact-info">
-                      <span class="contact-label d-block text-muted small"
-                        >Email</span
-                      >
+                      <span class="contact-label d-block text-muted small">{{
+                        "PAGES.SUPPORT.CONTACT_INFO.EMAIL_LABEL" | translate
+                      }}</span>
                       <span class="contact-value"
                         >assistech&#64;msl-itech.odoo.com</span
                       >
@@ -284,29 +343,32 @@
                       <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-info">
-                      <span class="contact-label d-block text-muted small"
-                        >Adresse</span
-                      >
-                      <span class="contact-value"
-                        >951 Q.I. AL MASSAR N° 2, ROUTE DE SAFI, MAROC</span
-                      >
+                      <span class="contact-label d-block text-muted small">{{
+                        "PAGES.SUPPORT.CONTACT_INFO.ADDRESS_LABEL" | translate
+                      }}</span>
+                      <span class="contact-value">{{
+                        "PAGES.SUPPORT.CONTACT_INFO.ADDRESS_VALUE" | translate
+                      }}</span>
                     </div>
                   </div>
                 </div>
                 <div class="border-top pt-4">
-                  <h4 class="h6 mb-3">Horaires d'ouverture</h4>
+                  <h4 class="h6 mb-3">
+                    {{ "PAGES.SUPPORT.CONTACT_INFO.OPENING_HOURS" | translate }}
+                  </h4>
                   <p class="mb-2">
                     <i class="fas fa-clock me-2 text-primary"></i>
-                    Lundi - Vendredi : 9h00 - 18h00
+                    {{ "PAGES.SUPPORT.CONTACT_INFO.WEEKDAYS" | translate }}
                   </p>
                   <p class="mb-0">
                     <i class="fas fa-calendar-times me-2 text-primary"></i>
-                    Samedi & Dimanche : Fermé
+                    {{ "PAGES.SUPPORT.CONTACT_INFO.WEEKEND" | translate }}
                   </p>
                 </div>
                 <div class="text-center mt-4">
                   <a href="tel:+32 2 886 05 64" class="btn btn-outline-primary">
-                    <i class="fas fa-phone-alt me-2"></i>Appeler maintenant
+                    <i class="fas fa-phone-alt me-2"></i
+                    >{{ "PAGES.SUPPORT.CONTACT_INFO.CALL_NOW" | translate }}
                   </a>
                 </div>
               </div>
@@ -322,10 +384,12 @@
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center">
-          <h2 class="section-title">Notre processus de gestion des tickets</h2>
+          <h2 class="section-title">
+            {{ "PAGES.SUPPORT.PROCESS.TITLE" | translate }}
+          </h2>
           <div class="separator"></div>
           <p class="section-subtitle">
-            Découvrez comment nous traitons vos demandes d'assistance
+            {{ "PAGES.SUPPORT.PROCESS.SUBTITLE" | translate }}
           </p>
         </div>
       </div>
@@ -339,10 +403,14 @@
                 <span class="process-number">1</span>
               </div>
               <div class="process-content">
-                <h4>Contact</h4>
+                <h4>
+                  {{ "PAGES.SUPPORT.PROCESS.STEPS.CONTACT.TITLE" | translate }}
+                </h4>
                 <p>
-                  Vous nous contactez via notre adresse mail
-                  assistech&#64;msl-itech.odoo.com
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.CONTACT.DESCRIPTION"
+                      | translate
+                  }}
                 </p>
               </div>
             </div>
@@ -353,10 +421,16 @@
                 <span class="process-number">2</span>
               </div>
               <div class="process-content">
-                <h4>Confirmation</h4>
+                <h4>
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.CONFIRMATION.TITLE" | translate
+                  }}
+                </h4>
                 <p>
-                  Vous recevez une confirmation avec un numéro de ticket sous 15
-                  minutes
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.CONFIRMATION.DESCRIPTION"
+                      | translate
+                  }}
                 </p>
               </div>
             </div>
@@ -367,10 +441,16 @@
                 <span class="process-number">3</span>
               </div>
               <div class="process-content">
-                <h4>Diagnostic</h4>
+                <h4>
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.DIAGNOSTIC.TITLE" | translate
+                  }}
+                </h4>
                 <p>
-                  Notre équipe examine votre problème en détail et identifie la
-                  solution la plus adaptée.
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.DIAGNOSTIC.DESCRIPTION"
+                      | translate
+                  }}
                 </p>
               </div>
             </div>
@@ -381,10 +461,16 @@
                 <span class="process-number">4</span>
               </div>
               <div class="process-content">
-                <h4>Résolution</h4>
+                <h4>
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.RESOLUTION.TITLE" | translate
+                  }}
+                </h4>
                 <p>
-                  Nous résolvons votre problème à distance ou vous accompagnons
-                  pas à pas pour une solution complète.
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.RESOLUTION.DESCRIPTION"
+                      | translate
+                  }}
                 </p>
               </div>
             </div>
@@ -395,10 +481,16 @@
                 <span class="process-number">5</span>
               </div>
               <div class="process-content">
-                <h4>Validation</h4>
+                <h4>
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.VALIDATION.TITLE" | translate
+                  }}
+                </h4>
                 <p>
-                  Nous confirmons avec vous que le problème a été entièrement
-                  résolu
+                  {{
+                    "PAGES.SUPPORT.PROCESS.STEPS.VALIDATION.DESCRIPTION"
+                      | translate
+                  }}
                 </p>
               </div>
             </div>
@@ -413,10 +505,12 @@
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center">
-          <h2 class="section-title">FAQ</h2>
+          <h2 class="section-title">
+            {{ "PAGES.SUPPORT.FAQ.TITLE" | translate }}
+          </h2>
           <div class="separator"></div>
           <p class="section-subtitle">
-            Trouvez rapidement des réponses aux questions les plus courantes
+            {{ "PAGES.SUPPORT.FAQ.SUBTITLE" | translate }}
           </p>
         </div>
       </div>
@@ -436,7 +530,10 @@
                   data-bs-target="#faq2"
                 >
                   <i class="fas fa-question-circle me-3"></i>
-                  Quels sont les délais de résolution habituels ?
+                  {{
+                    "PAGES.SUPPORT.FAQ.QUESTIONS.RESOLUTION_TIME.QUESTION"
+                      | translate
+                  }}
                 </button>
               </h2>
               <div
@@ -445,11 +542,10 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                  Notre équipe s'engage à répondre à votre demande sous 15
-                  minutes pendant nos heures d'ouverture. Bien que le temps de
-                  résolution dépende de la complexité du problème, 80 % des cas
-                  sont résolus en moins de 4 heures, garantissant une
-                  intervention rapide et efficace.
+                  {{
+                    "PAGES.SUPPORT.FAQ.QUESTIONS.RESOLUTION_TIME.ANSWER"
+                      | translate
+                  }}
                 </div>
               </div>
             </div>
@@ -464,7 +560,10 @@
                   data-bs-target="#faq3"
                 >
                   <i class="fas fa-question-circle me-3"></i>
-                  Comment fonctionne l'assistance à distance ?
+                  {{
+                    "PAGES.SUPPORT.FAQ.QUESTIONS.REMOTE_ASSISTANCE.QUESTION"
+                      | translate
+                  }}
                 </button>
               </h2>
               <div
@@ -473,10 +572,10 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                  L'assistance à distance utilise AnyDesk, un logiciel sécurisé
-                  qui permet à nos techniciens de se connecter à votre
-                  ordinateur avec votre permission. Vous pouvez observer toutes
-                  les actions effectuées et reprendre le contrôle à tout moment.
+                  {{
+                    "PAGES.SUPPORT.FAQ.QUESTIONS.REMOTE_ASSISTANCE.ANSWER"
+                      | translate
+                  }}
                 </div>
               </div>
             </div>
@@ -491,7 +590,10 @@
                   data-bs-target="#faq4"
                 >
                   <i class="fas fa-question-circle me-3"></i>
-                  Le support technique est-il inclus dans mon abonnement ?
+                  {{
+                    "PAGES.SUPPORT.FAQ.QUESTIONS.SUPPORT_INCLUDED.QUESTION"
+                      | translate
+                  }}
                 </button>
               </h2>
               <div
@@ -500,10 +602,10 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                  Oui, tous nos abonnements incluent un accès au support
-                  technique par email et téléphone pendant les heures
-                  d'ouverture. Les formules Premium bénéficient d'un support
-                  prioritaire et d'un accès 24/7 pour les urgences.
+                  {{
+                    "PAGES.SUPPORT.FAQ.QUESTIONS.SUPPORT_INCLUDED.ANSWER"
+                      | translate
+                  }}
                 </div>
               </div>
             </div>
@@ -518,7 +620,10 @@
                   data-bs-target="#faq5"
                 >
                   <i class="fas fa-question-circle me-3"></i>
-                  Comment puis-je suivre l'avancement de ma demande ?
+                  {{
+                    "PAGES.SUPPORT.FAQ.QUESTIONS.TRACK_REQUEST.QUESTION"
+                      | translate
+                  }}
                 </button>
               </h2>
               <div
@@ -527,11 +632,10 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                  Lorsque vous ouvrez un ticket, vous recevez un email de
-                  confirmation avec un numéro de référence. Vous pouvez utiliser
-                  ce numéro pour suivre l'avancement de votre demande en
-                  contactant notre équipe. Nous vous tenons également informé
-                  par email à chaque étape importante.
+                  {{
+                    "PAGES.SUPPORT.FAQ.QUESTIONS.TRACK_REQUEST.ANSWER"
+                      | translate
+                  }}
                 </div>
               </div>
             </div>
@@ -546,23 +650,26 @@
     <div class="container py-4">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="mb-4 text-white">Besoin d'aide rapidement ?</h2>
+          <h2 class="mb-4 text-white">
+            {{ "PAGES.SUPPORT.CTA.TITLE" | translate }}
+          </h2>
           <p class="mb-4 lead">
-            Notre équipe d'experts est prête à résoudre vos problèmes techniques
-            et à vous accompagner dans l'utilisation de nos solutions.
+            {{ "PAGES.SUPPORT.CTA.DESCRIPTION" | translate }}
           </p>
           <div class="d-flex flex-wrap justify-content-center gap-3">
             <a
               href="mailto:assistech@msl-itech.odoo.com"
               class="btn btn-light btn-lg px-4"
             >
-              <i class="fas fa-envelope me-2"></i>Contacter le support
+              <i class="fas fa-envelope me-2"></i
+              >{{ "PAGES.SUPPORT.CTA.CONTACT_SUPPORT" | translate }}
             </a>
             <a
               href="tel:+3228860564"
               class="btn btn-outline-light btn-lg px-4 cursor-p"
             >
-              <i class="fas fa-phone-alt me-2"></i>Appeler maintenant
+              <i class="fas fa-phone-alt me-2"></i
+              >{{ "PAGES.SUPPORT.CTA.CALL_NOW" | translate }}
             </a>
           </div>
         </div>

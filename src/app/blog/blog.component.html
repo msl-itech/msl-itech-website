@@ -1,32 +1,33 @@
 <section>
-    <div class="blog-articles">
-      <div class="section-header">
-        <div class="section-header--text">
-          <h2>Blog / Astuces</h2>
-          <p>
-            Astuces & Conseils pour optimiser votre gestion d'entreprise.
-          </p>
-        </div>
-        <div class="see-more">
-          <a href="#" class="btn-see-more">Voir plus</a>
-        </div>
+  <div class="blog-articles">
+    <div class="section-header">
+      <div class="section-header--text">
+        <h2>{{ "COMPONENTS.BLOG.TITLE" | translate }}</h2>
+        <p>
+          {{ "COMPONENTS.BLOG.SUBTITLE" | translate }}
+        </p>
       </div>
-  
-      <div class="articles">
-        <div 
-          class="article-card" 
-          *ngFor="let article of articles">
-          <img [src]="article.img" alt="Article Image">
-          <div class="article-info">
-            <span class="article-date">
-              <i class="fa fa-calendar" aria-hidden="true"></i> {{ article.date }}
-            </span>
-            <h3>{{ article.title }}</h3>
-            <p>{{ article.description }}</p>
-            <a [href]="article.link" class="learn-more">Voir plus →</a>
-          </div>
+      <div class="see-more">
+        <a href="#" class="btn-see-more">{{
+          "COMPONENTS.BLOG.SEE_MORE" | translate
+        }}</a>
+      </div>
+    </div>
+
+    <div class="articles">
+      <div class="article-card" *ngFor="let article of articles">
+        <img [src]="article.img" alt="Article Image" />
+        <div class="article-info">
+          <span class="article-date">
+            <i class="fa fa-calendar" aria-hidden="true"></i> {{ article.date }}
+          </span>
+          <h3>{{ article.title }}</h3>
+          <p>{{ article.description }}</p>
+          <a [href]="article.link" class="learn-more">{{
+            "COMPONENTS.BLOG.LEARN_MORE" | translate
+          }}</a>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
