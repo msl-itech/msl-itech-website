@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -72,6 +73,10 @@ import { TarifsComponent } from './tarifs/tarifs.component';
 import { TextSlideComponent } from './text-slide/text-slide.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
 
+// Imports pour l'optimisation d'images
+import { OptimizedImageComponent } from './components/optimized-image/optimized-image.component';
+import { ResponsiveImageDirective } from './directives/responsive-image.directive';
+
 // Factory function pour le loader de traduction
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -127,6 +132,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     SmartAlertOrderComponent,
     PrendreRendezVousComponent,
     LanguageSelectorComponent,
+    // Nouveaux composants pour l'optimisation d'images
+    ResponsiveImageDirective,
+    OptimizedImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -137,6 +145,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    LayoutModule, // Angular CDK Layout pour BreakpointObserver
     // Configuration de TranslateModule
     TranslateModule.forRoot({
       loader: {

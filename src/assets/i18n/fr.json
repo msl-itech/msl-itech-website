@@ -36,7 +36,7 @@
     "ACTIONS": {
       "SUBMIT_NEED": "Soumettre un besoin",
       "CONTACT_US": "Contactez-nous",
-      "BOOK_DEMO": "Reserver une démo"
+      "BOOK_DEMO": "Obtenez votre audit gratuit"
     }
   },
   "BUTTONS": {
@@ -953,7 +953,7 @@
             "BUTTON": "Choisir"
           },
           "ENTERPRISE": {
-            "TITLE": "Pack Enterprise",
+            "TITLE": "Pack Entreprise",
             "SUBTITLE": "Personnalisation totale",
             "VALUES": {
               "ANALYSIS": "Sur mesure",
@@ -968,7 +968,7 @@
               "TRAINING": "Formation sur mesure",
               "SUPPORT": "Support dédié 24/7",
               "IMPROVEMENTS": "Sur mesure",
-              "SERVICE": "Enterprise"
+              "SERVICE": "Entreprise"
             },
             "BUTTON": "Contacter"
           }

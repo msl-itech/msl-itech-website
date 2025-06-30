@@ -68,17 +68,19 @@
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         "
       >
-        <img
+        <app-optimized-image
           src="../../assets/img/webp/12.webp"
           alt="Présentation MSL Itech"
-          style="
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            margin: 0;
-          "
-        />
+          imageClass="presentation-image"
+          [customStyles]="{
+            width: '100%',
+            height: '100%',
+            'object-fit': 'cover',
+            display: 'block',
+            margin: '0'
+          }"
+          loading="eager"
+        ></app-optimized-image>
       </div>
 
       <img
@@ -86,12 +88,14 @@
         alt="Graphique illustrant les services MSL Itech"
         class="decoration-image decoration-image-1"
         data-aos="zoom-in"
+        loading="lazy"
       />
       <img
         src="../../assets/img/accueil/graphic-2.jpg.png"
         alt="Décoration visuelle des solutions"
         class="decoration-image decoration-image-2"
         data-aos="zoom-in"
+        loading="lazy"
       />
     </div>
     <div class="decorations">
@@ -140,6 +144,7 @@
       <img
         src="../../assets/img/accueil/Odoo-Themes-Development.png.png"
         alt="Développement de thèmes Odoo par MSL Itech"
+        loading="lazy"
       />
     </div>
   </div>
@@ -154,19 +159,23 @@
     </h1>
     <div class="experts-container">
       <div class="expert" data-aos="fade-up">
-        <img
+        <app-optimized-image
           src="../../assets/img/newImage/6.webp"
           alt="Expert en Business Analytics Odoo"
-        />
+          imageClass="expert-image"
+          loading="lazy"
+        ></app-optimized-image>
         <p class="expert-title">
           {{ "PAGES.HOME.EXPERTS.BUSINESS_ANALYTICS" | translate }}
         </p>
       </div>
       <div class="expert" data-aos="fade-up" data-aos-delay="200">
-        <img
+        <app-optimized-image
           src="../../assets/img/newImage/2.webp"
           alt="Développeur Odoo Certifié"
-        />
+          imageClass="expert-image"
+          loading="lazy"
+        ></app-optimized-image>
         <p class="expert-title">
           {{ "PAGES.HOME.EXPERTS.DEVELOPER" | translate }}
         </p>

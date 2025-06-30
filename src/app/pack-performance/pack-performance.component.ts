@@ -128,11 +128,11 @@ export class PackPerformanceComponent implements OnInit, AfterViewInit {
 
         // Changer le texte du bouton pour la dernière question
         if (currentQuestion === 3) {
-          nextBtn.innerHTML =
-            '<i class="fas fa-magic me-2"></i>' +
+          const buttonText =
             this.translate.instant(
               'PAGES.PACK_PERFORMANCE.PACK_FINDER.BUTTONS.SHOW_PACK'
-            );
+            ) || 'Voir mon pack idéal';
+          nextBtn.innerHTML = '<i class="fas fa-magic me-2"></i>' + buttonText;
         }
       } else {
         // Afficher le résultat
@@ -174,15 +174,33 @@ export class PackPerformanceComponent implements OnInit, AfterViewInit {
     // Déterminer le pack recommandé
     const pack = this.getRecommendedPack(answers);
 
-    // Afficher le résultat
+    // Afficher le résultat avec gestion asynchrone des traductions
     const recommendedPackEl = document.getElementById('recommendedPack');
     const packDescriptionEl = document.getElementById('packDescription');
 
+    // Utiliser les traductions avec fallback robuste
     if (recommendedPackEl) {
-      recommendedPackEl.textContent = pack.name;
+      this.translate.get(pack.nameKey).subscribe((translation: string) => {
+        // Vérifier si la traduction est trouvée (différente de la clé)
+        if (translation && translation !== pack.nameKey) {
+          recommendedPackEl.textContent = translation;
+        } else {
+          recommendedPackEl.textContent = pack.name; // Utiliser le fallback
+        }
+      });
     }
+
     if (packDescriptionEl) {
-      packDescriptionEl.textContent = pack.description;
+      this.translate
+        .get(pack.descriptionKey)
+        .subscribe((translation: string) => {
+          // Vérifier si la traduction est trouvée (différente de la clé)
+          if (translation && translation !== pack.descriptionKey) {
+            packDescriptionEl.textContent = translation;
+          } else {
+            packDescriptionEl.textContent = pack.description; // Utiliser le fallback
+          }
+        });
     }
 
     result.style.display = 'block';
@@ -210,22 +228,30 @@ export class PackPerformanceComponent implements OnInit, AfterViewInit {
       (budget === '1500-3000' && accompagnement === 'optimisation')
     ) {
       return {
-        name: this.translate.instant(
-          'PAGES.PACK_PERFORMANCE.PACKS.PREMIUM.NAME'
+        nameKey: 'PAGES.PACK_PERFORMANCE.PACKS.PREMIUM.NAME',
+        descriptionKey: 'PAGES.PACK_PERFORMANCE.PACKS.PREMIUM.DESCRIPTION',
+        name: this.getTranslationOrFallback(
+          'PAGES.PACK_PERFORMANCE.PACKS.PREMIUM.NAME',
+          'Pack Premium 👑'
         ),
-        description: this.translate.instant(
-          'PAGES.PACK_PERFORMANCE.PACKS.PREMIUM.DESCRIPTION'
+        description: this.getTranslationOrFallback(
+          'PAGES.PACK_PERFORMANCE.PACKS.PREMIUM.DESCRIPTION',
+          'Solution haut de gamme avec accompagnement personnalisé, support prioritaire et optimisation complète de vos processus Odoo.'
         ),
       };
     }
 
     // Toutes les autres combinaisons mènent au Pack Avancé
     return {
-      name: this.translate.instant(
-        'PAGES.PACK_PERFORMANCE.PACKS.ADVANCED.NAME'
+      nameKey: 'PAGES.PACK_PERFORMANCE.PACKS.ADVANCED.NAME',
+      descriptionKey: 'PAGES.PACK_PERFORMANCE.PACKS.ADVANCED.DESCRIPTION',
+      name: this.getTranslationOrFallback(
+        'PAGES.PACK_PERFORMANCE.PACKS.ADVANCED.NAME',
+        'Pack Avancé ⚡'
       ),
-      description: this.translate.instant(
-        'PAGES.PACK_PERFORMANCE.PACKS.ADVANCED.DESCRIPTION'
+      description: this.getTranslationOrFallback(
+        'PAGES.PACK_PERFORMANCE.PACKS.ADVANCED.DESCRIPTION',
+        'Solution complète pour développer votre activité avec Odoo. Configuration personnalisée, formation avancée et support technique inclus.'
       ),
     };
   }
@@ -380,5 +406,15 @@ export class PackPerformanceComponent implements OnInit, AfterViewInit {
         block: 'center',
       });
     }
+  }
+
+  private getTranslationOrFallback(key: string, fallback: string): string {
+    const translation = this.translate.instant(key);
+    // Si la traduction est différente de la clé, elle a été trouvée
+    if (translation && translation !== key) {
+      return translation;
+    }
+    // Sinon, utiliser la valeur de fallback
+    return fallback;
   }
 }

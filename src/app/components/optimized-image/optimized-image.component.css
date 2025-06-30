@@ -1,0 +1,61 @@
+/* Styles de base pour les images optimisées */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+/* Effet de fondu pendant le chargement */
+.responsive-image[loading="lazy"] {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styles pour les différents types d'images */
+.responsive-image.hero-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.responsive-image.thumbnail {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-image.card-image {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Optimisations pour les images au-dessus du pli */
+.responsive-image[loading="eager"] {
+  opacity: 1;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 599px) {
+  .responsive-image.hero-image {
+    height: 200px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .responsive-image.hero-image {
+    height: 300px;
+  }
+}
+
+@media (min-width: 960px) {
+  .responsive-image.hero-image {
+    height: 400px;
+  }
+}
