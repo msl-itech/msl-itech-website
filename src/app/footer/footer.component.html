@@ -8,57 +8,75 @@
         />
       </div>
       <p>
-        Accélérez la transformation numérique de votre entreprise avec
-        MSL-Itech, expert en implémentation et intégration d'Odoo.
+        {{ "FOOTER.DESCRIPTION" | translate }}
       </p>
     </div>
     <div class="footer-column">
-      <h3>Navigation</h3>
+      <h3>{{ "FOOTER.NAVIGATION.TITLE" | translate }}</h3>
       <ul>
-        <li><a routerLink="/" routerLinkActive="active">Accueil</a></li>
         <li>
-          <a routerLink="/services" routerLinkActive="active">Nos services</a>
+          <a routerLink="/" routerLinkActive="active">{{
+            "FOOTER.NAVIGATION.HOME" | translate
+          }}</a>
         </li>
         <li>
-          <a routerLink="/job" routerLinkActive="active">Offres d'emploi</a>
+          <a routerLink="/services" routerLinkActive="active">{{
+            "FOOTER.NAVIGATION.SERVICES" | translate
+          }}</a>
+        </li>
+        <li>
+          <a routerLink="/job" routerLinkActive="active">{{
+            "FOOTER.NAVIGATION.JOBS" | translate
+          }}</a>
         </li>
       </ul>
     </div>
     <div class="footer-column">
-      <h3>Liens rapides</h3>
+      <h3>{{ "FOOTER.QUICK_LINKS.TITLE" | translate }}</h3>
       <ul>
         <li>
-          <a routerLink="/contact" routerLinkActive="active">Contactez-nous</a>
-        </li>
-        <li><a routerLink="/faqs" routerLinkActive="active">FAQs</a></li>
-        <li>
-          <a routerLink="/about" routerLinkActive="active">À propos de nous</a>
+          <a routerLink="/contact" routerLinkActive="active">{{
+            "FOOTER.QUICK_LINKS.CONTACT" | translate
+          }}</a>
         </li>
         <li>
-          <a routerLink="/job" routerLinkActive="active">Offres d'emploi</a>
+          <a routerLink="/faqs" routerLinkActive="active">{{
+            "FOOTER.QUICK_LINKS.FAQS" | translate
+          }}</a>
         </li>
         <li>
-          <a routerLink="/prendre-rendez-vous" routerLinkActive="active"
-            >Prendre rendez-vous</a
-          >
+          <a routerLink="/about" routerLinkActive="active">{{
+            "FOOTER.QUICK_LINKS.ABOUT" | translate
+          }}</a>
         </li>
         <li>
-          <a routerLink="/reserver-demo" routerLinkActive="active"
-            >Réserver une démo</a
-          >
+          <a routerLink="/job" routerLinkActive="active">{{
+            "FOOTER.QUICK_LINKS.JOBS" | translate
+          }}</a>
+        </li>
+        <li>
+          <a routerLink="/prendre-rendez-vous" routerLinkActive="active">{{
+            "FOOTER.QUICK_LINKS.APPOINTMENT" | translate
+          }}</a>
+        </li>
+        <li>
+          <a routerLink="/reserver-demo" routerLinkActive="active">{{
+            "FOOTER.QUICK_LINKS.DEMO" | translate
+          }}</a>
         </li>
       </ul>
     </div>
   </div>
   <div class="footer-contact">
     <span
-      ><i class="fa fa-map-marker-alt" aria-hidden="true"></i> Bureaux
-      internationaux : Belgique, Maroc, Canada</span
+      ><i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+      {{ "FOOTER.CONTACT.OFFICES" | translate }}</span
     >
     <span
       ><i class="fa fa-phone-alt" aria-hidden="true"></i>
       <a href="tel:+3228860549"> +32 2 886 05 49</a> /
-      <a href="tel:+12046500765">+1 204 650 0765</a>
+      <a href="tel:+12046500765">+1 204 650 0765</a> /
+      <a href="tel:028860549">02 886 0549</a>
     </span>
     <span
       ><i class="fa fa-envelope" aria-hidden="true"></i>
@@ -98,6 +116,6 @@
 
   <div class="footer-bottom">
     <div class="footer-line"></div>
-    <p>&copy; 2024 MSL-ITECH • Tous droits réservés</p>
+    <p>{{ "FOOTER.COPYRIGHT" | translate }}</p>
   </div>
 </footer>

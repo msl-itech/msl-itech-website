@@ -1,13 +1,13 @@
 <section class="certification-section">
-    <div class="container">
-        <div class="certification-content">
-            <h3>Certification</h3>
-            <div class="underline"></div>
-            <h2>Nous sommes certifiés <span>Odoo</span></h2>
-            <p>Notre équipe est certifiée Odoo, garantissant que tous nos travaux respectent ses standards internationaux pour une implémentation de qualité.</p>
-        </div>
-        <div class="certification-badge">
-            <img src="../../assets/img/accueil/odoo17.png" alt="Odoo Certification">
-        </div>
+  <div class="container">
+    <div class="certification-content">
+      <h3>{{ "PAGES.CERTIFICATION.TITLE" | translate }}</h3>
+      <div class="underline"></div>
+      <h2 [innerHTML]="'PAGES.CERTIFICATION.SUBTITLE' | translate"></h2>
+      <p>{{ "PAGES.CERTIFICATION.DESCRIPTION" | translate }}</p>
     </div>
+    <div class="certification-badge">
+      <img src="../../assets/img/accueil/odoo17.png" alt="Odoo Certification" />
+    </div>
+  </div>
 </section>

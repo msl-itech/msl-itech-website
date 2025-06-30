@@ -1,152 +1,221 @@
 <section class="hero-section">
-    <div class="hero-image">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1>Solutions Odoo sur Mesure pour Votre Entreprise</h1>
-            <a href="/contact" class="btn-yellow">FAITES-NOUS CONFIANCE</a>
-        </div>
+  <div class="hero-image">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>{{ "PAGES.SERVICES.SERVICE1.HERO.TITLE" | translate }}</h1>
+      <a href="/contact" class="btn-yellow">{{
+        "PAGES.SERVICES.SERVICE1.HERO.CTA" | translate
+      }}</a>
     </div>
+  </div>
 </section>
 
 <section class="apps-section">
-    <div class="container2">
-        <div class="text-content">
-            <h3>Nous vous Installons des applications Odoo</h3>
-            <p>Chez MSL-ITECH, nous transformons vos besoins en solutions concrètes grâce à l'expertise d'Odoo. Chaque application est conçue sur mesure pour optimiser vos opérations et délivrer des résultats tangibles et stratégiques. </p>
-        </div>
-        <div>
-            <div class="apps-grid">
-                <div class="app-card">
-                    <img src="assets/img/service/CRM.png" alt="CRM">
-                    <p>CRM</p>
-                </div>
-                <div class="app-card">
-                    <img src="assets/img/service/icon.svg.png" alt="Comptabilité">
-                    <p>Comptabilité</p>
-                </div>
-                <div class="app-card">
-                    <img src="assets/img/service/Clip path group.png" alt="Site Web">
-                    <p>Site Web</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-1.png" alt="Point de Vente">
-                    <p>Point de Vente</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-2.png" alt="Inventaire">
-                    <p>Inventaire</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-3.png" alt="Fabrication">
-                    <p>Fabrication</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-4.png" alt="Marketing Social">
-                    <p>Marketing Social</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-5.png" alt="TimeSheet">
-                    <p>TimeSheet</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-6.png" alt="Projet">
-                    <p>Projet</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/hr.png" alt="HR">
-                    <p>HR</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-7.png" alt="Documents">
-                    <p>Documents</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-8.png" alt="Assistance">
-                    <p>Assistance</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-9.png" alt="Achats">
-                    <p>Achats</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-10.png" alt="Abonnement">
-                    <p>Abonnement</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-11.png" alt="Location">
-                    <p>Location</p>
-                </div>
-                <div class="app-card">
-                    <img src="../../assets/img/service/icon.svg-12.png" alt="Discussion">
-                    <p>Discussion</p>
-                </div>
-            </div>
-            <div class="view-plus" style="display:flex;justify-content: end;">
-                <span>Voir plus <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-
-
-        </div>
-
+  <div class="container2">
+    <div class="text-content">
+      <h3>{{ "PAGES.SERVICES.SERVICE1.APPS.TITLE" | translate }}</h3>
+      <p>
+        {{ "PAGES.SERVICES.SERVICE1.APPS.DESCRIPTION" | translate }}
+      </p>
     </div>
-
+    <div>
+      <div class="apps-grid">
+        <div class="app-card">
+          <img src="assets/img/service/CRM.png" alt="CRM" />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.CRM" | translate }}</p>
+        </div>
+        <div class="app-card">
+          <img src="assets/img/service/icon.svg.png" alt="Comptabilité" />
+          <p>
+            {{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.ACCOUNTING" | translate }}
+          </p>
+        </div>
+        <div class="app-card">
+          <img src="assets/img/service/Clip path group.png" alt="Site Web" />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.WEBSITE" | translate }}</p>
+        </div>
+        <div class="app-card">
+          <img
+            src="../../assets/img/service/icon.svg-1.png"
+            alt="Point de Vente"
+          />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.POS" | translate }}</p>
+        </div>
+        <div class="app-card">
+          <img src="../../assets/img/service/icon.svg-2.png" alt="Inventaire" />
+          <p>
+            {{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.INVENTORY" | translate }}
+          </p>
+        </div>
+        <div class="app-card">
+          <img
+            src="../../assets/img/service/icon.svg-3.png"
+            alt="Fabrication"
+          />
+          <p>
+            {{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.MANUFACTURING" | translate }}
+          </p>
+        </div>
+        <div class="app-card">
+          <img
+            src="../../assets/img/service/icon.svg-4.png"
+            alt="Marketing Social"
+          />
+          <p>
+            {{
+              "PAGES.SERVICES.SERVICE1.APPS.ITEMS.SOCIAL_MARKETING" | translate
+            }}
+          </p>
+        </div>
+        <div class="app-card">
+          <img src="../../assets/img/service/icon.svg-5.png" alt="TimeSheet" />
+          <p>
+            {{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.TIMESHEET" | translate }}
+          </p>
+        </div>
+        <div class="app-card">
+          <img src="../../assets/img/service/icon.svg-6.png" alt="Projet" />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.PROJECT" | translate }}</p>
+        </div>
+        <div class="app-card">
+          <img src="../../assets/img/service/hr.png" alt="HR" />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.HR" | translate }}</p>
+        </div>
+        <div class="app-card">
+          <img src="../../assets/img/service/icon.svg-7.png" alt="Documents" />
+          <p>
+            {{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.DOCUMENTS" | translate }}
+          </p>
+        </div>
+        <div class="app-card">
+          <img src="../../assets/img/service/icon.svg-8.png" alt="Assistance" />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.HELPDESK" | translate }}</p>
+        </div>
+        <div class="app-card">
+          <img src="../../assets/img/service/icon.svg-9.png" alt="Achats" />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.PURCHASE" | translate }}</p>
+        </div>
+        <div class="app-card">
+          <img
+            src="../../assets/img/service/icon.svg-10.png"
+            alt="Abonnement"
+          />
+          <p>
+            {{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.SUBSCRIPTION" | translate }}
+          </p>
+        </div>
+        <div class="app-card">
+          <img src="../../assets/img/service/icon.svg-11.png" alt="Location" />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.RENTAL" | translate }}</p>
+        </div>
+        <div class="app-card">
+          <img
+            src="../../assets/img/service/icon.svg-12.png"
+            alt="Discussion"
+          />
+          <p>{{ "PAGES.SERVICES.SERVICE1.APPS.ITEMS.DISCUSS" | translate }}</p>
+        </div>
+      </div>
+      <div class="view-plus" style="display: flex; justify-content: end">
+        <span
+          >{{ "PAGES.SERVICES.SERVICE1.APPS.VIEW_MORE" | translate }}
+          <i class="fa-solid fa-arrow-right"></i
+        ></span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="expertise-section">
-    <div class="container">
-        <div class="expertise-header">
-            <h2>Une expertise multiculturelle et technique au service de vos projets</h2>
-            <p class="lead-text">
-                Chez MSL-ITECH, nous mettons à votre disposition l'outil puissant et polyvalent d'Odoo, combiné à notre savoir-faire technique 
-                et à notre approche globale. Nous vous accompagnons pour optimiser vos processus, booster votre productivité et accélérer votre croissance.
-            </p>
-        </div>
-
-        <div class="engagement-section">
-            <h3 class="engagement-title">Notre engagement ?</h3>
-            <div class="engagement-cards">
-                <div class="engagement-card">
-                    <div class="card-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h4>Professionnalisme</h4>
-                    <p>Des solutions Odoo sur mesure, adaptées à vos besoins métiers.</p>
-                </div>
-                <div class="engagement-card">
-                    <div class="card-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h4>Efficacité</h4>
-                    <p>Une intégration fluide et un support réactif pour maximiser votre retour sur investissement.</p>
-                </div>
-                <div class="engagement-card">
-                    <div class="card-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h4>Innovation</h4>
-                    <p>Une expertise multiculturelle et technologique pour des projets qui repoussent les limites.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="closing-statement">
-            <p>Avec MSL-ITECH et Odoo, transformez vos défis en opportunités.</p>
-            <p class="tagline">Parce que chaque entreprise mérite une solution ERP qui évolue avec elle.</p>
-        </div>
+  <div class="container">
+    <div class="expertise-header">
+      <h2>{{ "PAGES.SERVICES.SERVICE1.EXPERTISE.TITLE" | translate }}</h2>
+      <p class="lead-text">
+        {{ "PAGES.SERVICES.SERVICE1.EXPERTISE.DESCRIPTION" | translate }}
+      </p>
     </div>
+
+    <div class="engagement-section">
+      <h3 class="engagement-title">
+        {{ "PAGES.SERVICES.SERVICE1.EXPERTISE.ENGAGEMENT_TITLE" | translate }}
+      </h3>
+      <div class="engagement-cards">
+        <div class="engagement-card">
+          <div class="card-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h4>
+            {{
+              "PAGES.SERVICES.SERVICE1.EXPERTISE.CARDS.PROFESSIONALISM.TITLE"
+                | translate
+            }}
+          </h4>
+          <p>
+            {{
+              "PAGES.SERVICES.SERVICE1.EXPERTISE.CARDS.PROFESSIONALISM.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+        <div class="engagement-card">
+          <div class="card-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h4>
+            {{
+              "PAGES.SERVICES.SERVICE1.EXPERTISE.CARDS.EFFICIENCY.TITLE"
+                | translate
+            }}
+          </h4>
+          <p>
+            {{
+              "PAGES.SERVICES.SERVICE1.EXPERTISE.CARDS.EFFICIENCY.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+        <div class="engagement-card">
+          <div class="card-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h4>
+            {{
+              "PAGES.SERVICES.SERVICE1.EXPERTISE.CARDS.INNOVATION.TITLE"
+                | translate
+            }}
+          </h4>
+          <p>
+            {{
+              "PAGES.SERVICES.SERVICE1.EXPERTISE.CARDS.INNOVATION.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing-statement">
+      <p>
+        {{ "PAGES.SERVICES.SERVICE1.EXPERTISE.CLOSING.STATEMENT" | translate }}
+      </p>
+      <p class="tagline">
+        {{ "PAGES.SERVICES.SERVICE1.EXPERTISE.CLOSING.TAGLINE" | translate }}
+      </p>
+    </div>
+  </div>
 </section>
 
 <style>
-.expertise-section {
+  .expertise-section {
     padding: 100px 0;
     background: linear-gradient(135deg, #ffffff 0%, #f0f7f9 100%);
-    color: #114D5A;
+    color: #114d5a;
     position: relative;
     overflow: hidden;
-}
+  }
 
-.expertise-section::before {
-    content: '';
+  .expertise-section::before {
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -155,74 +224,74 @@
     background: rgba(255, 193, 7, 0.2);
     border-radius: 50%;
     transform: translate(150px, -150px);
-}
+  }
 
-.container {
+  .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
     z-index: 1;
-}
+  }
 
-.expertise-header {
+  .expertise-header {
     text-align: center;
     margin-bottom: 80px;
-}
+  }
 
-.expertise-header h2 {
+  .expertise-header h2 {
     font-size: 2.8rem;
-    color: #114D5A;
+    color: #114d5a;
     margin-bottom: 30px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
+  }
 
-.lead-text {
+  .lead-text {
     font-size: 1.3rem;
     line-height: 1.8;
     color: #2c3e50;
     max-width: 800px;
     margin: 0 auto;
-}
+  }
 
-.engagement-section {
+  .engagement-section {
     margin: 80px 0;
-}
+  }
 
-.engagement-title {
+  .engagement-title {
     text-align: center;
     font-size: 2.2rem;
-    color: #114D5A;
+    color: #114d5a;
     margin-bottom: 60px;
     font-weight: 600;
-}
+  }
 
-.engagement-cards {
+  .engagement-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     margin-top: 40px;
-}
+  }
 
-.engagement-card {
+  .engagement-card {
     background: white;
     padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     text-align: center;
     border: 1px solid #e1e8ed;
-}
+  }
 
-.engagement-card:hover {
+  .engagement-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     border-color: #ffc107;
-}
+  }
 
-.card-icon {
+  .card-icon {
     width: 90px;
     height: 90px;
     background: #f8f9fa;
@@ -233,102 +302,104 @@
     margin: 0 auto 30px;
     border: 2px solid #ffc107;
     transition: all 0.3s ease;
-}
+  }
 
-.engagement-card:hover .card-icon {
+  .engagement-card:hover .card-icon {
     background: #ffc107;
-}
+  }
 
-.card-icon i {
+  .card-icon i {
     font-size: 35px;
-    color: #114D5A;
+    color: #114d5a;
     transition: all 0.3s ease;
-}
+  }
 
-.engagement-card:hover .card-icon i {
+  .engagement-card:hover .card-icon i {
     color: white;
-}
+  }
 
-.engagement-card h4 {
-    color: #114D5A;
+  .engagement-card h4 {
+    color: #114d5a;
     font-size: 1.8rem;
     margin-bottom: 20px;
     font-weight: 600;
-}
+  }
 
-.engagement-card p {
+  .engagement-card p {
     color: #2c3e50;
     line-height: 1.7;
     font-size: 1.1rem;
-}
+  }
 
-.closing-statement {
+  .closing-statement {
     text-align: center;
     margin-top: 80px;
     padding: 40px;
     background: white;
     border-radius: 20px;
     border: 2px solid #ffc107;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
 
-.closing-statement p {
+  .closing-statement p {
     font-size: 1.6rem;
-    color: #114D5A;
+    color: #114d5a;
     margin-bottom: 15px;
     font-weight: 600;
-}
+  }
 
-.tagline {
+  .tagline {
     font-style: italic;
     color: #2c3e50;
     font-size: 1.2rem;
-}
+  }
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .expertise-header h2 {
-        font-size: 2.2rem;
+      font-size: 2.2rem;
     }
-    
-    .engagement-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .closing-statement p {
-        font-size: 1.3rem;
-    }
-    
-    .expertise-section {
-        padding: 60px 0;
-    }
-    
-    .card-icon {
-        width: 70px;
-        height: 70px;
-    }
-}
 
-/* Animation d'apparition */
-@keyframes fadeInUp {
+    .engagement-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .closing-statement p {
+      font-size: 1.3rem;
+    }
+
+    .expertise-section {
+      padding: 60px 0;
+    }
+
+    .card-icon {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  /* Animation d'apparition */
+  @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
 
-.expertise-header, .engagement-card, .closing-statement {
+  .expertise-header,
+  .engagement-card,
+  .closing-statement {
     animation: fadeInUp 0.6s ease forwards;
-}
+  }
 
-.engagement-card:nth-child(2) {
+  .engagement-card:nth-child(2) {
     animation-delay: 0.2s;
-}
+  }
 
-.engagement-card:nth-child(3) {
+  .engagement-card:nth-child(3) {
     animation-delay: 0.4s;
-}
+  }
 </style>

@@ -1,139 +1,132 @@
 <style>
-.highlight {
-  background-color: #e63946; /* Rouge pour accent */
-  color: #ffffff;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
+  .highlight {
+    background-color: #e63946; /* Rouge pour accent */
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
 
-.card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-.card-item {
-  display: flex;
-  align-items: center;
-  background-color: #114D5A; /* Couleur de la carte */
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  color: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  .card-item {
+    display: flex;
+    align-items: center;
+    background-color: #114d5a; /* Couleur de la carte */
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-.card-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-}
+  .card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  }
 
-.icon {
-  font-size: 2.5rem;
-  color: #ffdd57; /* Bleu pour les icônes */
-  margin-right: 1rem;
-}
+  .icon {
+    font-size: 2.5rem;
+    color: #ffdd57; /* Bleu pour les icônes */
+    margin-right: 1rem;
+  }
 
-.card-item h5 {
-  margin: 0 0 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-}
+  .card-item h5 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+  }
 
-.card-item p {
-  margin: 0;
-  color: #fff; 
-  font-size:14px
-}
+  .card-item p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+  }
 
-.text-muted {
-  color: #6c757d; /* Texte légèrement atténué */
-}
+  .text-muted {
+    color: #6c757d; /* Texte légèrement atténué */
+  }
 
-.content{
+  .content {
     color: white;
-}
+  }
 
+  /* Base des timelines */
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
 
+  /* Timeline Left */
+  .timeline-left {
+    border-left: 2px solid #007bff; /* Barre verticale */
+    padding-left: 2rem; /* Distance depuis la gauche */
+  }
 
+  .timeline-left .timeline-item {
+    display: flex;
+    justify-content: flex-start; /* Alignement à gauche */
+    margin-bottom: 2rem;
+  }
 
+  .timeline-left .timeline-item .content {
+    background: #ffffff;
+    color: #333;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Limite la largeur */
+    margin-left: 0; /* Annule le centrage */
+  }
 
+  /* Timeline Right */
+  .timeline-right {
+    border-right: 2px solid #e63946; /* Barre verticale */
+    padding-right: 2rem; /* Distance depuis la droite */
+  }
 
+  .timeline-right .timeline-item {
+    display: flex;
+    justify-content: flex-end; /* Alignement à droite */
+    margin-bottom: 2rem;
+  }
 
-/* Base des timelines */
-.timeline {
-  position: relative;
-  padding: 2rem 0;
-}
+  .timeline-right .timeline-item .content {
+    background: #ffffff;
+    color: #333;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Limite la largeur */
+    margin-right: 0; /* Annule le centrage */
+  }
 
-/* Timeline Left */
-.timeline-left {
-  border-left: 2px solid #007bff; /* Barre verticale */
-  padding-left: 2rem; /* Distance depuis la gauche */
-}
+  /* Icônes */
+  .timeline-item .content i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
 
-.timeline-left .timeline-item {
-  display: flex;
-  justify-content: flex-start; /* Alignement à gauche */
-  margin-bottom: 2rem;
-}
+  /* sales-pitch.component.css */
 
-.timeline-left .timeline-item .content {
-  background: #ffffff;
-  color: #333;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 500px; /* Limite la largeur */
-  margin-left: 0; /* Annule le centrage */
-}
-
-/* Timeline Right */
-.timeline-right {
-  border-right: 2px solid #e63946; /* Barre verticale */
-  padding-right: 2rem; /* Distance depuis la droite */
-}
-
-.timeline-right .timeline-item {
-  display: flex;
-  justify-content: flex-end; /* Alignement à droite */
-  margin-bottom: 2rem;
-}
-
-.timeline-right .timeline-item .content {
-  background: #ffffff;
-  color: #333;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 500px; /* Limite la largeur */
-  margin-right: 0; /* Annule le centrage */
-}
-
-/* Icônes */
-.timeline-item .content i {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-/* sales-pitch.component.css */
-
-
-/* Banner Section */
-.banner-section {
+  /* Banner Section */
+  .banner-section {
     position: relative;
     height: 60vh;
     overflow: hidden;
   }
-  
+
   .banner-section img {
     object-fit: cover;
     height: 100%;
     width: 100%;
   }
-  
+
   .overlay-text {
     position: absolute;
     top: 0;
@@ -142,61 +135,59 @@
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
   }
-  
+
   .overlay-text .text-center {
     max-width: 800px;
     padding: 0 15px;
   }
-  
+
   .overlay-text h1 {
     font-weight: 900;
     font-size: 3rem;
   }
-  
+
   .overlay-text p {
     font-size: 1.25rem;
   }
-  
+
   /* Introduction Section */
   .intro-section p {
     font-size: 1.1rem;
     line-height: 1.6;
   }
 
-  
-/* Style pour les sections */
+  /* Style pour les sections */
 
-  
   /* Style pour les images de couverture */
   img.img-fluid {
     max-height: 300px;
     object-fit: cover;
   }
-  
+
   /* Style pour les cartes */
   .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .card-title {
     color: #007bff;
   }
-  
+
   .bg-primary {
     background-color: #007bff !important;
   }
-  
+
   .text-primary {
     color: #007bff !important;
   }
-  
+
   /* Style pour les boutons */
   .btn-light.text-primary {
     display: flex;
     align-items: center;
     gap: 5px;
   }
-  
+
   /* Ajustement des images dans les cartes */
   .card-img-top,
   .card-img-start,
@@ -204,622 +195,1375 @@
     height: 100%;
     object-fit: cover;
   }
-  
+
   .text-primary--custom {
-    color: #114D5A;
+    color: #114d5a;
   }
 
   /* Image */
-img {
+  img {
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 100%;
     height: auto;
   }
-  
+
   img:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .bg-custom {
-    background-color: #114D5A;
+    background-color: #114d5a;
   }
 
   .text-custom {
     color: #ffdd57;
   }
-  
+
   .color-white {
     color: white;
   }
-  
- 
 
-/* Nouvelles styles modernes */
-:root {
-  --primary-color: #114D5A;
-  --secondary-color: #ffdd57;
-  --text-light: #ffffff;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-}
+  /* Nouvelles styles modernes */
+  :root {
+    --primary-color: #114d5a;
+    --secondary-color: #ffdd57;
+    --text-light: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
 
+  /* Améliorations des cartes */
+  .card-item {
+    background: linear-gradient(145deg, #114d5a, #1a6275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
 
+  .card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
 
-/* Améliorations des cartes */
-.card-item {
-  background: linear-gradient(145deg, #114D5A, #1a6275);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
+  /* Amélioration de la bannière */
+  .banner-section {
+    height: 80vh;
+  }
 
-.card-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+  .overlay-text {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    backdrop-filter: blur(5px);
+  }
 
-/* Amélioration de la bannière */
-.banner-section {
-  height: 80vh;
-}
+  /* Nouveaux styles pour les sections */
+  .section-padding {
+    padding: 6rem 0;
+  }
 
-.overlay-text {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-  backdrop-filter: blur(5px);
-}
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--primary-color), #1a6275);
+  }
 
-/* Nouveaux styles pour les sections */
-.section-padding {
-  padding: 6rem 0;
-}
+  /* Amélioration des images */
+  .rounded-custom {
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+  }
 
-.gradient-bg {
-  background: linear-gradient(135deg, var(--primary-color), #1a6275);
-}
+  /* Animation de survol pour les cartes */
+  .floating-card {
+    transition: var(--transition);
+  }
 
-/* Amélioration des images */
-.rounded-custom {
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-}
+  .floating-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
 
-/* Animation de survol pour les cartes */
-.floating-card {
-  transition: var(--transition);
-}
+  /* Style moderne pour les titres */
+  h2 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+  }
 
-.floating-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
+  /* Amélioration des boutons */
+  .btn-custom {
+    padding: 12px 30px;
+    border-radius: 50px;
+    background: #ffdd57;
+    color: #114d5a;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
 
-/* Style moderne pour les titres */
-h2 {
-  font-weight: 700;
-  margin-bottom: 2rem;
-  position: relative;
-}
+  .btn-custom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
 
+  /* Timeline modernisé */
+  .timeline-left,
+  .timeline-right {
+    border-width: 3px;
+    border-image: linear-gradient(to bottom, #ffdd57, transparent) 1;
+  }
 
-/* Amélioration des boutons */
-.btn-custom {
-  padding: 12px 30px;
-  border-radius: 50px;
-  background: #ffdd57;
-  color: #114D5A;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+  .timeline-item .content {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+  }
 
-.btn-custom:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+  .timeline-item .content:hover {
+    transform: scale(1.03);
+  }
 
-/* Timeline modernisé */
-.timeline-left, .timeline-right {
-  border-width: 3px;
-  border-image: linear-gradient(to bottom, #ffdd57, transparent) 1;
-}
+  /* Solution Section */
+  .solution {
+    padding: 80px 0;
+    background: #ffffff;
+  }
 
-.timeline-item .content {
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: var(--transition);
-}
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
 
-.timeline-item .content:hover {
-  transform: scale(1.03);
-}
+  .solution-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid #114d5a;
+  }
 
+  .solution-card:hover {
+    transform: translateY(-5px);
+  }
 
-       /* Solution Section */
-       .solution {
-            padding: 80px 0;
-            background: #ffffff;
-        }
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    background: #114d5a;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #ffdd57;
+  }
 
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+  /* Qualification Section */
+  .qualification {
+    padding: 80px 0;
+    background: #114d5a;
+    color: #ffffff;
+  }
 
-        .solution-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            border: 2px solid #114D5A;
-        }
+  .qualification-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+  }
 
-        .solution-card:hover {
-            transform: translateY(-5px);
-        }
+  .qualification-image {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
 
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background: #114D5A;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: #ffdd57;
-        }
+  .qualification-text {
+    flex: 1;
+  }
 
-        /* Qualification Section */
-        .qualification {
-            padding: 80px 0;
-            background: #114D5A;
-            color: #ffffff;
-        }
+  .numbered-list {
+    list-style: none;
+    counter-reset: item;
+    margin-top: 30px;
+  }
 
-        .qualification-content {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-        }
+  .numbered-list li {
+    counter-increment: item;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+  }
 
-        .qualification-image {
-            flex: 1;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
+  .numbered-list li::before {
+    content: counter(item);
+    background: #ffdd57;
+    color: #114d5a;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
 
-        .qualification-text {
-            flex: 1;
-        }
+  /* Sales Process Section */
+  .sales-process {
+    padding: 80px 0;
+    background: #ffffff;
+    color: #114d5a;
+  }
 
-        .numbered-list {
-            list-style: none;
-            counter-reset: item;
-            margin-top: 30px;
-        }
+  .process-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
 
-        .numbered-list li {
-            counter-increment: item;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-        }
+  .process-card {
+    background: #114d5a;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+  }
 
-        .numbered-list li::before {
-            content: counter(item);
-            background: #ffdd57;
-            color: #114D5A;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
+  .cta {
+    background: linear-gradient(135deg, #114d5a 0%, #1a6275 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
 
-        /* Sales Process Section */
-        .sales-process {
-            padding: 80px 0;
-            background: #ffffff;
-            color: #114D5A;
-        }
+  /* Animated background pattern */
+  .cta::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 30px 30px;
+    animation: moveBackground 30s linear infinite;
+    opacity: 0.3;
+  }
 
-        .process-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+  @keyframes moveBackground {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
 
-        .process-card {
-            background: #114D5A;
-            padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            color: #ffffff;
-        }
+  .cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
 
-        .cta {
-            background: linear-gradient(135deg, #114D5A 0%, #1a6275 100%);
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
+  .cta-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
-        /* Animated background pattern */
-        .cta::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: moveBackground 30s linear infinite;
-            opacity: 0.3;
-        }
+  .cta h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to right, #ffdd57, #ffe584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-50%, -50%); }
-        }
+  .cta-intro {
+    color: #e5e7eb;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
 
-        .cta-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            position: relative;
-            z-index: 2;
-        }
+  .cta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+    display: grid;
+    gap: 1.5rem;
+  }
 
-        .cta-content {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 60px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
-        }
+  .cta-list li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 16px;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s ease;
+  }
 
-        .cta h2 {
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            background: linear-gradient(to right, #ffdd57, #ffe584);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+  .cta-list li:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+  }
 
-        .cta-intro {
-            color: #e5e7eb;
-            font-size: 1.25rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+  .cta-list .icon {
+    background: #ffdd57;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #114d5a;
+  }
 
-        .cta-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 3rem 0;
-            display: grid;
-            gap: 1.5rem;
-        }
+  .cta-list .content {
+    flex: 1;
+  }
 
-        .cta-list li {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 24px;
-            border-radius: 16px;
-            color: white;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            transition: transform 0.3s ease;
-        }
+  .cta-list strong {
+    display: block;
+    color: #ffdd57;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
 
-        .cta-list li:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
+  .highlight-box {
+    background: linear-gradient(135deg, #ffdd57 0%, #ffe584 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    margin: 3rem 0;
+    color: #114d5a;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
 
-        .cta-list .icon {
-            background: #ffdd57;
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            color: #114D5A;
-        }
+  .highlight-box p {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
 
-        .cta-list .content {
-            flex: 1;
-        }
+  .cta-footer {
+    text-align: center;
+    color: #e5e7eb;
+    font-size: 1.25rem;
+  }
 
-        .cta-list strong {
-            display: block;
-            color: #ffdd57;
-            margin-bottom: 0.5rem;
-            font-size: 1.25rem;
-        }
+  .cta-footer em {
+    display: block;
+    margin-top: 1rem;
+    color: #ffdd57;
+    font-style: normal;
+    font-weight: 600;
+  }
 
-        .highlight-box {
-            background: linear-gradient(135deg, #ffdd57 0%, #ffe584 100%);
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 3rem 0;
-            color: #114D5A;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
+  @media (max-width: 768px) {
+    .cta {
+      padding: 60px 0;
+    }
 
-        .highlight-box p {
-            font-size: 1.25rem;
-            font-weight: 500;
-        }
+    .cta-content {
+      padding: 30px;
+    }
 
-        .cta-footer {
-            text-align: center;
-            color: #e5e7eb;
-            font-size: 1.25rem;
-        }
+    .cta h2 {
+      font-size: 2rem;
+    }
 
-        .cta-footer em {
-            display: block;
-            margin-top: 1rem;
-            color: #ffdd57;
-            font-style: normal;
-            font-weight: 600;
-        }
+    .cta-list {
+      gap: 1rem;
+    }
 
-        @media (max-width: 768px) {
-            .cta {
-                padding: 60px 0;
-            }
+    .cta-list li {
+      padding: 20px;
+    }
+  }
+  .highlight {
+    color: #ffdd57;
+    font-weight: bold;
+  }
 
-            .cta-content {
-                padding: 30px;
-            }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .qualification-content {
+      flex-direction: column;
+    }
 
-            .cta h2 {
-                font-size: 2rem;
-            }
+    .hero::after {
+      width: 100%;
+    }
 
-            .cta-list {
-                gap: 1rem;
-            }
-
-            .cta-list li {
-                padding: 20px;
-            }
-        }
-        .highlight {
-            color: #ffdd57;
-            font-weight: bold;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .qualification-content {
-                flex-direction: column;
-            }
-
-            .hero::after {
-                width: 100%;
-            }
-
-            .hero-content {
-                max-width: 100%;
-            }
-        }
-
+    .hero-content {
+      max-width: 100%;
+    }
+  }
 </style>
 <div class="my-5">
-    <!-- Titre Principal avec Image de Couverture -->
-  
-    <div class="banner-section position-relative">
-        <img src="../../assets/img/pricing/Section.png" alt="MSL Itech Banner" class="w-100">
-        <div class="overlay-text d-flex align-items-center justify-content-center">
-          <div class="text-center text-white px-3 fade-in">
-            <h2 class="fw-bold">Boostez les Performances de Votre Équipe Commerciale avec Odoo CRM</h2>
-            <p class="lead">Transformez vos prospects en clients et maximisez vos bénéfices.</p>
+  <!-- Titre Principal avec Image de Couverture -->
+
+  <div class="banner-section position-relative">
+    <img
+      src="../../assets/img/pricing/Section.png"
+      alt="MSL Itech Banner"
+      class="w-100"
+    />
+    <div class="overlay-text d-flex align-items-center justify-content-center">
+      <div class="text-center text-white px-3 fade-in">
+        <h2 class="fw-bold">
+          {{ "PAGES.PACK_PERFORMANCE.BANNER.TITLE" | translate }}
+        </h2>
+        <p class="lead">
+          {{ "PAGES.PACK_PERFORMANCE.BANNER.SUBTITLE" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Section Gestion des Prospects avec Card -->
+  <section class="section-padding">
+    <div class="container my-5">
+      <div class="row align-items-center">
+        <div class="col-md-6 order-md-2 text-center">
+          <img
+            src="../../assets/img/perf/perf1.jpg"
+            alt="Intégration Odoo"
+            class="img-fluid rounded-custom shadow-sm"
+          />
+        </div>
+        <div class="col-md-6 order-md-1">
+          <h2 class="text-primary--custom">
+            {{ "PAGES.PACK_PERFORMANCE.PROSPECT_MANAGEMENT.TITLE" | translate }}
+          </h2>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.PROSPECT_MANAGEMENT.DESCRIPTION1"
+                | translate
+            }}
+          </p>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.PROSPECT_MANAGEMENT.DESCRIPTION2"
+                | translate
+            }}
+          </p>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.PROSPECT_MANAGEMENT.DESCRIPTION3"
+                | translate
+            }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <div class="container-fluid bg-custom py-5">
+      <div class="container color-white">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <img
+              src="../../assets/img/pricing/image_section.png"
+              alt="MSL Itech - Odoo Integration"
+              class="img-fluid rounded shadow-sm"
+            />
+          </div>
+          <!-- Texte avec liste -->
+          <div class="col-md-6">
+            <h2 class="text-custom">
+              {{ "PAGES.PACK_PERFORMANCE.CHALLENGE.TITLE" | translate }}
+            </h2>
+            <p>{{ "PAGES.PACK_PERFORMANCE.CHALLENGE.INTRO" | translate }}</p>
+            <ul>
+              <li>
+                {{
+                  "PAGES.PACK_PERFORMANCE.CHALLENGE.PROBLEMS.PROBLEM1"
+                    | translate
+                }}
+              </li>
+              <li>
+                {{
+                  "PAGES.PACK_PERFORMANCE.CHALLENGE.PROBLEMS.PROBLEM2"
+                    | translate
+                }}
+              </li>
+              <li>
+                {{
+                  "PAGES.PACK_PERFORMANCE.CHALLENGE.PROBLEMS.PROBLEM3"
+                    | translate
+                }}
+              </li>
+            </ul>
+            <p class="fw-bold p-3 border-start border-4 border-warning">
+              {{ "PAGES.PACK_PERFORMANCE.CHALLENGE.QUOTE" | translate }}
+            </p>
           </div>
         </div>
       </div>
-    <!-- Section Gestion des Prospects avec Card -->
-    <section class="section-padding">
-        <div class="container my-5" >
-            <div class="row align-items-center">
-              <div class="col-md-6 order-md-2 text-center">
-                <img src="../../assets/img/perf/perf1.jpg" alt="Intégration Odoo" class="img-fluid rounded-custom shadow-sm">
-              </div>
-              <div class="col-md-6 order-md-1" >
-                <h2 class="text-primary--custom">Gestion Intelligente des Prospects</h2>
-                <p >
-                    Cela commence par une gestion intelligente de vos prospects. Pourtant, beaucoup d'entreprises négligent une étape cruciale : s'assurer que leurs efforts se concentrent sur les prospects ayant un réel potentiel d'achat.
-                  </p>
-                  <p >
-                    Ne serait-ce pas frustrant de voir vos efforts commerciaux échouer simplement à cause d'un mauvais ciblage ?
-                  </p>
-                  <p>
-                    Mais savez-vous réellement ce que cela signifie de qualifier un prospect ? Et pourquoi cette étape est-elle essentielle pour réussir dans vos activités commerciales ?
-                  </p>
-              </div>
-            </div>
-          </div>
-    </section>
+    </div>
+  </section>
 
-    
-    <section class="mb-5">
-        <div class="container-fluid bg-custom py-5">
-            <div class="container color-white">
-              <div class="row align-items-center">
-                <div class="col-md-6" >
-                    <img src="../../assets/img/pricing/image_section.png" alt="MSL Itech - Odoo Integration" class="img-fluid rounded shadow-sm">
-                  </div>
-                <!-- Texte avec liste -->
-                <div class="col-md-6" >
-                  <h2 class="text-custom">Le Défi : Transformer Vos Efforts en Résultats</h2>
-                  <p>Imaginez ceci :</p>
-                  <ul>
-                    <li>Vous passez des heures à contacter des prospects, mais peu se convertissent en clients.</li>
-                    <li>Vos ventes stagnent, malgré des efforts importants.</li>
-                    <li>Vous perdez du temps et de l'énergie sur des prospects peu qualifiés.</li>
-                  </ul>
-                  <p class="fw-bold p-3 border-start border-4 border-warning">
-                     Et si vous pouviez concentrer vos efforts uniquement sur les prospects ayant un réel potentiel d'achat ?
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-    </section>
- 
-    <section class="solution">
-      <div class="container">
-          <h2>La Solution : Une Gestion Intelligente des Prospects avec Odoo CRM</h2>
-          <p>Chez <strong>MSL-ITECH</strong>, nous vous aidons à qualifier vos prospects de manière méthodique et efficace.</p>
-          
-          <div class="solution-grid">
-              <div class="solution-card">
-                  <div class="card-icon">🎯</div>
-                  <h3>Qualification Automatisée</h3>
-                  <p>Analysez rapidement les besoins, budgets et décideurs pour cibler les prospects les plus prometteurs.</p>
-              </div>
-              <div class="solution-card">
-                  <div class="card-icon">⭐</div>
-                  <h3>Gestion des Priorités</h3>
-                  <p>Identifiez les opportunités à fort potentiel et maximisez vos chances de conclure.</p>
-              </div>
-              <div class="solution-card">
-                  <div class="card-icon">📅</div>
-                  <h3>Suivi Structuré</h3>
-                  <p>Planifiez vos relances et rendez-vous sans rien oublier, pour toujours être au bon moment au bon endroit.</p>
-              </div>
-          </div>
+  <section class="solution">
+    <div class="container">
+      <h2>
+        {{ "PAGES.PACK_PERFORMANCE.SOLUTION.TITLE" | translate }}
+      </h2>
+      <p [innerHTML]="'PAGES.PACK_PERFORMANCE.SOLUTION.INTRO' | translate"></p>
+
+      <div class="solution-grid">
+        <div class="solution-card">
+          <div class="card-icon">🎯</div>
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.AUTOMATED_QUALIFICATION.TITLE"
+                | translate
+            }}
+          </h3>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.AUTOMATED_QUALIFICATION.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+        <div class="solution-card">
+          <div class="card-icon">⭐</div>
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.PRIORITY_MANAGEMENT.TITLE"
+                | translate
+            }}
+          </h3>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.PRIORITY_MANAGEMENT.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+        <div class="solution-card">
+          <div class="card-icon">📅</div>
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.STRUCTURED_TRACKING.TITLE"
+                | translate
+            }}
+          </h3>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.SOLUTION.FEATURES.STRUCTURED_TRACKING.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
       </div>
+    </div>
   </section>
 
   <!-- Qualification Section -->
   <section class="qualification">
-      <div class="container">
-          <div class="qualification-content">
-              <div class="qualification-image">
-                  <img src="../../assets/img/newImage/10.webp" alt="Qualification process" style="width: 100%; height: auto;">
-              </div>
-              <div class="qualification-text">
-                  <h2>Pourquoi Qualifier Vos Prospects ?</h2>
-                  <p>Qualifier un prospect, ce n'est pas du hasard. C'est une démarche stratégique qui repose sur des critères clés :</p>
-                  <ul class="numbered-list">
-                      <li><strong>Leurs besoins</strong> : Identifiez précisément ce qu'ils recherchent.</li>
-                      <li><strong>Leur budget</strong> : Assurez-vous qu'ils ont les moyens d'investir.</li>
-                      <li><strong>Leur pouvoir de décision</strong> : Vérifiez s'ils peuvent signer un contrat.</li>
-                  </ul>
-              </div>
-          </div>
+    <div class="container">
+      <div class="qualification-content">
+        <div class="qualification-image">
+          <img
+            src="../../assets/img/newImage/10.webp"
+            alt="Qualification process"
+            style="width: 100%; height: auto"
+          />
+        </div>
+        <div class="qualification-text">
+          <h2>
+            {{ "PAGES.PACK_PERFORMANCE.QUALIFICATION.TITLE" | translate }}
+          </h2>
+          <p>
+            {{ "PAGES.PACK_PERFORMANCE.QUALIFICATION.INTRO" | translate }}
+          </p>
+          <ul class="numbered-list">
+            <li
+              [innerHTML]="
+                'PAGES.PACK_PERFORMANCE.QUALIFICATION.CRITERIA.NEEDS'
+                  | translate
+              "
+            ></li>
+            <li
+              [innerHTML]="
+                'PAGES.PACK_PERFORMANCE.QUALIFICATION.CRITERIA.BUDGET'
+                  | translate
+              "
+            ></li>
+            <li
+              [innerHTML]="
+                'PAGES.PACK_PERFORMANCE.QUALIFICATION.CRITERIA.DECISION_POWER'
+                  | translate
+              "
+            ></li>
+          </ul>
+        </div>
       </div>
+    </div>
   </section>
 
   <!-- Sales Process Section -->
   <section class="sales-process">
-      <div class="container">
-          <h2>Ventes : Accélérez et Standardisez Vos Processus</h2>
-          <p>Avec <strong>Odoo CRM</strong>, simplifiez et optimisez chaque étape de votre processus commercial :</p>
-          
-          <div class="process-cards">
-              <div class="process-card">
-                  <h3>Importation de données</h3>
-                  <p>Ajoutez facilement vos clients et produits existants.</p>
-              </div>
-              <div class="process-card">
-                  <h3>Devis professionnels</h3>
-                  <p>Créez des modèles personnalisés en quelques clics.</p>
-              </div>
-              <div class="process-card">
-                  <h3>Validation des commandes</h3>
-                  <p>Faites signer et payer vos clients en ligne via des plateformes sécurisées.</p>
-              </div>
-          </div>
+    <div class="container">
+      <h2>{{ "PAGES.PACK_PERFORMANCE.SALES_PROCESS.TITLE" | translate }}</h2>
+      <p
+        [innerHTML]="'PAGES.PACK_PERFORMANCE.SALES_PROCESS.INTRO' | translate"
+      ></p>
+
+      <div class="process-cards">
+        <div class="process-card">
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.DATA_IMPORT.TITLE"
+                | translate
+            }}
+          </h3>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.DATA_IMPORT.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+        <div class="process-card">
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.PROFESSIONAL_QUOTES.TITLE"
+                | translate
+            }}
+          </h3>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.PROFESSIONAL_QUOTES.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
+        <div class="process-card">
+          <h3>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.ORDER_VALIDATION.TITLE"
+                | translate
+            }}
+          </h3>
+          <p>
+            {{
+              "PAGES.PACK_PERFORMANCE.SALES_PROCESS.STEPS.ORDER_VALIDATION.DESCRIPTION"
+                | translate
+            }}
+          </p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Pack Finder Interactive Section -->
+  <section
+    id="pack-finder"
+    class="pack-finder-section"
+    style="
+      background: linear-gradient(135deg, #114d5a 0%, #1a6275 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    "
+  >
+    <!-- Animated background -->
+    <div
+      style="
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.05) 1px,
+          transparent 1px
+        );
+        background-size: 30px 30px;
+        animation: moveBackground 30s linear infinite;
+        opacity: 0.3;
+      "
+    ></div>
+
+    <div class="container position-relative" style="z-index: 2">
+      <div
+        class="pack-finder-card"
+        style="
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          border-radius: 24px;
+          padding: 50px;
+          max-width: 900px;
+          margin: 0 auto;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        "
+      >
+        <!-- Header -->
+        <div class="text-center mb-4">
+          <div
+            style="
+              background: #ffdd57;
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 20px;
+              font-size: 2.5rem;
+            "
+          >
+            🔎
+          </div>
+          <h2 style="color: #114d5a; font-weight: 800; margin-bottom: 10px">
+            {{ "PAGES.PACK_PERFORMANCE.PACK_FINDER.TITLE" | translate }}
+          </h2>
+          <p style="color: #666; font-size: 1.1rem; margin-bottom: 0">
+            <em>{{
+              "PAGES.PACK_PERFORMANCE.PACK_FINDER.SUBTITLE" | translate
+            }}</em>
+          </p>
+        </div>
+
+        <!-- Formulaire interactif -->
+        <div id="packFinderForm">
+          <!-- Question 1 -->
+          <div class="question-block mb-4" id="question1">
+            <h4 style="color: #114d5a; margin-bottom: 20px; font-weight: 600">
+              <span
+                style="
+                  background: #ffdd57;
+                  color: #114d5a;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-right: 10px;
+                  font-size: 0.9rem;
+                "
+                >1</span
+              >
+              {{
+                "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.TITLE"
+                  | translate
+              }}
+            </h4>
+            <div
+              class="options-grid"
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+              "
+            >
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="accompagnement"
+                  value="coup-pouce"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">🚀</div>
+                <strong
+                  style="color: #114d5a; display: block; margin-bottom: 5px"
+                  >{{
+                    "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.COUP_POUCE.TITLE"
+                      | translate
+                  }}</strong
+                >
+                <small style="color: #666">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.COUP_POUCE.SUBTITLE"
+                    | translate
+                }}</small>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="accompagnement"
+                  value="prise-en-main"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">🎯</div>
+                <strong
+                  style="color: #114d5a; display: block; margin-bottom: 5px"
+                  >{{
+                    "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.PRISE_EN_MAIN.TITLE"
+                      | translate
+                  }}</strong
+                >
+                <small style="color: #666">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.PRISE_EN_MAIN.SUBTITLE"
+                    | translate
+                }}</small>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="accompagnement"
+                  value="optimisation"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">⚡</div>
+                <strong
+                  style="color: #114d5a; display: block; margin-bottom: 5px"
+                  >{{
+                    "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.OPTIMISATION.TITLE"
+                      | translate
+                  }}</strong
+                >
+                <small style="color: #666">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.OPTIMISATION.SUBTITLE"
+                    | translate
+                }}</small>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="accompagnement"
+                  value="personnalise"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">👑</div>
+                <strong
+                  style="color: #114d5a; display: block; margin-bottom: 5px"
+                  >{{
+                    "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.PERSONNALISE.TITLE"
+                      | translate
+                  }}</strong
+                >
+                <small style="color: #666">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION1.OPTIONS.PERSONNALISE.SUBTITLE"
+                    | translate
+                }}</small>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question-block mb-4" id="question2" style="display: none">
+            <h4 style="color: #114d5a; margin-bottom: 20px; font-weight: 600">
+              <span
+                style="
+                  background: #ffdd57;
+                  color: #114d5a;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-right: 10px;
+                  font-size: 0.9rem;
+                "
+                >2</span
+              >
+              {{
+                "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.TITLE"
+                  | translate
+              }}
+            </h4>
+            <div
+              class="options-grid"
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 15px;
+              "
+            >
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="budget"
+                  value="moins-500"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">💰</div>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.OPTIONS.MOINS_500"
+                    | translate
+                }}</strong>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="budget"
+                  value="500-1500"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">💎</div>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.OPTIONS.500_1500"
+                    | translate
+                }}</strong>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="budget"
+                  value="1500-3000"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">💼</div>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.OPTIONS.1500_3000"
+                    | translate
+                }}</strong>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="budget"
+                  value="plus-3000"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">🏆</div>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION2.OPTIONS.PLUS_3000"
+                    | translate
+                }}</strong>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question-block mb-4" id="question3" style="display: none">
+            <h4 style="color: #114d5a; margin-bottom: 20px; font-weight: 600">
+              <span
+                style="
+                  background: #ffdd57;
+                  color: #114d5a;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-right: 10px;
+                  font-size: 0.9rem;
+                "
+                >3</span
+              >
+              {{
+                "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.TITLE"
+                  | translate
+              }}
+            </h4>
+            <div
+              class="options-grid"
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 15px;
+              "
+            >
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="besoin"
+                  value="gagner-temps"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">⏱️</div>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.OPTIONS.GAGNER_TEMPS"
+                    | translate
+                }}</strong>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="besoin"
+                  value="evolutivite"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">📈</div>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.OPTIONS.EVOLUTIVITE"
+                    | translate
+                }}</strong>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="besoin"
+                  value="expertise"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">🎓</div>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.OPTIONS.EXPERTISE"
+                    | translate
+                }}</strong>
+              </label>
+              <label
+                class="option-card"
+                style="
+                  background: #f8f9fa;
+                  border: 2px solid #e9ecef;
+                  border-radius: 12px;
+                  padding: 20px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-align: center;
+                "
+              >
+                <input
+                  type="radio"
+                  name="besoin"
+                  value="support-prioritaire"
+                  style="display: none"
+                />
+                <div style="font-size: 1.5rem; margin-bottom: 10px">🚑</div>
+                <strong style="color: #114d5a">{{
+                  "PAGES.PACK_PERFORMANCE.PACK_FINDER.QUESTIONS.QUESTION3.OPTIONS.SUPPORT_PRIORITAIRE"
+                    | translate
+                }}</strong>
+              </label>
+            </div>
+          </div>
+
+          <!-- Résultat -->
+          <div
+            id="result"
+            style="
+              display: none;
+              text-align: center;
+              padding: 30px;
+              background: linear-gradient(135deg, #ffdd57 0%, #ffe584 100%);
+              border-radius: 16px;
+              margin-top: 30px;
+            "
+          >
+            <div style="font-size: 3rem; margin-bottom: 15px">🎉</div>
+            <h3 style="color: #114d5a; margin-bottom: 15px">
+              Votre pack idéal :
+            </h3>
+            <div
+              id="recommendedPack"
+              style="
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #114d5a;
+                margin-bottom: 20px;
+              "
+            ></div>
+            <p
+              style="color: #114d5a; margin-bottom: 25px"
+              id="packDescription"
+            ></p>
+            <a
+              href="/demo-reservation"
+              style="
+                background: #114d5a;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                transition: all 0.3s ease;
+              "
+            >
+              <i class="fas fa-rocket"></i>
+              Réserver ma démonstration personnalisée
+            </a>
+          </div>
+
+          <!-- Navigation -->
+          <div class="text-center mt-4" id="navigation">
+            <button
+              id="packFinderBtn"
+              style="
+                background: #114d5a;
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 50px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+              "
+              disabled
+            >
+              <i class="fas fa-arrow-right me-2"></i>
+              Question suivante
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="cta" style="background: #f5f7f9;">
+  <section class="cta" style="background: #f5f7f9">
     <div class="cta-container">
-        <div class="cta-content" style="background: white; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-            <h2 style="color: #114D5A; background: none; -webkit-text-fill-color: initial;">Passez à l'Action : Boostez Votre Chiffre d'Affaires avec Odoo</h2>
-            <p class="cta-intro" style="color: #666;">Ne laissez pas des processus inefficaces freiner votre croissance. Avec notre <strong style="color: #114D5A;">Pack d'Implémentation Odoo</strong>, vous obtenez :</p>
-            
-            <ul class="cta-list">
-                <li style="background: #f8f9fa; color: #333;">
-                    <div class="icon" style="background: #ffdd57; color: #114D5A;">⚙️</div>
-                    <div class="content" style="color: #333;">
-                        <strong style="color: #114D5A;">Configuration sur mesure</strong>
-                        <p style="color: #666; margin-top: 5px;">Optimisée pour répondre à vos besoins spécifiques.</p>
-                    </div>
-                </li>
-                <li style="background: #f8f9fa; color: #333;">
-                    <div class="icon" style="background: #ffdd57; color: #114D5A;">📚</div>
-                    <div class="content" style="color: #333;">
-                        <strong style="color: #114D5A;">Formation pratique</strong>
-                        <p style="color: #666; margin-top: 5px;">Pour une équipe opérationnelle dès le premier jour.</p>
-                    </div>
-                </li>
-                <li style="background: #f8f9fa; color: #333;">
-                    <div class="icon" style="background: #ffdd57; color: #114D5A;">🎯</div>
-                    <div class="content" style="color: #333;">
-                        <strong style="color: #114D5A;">Support dédié</strong>
-                        <p style="color: #666; margin-top: 5px;">Pour une utilisation optimale dès la mise en œuvre.</p>
-                    </div>
-                </li>
-            </ul>
+      <div
+        class="cta-content"
+        style="
+          background: white;
+          border-radius: 24px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <h2
+          style="
+            color: #114d5a;
+            background: none;
+            -webkit-text-fill-color: initial;
+          "
+        >
+          {{ "PAGES.PACK_PERFORMANCE.CTA.TITLE" | translate }}
+        </h2>
+        <p
+          class="cta-intro"
+          style="color: #666"
+          [innerHTML]="'PAGES.PACK_PERFORMANCE.CTA.INTRO' | translate"
+        ></p>
 
-            <div class="highlight-box" style="background: #ffdd57; border: none; padding: 30px; margin: 40px 0;">
-                <p style="color: #114D5A; font-size: 1.1em; margin-bottom: 20px;">Offre spéciale : Profitez d'une démonstration gratuite et découvrez comment augmenter vos revenus dès le premier mois grâce à Odoo.</p>
-                <a href="/reserver-demo" class="btn btn-custom mt-3" style="background: #114D5A; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
-                    <i class="fas fa-calendar-check me-2"></i>
-                    Réserver ma démo gratuite
-                </a>
+        <ul class="cta-list">
+          <li style="background: #f8f9fa; color: #333">
+            <div class="icon" style="background: #ffdd57; color: #114d5a">
+              ⚙️
             </div>
+            <div class="content" style="color: #333">
+              <strong style="color: #114d5a">{{
+                "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.CUSTOM_CONFIG.TITLE"
+                  | translate
+              }}</strong>
+              <p style="color: #666; margin-top: 5px">
+                {{
+                  "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.CUSTOM_CONFIG.DESCRIPTION"
+                    | translate
+                }}
+              </p>
+            </div>
+          </li>
+          <li style="background: #f8f9fa; color: #333">
+            <div class="icon" style="background: #ffdd57; color: #114d5a">
+              📚
+            </div>
+            <div class="content" style="color: #333">
+              <strong style="color: #114d5a">{{
+                "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.PRACTICAL_TRAINING.TITLE"
+                  | translate
+              }}</strong>
+              <p style="color: #666; margin-top: 5px">
+                {{
+                  "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.PRACTICAL_TRAINING.DESCRIPTION"
+                    | translate
+                }}
+              </p>
+            </div>
+          </li>
+          <li style="background: #f8f9fa; color: #333">
+            <div class="icon" style="background: #ffdd57; color: #114d5a">
+              🎯
+            </div>
+            <div class="content" style="color: #333">
+              <strong style="color: #114d5a">{{
+                "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.DEDICATED_SUPPORT.TITLE"
+                  | translate
+              }}</strong>
+              <p style="color: #666; margin-top: 5px">
+                {{
+                  "PAGES.PACK_PERFORMANCE.CTA.BENEFITS.DEDICATED_SUPPORT.DESCRIPTION"
+                    | translate
+                }}
+              </p>
+            </div>
+          </li>
+        </ul>
 
-            <div class="cta-footer">
-                <p style="color: #666;">Avec Odoo et MSL-ITECH, faites de vos objectifs commerciaux une réalité.</p>
-                <em style="color: #114D5A; font-weight: 600;">Vos ventes n'attendent plus. 🚀</em>
-            </div>
+        <div
+          class="highlight-box"
+          style="
+            background: #ffdd57;
+            border: none;
+            padding: 30px;
+            margin: 40px 0;
+          "
+        >
+          <p style="color: #114d5a; font-size: 1.1em; margin-bottom: 20px">
+            {{ "PAGES.PACK_PERFORMANCE.CTA.SPECIAL_OFFER" | translate }}
+          </p>
+          <a
+            href="/reserver-demo"
+            class="btn btn-custom mt-3"
+            style="
+              background: #114d5a;
+              color: white;
+              padding: 12px 30px;
+              border-radius: 50px;
+              text-decoration: none;
+              display: inline-block;
+              transition: all 0.3s ease;
+            "
+          >
+            <i class="fas fa-calendar-check me-2"></i>
+            {{ "BUTTONS.BOOK_DEMO" | translate }}
+          </a>
         </div>
-    </div>
-</section>
 
-      <app-tableau-crm-vente></app-tableau-crm-vente>
-  </div>
-  
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const fadeElements = document.querySelectorAll('.fade-in');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  });
-  
-  fadeElements.forEach(element => {
-    observer.observe(element);
-  });
-});
-</script>
-  
+        <div class="cta-footer">
+          <p style="color: #666">
+            {{ "PAGES.PACK_PERFORMANCE.CTA.FOOTER" | translate }}
+          </p>
+          <em style="color: #114d5a; font-weight: 600">{{
+            "PAGES.PACK_PERFORMANCE.CTA.TAGLINE" | translate
+          }}</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-tableau-crm-vente></app-tableau-crm-vente>
+</div>

@@ -1,35 +1,66 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+  styleUrl: './blog.component.css',
 })
-export class BlogComponent {
-  articles = [
-  {
-    img: '../../assets/img/accueil/img1.png', // Image de remplacement
-    date: '20 Nov 2024',
-    title: 'Les atouts du pack gestion de projet',
-    description:
-      'Découvrez comment ce pack peut transformer votre façon de travailler, avec des exemples concrets d\'entreprises qui ont réussi.',
-    link: '#'
-  },
-  {
-    img: '../../assets/img/accueil/img2.png', // Image de remplacement
-    date: '15 Nov 2024',
-    title: 'Avant/Après',
-    description:
-      'Visualisez l\'impact de nos packs sur la productivité et l\'organisation d\'une entreprise.',
-    link: '#'
-  },
-  {
-    img: '../../assets/img/accueil/img3.png', // Image de remplacement
-    date: '10 Nov 2024',
-    title: 'Pourquoi choisir MSL-ITECH ?',
-    description:
-      'Nous vous accompagnons à chaque étape, de l\'analyse de vos besoins à la mise en place des solutions.',
-    link: '#'
+export class BlogComponent implements OnInit, OnDestroy {
+  articles: any[] = [];
+  private translateSubscription: Subscription = new Subscription();
+
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit() {
+    this.loadArticles();
+
+    // S'abonner aux changements de langue
+    this.translateSubscription = this.translate.onLangChange.subscribe(() => {
+      this.loadArticles();
+    });
   }
-];
+
+  ngOnDestroy() {
+    this.translateSubscription.unsubscribe();
+  }
+
+  loadArticles() {
+    this.articles = [
+      {
+        img: '../../assets/img/accueil/img1.png',
+        date: '20 Nov 2024',
+        title: this.translate.instant(
+          'COMPONENTS.BLOG.ARTICLES.ARTICLE1.TITLE'
+        ),
+        description: this.translate.instant(
+          'COMPONENTS.BLOG.ARTICLES.ARTICLE1.DESCRIPTION'
+        ),
+        link: '#',
+      },
+      {
+        img: '../../assets/img/accueil/img2.png',
+        date: '15 Nov 2024',
+        title: this.translate.instant(
+          'COMPONENTS.BLOG.ARTICLES.ARTICLE2.TITLE'
+        ),
+        description: this.translate.instant(
+          'COMPONENTS.BLOG.ARTICLES.ARTICLE2.DESCRIPTION'
+        ),
+        link: '#',
+      },
+      {
+        img: '../../assets/img/accueil/img3.png',
+        date: '10 Nov 2024',
+        title: this.translate.instant(
+          'COMPONENTS.BLOG.ARTICLES.ARTICLE3.TITLE'
+        ),
+        description: this.translate.instant(
+          'COMPONENTS.BLOG.ARTICLES.ARTICLE3.DESCRIPTION'
+        ),
+        link: '#',
+      },
+    ];
+  }
 }

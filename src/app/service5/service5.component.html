@@ -4,9 +4,11 @@
     <div class="title-wrapper">
       <div class="decorative-line left"></div>
       <h1 id="sticky-title">
-        Ressources Humaines
+        {{ "PAGES.SERVICES.SERVICE5.HERO.TITLE" | translate }}
         <div class="subtitle-wrapper">
-          <span class="highlight">Gérez Efficacement Votre Capital Humain</span>
+          <span class="highlight">{{
+            "PAGES.SERVICES.SERVICE5.HERO.SUBTITLE" | translate
+          }}</span>
           <div class="accent-bar"></div>
         </div>
       </h1>
@@ -31,10 +33,7 @@
 
 <div class="content-section">
   <p>
-    Avec MSL-ITECH, optimisez la gestion de vos ressources humaines grâce à nos
-    solutions Odoo. Du recrutement à la gestion des talents, en passant par la
-    paie et les congés, nous vous accompagnons dans la digitalisation de vos
-    processus RH.
+    {{ "PAGES.SERVICES.SERVICE5.CONTENT.DESCRIPTION" | translate }}
   </p>
 </div>
 
@@ -42,13 +41,16 @@
   <div class="bg-green"></div>
   <div class="left-column">
     <div class="starter">
-      <h1>Les RH avec Odoo</h1>
+      <h1>{{ "PAGES.SERVICES.SERVICE5.STARTER_TITLE" | translate }}</h1>
     </div>
     <section id="Employes" class="section">
-      <h2>Employés</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE5.SECTIONS.EMPLOYEES.TITLE" | translate }}
+      </h2>
       <p>
-        Centralisez et gérez efficacement toutes les informations de vos
-        employés dans un espace unique et sécurisé...
+        {{
+          "PAGES.SERVICES.SERVICE5.SECTIONS.EMPLOYEES.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/employee.webp"
@@ -57,10 +59,13 @@
       />
     </section>
     <section id="Recrutement" class="section">
-      <h2>Recrutement</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE5.SECTIONS.RECRUITMENT.TITLE" | translate }}
+      </h2>
       <p>
-        Optimisez votre processus de recrutement avec un suivi complet des
-        candidatures et une gestion simplifiée des entretiens...
+        {{
+          "PAGES.SERVICES.SERVICE5.SECTIONS.RECRUITMENT.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/recrutement.webp"
@@ -69,10 +74,9 @@
       />
     </section>
     <section id="Conges" class="section">
-      <h2>Congés</h2>
+      <h2>{{ "PAGES.SERVICES.SERVICE5.SECTIONS.LEAVE.TITLE" | translate }}</h2>
       <p>
-        Gérez facilement les demandes de congés, les absences et le planning des
-        équipes...
+        {{ "PAGES.SERVICES.SERVICE5.SECTIONS.LEAVE.DESCRIPTION" | translate }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/conge.webp"
@@ -81,10 +85,13 @@
       />
     </section>
     <section id="Evaluations" class="section">
-      <h2>Évaluations</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE5.SECTIONS.APPRAISALS.TITLE" | translate }}
+      </h2>
       <p>
-        Suivez la performance et le développement de vos employés avec des
-        évaluations personnalisées...
+        {{
+          "PAGES.SERVICES.SERVICE5.SECTIONS.APPRAISALS.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/evaluation.png"
@@ -93,10 +100,13 @@
       />
     </section>
     <section id="Recommandation" class="section">
-      <h2>Recommandation</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE5.SECTIONS.REFERRALS.TITLE" | translate }}
+      </h2>
       <p>
-        Encouragez la cooptation et récompensez les recommandations pertinentes
-        de vos collaborateurs...
+        {{
+          "PAGES.SERVICES.SERVICE5.SECTIONS.REFERRALS.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/recommandation.png"
@@ -105,10 +115,9 @@
       />
     </section>
     <section id="ParcAutomobile" class="section">
-      <h2>Parc Automobile</h2>
+      <h2>{{ "PAGES.SERVICES.SERVICE5.SECTIONS.FLEET.TITLE" | translate }}</h2>
       <p>
-        Gérez votre flotte de véhicules d'entreprise et optimisez leur
-        utilisation...
+        {{ "PAGES.SERVICES.SERVICE5.SECTIONS.FLEET.DESCRIPTION" | translate }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/parc_auto.png"

@@ -797,10 +797,9 @@
   />
   <div class="overlay-text d-flex align-items-center justify-content-center">
     <div class="text-center text-white px-3">
-      <h1 class="display-4">Nos Offres Site internet</h1>
+      <h1 class="display-4">{{ "PAGES.TARIFS.BANNER.TITLE" | translate }}</h1>
       <p class="lead" data-aos="fade-up" data-aos-delay="200">
-        Des tarifs site internet qui défient la concurrence, sans compromis sur
-        la qualité !
+        {{ "PAGES.TARIFS.BANNER.SUBTITLE" | translate }}
       </p>
     </div>
   </div>
@@ -813,15 +812,13 @@
     <div class="image-text-content" data-aos="fade-up">
       <div>
         <h2>
-          Créer un site web, c'est poser les fondations de votre croissance
+          {{ "PAGES.TARIFS.FOUNDATION.TITLE" | translate }}
         </h2>
         <p>
-          Chez MSL-iTECH, nous ne vendons pas simplement des sites web. Nous
-          vous aidons à construire une présence en ligne stratégique.
+          {{ "PAGES.TARIFS.FOUNDATION.DESCRIPTION1" | translate }}
         </p>
         <p>
-          Un site, c'est bien plus qu'un outil technique : c'est un levier pour
-          convaincre, attirer et fidéliser.
+          {{ "PAGES.TARIFS.FOUNDATION.DESCRIPTION2" | translate }}
         </p>
       </div>
       <div>
@@ -843,11 +840,10 @@
           style="color: #114d5a; font-size: 2.5rem; font-weight: 700"
           data-aos="fade-up"
         >
-          Comparaison des technologies et tarifs
+          {{ "PAGES.TARIFS.COMPARISON.TITLE" | translate }}
         </h2>
         <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">
-          Comparez visuellement WordPress et JavaScript moderne selon votre
-          budget
+          {{ "PAGES.TARIFS.COMPARISON.SUBTITLE" | translate }}
         </p>
       </div>
     </div>
@@ -857,7 +853,7 @@
       <div class="d-flex flex-column flex-md-row align-items-center gap-3">
         <h3 class="mb-0">
           <i class="fas fa-globe-americas me-2"></i>
-          Devise détectée automatiquement :
+          {{ "PAGES.TARIFS.COMPARISON.CURRENCY_DETECTED" | translate }}
         </h3>
         <div class="d-flex align-items-center gap-2" *ngIf="userCountryCode">
           <span
@@ -938,9 +934,11 @@
       <!-- Solution Basique -->
       <div class="solution-column">
         <div class="solution-header">
-          <h3 class="solution-title">Solution Basique</h3>
+          <h3 class="solution-title">
+            {{ "PAGES.TARIFS.COMPARISON.SOLUTIONS.BASIC.TITLE" | translate }}
+          </h3>
           <p class="solution-subtitle">
-            Idéale pour débuter votre présence en ligne
+            {{ "PAGES.TARIFS.COMPARISON.SOLUTIONS.BASIC.SUBTITLE" | translate }}
           </p>
         </div>
 
@@ -956,7 +954,12 @@
               <div class="price-value" data-wp-price="900">
                 900<span class="currency-symbol">€</span>
               </div>
-              <div class="price-difference">Économie de base</div>
+              <div class="price-difference">
+                {{
+                  "PAGES.TARIFS.COMPARISON.PRICE_DIFFERENCES.BASE_ECONOMY"
+                    | translate
+                }}
+              </div>
             </div>
           </div>
 
@@ -979,19 +982,31 @@
         <ul class="feature-list">
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Site vitrine professionnel</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BASIC.FEATURES.PROFESSIONAL_SHOWCASE"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Design responsive</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BASIC.FEATURES.RESPONSIVE_DESIGN"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Optimisation SEO de base</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BASIC.FEATURES.BASIC_SEO"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Formulaire de contact</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BASIC.FEATURES.CONTACT_FORM"
+                | translate
+            }}</span>
           </li>
         </ul>
       </div>
@@ -999,9 +1014,16 @@
       <!-- Solution Professionnelle -->
       <div class="solution-column recommended">
         <div class="solution-header">
-          <h3 class="solution-title">Solution Professionnelle</h3>
+          <h3 class="solution-title">
+            {{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.PROFESSIONAL.TITLE" | translate
+            }}
+          </h3>
           <p class="solution-subtitle">
-            Le meilleur rapport qualité/prix pour votre croissance
+            {{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.PROFESSIONAL.SUBTITLE"
+                | translate
+            }}
           </p>
         </div>
 
@@ -1017,7 +1039,12 @@
               <div class="price-value" data-wp-price="2000">
                 2 000<span class="currency-symbol">€</span>
               </div>
-              <div class="price-difference">Solution équilibrée</div>
+              <div class="price-difference">
+                {{
+                  "PAGES.TARIFS.COMPARISON.PRICE_DIFFERENCES.BALANCED_SOLUTION"
+                    | translate
+                }}
+              </div>
             </div>
           </div>
 
@@ -1040,23 +1067,38 @@
         <ul class="feature-list">
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Tout de la solution basique</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.PROFESSIONAL.FEATURES.ALL_BASIC"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Intégration CRM</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.PROFESSIONAL.FEATURES.CRM_INTEGRATION"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Analytics avancées</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.PROFESSIONAL.FEATURES.ADVANCED_ANALYTICS"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Optimisation conversion</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.PROFESSIONAL.FEATURES.CONVERSION_OPTIMIZATION"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Support prioritaire</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.PROFESSIONAL.FEATURES.PRIORITY_SUPPORT"
+                | translate
+            }}</span>
           </li>
         </ul>
       </div>
@@ -1064,8 +1106,14 @@
       <!-- Solution Business -->
       <div class="solution-column">
         <div class="solution-header">
-          <h3 class="solution-title">Solution Business</h3>
-          <p class="solution-subtitle">Pour les entreprises ambitieuses</p>
+          <h3 class="solution-title">
+            {{ "PAGES.TARIFS.COMPARISON.SOLUTIONS.BUSINESS.TITLE" | translate }}
+          </h3>
+          <p class="solution-subtitle">
+            {{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BUSINESS.SUBTITLE" | translate
+            }}
+          </p>
         </div>
 
         <div class="price-comparison">
@@ -1080,7 +1128,12 @@
               <div class="price-value" data-wp-price="4500">
                 4 500<span class="currency-symbol">€</span>
               </div>
-              <div class="price-difference">WordPress avancé</div>
+              <div class="price-difference">
+                {{
+                  "PAGES.TARIFS.COMPARISON.PRICE_DIFFERENCES.ADVANCED_WORDPRESS"
+                    | translate
+                }}
+              </div>
             </div>
           </div>
 
@@ -1103,23 +1156,38 @@
         <ul class="feature-list">
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Tout de la solution pro</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BUSINESS.FEATURES.ALL_PRO"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>E-commerce intégré</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BUSINESS.FEATURES.INTEGRATED_ECOMMERCE"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Automatisation marketing</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BUSINESS.FEATURES.MARKETING_AUTOMATION"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Performance maximale</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BUSINESS.FEATURES.MAX_PERFORMANCE"
+                | translate
+            }}</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check feature-icon"></i>
-            <span>Support dédié 24/7</span>
+            <span>{{
+              "PAGES.TARIFS.COMPARISON.SOLUTIONS.BUSINESS.FEATURES.DEDICATED_SUPPORT"
+                | translate
+            }}</span>
           </li>
         </ul>
       </div>
@@ -1146,18 +1214,20 @@
             <div class="col-md-10">
               <h4 style="color: #114d5a; margin-bottom: 15px">
                 <i class="fas fa-lightbulb me-2"></i>
-                Comment choisir ?
+                {{ "PAGES.TARIFS.COMPARISON.INFO_BOX.TITLE" | translate }}
               </h4>
-              <p style="margin-bottom: 10px; color: #666">
-                <strong>WordPress</strong> : Parfait si vous recherchez une
-                solution rapide, économique et facilement gérable avec un
-                excellent rapport qualité/prix.
-              </p>
-              <p style="margin: 0; color: #666">
-                <strong>JavaScript moderne</strong> : Idéal pour des projets
-                sur-mesure nécessitant des performances maximales et des
-                fonctionnalités uniques.
-              </p>
+              <p
+                style="margin-bottom: 10px; color: #666"
+                [innerHTML]="
+                  'PAGES.TARIFS.COMPARISON.INFO_BOX.WORDPRESS' | translate
+                "
+              ></p>
+              <p
+                style="margin: 0; color: #666"
+                [innerHTML]="
+                  'PAGES.TARIFS.COMPARISON.INFO_BOX.JAVASCRIPT' | translate
+                "
+              ></p>
             </div>
           </div>
         </div>
@@ -1171,7 +1241,7 @@
     <div class="row">
       <div class="col-12 text-center mb-4">
         <h2 style="font-size: 2.2rem; font-weight: 700">
-          Résultats concrets selon votre solution
+          {{ "PAGES.TARIFS.STATS.TITLE" | translate }}
         </h2>
       </div>
     </div>
@@ -1179,21 +1249,25 @@
       <div class="stat-item">
         <span class="stat-number">40+</span>
         <span class="stat-label"
-          >leads mensuels potentiels avec une solution optimisée</span
+          >40+ {{ "PAGES.TARIFS.STATS.LEADS" | translate }}</span
         >
       </div>
       <div class="stat-item">
         <span class="stat-number">8%</span>
-        <span class="stat-label">taux de conversion maximum atteignable</span>
+        <span class="stat-label"
+          >8% {{ "PAGES.TARIFS.STATS.CONVERSION" | translate }}</span
+        >
       </div>
       <div class="stat-item">
         <span class="stat-number">Top 5</span>
-        <span class="stat-label">positionnement Google possible</span>
+        <span class="stat-label"
+          >Top 5 {{ "PAGES.TARIFS.STATS.RANKING" | translate }}</span
+        >
       </div>
       <div class="stat-item">
         <span class="stat-number">24h/7j</span>
         <span class="stat-label"
-          >machine à clients qui travaille pour vous</span
+          >24h/7j {{ "PAGES.TARIFS.STATS.MACHINE" | translate }}</span
         >
       </div>
     </div>
@@ -1207,11 +1281,10 @@
         style="color: #114d5a; font-size: 2.5rem; font-weight: 700"
         data-aos="fade-up"
       >
-        Notre rôle : être votre partenaire de croissance
+        {{ "PAGES.TARIFS.PARTNER.TITLE" | translate }}
       </h2>
       <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">
-        Votre site n'est pas une fin en soi. C'est le début d'une stratégie
-        durable.
+        {{ "PAGES.TARIFS.PARTNER.SUBTITLE" | translate }}
       </p>
     </div>
   </div>
@@ -1221,9 +1294,9 @@
       <div class="icon">
         <i class="fas fa-key"></i>
       </div>
-      <h3>Autonomie</h3>
+      <h3>{{ "PAGES.TARIFS.PARTNER.FEATURES.AUTONOMY.TITLE" | translate }}</h3>
       <p>
-        Vous rendre indépendant dans l'usage et la gestion de votre site web.
+        {{ "PAGES.TARIFS.PARTNER.FEATURES.AUTONOMY.DESCRIPTION" | translate }}
       </p>
     </div>
 
@@ -1231,10 +1304,11 @@
       <div class="icon">
         <i class="fas fa-chart-line"></i>
       </div>
-      <h3>Conversion</h3>
+      <h3>
+        {{ "PAGES.TARIFS.PARTNER.FEATURES.CONVERSION.TITLE" | translate }}
+      </h3>
       <p>
-        Logique de conversion mesurable et optimisée pour maximiser vos
-        résultats.
+        {{ "PAGES.TARIFS.PARTNER.FEATURES.CONVERSION.DESCRIPTION" | translate }}
       </p>
     </div>
 
@@ -1242,16 +1316,31 @@
       <div class="icon">
         <i class="fas fa-users"></i>
       </div>
-      <h3>Trafic qualifié</h3>
-      <p>Stratégies pour attirer des visiteurs intéressés par vos services.</p>
+      <h3>
+        {{
+          "PAGES.TARIFS.PARTNER.FEATURES.QUALIFIED_TRAFFIC.TITLE" | translate
+        }}
+      </h3>
+      <p>
+        {{
+          "PAGES.TARIFS.PARTNER.FEATURES.QUALIFIED_TRAFFIC.DESCRIPTION"
+            | translate
+        }}
+      </p>
     </div>
 
     <div class="feature-block" data-aos="fade-up" data-aos-delay="400">
       <div class="icon">
         <i class="fas fa-bullhorn"></i>
       </div>
-      <h3>Message clair</h3>
-      <p>Clarifier votre offre et votre proposition de valeur unique.</p>
+      <h3>
+        {{ "PAGES.TARIFS.PARTNER.FEATURES.CLEAR_MESSAGE.TITLE" | translate }}
+      </h3>
+      <p>
+        {{
+          "PAGES.TARIFS.PARTNER.FEATURES.CLEAR_MESSAGE.DESCRIPTION" | translate
+        }}
+      </p>
     </div>
   </div>
 </section>
@@ -1259,40 +1348,40 @@
 <div class="bg-custom">
   <section class="container recommendation-section">
     <h1>
-      Notre recommandation :
-      <span class="highlighted">ce qui convient à votre projet</span>
+      {{ "PAGES.TARIFS.RECOMMENDATION.TITLE" | translate }}
     </h1>
     <div class="content-container">
       <div class="contentt">
-        <h2>Choisissez JavaScript moderne si :</h2>
+        <h2>
+          {{ "PAGES.TARIFS.RECOMMENDATION.JAVASCRIPT.TITLE" | translate }}
+        </h2>
         <div class="icon d-flex align-items-baseline gap-2">
           <i class="fas fa-star"></i>
           <p>
-            Vous voulez un projet hautement personnalisé qui répond parfaitement
-            à vos besoins professionnels spécifiques.
+            {{ "PAGES.TARIFS.RECOMMENDATION.JAVASCRIPT.FEATURE1" | translate }}
           </p>
         </div>
         <div class="icon d-flex align-items-baseline gap-2">
           <i class="fas fa-star"></i>
           <p>
-            Vous avez un budget conséquent et êtes prêt à investir pour une
-            solution performante et évolutive.
+            {{ "PAGES.TARIFS.RECOMMENDATION.JAVASCRIPT.FEATURE2" | translate }}
           </p>
         </div>
       </div>
       <div class="divider"></div>
       <div class="contentt">
-        <h2>Choisissez WordPress si :</h2>
+        <h2>{{ "PAGES.TARIFS.RECOMMENDATION.WORDPRESS.TITLE" | translate }}</h2>
         <div class="icon d-flex align-items-baseline gap-2">
           <i class="fas fa-star"></i>
           <p>
-            Vous avez besoin d'un site rapidement opérationnel pour promouvoir
-            vos services ou produits.
+            {{ "PAGES.TARIFS.RECOMMENDATION.WORDPRESS.FEATURE1" | translate }}
           </p>
         </div>
         <div class="icon d-flex align-items-baseline gap-2">
           <i class="fas fa-star"></i>
-          <p>Vous recherchez une solution économique et facile à gérer.</p>
+          <p>
+            {{ "PAGES.TARIFS.RECOMMENDATION.WORDPRESS.FEATURE2" | translate }}
+          </p>
         </div>
       </div>
     </div>
@@ -1304,177 +1393,21 @@
     <div class="row">
       <div class="col-12">
         <h2 data-aos="fade-up">
-          La vraie question n'est pas "Combien coûte un site web ?"
+          {{ "PAGES.TARIFS.CTA.TITLE" | translate }}
         </h2>
         <p class="lead" data-aos="fade-up" data-aos-delay="200">
-          La vraie question : "Combien d'opportunités perdez-vous aujourd'hui
-          sans un site qui soutient vos objectifs de croissance ?"
+          {{ "PAGES.TARIFS.CTA.SUBTITLE" | translate }}
         </p>
         <div data-aos="fade-up" data-aos-delay="400">
           <a href="/contact" class="cta-button">
             <i class="fas fa-rocket"></i>
-            Commencer mon projet dès maintenant
+            {{ "PAGES.TARIFS.CTA.BUTTON" | translate }}
           </a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- <div class="container mt-5 mb-4">
-     <div class="text-center">
-      <h1>Choisissez un tarif et commencez l'aventure</h1>
-     </div>
-  <div class="d-flex justify-content-center mb-4">
-      <div class="btn-group" role="group" aria-label="Toggle Packages">
-        <label
-          class="btn"
-          [ngClass]="{
-            'bg-custom-primary': activePackage === 'wordpress',
-            'btn-outline-custom-primary': activePackage !== 'wordpress'
-          }"
-        >
-          <input
-            type="radio"
-            class="btn-check"
-            name="togglePackages"
-            id="wordpressPackages"
-            autocomplete="off"
-            [checked]="activePackage === 'wordpress'"
-            (change)="switchPackage('wordpress')"
-          />
-          WordPress Packages
-        </label>
-  
-        <label
-          class="btn"
-          [ngClass]="{
-            'bg-custom-primary': activePackage === 'javascript',
-            'btn-outline-custom-primary': activePackage !== 'javascript'
-          }"
-        >
-          <input
-            type="radio"
-            class="btn-check"
-            name="togglePackages"
-            id="javascriptPackages"
-            autocomplete="off"
-            [checked]="activePackage === 'javascript'"
-            (change)="switchPackage('javascript')"
-          />
-          JavaScript Packages
-        </label>
-      </div>
-    </div>
-  
-    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-4">
-      <ng-container *ngIf="activePackage === 'wordpress'">
-        <div
-          class="col"
-          *ngFor="let pack of wordpressPackages; let i = index"
-        [style.animationDelay]="i * 0.2 + 's'"
-        >
-          <div
-            class="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp"
-            [ngClass]="{ 'middle-card': i === 1 }"
-          >
-            <div class="card-header text-center">
-              <h5 class="card-title mb-0">{{ pack.title }}</h5>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">{{ pack.description }}</p>
-              <div class="m-2">
-                <div *ngIf="showPrices; else noPrice">
-                  <div *ngIf="pricesUpdated; else loading">
-                    <div class="price display-3 text-center mb-1">
-                    <span [appCountUp]="pack.price" [duration]="2000"></span>
-                    {{ currencySymbol }}
-                    </div>
-                  </div>
-                  <ng-template #loading>
-                    <div class="price display-6 text-center mb-2">
-                      Chargement des prix...
-                    </div>
-                  </ng-template>
-                  
-                  <div class="time fs-6 text-center mb-3">
-                    Temps : ± {{ pack.time }} heures
-                  </div>
-                </div>
-                <ng-template #noPrice>
-                  <div class="price display-6 text-center mb-2">
-                    Contactez-nous pour un devis
-                  </div>
-                </ng-template>
-                <ul class="list-group list-group-flush mb-3">
-                  <li
-                    *ngFor="let feature of pack.features"
-                    class="list-group-item"
-                  >
-                    <i class="fas fa-check-circle me-2"></i>{{ feature }}
-                  </li>
-                </ul>
-              </div>
-              <div class="button-container">
-              <button class="btn btn-primary" [routerLink]="['/contact']">
-                Contactez-nous
-              </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ng-container>
-  
-<ng-container *ngIf="activePackage === 'javascript'">
-  <div
-    class="col"
-    *ngFor="let pack of javascriptPackages; let i = index"
-        [style.animationDelay]="i * 0.2 + 's'"
-  >
-    <div
-      class="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp"
-      [ngClass]="{ 'middle-card': i === 1 }"
-    >
-      <div class="card-header text-center">
-        <h5 class="card-title mb-0">{{ pack.title }}</h5>
-      </div>
-      <div class="card-body d-flex flex-column">
-        <p class="card-text">{{ pack.description }}</p>
-        <div class="m-2">
-          <div *ngIf="showPrices; else noPrice">
-            <div class="price display-3 text-center">
-                  <span [appCountUp]="pack.price" [duration]="2000"></span>
-                  {{ currencySymbol }}
-            </div>
-            <div class="time fs-6 text-center mb-3">
-              Temps : ± {{ pack.time }} heures
-            </div>
-          </div>
-          <ng-template #noPrice>
-            <div class="price display-6 text-center mb-2">
-              Contactez-nous pour un devis
-            </div>
-          </ng-template>
-          <ul class="list-group list-group-flush mb-3">
-                <li
-                  *ngFor="let feature of pack.features"
-                  class="list-group-item"
-                >
-              <i class="fas fa-check-circle me-2"></i>{{ feature }}
-            </li>
-          </ul>
-        </div>
-        <div class="button-container">
-              <button class="btn btn-primary" [routerLink]="['/contact']">
-                Contactez-nous
-              </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</ng-container>
-  </div>
-</div> -->
 
 <section class="container my-5">
   <div class="row">
@@ -1483,10 +1416,10 @@
         style="color: #114d5a; font-size: 2.5rem; font-weight: 700"
         data-aos="fade-up"
       >
-        WordPress vs JavaScript moderne : Les différences clés
+        {{ "PAGES.TARIFS.TECH_COMPARISON.TITLE" | translate }}
       </h2>
       <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">
-        Comprendre les technologies pour faire le bon choix
+        {{ "PAGES.TARIFS.TECH_COMPARISON.SUBTITLE" | translate }}
       </p>
     </div>
   </div>
@@ -1495,7 +1428,9 @@
     <table>
       <thead>
         <tr>
-          <th>Critère</th>
+          <th>
+            {{ "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.NEEDS" | translate }}
+          </th>
           <th>
             <i class="fab fa-js me-2"></i>
             JavaScript moderne (sur-mesure)
@@ -1508,61 +1443,151 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Vos besoins</strong></td>
-          <td>Solution unique et complexe</td>
-          <td>Site rapide, simple et fonctionnel</td>
-        </tr>
-        <tr>
-          <td><strong>Coût</strong></td>
-          <td><span style="color: #114d5a; opacity: 0.8">Plus élevé</span></td>
-          <td><span style="color: #114d5a">Modéré</span></td>
-        </tr>
-        <tr>
-          <td><strong>Temps de création</strong></td>
           <td>
-            <span style="color: #114d5a; opacity: 0.8">Long (2-6 mois)</span>
+            <strong>{{
+              "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.NEEDS" | translate
+            }}</strong>
           </td>
-          <td><span style="color: #114d5a">Rapide (2-6 semaines)</span></td>
-        </tr>
-        <tr>
-          <td><strong>Personnalisation</strong></td>
-          <td><span style="color: #114d5a">Totale et illimitée</span></td>
           <td>
-            <span style="color: #114d5a; opacity: 0.8"
-              >Facile mais limitée</span
-            >
+            {{
+              "PAGES.TARIFS.TECH_COMPARISON.JAVASCRIPT_VALUES.NEEDS" | translate
+            }}
+          </td>
+          <td>
+            {{
+              "PAGES.TARIFS.TECH_COMPARISON.WORDPRESS_VALUES.NEEDS" | translate
+            }}
           </td>
         </tr>
         <tr>
-          <td><strong>Performance</strong></td>
-          <td><span style="color: #114d5a">Excellente et optimisée</span></td>
           <td>
-            <span style="color: #114d5a; opacity: 0.8"
-              >Variable selon plugins</span
-            >
+            <strong>{{
+              "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.COST" | translate
+            }}</strong>
+          </td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8">{{
+              "PAGES.TARIFS.TECH_COMPARISON.JAVASCRIPT_VALUES.COST" | translate
+            }}</span>
+          </td>
+          <td>
+            <span style="color: #114d5a">{{
+              "PAGES.TARIFS.TECH_COMPARISON.WORDPRESS_VALUES.COST" | translate
+            }}</span>
           </td>
         </tr>
         <tr>
-          <td><strong>Maintenance</strong></td>
           <td>
-            <span style="color: #114d5a; opacity: 0.8"
-              >Requiert un développeur</span
-            >
+            <strong>{{
+              "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.CREATION_TIME" | translate
+            }}</strong>
           </td>
-          <td><span style="color: #114d5a">Facile à gérer soi-même</span></td>
-        </tr>
-        <tr>
-          <td><strong>Évolutivité</strong></td>
-          <td><span style="color: #114d5a">Très élevée</span></td>
-          <td><span style="color: #114d5a; opacity: 0.8">Modérée</span></td>
-        </tr>
-        <tr>
-          <td><strong>Sécurité</strong></td>
-          <td><span style="color: #114d5a">Très sécurisé</span></td>
           <td>
-            <span style="color: #114d5a; opacity: 0.8"
-              >Dépend des mises à jour</span
-            >
+            <span style="color: #114d5a; opacity: 0.8">{{
+              "PAGES.TARIFS.TECH_COMPARISON.JAVASCRIPT_VALUES.CREATION_TIME"
+                | translate
+            }}</span>
+          </td>
+          <td>
+            <span style="color: #114d5a">{{
+              "PAGES.TARIFS.TECH_COMPARISON.WORDPRESS_VALUES.CREATION_TIME"
+                | translate
+            }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{{
+              "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.CUSTOMIZATION" | translate
+            }}</strong>
+          </td>
+          <td>
+            <span style="color: #114d5a">{{
+              "PAGES.TARIFS.TECH_COMPARISON.JAVASCRIPT_VALUES.CUSTOMIZATION"
+                | translate
+            }}</span>
+          </td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8">{{
+              "PAGES.TARIFS.TECH_COMPARISON.WORDPRESS_VALUES.CUSTOMIZATION"
+                | translate
+            }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{{
+              "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.PERFORMANCE" | translate
+            }}</strong>
+          </td>
+          <td>
+            <span style="color: #114d5a">{{
+              "PAGES.TARIFS.TECH_COMPARISON.JAVASCRIPT_VALUES.PERFORMANCE"
+                | translate
+            }}</span>
+          </td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8">{{
+              "PAGES.TARIFS.TECH_COMPARISON.WORDPRESS_VALUES.PERFORMANCE"
+                | translate
+            }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{{
+              "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.MAINTENANCE" | translate
+            }}</strong>
+          </td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8">{{
+              "PAGES.TARIFS.TECH_COMPARISON.JAVASCRIPT_VALUES.MAINTENANCE"
+                | translate
+            }}</span>
+          </td>
+          <td>
+            <span style="color: #114d5a">{{
+              "PAGES.TARIFS.TECH_COMPARISON.WORDPRESS_VALUES.MAINTENANCE"
+                | translate
+            }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{{
+              "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.SCALABILITY" | translate
+            }}</strong>
+          </td>
+          <td>
+            <span style="color: #114d5a">{{
+              "PAGES.TARIFS.TECH_COMPARISON.JAVASCRIPT_VALUES.SCALABILITY"
+                | translate
+            }}</span>
+          </td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8">{{
+              "PAGES.TARIFS.TECH_COMPARISON.WORDPRESS_VALUES.SCALABILITY"
+                | translate
+            }}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>{{
+              "PAGES.TARIFS.TECH_COMPARISON.CRITERIA.SECURITY" | translate
+            }}</strong>
+          </td>
+          <td>
+            <span style="color: #114d5a">{{
+              "PAGES.TARIFS.TECH_COMPARISON.JAVASCRIPT_VALUES.SECURITY"
+                | translate
+            }}</span>
+          </td>
+          <td>
+            <span style="color: #114d5a; opacity: 0.8">{{
+              "PAGES.TARIFS.TECH_COMPARISON.WORDPRESS_VALUES.SECURITY"
+                | translate
+            }}</span>
           </td>
         </tr>
       </tbody>

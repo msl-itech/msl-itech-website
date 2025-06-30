@@ -4,9 +4,11 @@
     <div class="title-wrapper">
       <div class="decorative-line left"></div>
       <h1 id="sticky-title">
-        La Finance avec Odoo
+        {{ "PAGES.SERVICES.SERVICE3.HERO.TITLE" | translate }}
         <div class="subtitle-wrapper">
-          <span class="highlight">Transformez Vos Idées en Réalité</span>
+          <span class="highlight">{{
+            "PAGES.SERVICES.SERVICE3.HERO.SUBTITLE" | translate
+          }}</span>
           <div class="accent-bar"></div>
         </div>
       </h1>
@@ -31,10 +33,7 @@
 
 <div class="content-section">
   <p>
-    Chez MSL-ITECH, nous transformons vos idées en projets concrets grâce à
-    notre expertise et à la flexibilité d'Odoo. Nous analysons vos besoins et
-    personnalisons des solutions adaptées à vos attentes. Chaque module est
-    conçu pour optimiser vos opérations et garantir des résultats efficaces.
+    {{ "PAGES.SERVICES.SERVICE3.CONTENT.DESCRIPTION" | translate }}
   </p>
 </div>
 
@@ -42,13 +41,16 @@
   <div class="bg-green"></div>
   <div class="left-column">
     <div class="starter">
-      <h1>La Finance avec Odoo</h1>
+      <h1>{{ "PAGES.SERVICES.SERVICE3.HERO.TITLE" | translate }}</h1>
     </div>
     <section id="Comptabilité" class="section">
-      <h2>Comptabilité</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE3.SECTIONS.ACCOUNTING.TITLE" | translate }}
+      </h2>
       <p>
-        Odoo Comptabilité est le véritable outil central sur le chemin pour tous
-        vos besoins commerciaux...
+        {{
+          "PAGES.SERVICES.SERVICE3.SECTIONS.ACCOUNTING.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/comptabilite.webp"
@@ -57,9 +59,13 @@
       />
     </section>
     <section id="Facturation" class="section">
-      <h2>Facturation</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE3.SECTIONS.INVOICING.TITLE" | translate }}
+      </h2>
       <p>
-        Créez instantanément des devis clairs, professionnels et interactifs...
+        {{
+          "PAGES.SERVICES.SERVICE3.SECTIONS.INVOICING.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/facturation.webp"
@@ -68,8 +74,14 @@
       />
     </section>
     <section id="Note-de-Frais" class="section">
-      <h2>Note de Frais</h2>
-      <p>Odoo Point de vente est intuitif, donc peu importe où vous êtes...</p>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE3.SECTIONS.EXPENSES.TITLE" | translate }}
+      </h2>
+      <p>
+        {{
+          "PAGES.SERVICES.SERVICE3.SECTIONS.EXPENSES.DESCRIPTION" | translate
+        }}
+      </p>
       <img
         src="../../assets/img/serviceOdoo/Note_frais.webp"
         alt="Image Note de Frais"
@@ -77,8 +89,14 @@
       />
     </section>
     <section id="Document" class="section">
-      <h2>Document</h2>
-      <p>Simplifiez la facturation récurrente et la gestion des abonnés...</p>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE3.SECTIONS.DOCUMENTS.TITLE" | translate }}
+      </h2>
+      <p>
+        {{
+          "PAGES.SERVICES.SERVICE3.SECTIONS.DOCUMENTS.DESCRIPTION" | translate
+        }}
+      </p>
       <img
         src="../../assets/img/serviceOdoo/Document.webp"
         alt="Image Document"
@@ -86,10 +104,13 @@
       />
     </section>
     <section id="Feuille-de-calcul" class="section">
-      <h2>Feuille de calcul</h2>
+      <h2>
+        {{ "PAGES.SERVICES.SERVICE3.SECTIONS.SPREADSHEET.TITLE" | translate }}
+      </h2>
       <p>
-        L'application Location d'Odoo est un moyen simple de paramétrer
-        l'activité de location...
+        {{
+          "PAGES.SERVICES.SERVICE3.SECTIONS.SPREADSHEET.DESCRIPTION" | translate
+        }}
       </p>
       <img
         src="../../assets/img/serviceOdoo/Feuille_calcul.webp"

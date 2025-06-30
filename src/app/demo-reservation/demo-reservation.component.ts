@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 import { OdooService } from '../services/odoo.service';
 
 @Component({
@@ -8,137 +10,486 @@ import { OdooService } from '../services/odoo.service';
   templateUrl: './demo-reservation.component.html',
   styleUrls: ['./demo-reservation.component.css'],
 })
-export class DemoReservationComponent implements OnInit {
+export class DemoReservationComponent implements OnInit, OnDestroy {
+  // Gestion des étapes
+  currentStep: number = 1;
+  totalSteps: number = 5;
+  stepTitles: string[] = [];
+  private langChangeSubscription?: Subscription;
+
+  // Informations de contact de base
   contact_name: string = '';
   phone: string = '+237';
   email_from: string = '';
   company: string = '';
-  subject: string = '';
-  description: string = '';
-  description_produits: string = '';
-  contexte: string = '';
-  scenario: string = '';
   isLoading = false;
-  selectedFile: File | null = null;
 
-  modules = {
-    crm: false,
-    comptabilite: false,
-    pointVente: false,
-    siteWeb: false,
-    evenements: false,
-    rh: false,
-    recrutement: false,
-    ventes: false,
-    inventaire: false,
-    projets: false,
-    ventesB2B: false,
-    sondages: false,
-    depenses: false,
-    tableauxBords: false,
-    achats: false,
-    mrp: false,
-    feuilleTemps: false,
-    ventesB2C: false,
-    formations: false,
-    absencesConges: false,
+  // Question 1: Objectifs principaux (choix multiple)
+  objectifs = {
+    automatiser: false,
+    centraliser: false,
+    collaboration: false,
+    remplacer: false,
+    autre: false,
   };
+  objectifRemplacerDetail: string = '';
+  objectifAutreDetail: string = '';
+
+  // Question 2: Processus qui prennent le plus de temps (cases à cocher)
+  processusTemps = {
+    leadsDevis: false,
+    suiviCommandes: false,
+    reporting: false,
+    gestionStocks: false,
+    autre: false,
+  };
+  processusAutreDetail: string = '';
+
+  // Question 3: Outils actuels
+  outilsActuels = {
+    excel: false,
+    zoho: false,
+    sage: false,
+    autre: false,
+  };
+  outilsAutreDetail: string = '';
+
+  // Question 4: Plus gros défi opérationnel (menu déroulant)
+  defiOperationnel: string = '';
+  defisOptions: Array<{ value: string; label: string }> = [];
+  defiAutreDetail: string = '';
+
+  // Question bonus
+  problemePrincipal: string = '';
 
   constructor(
     private odooService: OdooService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate: TranslateService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadTranslations();
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      this.loadTranslations();
+    });
+  }
 
-  onFileSelected(event: any): void {
-    if (event.target.files && event.target.files.length > 0) {
-      this.selectedFile = event.target.files[0];
+  ngOnDestroy(): void {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
     }
   }
 
-  getSelectedModules(): string {
-    const selectedModules = Object.entries(this.modules)
-      .filter(([_, isSelected]) => isSelected)
-      .map(([moduleName, _]) => {
-        const moduleNames: { [key: string]: string } = {
-          crm: 'GRP (CRM)',
-          comptabilite: 'Comptabilité',
-          pointVente: 'Point de Ventes',
-          siteWeb: 'Site web',
-          evenements: 'Événements',
-          rh: 'RH',
-          recrutement: 'Recrutement',
-          ventes: 'Ventes',
-          inventaire: 'Inventaire',
-          projets: 'Projets',
-          ventesB2B: 'Ventes en Ligne B2B',
-          sondages: 'Sondages',
-          depenses: 'Dépenses',
-          tableauxBords: 'Tableaux de Bords/KPIs',
-          achats: 'Achats',
-          mrp: 'MRP',
-          feuilleTemps: 'Feuilles de Temps',
-          ventesB2C: 'Ventes en Ligne B2C',
-          formations: 'Formations',
-          absencesConges: 'Absences/Congés',
-        };
-        return moduleNames[moduleName] || moduleName;
-      });
+  private loadTranslations(): void {
+    // Charger les titres des étapes
+    this.stepTitles = [
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.COORDINATES'),
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.OBJECTIVES'),
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.PROCESSES'),
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.TOOLS'),
+      this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.CHALLENGES'),
+    ];
 
-    return selectedModules.length > 0
-      ? selectedModules.map((module) => `- ${module}`).join('\n')
-      : 'Aucun module sélectionné';
+    // Charger les options de défis
+    this.defisOptions = [
+      {
+        value: '',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.SELECT_CHALLENGE'
+        ),
+      },
+      {
+        value: 'doublons',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.DUPLICATES'
+        ),
+      },
+      {
+        value: 'visibilite',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.VISIBILITY'
+        ),
+      },
+      {
+        value: 'couts',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.COSTS'
+        ),
+      },
+      {
+        value: 'manuels',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.MANUAL'
+        ),
+      },
+      {
+        value: 'autre',
+        label: this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.CHALLENGES.OTHER'
+        ),
+      },
+    ];
+  }
+
+  // Navigation entre les étapes
+  nextStep(): void {
+    if (this.validateCurrentStepWithMessage()) {
+      if (this.currentStep < this.totalSteps) {
+        this.currentStep++;
+      }
+    }
+  }
+
+  prevStep(): void {
+    if (this.currentStep > 1) {
+      this.currentStep--;
+    }
+  }
+
+  goToStep(step: number): void {
+    if (step <= this.currentStep || this.validateStepsUpToSilent(step - 1)) {
+      this.currentStep = step;
+    }
+  }
+
+  // Validation silencieuse (pour les boutons et états)
+  validateCurrentStep(): boolean {
+    switch (this.currentStep) {
+      case 1:
+        return this.validateContactInfoSilent();
+      case 2:
+        return this.validateObjectifsSilent();
+      case 3:
+        return this.validateProcessusSilent();
+      case 4:
+        return this.validateOutilsSilent();
+      case 5:
+        return this.validateDefiSilent();
+      default:
+        return true;
+    }
+  }
+
+  // Validation avec messages d'erreur (pour les actions utilisateur)
+  validateCurrentStepWithMessage(): boolean {
+    switch (this.currentStep) {
+      case 1:
+        return this.validateContactInfoWithMessage();
+      case 2:
+        return this.validateObjectifsWithMessage();
+      case 3:
+        return this.validateProcessusWithMessage();
+      case 4:
+        return this.validateOutilsWithMessage();
+      case 5:
+        return this.validateDefiWithMessage();
+      default:
+        return true;
+    }
+  }
+
+  // Validations silencieuses
+  validateContactInfoSilent(): boolean {
+    return !!(
+      this.contact_name &&
+      this.company &&
+      this.email_from &&
+      this.phone
+    );
+  }
+
+  validateObjectifsSilent(): boolean {
+    const hasObjectif = Object.values(this.objectifs).some((value) => value);
+    if (!hasObjectif) return false;
+    if (this.objectifs.remplacer && !this.objectifRemplacerDetail.trim())
+      return false;
+    if (this.objectifs.autre && !this.objectifAutreDetail.trim()) return false;
+    return true;
+  }
+
+  validateProcessusSilent(): boolean {
+    const hasProcessus = Object.values(this.processusTemps).some(
+      (value) => value
+    );
+    if (!hasProcessus) return false;
+    if (this.processusTemps.autre && !this.processusAutreDetail.trim())
+      return false;
+    return true;
+  }
+
+  validateOutilsSilent(): boolean {
+    const hasOutil = Object.values(this.outilsActuels).some((value) => value);
+    if (!hasOutil) return false;
+    if (this.outilsActuels.autre && !this.outilsAutreDetail.trim())
+      return false;
+    return true;
+  }
+
+  validateDefiSilent(): boolean {
+    if (!this.defiOperationnel) return false;
+    if (this.defiOperationnel === 'autre' && !this.defiAutreDetail.trim())
+      return false;
+    return true;
+  }
+
+  // Validations avec messages d'erreur
+  validateContactInfoWithMessage(): boolean {
+    const isValid = this.validateContactInfoSilent();
+    if (!isValid) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_REQUIRED'
+        ),
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEPS.TITLES.COORDINATES'
+        )
+      );
+    }
+    return isValid;
+  }
+
+  validateObjectifsWithMessage(): boolean {
+    const hasObjectif = Object.values(this.objectifs).some((value) => value);
+    if (!hasObjectif) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.SELECT_OBJECTIVE'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.OBJECTIVES')
+      );
+      return false;
+    }
+    if (this.objectifs.remplacer && !this.objectifRemplacerDetail.trim()) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_REPLACEMENT'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.OBJECTIVES')
+      );
+      return false;
+    }
+    if (this.objectifs.autre && !this.objectifAutreDetail.trim()) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_OTHER_OBJECTIVE'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.OBJECTIVES')
+      );
+      return false;
+    }
+    return true;
+  }
+
+  validateProcessusWithMessage(): boolean {
+    const hasProcessus = Object.values(this.processusTemps).some(
+      (value) => value
+    );
+    if (!hasProcessus) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.SELECT_PROCESS'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.PROCESSES')
+      );
+      return false;
+    }
+    if (this.processusTemps.autre && !this.processusAutreDetail.trim()) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_OTHER_PROCESS'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.PROCESSES')
+      );
+      return false;
+    }
+    return true;
+  }
+
+  validateOutilsWithMessage(): boolean {
+    const hasOutil = Object.values(this.outilsActuels).some((value) => value);
+    if (!hasOutil) {
+      this.toastr.error(
+        this.translate.instant('PAGES.DEMO_RESERVATION.VALIDATION.SELECT_TOOL'),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.TOOLS')
+      );
+      return false;
+    }
+    if (this.outilsActuels.autre && !this.outilsAutreDetail.trim()) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.VALIDATION.FILL_OTHER_TOOL'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.TOOLS')
+      );
+      return false;
+    }
+    return true;
+  }
+
+  validateDefiWithMessage(): boolean {
+    if (!this.defiOperationnel) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.VALIDATION.SELECT_CHALLENGE'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.CHALLENGES')
+      );
+      return false;
+    }
+    if (this.defiOperationnel === 'autre' && !this.defiAutreDetail.trim()) {
+      this.toastr.error(
+        this.translate.instant(
+          'PAGES.DEMO_RESERVATION.STEP5.OTHER_PLACEHOLDER'
+        ),
+        this.translate.instant('PAGES.DEMO_RESERVATION.STEPS.TITLES.CHALLENGES')
+      );
+      return false;
+    }
+    return true;
+  }
+
+  validateStepsUpToSilent(step: number): boolean {
+    for (let i = 1; i <= step; i++) {
+      const currentStepBackup = this.currentStep;
+      this.currentStep = i;
+      const isValid = this.validateCurrentStep();
+      this.currentStep = currentStepBackup;
+      if (!isValid) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // Méthodes pour obtenir les sélections
+  getSelectedObjectifs(): string[] {
+    const selected: string[] = [];
+    if (this.objectifs.automatiser)
+      selected.push('Automatiser les processus (factures, stocks, ventes)');
+    if (this.objectifs.centraliser)
+      selected.push('Centraliser les données (CRM + Comptabilité + Projets)');
+    if (this.objectifs.collaboration)
+      selected.push('Améliorer la collaboration entre équipes');
+    if (this.objectifs.remplacer)
+      selected.push(
+        `Remplacer un outil inefficace: ${this.objectifRemplacerDetail}`
+      );
+    if (this.objectifs.autre)
+      selected.push(`Autre: ${this.objectifAutreDetail}`);
+    return selected;
+  }
+
+  getSelectedProcessus(): string[] {
+    const selected: string[] = [];
+    if (this.processusTemps.leadsDevis)
+      selected.push("Gestion des leads/devis (ex : perte d'opportunités)");
+    if (this.processusTemps.suiviCommandes)
+      selected.push('Suivi des commandes/clients (ex : relances manuelles)');
+    if (this.processusTemps.reporting)
+      selected.push("Reporting financier ou d'activité");
+    if (this.processusTemps.gestionStocks)
+      selected.push('Gestion des stocks (ex : ruptures, surstocks)');
+    if (this.processusTemps.autre)
+      selected.push(`Autre: ${this.processusAutreDetail}`);
+    return selected;
+  }
+
+  getSelectedOutils(): string[] {
+    const selected: string[] = [];
+    if (this.outilsActuels.excel) selected.push('Excel');
+    if (this.outilsActuels.zoho) selected.push('Zoho CRM');
+    if (this.outilsActuels.sage) selected.push('Sage Comptabilité');
+    if (this.outilsActuels.autre)
+      selected.push(`Autre: ${this.outilsAutreDetail}`);
+    return selected;
+  }
+
+  getDefiOperationnel(): string {
+    if (this.defiOperationnel === 'autre') {
+      return this.defiAutreDetail;
+    }
+    const defi = this.defisOptions.find(
+      (d) => d.value === this.defiOperationnel
+    );
+    return defi ? defi.label : '';
+  }
+
+  // Calcul du pourcentage de progression
+  getProgressPercentage(): number {
+    return Math.round((this.currentStep / this.totalSteps) * 100);
+  }
+
+  // Vérifier si une étape est complétée (silencieux)
+  isStepCompleted(step: number): boolean {
+    if (step > this.currentStep) return false;
+
+    const currentStepBackup = this.currentStep;
+    this.currentStep = step;
+    const isValid = this.validateCurrentStep();
+    this.currentStep = currentStepBackup;
+    return isValid;
   }
 
   onSubmit(form: NgForm): void {
-    if (form.invalid) {
-      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+    if (!this.validateStepsUpToSilent(this.totalSteps)) {
+      this.toastr.error('Veuillez compléter toutes les étapes', 'Erreur');
       return;
     }
 
     this.isLoading = true;
 
-    // Assemblage de la description complète avec des paragraphes HTML
+    // Assemblage de la description complète
     const descriptionParts = [
-      `<p>Société: ${this.company}</p>`,
-      `<p>Sujet: ${this.subject}</p>`,
-      `<p>Message: ${this.description}</p>`,
-      `<p>Description des produits & services: ${
-        this.description_produits || 'Non fourni'
-      }</p>`,
-      `<p>Contexte: ${this.contexte || 'Non fourni'}</p>`,
-      `<p>Scénario: ${this.scenario || 'Non fourni'}</p>`,
-      `<p>Modules sélectionnés:</p><ul>${this.getSelectedModulesHTML()}</ul>`,
+      `<h3>Informations de contact</h3>`,
+      `<p><strong>Société:</strong> ${this.company}</p>`,
+      `<p><strong>Nom:</strong> ${this.contact_name}</p>`,
+      `<p><strong>Téléphone:</strong> ${this.phone}</p>`,
+      `<p><strong>Email:</strong> ${this.email_from}</p>`,
+
+      `<h3>🎯 Objectifs principaux avec Odoo</h3>`,
+      `<ul>${this.getSelectedObjectifs()
+        .map((obj) => `<li>${obj}</li>`)
+        .join('')}</ul>`,
+
+      `<h3>🔍 Processus qui prennent le plus de temps</h3>`,
+      `<ul>${this.getSelectedProcessus()
+        .map((proc) => `<li>${proc}</li>`)
+        .join('')}</ul>`,
+
+      `<h3>🛠️ Outils actuellement utilisés</h3>`,
+      `<ul>${this.getSelectedOutils()
+        .map((outil) => `<li>${outil}</li>`)
+        .join('')}</ul>`,
+
+      `<h3>🚧 Principal défi opérationnel</h3>`,
+      `<p>${this.getDefiOperationnel()}</p>`,
     ];
+
+    if (this.problemePrincipal.trim()) {
+      descriptionParts.push(
+        `<h3>✨ Problème principal à résoudre</h3>`,
+        `<p>${this.problemePrincipal}</p>`
+      );
+    }
 
     const fullDescription = descriptionParts.join('');
 
-    // Créer un objet FormData pour inclure le fichier
-    const formData = new FormData();
-    formData.append('name', this.contact_name);
-    formData.append('phone', this.phone);
-    formData.append('email_from', this.email_from);
-    formData.append('description', fullDescription);
+    // Créer l'objet de données pour l'envoi
+    const leadData = {
+      name: this.contact_name,
+      phone: this.phone,
+      email_from: this.email_from,
+      description: fullDescription,
+    };
 
-    // Ajouter le fichier s'il existe
-    if (this.selectedFile) {
-      formData.append('file', this.selectedFile);
-    }
-
-    this.odooService.createLeadWithFile(formData).subscribe({
+    this.odooService.createLead(leadData).subscribe({
       next: (response) => {
         this.toastr.success(
           'Votre demande de démonstration a été envoyée avec succès',
           'Succès'
         );
-        form.resetForm();
-        this.phone = '+237';
-        this.selectedFile = null;
-        // Réinitialiser les modules
-        Object.keys(this.modules).forEach((key) => {
-          this.modules[key as keyof typeof this.modules] = false;
-        });
+        this.resetForm(form);
         this.isLoading = false;
       },
       error: (error) => {
@@ -151,37 +502,33 @@ export class DemoReservationComponent implements OnInit {
     });
   }
 
-  getSelectedModulesHTML(): string {
-    const selectedModules = Object.entries(this.modules)
-      .filter(([_, isSelected]) => isSelected)
-      .map(([moduleName, _]) => {
-        const moduleNames: { [key: string]: string } = {
-          crm: 'GRP (CRM)',
-          comptabilite: 'Comptabilité',
-          pointVente: 'Point de Ventes',
-          siteWeb: 'Site web',
-          evenements: 'Événements',
-          rh: 'RH',
-          recrutement: 'Recrutement',
-          ventes: 'Ventes',
-          inventaire: 'Inventaire',
-          projets: 'Projets',
-          ventesB2B: 'Ventes en Ligne B2B',
-          sondages: 'Sondages',
-          depenses: 'Dépenses',
-          tableauxBords: 'Tableaux de Bords/KPIs',
-          achats: 'Achats',
-          mrp: 'MRP',
-          feuilleTemps: 'Feuilles de Temps',
-          ventesB2C: 'Ventes en Ligne B2C',
-          formations: 'Formations',
-          absencesConges: 'Absences/Congés',
-        };
-        return moduleNames[moduleName] || moduleName;
-      });
+  resetForm(form: NgForm): void {
+    form.resetForm();
+    this.currentStep = 1;
+    this.phone = '+237';
 
-    return selectedModules.length > 0
-      ? selectedModules.map((module) => `<li>${module}</li>`).join('')
-      : '<li>Aucun module sélectionné</li>';
+    // Réinitialiser les objectifs
+    Object.keys(this.objectifs).forEach((key) => {
+      this.objectifs[key as keyof typeof this.objectifs] = false;
+    });
+    this.objectifRemplacerDetail = '';
+    this.objectifAutreDetail = '';
+
+    // Réinitialiser les processus
+    Object.keys(this.processusTemps).forEach((key) => {
+      this.processusTemps[key as keyof typeof this.processusTemps] = false;
+    });
+    this.processusAutreDetail = '';
+
+    // Réinitialiser les outils
+    Object.keys(this.outilsActuels).forEach((key) => {
+      this.outilsActuels[key as keyof typeof this.outilsActuels] = false;
+    });
+    this.outilsAutreDetail = '';
+
+    // Réinitialiser le défi et le problème principal
+    this.defiOperationnel = '';
+    this.defiAutreDetail = '';
+    this.problemePrincipal = '';
   }
 }
