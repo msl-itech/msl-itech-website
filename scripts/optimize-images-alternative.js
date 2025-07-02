@@ -43,7 +43,7 @@ const IMAGES_TO_OPTIMIZE = [
     directory: "src/assets/img/accueil/",
   },
   {
-    input: "src/assets/img/accueil/logoMSL.png",
+    input: "src/assets/img/accueil/logoMSL.webp",
     basename: "logoMSL",
     directory: "src/assets/img/accueil/",
   },
