@@ -859,51 +859,68 @@
           (click)="isMobile && toggleDropdown('vosBesoins')"
         >
           <a
-            aria-haspopup="true"
+            role="button"
+            aria-haspopup="menu"
             [attr.aria-expanded]="isDropdownOpen('vosBesoins')"
+            aria-controls="vosBesoins-menu"
           >
             {{ "HEADER.MENU.DIGITAL_SOLUTIONS" | translate }}
             <i class="fas fa-chevron-down"></i>
           </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a routerLink="/serviceOdoo" (click)="isMobile && closeMenu()">{{
-                "HEADER.MENU.ODOO_APPS" | translate
-              }}</a>
+          <ul class="dropdown-menu" id="vosBesoins-menu" role="menu">
+            <li role="none">
+              <a
+                routerLink="/serviceOdoo"
+                (click)="isMobile && closeMenu()"
+                role="menuitem"
+                >{{ "HEADER.MENU.ODOO_APPS" | translate }}</a
+              >
             </li>
-            <li>
-              <a routerLink="/service2" (click)="isMobile && closeMenu()">{{
-                "HEADER.MENU.FINANCE" | translate
-              }}</a>
+            <li role="none">
+              <a
+                routerLink="/service2"
+                (click)="isMobile && closeMenu()"
+                role="menuitem"
+                >{{ "HEADER.MENU.FINANCE" | translate }}</a
+              >
             </li>
-            <li>
-              <a routerLink="/service3" (click)="isMobile && closeMenu()">{{
-                "HEADER.MENU.SALES" | translate
-              }}</a>
+            <li role="none">
+              <a
+                routerLink="/service3"
+                (click)="isMobile && closeMenu()"
+                role="menuitem"
+                >{{ "HEADER.MENU.SALES" | translate }}</a
+              >
             </li>
-            <li>
-              <a routerLink="/fabrication" (click)="isMobile && closeMenu()">{{
-                "HEADER.MENU.MANUFACTURING" | translate
-              }}</a>
+            <li role="none">
+              <a
+                routerLink="/fabrication"
+                (click)="isMobile && closeMenu()"
+                role="menuitem"
+                >{{ "HEADER.MENU.MANUFACTURING" | translate }}</a
+              >
             </li>
-            <li>
+            <li role="none">
               <a
                 routerLink="/ressources-humaines"
                 (click)="isMobile && closeMenu()"
+                role="menuitem"
                 >{{ "HEADER.MENU.HR" | translate }}</a
               >
             </li>
-            <li>
+            <li role="none">
               <a
                 routerLink="/marketing-digital"
                 (click)="isMobile && closeMenu()"
+                role="menuitem"
                 >{{ "HEADER.MENU.MARKETING" | translate }}</a
               >
             </li>
-            <li>
+            <li role="none">
               <a
                 routerLink="/services-professionnels"
                 (click)="isMobile && closeMenu()"
+                role="menuitem"
                 >{{ "HEADER.MENU.PROFESSIONAL_SERVICES" | translate }}</a
               >
             </li>
@@ -919,24 +936,28 @@
           <a
             routerLink="/package-metier"
             routerLinkActive="actived"
-            aria-haspopup="true"
+            role="button"
+            aria-haspopup="menu"
             [attr.aria-expanded]="isDropdownOpen('packageMetier')"
+            aria-controls="packageMetier-menu"
           >
             {{ "HEADER.MENU.ORGANIZATIONAL_MODULES" | translate }}
             <i class="fas fa-chevron-down"></i>
           </a>
-          <ul class="dropdown-menu">
-            <li>
+          <ul class="dropdown-menu" id="packageMetier-menu" role="menu">
+            <li role="none">
               <a
                 routerLink="/package-metier/commerciale"
                 (click)="isMobile && closeMenu()"
+                role="menuitem"
                 >{{ "HEADER.MENU.COMMERCIAL" | translate }}</a
               >
             </li>
-            <li>
+            <li role="none">
               <a
                 routerLink="/package-metier/administratif"
                 (click)="isMobile && closeMenu()"
+                role="menuitem"
                 >{{ "HEADER.MENU.ADMINISTRATIVE" | translate }}</a
               >
             </li>
@@ -946,31 +967,39 @@
                 $event.stopPropagation(); isMobile && toggleDropdown('horeca')
               "
             >
-              <a>
+              <a
+                role="button"
+                aria-haspopup="menu"
+                [attr.aria-expanded]="isDropdownOpen('horeca')"
+                aria-controls="horeca-menu"
+              >
                 {{ "HEADER.MENU.HORECA" | translate }}
                 <i class="fas fa-chevron-right"></i>
               </a>
-              <ul class="sub-dropdown-menu">
-                <li>
+              <ul class="sub-dropdown-menu" id="horeca-menu" role="menu">
+                <li role="none">
                   <a
                     routerLink="/package-metier/horeca/formules"
                     (click)="isMobile && closeMenu()"
+                    role="menuitem"
                     >{{ "HEADER.MENU.OUR_FORMULAS" | translate }}</a
                   >
                 </li>
-                <li>
+                <li role="none">
                   <a
                     routerLink="/package-metier/horeca/smartAlert"
                     (click)="isMobile && closeMenu()"
+                    role="menuitem"
                   >
                     {{ "HEADER.MENU.SMART_ALERT" | translate }}
                     <span class="pro-badge">PRO</span>
                   </a>
                 </li>
-                <li>
+                <li role="none">
                   <a
                     routerLink="/package-metier/horeca/services-exclusifs"
                     (click)="isMobile && closeMenu()"
+                    role="menuitem"
                     >{{ "HEADER.MENU.EXCLUSIVE_SERVICES" | translate }}</a
                   >
                 </li>
@@ -996,22 +1025,30 @@
           (click)="isMobile && toggleDropdown('tarifs')"
         >
           <a
-            aria-haspopup="true"
+            role="button"
+            aria-haspopup="menu"
             [attr.aria-expanded]="isDropdownOpen('tarifs')"
+            aria-controls="tarifs-menu"
           >
             {{ "HEADER.MENU.CUSTOM_PRICING" | translate }}
             <i class="fas fa-chevron-down"></i>
           </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a routerLink="/tarif-Odoo" (click)="isMobile && closeMenu()">{{
-                "HEADER.MENU.ODOO" | translate
-              }}</a>
+          <ul class="dropdown-menu" id="tarifs-menu" role="menu">
+            <li role="none">
+              <a
+                routerLink="/tarif-Odoo"
+                (click)="isMobile && closeMenu()"
+                role="menuitem"
+                >{{ "HEADER.MENU.ODOO" | translate }}</a
+              >
             </li>
-            <li>
-              <a routerLink="/tarif" (click)="isMobile && closeMenu()">{{
-                "HEADER.MENU.WEBSITE" | translate
-              }}</a>
+            <li role="none">
+              <a
+                routerLink="/tarif"
+                (click)="isMobile && closeMenu()"
+                role="menuitem"
+                >{{ "HEADER.MENU.WEBSITE" | translate }}</a
+              >
             </li>
           </ul>
         </li>

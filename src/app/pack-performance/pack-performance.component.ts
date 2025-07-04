@@ -329,10 +329,16 @@ export class PackPerformanceComponent implements OnInit, AfterViewInit {
           </div>
           <div style="flex: 1;">
             <div style="font-weight: 700; font-size: 16px; margin-bottom: 5px;">
-              Quel pack Odoo vous convient ?
+              ${this.getTranslationOrFallback(
+                'PAGES.PACK_PERFORMANCE.PACK_FINDER.POPUP.TITLE',
+                'Quel pack Odoo vous convient ?'
+              )}
             </div>
             <div style="font-size: 13px; opacity: 0.9; line-height: 1.4;">
-              Découvrez en 3 questions rapides le pack idéal pour votre entreprise
+              ${this.getTranslationOrFallback(
+                'PAGES.PACK_PERFORMANCE.PACK_FINDER.POPUP.SUBTITLE',
+                'Découvrez en 3 questions rapides le pack idéal pour votre entreprise'
+              )}
             </div>
           </div>
         </div>
@@ -358,7 +364,10 @@ export class PackPerformanceComponent implements OnInit, AfterViewInit {
         onmouseout="this.style.background='#ffdd57'; this.style.transform='translateY(0)'"
         onclick="window.scrollToPackFinder(); document.getElementById('miniPopup').remove();">
           <span>🚀</span>
-          Faire le test gratuit
+          ${this.getTranslationOrFallback(
+            'PAGES.PACK_PERFORMANCE.PACK_FINDER.POPUP.CTA',
+            'Faire le test gratuit'
+          )}
         </button>
       </div>
     `;

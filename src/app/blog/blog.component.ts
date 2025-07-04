@@ -29,7 +29,7 @@ export class BlogComponent implements OnInit, OnDestroy {
   loadArticles() {
     this.articles = [
       {
-        img: '../../assets/img/accueil/img1.wepb',
+        img: '../../assets/img/accueil/img1.webp',
         date: '20 Nov 2024',
         title: this.translate.instant(
           'COMPONENTS.BLOG.ARTICLES.ARTICLE1.TITLE'
@@ -40,7 +40,7 @@ export class BlogComponent implements OnInit, OnDestroy {
         link: '#',
       },
       {
-        img: '../../assets/img/accueil/img2.wepb',
+        img: '../../assets/img/accueil/img2.webp',
         date: '15 Nov 2024',
         title: this.translate.instant(
           'COMPONENTS.BLOG.ARTICLES.ARTICLE2.TITLE'
@@ -51,7 +51,7 @@ export class BlogComponent implements OnInit, OnDestroy {
         link: '#',
       },
       {
-        img: '../../assets/img/accueil/img3.wepb',
+        img: '../../assets/img/accueil/img3.webp',
         date: '10 Nov 2024',
         title: this.translate.instant(
           'COMPONENTS.BLOG.ARTICLES.ARTICLE3.TITLE'

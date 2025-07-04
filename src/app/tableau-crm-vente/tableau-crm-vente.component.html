@@ -253,104 +253,218 @@
   <table class="table table-responsive">
     <thead>
       <tr>
-        <th class="table-header" style="width: 20%">Modules</th>
+        <th class="table-header" style="width: 20%">
+          {{ "PAGES.TABLEAU_CRM_VENTE.TABLE.HEADERS.MODULES" | translate }}
+        </th>
         <th class="table-header" style="width: 40%">
-          <div class="pack-title">Pack Performance</div>
-          <div class="pack-hours">Solution Essentielle</div>
+          <div class="pack-title">
+            {{
+              "PAGES.TABLEAU_CRM_VENTE.TABLE.HEADERS.PACK_PERFORMANCE"
+                | translate
+            }}
+          </div>
+          <div class="pack-hours">
+            {{
+              "PAGES.TABLEAU_CRM_VENTE.TABLE.HEADERS.SOLUTION_ESSENTIELLE"
+                | translate
+            }}
+          </div>
         </th>
         <th
           class="table-header highlight-header highlight-column"
           style="width: 40%"
         >
-          <div class="pack-title">Pack Réussite</div>
-          <div class="pack-hours">Solution Complète</div>
+          <div class="pack-title">
+            {{
+              "PAGES.TABLEAU_CRM_VENTE.TABLE.HEADERS.PACK_REUSSITE" | translate
+            }}
+          </div>
+          <div class="pack-hours">
+            {{
+              "PAGES.TABLEAU_CRM_VENTE.TABLE.HEADERS.SOLUTION_COMPLETE"
+                | translate
+            }}
+          </div>
         </th>
       </tr>
     </thead>
     <tbody>
       <!-- CRM Section -->
       <tr class="module-section">
-        <td class="module-header" rowspan="3">Gestion de la Relation Client</td>
+        <td class="module-header" rowspan="3">
+          {{ "PAGES.TABLEAU_CRM_VENTE.TABLE.MODULES.CRM" | translate }}
+        </td>
         <td class="feature-name">
-          Pipeline de vente optimisé pour votre activité
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.CRM.PIPELINE_BASIC"
+              | translate
+          }}
         </td>
         <td class="feature-name highlight-column">
-          Pipeline de vente personnalisé avec suivi avancé
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.CRM.PIPELINE_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
       <tr>
-        <td class="feature-name">Suivi basique des activités commerciales</td>
+        <td class="feature-name">
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.CRM.ACTIVITIES_BASIC"
+              | translate
+          }}
+        </td>
         <td class="feature-name highlight-column">
-          Suivi détaillé et automatisation des activités commerciales
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.CRM.ACTIVITIES_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
       <tr>
-        <td class="feature-name">Notifications standards</td>
+        <td class="feature-name">
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.CRM.NOTIFICATIONS_BASIC"
+              | translate
+          }}
+        </td>
         <td class="feature-name highlight-column">
-          Notifications personnalisées et alertes intelligentes
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.CRM.NOTIFICATIONS_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
 
       <!-- Ventes Section -->
       <tr class="module-section">
-        <td class="module-header" rowspan="2">Processus Commercial</td>
-        <td class="feature-name">Catalogue produits et tarification simple</td>
+        <td class="module-header" rowspan="2">
+          {{ "PAGES.TABLEAU_CRM_VENTE.TABLE.MODULES.SALES" | translate }}
+        </td>
+        <td class="feature-name">
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SALES.CATALOG_BASIC"
+              | translate
+          }}
+        </td>
         <td class="feature-name highlight-column">
-          Catalogue produits avancé avec tarification dynamique
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SALES.CATALOG_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
       <tr>
-        <td class="empty-cell">Non inclus</td>
+        <td class="empty-cell">
+          {{ "PAGES.TABLEAU_CRM_VENTE.TABLE.COMMON.NOT_INCLUDED" | translate }}
+        </td>
         <td class="feature-name highlight-column">
-          Bibliothèque de modèles de devis professionnels
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SALES.TEMPLATES_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
 
       <!-- Facturation Section -->
       <tr class="module-section">
-        <td class="module-header" rowspan="3">Gestion Financière</td>
-        <td class="feature-name">Configuration standard des taxes</td>
+        <td class="module-header" rowspan="3">
+          {{ "PAGES.TABLEAU_CRM_VENTE.TABLE.MODULES.FINANCIAL" | translate }}
+        </td>
+        <td class="feature-name">
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.FINANCIAL.TAXES_BASIC"
+              | translate
+          }}
+        </td>
         <td class="feature-name highlight-column">
-          Configuration avancée multi-taxes et multi-devises
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.FINANCIAL.TAXES_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
       <tr>
-        <td class="feature-name">Modèle de facture basique</td>
+        <td class="feature-name">
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.FINANCIAL.INVOICES_BASIC"
+              | translate
+          }}
+        </td>
         <td class="feature-name highlight-column">
-          Modèles de factures personnalisés et professionnels
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.FINANCIAL.INVOICES_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
       <tr>
-        <td class="feature-name">Système de relance simple</td>
+        <td class="feature-name">
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.FINANCIAL.FOLLOW_UP_BASIC"
+              | translate
+          }}
+        </td>
         <td class="feature-name highlight-column">
-          Système de relance intelligent et automatisé
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.FINANCIAL.FOLLOW_UP_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
 
       <!-- Supports Section -->
       <tr class="module-section">
-        <td class="module-header" rowspan="4">Accompagnement</td>
-        <td class="feature-name">Migration basique des données</td>
+        <td class="module-header" rowspan="4">
+          {{ "PAGES.TABLEAU_CRM_VENTE.TABLE.MODULES.SUPPORT" | translate }}
+        </td>
+        <td class="feature-name">
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SUPPORT.MIGRATION_BASIC"
+              | translate
+          }}
+        </td>
         <td class="feature-name highlight-column">
-          Migration complète et optimisation des données
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SUPPORT.MIGRATION_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
       <tr>
-        <td class="feature-name">Assistance au démarrage</td>
+        <td class="feature-name">
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SUPPORT.ASSISTANCE_BASIC"
+              | translate
+          }}
+        </td>
         <td class="feature-name highlight-column">
-          Accompagnement personnalisé au démarrage
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SUPPORT.ASSISTANCE_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
       <tr>
-        <td class="empty-cell">Non inclus</td>
+        <td class="empty-cell">
+          {{ "PAGES.TABLEAU_CRM_VENTE.TABLE.COMMON.NOT_INCLUDED" | translate }}
+        </td>
         <td class="feature-name highlight-column">
-          Formation approfondie et documentation détaillée
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SUPPORT.TRAINING_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
       <tr>
-        <td class="empty-cell">Non inclus</td>
+        <td class="empty-cell">
+          {{ "PAGES.TABLEAU_CRM_VENTE.TABLE.COMMON.NOT_INCLUDED" | translate }}
+        </td>
         <td class="feature-name highlight-column">
-          Suivi régulier et optimisation continue
+          {{
+            "PAGES.TABLEAU_CRM_VENTE.TABLE.FEATURES.SUPPORT.FOLLOW_UP_ADVANCED"
+              | translate
+          }}
         </td>
       </tr>
     </tbody>
@@ -359,12 +473,16 @@
   <div class="pack-actions">
     <div class="btn-performance-wrapper">
       <a href="/contact?pack=performance" class="action-btn btn-performance">
-        Démarrer avec Performance
+        {{
+          "PAGES.TABLEAU_CRM_VENTE.TABLE.ACTIONS.START_PERFORMANCE" | translate
+        }}
       </a>
     </div>
     <div class="btn-reussite-wrapper">
       <a href="/contact?pack=reussite" class="action-btn btn-reussite">
-        Démarrer avec l'Excellence
+        {{
+          "PAGES.TABLEAU_CRM_VENTE.TABLE.ACTIONS.START_EXCELLENCE" | translate
+        }}
       </a>
     </div>
   </div>

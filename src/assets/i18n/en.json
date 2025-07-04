@@ -206,6 +206,20 @@
         "TITLE": "WHY ODOO",
         "SUBTITLE": "Odoo, the complete software for managing your business"
       },
+      "ACCORDION": {
+        "ALL_IN_ONE": {
+          "TITLE": "All-in-one solution",
+          "CONTENT": "Odoo stands out for its integrated approach, allowing businesses to manage all their processes in one place, which simplifies management and improves efficiency."
+        },
+        "MODULARITY": {
+          "TITLE": "Modularity and flexibility",
+          "CONTENT": "You choose only the modules you need, whether for finance, production or marketing, and you can add or remove them as your business evolves."
+        },
+        "SUPPORT": {
+          "TITLE": "Odoo Support & Maintenance",
+          "CONTENT": "As an open source ERP, Odoo allows advanced customization, giving you the freedom to adapt the tool to your specific processes and easily integrate it with other systems"
+        }
+      },
       "EXPERTS": {
         "TITLE": "Our Experts",
         "SUBTITLE": "We connect you with Odoo experts",
@@ -322,6 +336,14 @@
               "SUPPORT_PRIORITAIRE": "Priority support"
             }
           }
+        },
+        "YOUR_IDEAL_PACK": "Your ideal pack:",
+        "BOOK_PERSONALIZED_DEMO": "Book my personalized demonstration",
+        "NEXT_QUESTION": "Next question",
+        "POPUP": {
+          "TITLE": "Which Odoo pack suits you?",
+          "SUBTITLE": "Discover in 3 quick questions the ideal pack for your business",
+          "CTA": "Take the free test"
         },
         "RESULT": {
           "TITLE": "Your ideal pack:",
@@ -768,6 +790,10 @@
       "TECH_COMPARISON": {
         "TITLE": "WordPress vs Modern JavaScript: Key Differences",
         "SUBTITLE": "Understanding technologies to make the right choice",
+        "HEADERS": {
+          "JAVASCRIPT": "Modern JavaScript (custom)",
+          "WORDPRESS": "WordPress (ready-to-use)"
+        },
         "CRITERIA": {
           "NEEDS": "Your needs",
           "COST": "Cost",
@@ -1505,6 +1531,143 @@
             "DESCRIPTION": "Easily manage your client appointments with an integrated online booking system and automatic reminders..."
           }
         }
+      }
+    },
+    "TABLEAU_CRM_VENTE": {
+      "TABLE": {
+        "HEADERS": {
+          "MODULES": "Modules",
+          "PACK_PERFORMANCE": "Performance Pack",
+          "PACK_REUSSITE": "Success Pack",
+          "SOLUTION_ESSENTIELLE": "Essential Solution",
+          "SOLUTION_COMPLETE": "Complete Solution"
+        },
+        "MODULES": {
+          "CRM": "Customer Relationship Management",
+          "SALES": "Sales Process",
+          "FINANCIAL": "Financial Management",
+          "SUPPORT": "Support"
+        },
+        "FEATURES": {
+          "CRM": {
+            "PIPELINE_BASIC": "Sales pipeline optimized for your business",
+            "PIPELINE_ADVANCED": "Personalized sales pipeline with advanced tracking",
+            "ACTIVITIES_BASIC": "Basic tracking of commercial activities",
+            "ACTIVITIES_ADVANCED": "Detailed tracking and automation of commercial activities",
+            "NOTIFICATIONS_BASIC": "Standard notifications",
+            "NOTIFICATIONS_ADVANCED": "Personalized notifications and smart alerts"
+          },
+          "SALES": {
+            "CATALOG_BASIC": "Product catalog and simple pricing",
+            "CATALOG_ADVANCED": "Advanced product catalog with dynamic pricing",
+            "TEMPLATES_NONE": "Not included",
+            "TEMPLATES_ADVANCED": "Professional quote template library"
+          },
+          "FINANCIAL": {
+            "TAXES_BASIC": "Standard tax configuration",
+            "TAXES_ADVANCED": "Advanced multi-tax and multi-currency configuration",
+            "INVOICES_BASIC": "Basic invoice template",
+            "INVOICES_ADVANCED": "Custom and professional invoice templates",
+            "FOLLOW_UP_BASIC": "Simple follow-up system",
+            "FOLLOW_UP_ADVANCED": "Smart and automated follow-up system"
+          },
+          "SUPPORT": {
+            "MIGRATION_BASIC": "Basic data migration",
+            "MIGRATION_ADVANCED": "Complete migration and data optimization",
+            "ASSISTANCE_BASIC": "Startup assistance",
+            "ASSISTANCE_ADVANCED": "Personalized startup support",
+            "TRAINING_NONE": "Not included",
+            "TRAINING_ADVANCED": "In-depth training and detailed documentation",
+            "FOLLOW_UP_NONE": "Not included",
+            "FOLLOW_UP_ADVANCED": "Regular follow-up and continuous optimization"
+          }
+        },
+        "ACTIONS": {
+          "START_PERFORMANCE": "Start with Performance",
+          "START_EXCELLENCE": "Start with Excellence"
+        },
+        "COMMON": {
+          "NOT_INCLUDED": "Not included"
+        }
+      }
+    },
+    "PAGE_PACKAGE": {
+      "HEADER": {
+        "TITLE": "Discover our packages according to your business needs",
+        "DESCRIPTION": "Whether you are an entrepreneur, administrative manager, or communications officer, our tailor-made packs allow you to improve your daily life without effort. Clear, efficient solutions designed to save time, simplify your management and develop your turnover."
+      }
+    },
+    "PACKAGE_METIER": {
+      "BADGES": {
+        "POPULAR": "Popular"
+      },
+      "PACKAGES": {
+        "ADMINISTRATIF": {
+          "TITLE": "Administrative Package",
+          "DESCRIPTION": "Centralize and automate your administrative tasks to increase productivity",
+          "FEATURES": {
+            "DOCUMENT_MANAGEMENT": "Document management",
+            "WORKFLOW_AUTOMATION": "Workflow automation",
+            "LEAVE_MANAGEMENT": "Leave and absence management",
+            "EXPENSE_MANAGEMENT": "Expense report management",
+            "PAYROLL_MANAGEMENT": "Payroll management",
+            "WEBHOOK_SECRET": "Webhook Secret"
+          }
+        },
+        "COMMERCIALE": {
+          "TITLE": "Commercial Package",
+          "DESCRIPTION": "Improve your commercial management with high-performance tools to optimize your sales, customers and campaigns.",
+          "FEATURES": {
+            "OPPORTUNITY_TRACKING": "Effective tracking of opportunities and prospects.",
+            "SALES_AUTOMATION": "Sales automation",
+            "CLIENT_FOLLOW_UP": "Client follow-up optimization",
+            "ADVANCED_REPORTING": "Advanced reporting"
+          }
+        },
+        "HORECA": {
+          "TITLE": "Heroca Package",
+          "DESCRIPTION": "Enjoy a complete solution for your hosting needs, security management and platform maintenance.",
+          "FEATURES": {
+            "ADVANCED_SEGMENTATION": "Advanced segmentation for your users.",
+            "PERFORMANCE_OPTIMIZATION": "Performance optimization",
+            "ACTIVITY_HISTORY": "Detailed activity history.",
+            "ROLE_MANAGEMENT": "Role and permission management.",
+            "TRAFFIC_LIMIT": "500 GB Traffic/month"
+          }
+        }
+      },
+      "COMMON": {
+        "SEE_MORE": "See more details",
+        "FEATURES_INCLUDED": "Features included:"
+      }
+    },
+    "CODE_PROMO": {
+      "HEADER": {
+        "BOOST_BUSINESS": "BOOST YOUR BUSINESS WITH",
+        "PROMO_CODE": "THE PROMO CODE"
+      },
+      "BENEFITS": {
+        "REDUCTION": "{{reduction}}% discount on our Commercial pack",
+        "REDUCTION_DESC": "Access the best tools to automate your sales and improve your customer relationship.",
+        "SIMPLIFY_PROSPECTS": "Simplify your prospect management",
+        "SIMPLIFY_PROSPECTS_DESC": "Organize your commercial opportunities in one place to maximize your conversions.",
+        "DETAILED_TRACKING": "Detailed performance tracking",
+        "DETAILED_TRACKING_DESC": "Advanced reports to analyze your sales and make strategic decisions."
+      },
+      "COUNTDOWN": {
+        "TITLE": "Time remaining before the end of the promo:",
+        "DAYS": "Days",
+        "HOURS": "Hours",
+        "MINUTES": "Minutes",
+        "SECONDS": "Seconds",
+        "EXPIRED": "The Promotional Offer Has Expired"
+      },
+      "CARD": {
+        "FEATURES": {
+          "SALES_AUTOMATION": "Simplified sales automation",
+          "CLIENT_MANAGEMENT": "Optimal management of your client follow-ups"
+        },
+        "CTA": "TAKE ADVANTAGE!"
       }
     }
   }

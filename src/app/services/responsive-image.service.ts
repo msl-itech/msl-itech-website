@@ -8,6 +8,7 @@ export interface ResponsiveImageConfig {
   desktop: string;
   alt: string;
   loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
 @Injectable({
@@ -19,9 +20,12 @@ export class ResponsiveImageService {
   /**
    * Retourne l'image appropriée selon le breakpoint actuel
    */
-  getResponsiveImage(
-    config: ResponsiveImageConfig
-  ): Observable<{ src: string; alt: string; loading: 'lazy' | 'eager' }> {
+  getResponsiveImage(config: ResponsiveImageConfig): Observable<{
+    src: string;
+    alt: string;
+    loading: 'lazy' | 'eager';
+    fetchpriority?: 'high' | 'low' | 'auto';
+  }> {
     return this.breakpointObserver
       .observe([
         Breakpoints.XSmall, // < 600px (mobile)
@@ -50,6 +54,7 @@ export class ResponsiveImageService {
             src,
             alt: config.alt,
             loading: config.loading || 'lazy',
+            fetchpriority: config.fetchpriority,
           };
         })
       );
@@ -61,7 +66,8 @@ export class ResponsiveImageService {
   generateResponsiveConfig(
     basePath: string,
     alt: string,
-    loading: 'lazy' | 'eager' = 'lazy'
+    loading: 'lazy' | 'eager' = 'lazy',
+    fetchpriority?: 'high' | 'low' | 'auto'
   ): ResponsiveImageConfig {
     const pathParts = basePath.split('.');
     const extension = pathParts.pop();
@@ -73,6 +79,7 @@ export class ResponsiveImageService {
       desktop: basePath, // Image originale pour desktop
       alt,
       loading,
+      fetchpriority,
     };
   }
 

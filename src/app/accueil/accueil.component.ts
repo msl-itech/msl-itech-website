@@ -1,58 +1,106 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 import { SeoService } from '../seo.service';
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrl: './accueil.component.css'
+  styleUrl: './accueil.component.css',
 })
-export class AccueilComponent implements OnInit{
+export class AccueilComponent implements OnInit, OnDestroy {
+  private translateSubscription: Subscription = new Subscription();
 
-  constructor(private seoService: SeoService) { }
-    // Gérer l'état d'expansion des éléments de l'accordéon
-    accordionItems = [
+  constructor(
+    private seoService: SeoService,
+    private translate: TranslateService
+  ) {}
+
+  // Gérer l'état d'expansion des éléments de l'accordéon
+  accordionItems = [
+    {
+      title: '',
+      content: '',
+      isExpanded: true,
+    },
+    {
+      title: '',
+      content: '',
+      isExpanded: false,
+    },
+    {
+      title: '',
+      content: '',
+      isExpanded: false,
+    },
+  ];
+
+  toggleAccordion(item: any) {
+    item.isExpanded = !item.isExpanded;
+  }
+
+  slides = [
+    { img: 'assets/img/accueil/maroc.png', alt: 'Drapeau du Maroc' },
+    { img: 'assets/img/accueil/france.png', alt: 'Drapeau de la France' },
+    { img: 'assets/img/accueil/usa.png', alt: 'Drapeau des USA' },
+  ];
+
+  currentSlide = 0;
+
+  goToSlide(index: number) {
+    this.currentSlide = index;
+  }
+
+  private loadAccordionItems() {
+    this.accordionItems = [
       {
-        title: 'Solution tout-en-un',
-        content: `Odoo se distingue par son approche intégrée, permettant aux entreprises de gérer tous leurs processus en un seul 
-        endroit, ce qui simplifie la gestion et améliore l'efficacité.`,
-        isExpanded: true
+        title: this.translate.instant('PAGES.HOME.ACCORDION.ALL_IN_ONE.TITLE'),
+        content: this.translate.instant(
+          'PAGES.HOME.ACCORDION.ALL_IN_ONE.CONTENT'
+        ),
+        isExpanded: true,
       },
       {
-        title: 'Modularité et flexibilité',
-        content: `Vous choisissez uniquement les modules dont vous avez besoin, que ce soit pour les finances, la production ou le
-        marketing, et vous pouvez les ajouter ou les retirer à mesure que votre entreprise évolue.`,
-        isExpanded: false
+        title: this.translate.instant('PAGES.HOME.ACCORDION.MODULARITY.TITLE'),
+        content: this.translate.instant(
+          'PAGES.HOME.ACCORDION.MODULARITY.CONTENT'
+        ),
+        isExpanded: false,
       },
       {
-        title: 'Odoo Support & Maintenance',
-        content: `En tant qu’ERP open source, Odoo permet une personnalisation poussée,vous offrant la liberté d’adapter l'outil à
-        vos processus spécifiques et de l'intégrer facilement à d'autres systèmes`,
-        isExpanded: false
-      }
+        title: this.translate.instant('PAGES.HOME.ACCORDION.SUPPORT.TITLE'),
+        content: this.translate.instant('PAGES.HOME.ACCORDION.SUPPORT.CONTENT'),
+        isExpanded: false,
+      },
     ];
-  
-    toggleAccordion(item: any) {
-      item.isExpanded = !item.isExpanded;
-    }
+  }
 
-    slides = [
-      { img: 'assets/img/accueil/maroc.png', alt: 'Drapeau du Maroc' },
-      { img: 'assets/img/accueil/france.png', alt: 'Drapeau de la France' },
-      { img: 'assets/img/accueil/usa.png', alt: 'Drapeau des USA' }
-    ];
-  
-    currentSlide = 0;
-  
-    goToSlide(index: number) {
-      this.currentSlide = index;
-    }
+  ngOnInit(): void {
+    this.loadAccordionItems();
 
-    ngOnInit(): void {
-      
-      this.seoService.updateTitle('MSL Itech - Partenaire Certifié Odoo en Belgique, Canada et Maroc');
-      this.seoService.updateMetaTags([
-        { name: 'description', content: 'MSL Itech est un partenaire certifié Odoo offrant des services d’implémentation, de personnalisation et de support ERP en Belgique, Canada et Maroc pour les PME et les entreprises en croissance.' },
-        { name: 'keywords', content: 'partenaire Odoo, consultant Odoo, implémentation Odoo, développement Odoo, services Odoo, solutions Odoo, intégrateur Odoo, MSL Itech Odoo, Belgique, Canada, Maroc' }
-      ]);
-    }
+    // S'abonner aux changements de langue
+    this.translateSubscription = this.translate.onLangChange.subscribe(() => {
+      this.loadAccordionItems();
+    });
+
+    this.seoService.updateTitle(
+      'MSL Itech - Partenaire Certifié Odoo en Belgique, Canada et Maroc'
+    );
+    this.seoService.updateMetaTags([
+      {
+        name: 'description',
+        content:
+          "MSL Itech est un partenaire certifié Odoo offrant des services d'implémentation, de personnalisation et de support ERP en Belgique, Canada et Maroc pour les PME et les entreprises en croissance.",
+      },
+      {
+        name: 'keywords',
+        content:
+          'partenaire Odoo, consultant Odoo, implémentation Odoo, développement Odoo, services Odoo, solutions Odoo, intégrateur Odoo, MSL Itech Odoo, Belgique, Canada, Maroc',
+      },
+    ]);
+  }
+
+  ngOnDestroy(): void {
+    this.translateSubscription.unsubscribe();
+  }
 }

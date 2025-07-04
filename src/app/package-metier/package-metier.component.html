@@ -112,41 +112,67 @@
     <div class="col-12 col-md-6 col-lg-3">
       <div class="package-card bg-dark-teal text-light">
         <div>
-          <div class="package-title">Package Administratif</div>
+          <div class="package-title">
+            {{
+              "PAGES.PACKAGE_METIER.PACKAGES.ADMINISTRATIF.TITLE" | translate
+            }}
+          </div>
           <div class="package-subtitle">
-            Centralisez et automatisez vos tâches administratives pour gagner en
-            productivité
+            {{
+              "PAGES.PACKAGE_METIER.PACKAGES.ADMINISTRATIF.DESCRIPTION"
+                | translate
+            }}
           </div>
           <a
             routerLink="/package-metier/administratif"
             class="btn btn-gold mb-4"
-            >Voir plus en détails</a
+            >{{ "PAGES.PACKAGE_METIER.COMMON.SEE_MORE" | translate }}</a
           >
-          <div class="package-feature-title">Fonctionnalités incluses :</div>
+          <div class="package-feature-title">
+            {{ "PAGES.PACKAGE_METIER.COMMON.FEATURES_INCLUDED" | translate }}
+          </div>
           <ul class="feature-list">
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Gestion des documents
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.ADMINISTRATIF.FEATURES.DOCUMENT_MANAGEMENT"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Automatisation des workflows
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.ADMINISTRATIF.FEATURES.WORKFLOW_AUTOMATION"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Gestion des congés et absences
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.ADMINISTRATIF.FEATURES.LEAVE_MANAGEMENT"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Gestion des notes de frais
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.ADMINISTRATIF.FEATURES.EXPENSE_MANAGEMENT"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Gestion de la paie
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.ADMINISTRATIF.FEATURES.PAYROLL_MANAGEMENT"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Webhook Secret
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.ADMINISTRATIF.FEATURES.WEBHOOK_SECRET"
+                  | translate
+              }}
             </li>
           </ul>
         </div>
@@ -157,35 +183,55 @@
       <div
         class="package-card package-card-white text-dark position-relative package-card-yellow-border"
       >
-        <div class="badge-populaire">Populaire</div>
+        <div class="badge-populaire">
+          {{ "PAGES.PACKAGE_METIER.BADGES.POPULAR" | translate }}
+        </div>
         <div>
-          <div class="package-title mt-3">Package Commerciale</div>
+          <div class="package-title mt-3">
+            {{ "PAGES.PACKAGE_METIER.PACKAGES.COMMERCIALE.TITLE" | translate }}
+          </div>
           <div class="package-subtitle">
-            Améliorez votre gestion commerciale avec les outils performants pour
-            optimiser vos ventes, vos clients et vos campagnes.
+            {{
+              "PAGES.PACKAGE_METIER.PACKAGES.COMMERCIALE.DESCRIPTION"
+                | translate
+            }}
           </div>
           <a
             routerLink="/package-metier/commerciale"
             class="btn btn-gold mb-4 animate-btn"
-            >Voir plus en détails</a
+            >{{ "PAGES.PACKAGE_METIER.COMMON.SEE_MORE" | translate }}</a
           >
-          <div class="package-feature-title">Fonctionnalités incluses :</div>
+          <div class="package-feature-title">
+            {{ "PAGES.PACKAGE_METIER.COMMON.FEATURES_INCLUDED" | translate }}
+          </div>
           <ul class="feature-list">
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Suivi efficace des opportunités et prospects.
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.COMMERCIALE.FEATURES.OPPORTUNITY_TRACKING"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Automatisations des ventes
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.COMMERCIALE.FEATURES.SALES_AUTOMATION"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Optimisation des relances clients
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.COMMERCIALE.FEATURES.CLIENT_FOLLOW_UP"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Reporting avancé
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.COMMERCIALE.FEATURES.ADVANCED_REPORTING"
+                  | translate
+              }}
             </li>
           </ul>
         </div>
@@ -196,35 +242,53 @@
     <div class="col-12 col-md-6 col-lg-3">
       <div class="package-card bg-dark-teal text-light">
         <div>
-          <div class="package-title">Package Heroca</div>
-          <div class="package-subtitle">
-            Profitez d’une solution complète pour vos besoins en hébergement,
-            gestion de la sécurité et maintenance des plateformes.
+          <div class="package-title">
+            {{ "PAGES.PACKAGE_METIER.PACKAGES.HORECA.TITLE" | translate }}
           </div>
-          <a routerLink="/package-metier/horeca" class="btn btn-gold mb-4"
-            >Voir plus en détails</a
-          >
-          <div class="package-feature-title">Fonctionnalités incluses :</div>
+          <div class="package-subtitle">
+            {{ "PAGES.PACKAGE_METIER.PACKAGES.HORECA.DESCRIPTION" | translate }}
+          </div>
+          <a routerLink="/package-metier/horeca" class="btn btn-gold mb-4">{{
+            "PAGES.PACKAGE_METIER.COMMON.SEE_MORE" | translate
+          }}</a>
+          <div class="package-feature-title">
+            {{ "PAGES.PACKAGE_METIER.COMMON.FEATURES_INCLUDED" | translate }}
+          </div>
           <ul class="feature-list">
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Segmentation avancée pour vos utilisateurs.
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.HORECA.FEATURES.ADVANCED_SEGMENTATION"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Optimisation des performances
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.HORECA.FEATURES.PERFORMANCE_OPTIMIZATION"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Historique détaillé des activités.
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.HORECA.FEATURES.ACTIVITY_HISTORY"
+                  | translate
+              }}
             </li>
             <li>
               <span class="feature-icon"><i class="fas fa-check"></i></span>
-              Gestion des rôles et permissions.
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.HORECA.FEATURES.ROLE_MANAGEMENT"
+                  | translate
+              }}
             </li>
             <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span> 500
-              GB Traffic/month
+              <span class="feature-icon"><i class="fas fa-check"></i></span>
+              {{
+                "PAGES.PACKAGE_METIER.PACKAGES.HORECA.FEATURES.TRAFFIC_LIMIT"
+                  | translate
+              }}
             </li>
           </ul>
         </div>

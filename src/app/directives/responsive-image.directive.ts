@@ -41,7 +41,12 @@ export class ResponsiveImageDirective implements OnInit, OnDestroy {
       .getResponsiveImage(this.appResponsiveImage)
       .subscribe({
         next: (imageData) => {
-          this.updateImage(imageData.src, imageData.alt, imageData.loading);
+          this.updateImage(
+            imageData.src,
+            imageData.alt,
+            imageData.loading,
+            imageData.fetchpriority
+          );
         },
         error: (error) => {
           console.error('Error loading responsive image:', error);
@@ -61,7 +66,12 @@ export class ResponsiveImageDirective implements OnInit, OnDestroy {
         console.warn(
           `Failed to load image: ${this.el.nativeElement.src}, using fallback`
         );
-        this.updateImage(this.fallbackSrc, this.appResponsiveImage.alt, 'lazy');
+        this.updateImage(
+          this.fallbackSrc,
+          this.appResponsiveImage.alt,
+          'lazy',
+          undefined
+        );
       }
     });
   }
@@ -70,10 +80,24 @@ export class ResponsiveImageDirective implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  private updateImage(src: string, alt: string, loading: 'lazy' | 'eager') {
+  private updateImage(
+    src: string,
+    alt: string,
+    loading: 'lazy' | 'eager',
+    fetchpriority?: 'high' | 'low' | 'auto'
+  ) {
     this.renderer.setAttribute(this.el.nativeElement, 'src', src);
     this.renderer.setAttribute(this.el.nativeElement, 'alt', alt);
     this.renderer.setAttribute(this.el.nativeElement, 'loading', loading);
+
+    // Ajouter fetchpriority si défini
+    if (fetchpriority) {
+      this.renderer.setAttribute(
+        this.el.nativeElement,
+        'fetchpriority',
+        fetchpriority
+      );
+    }
 
     // Ajouter des classes pour le styling
     this.renderer.addClass(this.el.nativeElement, 'responsive-image');
