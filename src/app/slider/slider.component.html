@@ -4,6 +4,7 @@
       class="slide"
       *ngFor="let slide of slides; let i = index"
       [class.active]="currentSlide === i"
+      [class.lcp-slide]="i === 0"
       [id]="slide.id"
     >
       <img

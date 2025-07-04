@@ -65,9 +65,21 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit:cover; 
-  background-position:center;
+  object-fit: cover;
+  background-position: center;
   z-index: 1;
+}
+
+/* Optimisation LCP - Première image visible immédiatement */
+.slide.lcp-slide {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  z-index: 2 !important;
+}
+
+.slide.lcp-slide .text-overlay {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Overlay */

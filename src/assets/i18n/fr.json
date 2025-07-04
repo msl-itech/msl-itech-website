@@ -199,6 +199,20 @@
         "TITLE": "POURQUOI ODOO",
         "SUBTITLE": "Odoo, le logiciel complet pour la gestion de votre entreprise"
       },
+      "ACCORDION": {
+        "ALL_IN_ONE": {
+          "TITLE": "Solution tout-en-un",
+          "CONTENT": "Odoo se distingue par son approche intégrée, permettant aux entreprises de gérer tous leurs processus en un seul endroit, ce qui simplifie la gestion et améliore l'efficacité."
+        },
+        "MODULARITY": {
+          "TITLE": "Modularité et flexibilité",
+          "CONTENT": "Vous choisissez uniquement les modules dont vous avez besoin, que ce soit pour les finances, la production ou le marketing, et vous pouvez les ajouter ou les retirer à mesure que votre entreprise évolue."
+        },
+        "SUPPORT": {
+          "TITLE": "Odoo Support & Maintenance",
+          "CONTENT": "En tant qu'ERP open source, Odoo permet une personnalisation poussée, vous offrant la liberté d'adapter l'outil à vos processus spécifiques et de l'intégrer facilement à d'autres systèmes"
+        }
+      },
       "EXPERTS": {
         "TITLE": "Nos Experts",
         "SUBTITLE": "Nous vous mettons en relation avec des experts Odoo",
@@ -315,6 +329,14 @@
               "SUPPORT_PRIORITAIRE": "Support prioritaire"
             }
           }
+        },
+        "YOUR_IDEAL_PACK": "Votre pack idéal :",
+        "BOOK_PERSONALIZED_DEMO": "Réserver ma démonstration personnalisée",
+        "NEXT_QUESTION": "Question suivante",
+        "POPUP": {
+          "TITLE": "Quel pack Odoo vous convient ?",
+          "SUBTITLE": "Découvrez en 3 questions rapides le pack idéal pour votre entreprise",
+          "CTA": "Faire le test gratuit"
         },
         "RESULT": {
           "TITLE": "Votre pack idéal :",
@@ -761,6 +783,10 @@
       "TECH_COMPARISON": {
         "TITLE": "WordPress vs JavaScript moderne : Les différences clés",
         "SUBTITLE": "Comprendre les technologies pour faire le bon choix",
+        "HEADERS": {
+          "JAVASCRIPT": "JavaScript moderne (sur-mesure)",
+          "WORDPRESS": "WordPress (prêt à l'emploi)"
+        },
         "CRITERIA": {
           "NEEDS": "Vos besoins",
           "COST": "Coût",
@@ -1498,6 +1524,143 @@
             "DESCRIPTION": "Gérez facilement vos rendez-vous clients avec un système de réservation en ligne intégré et des rappels automatiques..."
           }
         }
+      }
+    },
+    "TABLEAU_CRM_VENTE": {
+      "TABLE": {
+        "HEADERS": {
+          "MODULES": "Modules",
+          "PACK_PERFORMANCE": "Pack Performance",
+          "PACK_REUSSITE": "Pack Réussite",
+          "SOLUTION_ESSENTIELLE": "Solution Essentielle",
+          "SOLUTION_COMPLETE": "Solution Complète"
+        },
+        "MODULES": {
+          "CRM": "Gestion de la Relation Client",
+          "SALES": "Processus Commercial",
+          "FINANCIAL": "Gestion Financière",
+          "SUPPORT": "Accompagnement"
+        },
+        "FEATURES": {
+          "CRM": {
+            "PIPELINE_BASIC": "Pipeline de vente optimisé pour votre activité",
+            "PIPELINE_ADVANCED": "Pipeline de vente personnalisé avec suivi avancé",
+            "ACTIVITIES_BASIC": "Suivi basique des activités commerciales",
+            "ACTIVITIES_ADVANCED": "Suivi détaillé et automatisation des activités commerciales",
+            "NOTIFICATIONS_BASIC": "Notifications standards",
+            "NOTIFICATIONS_ADVANCED": "Notifications personnalisées et alertes intelligentes"
+          },
+          "SALES": {
+            "CATALOG_BASIC": "Catalogue produits et tarification simple",
+            "CATALOG_ADVANCED": "Catalogue produits avancé avec tarification dynamique",
+            "TEMPLATES_NONE": "Non inclus",
+            "TEMPLATES_ADVANCED": "Bibliothèque de modèles de devis professionnels"
+          },
+          "FINANCIAL": {
+            "TAXES_BASIC": "Configuration standard des taxes",
+            "TAXES_ADVANCED": "Configuration avancée multi-taxes et multi-devises",
+            "INVOICES_BASIC": "Modèle de facture basique",
+            "INVOICES_ADVANCED": "Modèles de factures personnalisés et professionnels",
+            "FOLLOW_UP_BASIC": "Système de relance simple",
+            "FOLLOW_UP_ADVANCED": "Système de relance intelligent et automatisé"
+          },
+          "SUPPORT": {
+            "MIGRATION_BASIC": "Migration basique des données",
+            "MIGRATION_ADVANCED": "Migration complète et optimisation des données",
+            "ASSISTANCE_BASIC": "Assistance au démarrage",
+            "ASSISTANCE_ADVANCED": "Accompagnement personnalisé au démarrage",
+            "TRAINING_NONE": "Non inclus",
+            "TRAINING_ADVANCED": "Formation approfondie et documentation détaillée",
+            "FOLLOW_UP_NONE": "Non inclus",
+            "FOLLOW_UP_ADVANCED": "Suivi régulier et optimisation continue"
+          }
+        },
+        "ACTIONS": {
+          "START_PERFORMANCE": "Démarrer avec Performance",
+          "START_EXCELLENCE": "Démarrer avec l'Excellence"
+        },
+        "COMMON": {
+          "NOT_INCLUDED": "Non inclus"
+        }
+      }
+    },
+    "PAGE_PACKAGE": {
+      "HEADER": {
+        "TITLE": "Découvrez nos packages en fonction de vos besoins d'entreprises",
+        "DESCRIPTION": "Que vous soyez entrepreneur, responsable administratif, ou chargé de communication, nos packs sur mesure vous permettent d'améliorer votre quotidien sans effort. Des solutions claires, performantes et pensées pour gagner du temps, simplifier votre gestion et développer votre chiffre d'affaires."
+      }
+    },
+    "PACKAGE_METIER": {
+      "BADGES": {
+        "POPULAR": "Populaire"
+      },
+      "PACKAGES": {
+        "ADMINISTRATIF": {
+          "TITLE": "Package Administratif",
+          "DESCRIPTION": "Centralisez et automatisez vos tâches administratives pour gagner en productivité",
+          "FEATURES": {
+            "DOCUMENT_MANAGEMENT": "Gestion des documents",
+            "WORKFLOW_AUTOMATION": "Automatisation des workflows",
+            "LEAVE_MANAGEMENT": "Gestion des congés et absences",
+            "EXPENSE_MANAGEMENT": "Gestion des notes de frais",
+            "PAYROLL_MANAGEMENT": "Gestion de la paie",
+            "WEBHOOK_SECRET": "Webhook Secret"
+          }
+        },
+        "COMMERCIALE": {
+          "TITLE": "Package Commerciale",
+          "DESCRIPTION": "Améliorez votre gestion commerciale avec les outils performants pour optimiser vos ventes, vos clients et vos campagnes.",
+          "FEATURES": {
+            "OPPORTUNITY_TRACKING": "Suivi efficace des opportunités et prospects.",
+            "SALES_AUTOMATION": "Automatisations des ventes",
+            "CLIENT_FOLLOW_UP": "Optimisation des relances clients",
+            "ADVANCED_REPORTING": "Reporting avancé"
+          }
+        },
+        "HORECA": {
+          "TITLE": "Package Heroca",
+          "DESCRIPTION": "Profitez d'une solution complète pour vos besoins en hébergement, gestion de la sécurité et maintenance des plateformes.",
+          "FEATURES": {
+            "ADVANCED_SEGMENTATION": "Segmentation avancée pour vos utilisateurs.",
+            "PERFORMANCE_OPTIMIZATION": "Optimisation des performances",
+            "ACTIVITY_HISTORY": "Historique détaillé des activités.",
+            "ROLE_MANAGEMENT": "Gestion des rôles et permissions.",
+            "TRAFFIC_LIMIT": "500 GB Traffic/month"
+          }
+        }
+      },
+      "COMMON": {
+        "SEE_MORE": "Voir plus en détails",
+        "FEATURES_INCLUDED": "Fonctionnalités incluses :"
+      }
+    },
+    "CODE_PROMO": {
+      "HEADER": {
+        "BOOST_BUSINESS": "BOOSTEZ VOTRE ENTREPRISE AVEC",
+        "PROMO_CODE": "LE CODE PROMO"
+      },
+      "BENEFITS": {
+        "REDUCTION": "Réduction de {{reduction}}% sur notre pack Commercial",
+        "REDUCTION_DESC": "Accédez aux meilleurs outils pour automatiser vos ventes et améliorer votre relation client.",
+        "SIMPLIFY_PROSPECTS": "Simplifiez la gestion de vos prospects",
+        "SIMPLIFY_PROSPECTS_DESC": "Organisez vos opportunités commerciales en un seul endroit pour maximiser vos conversions.",
+        "DETAILED_TRACKING": "Suivi détaillé de vos performances",
+        "DETAILED_TRACKING_DESC": "Des rapports avancés pour analyser vos ventes et prendre des décisions stratégiques."
+      },
+      "COUNTDOWN": {
+        "TITLE": "Temps restant avant la fin de la promo :",
+        "DAYS": "Jours",
+        "HOURS": "Heures",
+        "MINUTES": "Minutes",
+        "SECONDS": "Secondes",
+        "EXPIRED": "L'offre Promotionnelle A Expiré"
+      },
+      "CARD": {
+        "FEATURES": {
+          "SALES_AUTOMATION": "Automatisation des ventes simplifiée",
+          "CLIENT_MANAGEMENT": "Gestion optimale de vos relances clients"
+        },
+        "CTA": "PROFITEZ-EN!"
       }
     }
   }

@@ -50,6 +50,7 @@ export class SliderComponent implements OnInit, OnDestroy {
           desktop: '../../assets/img/accueil/Slide1-min.webp',
           alt: 'Gérez simplement, innovez différemment avec MSL Itech',
           loading: 'eager' as const, // Au-dessus du pli
+          fetchpriority: 'high' as const, // Optimisation LCP
         } as ResponsiveImageConfig,
         fallbackSrc: '../../assets/img/accueil/Slide1-min.webp',
         title: this.translate.instant('COMPONENTS.SLIDER.SLIDE1.TITLE'),

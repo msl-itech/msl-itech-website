@@ -1,13 +1,13 @@
 <header class="header-section py-5">
-    <div class="container text-center">
-      <h1 class="fw-bold mb-4">
-        Découvrez nos packages en fonction de vos besoins d’entreprises
-      </h1>
-      <p class="lead mx-auto" style="max-width: 700px;">
-        Que vous soyez entrepreneur, responsable administratif, ou chargé de communication, nos packs sur mesure vous permettent d’améliorer votre quotidien sans effort. Des solutions claires, performantes et pensées pour gagner du temps, simplifier votre gestion et développer votre chiffre d’affaires.
-      </p>
-    </div>
-  </header>
+  <div class="container text-center" style="margin-top: 150px">
+    <h1 class="fw-bold mb-4">
+      {{ "PAGES.PAGE_PACKAGE.HEADER.TITLE" | translate }}
+    </h1>
+    <p class="lead mx-auto text-white" style="max-width: 700px">
+      {{ "PAGES.PAGE_PACKAGE.HEADER.DESCRIPTION" | translate }}
+    </p>
+  </div>
+</header>
 
 <app-package-metier></app-package-metier>
 <app-code-promo></app-code-promo>
