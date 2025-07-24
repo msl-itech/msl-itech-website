@@ -165,7 +165,7 @@
       "TITLE": "Blog / Tips",
       "SUBTITLE": "Tips & Advice to optimize your business management.",
       "SEE_MORE": "See more",
-      "LEARN_MORE": "See more →",
+      "LEARN_MORE": "See more",
       "ARTICLES": {
         "ARTICLE1": {
           "TITLE": "The assets of the project management pack",
@@ -668,8 +668,8 @@
         }
       },
       "PAYROLL": {
-        "TITLE": "Belgian and Canadian Payroll",
-        "SUBTITLE": "We offer you payroll solutions in Belgium and Canada.",
+        "TITLE": "International Payroll Solutions",
+        "SUBTITLE": "We offer you payroll solutions in Belgium, Canada and Morocco.",
         "BELGIUM": "MSL Conseils - Belgium",
         "CANADA": "MSL Canada - Canada",
         "CONTACT_INFO": "Initial contact",

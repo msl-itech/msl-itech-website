@@ -1,0 +1,796 @@
+<style>
+  /* Couleurs principales MSL Itech */
+  :root {
+    --primary-color: #114d5a;
+    --secondary-color: #ffdd57;
+    --text-light: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  .bg-custom {
+    background-color: #114d5a;
+  }
+
+  .text-custom {
+    color: #ffdd57;
+  }
+
+  .text-primary--custom {
+    color: #114d5a;
+  }
+
+  /* Loading & Error States */
+  .loading-container,
+  .error-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #114d5a 0%, #1a6275 100%);
+  }
+
+  .loading-spinner,
+  .error-content {
+    text-align: center;
+    color: white;
+  }
+
+  .loading-spinner i {
+    font-size: 3rem;
+    color: #ffdd57;
+    margin-bottom: 1rem;
+  }
+
+  .error-content i {
+    font-size: 4rem;
+    color: #ffdd57;
+    margin-bottom: 2rem;
+  }
+
+  .error-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .error-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Article Navigation */
+  .article-nav {
+    background: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(17, 77, 90, 0.1);
+    position: sticky;
+    top: 90px;
+    z-index: 100;
+  }
+
+  .back-btn {
+    background: #114d5a;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .back-btn:hover {
+    background: #0d3a44;
+    transform: translateX(-5px);
+  }
+
+  /* Article Header */
+  .article-header {
+    background: linear-gradient(135deg, #114d5a 0%, #1a6275 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article-header::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 30px 30px;
+    animation: moveBackground 30s linear infinite;
+    opacity: 0.3;
+  }
+
+  @keyframes moveBackground {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    flex-wrap: wrap;
+  }
+
+  .article-meta i {
+    color: #ffdd57;
+    margin-right: 0.5rem;
+  }
+
+  .article-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .article-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .article-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .tags-label {
+    color: #ffdd57;
+    font-weight: 600;
+  }
+
+  .article-tag {
+    background: rgba(255, 221, 87, 0.2);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 221, 87, 0.3);
+  }
+
+  /* Article Image */
+  .article-image-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+  }
+
+  .article-image-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(17, 77, 90, 0.1);
+  }
+
+  .article-main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .article-image-container:hover .article-main-image {
+    transform: scale(1.02);
+  }
+
+  /* Optimisation des images pour tous les conteneurs */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Article Content */
+  .article-content {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .article-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 4rem;
+  }
+
+  .article-body h1,
+  .article-body h2,
+  .article-body h3,
+  .article-body h4,
+  .article-body h5,
+  .article-body h6 {
+    color: #114d5a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .article-body h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid #ffdd57;
+    padding-bottom: 0.5rem;
+  }
+
+  .article-body h3 {
+    font-size: 1.5rem;
+  }
+
+  .article-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body ul,
+  .article-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .article-body li {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-body blockquote {
+    background: rgba(17, 77, 90, 0.05);
+    border-left: 4px solid #ffdd57;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+  }
+
+  .article-body code {
+    background: rgba(17, 77, 90, 0.1);
+    color: #114d5a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+  }
+
+  .article-body pre {
+    background: #114d5a;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+
+  /* Share Section */
+  .share-section {
+    background: rgba(17, 77, 90, 0.03);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .share-section h3 {
+    color: #114d5a;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .share-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .share-btn.facebook {
+    background: #1877f2;
+  }
+
+  .share-btn.twitter {
+    background: #1da1f2;
+  }
+
+  .share-btn.linkedin {
+    background: #0077b5;
+  }
+
+  .share-btn.email {
+    background: #ea4335;
+  }
+
+  .share-btn.copy {
+    background: #114d5a;
+  }
+
+  .share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Related Articles */
+  .related-articles {
+    padding: 4rem 0;
+    background: #f8f9fa;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #114d5a;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .related-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .related-article-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(17, 77, 90, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+  }
+
+  .related-article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(17, 77, 90, 0.15);
+  }
+
+  .related-article-card:active {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(17, 77, 90, 0.12);
+  }
+
+  .related-article-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .related-article-card:hover::before {
+    background: rgba(17, 77, 90, 0.05);
+  }
+
+  .related-article-image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .related-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .related-article-card:hover .related-img {
+    transform: scale(1.05);
+  }
+
+  .related-article-content {
+    padding: 1.5rem;
+  }
+
+  .related-article-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+
+  .related-article-title {
+    color: #114d5a;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .related-article-description {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .related-article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .related-tag {
+    background: rgba(17, 77, 90, 0.1);
+    color: #114d5a;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, #114d5a 0%, #1a6275 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 30px 30px;
+    animation: moveBackground 30s linear infinite;
+    opacity: 0.3;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: #ffdd57;
+    color: #114d5a;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 221, 87, 0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #114d5a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .article-title {
+      font-size: 2rem;
+    }
+
+    .article-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .article-main-image {
+      height: 300px;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .share-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .related-articles-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- Loading State -->
+<div *ngIf="loading" class="loading-container">
+  <div class="loading-spinner">
+    <i class="fas fa-spinner fa-spin"></i>
+    <p>Chargement de l'article...</p>
+  </div>
+</div>
+
+<!-- Error State -->
+<div *ngIf="error && !loading" class="error-container">
+  <div class="error-content">
+    <i class="fas fa-exclamation-triangle"></i>
+    <h2>Article non trouvé</h2>
+    <p>L'article que vous recherchez n'existe pas ou a été supprimé.</p>
+    <button class="btn-primary" (click)="backToBlog()">
+      <i class="fas fa-arrow-left"></i>
+      {{ "BLOG.PAGE.BACK_TO_BLOG" | translate }}
+    </button>
+  </div>
+</div>
+
+<!-- Article Content -->
+<div *ngIf="!loading && !error && article" class="article-container">
+  <!-- Navigation -->
+  <nav class="article-nav">
+    <div class="container">
+      <button class="back-btn" (click)="backToBlog()">
+        <i class="fas fa-arrow-left"></i>
+        {{ "BLOG.PAGE.BACK_TO_BLOG" | translate }}
+      </button>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="container">
+      <div class="header-content" data-aos="fade-up">
+        <div class="article-meta">
+          <span class="article-date">
+            <i class="fas fa-calendar-alt"></i>
+            {{ "BLOG.PAGE.PUBLISHED" | translate }}
+            {{ formatDate(article.date || "") }}
+          </span>
+          <span class="article-author">
+            <i class="fas fa-user"></i>
+            {{ "BLOG.PAGE.AUTHOR" | translate }}: {{ article.author }}
+          </span>
+          <span class="article-read-time">
+            <i class="fas fa-clock"></i>
+            {{ article.readTime }} {{ "BLOG.PAGE.MINUTES" | translate }}
+          </span>
+        </div>
+
+        <h1 class="article-title">{{ article.title }}</h1>
+        <p class="article-description">{{ article.description }}</p>
+
+        <div class="article-tags">
+          <span class="tags-label">{{ "BLOG.PAGE.TAGS" | translate }}:</span>
+          <span *ngFor="let tag of article.tags" class="article-tag">
+            {{ tag }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Image -->
+  <section class="article-image-section" data-aos="fade-up">
+    <div class="container">
+      <div class="article-image-container">
+        <img
+          [src]="article.image"
+          [alt]="article.title"
+          class="article-main-image"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <main class="article-content" data-aos="fade-up">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="article-body">
+          <div [innerHTML]="convertMarkdownToHtml(article.content)"></div>
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="share-section">
+          <h3>{{ "BLOG.PAGE.SHARE" | translate }}</h3>
+          <div class="share-buttons">
+            <button
+              class="share-btn facebook"
+              (click)="shareArticle('facebook')"
+            >
+              <i class="fab fa-facebook-f"></i>
+              Facebook
+            </button>
+            <button class="share-btn twitter" (click)="shareArticle('twitter')">
+              <i class="fab fa-twitter"></i>
+              Twitter
+            </button>
+            <button
+              class="share-btn linkedin"
+              (click)="shareArticle('linkedin')"
+            >
+              <i class="fab fa-linkedin-in"></i>
+              LinkedIn
+            </button>
+            <button class="share-btn email" (click)="shareArticle('email')">
+              <i class="fas fa-envelope"></i>
+              Email
+            </button>
+            <button class="share-btn copy" (click)="copyLink()">
+              <i class="fas fa-link"></i>
+              Copier le lien
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Related Articles -->
+  <section
+    *ngIf="relatedArticles.length > 0"
+    class="related-articles"
+    data-aos="fade-up"
+  >
+    <div class="container">
+      <h2 class="section-title">
+        {{ "BLOG.PAGE.RELATED_ARTICLES" | translate }}
+      </h2>
+      <div class="related-articles-grid">
+        <article
+          *ngFor="let relatedArticle of relatedArticles"
+          class="related-article-card"
+          (click)="readRelatedArticle(relatedArticle)"
+        >
+          <div class="related-article-image">
+            <img
+              [src]="relatedArticle.image"
+              [alt]="relatedArticle.title"
+              class="related-img"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="related-article-content">
+            <div class="related-article-meta">
+              <span class="related-article-date">
+                {{ formatDate(relatedArticle.date) }}
+              </span>
+              <span class="related-article-read-time">
+                {{ relatedArticle.readTime }} min
+              </span>
+            </div>
+
+            <h3 class="related-article-title">{{ relatedArticle.title }}</h3>
+            <p class="related-article-description">
+              {{ relatedArticle.description }}
+            </p>
+
+            <div class="related-article-tags">
+              <span *ngFor="let tag of relatedArticle.tags" class="related-tag">
+                {{ tag }}
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section" data-aos="fade-up">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Prêt à optimiser votre entreprise avec Odoo ?</h2>
+        <p>
+          Contactez nos experts MSL-iTECH pour une consultation gratuite et
+          découvrez comment Odoo peut transformer votre business.
+        </p>
+        <div class="cta-buttons">
+          <button class="btn-primary" routerLink="/contact">
+            Contactez-nous
+          </button>
+          <button class="btn-secondary" routerLink="/reserver-demo">
+            Réserver une démo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

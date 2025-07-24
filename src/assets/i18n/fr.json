@@ -161,18 +161,55 @@
       "LEARN_MORE": "Voir plus →",
       "ARTICLES": {
         "ARTICLE1": {
-          "TITLE": "Les atouts du pack gestion de projet",
-          "DESCRIPTION": "Découvrez comment ce pack peut transformer votre façon de travailler, avec des exemples concrets d'entreprises qui ont réussi."
+          "TITLE": "Modernisez la gestion de votre trésorerie : suivez votre argent en temps réel avec Odoo",
+          "DESCRIPTION": "Garder un œil sur votre trésorerie, c'est comme surveiller la jauge d'essence avant un long trajet : mieux vaut savoir où vous en êtes pour éviter la panne sèche.",
+          "CONTENT": "# Modernisez la gestion de votre trésorerie : suivez votre argent en temps réel avec Odoo\n\n## Introduction\n\nGarder un œil sur votre trésorerie, c'est comme surveiller la jauge d'essence avant un long trajet : mieux vaut savoir où vous en êtes pour éviter la panne sèche. Avec Odoo, vous disposez d'un tableau de bord qui affiche en un coup d'œil vos recettes et vos dépenses, sans graphe compliqué ni code à déchiffrer.\n\n## Un tableau de bord au service de votre sérénité\n\nPlutôt que de multiplier les fichiers Excel, Odoo réunit toutes vos données financières dans une seule interface.\n\n- **Entrées et sorties** : visualisez les factures émises, les paiements reçus et les frais à venir.\n- **Alertes automatiques** : recevez un e-mail ou une notification dès qu'une dépense imprévue se présente.\n\n## Simuler pour mieux décider\n\nImaginez pouvoir anticiper l'impact d'un achat d'équipement ou d'un recrutement. Avec la fonction de simulation, vous ajustez le montant et la date, et Odoo vous montre immédiatement si votre trésorerie supporte l'opération. Fini les calculs manuels qui prennent des heures !\n\n## Un accès partagé et sécurisé\n\nPlus besoin d'envoyer des captures d'écran ou des exports par mail. Vos collaborateurs accèdent au même tableau de bord, synchronisé en temps réel. Chaque action reste tracée pour garantir la transparence : qui a validé quel paiement, et à quel moment.\n\n## Conclusion & appel à l'action\n\nVous n'avez pas envie de revoir vos chiffres à chaque fin de mois ? Demandez dès maintenant un aperçu gratuit de votre futur tableau de trésorerie Odoo, adapté à votre activité. MSL-iTECH vous accompagne pas à pas pour installer et paramétrer votre espace en moins d'une journée."
         },
         "ARTICLE2": {
-          "TITLE": "Avant/Après",
-          "DESCRIPTION": "Visualisez l'impact de nos packs sur la productivité et l'organisation d'une entreprise."
+          "TITLE": "Automatisez vos factures : moins d'erreurs et plus de temps libre grâce à Odoo",
+          "DESCRIPTION": "Émettre et relancer des factures, c'est un peu comme arroser des plantes : il faut être régulier, sinon on risquera de voir quelques feuilles faner (ou des impayés s'accumuler).",
+          "CONTENT": "# Automatisez vos factures : moins d'erreurs et plus de temps libre grâce à Odoo\n\n## Introduction\n\nÉmettre et relancer des factures, c'est un peu comme arroser des plantes : il faut être régulier, sinon on risquera de voir quelques feuilles faner (ou des impayés s'accumuler). Odoo transforme cette corvée en un processus fluide, où chaque étape est organisée et rapide.\n\n## Génération en un clic\n\nAu lieu de copier manuellement les informations client par client, Odoo crée vos factures à partir de vos devis acceptés. Les détails (nom, adresse, références produits) sont remplis automatiquement, et vous n'avez qu'à vérifier avant d'envoyer.\n\n## Relance automatique\n\nUn paiement en retard ? Odoo repère la date d'échéance et envoie un e-mail de relance personnalisé. Vous choisissez la fréquence et le ton (doux rappel ou message plus ferme), et le système s'occupe du reste.\n\n## Export vers la comptabilité\n\nQuand arrive le moment de clôturer vos comptes, vos factures sont prêtes à être transférées vers votre expert-comptable ou votre logiciel de compta. Plus besoin de ressaisir, et vous évitez les fautes de frappe qui coûtent cher.\n\n## Conclusion & appel à l'action\n\nImaginez tout le temps gagné chaque mois ! Pour découvrir comment Odoo peut libérer votre équipe de la gestion manuelle des factures, réservez une démonstration personnalisée avec MSL-iTECH. Vous verrez l'impact dès la première semaine."
         },
         "ARTICLE3": {
-          "TITLE": "Pourquoi choisir MSL-ITECH ?",
-          "DESCRIPTION": "Nous vous accompagnons à chaque étape, de l'analyse de vos besoins à la mise en place des solutions."
+          "TITLE": "Réussir votre projet de digitalisation : les étapes simples pour vous lancer sans stress",
+          "DESCRIPTION": "Lancer un projet de digitalisation, c'est comme préparer un grand voyage : il faut un bon itinéraire, des bagages bien organisés et des escales planifiées.",
+          "CONTENT": "# Réussir votre projet de digitalisation : les étapes simples pour vous lancer sans stress\n\n## Introduction\n\nLancer un projet de digitalisation, c'est comme préparer un grand voyage : il faut un bon itinéraire, des bagages bien organisés et des escales planifiées. Suivez ces étapes pour embarquer votre entreprise vers le numérique en toute confiance.\n\n## 1. Comprendre vos besoins réels\n\nAvant de choisir un outil, listez ce qui freine aujourd'hui vos équipes : retards de validation, informations dispersées, tâches répétitives… Cette « carte » vous permettra de ne pas investir à l'aveugle.\n\n## 2. Impliquer les utilisateurs\n\nCe sont eux qui utiliseront l'outil chaque jour. Organisez un atelier simple où chacun explique sa méthode actuelle. Vous récoltez des idées concrètes et vous créez l'adhésion dès le départ.\n\n## 3. Lancement en « petit comité »\n\nChoisissez un service pilote (par exemple la facturation ou le service client) et déployez Odoo pour ce périmètre. Vous limitez les risques, aiguisez votre savoir-faire interne et pouvez ajuster avant le déploiement global.\n\n## 4. Formation progressive\n\nÀ chaque nouvelle fonctionnalité, proposez une courte session (30 minutes) et un support visuel simple (2 ou 3 captures annotées). Vos équipes assimileront sans être submergées.\n\n## 5. Évolution continue\n\nLa digitalisation n'est pas un projet unique : pensez itératif. Après avoir stabilisé le premier périmètre, abordez un nouveau domaine (stock, ressources humaines…), en gardant le même processus éprouvé.\n\n## Conclusion & appel à l'action\n\nVous avez désormais une feuille de route claire pour votre aventure numérique. Pour un accompagnement sur mesure, contactez MSL-iTECH : nous co-pilotons votre projet de A à Z, de l'analyse initiale jusqu'à la formation continue de vos équipes."
         }
       }
+    }
+  },
+  "BLOG": {
+    "ARTICLES": {
+      "ARTICLE1": {
+        "TITLE": "Modernisez la gestion de votre trésorerie : suivez votre argent en temps réel avec Odoo",
+        "DESCRIPTION": "Garder un œil sur votre trésorerie, c'est comme surveiller la jauge d'essence avant un long trajet : mieux vaut savoir où vous en êtes pour éviter la panne sèche.",
+        "CONTENT": "# Modernisez la gestion de votre trésorerie : suivez votre argent en temps réel avec Odoo\n\n## Introduction\n\nGarder un œil sur votre trésorerie, c'est comme surveiller la jauge d'essence avant un long trajet : mieux vaut savoir où vous en êtes pour éviter la panne sèche. Avec Odoo, vous disposez d'un tableau de bord qui affiche en un coup d'œil vos recettes et vos dépenses, sans graphe compliqué ni code à déchiffrer.\n\n## Un tableau de bord au service de votre sérénité\n\nPlutôt que de multiplier les fichiers Excel, Odoo réunit toutes vos données financières dans une seule interface.\n\n- **Entrées et sorties** : visualisez les factures émises, les paiements reçus et les frais à venir.\n- **Alertes automatiques** : recevez un e-mail ou une notification dès qu'une dépense imprévue se présente.\n\n## Simuler pour mieux décider\n\nImaginez pouvoir anticiper l'impact d'un achat d'équipement ou d'un recrutement. Avec la fonction de simulation, vous ajustez le montant et la date, et Odoo vous montre immédiatement si votre trésorerie supporte l'opération. Fini les calculs manuels qui prennent des heures !\n\n## Un accès partagé et sécurisé\n\nPlus besoin d'envoyer des captures d'écran ou des exports par mail. Vos collaborateurs accèdent au même tableau de bord, synchronisé en temps réel. Chaque action reste tracée pour garantir la transparence : qui a validé quel paiement, et à quel moment.\n\n## Conclusion & appel à l'action\n\nVous n'avez pas envie de revoir vos chiffres à chaque fin de mois ? Demandez dès maintenant un aperçu gratuit de votre futur tableau de trésorerie Odoo, adapté à votre activité. MSL-iTECH vous accompagne pas à pas pour installer et paramétrer votre espace en moins d'une journée."
+      },
+      "ARTICLE2": {
+        "TITLE": "Automatisez vos factures : moins d'erreurs et plus de temps libre grâce à Odoo",
+        "DESCRIPTION": "Émettre et relancer des factures, c'est un peu comme arroser des plantes : il faut être régulier, sinon on risquera de voir quelques feuilles faner (ou des impayés s'accumuler).",
+        "CONTENT": "# Automatisez vos factures : moins d'erreurs et plus de temps libre grâce à Odoo\n\n## Introduction\n\nÉmettre et relancer des factures, c'est un peu comme arroser des plantes : il faut être régulier, sinon on risquera de voir quelques feuilles faner (ou des impayés s'accumuler). Odoo transforme cette corvée en un processus fluide, où chaque étape est organisée et rapide.\n\n## Génération en un clic\n\nAu lieu de copier manuellement les informations client par client, Odoo crée vos factures à partir de vos devis acceptés. Les détails (nom, adresse, références produits) sont remplis automatiquement, et vous n'avez qu'à vérifier avant d'envoyer.\n\n## Relance automatique\n\nUn paiement en retard ? Odoo repère la date d'échéance et envoie un e-mail de relance personnalisé. Vous choisissez la fréquence et le ton (doux rappel ou message plus ferme), et le système s'occupe du reste.\n\n## Export vers la comptabilité\n\nQuand arrive le moment de clôturer vos comptes, vos factures sont prêtes à être transférées vers votre expert-comptable ou votre logiciel de compta. Plus besoin de ressaisir, et vous évitez les fautes de frappe qui coûtent cher.\n\n## Conclusion & appel à l'action\n\nImaginez tout le temps gagné chaque mois ! Pour découvrir comment Odoo peut libérer votre équipe de la gestion manuelle des factures, réservez une démonstration personnalisée avec MSL-iTECH. Vous verrez l'impact dès la première semaine."
+      },
+      "ARTICLE3": {
+        "TITLE": "Réussir votre projet de digitalisation : les étapes simples pour vous lancer sans stress",
+        "DESCRIPTION": "Lancer un projet de digitalisation, c'est comme préparer un grand voyage : il faut un bon itinéraire, des bagages bien organisés et des escales planifiées.",
+        "CONTENT": "# Réussir votre projet de digitalisation : les étapes simples pour vous lancer sans stress\n\n## Introduction\n\nLancer un projet de digitalisation, c'est comme préparer un grand voyage : il faut un bon itinéraire, des bagages bien organisés et des escales planifiées. Suivez ces étapes pour embarquer votre entreprise vers le numérique en toute confiance.\n\n## 1. Comprendre vos besoins réels\n\nAvant de choisir un outil, listez ce qui freine aujourd'hui vos équipes : retards de validation, informations dispersées, tâches répétitives… Cette « carte » vous permettra de ne pas investir à l'aveugle.\n\n## 2. Impliquer les utilisateurs\n\nCe sont eux qui utiliseront l'outil chaque jour. Organisez un atelier simple où chacun explique sa méthode actuelle. Vous récoltez des idées concrètes et vous créez l'adhésion dès le départ.\n\n## 3. Lancement en « petit comité »\n\nChoisissez un service pilote (par exemple la facturation ou le service client) et déployez Odoo pour ce périmètre. Vous limitez les risques, aiguisez votre savoir-faire interne et pouvez ajuster avant le déploiement global.\n\n## 4. Formation progressive\n\nÀ chaque nouvelle fonctionnalité, proposez une courte session (30 minutes) et un support visuel simple (2 ou 3 captures annotées). Vos équipes assimileront sans être submergées.\n\n## 5. Évolution continue\n\nLa digitalisation n'est pas un projet unique : pensez itératif. Après avoir stabilisé le premier périmètre, abordez un nouveau domaine (stock, ressources humaines…), en gardant le même processus éprouvé.\n\n## Conclusion & appel à l'action\n\nVous avez désormais une feuille de route claire pour votre aventure numérique. Pour un accompagnement sur mesure, contactez MSL-iTECH : nous co-pilotons votre projet de A à Z, de l'analyse initiale jusqu'à la formation continue de vos équipes."
+      }
+    },
+    "PAGE": {
+      "TITLE": "Blog MSL-iTECH",
+      "SUBTITLE": "Découvrez nos articles et conseils d'experts pour optimiser votre entreprise avec Odoo",
+      "ALL_ARTICLES": "Tous nos articles",
+      "FILTER_BY_TAG": "Filtrer par tag",
+      "READ_MORE": "Lire l'article",
+      "BACK_TO_BLOG": "Retour au blog",
+      "SHARE": "Partager",
+      "AUTHOR": "Auteur",
+      "PUBLISHED": "Publié le",
+      "READ_TIME": "Temps de lecture",
+      "MINUTES": "minutes",
+      "RELATED_ARTICLES": "Articles similaires",
+      "TAGS": "Tags"
     }
   },
   "PAGES": {
@@ -661,8 +698,8 @@
         }
       },
       "PAYROLL": {
-        "TITLE": "Payroll Belge et Canadien",
-        "SUBTITLE": "Nous vous offrons des solutions de paie en Belgique et au Canada.",
+        "TITLE": "Solutions de Paie Internationales",
+        "SUBTITLE": "Nous vous offrons des solutions de paie en Belgique, au Canada et au Maroc.",
         "BELGIUM": "MSL Conseils - Belgique",
         "CANADA": "MSL Canada - Canada",
         "CONTACT_INFO": "Prise de contact",

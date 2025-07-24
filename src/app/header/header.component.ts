@@ -1,9 +1,9 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
   isMenuOpen = false;
@@ -22,7 +22,7 @@ export class HeaderComponent {
   }
 
   checkScreenSize() {
-    this.isMobile = window.innerWidth < 1025; // Ajustez la valeur selon vos besoins
+    this.isMobile = window.innerWidth < 1201; // Ajustez la valeur selon vos besoins
     if (!this.isMobile) {
       this.isMenuOpen = false;
       this.activeDropdown = null;
