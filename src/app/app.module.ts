@@ -74,6 +74,8 @@ import { TextSlideComponent } from './text-slide/text-slide.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
 
 // Imports pour l'optimisation d'images
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
 import { OptimizedImageComponent } from './components/optimized-image/optimized-image.component';
 import { ResponsiveImageDirective } from './directives/responsive-image.directive';
 
@@ -135,6 +137,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     // Nouveaux composants pour l'optimisation d'images
     ResponsiveImageDirective,
     OptimizedImageComponent,
+    BlogPageComponent,
+    BlogDetailComponent,
   ],
   imports: [
     BrowserModule,

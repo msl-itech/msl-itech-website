@@ -1,23 +1,30 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { BlogArticle, BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css',
+  styleUrls: ['./blog.component.css'],
 })
 export class BlogComponent implements OnInit, OnDestroy {
-  articles: any[] = [];
+  articles: BlogArticle[] = [];
   private translateSubscription: Subscription = new Subscription();
 
-  constructor(private translate: TranslateService) {}
+  constructor(
+    private translate: TranslateService,
+    private blogService: BlogService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loadArticles();
 
     // S'abonner aux changements de langue
     this.translateSubscription = this.translate.onLangChange.subscribe(() => {
+      this.blogService.reloadArticles();
       this.loadArticles();
     });
   }
@@ -27,40 +34,15 @@ export class BlogComponent implements OnInit, OnDestroy {
   }
 
   loadArticles() {
-    this.articles = [
-      {
-        img: '../../assets/img/accueil/img1.webp',
-        date: '20 Nov 2024',
-        title: this.translate.instant(
-          'COMPONENTS.BLOG.ARTICLES.ARTICLE1.TITLE'
-        ),
-        description: this.translate.instant(
-          'COMPONENTS.BLOG.ARTICLES.ARTICLE1.DESCRIPTION'
-        ),
-        link: '#',
-      },
-      {
-        img: '../../assets/img/accueil/img2.webp',
-        date: '15 Nov 2024',
-        title: this.translate.instant(
-          'COMPONENTS.BLOG.ARTICLES.ARTICLE2.TITLE'
-        ),
-        description: this.translate.instant(
-          'COMPONENTS.BLOG.ARTICLES.ARTICLE2.DESCRIPTION'
-        ),
-        link: '#',
-      },
-      {
-        img: '../../assets/img/accueil/img3.webp',
-        date: '10 Nov 2024',
-        title: this.translate.instant(
-          'COMPONENTS.BLOG.ARTICLES.ARTICLE3.TITLE'
-        ),
-        description: this.translate.instant(
-          'COMPONENTS.BLOG.ARTICLES.ARTICLE3.DESCRIPTION'
-        ),
-        link: '#',
-      },
-    ];
+    // Récupérer les 3 articles les plus récents pour la section sur la page d'accueil
+    this.articles = this.blogService.getRecentArticles(3);
+  }
+
+  readArticle(article: BlogArticle) {
+    this.router.navigate(['/blog', article.slug]);
+  }
+
+  goToBlogPage() {
+    this.router.navigate(['/blog']);
   }
 }

@@ -38,7 +38,11 @@
         <p
           [innerHTML]="'PAGES.TARIF_ODOO.WHY_CHOOSE.HIGHLIGHT' | translate"
         ></p>
-        <button class="btn btn-bg-primary mt-3" data-aos="zoom-in">
+        <button
+          class="btn btn-bg-primary mt-3"
+          data-aos="zoom-in"
+          (click)="goToRendezVous()"
+        >
           {{ "PAGES.TARIF_ODOO.WHY_CHOOSE.BUTTON" | translate }}
         </button>
       </div>
@@ -470,38 +474,39 @@
           {{ "PAGES.TARIF_ODOO.PAYROLL.SUBTITLE" | translate }}
         </p>
       </div>
-      <div class="row justify-content-center">
-        <!-- Carte Belgique -->
+      <div class="row justify-content-center msl-itech-cards">
+        <!-- Carte MSL-iTech Belgique -->
         <div
           class="col-md-6 col-lg-4 mb-4"
           data-aos="zoom-in"
           data-aos-delay="100"
         >
           <div class="card shadow-sm border-0 h-100">
-            <div class="card-header text-center">
-              <h5 class="card-title mb-0">
-                {{ "PAGES.TARIF_ODOO.PAYROLL.BELGIUM" | translate }}
-              </h5>
+            <div class="card-header card-header-belgique text-center">
+              <div class="country-icon">🇧🇪</div>
+              <h5 class="card-title mb-0">MSL-iTech Belgique</h5>
             </div>
             <div class="card-body d-flex flex-column">
-              <div class="price display-4 text-center">135 € HTVA</div>
-              <div class="time fs-6 text-center mb-3">Par Heure</div>
-              <p class="card-text">
+              <div class="price-container">
+                <div class="price display-4 text-center">135 € HTVA</div>
+                <div class="time text-center">Par Heure</div>
+              </div>
+              <p class="card-text text-center mb-4">
                 {{ "PAGES.TARIF_ODOO.PAYROLL.CONTACT_INFO" | translate }}
               </p>
-              <ul class="list-group list-group-flush mb-3">
+              <ul class="list-group list-group-flush mb-4">
                 <li class="list-group-item">
-                  <i class="fas fa-check-circle me-2"></i
+                  <i class="fas fa-check-circle"></i
                   >{{ "PAGES.TARIF_ODOO.PAYROLL.FEATURES.TEAMS" | translate }}
                 </li>
                 <li class="list-group-item">
-                  <i class="fas fa-check-circle me-2"></i
+                  <i class="fas fa-check-circle"></i
                   >{{
                     "PAGES.TARIF_ODOO.PAYROLL.FEATURES.GOOGLE_MEET" | translate
                   }}
                 </li>
                 <li class="list-group-item">
-                  <i class="fas fa-check-circle me-2"></i
+                  <i class="fas fa-check-circle"></i
                   >{{
                     "PAGES.TARIF_ODOO.PAYROLL.FEATURES.TRAVEL_BILLED"
                       | translate
@@ -509,46 +514,48 @@
                 </li>
               </ul>
               <button
-                class="btn btn-bg-primary w-100 mt-auto"
+                class="btn w-100 mt-auto"
                 data-aos="fade-up"
+                (click)="goToRendezVous()"
               >
-                {{ "PAGES.TARIF_ODOO.PAYROLL.CHOOSE_PLAN" | translate }}
+                <span>Prendre Rendez-vous</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Carte Canada -->
+        <!-- Carte MSL-iTech Canada -->
         <div
           class="col-md-6 col-lg-4 mb-4"
           data-aos="zoom-in"
           data-aos-delay="200"
         >
           <div class="card shadow-sm border-0 h-100">
-            <div class="card-header text-center">
-              <h5 class="card-title mb-0">
-                {{ "PAGES.TARIF_ODOO.PAYROLL.CANADA" | translate }}
-              </h5>
+            <div class="card-header card-header-canada text-center">
+              <div class="country-icon">🇨🇦</div>
+              <h5 class="card-title mb-0">MSL-iTech Canada</h5>
             </div>
             <div class="card-body d-flex flex-column">
-              <div class="price display-4 text-center">205 CAD HTVA</div>
-              <div class="time fs-6 text-center mb-3">Par Heure</div>
-              <p class="card-text">
+              <div class="price-container">
+                <div class="price display-4 text-center">205 CAD HTVA</div>
+                <div class="time text-center">Par Heure</div>
+              </div>
+              <p class="card-text text-center mb-4">
                 {{ "PAGES.TARIF_ODOO.PAYROLL.CONTACT_INFO" | translate }}
               </p>
-              <ul class="list-group list-group-flush mb-3">
+              <ul class="list-group list-group-flush mb-4">
                 <li class="list-group-item">
-                  <i class="fas fa-check-circle me-2"></i
+                  <i class="fas fa-check-circle"></i
                   >{{ "PAGES.TARIF_ODOO.PAYROLL.FEATURES.TEAMS" | translate }}
                 </li>
                 <li class="list-group-item">
-                  <i class="fas fa-check-circle me-2"></i
+                  <i class="fas fa-check-circle"></i
                   >{{
                     "PAGES.TARIF_ODOO.PAYROLL.FEATURES.GOOGLE_MEET" | translate
                   }}
                 </li>
                 <li class="list-group-item">
-                  <i class="fas fa-check-circle me-2"></i
+                  <i class="fas fa-check-circle"></i
                   >{{
                     "PAGES.TARIF_ODOO.PAYROLL.FEATURES.TRAVEL_BILLED"
                       | translate
@@ -556,10 +563,60 @@
                 </li>
               </ul>
               <button
-                class="btn btn-bg-primary w-100 mt-auto"
+                class="btn w-100 mt-auto"
                 data-aos="fade-up"
+                (click)="goToRendezVous()"
               >
-                {{ "PAGES.TARIF_ODOO.PAYROLL.CHOOSE_PLAN" | translate }}
+                <span>Prendre Rendez-vous</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte MSL-iTech Maroc -->
+        <div
+          class="col-md-6 col-lg-4 mb-4"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-header card-header-maroc text-center">
+              <div class="country-icon">🇲🇦</div>
+              <h5 class="card-title mb-0">MSL-iTech Maroc</h5>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="price-container">
+                <div class="price display-4 text-center">1200 MAD HTVA</div>
+                <div class="time text-center">Par Heure</div>
+              </div>
+              <p class="card-text text-center mb-4">
+                {{ "PAGES.TARIF_ODOO.PAYROLL.CONTACT_INFO" | translate }}
+              </p>
+              <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item">
+                  <i class="fas fa-check-circle"></i
+                  >{{ "PAGES.TARIF_ODOO.PAYROLL.FEATURES.TEAMS" | translate }}
+                </li>
+                <li class="list-group-item">
+                  <i class="fas fa-check-circle"></i
+                  >{{
+                    "PAGES.TARIF_ODOO.PAYROLL.FEATURES.GOOGLE_MEET" | translate
+                  }}
+                </li>
+                <li class="list-group-item">
+                  <i class="fas fa-check-circle"></i
+                  >{{
+                    "PAGES.TARIF_ODOO.PAYROLL.FEATURES.TRAVEL_BILLED"
+                      | translate
+                  }}
+                </li>
+              </ul>
+              <button
+                class="btn w-100 mt-auto"
+                data-aos="fade-up"
+                (click)="goToRendezVous()"
+              >
+                <span>Prendre Rendez-vous</span>
               </button>
             </div>
           </div>

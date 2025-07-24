@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemoReservationComponent } from './demo-reservation/demo-reservation.component';
 import { HorecaFormulesComponent } from './horeca-formules/horeca-formules.component';
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'sitemap', redirectTo: '/sitemap.xml', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
+  { path: 'blog', component: BlogPageComponent },
+  { path: 'blog/:slug', component: BlogDetailComponent },
   { path: 'package-metier', component: PagePackageComponent },
   { path: 'serviceOdoo', component: Service1Component },
   { path: 'service2', component: Service2Component },
