@@ -182,8 +182,8 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
     this.isExporting = true;
 
     try {
-      // Utiliser le service de consentement pour exporter les données
-      const userData = this.consentService.exportUserData();
+      // Export des données locales (immédiat)
+      const userData = this.consentService.exportUserData('local');
 
       // Créer le fichier JSON
       const dataStr = JSON.stringify(userData, null, 2);
@@ -193,7 +193,7 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
       const url = window.URL.createObjectURL(dataBlob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `msl-itech-donnees-${
+      link.download = `msl-itech-donnees-locales-${
         new Date().toISOString().split('T')[0]
       }.json`;
 
@@ -215,6 +215,47 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
     } finally {
       this.isExporting = false;
     }
+  }
+
+  /**
+   * Demander un export complet des données (via email)
+   */
+  requestCompleteExport() {
+    const email = prompt(
+      "Veuillez saisir votre adresse email pour recevoir l'export complet de vos données :"
+    );
+
+    if (!email) {
+      return;
+    }
+
+    // Validation email simple
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Veuillez saisir une adresse email valide.');
+      return;
+    }
+
+    this.isExporting = true;
+
+    this.consentService
+      .requestCompleteDataExport(email)
+      .then((response) => {
+        alert(
+          `Votre demande d'export complet a été envoyée. ` +
+            `Vous recevrez vos données par email dans un délai de 30 jours maximum.`
+        );
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la demande d'export:", error);
+        alert(
+          'Une erreur est survenue. Veuillez nous contacter directement à info@msl-itech.com ' +
+            "pour faire votre demande d'export de données."
+        );
+      })
+      .finally(() => {
+        this.isExporting = false;
+      });
   }
 
   /**
