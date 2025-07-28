@@ -16,6 +16,8 @@ export class ContactComponent {
   company: string = '';
   subject: string = '';
   description: string = '';
+  privacyConsent: boolean = false;
+  marketingConsent: boolean = false;
 
   constructor(
     private odooService: OdooService,

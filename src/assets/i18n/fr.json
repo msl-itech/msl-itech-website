@@ -64,8 +64,11 @@
     "INFO": "Information",
     "LANGUAGE": "Langue",
     "FRENCH": "Français",
-    "ENGLISH": "Anglais"
+    "ENGLISH": "Anglais",
+    "HOME": "Accueil",
+    "CLOSE": "Fermer"
   },
+
   "FOOTER": {
     "DESCRIPTION": "Accélérez la transformation numérique de votre entreprise avec MSL-Itech, expert en implémentation et intégration d'Odoo.",
     "NAVIGATION": {
@@ -81,7 +84,8 @@
       "ABOUT": "À propos de nous",
       "JOBS": "Offres d'emploi",
       "APPOINTMENT": "Prendre rendez-vous",
-      "DEMO": "Réserver une démo"
+      "DEMO": "Réserver une démo",
+      "PRIVACY_POLICY": "Politique de confidentialité"
     },
     "CONTACT": {
       "OFFICES": "Bureaux internationaux : Belgique, Maroc, Canada"
@@ -1699,6 +1703,218 @@
         },
         "CTA": "PROFITEZ-EN!"
       }
+    }
+  },
+  "COOKIE_BANNER": {
+    "TITLE": "🍪 Nous utilisons des cookies pour améliorer votre expérience",
+    "DESCRIPTION": "Nous souhaitons utiliser des cookies analytiques et fonctionnels pour :",
+    "FEATURE_ANALYTICS": "Analyser l'audience (Google Analytics)",
+    "FEATURE_PERFORMANCE": "Optimiser les performances du site",
+    "FEATURE_PREFERENCES": "Mémoriser vos préférences (ex : langue)",
+    "NO_SHARING": "Nous ne partageons aucune donnée avec des tiers publicitaires.",
+    "CUSTOMIZATION_NOTE": "👉 Vous pouvez tout accepter, refuser, ou personnaliser vos choix.",
+    "ACCEPT_ALL": "Tout accepter",
+    "CUSTOMIZE": "Personnaliser",
+    "REJECT": "Refuser (hors cookies essentiels)",
+    "CONTINUE_NOTE": "En continuant votre navigation, vous acceptez notre",
+    "PRIVACY_POLICY_LINK": "Politique de Cookies",
+    "CUSTOMIZE_TITLE": "Personnaliser les préférences de cookies",
+    "CUSTOMIZE_DESCRIPTION": "Vous pouvez choisir quels types de cookies vous souhaitez autoriser. Vos choix seront enregistrés pendant 12 mois.",
+    "ESSENTIAL_TITLE": "Cookies essentiels",
+    "ESSENTIAL_DESCRIPTION": "Ces cookies sont nécessaires au fonctionnement du site. Ils permettent d'utiliser les principales fonctionnalités comme la navigation sécurisée et l'accès aux zones protégées. Ces cookies ne collectent aucune information personnelle.",
+    "ANALYTICS_TITLE": "Cookies analytiques",
+    "ANALYTICS_DESCRIPTION": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec le site en collectant des informations anonymes. Cela nous permet d'améliorer continuellement notre service.",
+    "FUNCTIONAL_TITLE": "Cookies fonctionnels",
+    "FUNCTIONAL_DESCRIPTION": "Ces cookies permettent d'améliorer l'expérience utilisateur en mémorisant vos préférences (langue, région) et en personnalisant le contenu.",
+    "REQUIRED": "Requis",
+    "OPTIONAL": "Optionnel",
+    "SAVE_PREFERENCES": "Enregistrer les préférences"
+  },
+  "FORM_CONSENT": {
+    "PRIVACY_AGREEMENT": "En soumettant ce formulaire, j'accepte que mes données soient traitées conformément à la",
+    "PRIVACY_POLICY_LINK": "Politique de Confidentialité",
+    "MARKETING_CONSENT": "Je souhaite recevoir des offres exclusives de MSL-iTECH",
+    "MARKETING_UNSUBSCRIBE": "(désinscription à tout moment)",
+    "REQUIRED_FIELD": "Ce champ est obligatoire pour soumettre le formulaire"
+  },
+  "DATA_EXPORT": {
+    "TITLE": "Exporter mes données",
+    "DESCRIPTION": "Conformément au RGPD, vous pouvez demander une copie de toutes les données que nous avons collectées vous concernant.",
+    "DOWNLOAD_BUTTON": "Télécharger mes données",
+    "EXPORT_SUCCESS": "Vos données ont été exportées avec succès",
+    "EXPORT_ERROR": "Une erreur s'est produite lors de l'export",
+    "FILE_FORMAT": "Fichier JSON contenant toutes vos données",
+    "LAST_EXPORT": "Dernier export :",
+    "ITEMS": {
+      "CONSENT": "Données de consentement et préférences",
+      "COOKIES": "Cookies et données locales",
+      "METADATA": "Métadonnées de navigation",
+      "TIMESTAMPS": "Horodatage des consentements"
+    },
+    "EXPORTING": "Export en cours...",
+    "NOTICE": "Les données exportées incluent uniquement les informations stockées localement dans votre navigateur. Pour un export complet de toutes vos données, contactez-nous directement."
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Politique de confidentialité MSL-iTECH",
+    "SUBTITLE": "Protection et transparence de vos données personnelles",
+    "INTRO": "Chez MSL iTECH, la protection de vos données personnelles est une priorité absolue. Cette politique de confidentialité a été conçue pour vous informer de manière transparente et exhaustive sur la façon dont nous collectons, utilisons, stockons, protégeons et partageons vos données, dans le strict respect des réglementations en vigueur, notamment la loi marocaine 09-08 et le Règlement Général sur la Protection des Données (RGPD).",
+    "INTRO_NOTE": "En utilisant nos services ou en naviguant sur notre site, vous acceptez les termes de cette politique. Si vous avez des questions, n'hésitez pas à nous contacter.",
+    "TOC": {
+      "TITLE": "Table des matières",
+      "INTRODUCTION": "Introduction",
+      "SECTION_2": "2. Données collectées",
+      "SECTION_3": "3. Finalités du traitement",
+      "SECTION_4": "4. Durée de conservation",
+      "SECTION_5": "5. Partage des données",
+      "SECTION_6": "6. Sécurité des données",
+      "SECTION_7": "7. Conformité légale",
+      "SECTION_8": "8. Vos droits",
+      "SECTION_9": "9. Politique de cookies",
+      "SECTION_10": "10. Modifications",
+      "CONTACT": "Contact",
+      "EXPORT": "Export de données"
+    },
+    "PROGRESS": {
+      "READ": "% lu"
+    },
+    "INTRODUCTION": {
+      "TITLE": "Introduction"
+    },
+    "SECTION_1": {
+      "TITLE": "1. Qui sommes-nous ?",
+      "DESCRIPTION": "MSL iTECH est une entreprise spécialisée dans la digitalisation, l'automatisation et le développement de solutions web et ERP pour les professionnels et les entrepreneurs. Notre mission est d'accompagner nos clients dans leur transformation numérique grâce à des outils performants et sécurisés.",
+      "EMAIL": "Contact : info@msl-itech.com",
+      "WEBSITE": "Site web : www.msl-itech.com"
+    },
+    "SECTION_2": {
+      "TITLE": "2. Quelles données collectons-nous ?",
+      "INTRO": "Nous ne collectons que les données strictement nécessaires à la fourniture de nos services. Ces informations peuvent inclure :",
+      "PERSONAL_DATA": {
+        "TITLE": "Données personnelles :",
+        "NAME": "Nom et prénom",
+        "EMAIL": "Adresse e-mail",
+        "PHONE": "Numéro de téléphone",
+        "COMPANY": "Nom et secteur d'activité de l'entreprise (le cas échéant)",
+        "FUNCTION": "Fonction professionnelle"
+      },
+      "PROJECT_DATA": {
+        "TITLE": "Données liées à votre projet :",
+        "DESCRIPTION": "Description de votre demande ou besoin",
+        "HISTORY": "Historique des échanges (e-mails, appels, formulaires)",
+        "PREFERENCES": "Préférences et besoins techniques"
+      },
+      "TECHNICAL_DATA": {
+        "TITLE": "Données techniques (automatiques) :",
+        "IP": "Adresse IP",
+        "BROWSER": "Type de navigateur et appareil utilisé",
+        "PAGES": "Pages visitées sur notre site (via des cookies, avec votre consentement)"
+      }
+    },
+    "SECTION_3": {
+      "TITLE": "3. Finalités du traitement des données",
+      "INTRO": "Vos données sont utilisées uniquement dans les cas suivants :",
+      "PURPOSE_1": "Répondre à vos demandes (devis, support, informations)",
+      "PURPOSE_2": "Gérer et suivre vos projets (développement web, ERP, automatisation)",
+      "PURPOSE_3": "Améliorer nos services et personnaliser votre expérience",
+      "PURPOSE_4": "Vous informer des nouveautés et offres (uniquement avec votre consentement)",
+      "PURPOSE_5": "Respecter nos obligations légales et contractuelles"
+    },
+    "SECTION_4": {
+      "TITLE": "4. Durée de conservation des données",
+      "DESCRIPTION": "Vos données sont conservées de manière sécurisée pendant une durée maximale de 3 ans après notre dernier contact, sauf :",
+      "LEGAL_OBLIGATION": "Obligation légale",
+      "CONTRACT": "Contrat en cours (conservation jusqu'à la fin de la relation commerciale)",
+      "TIMELINE": {
+        "STANDARD": "3 ans maximum",
+        "STANDARD_DESC": "Conservation standard après dernier contact",
+        "LEGAL_DESC": "Selon les exigences légales applicables",
+        "CONTRACT_DESC": "Durée de la relation commerciale + archivage légal"
+      }
+    },
+    "SECTION_5": {
+      "TITLE": "5. Partage des données avec des tiers",
+      "NO_SALE": "Nous ne vendons ni ne louons vos données à des fins commerciales.",
+      "SHARING_INTRO": "Cependant, dans le cadre de nos services, nous pouvons les partager avec :",
+      "TECHNICAL_PROVIDERS": "Prestataires techniques (hébergeurs, outils CRM, sous-traitants)",
+      "TRUSTED_PARTNERS": "Partenaires de confiance (uniquement si nécessaire au projet)",
+      "LEGAL_AUTHORITIES": "Autorités légales (si requis par la loi)",
+      "COMPLIANCE_NOTE": "Tous nos partenaires sont sélectionnés pour leur conformité aux normes de sécurité.",
+      "PROVIDERS": {
+        "TECHNICAL": "Prestataires techniques",
+        "PARTNERS": "Partenaires de confiance",
+        "AUTHORITIES": "Autorités légales"
+      }
+    },
+    "SECTION_6": {
+      "TITLE": "6. Sécurité des données",
+      "INTRO": "Nous mettons en place des mesures techniques et organisationnelles avancées pour protéger vos données :",
+      "ENCRYPTION": "Chiffrement des communications",
+      "BACKUPS": "Sauvegardes régulières",
+      "ACCESS_CONTROL": "Accès restreint et authentification forte",
+      "AUDITS": "Audits de sécurité périodiques",
+      "BREACH_NOTICE": "En cas de violation de données, nous nous engageons à vous informer dans les 72 heures si cela présente un risque pour vos droits."
+    },
+    "SECTION_7": {
+      "TITLE": "7. Conformité légale",
+      "INTRO": "Nos traitements respectent :",
+      "MOROCCO_LAW": "La loi marocaine n°09-08 (Protection des données personnelles)",
+      "GDPR": "Le RGPD (pour les citoyens de l'UE)",
+      "CYBERSECURITY": "Les meilleures pratiques internationales en cybersécurité",
+      "LAWS": {
+        "MOROCCO": "Loi marocaine n°09-08",
+        "GDPR": "RGPD Européen",
+        "CYBERSECURITY": "Cybersécurité"
+      }
+    },
+    "SECTION_8": {
+      "TITLE": "8. Vos droits",
+      "INTRO": "Vous avez le contrôle total sur vos données :",
+      "RIGHT_ACCESS": "Droit d'accès (demander une copie de vos données)",
+      "RIGHT_RECTIFICATION": "Droit de rectification (mettre à jour des informations incorrectes)",
+      "RIGHT_ERASURE": "Droit à l'oubli (demander la suppression)",
+      "RIGHT_OPPOSITION": "Droit d'opposition (refuser un traitement)",
+      "RIGHT_PORTABILITY": "Droit à la portabilité (récupérer vos données dans un format structuré)",
+      "EXERCISE_TITLE": "Pour exercer ces droits :",
+      "CONTACT_EMAIL": "Contactez-nous à : info@msl-itech.com",
+      "RESPONSE_TIME": "Délai de réponse : 30 jours maximum",
+      "RIGHTS": {
+        "ACCESS": "Droit d'accès",
+        "RECTIFICATION": "Droit de rectification",
+        "ERASURE": "Droit à l'oubli",
+        "OPPOSITION": "Droit d'opposition",
+        "PORTABILITY": "Droit à la portabilité"
+      }
+    },
+    "SECTION_9": {
+      "TITLE": "9. Politique de cookies",
+      "INTRO": "Notre site utilise des cookies pour :",
+      "ANALYTICS": "Analyser le trafic (Google Analytics)",
+      "USER_EXPERIENCE": "Améliorer l'expérience utilisateur",
+      "PERSONALIZATION": "Personnaliser les contenus",
+      "DISABLE_NOTE": "Vous pouvez désactiver les cookies via les paramètres de votre navigateur."
+    },
+    "SECTION_10": {
+      "TITLE": "10. Modifications de la politique",
+      "DESCRIPTION": "Cette politique peut être mise à jour pour refléter les évolutions légales ou techniques. Toute modification sera publiée sur cette page.",
+      "LAST_UPDATE": "Dernière mise à jour : 26 juillet 2025"
+    },
+    "CONTACT": {
+      "TITLE": "Nous contacter",
+      "DESCRIPTION": "Pour toute question concernant cette politique de confidentialité ou l'exercice de vos droits, contactez-nous :",
+      "EMAIL": {
+        "TITLE": "Email",
+        "DESC": "Contactez notre équipe par email"
+      },
+      "PHONE": {
+        "TITLE": "Téléphone",
+        "DESC": "Appelez-nous directement"
+      },
+      "RESPONSE": {
+        "TITLE": "Réponse",
+        "DESC": "Délai de réponse garanti",
+        "TIME": "48h maximum"
+      },
+      "NOTE": "Notre équipe est disponible du lundi au vendredi de 9h à 18h (CET). Pour les demandes urgentes concernant vos données personnelles, utilisez l'email avec l'objet \"URGENT - RGPD\"."
     }
   }
 }

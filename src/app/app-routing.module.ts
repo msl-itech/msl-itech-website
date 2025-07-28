@@ -17,6 +17,7 @@ import { PackHorecaComponent } from './pack-horeca/pack-horeca.component';
 import { PackPerformanceComponent } from './pack-performance/pack-performance.component';
 import { PackSelectionComponent } from './pack-selection/pack-selection.component';
 import { PagePackageComponent } from './page-package/page-package.component';
+import { PolitiqueConfidentialiteComponent } from './politique-confidentialite/politique-confidentialite.component';
 import { PrendreRendezVousComponent } from './prendre-rendez-vous/prendre-rendez-vous.component';
 import { PricingOdooComponent } from './pricing-odoo/pricing-odoo.component';
 import { ReservationHorecaComponent } from './reservation-horeca/reservation-horeca.component';
@@ -53,6 +54,10 @@ const routes: Routes = [
   { path: 'tarif', component: TarifsComponent },
   { path: 'tarif-Odoo', component: TarifOdooComponent },
   { path: 'pricing', component: PricingOdooComponent },
+  {
+    path: 'politique-confidentialite',
+    component: PolitiqueConfidentialiteComponent,
+  },
   { path: 'package-metier/commerciale', component: PackPerformanceComponent },
   { path: 'package-metier/horeca', component: PackHorecaComponent },
   {

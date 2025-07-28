@@ -1,0 +1,171 @@
+<!-- Bannière compacte des cookies -->
+<div class="cookie-banner" *ngIf="showBanner" [@slideUp]>
+  <div class="cookie-banner-content">
+    <div class="cookie-icon">🍪</div>
+
+    <div class="cookie-text">
+      <h3>{{ "COOKIE_BANNER.TITLE" | translate }}</h3>
+      <p>{{ "COOKIE_BANNER.DESCRIPTION" | translate }}</p>
+
+      <div class="privacy-note">
+        <i class="fas fa-lock"></i>
+        <span>{{ "COOKIE_BANNER.NO_SHARING" | translate }}</span>
+      </div>
+    </div>
+
+    <div class="cookie-actions">
+      <button
+        class="btn btn-accept-all"
+        (click)="acceptAll()"
+        [attr.aria-label]="'COOKIE_BANNER.ACCEPT_ALL' | translate"
+      >
+        <i class="fas fa-check"></i>
+        {{ "COOKIE_BANNER.ACCEPT_ALL" | translate }}
+      </button>
+
+      <button
+        class="btn btn-customize"
+        (click)="showCustomizationModal()"
+        [attr.aria-label]="'COOKIE_BANNER.CUSTOMIZE' | translate"
+      >
+        <i class="fas fa-cog"></i>
+        {{ "COOKIE_BANNER.CUSTOMIZE" | translate }}
+      </button>
+
+      <button
+        class="btn btn-reject"
+        (click)="rejectAll()"
+        [attr.aria-label]="'COOKIE_BANNER.REJECT' | translate"
+      >
+        <i class="fas fa-times"></i>
+        {{ "COOKIE_BANNER.REJECT" | translate }}
+      </button>
+    </div>
+
+    <button
+      class="close-banner"
+      (click)="closeBanner()"
+      [attr.aria-label]="'COMMON.CLOSE' | translate"
+    >
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="cookie-footer">
+    <span>{{ "COOKIE_BANNER.CONTINUE_NOTE" | translate }}</span>
+    <a routerLink="/politique-confidentialite" class="privacy-link">
+      {{ "COOKIE_BANNER.PRIVACY_POLICY_LINK" | translate }}
+    </a>
+  </div>
+</div>
+
+<!-- Modal de personnalisation (inchangé) -->
+<div
+  class="cookie-modal-overlay"
+  *ngIf="showCustomization"
+  (click)="closeCustomization()"
+>
+  <div class="cookie-modal" (click)="$event.stopPropagation()" [@fadeIn]>
+    <div class="modal-header">
+      <h3>{{ "COOKIE_BANNER.CUSTOMIZE_TITLE" | translate }}</h3>
+      <button class="close-modal" (click)="closeCustomization()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="modal-content">
+      <p>{{ "COOKIE_BANNER.CUSTOMIZE_DESCRIPTION" | translate }}</p>
+
+      <div class="cookie-categories">
+        <!-- Cookies essentiels -->
+        <div class="cookie-category">
+          <div class="category-header">
+            <div class="toggle-container">
+              <input
+                type="checkbox"
+                id="essential"
+                [checked]="preferences.essential"
+                disabled
+                class="cookie-toggle"
+              />
+              <label for="essential" class="toggle-label disabled">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="category-info">
+              <h4>{{ "COOKIE_BANNER.ESSENTIAL_TITLE" | translate }}</h4>
+              <span class="category-status required">{{
+                "COOKIE_BANNER.REQUIRED" | translate
+              }}</span>
+            </div>
+          </div>
+          <p class="category-description">
+            {{ "COOKIE_BANNER.ESSENTIAL_DESCRIPTION" | translate }}
+          </p>
+        </div>
+
+        <!-- Cookies analytiques -->
+        <div class="cookie-category">
+          <div class="category-header">
+            <div class="toggle-container">
+              <input
+                type="checkbox"
+                id="analytics"
+                [(ngModel)]="preferences.analytics"
+                class="cookie-toggle"
+              />
+              <label for="analytics" class="toggle-label">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="category-info">
+              <h4>{{ "COOKIE_BANNER.ANALYTICS_TITLE" | translate }}</h4>
+              <span class="category-status">{{
+                "COOKIE_BANNER.OPTIONAL" | translate
+              }}</span>
+            </div>
+          </div>
+          <p class="category-description">
+            {{ "COOKIE_BANNER.ANALYTICS_DESCRIPTION" | translate }}
+          </p>
+        </div>
+
+        <!-- Cookies fonctionnels -->
+        <div class="cookie-category">
+          <div class="category-header">
+            <div class="toggle-container">
+              <input
+                type="checkbox"
+                id="functional"
+                [(ngModel)]="preferences.functional"
+                class="cookie-toggle"
+              />
+              <label for="functional" class="toggle-label">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="category-info">
+              <h4>{{ "COOKIE_BANNER.FUNCTIONAL_TITLE" | translate }}</h4>
+              <span class="category-status">{{
+                "COOKIE_BANNER.OPTIONAL" | translate
+              }}</span>
+            </div>
+          </div>
+          <p class="category-description">
+            {{ "COOKIE_BANNER.FUNCTIONAL_DESCRIPTION" | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-save" (click)="saveCustomPreferences()">
+        <i class="fas fa-save"></i>
+        {{ "COOKIE_BANNER.SAVE_PREFERENCES" | translate }}
+      </button>
+      <button class="btn btn-cancel" (click)="closeCustomization()">
+        {{ "BUTTONS.CANCEL" | translate }}
+      </button>
+    </div>
+  </div>
+</div>

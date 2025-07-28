@@ -190,6 +190,60 @@
           }}</label>
         </div>
 
+        <!-- Cases à cocher de consentement -->
+        <div class="consent-checkboxes">
+          <div class="consent-group">
+            <label class="consent-checkbox" for="privacyConsent">
+              <input
+                type="checkbox"
+                id="privacyConsent"
+                name="privacyConsent"
+                [(ngModel)]="privacyConsent"
+                required
+                #privacyInput="ngModel"
+              />
+              <span class="checkmark"></span>
+              <span class="consent-text">
+                {{ "FORM_CONSENT.PRIVACY_AGREEMENT" | translate }}
+                <a
+                  routerLink="/politique-confidentialite"
+                  target="_blank"
+                  class="privacy-link"
+                >
+                  {{ "FORM_CONSENT.PRIVACY_POLICY_LINK" | translate }}
+                </a>
+              </span>
+            </label>
+            <small
+              class="text-danger"
+              *ngIf="
+                privacyInput.invalid &&
+                (privacyInput.dirty || privacyInput.touched)
+              "
+            >
+              {{ "FORM_CONSENT.REQUIRED_FIELD" | translate }}
+            </small>
+          </div>
+
+          <div class="consent-group optional">
+            <label class="consent-checkbox" for="marketingConsent">
+              <input
+                type="checkbox"
+                id="marketingConsent"
+                name="marketingConsent"
+                [(ngModel)]="marketingConsent"
+              />
+              <span class="checkmark"></span>
+              <span class="consent-text">
+                {{ "FORM_CONSENT.MARKETING_CONSENT" | translate }}
+                <span class="unsubscribe-note">{{
+                  "FORM_CONSENT.MARKETING_UNSUBSCRIBE" | translate
+                }}</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
         <button
           type="submit"
           class="submit-btn"

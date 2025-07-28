@@ -267,3 +267,133 @@ textarea.form-control {
 .full-width {
   grid-column: 1 / -1;
 }
+
+/* ----------------------------------------------
+ CASES À COCHER DE CONSENTEMENT
+---------------------------------------------- */
+
+.consent-checkboxes {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(17, 77, 90, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(17, 77, 90, 0.1);
+}
+
+.consent-group {
+  margin-bottom: 15px;
+}
+
+.consent-group.optional {
+  margin-bottom: 0;
+}
+
+.consent-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.6;
+}
+
+.consent-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #114d5a;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  margin-top: 2px;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.consent-checkbox input[type="checkbox"]:checked + .checkmark {
+  background: #114d5a;
+  border-color: #114d5a;
+}
+
+.consent-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  transform: rotate(45deg) scale(1);
+}
+
+.consent-checkbox:hover .checkmark {
+  border-color: #1a6b7a;
+  background: rgba(17, 77, 90, 0.05);
+}
+
+.consent-checkbox input[type="checkbox"]:checked:hover + .checkmark {
+  background: #1a6b7a;
+  border-color: #1a6b7a;
+}
+
+.consent-text {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.privacy-link {
+  color: #114d5a;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.privacy-link:hover {
+  border-bottom-color: #114d5a;
+}
+
+.unsubscribe-note {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.consent-group .text-danger {
+  margin-top: 8px;
+  margin-left: 32px;
+  font-size: 0.85rem;
+}
+
+/* Responsive pour les consentements */
+@media (max-width: 768px) {
+  .consent-checkboxes {
+    padding: 15px;
+    margin-top: 15px;
+  }
+
+  .consent-checkbox {
+    align-items: flex-start;
+  }
+
+  .consent-text {
+    font-size: 0.9rem;
+  }
+
+  .consent-group .text-danger {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
