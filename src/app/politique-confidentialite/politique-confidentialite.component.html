@@ -1,0 +1,1050 @@
+<div class="privacy-policy-container">
+  <!-- Breadcrumbs -->
+  <!-- <div class="breadcrumbs">
+    <div class="container">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb-list">
+          <li>
+            <a routerLink="/">{{ "COMMON.HOME" | translate }}</a>
+          </li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li class="current">{{ "PRIVACY_POLICY.TITLE" | translate }}</li>
+        </ol>
+      </nav>
+    </div>
+  </div> -->
+
+  <!-- Hero Section améliorée -->
+  <div class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-shield-alt"></i>
+          <span>RGPD Conforme</span>
+        </div>
+        <h1>{{ "PRIVACY_POLICY.TITLE" | translate }}</h1>
+        <p class="lead">{{ "PRIVACY_POLICY.SUBTITLE" | translate }}</p>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>{{
+              "PRIVACY_POLICY.SECTION_10.LAST_UPDATE" | translate
+            }}</span>
+          </div>
+          <div class="meta-item">
+            <i class="fas fa-clock"></i>
+            <span>15 min de lecture</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="action-btn" (click)="scrollToSection('toc')">
+            <i class="fas fa-list"></i>
+            Table des matières
+          </button>
+          <button class="action-btn secondary" (click)="exportUserData()">
+            <i class="fas fa-download"></i>
+            Exporter mes données
+          </button>
+          <button class="action-btn secondary" (click)="printPage()">
+            <i class="fas fa-print"></i>
+            Imprimer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="container">
+      <div class="content-layout">
+        <!-- Table des matières fixe -->
+        <aside class="toc-sidebar" id="toc">
+          <div class="toc-container">
+            <h3>
+              <i class="fas fa-list"></i>
+              {{ "PRIVACY_POLICY.TOC.TITLE" | translate }}
+            </h3>
+            <nav class="toc-nav">
+              <ul>
+                <li>
+                  <a
+                    href="#introduction"
+                    (click)="scrollToSection('introduction')"
+                    >{{ "PRIVACY_POLICY.TOC.INTRODUCTION" | translate }}</a
+                  >
+                </li>
+                <li>
+                  <a href="#section1" (click)="scrollToSection('section1')">{{
+                    "PRIVACY_POLICY.SECTION_1.TITLE" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section2" (click)="scrollToSection('section2')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_2" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section3" (click)="scrollToSection('section3')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_3" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section4" (click)="scrollToSection('section4')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_4" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section5" (click)="scrollToSection('section5')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_5" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section6" (click)="scrollToSection('section6')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_6" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section7" (click)="scrollToSection('section7')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_7" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section8" (click)="scrollToSection('section8')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_8" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section9" (click)="scrollToSection('section9')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_9" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#section10" (click)="scrollToSection('section10')">{{
+                    "PRIVACY_POLICY.TOC.SECTION_10" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#contact" (click)="scrollToSection('contact')">{{
+                    "PRIVACY_POLICY.TOC.CONTACT" | translate
+                  }}</a>
+                </li>
+                <li>
+                  <a href="#export" (click)="scrollToSection('export')">{{
+                    "PRIVACY_POLICY.TOC.EXPORT" | translate
+                  }}</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Progress indicator -->
+            <div class="reading-progress">
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  [style.width.%]="readingProgress"
+                ></div>
+              </div>
+              <span class="progress-text"
+                >{{ readingProgress | number : "1.0-0"
+                }}{{ "PRIVACY_POLICY.PROGRESS.READ" | translate }}</span
+              >
+            </div>
+          </div>
+        </aside>
+
+        <!-- Contenu principal -->
+        <main class="policy-content">
+          <!-- Introduction -->
+          <section class="policy-section" id="introduction">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-info-circle"></i>
+                {{ "PRIVACY_POLICY.INTRODUCTION.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('intro')"
+                [class.expanded]="expandedSections.intro"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.intro"
+                  [class.fa-chevron-up]="expandedSections.intro"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.intro"
+            >
+              <p class="intro-text">
+                {{ "PRIVACY_POLICY.INTRO" | translate }}
+              </p>
+              <p class="intro-note">
+                {{ "PRIVACY_POLICY.INTRO_NOTE" | translate }}
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 1: Qui sommes-nous -->
+          <section class="policy-section" id="section1">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-building"></i>
+                {{ "PRIVACY_POLICY.SECTION_1.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section1')"
+                [class.expanded]="expandedSections.section1"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section1"
+                  [class.fa-chevron-up]="expandedSections.section1"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section1"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_1.DESCRIPTION" | translate }}</p>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_1.EMAIL" | translate
+                  }}</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-globe"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_1.WEBSITE" | translate
+                  }}</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 2: Données collectées -->
+          <section class="policy-section" id="section2">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-database"></i>
+                {{ "PRIVACY_POLICY.SECTION_2.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section2')"
+                [class.expanded]="expandedSections.section2"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section2"
+                  [class.fa-chevron-up]="expandedSections.section2"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section2"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_2.INTRO" | translate }}</p>
+
+              <div class="data-types">
+                <div class="data-category">
+                  <h3>
+                    <i class="fas fa-user"></i>
+                    {{
+                      "PRIVACY_POLICY.SECTION_2.PERSONAL_DATA.TITLE" | translate
+                    }}
+                  </h3>
+                  <ul class="data-list">
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.PERSONAL_DATA.NAME"
+                          | translate
+                      }}
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.PERSONAL_DATA.EMAIL"
+                          | translate
+                      }}
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.PERSONAL_DATA.PHONE"
+                          | translate
+                      }}
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.PERSONAL_DATA.COMPANY"
+                          | translate
+                      }}
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.PERSONAL_DATA.FUNCTION"
+                          | translate
+                      }}
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="data-category">
+                  <h3>
+                    <i class="fas fa-project-diagram"></i>
+                    {{
+                      "PRIVACY_POLICY.SECTION_2.PROJECT_DATA.TITLE" | translate
+                    }}
+                  </h3>
+                  <ul class="data-list">
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.PROJECT_DATA.DESCRIPTION"
+                          | translate
+                      }}
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.PROJECT_DATA.HISTORY"
+                          | translate
+                      }}
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.PROJECT_DATA.PREFERENCES"
+                          | translate
+                      }}
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="data-category">
+                  <h3>
+                    <i class="fas fa-cogs"></i>
+                    {{
+                      "PRIVACY_POLICY.SECTION_2.TECHNICAL_DATA.TITLE"
+                        | translate
+                    }}
+                  </h3>
+                  <ul class="data-list">
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.TECHNICAL_DATA.IP" | translate
+                      }}
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.TECHNICAL_DATA.BROWSER"
+                          | translate
+                      }}
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      {{
+                        "PRIVACY_POLICY.SECTION_2.TECHNICAL_DATA.PAGES"
+                          | translate
+                      }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 3: Finalités -->
+          <section class="policy-section" id="section3">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-target"></i>
+                {{ "PRIVACY_POLICY.SECTION_3.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section3')"
+                [class.expanded]="expandedSections.section3"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section3"
+                  [class.fa-chevron-up]="expandedSections.section3"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section3"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_3.INTRO" | translate }}</p>
+              <ul class="purposes-list">
+                <li>
+                  <i class="fas fa-check"></i>
+                  {{ "PRIVACY_POLICY.SECTION_3.PURPOSE_1" | translate }}
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  {{ "PRIVACY_POLICY.SECTION_3.PURPOSE_2" | translate }}
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  {{ "PRIVACY_POLICY.SECTION_3.PURPOSE_3" | translate }}
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  {{ "PRIVACY_POLICY.SECTION_3.PURPOSE_4" | translate }}
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  {{ "PRIVACY_POLICY.SECTION_3.PURPOSE_5" | translate }}
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Section 4: Durée de conservation -->
+          <section class="policy-section" id="section4">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-hourglass-half"></i>
+                {{ "PRIVACY_POLICY.SECTION_4.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section4')"
+                [class.expanded]="expandedSections.section4"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section4"
+                  [class.fa-chevron-up]="expandedSections.section4"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section4"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_4.DESCRIPTION" | translate }}</p>
+              <div class="retention-timeline">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <i class="fas fa-calendar-times"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>
+                      {{
+                        "PRIVACY_POLICY.SECTION_4.TIMELINE.STANDARD" | translate
+                      }}
+                    </h4>
+                    <p>
+                      {{
+                        "PRIVACY_POLICY.SECTION_4.TIMELINE.STANDARD_DESC"
+                          | translate
+                      }}
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <i class="fas fa-gavel"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>
+                      {{
+                        "PRIVACY_POLICY.SECTION_4.LEGAL_OBLIGATION" | translate
+                      }}
+                    </h4>
+                    <p>
+                      {{
+                        "PRIVACY_POLICY.SECTION_4.TIMELINE.LEGAL_DESC"
+                          | translate
+                      }}
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <i class="fas fa-handshake"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h4>
+                      {{ "PRIVACY_POLICY.SECTION_4.CONTRACT" | translate }}
+                    </h4>
+                    <p>
+                      {{
+                        "PRIVACY_POLICY.SECTION_4.TIMELINE.CONTRACT_DESC"
+                          | translate
+                      }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 5: Partage des données -->
+          <section class="policy-section" id="section5">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-share-alt"></i>
+                {{ "PRIVACY_POLICY.SECTION_5.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section5')"
+                [class.expanded]="expandedSections.section5"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section5"
+                  [class.fa-chevron-up]="expandedSections.section5"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section5"
+            >
+              <div class="security-badge">
+                <i class="fas fa-lock"></i>
+                <p>{{ "PRIVACY_POLICY.SECTION_5.NO_SALE" | translate }}</p>
+              </div>
+              <p>{{ "PRIVACY_POLICY.SECTION_5.SHARING_INTRO" | translate }}</p>
+              <div class="sharing-grid">
+                <div class="sharing-item">
+                  <i class="fas fa-server"></i>
+                  <h4>
+                    {{
+                      "PRIVACY_POLICY.SECTION_5.PROVIDERS.TECHNICAL" | translate
+                    }}
+                  </h4>
+                  <p>
+                    {{
+                      "PRIVACY_POLICY.SECTION_5.TECHNICAL_PROVIDERS" | translate
+                    }}
+                  </p>
+                </div>
+                <div class="sharing-item">
+                  <i class="fas fa-handshake"></i>
+                  <h4>
+                    {{
+                      "PRIVACY_POLICY.SECTION_5.PROVIDERS.PARTNERS" | translate
+                    }}
+                  </h4>
+                  <p>
+                    {{
+                      "PRIVACY_POLICY.SECTION_5.TRUSTED_PARTNERS" | translate
+                    }}
+                  </p>
+                </div>
+                <div class="sharing-item">
+                  <i class="fas fa-balance-scale"></i>
+                  <h4>
+                    {{
+                      "PRIVACY_POLICY.SECTION_5.PROVIDERS.AUTHORITIES"
+                        | translate
+                    }}
+                  </h4>
+                  <p>
+                    {{
+                      "PRIVACY_POLICY.SECTION_5.LEGAL_AUTHORITIES" | translate
+                    }}
+                  </p>
+                </div>
+              </div>
+              <p class="note">
+                {{ "PRIVACY_POLICY.SECTION_5.COMPLIANCE_NOTE" | translate }}
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 6: Sécurité -->
+          <section class="policy-section" id="section6">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-shield-alt"></i>
+                {{ "PRIVACY_POLICY.SECTION_6.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section6')"
+                [class.expanded]="expandedSections.section6"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section6"
+                  [class.fa-chevron-up]="expandedSections.section6"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section6"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_6.INTRO" | translate }}</p>
+              <div class="security-measures">
+                <div class="measure">
+                  <i class="fas fa-shield-alt"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_6.ENCRYPTION" | translate
+                  }}</span>
+                </div>
+                <div class="measure">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_6.BACKUPS" | translate
+                  }}</span>
+                </div>
+                <div class="measure">
+                  <i class="fas fa-user-lock"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_6.ACCESS_CONTROL" | translate
+                  }}</span>
+                </div>
+                <div class="measure">
+                  <i class="fas fa-search"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_6.AUDITS" | translate
+                  }}</span>
+                </div>
+              </div>
+              <div class="breach-notice">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>
+                  {{ "PRIVACY_POLICY.SECTION_6.BREACH_NOTICE" | translate }}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 7: Conformité légale -->
+          <section class="policy-section" id="section7">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-gavel"></i>
+                {{ "PRIVACY_POLICY.SECTION_7.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section7')"
+                [class.expanded]="expandedSections.section7"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section7"
+                  [class.fa-chevron-up]="expandedSections.section7"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section7"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_7.INTRO" | translate }}</p>
+              <div class="legal-compliance">
+                <div class="compliance-item">
+                  <i class="fas fa-scroll"></i>
+                  <div class="compliance-content">
+                    <h4>
+                      {{ "PRIVACY_POLICY.SECTION_7.LAWS.MOROCCO" | translate }}
+                    </h4>
+                    <p>
+                      {{ "PRIVACY_POLICY.SECTION_7.MOROCCO_LAW" | translate }}
+                    </p>
+                  </div>
+                </div>
+                <div class="compliance-item">
+                  <i class="fas fa-globe-europe"></i>
+                  <div class="compliance-content">
+                    <h4>
+                      {{ "PRIVACY_POLICY.SECTION_7.LAWS.GDPR" | translate }}
+                    </h4>
+                    <p>{{ "PRIVACY_POLICY.SECTION_7.GDPR" | translate }}</p>
+                  </div>
+                </div>
+                <div class="compliance-item">
+                  <i class="fas fa-shield-virus"></i>
+                  <div class="compliance-content">
+                    <h4>
+                      {{
+                        "PRIVACY_POLICY.SECTION_7.LAWS.CYBERSECURITY"
+                          | translate
+                      }}
+                    </h4>
+                    <p>
+                      {{ "PRIVACY_POLICY.SECTION_7.CYBERSECURITY" | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 8: Vos droits -->
+          <section class="policy-section" id="section8">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-user-shield"></i>
+                {{ "PRIVACY_POLICY.SECTION_8.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section8')"
+                [class.expanded]="expandedSections.section8"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section8"
+                  [class.fa-chevron-up]="expandedSections.section8"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section8"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_8.INTRO" | translate }}</p>
+              <div class="rights-grid">
+                <div class="right-item">
+                  <i class="fas fa-eye"></i>
+                  <h4>
+                    {{ "PRIVACY_POLICY.SECTION_8.RIGHTS.ACCESS" | translate }}
+                  </h4>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_8.RIGHT_ACCESS" | translate
+                  }}</span>
+                </div>
+                <div class="right-item">
+                  <i class="fas fa-edit"></i>
+                  <h4>
+                    {{
+                      "PRIVACY_POLICY.SECTION_8.RIGHTS.RECTIFICATION"
+                        | translate
+                    }}
+                  </h4>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_8.RIGHT_RECTIFICATION" | translate
+                  }}</span>
+                </div>
+                <div class="right-item">
+                  <i class="fas fa-eraser"></i>
+                  <h4>
+                    {{ "PRIVACY_POLICY.SECTION_8.RIGHTS.ERASURE" | translate }}
+                  </h4>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_8.RIGHT_ERASURE" | translate
+                  }}</span>
+                </div>
+                <div class="right-item">
+                  <i class="fas fa-ban"></i>
+                  <h4>
+                    {{
+                      "PRIVACY_POLICY.SECTION_8.RIGHTS.OPPOSITION" | translate
+                    }}
+                  </h4>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_8.RIGHT_OPPOSITION" | translate
+                  }}</span>
+                </div>
+                <div class="right-item">
+                  <i class="fas fa-download"></i>
+                  <h4>
+                    {{
+                      "PRIVACY_POLICY.SECTION_8.RIGHTS.PORTABILITY" | translate
+                    }}
+                  </h4>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_8.RIGHT_PORTABILITY" | translate
+                  }}</span>
+                </div>
+              </div>
+              <div class="contact-rights">
+                <h3>
+                  {{ "PRIVACY_POLICY.SECTION_8.EXERCISE_TITLE" | translate }}
+                </h3>
+                <div class="contact-methods">
+                  <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <span>{{
+                      "PRIVACY_POLICY.SECTION_8.CONTACT_EMAIL" | translate
+                    }}</span>
+                  </div>
+                  <div class="contact-method">
+                    <i class="fas fa-clock"></i>
+                    <span>{{
+                      "PRIVACY_POLICY.SECTION_8.RESPONSE_TIME" | translate
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 9: Cookies -->
+          <section class="policy-section" id="section9">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-cookie-bite"></i>
+                {{ "PRIVACY_POLICY.SECTION_9.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section9')"
+                [class.expanded]="expandedSections.section9"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section9"
+                  [class.fa-chevron-up]="expandedSections.section9"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section9"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_9.INTRO" | translate }}</p>
+              <div class="cookie-purposes">
+                <div class="purpose-item">
+                  <i class="fas fa-chart-line"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_9.ANALYTICS" | translate
+                  }}</span>
+                </div>
+                <div class="purpose-item">
+                  <i class="fas fa-user-cog"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_9.USER_EXPERIENCE" | translate
+                  }}</span>
+                </div>
+                <div class="purpose-item">
+                  <i class="fas fa-palette"></i>
+                  <span>{{
+                    "PRIVACY_POLICY.SECTION_9.PERSONALIZATION" | translate
+                  }}</span>
+                </div>
+              </div>
+              <p class="cookie-note">
+                {{ "PRIVACY_POLICY.SECTION_9.DISABLE_NOTE" | translate }}
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 10: Modifications -->
+          <section class="policy-section" id="section10">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-edit"></i>
+                {{ "PRIVACY_POLICY.SECTION_10.TITLE" | translate }}
+              </h2>
+              <button
+                class="expand-btn"
+                (click)="toggleSection('section10')"
+                [class.expanded]="expandedSections.section10"
+              >
+                <i
+                  class="fas"
+                  [class.fa-chevron-down]="!expandedSections.section10"
+                  [class.fa-chevron-up]="expandedSections.section10"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="section-content"
+              [class.collapsed]="!expandedSections.section10"
+            >
+              <p>{{ "PRIVACY_POLICY.SECTION_10.DESCRIPTION" | translate }}</p>
+              <div class="last-update">
+                <i class="fas fa-calendar-alt"></i>
+                <span>{{
+                  "PRIVACY_POLICY.SECTION_10.LAST_UPDATE" | translate
+                }}</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact Section -->
+          <section class="contact-section" id="contact">
+            <div class="contact-header">
+              <div class="contact-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <div class="contact-title">
+                <h2>{{ "PRIVACY_POLICY.CONTACT.TITLE" | translate }}</h2>
+                <p class="contact-subtitle">
+                  {{ "PRIVACY_POLICY.CONTACT.DESCRIPTION" | translate }}
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-cards">
+              <div class="contact-card primary">
+                <div class="card-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="card-content">
+                  <h3>
+                    {{ "PRIVACY_POLICY.CONTACT.EMAIL.TITLE" | translate }}
+                  </h3>
+                  <p>{{ "PRIVACY_POLICY.CONTACT.EMAIL.DESC" | translate }}</p>
+                  <a href="mailto:info@msl-itech.com" class="contact-link">
+                    <span>info&#64;msl-itech.com</span>
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-card secondary">
+                <div class="card-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="card-content">
+                  <h3>
+                    {{ "PRIVACY_POLICY.CONTACT.PHONE.TITLE" | translate }}
+                  </h3>
+                  <p>{{ "PRIVACY_POLICY.CONTACT.PHONE.DESC" | translate }}</p>
+                  <a href="tel:+3228860549" class="contact-link">
+                    <span>+32 2 886 05 49</span>
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-card tertiary">
+                <div class="card-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="card-content">
+                  <h3>
+                    {{ "PRIVACY_POLICY.CONTACT.RESPONSE.TITLE" | translate }}
+                  </h3>
+                  <p>
+                    {{ "PRIVACY_POLICY.CONTACT.RESPONSE.DESC" | translate }}
+                  </p>
+                  <div class="response-time">
+                    <span>{{
+                      "PRIVACY_POLICY.CONTACT.RESPONSE.TIME" | translate
+                    }}</span>
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-note">
+              <i class="fas fa-info-circle"></i>
+              <p>
+                {{ "PRIVACY_POLICY.CONTACT.NOTE" | translate }}
+              </p>
+            </div>
+          </section>
+
+          <!-- Data Export Section -->
+          <section class="data-export-section" id="export">
+            <h2>{{ "DATA_EXPORT.TITLE" | translate }}</h2>
+            <p>{{ "DATA_EXPORT.DESCRIPTION" | translate }}</p>
+
+            <div class="export-container">
+              <div class="export-info">
+                <h3>{{ "DATA_EXPORT.FILE_FORMAT" | translate }}</h3>
+                <ul>
+                  <li>
+                    <i class="fas fa-check"></i>
+                    {{ "DATA_EXPORT.ITEMS.CONSENT" | translate }}
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i>
+                    {{ "DATA_EXPORT.ITEMS.COOKIES" | translate }}
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i>
+                    {{ "DATA_EXPORT.ITEMS.METADATA" | translate }}
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i>
+                    {{ "DATA_EXPORT.ITEMS.TIMESTAMPS" | translate }}
+                  </li>
+                </ul>
+              </div>
+
+              <div class="export-actions">
+                <button
+                  class="export-btn"
+                  (click)="exportUserData()"
+                  [disabled]="isExporting"
+                >
+                  <i
+                    class="fas fa-download"
+                    [ngClass]="{ 'fa-spin': isExporting }"
+                  ></i>
+                  <span *ngIf="!isExporting">{{
+                    "DATA_EXPORT.DOWNLOAD_BUTTON" | translate
+                  }}</span>
+                  <span *ngIf="isExporting">{{
+                    "DATA_EXPORT.EXPORTING" | translate
+                  }}</span>
+                </button>
+
+                <div class="last-export" *ngIf="lastExportDate">
+                  <i class="fas fa-clock"></i>
+                  <span
+                    >{{ "DATA_EXPORT.LAST_EXPORT" | translate }}
+                    {{ lastExportDate | date : "dd/MM/yyyy à HH:mm" }}</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="export-notice">
+              <i class="fas fa-info-circle"></i>
+              <p>
+                {{ "DATA_EXPORT.NOTICE" | translate }}
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bouton retour en haut -->
+  <button
+    class="back-to-top"
+    [class.visible]="showBackToTop"
+    (click)="scrollToTop()"
+    aria-label="Retour en haut"
+  >
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Actions flottantes -->
+  <div class="floating-actions">
+    <button
+      class="floating-btn"
+      (click)="exportUserData()"
+      title="Exporter mes données"
+    >
+      <i class="fas fa-download"></i>
+    </button>
+    <button class="floating-btn" (click)="printPage()" title="Imprimer">
+      <i class="fas fa-print"></i>
+    </button>
+    <button class="floating-btn" (click)="sharePage()" title="Partager">
+      <i class="fas fa-share-alt"></i>
+    </button>
+  </div>
+</div>

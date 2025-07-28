@@ -71,8 +71,11 @@
     "INFO": "Information",
     "LANGUAGE": "Language",
     "FRENCH": "French",
-    "ENGLISH": "English"
+    "ENGLISH": "English",
+    "HOME": "Home",
+    "CLOSE": "Close"
   },
+
   "FOOTER": {
     "DESCRIPTION": "Accelerate your company's digital transformation with MSL-Itech, expert in Odoo implementation and integration.",
     "NAVIGATION": {
@@ -88,7 +91,8 @@
       "ABOUT": "About us",
       "JOBS": "Job opportunities",
       "APPOINTMENT": "Book an appointment",
-      "DEMO": "Book a demo"
+      "DEMO": "Book a demo",
+      "PRIVACY_POLICY": "Privacy Policy"
     },
     "CONTACT": {
       "OFFICES": "International offices: Belgium, Morocco, Canada"
@@ -1669,6 +1673,152 @@
         },
         "CTA": "TAKE ADVANTAGE!"
       }
+    }
+  },
+  "COOKIE_BANNER": {
+    "TITLE": "🍪 We use cookies to improve your experience",
+    "DESCRIPTION": "We would like to use analytical and functional cookies to:",
+    "FEATURE_ANALYTICS": "Analyze traffic (Google Analytics)",
+    "FEATURE_PERFORMANCE": "Optimize site performance",
+    "FEATURE_PREFERENCES": "Remember your preferences (e.g. language)",
+    "NO_SHARING": "We do not share any data with advertising third parties.",
+    "CUSTOMIZATION_NOTE": "👉 You can accept all, refuse, or customize your choices.",
+    "ACCEPT_ALL": "Accept all",
+    "CUSTOMIZE": "Customize",
+    "REJECT": "Refuse (except essential cookies)",
+    "CONTINUE_NOTE": "By continuing your navigation, you accept our",
+    "PRIVACY_POLICY_LINK": "Cookie Policy",
+    "CUSTOMIZE_TITLE": "Customize cookie preferences",
+    "CUSTOMIZE_DESCRIPTION": "You can choose which types of cookies you want to allow. Your choices will be saved for 12 months.",
+    "ESSENTIAL_TITLE": "Essential cookies",
+    "ESSENTIAL_DESCRIPTION": "These cookies are necessary for the website to function. They enable the use of main features like secure navigation and access to protected areas. These cookies do not collect any personal information.",
+    "ANALYTICS_TITLE": "Analytics cookies",
+    "ANALYTICS_DESCRIPTION": "These cookies help us understand how visitors interact with the website by collecting anonymous information. This allows us to continuously improve our service.",
+    "FUNCTIONAL_TITLE": "Functional cookies",
+    "FUNCTIONAL_DESCRIPTION": "These cookies enhance user experience by remembering your preferences (language, region) and personalizing content.",
+    "REQUIRED": "Required",
+    "OPTIONAL": "Optional",
+    "SAVE_PREFERENCES": "Save preferences"
+  },
+  "FORM_CONSENT": {
+    "PRIVACY_AGREEMENT": "By submitting this form, I agree that my data will be processed in accordance with the",
+    "PRIVACY_POLICY_LINK": "Privacy Policy",
+    "MARKETING_CONSENT": "I would like to receive exclusive offers from MSL-iTECH",
+    "MARKETING_UNSUBSCRIBE": "(unsubscribe at any time)",
+    "REQUIRED_FIELD": "This field is required to submit the form"
+  },
+  "DATA_EXPORT": {
+    "TITLE": "Export my data",
+    "DESCRIPTION": "In accordance with GDPR, you can request a copy of all data we have collected about you.",
+    "DOWNLOAD_BUTTON": "Download my data",
+    "EXPORT_SUCCESS": "Your data has been successfully exported",
+    "EXPORT_ERROR": "An error occurred during export",
+    "FILE_FORMAT": "JSON file containing all your data",
+    "LAST_EXPORT": "Last export:"
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "MSL-iTECH Privacy Policy",
+    "SUBTITLE": "Protection and transparency of your personal data",
+    "INTRO": "At MSL iTECH, protecting your personal data is an absolute priority. This privacy policy has been designed to inform you transparently and comprehensively about how we collect, use, store, protect and share your data, in strict compliance with applicable regulations, including Moroccan law 09-08 and the General Data Protection Regulation (GDPR).",
+    "INTRO_NOTE": "By using our services or browsing our site, you accept the terms of this policy. If you have any questions, please do not hesitate to contact us.",
+    "SECTION_1": {
+      "TITLE": "1. Who are we?",
+      "DESCRIPTION": "MSL iTECH is a company specialized in digitalization, automation and development of web and ERP solutions for professionals and entrepreneurs. Our mission is to support our clients in their digital transformation through high-performance and secure tools.",
+      "EMAIL": "Contact: info@msl-itech.com",
+      "WEBSITE": "Website: www.msl-itech.com"
+    },
+    "SECTION_2": {
+      "TITLE": "2. What data do we collect?",
+      "INTRO": "We only collect data strictly necessary for the provision of our services. This information may include:",
+      "PERSONAL_DATA": {
+        "TITLE": "Personal data:",
+        "NAME": "First and last name",
+        "EMAIL": "Email address",
+        "PHONE": "Phone number",
+        "COMPANY": "Company name and business sector (if applicable)",
+        "FUNCTION": "Professional function"
+      },
+      "PROJECT_DATA": {
+        "TITLE": "Data related to your project:",
+        "DESCRIPTION": "Description of your request or need",
+        "HISTORY": "Exchange history (emails, calls, forms)",
+        "PREFERENCES": "Technical preferences and needs"
+      },
+      "TECHNICAL_DATA": {
+        "TITLE": "Technical data (automatic):",
+        "IP": "IP address",
+        "BROWSER": "Browser type and device used",
+        "PAGES": "Pages visited on our site (via cookies, with your consent)"
+      }
+    },
+    "SECTION_3": {
+      "TITLE": "3. Purposes of data processing",
+      "INTRO": "Your data is used only in the following cases:",
+      "PURPOSE_1": "Respond to your requests (quotes, support, information)",
+      "PURPOSE_2": "Manage and track your projects (web development, ERP, automation)",
+      "PURPOSE_3": "Improve our services and personalize your experience",
+      "PURPOSE_4": "Inform you of news and offers (only with your consent)",
+      "PURPOSE_5": "Comply with our legal and contractual obligations"
+    },
+    "SECTION_4": {
+      "TITLE": "4. Data retention period",
+      "DESCRIPTION": "Your data is securely stored for a maximum period of 3 years after our last contact, except:",
+      "LEGAL_OBLIGATION": "Legal obligation",
+      "CONTRACT": "Current contract (retention until the end of the business relationship)"
+    },
+    "SECTION_5": {
+      "TITLE": "5. Sharing data with third parties",
+      "NO_SALE": "We do not sell or rent your data for commercial purposes.",
+      "SHARING_INTRO": "However, as part of our services, we may share them with:",
+      "TECHNICAL_PROVIDERS": "Technical providers (hosting, CRM tools, subcontractors)",
+      "TRUSTED_PARTNERS": "Trusted partners (only if necessary for the project)",
+      "LEGAL_AUTHORITIES": "Legal authorities (if required by law)",
+      "COMPLIANCE_NOTE": "All our partners are selected for their compliance with security standards."
+    },
+    "SECTION_6": {
+      "TITLE": "6. Data security",
+      "INTRO": "We implement advanced technical and organizational measures to protect your data:",
+      "ENCRYPTION": "Communication encryption",
+      "BACKUPS": "Regular backups",
+      "ACCESS_CONTROL": "Restricted access and strong authentication",
+      "AUDITS": "Periodic security audits",
+      "BREACH_NOTICE": "In case of data breach, we commit to inform you within 72 hours if it presents a risk to your rights."
+    },
+    "SECTION_7": {
+      "TITLE": "7. Legal compliance",
+      "INTRO": "Our processing complies with:",
+      "MOROCCO_LAW": "Moroccan law n°09-08 (Personal data protection)",
+      "GDPR": "GDPR (for EU citizens)",
+      "CYBERSECURITY": "International best practices in cybersecurity"
+    },
+    "SECTION_8": {
+      "TITLE": "8. Your rights",
+      "INTRO": "You have full control over your data:",
+      "RIGHT_ACCESS": "Right of access (request a copy of your data)",
+      "RIGHT_RECTIFICATION": "Right of rectification (update incorrect information)",
+      "RIGHT_ERASURE": "Right to be forgotten (request deletion)",
+      "RIGHT_OPPOSITION": "Right of opposition (refuse processing)",
+      "RIGHT_PORTABILITY": "Right to portability (retrieve your data in a structured format)",
+      "EXERCISE_TITLE": "To exercise these rights:",
+      "CONTACT_EMAIL": "Contact us at: info@msl-itech.com",
+      "RESPONSE_TIME": "Response time: 30 days maximum"
+    },
+    "SECTION_9": {
+      "TITLE": "9. Cookie policy",
+      "INTRO": "Our site uses cookies to:",
+      "ANALYTICS": "Analyze traffic (Google Analytics)",
+      "USER_EXPERIENCE": "Improve user experience",
+      "PERSONALIZATION": "Personalize content",
+      "DISABLE_NOTE": "You can disable cookies through your browser settings."
+    },
+    "SECTION_10": {
+      "TITLE": "10. Policy modifications",
+      "DESCRIPTION": "This policy may be updated to reflect legal or technical developments. Any modification will be published on this page.",
+      "LAST_UPDATE": "Last update: July 26, 2025"
+    },
+    "CONTACT": {
+      "TITLE": "Contact us",
+      "DESCRIPTION": "For any questions regarding this privacy policy or exercising your rights, contact us:"
     }
   }
 }

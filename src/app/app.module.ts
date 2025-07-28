@@ -78,6 +78,8 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { OptimizedImageComponent } from './components/optimized-image/optimized-image.component';
 import { ResponsiveImageDirective } from './directives/responsive-image.directive';
+import { PolitiqueConfidentialiteComponent } from './politique-confidentialite/politique-confidentialite.component';
+import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
 
 // Factory function pour le loader de traduction
 export function HttpLoaderFactory(http: HttpClient) {
@@ -139,6 +141,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     OptimizedImageComponent,
     BlogPageComponent,
     BlogDetailComponent,
+    PolitiqueConfidentialiteComponent,
+    CookieBannerComponent,
   ],
   imports: [
     BrowserModule,
