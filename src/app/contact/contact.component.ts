@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { ConsentService } from '../services/consent.service';
 import { OdooService } from '../services/odoo.service';
 
 @Component({
@@ -21,12 +22,14 @@ export class ContactComponent {
 
   constructor(
     private odooService: OdooService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private consentService: ConsentService
   ) {}
 
   onSubmit(form: NgForm): void {
     if (form.invalid) {
       this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      this.consentService.trackFormSubmission('contact_form', false);
       return;
     }
 
@@ -52,6 +55,7 @@ export class ContactComponent {
     this.odooService.createLead(leadData).subscribe({
       next: (response) => {
         this.toastr.success('Votre message a été envoyé avec succès', 'Succès');
+        this.consentService.trackFormSubmission('contact_form', true);
         form.resetForm();
         this.isLoading = false;
       },
@@ -60,6 +64,7 @@ export class ContactComponent {
           "Une erreur est survenue lors de l'envoi du message",
           'Erreur'
         );
+        this.consentService.trackFormSubmission('contact_form', false);
         this.isLoading = false;
       },
     });

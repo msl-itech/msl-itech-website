@@ -1706,7 +1706,7 @@
     }
   },
   "COOKIE_BANNER": {
-    "TITLE": "🍪 Nous utilisons des cookies pour améliorer votre expérience",
+    "TITLE": "Nous utilisons des cookies pour améliorer votre expérience",
     "DESCRIPTION": "Nous souhaitons utiliser des cookies analytiques et fonctionnels pour :",
     "FEATURE_ANALYTICS": "Analyser l'audience (Google Analytics)",
     "FEATURE_PERFORMANCE": "Optimiser les performances du site",
@@ -1754,6 +1754,7 @@
     "EXPORTING": "Export en cours...",
     "NOTICE": "Les données exportées incluent uniquement les informations stockées localement dans votre navigateur. Pour un export complet de toutes vos données, contactez-nous directement."
   },
+
   "PRIVACY_POLICY": {
     "TITLE": "Politique de confidentialité MSL-iTECH",
     "SUBTITLE": "Protection et transparence de vos données personnelles",

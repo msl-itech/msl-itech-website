@@ -1676,7 +1676,7 @@
     }
   },
   "COOKIE_BANNER": {
-    "TITLE": "🍪 We use cookies to improve your experience",
+    "TITLE": "We use cookies to improve your experience",
     "DESCRIPTION": "We would like to use analytical and functional cookies to:",
     "FEATURE_ANALYTICS": "Analyze traffic (Google Analytics)",
     "FEATURE_PERFORMANCE": "Optimize site performance",
@@ -1711,16 +1711,45 @@
     "TITLE": "Export my data",
     "DESCRIPTION": "In accordance with GDPR, you can request a copy of all data we have collected about you.",
     "DOWNLOAD_BUTTON": "Download my data",
-    "EXPORT_SUCCESS": "Your data has been successfully exported",
+    "EXPORT_SUCCESS": "Your data has been exported successfully",
     "EXPORT_ERROR": "An error occurred during export",
     "FILE_FORMAT": "JSON file containing all your data",
-    "LAST_EXPORT": "Last export:"
+    "LAST_EXPORT": "Last export:",
+    "ITEMS": {
+      "CONSENT": "Consent and preference data",
+      "COOKIES": "Cookies and local data",
+      "METADATA": "Navigation metadata",
+      "TIMESTAMPS": "Consent timestamps"
+    },
+    "EXPORTING": "Export in progress...",
+    "NOTICE": "Exported data includes only information stored locally in your browser. For a complete export of all your data, contact us directly."
   },
   "PRIVACY_POLICY": {
     "TITLE": "MSL-iTECH Privacy Policy",
     "SUBTITLE": "Protection and transparency of your personal data",
     "INTRO": "At MSL iTECH, protecting your personal data is an absolute priority. This privacy policy has been designed to inform you transparently and comprehensively about how we collect, use, store, protect and share your data, in strict compliance with applicable regulations, including Moroccan law 09-08 and the General Data Protection Regulation (GDPR).",
     "INTRO_NOTE": "By using our services or browsing our site, you accept the terms of this policy. If you have any questions, please do not hesitate to contact us.",
+    "TOC": {
+      "TITLE": "Table of Contents",
+      "INTRODUCTION": "Introduction",
+      "SECTION_2": "2. Data collected",
+      "SECTION_3": "3. Processing purposes",
+      "SECTION_4": "4. Retention period",
+      "SECTION_5": "5. Data sharing",
+      "SECTION_6": "6. Data security",
+      "SECTION_7": "7. Legal compliance",
+      "SECTION_8": "8. Your rights",
+      "SECTION_9": "9. Cookie policy",
+      "SECTION_10": "10. Changes",
+      "CONTACT": "Contact",
+      "EXPORT": "Data export"
+    },
+    "PROGRESS": {
+      "READ": "% read"
+    },
+    "INTRODUCTION": {
+      "TITLE": "Introduction"
+    },
     "SECTION_1": {
       "TITLE": "1. Who are we?",
       "DESCRIPTION": "MSL iTECH is a company specialized in digitalization, automation and development of web and ERP solutions for professionals and entrepreneurs. Our mission is to support our clients in their digital transformation through high-performance and secure tools.",
@@ -1764,7 +1793,13 @@
       "TITLE": "4. Data retention period",
       "DESCRIPTION": "Your data is securely stored for a maximum period of 3 years after our last contact, except:",
       "LEGAL_OBLIGATION": "Legal obligation",
-      "CONTRACT": "Current contract (retention until the end of the business relationship)"
+      "CONTRACT": "Current contract (retention until the end of the business relationship)",
+      "TIMELINE": {
+        "STANDARD": "3 years maximum",
+        "STANDARD_DESC": "Standard retention after last contact",
+        "LEGAL_DESC": "According to applicable legal requirements",
+        "CONTRACT_DESC": "Duration of business relationship + legal archiving"
+      }
     },
     "SECTION_5": {
       "TITLE": "5. Sharing data with third parties",
@@ -1773,7 +1808,12 @@
       "TECHNICAL_PROVIDERS": "Technical providers (hosting, CRM tools, subcontractors)",
       "TRUSTED_PARTNERS": "Trusted partners (only if necessary for the project)",
       "LEGAL_AUTHORITIES": "Legal authorities (if required by law)",
-      "COMPLIANCE_NOTE": "All our partners are selected for their compliance with security standards."
+      "COMPLIANCE_NOTE": "All our partners are selected for their compliance with security standards.",
+      "PROVIDERS": {
+        "TECHNICAL": "Technical providers",
+        "PARTNERS": "Trusted partners",
+        "AUTHORITIES": "Legal authorities"
+      }
     },
     "SECTION_6": {
       "TITLE": "6. Data security",
@@ -1789,7 +1829,12 @@
       "INTRO": "Our processing complies with:",
       "MOROCCO_LAW": "Moroccan law n°09-08 (Personal data protection)",
       "GDPR": "GDPR (for EU citizens)",
-      "CYBERSECURITY": "International best practices in cybersecurity"
+      "CYBERSECURITY": "International best practices in cybersecurity",
+      "LAWS": {
+        "MOROCCO": "Moroccan law n°09-08",
+        "GDPR": "European GDPR",
+        "CYBERSECURITY": "Cybersecurity"
+      }
     },
     "SECTION_8": {
       "TITLE": "8. Your rights",
@@ -1801,7 +1846,14 @@
       "RIGHT_PORTABILITY": "Right to portability (retrieve your data in a structured format)",
       "EXERCISE_TITLE": "To exercise these rights:",
       "CONTACT_EMAIL": "Contact us at: info@msl-itech.com",
-      "RESPONSE_TIME": "Response time: 30 days maximum"
+      "RESPONSE_TIME": "Response time: 30 days maximum",
+      "RIGHTS": {
+        "ACCESS": "Right of access",
+        "RECTIFICATION": "Right of rectification",
+        "ERASURE": "Right to be forgotten",
+        "OPPOSITION": "Right of opposition",
+        "PORTABILITY": "Right to portability"
+      }
     },
     "SECTION_9": {
       "TITLE": "9. Cookie policy",
@@ -1818,7 +1870,21 @@
     },
     "CONTACT": {
       "TITLE": "Contact us",
-      "DESCRIPTION": "For any questions regarding this privacy policy or exercising your rights, contact us:"
+      "DESCRIPTION": "For any questions regarding this privacy policy or exercising your rights, contact us:",
+      "EMAIL": {
+        "TITLE": "Email",
+        "DESC": "Contact our team by email"
+      },
+      "PHONE": {
+        "TITLE": "Phone",
+        "DESC": "Call us directly"
+      },
+      "RESPONSE": {
+        "TITLE": "Response",
+        "DESC": "Guaranteed response time",
+        "TIME": "48h maximum"
+      },
+      "NOTE": "Our team is available Monday to Friday from 9am to 6pm (CET). For urgent requests regarding your personal data, use the email with the subject \"URGENT - GDPR\"."
     }
   }
 }
