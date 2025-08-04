@@ -1009,49 +1009,16 @@
                 >{{ "HEADER.MENU.ADMINISTRATIVE" | translate }}</a
               >
             </li>
-            <li
-              [ngClass]="{ open: isDropdownOpen('horeca') }"
-              (click)="
-                $event.stopPropagation(); isMobile && toggleDropdown('horeca')
-              "
-            >
+            <li role="none">
               <a
-                role="button"
-                aria-haspopup="menu"
-                [attr.aria-expanded]="isDropdownOpen('horeca')"
-                aria-controls="horeca-menu"
+                href="https://horeca.msl-itech.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="openHorecaLink($event)"
+                role="menuitem"
               >
                 {{ "HEADER.MENU.HORECA" | translate }}
-                <i class="fas fa-chevron-right"></i>
               </a>
-              <ul class="sub-dropdown-menu" id="horeca-menu" role="menu">
-                <li role="none">
-                  <a
-                    routerLink="/package-metier/horeca/formules"
-                    (click)="isMobile && closeMenu()"
-                    role="menuitem"
-                    >{{ "HEADER.MENU.OUR_FORMULAS" | translate }}</a
-                  >
-                </li>
-                <li role="none">
-                  <a
-                    routerLink="/package-metier/horeca/smartAlert"
-                    (click)="isMobile && closeMenu()"
-                    role="menuitem"
-                  >
-                    {{ "HEADER.MENU.SMART_ALERT" | translate }}
-                    <span class="pro-badge">PRO</span>
-                  </a>
-                </li>
-                <li role="none">
-                  <a
-                    routerLink="/package-metier/horeca/services-exclusifs"
-                    (click)="isMobile && closeMenu()"
-                    role="menuitem"
-                    >{{ "HEADER.MENU.EXCLUSIVE_SERVICES" | translate }}</a
-                  >
-                </li>
-              </ul>
             </li>
           </ul>
         </li>
