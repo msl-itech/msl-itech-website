@@ -49,6 +49,14 @@ export class HeaderComponent {
     }
   }
 
+  openHorecaLink(event: Event): void {
+    event.preventDefault();
+    window.open('https://horeca.msl-itech.com', '_blank');
+    if (this.isMobile) {
+      this.closeMenu();
+    }
+  }
+
   isDropdownOpen(menu: string): boolean {
     return this.activeDropdown === menu;
   }
