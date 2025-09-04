@@ -12,14 +12,13 @@ import { OdooService } from '../services/odoo.service';
 export class DevenirPartenaireComponent implements OnInit {
   // Gestion des étapes
   currentStep: number = 1;
-  totalSteps: number = 7;
+  totalSteps: number = 6;
   stepTitles: string[] = [
     'Informations personnelles',
     'Votre profil professionnel',
     'Votre spécialité/expertise',
     "Votre expérience",
     'Vos clients',
-    'Votre disponibilité',
     'Finalisation',
   ];
 
@@ -64,7 +63,6 @@ export class DevenirPartenaireComponent implements OnInit {
     autre: false,
   };
   secteurAutreDetail: string = '';
-  disponibilite: string = '';
 
   // Étape 5: Message libre
   message: string = '';
@@ -78,12 +76,6 @@ export class DevenirPartenaireComponent implements OnInit {
     { value: '10+', label: '10 ans et plus' },
   ];
 
-  disponibiliteOptions = [
-    { value: '<5h', label: 'Moins de 5h par semaine' },
-    { value: '5-10h', label: '5 à 10h par semaine' },
-    { value: '10-20h', label: '10 à 20h par semaine' },
-    { value: '20h+', label: 'Plus de 20h par semaine' },
-  ];
 
   constructor(
     private odooService: OdooService,
@@ -128,8 +120,6 @@ export class DevenirPartenaireComponent implements OnInit {
       case 5:
         return this.validateClientsSilent();
       case 6:
-        return this.validateDisponibiliteSilent();
-      case 7:
         return this.validateFinalizationSilent();
       default:
         return true;
@@ -150,8 +140,6 @@ export class DevenirPartenaireComponent implements OnInit {
       case 5:
         return this.validateClientsWithMessage();
       case 6:
-        return this.validateDisponibiliteWithMessage();
-      case 7:
         return this.validateFinalizationWithMessage();
       default:
         return true;
@@ -199,9 +187,6 @@ export class DevenirPartenaireComponent implements OnInit {
     return true;
   }
 
-  validateDisponibiliteSilent(): boolean {
-    return !!this.disponibilite;
-  }
 
   validateFinalizationSilent(): boolean {
     return this.privacyConsent;
@@ -284,13 +269,6 @@ export class DevenirPartenaireComponent implements OnInit {
     return true;
   }
 
-  validateDisponibiliteWithMessage(): boolean {
-    if (!this.disponibilite) {
-      this.toastr.error('Veuillez indiquer votre disponibilité', 'Disponibilité');
-      return false;
-    }
-    return true;
-  }
 
   validateFinalizationWithMessage(): boolean {
     if (!this.privacyConsent) {
@@ -381,12 +359,6 @@ export class DevenirPartenaireComponent implements OnInit {
     return exp ? exp.label : '';
   }
 
-  getDisponibiliteLabel(): string {
-    const disp = this.disponibiliteOptions.find(
-      (d) => d.value === this.disponibilite
-    );
-    return disp ? disp.label : '';
-  }
 
   onSubmit(form: NgForm): void {
     if (!this.validateStepsUpToSilent(this.totalSteps)) {
@@ -420,7 +392,6 @@ export class DevenirPartenaireComponent implements OnInit {
       `<ul>${this.getSelectedSecteurs()
         .map((secteur) => `<li>${secteur}</li>`)
         .join('')}</ul>`,
-      `<p><strong>Disponibilité:</strong> ${this.getDisponibiliteLabel()}</p>`,
     ];
 
     if (this.message.trim()) {
@@ -481,7 +452,6 @@ export class DevenirPartenaireComponent implements OnInit {
     this.specialiteAutreDetail = '';
     this.secteurAutreDetail = '';
     this.experience = '';
-    this.disponibilite = '';
     this.message = '';
     this.privacyConsent = false;
   }

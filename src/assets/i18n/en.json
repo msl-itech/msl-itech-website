@@ -1680,6 +1680,176 @@
         },
         "CTA": "TAKE ADVANTAGE!"
       }
+    },
+    "DEVENIR_PARTENAIRE": {
+      "BANNER": {
+        "TITLE": "Become MSL Itech Partner",
+        "SUBTITLE": "Join our partner network and let's grow your business together"
+      },
+      "ADVANTAGES": {
+        "BADGE": "Partner Program",
+        "TITLE": "Why become our partner?",
+        "SUBTITLE": "Discover all the advantages of partnering with MSL-Itech",
+        "CARDS": {
+          "GROWTH": {
+            "TITLE": "Accelerated Growth",
+            "DESCRIPTION": "Grow your client portfolio with our leading ERP solutions",
+            "BENEFIT": "Rapidly increase your revenue"
+          },
+          "TRAINING": {
+            "TITLE": "Continuous Training",
+            "DESCRIPTION": "Benefit from free training and certifications on all our solutions",
+            "BENEFIT": "Guaranteed skill development"
+          },
+          "SUPPORT": {
+            "TITLE": "Dedicated Support",
+            "DESCRIPTION": "A dedicated commercial and technical expert to support you",
+            "BENEFIT": "Personalized 24/7 support"
+          },
+          "COMMISSIONS": {
+            "TITLE": "Attractive Commissions",
+            "DESCRIPTION": "Enjoy competitive margins and performance bonuses",
+            "BENEFIT": "Motivating and scalable compensation"
+          }
+        }
+      },
+      "PROCESS": {
+        "BADGE": "Simple Process",
+        "TITLE": "How to become a partner?",
+        "SUBTITLE": "A simple and fast process in just a few steps",
+        "STEPS": {
+          "APPLICATION": {
+            "TITLE": "Application",
+            "DESCRIPTION": "Fill out the application form below in 7 simple steps",
+            "BENEFIT": "5 minutes is enough"
+          },
+          "EVALUATION": {
+            "TITLE": "Evaluation & Interview",
+            "DESCRIPTION": "We evaluate your profile and schedule a personalized interview",
+            "BENEFIT": "Response within 48h"
+          },
+          "LAUNCH": {
+            "TITLE": "Launch",
+            "DESCRIPTION": "Training, tool access and official partnership launch",
+            "BENEFIT": "Complete support"
+          }
+        }
+      },
+      "CTA": {
+        "BADGE": "Join Us",
+        "TITLE": "Ready to grow your business with MSL Itech?",
+        "SUBTITLE": "Over 500 partners already trust us. Join a dynamic ecosystem and benefit from tailored support to develop your business.",
+        "STATS": {
+          "PARTNERS": "500+",
+          "PARTNERS_LABEL": "Active partners",
+          "SATISFACTION": "95%",
+          "SATISFACTION_LABEL": "Satisfaction rate",
+          "SUPPORT": "24/7",
+          "SUPPORT_LABEL": "Support available"
+        }
+      },
+      "FORM": {
+        "INFO_TITLE": "Partner Information",
+        "PROGRESS_TITLE": "Progress",
+        "STEP_COUNTER": "Step {{current}} of {{total}}",
+        "STEPS": {
+          "PERSONAL": "Personal information",
+          "PROFILE": "Profile type",
+          "EXPERTISE": "Specialty/expertise",
+          "EXPERIENCE": "Experience",
+          "SECTORS": "Client sectors",
+          "AVAILABILITY": "Availability",
+          "FINALIZATION": "Finalization"
+        },
+        "STEP1": {
+          "INTRO": "Let's start with your contact information",
+          "FIELDS": {
+            "NAME": "First and last name *",
+            "ROLE": "Function / Role *",
+            "EMAIL": "Professional email *",
+            "PHONE": "Phone *",
+            "COUNTRY": "Country *"
+          }
+        },
+        "STEP2": {
+          "TITLE": "Your professional profile",
+          "SUBTITLE": "Select the profile type(s) that match you",
+          "PROFILES": {
+            "CONSULTANT": "ERP/IT freelance consultant",
+            "ACCOUNTANT": "Certified accountant / Outsourced CFO",
+            "AGENCY": "Web agency / digital marketing",
+            "CHAMBER": "Chamber of commerce / incubator",
+            "INFLUENCER": "LinkedIn / YouTube influencer",
+            "OTHER": "Other",
+            "OTHER_SUBTITLE": "Specify your profile",
+            "OTHER_PLACEHOLDER": "Specify your profile type"
+          }
+        },
+        "STEP3": {
+          "TITLE": "Your specialty/expertise",
+          "SUBTITLE": "Indicate your main specialty(ies)",
+          "SPECIALTIES": {
+            "MARKETING": "Digital marketing / Social media",
+            "DEVELOPMENT": "ERP development / IT",
+            "FINANCE": "Financial management / Outsourced CFO",
+            "COMMERCIAL": "Commercial strategy / Business development",
+            "CONTENT": "Content creation / Copywriting",
+            "OTHER": "Other",
+            "OTHER_SUBTITLE": "Specify your specialty",
+            "OTHER_PLACEHOLDER": "Specify your specialty"
+          }
+        },
+        "STEP4": {
+          "TITLE": "Your experience",
+          "SUBTITLE": "Select your years of experience",
+          "EXPERIENCE_TITLE": "Years of experience"
+        },
+        "STEP5": {
+          "TITLE": "Your clients",
+          "SUBTITLE": "What types of clients do you work with most?",
+          "SECTORS": {
+            "STARTUPS": "Tech startups",
+            "SME": "SME / Small businesses",
+            "ECOMMERCE": "E-commerce / Retail",
+            "B2B_SERVICES": "B2B Services",
+            "HOSPITALITY": "Hospitality / Tourism",
+            "OTHER": "Other",
+            "OTHER_SUBTITLE": "Specify the sector",
+            "OTHER_PLACEHOLDER": "Specify the sector"
+          }
+        },
+        "STEP6": {
+          "TITLE": "Your availability",
+          "SUBTITLE": "Indicate your weekly availability for collaboration",
+          "AVAILABILITY_TITLE": "Estimated availability for collaboration"
+        },
+        "STEP7": {
+          "TITLE": "Free message / Your questions",
+          "SUBTITLE": "Share your motivations and questions with us",
+          "MESSAGE_PLACEHOLDER": "Introduce yourself, explain your motivations to become a partner, or ask us your questions...",
+          "CONSENT": {
+            "PRIVACY": "I agree to the processing of my personal data in accordance with the",
+            "PRIVACY_LINK": "privacy policy",
+            "REQUIRED": "You must accept the privacy policy"
+          }
+        },
+        "INFO_ITEMS": {
+          "STRATEGIC_PARTNERSHIP": "Strategic partnership with an ERP leader",
+          "GROWTH_OPPORTUNITIES": "Growth and development opportunities",
+          "DEDICATED_SUPPORT": "Dedicated technical and commercial support",
+          "TRAINING_CERTIFICATION": "Training and certification on our solutions"
+        },
+        "NAVIGATION": {
+          "PREVIOUS": "Previous",
+          "NEXT": "Next",
+          "SUBMIT": "I want to become a partner",
+          "LOADING": "Sending..."
+        },
+        "VALIDATION": {
+          "REQUIRED": "This field is required",
+          "EMAIL_INVALID": "Invalid email"
+        }
+      }
     }
   },
   "COOKIE_BANNER": {
@@ -1892,178 +2062,6 @@
         "TIME": "48h maximum"
       },
       "NOTE": "Our team is available Monday to Friday from 9am to 6pm (CET). For urgent requests regarding your personal data, use the email with the subject \"URGENT - GDPR\"."
-    }
-  },
-  "PAGES": {
-    "BECOME_PARTNER": {
-      "BANNER": {
-        "TITLE": "Become MSL Itech Partner",
-        "SUBTITLE": "Join our partner network and let's grow your business together"
-      },
-      "ADVANTAGES": {
-        "BADGE": "Partner Program",
-        "TITLE": "Why become our partner?",
-        "SUBTITLE": "Discover all the advantages of partnering with MSL Itech",
-        "CARDS": {
-          "GROWTH": {
-            "TITLE": "Accelerated Growth",
-            "DESCRIPTION": "Grow your client portfolio with our leading ERP solutions",
-            "BENEFIT": "Rapidly increase your revenue"
-          },
-          "TRAINING": {
-            "TITLE": "Continuous Training",
-            "DESCRIPTION": "Benefit from free training and certifications on all our solutions",
-            "BENEFIT": "Guaranteed skill development"
-          },
-          "SUPPORT": {
-            "TITLE": "Dedicated Support",
-            "DESCRIPTION": "A dedicated commercial and technical expert to support you",
-            "BENEFIT": "Personalized 24/7 support"
-          },
-          "COMMISSIONS": {
-            "TITLE": "Attractive Commissions",
-            "DESCRIPTION": "Enjoy competitive margins and performance bonuses",
-            "BENEFIT": "Motivating and scalable compensation"
-          }
-        }
-      },
-      "PROCESS": {
-        "BADGE": "Simple Process",
-        "TITLE": "How to become a partner?",
-        "SUBTITLE": "A simple and fast process in just a few steps",
-        "STEPS": {
-          "APPLICATION": {
-            "TITLE": "Application",
-            "DESCRIPTION": "Fill out the application form below in 7 simple steps",
-            "BENEFIT": "5 minutes is enough"
-          },
-          "EVALUATION": {
-            "TITLE": "Evaluation & Interview",
-            "DESCRIPTION": "We evaluate your profile and schedule a personalized interview",
-            "BENEFIT": "Response within 48h"
-          },
-          "LAUNCH": {
-            "TITLE": "Launch",
-            "DESCRIPTION": "Training, tool access and official partnership launch",
-            "BENEFIT": "Complete support"
-          }
-        }
-      },
-      "CTA": {
-        "BADGE": "Join Us",
-        "TITLE": "Ready to grow your business with MSL Itech?",
-        "SUBTITLE": "Over 500 partners already trust us. Join a dynamic ecosystem and benefit from tailored support to develop your business.",
-        "STATS": {
-          "PARTNERS": "500+",
-          "PARTNERS_LABEL": "Active partners",
-          "SATISFACTION": "95%",
-          "SATISFACTION_LABEL": "Satisfaction rate",
-          "SUPPORT": "24/7",
-          "SUPPORT_LABEL": "Support available"
-        }
-      },
-      "FORM": {
-        "INFO_TITLE": "Partner Information",
-        "PROGRESS_TITLE": "Progress",
-        "STEP_COUNTER": "Step {{current}} of {{total}}",
-        "STEPS": {
-          "PERSONAL": "Personal information",
-          "PROFILE": "Profile type",
-          "EXPERTISE": "Specialty/expertise",
-          "EXPERIENCE": "Experience",
-          "SECTORS": "Client sectors",
-          "AVAILABILITY": "Availability",
-          "FINALIZATION": "Finalization"
-        },
-        "STEP1": {
-          "INTRO": "Let's start with your contact information",
-          "FIELDS": {
-            "NAME": "First and last name *",
-            "ROLE": "Function / Role *",
-            "EMAIL": "Professional email *",
-            "PHONE": "Phone *",
-            "COUNTRY": "Country *"
-          }
-        },
-        "STEP2": {
-          "TITLE": "Your professional profile",
-          "SUBTITLE": "Select the profile type(s) that match you",
-          "PROFILES": {
-            "CONSULTANT": "ERP/IT freelance consultant",
-            "ACCOUNTANT": "Certified accountant / Outsourced CFO",
-            "AGENCY": "Web agency / digital marketing",
-            "CHAMBER": "Chamber of commerce / incubator",
-            "INFLUENCER": "LinkedIn / YouTube influencer",
-            "OTHER": "Other",
-            "OTHER_SUBTITLE": "Specify your profile",
-            "OTHER_PLACEHOLDER": "Specify your profile type"
-          }
-        },
-        "STEP3": {
-          "TITLE": "Your specialty/expertise",
-          "SUBTITLE": "Indicate your main specialty(ies)",
-          "SPECIALTIES": {
-            "MARKETING": "Digital marketing / Social media",
-            "DEVELOPMENT": "ERP development / IT",
-            "FINANCE": "Financial management / Outsourced CFO",
-            "COMMERCIAL": "Commercial strategy / Business development",
-            "CONTENT": "Content creation / Copywriting",
-            "OTHER": "Other",
-            "OTHER_SUBTITLE": "Specify your specialty",
-            "OTHER_PLACEHOLDER": "Specify your specialty"
-          }
-        },
-        "STEP4": {
-          "TITLE": "Your experience",
-          "SUBTITLE": "Select your years of experience",
-          "EXPERIENCE_TITLE": "Years of experience"
-        },
-        "STEP5": {
-          "TITLE": "Your clients",
-          "SUBTITLE": "What types of clients do you work with most?",
-          "SECTORS": {
-            "STARTUPS": "Tech startups",
-            "SME": "SME / Small businesses",
-            "ECOMMERCE": "E-commerce / Retail",
-            "B2B_SERVICES": "B2B Services",
-            "HOSPITALITY": "Hospitality / Tourism",
-            "OTHER": "Other",
-            "OTHER_SUBTITLE": "Specify the sector",
-            "OTHER_PLACEHOLDER": "Specify the sector"
-          }
-        },
-        "STEP6": {
-          "TITLE": "Your availability",
-          "SUBTITLE": "Indicate your weekly availability for collaboration",
-          "AVAILABILITY_TITLE": "Estimated availability for collaboration"
-        },
-        "STEP7": {
-          "TITLE": "Free message / Your questions",
-          "SUBTITLE": "Share your motivations and questions with us",
-          "MESSAGE_PLACEHOLDER": "Introduce yourself, explain your motivations to become a partner, or ask us your questions...",
-          "CONSENT": {
-            "PRIVACY": "I agree to the processing of my personal data in accordance with the",
-            "PRIVACY_LINK": "privacy policy",
-            "REQUIRED": "You must accept the privacy policy"
-          }
-        },
-        "INFO_ITEMS": {
-          "STRATEGIC_PARTNERSHIP": "Strategic partnership with an ERP leader",
-          "GROWTH_OPPORTUNITIES": "Growth and development opportunities",
-          "DEDICATED_SUPPORT": "Dedicated technical and commercial support",
-          "TRAINING_CERTIFICATION": "Training and certification on our solutions"
-        },
-        "NAVIGATION": {
-          "PREVIOUS": "Previous",
-          "NEXT": "Next",
-          "SUBMIT": "I want to become a partner",
-          "LOADING": "Sending..."
-        },
-        "VALIDATION": {
-          "REQUIRED": "This field is required",
-          "EMAIL_INVALID": "Invalid email"
-        }
-      }
     }
   }
 }

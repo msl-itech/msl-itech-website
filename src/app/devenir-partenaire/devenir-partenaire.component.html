@@ -571,7 +571,7 @@
                 "
               >
                 <span *ngIf="emailInput.errors?.['required']"
-                  >Ce champ est requis</span
+                  >{{ "PAGES.DEVENIR_PARTENAIRE.FORM.VALIDATION.REQUIRED" | translate }}</span
                 >
                 <span *ngIf="emailInput.errors?.['email']">{{ "PAGES.DEVENIR_PARTENAIRE.FORM.VALIDATION.EMAIL_INVALID" | translate }}</span>
               </small>
@@ -686,7 +686,7 @@
               <label for="chambreCommerce" class="checkbox-label">
                 <i class="fas fa-building"></i>
                 <div>
-                  <strong>Chambre de commerce / incubateur</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP2.PROFILES.CHAMBER" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -701,7 +701,7 @@
               <label for="influenceur" class="checkbox-label">
                 <i class="fab fa-linkedin"></i>
                 <div>
-                  <strong>Influenceur LinkedIn / YouTube</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP2.PROFILES.INFLUENCER" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -716,8 +716,8 @@
               <label for="profileAutre" class="checkbox-label">
                 <i class="fas fa-plus"></i>
                 <div>
-                  <strong>Autre</strong>
-                  <span>Précisez votre profil</span>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP2.PROFILES.OTHER" | translate }}</strong>
+                  <span>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP2.PROFILES.OTHER_SUBTITLE" | translate }}</span>
                 </div>
               </label>
             </div>
@@ -738,8 +738,8 @@
         <div class="step-content" *ngIf="currentStep === 3">
           <div class="step-intro">
             <i class="fas fa-star step-icon"></i>
-            <h3>Votre spécialité/expertise</h3>
-            <p>Indiquez votre ou vos spécialités principales</p>
+            <h3>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.TITLE" | translate }}</h3>
+            <p>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.SUBTITLE" | translate }}</p>
           </div>
 
           <div class="checkbox-grid">
@@ -753,7 +753,7 @@
               <label for="marketing" class="checkbox-label">
                 <i class="fas fa-bullhorn"></i>
                 <div>
-                  <strong>Marketing digital / Social media</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.SPECIALTIES.MARKETING" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -768,7 +768,7 @@
               <label for="developpement" class="checkbox-label">
                 <i class="fas fa-code"></i>
                 <div>
-                  <strong>Développement ERP / IT</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.SPECIALTIES.DEVELOPMENT" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -783,7 +783,7 @@
               <label for="finance" class="checkbox-label">
                 <i class="fas fa-chart-pie"></i>
                 <div>
-                  <strong>Gestion financière / CFO externalisé</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.SPECIALTIES.FINANCE" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -798,7 +798,7 @@
               <label for="commercial" class="checkbox-label">
                 <i class="fas fa-handshake"></i>
                 <div>
-                  <strong>Stratégie commerciale / Business development</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.SPECIALTIES.COMMERCIAL" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -813,7 +813,7 @@
               <label for="contenu" class="checkbox-label">
                 <i class="fas fa-pen-fancy"></i>
                 <div>
-                  <strong>Création de contenu / Copywriting</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.SPECIALTIES.CONTENT" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -828,8 +828,8 @@
               <label for="specialiteAutre" class="checkbox-label">
                 <i class="fas fa-plus"></i>
                 <div>
-                  <strong>Autre</strong>
-                  <span>Précisez votre spécialité</span>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.SPECIALTIES.OTHER" | translate }}</strong>
+                  <span>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP3.SPECIALTIES.OTHER_SUBTITLE" | translate }}</span>
                 </div>
               </label>
             </div>
@@ -850,12 +850,12 @@
         <div class="step-content" *ngIf="currentStep === 4">
           <div class="step-intro">
             <i class="fas fa-briefcase step-icon"></i>
-            <h3>Votre expérience</h3>
-            <p>Sélectionnez votre nombre d'années d'expérience</p>
+            <h3>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP4.TITLE" | translate }}</h3>
+            <p>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP4.SUBTITLE" | translate }}</p>
           </div>
 
           <div class="form-group experience-section">
-            <h4>Nombre d'années d'expérience</h4>
+            <h4>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP4.EXPERIENCE_TITLE" | translate }}</h4>
             <div
               class="option-steps"
               role="radiogroup"
@@ -879,8 +879,8 @@
         <div class="step-content" *ngIf="currentStep === 5">
           <div class="step-intro">
             <i class="fas fa-users step-icon"></i>
-            <h3>Vos clients</h3>
-            <p>Avec quels types de clients travaillez-vous le plus ?</p>
+            <h3>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.TITLE" | translate }}</h3>
+            <p>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.SUBTITLE" | translate }}</p>
           </div>
 
           <div class="checkbox-grid">
@@ -894,7 +894,7 @@
               <label for="startups" class="checkbox-label">
                 <i class="fas fa-rocket"></i>
                 <div>
-                  <strong>Startups tech</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.SECTORS.STARTUPS" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -909,7 +909,7 @@
               <label for="pmeTpe" class="checkbox-label">
                 <i class="fas fa-store"></i>
                 <div>
-                  <strong>PME / TPE</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.SECTORS.SME" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -924,7 +924,7 @@
               <label for="ecommerce" class="checkbox-label">
                 <i class="fas fa-shopping-cart"></i>
                 <div>
-                  <strong>E-commerce / Retail</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.SECTORS.ECOMMERCE" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -939,7 +939,7 @@
               <label for="servicesB2b" class="checkbox-label">
                 <i class="fas fa-briefcase"></i>
                 <div>
-                  <strong>Services B2B</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.SECTORS.B2B_SERVICES" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -954,7 +954,7 @@
               <label for="hotellerie" class="checkbox-label">
                 <i class="fas fa-bed"></i>
                 <div>
-                  <strong>Hôtellerie / Tourisme</strong>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.SECTORS.HOSPITALITY" | translate }}</strong>
                 </div>
               </label>
             </div>
@@ -969,8 +969,8 @@
               <label for="secteurAutre" class="checkbox-label">
                 <i class="fas fa-plus"></i>
                 <div>
-                  <strong>Autre</strong>
-                  <span>Précisez le secteur</span>
+                  <strong>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.SECTORS.OTHER" | translate }}</strong>
+                  <span>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP5.SECTORS.OTHER_SUBTITLE" | translate }}</span>
                 </div>
               </label>
             </div>
@@ -986,44 +986,14 @@
             />
           </div>
 
-          <!-- La disponibilité est désormais une étape dédiée (Étape 6) -->
         </div>
 
-        <!-- Étape 6: Disponibilité -->
+        <!-- Étape 6: Finalisation -->
         <div class="step-content" *ngIf="currentStep === 6">
           <div class="step-intro">
-            <i class="fas fa-clock step-icon"></i>
-            <h3>Votre disponibilité</h3>
-            <p>Indiquez votre disponibilité hebdomadaire pour collaborer</p>
-          </div>
-
-          <div class="form-group disponibilite-section">
-            <h4>Disponibilité estimée pour collaborer</h4>
-            <div
-              class="option-steps"
-              role="radiogroup"
-              aria-label="Disponibilité hebdomadaire"
-            >
-              <div
-                *ngFor="let option of disponibiliteOptions"
-                class="option-step"
-                role="radio"
-                [attr.aria-checked]="disponibilite === option.value"
-                [class.active]="disponibilite === option.value"
-                (click)="disponibilite = option.value"
-              >
-                <span class="option-step-label">{{ option.label }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Étape 7: Finalisation -->
-        <div class="step-content" *ngIf="currentStep === 7">
-          <div class="step-intro">
             <i class="fas fa-flag-checkered step-icon"></i>
-            <h3>Message libre / Vos questions</h3>
-            <p>Partagez-nous vos motivations et vos questions</p>
+            <h3>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP7.TITLE" | translate }}</h3>
+            <p>{{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP7.SUBTITLE" | translate }}</p>
           </div>
 
           <div class="form-group">
@@ -1032,7 +1002,7 @@
               name="message"
               class="form-control textarea-message"
               rows="5"
-              placeholder="Présentez-vous, expliquez vos motivations pour devenir partenaire, ou posez-nous vos questions..."
+              placeholder="{{ 'PAGES.DEVENIR_PARTENAIRE.FORM.STEP7.MESSAGE_PLACEHOLDER' | translate }}"
             ></textarea>
           </div>
 
@@ -1049,14 +1019,13 @@
               />
               <span class="checkmark"></span>
               <span class="consent-text">
-                J'accepte le traitement de mes données personnelles conformément
-                à la
+                {{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP7.CONSENT.PRIVACY" | translate }}
                 <a
                   routerLink="/politique-confidentialite"
                   target="_blank"
                   class="privacy-link"
                 >
-                  politique de confidentialité
+                  {{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP7.CONSENT.PRIVACY_LINK" | translate }}
                 </a>
                 *
               </span>
@@ -1068,7 +1037,7 @@
                 (privacyInput.dirty || privacyInput.touched)
               "
             >
-              Vous devez accepter la politique de confidentialité
+              {{ "PAGES.DEVENIR_PARTENAIRE.FORM.STEP7.CONSENT.REQUIRED" | translate }}
             </small>
           </div>
         </div>

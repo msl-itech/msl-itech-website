@@ -1,3 +1,60 @@
+/* Styles pour les boutons de réservation */
+.reservation-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: -2rem auto;
+  position: relative;
+  z-index: 10;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.reservation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+  min-width: 240px;
+}
+
+.reservation-button i {
+  font-size: 1.3rem;
+}
+
+.demo-button {
+  background: #114d5a;
+}
+
+.rdv-button {
+  background: #f0c300;
+  color: #333;
+}
+.rdv-button2 {
+  background: #ffffff;
+  color: #333;
+}
+.reservation-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-button.demo-button:hover {
+  background: #0e3c47;
+}
+
+.reservation-button.rdv-button:hover {
+  background: #e0b700;
+}
+
 .contact-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #f6f9fc 0%, #f1f4f8 100%);
@@ -970,4 +1027,9 @@ textarea.form-control {
   .checkbox-label i {
     font-size: 1.5rem;
   }
+}
+
+.rdv-button2 {
+  background: #ffffff;
+  color: #333;
 }
