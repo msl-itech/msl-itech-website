@@ -1724,9 +1724,9 @@
             "BENEFIT": "5 minutes is enough"
           },
           "EVALUATION": {
-            "TITLE": "Evaluation & Interview",
-            "DESCRIPTION": "We evaluate your profile and schedule a personalized interview",
-            "BENEFIT": "Response within 48h"
+            "TITLE": "Meeting & Exchange",
+            "DESCRIPTION": "We organize a meeting to discuss your profile and expectations",
+            "BENEFIT": "Personalized exchange"
           },
           "LAUNCH": {
             "TITLE": "Launch",
@@ -1740,7 +1740,7 @@
         "TITLE": "Ready to grow your business with MSL Itech?",
         "SUBTITLE": "Over 500 partners already trust us. Join a dynamic ecosystem and benefit from tailored support to develop your business.",
         "STATS": {
-          "PARTNERS": "500+",
+          "PARTNERS": "50+",
           "PARTNERS_LABEL": "Active partners",
           "SATISFACTION": "95%",
           "SATISFACTION_LABEL": "Satisfaction rate",
