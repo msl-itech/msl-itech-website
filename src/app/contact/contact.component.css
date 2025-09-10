@@ -43,7 +43,10 @@
   background: #f0c300;
   color: #333;
 }
-
+.rdv-button2 {
+  background: #ffffff;
+  color: #333;
+}
 .reservation-button:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);

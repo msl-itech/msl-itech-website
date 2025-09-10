@@ -85,7 +85,8 @@
       "JOBS": "Offres d'emploi",
       "APPOINTMENT": "Prendre rendez-vous",
       "DEMO": "Réserver une démo",
-      "PRIVACY_POLICY": "Politique de confidentialité"
+      "PRIVACY_POLICY": "Politique de confidentialité",
+      "BECOME_PARTNER": "Devenir partenaire"
     },
     "CONTACT": {
       "OFFICES": "Bureaux internationaux : Belgique, Maroc, Canada"
@@ -499,10 +500,6 @@
           }
         }
       }
-    },
-    "CONTACT": {
-      "TITLE": "Contactez-nous",
-      "DESCRIPTION": "N'hésitez pas à nous contacter pour vos projets"
     },
     "SUPPORT": {
       "HERO": {
@@ -1099,7 +1096,8 @@
       },
       "RESERVATION_BUTTONS": {
         "DEMO": "Réserver une démo",
-        "APPOINTMENT": "Prendre rendez-vous"
+        "APPOINTMENT": "Prendre rendez-vous",
+        "PARTNER": "Devenir partenaire"
       },
       "INFO": {
         "TITLE": "MSL-iTECH"
@@ -1702,6 +1700,176 @@
           "CLIENT_MANAGEMENT": "Gestion optimale de vos relances clients"
         },
         "CTA": "PROFITEZ-EN!"
+      }
+    },
+    "DEVENIR_PARTENAIRE": {
+      "BANNER": {
+        "TITLE": "Devenez Partenaire MSL Itech",
+        "SUBTITLE": "Rejoignez notre réseau de partenaires et développons ensemble votre activité"
+      },
+      "ADVANTAGES": {
+        "BADGE": "Programme Partenaire",
+        "TITLE": "Pourquoi devenir notre partenaire ?",
+        "SUBTITLE": "Découvrez tous les avantages d'un partenariat chez nous",
+        "CARDS": {
+          "GROWTH": {
+            "TITLE": "Croissance Accélérée",
+            "DESCRIPTION": "Développez votre portefeuille client avec nos solutions ERP leader du marché",
+            "BENEFIT": "Augmentez votre chiffre d'affaires rapidement"
+          },
+          "TRAINING": {
+            "TITLE": "Formation Continue",
+            "DESCRIPTION": "Bénéficiez de formations gratuites et certifications sur toutes nos solutions",
+            "BENEFIT": "Montée en compétence garantie"
+          },
+          "SUPPORT": {
+            "TITLE": "Support Dédié",
+            "DESCRIPTION": "Un expert commercial et technique dédié pour vous accompagner",
+            "BENEFIT": "Accompagnement personnalisé 24/7"
+          },
+          "COMMISSIONS": {
+            "TITLE": "Commissions Attractives",
+            "DESCRIPTION": "Profitez de marges compétitives et de bonus de performance",
+            "BENEFIT": "Rémunération motivante et évolutive"
+          }
+        }
+      },
+      "PROCESS": {
+        "BADGE": "Processus Simple",
+        "TITLE": "Comment devenir partenaire ?",
+        "SUBTITLE": "Un processus simple et rapide en quelques étapes",
+        "STEPS": {
+          "APPLICATION": {
+            "TITLE": "Candidature",
+            "DESCRIPTION": "Remplissez le formulaire de candidature ci-dessous en 7 étapes simples",
+            "BENEFIT": "5 minutes suffisent"
+          },
+          "EVALUATION": {
+            "TITLE": "Rencontre & Echange",
+            "DESCRIPTION": "Nous organisons une rencontre pour échanger sur votre profil et vos attentes",
+            "BENEFIT": "Échange personnalisé"
+          },
+          "LAUNCH": {
+            "TITLE": "Lancement",
+            "DESCRIPTION": "Formation, accès aux outils et démarrage officiel du partenariat",
+            "BENEFIT": "Accompagnement complet"
+          }
+        }
+      },
+      "CTA": {
+        "BADGE": "Rejoignez-nous",
+        "TITLE": "Prêt à développer votre activité avec MSL Itech ?",
+        "SUBTITLE": "Plus de 500 partenaires nous font déjà confiance. Rejoignez un écosystème dynamique et bénéficiez d'un accompagnement sur mesure pour développer votre business.",
+        "STATS": {
+          "PARTNERS": "50+",
+          "PARTNERS_LABEL": "Partenaires actifs",
+          "SATISFACTION": "95%",
+          "SATISFACTION_LABEL": "Taux de satisfaction",
+          "SUPPORT": "24/7",
+          "SUPPORT_LABEL": "Support disponible"
+        }
+      },
+      "FORM": {
+        "INFO_TITLE": "Informations Partenaire",
+        "PROGRESS_TITLE": "Progression",
+        "STEP_COUNTER": "Étape {{current}} sur {{total}}",
+        "STEPS": {
+          "PERSONAL": "Informations personnelles",
+          "PROFILE": "Type de profil",
+          "EXPERTISE": "Spécialité/expertise",
+          "EXPERIENCE": "Expérience",
+          "SECTORS": "Secteurs clients",
+          "AVAILABILITY": "Disponibilité",
+          "FINALIZATION": "Finalisation"
+        },
+        "STEP1": {
+          "INTRO": "Commençons par vos informations de contact",
+          "FIELDS": {
+            "NAME": "Nom et prénom *",
+            "ROLE": "Fonction / Rôle *",
+            "EMAIL": "Email professionnel *",
+            "PHONE": "Téléphone *",
+            "COUNTRY": "Pays *"
+          }
+        },
+        "STEP2": {
+          "TITLE": "Votre profil professionnel",
+          "SUBTITLE": "Sélectionnez le(s) type(s) de profil qui vous correspond(ent)",
+          "PROFILES": {
+            "CONSULTANT": "Consultant ERP/IT freelance",
+            "ACCOUNTANT": "Expert-comptable / CFO externalisé",
+            "AGENCY": "Agence web / marketing digital",
+            "CHAMBER": "Chambre de commerce / incubateur",
+            "INFLUENCER": "Influenceur LinkedIn / YouTube",
+            "OTHER": "Autre",
+            "OTHER_SUBTITLE": "Précisez votre profil",
+            "OTHER_PLACEHOLDER": "Précisez votre type de profil"
+          }
+        },
+        "STEP3": {
+          "TITLE": "Votre spécialité/expertise",
+          "SUBTITLE": "Indiquez votre ou vos spécialités principales",
+          "SPECIALTIES": {
+            "MARKETING": "Marketing digital / Social media",
+            "DEVELOPMENT": "Développement ERP / IT",
+            "FINANCE": "Gestion financière / CFO externalisé",
+            "COMMERCIAL": "Stratégie commerciale / Business development",
+            "CONTENT": "Création de contenu / Copywriting",
+            "OTHER": "Autre",
+            "OTHER_SUBTITLE": "Précisez votre spécialité",
+            "OTHER_PLACEHOLDER": "Précisez votre spécialité"
+          }
+        },
+        "STEP4": {
+          "TITLE": "Votre expérience",
+          "SUBTITLE": "Sélectionnez votre nombre d'années d'expérience",
+          "EXPERIENCE_TITLE": "Nombre d'années d'expérience"
+        },
+        "STEP5": {
+          "TITLE": "Vos clients",
+          "SUBTITLE": "Avec quels types de clients travaillez-vous le plus ?",
+          "SECTORS": {
+            "STARTUPS": "Startups tech",
+            "SME": "PME / TPE",
+            "ECOMMERCE": "E-commerce / Retail",
+            "B2B_SERVICES": "Services B2B",
+            "HOSPITALITY": "Hôtellerie / Tourisme",
+            "OTHER": "Autre",
+            "OTHER_SUBTITLE": "Précisez le secteur",
+            "OTHER_PLACEHOLDER": "Précisez le secteur"
+          }
+        },
+        "STEP6": {
+          "TITLE": "Votre disponibilité",
+          "SUBTITLE": "Indiquez votre disponibilité hebdomadaire pour collaborer",
+          "AVAILABILITY_TITLE": "Disponibilité estimée pour collaborer"
+        },
+        "STEP7": {
+          "TITLE": "Message libre / Vos questions",
+          "SUBTITLE": "Partagez-nous vos motivations et vos questions",
+          "MESSAGE_PLACEHOLDER": "Présentez-vous, expliquez vos motivations pour devenir partenaire, ou posez-nous vos questions...",
+          "CONSENT": {
+            "PRIVACY": "J'accepte le traitement de mes données personnelles conformément à la",
+            "PRIVACY_LINK": "politique de confidentialité",
+            "REQUIRED": "Vous devez accepter la politique de confidentialité"
+          }
+        },
+        "INFO_ITEMS": {
+          "STRATEGIC_PARTNERSHIP": "Partenariat stratégique avec un leader ERP",
+          "GROWTH_OPPORTUNITIES": "Opportunités de croissance et de développement",
+          "DEDICATED_SUPPORT": "Support technique et commercial dédié",
+          "TRAINING_CERTIFICATION": "Formation et certification sur nos solutions"
+        },
+        "NAVIGATION": {
+          "PREVIOUS": "Précédent",
+          "NEXT": "Suivant",
+          "SUBMIT": "Je souhaite devenir partenaire",
+          "LOADING": "Envoi en cours..."
+        },
+        "VALIDATION": {
+          "REQUIRED": "Ce champ est requis",
+          "EMAIL_INVALID": "Email invalide"
+        }
       }
     }
   },

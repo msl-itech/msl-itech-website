@@ -80,6 +80,7 @@ import { OptimizedImageComponent } from './components/optimized-image/optimized-
 import { ResponsiveImageDirective } from './directives/responsive-image.directive';
 import { PolitiqueConfidentialiteComponent } from './politique-confidentialite/politique-confidentialite.component';
 import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
+import { DevenirPartenaireComponent } from './devenir-partenaire/devenir-partenaire.component';
 
 // Factory function pour le loader de traduction
 export function HttpLoaderFactory(http: HttpClient) {
@@ -143,6 +144,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BlogDetailComponent,
     PolitiqueConfidentialiteComponent,
     CookieBannerComponent,
+    DevenirPartenaireComponent,
   ],
   imports: [
     BrowserModule,

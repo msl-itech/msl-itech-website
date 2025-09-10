@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { ConsentService } from '../services/consent.service';
 import { OdooService } from '../services/odoo.service';
@@ -23,7 +24,8 @@ export class ContactComponent {
   constructor(
     private odooService: OdooService,
     private toastr: ToastrService,
-    private consentService: ConsentService
+    private consentService: ConsentService,
+    private translate: TranslateService
   ) {}
 
   onSubmit(form: NgForm): void {
