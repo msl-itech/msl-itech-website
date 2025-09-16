@@ -16,7 +16,9 @@ interface PackagePricing {
 })
 export class TarifOdooComponent implements OnInit {
   isMoroccanUser: boolean = false;
-  isNorthAmericanUser: boolean = false;
+  isNorthAmericanUser: boolean = false; // Utilisateur aux États-Unis
+  isCanadianUser: boolean = false;
+  private readonly usdToCadRate = 1.5; // Aligné sur tarifs.component.ts
 
   // Définition des prix selon le tableau fourni
   packagePricing: { [key: string]: PackagePricing } = {
@@ -61,9 +63,12 @@ export class TarifOdooComponent implements OnInit {
     this.geolocationService.countryInfo$.subscribe((countryInfo) => {
       console.log('CountryInfo reçu dans tarif-odoo:', countryInfo);
       this.isMoroccanUser = countryInfo.isMorocco;
-      this.isNorthAmericanUser = countryInfo.isNorthAmerica;
+      this.isCanadianUser = countryInfo.isCanada;
+      this.isNorthAmericanUser =
+        countryInfo.isNorthAmerica && !countryInfo.isCanada;
       console.log('Variables mises à jour:', {
         isMoroccanUser: this.isMoroccanUser,
+        isCanadianUser: this.isCanadianUser,
         isNorthAmericanUser: this.isNorthAmericanUser,
       });
     });
@@ -73,6 +78,7 @@ export class TarifOdooComponent implements OnInit {
       (window as any).testPricing = {
         morocco: () => this.testMorocco(),
         usa: () => this.testUSA(),
+        canada: () => this.testCanada(),
         france: () => this.testFrance(),
         currentInfo: () =>
           console.log(
@@ -90,6 +96,7 @@ export class TarifOdooComponent implements OnInit {
         '🧪 Méthodes de test disponibles:',
         '\n- testPricing.morocco() : Tester prix Maroc',
         '\n- testPricing.usa() : Tester prix USA',
+        '\n- testPricing.canada() : Tester prix Canada',
         '\n- testPricing.france() : Tester prix France',
         '\n- testPricing.currentInfo() : Info pays actuel',
         '\n- testPricing.prices() : Afficher tous les prix actuels'
@@ -112,6 +119,11 @@ export class TarifOdooComponent implements OnInit {
     this.geolocationService.forceCountry('US');
   }
 
+  testCanada(): void {
+    console.log('🇨🇦 Test: Simulation utilisateur canadien');
+    this.geolocationService.forceCountry('CA');
+  }
+
   testFrance(): void {
     console.log('🇫🇷 Test: Simulation utilisateur français');
     this.geolocationService.forceCountry('FR');
@@ -124,6 +136,7 @@ export class TarifOdooComponent implements OnInit {
     console.log(`getPrice(${packageKey}) appelée avec:`, {
       isMoroccanUser: this.isMoroccanUser,
       isNorthAmericanUser: this.isNorthAmericanUser,
+      isCanadianUser: this.isCanadianUser,
       pricing: pricing,
     });
 
@@ -133,6 +146,17 @@ export class TarifOdooComponent implements OnInit {
         `${pricing.madWithTva.toLocaleString('fr-FR')} MAD`
       );
       return `${pricing.madWithTva.toLocaleString('fr-FR')} MAD`;
+    } else if (this.isCanadianUser) {
+      const cadAmount = pricing.usd * this.usdToCadRate;
+      const formattedCad = cadAmount.toLocaleString('en-CA', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+      console.log(
+        `Retour prix CAD pour ${packageKey}:`,
+        `${formattedCad} CAD`
+      );
+      return `${formattedCad} CAD`;
     } else if (this.isNorthAmericanUser) {
       console.log(
         `Retour prix USD pour ${packageKey}:`,

@@ -8,6 +8,8 @@ export interface CountryInfo {
   isEuroZone: boolean;
   isMorocco: boolean;
   isNorthAmerica: boolean;
+  isUnitedStates: boolean;
+  isCanada: boolean;
 }
 
 @Injectable({
@@ -20,6 +22,8 @@ export class GeolocationService {
     isEuroZone: true,
     isMorocco: false,
     isNorthAmerica: false,
+    isUnitedStates: false,
+    isCanada: false,
   });
 
   public countryInfo$ = this.countryInfoSubject.asObservable();
@@ -38,12 +42,14 @@ export class GeolocationService {
           this.normalizeCountryCode(data.country_code) ||
           this.normalizeCountryCode(data.country_code_iso3) ||
           this.normalizeCountryCode(data.country_name) ||
-          this.normalizeCountryCode(data.country);
+          this.normalizeCountryCode(data.country) ||
+          this.normalizeCountryCode(data.currency);
         console.log('Code pays détecté:', countryCode);
         console.log('country_code:', data.country_code);
         console.log('country_code_iso3:', data.country_code_iso3);
         console.log('country_name:', data.country_name);
         console.log('country:', data.country);
+        console.log('currency:', data.currency);
 
         if (!countryCode) {
           console.error('Aucun code pays trouvé dans la réponse API');
@@ -78,6 +84,8 @@ export class GeolocationService {
 
     const isEuroZone = euroZoneRegex.test(normalizedCode);
     const isMorocco = normalizedCode === 'MA';
+    const isUnitedStates = normalizedCode === 'US';
+    const isCanada = normalizedCode === 'CA';
     const isNorthAmerica = northAmericaRegex.test(normalizedCode);
 
     console.log('Tests de détection:', {
@@ -91,9 +99,12 @@ export class GeolocationService {
     if (isMorocco) {
       currency = 'MAD';
       console.log('Utilisateur marocain détecté - devise: MAD');
-    } else if (isNorthAmerica) {
+    } else if (isCanada) {
+      currency = 'CAD';
+      console.log('Utilisateur canadien détecté - devise: CAD');
+    } else if (isUnitedStates) {
       currency = 'USD';
-      console.log('Utilisateur nord-américain détecté - devise: USD');
+      console.log('Utilisateur américain détecté - devise: USD');
     } else if (isEuroZone) {
       currency = 'EUR';
       console.log('Utilisateur de la zone euro détecté - devise: EUR');
@@ -108,6 +119,8 @@ export class GeolocationService {
       isEuroZone,
       isMorocco,
       isNorthAmerica,
+      isUnitedStates,
+      isCanada,
     };
 
     console.log('Résultat getCountryInfo:', result);
@@ -124,6 +137,10 @@ export class GeolocationService {
 
   isNorthAmericanUser(): boolean {
     return this.getCurrentCountryInfo().isNorthAmerica;
+  }
+
+  isCanadianUser(): boolean {
+    return this.getCurrentCountryInfo().isCanada;
   }
 
   // Méthode pour forcer un pays pour les tests
@@ -183,6 +200,9 @@ export class GeolocationService {
 
     const nameToIso2: Record<string, string> = {
       MOROCCO: 'MA',
+      MAROC: 'MA',
+      'KINGDOM OF MOROCCO': 'MA',
+      'ROYAUME DU MAROC': 'MA',
       'UNITED STATES': 'US',
       'UNITED STATES OF AMERICA': 'US',
       CANADA: 'CA',
@@ -190,6 +210,16 @@ export class GeolocationService {
 
     if (nameToIso2[upperCode]) {
       return nameToIso2[upperCode];
+    }
+
+    const currencyToIso2: Record<string, string> = {
+      MAD: 'MA',
+      USD: 'US',
+      CAD: 'CA',
+    };
+
+    if (currencyToIso2[upperCode]) {
+      return currencyToIso2[upperCode];
     }
 
     return null;
