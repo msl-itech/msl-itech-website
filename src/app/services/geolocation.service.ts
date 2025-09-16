@@ -53,8 +53,7 @@ export class GeolocationService {
 
         if (!countryCode) {
           console.error('Aucun code pays trouvé dans la réponse API');
-          const defaultCountryInfo = this.getCountryInfo('FR');
-          this.countryInfoSubject.next(defaultCountryInfo);
+          this.setDefaultCountry();
           return;
         }
 
@@ -66,11 +65,80 @@ export class GeolocationService {
           'Erreur lors de la géolocalisation, affichage par défaut en euros.',
           error
         );
-        // En cas d'erreur, définir un pays par défaut (France)
-        const defaultCountryInfo = this.getCountryInfo('FR');
-        this.countryInfoSubject.next(defaultCountryInfo);
+        this.getUserLocationFallback();
       }
     );
+  }
+
+  private getUserLocationFallback() {
+    this.http.get<any>('https://ipwho.is/').subscribe(
+      (data) => {
+        console.log('Réponse API fallback géolocalisation (ipwho.is):', data);
+
+        if (!data || data.success === false) {
+          console.error('Fallback ipwho.is: réponse invalide, on continue.');
+          this.getUserLocationFallbackCountryIs();
+          return;
+        }
+
+        const countryCode =
+          this.normalizeCountryCode(data?.country_code) ||
+          this.normalizeCountryCode(data?.country) ||
+          this.normalizeCountryCode(data?.currency?.code);
+
+        if (!countryCode) {
+          console.error(
+            'Fallback ipwho.is: code pays absent, on essaie un autre service.'
+          );
+          this.getUserLocationFallbackCountryIs();
+          return;
+        }
+
+        const countryInfo = this.getCountryInfo(countryCode);
+        console.log('Informations pays via ipwho.is:', countryInfo);
+        this.countryInfoSubject.next(countryInfo);
+      },
+      (fallbackError) => {
+        console.error(
+          'Erreur fallback ipwho.is, on tente une autre API.',
+          fallbackError
+        );
+        this.getUserLocationFallbackCountryIs();
+      }
+    );
+  }
+
+  private getUserLocationFallbackCountryIs() {
+    this.http.get<any>('https://api.country.is/').subscribe(
+      (data) => {
+        console.log('Réponse API fallback géolocalisation (country.is):', data);
+        const countryCode = this.normalizeCountryCode(data?.country);
+
+        if (!countryCode) {
+          console.error(
+            'Fallback country.is: code pays absent, utilisation du défaut.'
+          );
+          this.setDefaultCountry();
+          return;
+        }
+
+        const countryInfo = this.getCountryInfo(countryCode);
+        console.log('Informations pays via country.is:', countryInfo);
+        this.countryInfoSubject.next(countryInfo);
+      },
+      (fallbackError) => {
+        console.error(
+          'Erreur fallback country.is, affichage par défaut en euros.',
+          fallbackError
+        );
+        this.setDefaultCountry();
+      }
+    );
+  }
+
+  private setDefaultCountry() {
+    const defaultCountryInfo = this.getCountryInfo('FR');
+    this.countryInfoSubject.next(defaultCountryInfo);
   }
 
   private getCountryInfo(countryCode: string | null | undefined): CountryInfo {
