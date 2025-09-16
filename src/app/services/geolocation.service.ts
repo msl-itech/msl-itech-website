@@ -34,9 +34,15 @@ export class GeolocationService {
         console.log('Réponse API géolocalisation complète:', data);
 
         // Essayer country_code en premier, puis country comme fallback
-        const countryCode = data.country_code || data.country;
+        const countryCode =
+          this.normalizeCountryCode(data.country_code) ||
+          this.normalizeCountryCode(data.country_code_iso3) ||
+          this.normalizeCountryCode(data.country_name) ||
+          this.normalizeCountryCode(data.country);
         console.log('Code pays détecté:', countryCode);
         console.log('country_code:', data.country_code);
+        console.log('country_code_iso3:', data.country_code_iso3);
+        console.log('country_name:', data.country_name);
         console.log('country:', data.country);
 
         if (!countryCode) {
@@ -63,15 +69,16 @@ export class GeolocationService {
   }
 
   private getCountryInfo(countryCode: string): CountryInfo {
-    console.log('getCountryInfo appelée avec:', countryCode);
+    const normalizedCode = (countryCode || '').toUpperCase();
+    console.log('getCountryInfo appelée avec:', normalizedCode);
 
     const euroZoneRegex =
       /^(FR|DE|ES|IT|BE|NL|LU|IE|PT|GR|AT|FI|SK|SI|LV|LT|EE|CY|MT)$/;
     const northAmericaRegex = /^(US|CA)$/; // États-Unis et Canada
 
-    const isEuroZone = euroZoneRegex.test(countryCode);
-    const isMorocco = countryCode === 'MA';
-    const isNorthAmerica = northAmericaRegex.test(countryCode);
+    const isEuroZone = euroZoneRegex.test(normalizedCode);
+    const isMorocco = normalizedCode === 'MA';
+    const isNorthAmerica = northAmericaRegex.test(normalizedCode);
 
     console.log('Tests de détection:', {
       countryCode,
@@ -96,7 +103,7 @@ export class GeolocationService {
     }
 
     const result = {
-      countryCode,
+      countryCode: normalizedCode,
       currency,
       isEuroZone,
       isMorocco,
@@ -140,9 +147,51 @@ export class GeolocationService {
     };
 
     console.log('Simulation avec données:', moroccanData);
-    const countryCode = moroccanData.country_code || moroccanData.country;
+    const countryCode =
+      this.normalizeCountryCode(moroccanData.country_code) ||
+      this.normalizeCountryCode(moroccanData.country);
     const countryInfo = this.getCountryInfo(countryCode);
     console.log('Résultat simulation Maroc:', countryInfo);
     this.countryInfoSubject.next(countryInfo);
+  }
+
+  private normalizeCountryCode(code: any): string | null {
+    if (!code) {
+      return null;
+    }
+
+    const trimmedCode = String(code).trim();
+    if (!trimmedCode) {
+      return null;
+    }
+
+    if (trimmedCode.length === 2) {
+      return trimmedCode.toUpperCase();
+    }
+
+    const upperCode = trimmedCode.toUpperCase();
+
+    const iso3ToIso2: Record<string, string> = {
+      MAR: 'MA',
+      USA: 'US',
+      CAN: 'CA',
+    };
+
+    if (iso3ToIso2[upperCode]) {
+      return iso3ToIso2[upperCode];
+    }
+
+    const nameToIso2: Record<string, string> = {
+      MOROCCO: 'MA',
+      'UNITED STATES': 'US',
+      'UNITED STATES OF AMERICA': 'US',
+      CANADA: 'CA',
+    };
+
+    if (nameToIso2[upperCode]) {
+      return nameToIso2[upperCode];
+    }
+
+    return null;
   }
 }
