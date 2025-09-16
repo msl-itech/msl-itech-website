@@ -78,7 +78,8 @@ export class TarifOdooComponent implements OnInit {
     if (!pricing) return '';
 
     if (this.isMoroccanUser) {
-      return `${pricing.madWithTva.toLocaleString('fr-FR')} MAD`;
+      const roundedMadWithTva = Math.round(pricing.madWithTva);
+      return `${roundedMadWithTva.toLocaleString('fr-FR')} MAD`;
     } else if (this.isCanadianUser) {
       const cadAmount = pricing.usd * this.usdToCadRate;
       const formattedCad = cadAmount.toLocaleString('en-CA', {
