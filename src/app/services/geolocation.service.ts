@@ -59,7 +59,6 @@ export class GeolocationService {
         }
 
         const countryInfo = this.getCountryInfo(countryCode);
-        console.log('Informations pays calculées:', countryInfo);
         this.countryInfoSubject.next(countryInfo);
       },
       (error) => {
@@ -87,13 +86,6 @@ export class GeolocationService {
     const isUnitedStates = normalizedCode === 'US';
     const isCanada = normalizedCode === 'CA';
     const isNorthAmerica = northAmericaRegex.test(normalizedCode);
-
-    console.log('Tests de détection:', {
-      countryCode,
-      isEuroZone,
-      isMorocco,
-      isNorthAmerica,
-    });
 
     let currency = 'EUR'; // Défaut pour l'Europe
     if (isMorocco) {
@@ -145,15 +137,12 @@ export class GeolocationService {
 
   // Méthode pour forcer un pays pour les tests
   forceCountry(countryCode: string): void {
-    console.log('Forçage du pays à:', countryCode);
     const countryInfo = this.getCountryInfo(countryCode);
-    console.log('Informations pays forcées:', countryInfo);
     this.countryInfoSubject.next(countryInfo);
   }
 
   // Méthode pour simuler la réponse API complète du Maroc
   simulateMorocco(): void {
-    console.log('Simulation complète du Maroc');
     const moroccanData = {
       ip: '160.177.149.137',
       country: 'MA',
