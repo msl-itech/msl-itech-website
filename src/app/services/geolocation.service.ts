@@ -68,8 +68,8 @@ export class GeolocationService {
     );
   }
 
-  private getCountryInfo(countryCode: string): CountryInfo {
-    const normalizedCode = (countryCode || '').toUpperCase();
+  private getCountryInfo(countryCode: string | null | undefined): CountryInfo {
+    const normalizedCode = (countryCode ?? '').trim().toUpperCase();
     console.log('getCountryInfo appelée avec:', normalizedCode);
 
     const euroZoneRegex =
