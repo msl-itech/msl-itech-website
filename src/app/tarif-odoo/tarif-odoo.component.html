@@ -421,6 +421,29 @@
           <tr>
             <td class="text-start table-light">
               {{
+                "PAGES.TARIF_ODOO.PACKAGES.FEATURES.NEW_CLIENT_PRICE"
+                  | translate
+              }}
+            </td>
+            <td class="bg-warning-subtle text-white p-3">
+              <strong>{{ getNewClientPrice("4h") }}</strong>
+            </td>
+            <td class="bg-primary-subtle text-white p-3">
+              <strong>{{ getNewClientPrice("10h") }}</strong>
+            </td>
+            <td class="bg-danger-subtle text-white p-3">
+              <strong>{{ getNewClientPrice("25h") }}</strong>
+            </td>
+            <td class="bg-success-subtle text-white p-3">
+              <strong>{{ getNewClientPrice("50h") }}</strong>
+            </td>
+            <td class="bg-info-subtle text-white p-3">
+              <strong>{{ getNewClientPrice("100h") }}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-start table-light">
+              {{
                 "PAGES.TARIF_ODOO.PACKAGES.FEATURES.OLD_CLIENT_PRICE"
                   | translate
               }}
