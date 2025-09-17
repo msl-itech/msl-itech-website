@@ -691,7 +691,8 @@
           "AUTOMATION": "Automatisation",
           "CUSTOM_DEVELOPMENT": "Développement sur-mesure",
           "MEMBERSHIP_OFFER": "Offre d'adhésion",
-          "OLD_CLIENT_PRICE": "Prix ancien client"
+          "OLD_CLIENT_PRICE": "Prix ancien client",
+          "NEW_CLIENT_PRICE": "Prix nouveau client"
         },
         "NOTES": {
           "DATA_CLEANING": "* Nettoyage de données: le nettoyage est fait par vous pour ce cas",

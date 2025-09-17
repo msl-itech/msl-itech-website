@@ -665,7 +665,8 @@
           "AUTOMATION": "Automation",
           "CUSTOM_DEVELOPMENT": "Custom Development",
           "MEMBERSHIP_OFFER": "Membership Offer",
-          "OLD_CLIENT_PRICE": "Existing Client Price"
+          "OLD_CLIENT_PRICE": "Existing Client Price",
+          "NEW_CLIENT_PRICE": "New Client Price"
         },
         "NOTES": {
           "DATA_CLEANING": "* Data cleaning: cleaning is done by you in this case",
