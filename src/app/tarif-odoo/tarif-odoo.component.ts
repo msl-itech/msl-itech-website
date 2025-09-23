@@ -29,7 +29,7 @@ export class TarifOdooComponent implements OnInit {
   newClientPricing: { [key: string]: NewClientPricing } = {
     '4h': {
       usd: 190,
-      mad: 1710,
+      mad: 1539,
     },
     '10h': {
       usd: 291.67,

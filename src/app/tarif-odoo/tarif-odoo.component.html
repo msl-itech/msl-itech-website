@@ -418,52 +418,64 @@
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
           </tr>
-          <tr class="table-warning border-warning border-2">
-            <td class="text-start table-warning">
-              <strong>
-              {{
+          <tr class="table-light">
+            <td class="text-start">
+              <strong>{{
                 "PAGES.TARIF_ODOO.PACKAGES.FEATURES.NEW_CLIENT_PRICE"
                   | translate
-              }}
-              </strong>
+              }}</strong>
+              <span class="text-muted">
+                /
+                {{
+                  "PAGES.TARIF_ODOO.PACKAGES.FEATURES.OLD_CLIENT_PRICE"
+                    | translate
+                }}</span
+              >
             </td>
-            <td class="bg-warning text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("4h") }}</strong>
+            <td class="p-3">
+              <div
+                class="d-flex justify-content-center align-items-baseline gap-2"
+              >
+                <strong>{{ getNewClientPrice("4h") }}</strong>
+                <span class="text-muted">/</span>
+                <span class="text-muted">{{ getPrice("4h") }}</span>
+              </div>
             </td>
-            <td class="bg-primary text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("10h") }}</strong>
+            <td class="p-3">
+              <div
+                class="d-flex justify-content-center align-items-baseline gap-2"
+              >
+                <strong>{{ getNewClientPrice("10h") }}</strong>
+                <span class="text-muted">/</span>
+                <span class="text-muted">{{ getPrice("10h") }}</span>
+              </div>
             </td>
-            <td class="bg-danger text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("25h") }}</strong>
+            <td class="p-3">
+              <div
+                class="d-flex justify-content-center align-items-baseline gap-2"
+              >
+                <strong>{{ getNewClientPrice("25h") }}</strong>
+                <span class="text-muted">/</span>
+                <span class="text-muted">{{ getPrice("25h") }}</span>
+              </div>
             </td>
-            <td class="bg-success text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("50h") }}</strong>
+            <td class="p-3">
+              <div
+                class="d-flex justify-content-center align-items-baseline gap-2"
+              >
+                <strong>{{ getNewClientPrice("50h") }}</strong>
+                <span class="text-muted">/</span>
+                <span class="text-muted">{{ getPrice("50h") }}</span>
+              </div>
             </td>
-            <td class="bg-info text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("100h") }}</strong>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-start table-light">
-              {{
-                "PAGES.TARIF_ODOO.PACKAGES.FEATURES.OLD_CLIENT_PRICE"
-                  | translate
-              }}
-            </td>
-            <td class="bg-warning-subtle text-white p-3">
-              <strong>{{ getPrice("4h") }}</strong>
-            </td>
-            <td class="bg-primary-subtle text-white p-3">
-              <strong>{{ getPrice("10h") }}</strong>
-            </td>
-            <td class="bg-danger-subtle text-white p-3">
-              <strong>{{ getPrice("25h") }}</strong>
-            </td>
-            <td class="bg-success-subtle text-white p-3">
-              <strong>{{ getPrice("50h") }}</strong>
-            </td>
-            <td class="bg-info-subtle text-white p-3">
-              <strong>{{ getPrice("100h") }}</strong>
+            <td class="p-3">
+              <div
+                class="d-flex justify-content-center align-items-baseline gap-2"
+              >
+                <strong>{{ getNewClientPrice("100h") }}</strong>
+                <span class="text-muted">/</span>
+                <span class="text-muted">{{ getPrice("100h") }}</span>
+              </div>
             </td>
           </tr>
         </tbody>
