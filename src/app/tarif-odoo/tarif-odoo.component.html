@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <!-- Section Pourquoi choisir MSL Itech -->
+  <!-- Section Pourquoi choisir MSL-Itech -->
   <div class="container my-5">
     <div class="row align-items-center">
       <div class="col-md-6 order-md-2 text-center" data-aos="fade-left">
@@ -418,52 +418,61 @@
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
           </tr>
-          <tr class="table-warning border-warning border-2">
-            <td class="text-start table-warning">
-              <strong>
-              {{
+          <tr class="table-success bg-opacity-25">
+            <td class="text-start">
+              <strong>{{
                 "PAGES.TARIF_ODOO.PACKAGES.FEATURES.NEW_CLIENT_PRICE"
                   | translate
-              }}
-              </strong>
+              }}</strong>
+              <small class="badge bg-primary ms-2">New</small>
             </td>
-            <td class="bg-warning text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("4h") }}</strong>
+            <td class="p-3">
+              <strong class="text-success">{{
+                getNewClientPrice("4h")
+              }}</strong>
             </td>
-            <td class="bg-primary text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("10h") }}</strong>
+            <td class="p-3">
+              <strong class="text-success">{{
+                getNewClientPrice("10h")
+              }}</strong>
             </td>
-            <td class="bg-danger text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("25h") }}</strong>
+            <td class="p-3">
+              <strong class="text-success">{{
+                getNewClientPrice("25h")
+              }}</strong>
             </td>
-            <td class="bg-success text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("50h") }}</strong>
+            <td class="p-3">
+              <strong class="text-success">{{
+                getNewClientPrice("50h")
+              }}</strong>
             </td>
-            <td class="bg-info text-white p-3 border-warning">
-              <strong>{{ getNewClientPrice("100h") }}</strong>
+            <td class="p-3">
+              <strong class="text-success">{{
+                getNewClientPrice("100h")
+              }}</strong>
             </td>
           </tr>
-          <tr>
-            <td class="text-start table-light">
-              {{
+          <tr class="table-light">
+            <td class="text-start">
+              <strong>{{
                 "PAGES.TARIF_ODOO.PACKAGES.FEATURES.OLD_CLIENT_PRICE"
                   | translate
-              }}
+              }}</strong>
             </td>
-            <td class="bg-warning-subtle text-white p-3">
-              <strong>{{ getPrice("4h") }}</strong>
+            <td class="p-3">
+              <span class="text-muted">{{ getPrice("4h") }}</span>
             </td>
-            <td class="bg-primary-subtle text-white p-3">
-              <strong>{{ getPrice("10h") }}</strong>
+            <td class="p-3">
+              <span class="text-muted">{{ getPrice("10h") }}</span>
             </td>
-            <td class="bg-danger-subtle text-white p-3">
-              <strong>{{ getPrice("25h") }}</strong>
+            <td class="p-3">
+              <span class="text-muted">{{ getPrice("25h") }}</span>
             </td>
-            <td class="bg-success-subtle text-white p-3">
-              <strong>{{ getPrice("50h") }}</strong>
+            <td class="p-3">
+              <span class="text-muted">{{ getPrice("50h") }}</span>
             </td>
-            <td class="bg-info-subtle text-white p-3">
-              <strong>{{ getPrice("100h") }}</strong>
+            <td class="p-3">
+              <span class="text-muted">{{ getPrice("100h") }}</span>
             </td>
           </tr>
         </tbody>
