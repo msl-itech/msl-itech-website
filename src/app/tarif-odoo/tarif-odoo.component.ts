@@ -33,7 +33,7 @@ export class TarifOdooComponent implements OnInit {
     },
     '10h': {
       usd: 291.67,
-      mad: 3500,
+      mad: 3825,
     },
     '25h': {
       usd: 977,
