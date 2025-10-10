@@ -129,15 +129,15 @@ export class TarifOdooComponent implements OnInit {
       // Prix européens pour clients existants
       switch (packageKey) {
         case '4h':
-          return '171 €';
+          return '400 €';
         case '10h':
-          return '425 €';
+          return '800 €';
         case '25h':
-          return '879 €';
+          return '1.750 €';
         case '50h':
-          return '1.712€';
+          return '3.200 €';
         case '100h':
-          return '3.058 €';
+          return '6.000 €';
         default:
           return '';
       }
@@ -163,15 +163,15 @@ export class TarifOdooComponent implements OnInit {
       // Prix européens pour les nouveaux clients (anciens prix du système)
       switch (packageKey) {
         case '4h':
-          return '146 €';
+          return '350 €';
         case '10h':
-          return '361 €';
+          return '750 €';
         case '25h':
-          return '747€';
+          return '1.550 €';
         case '50h':
-          return '1.455€';
+          return '2.750 €';
         case '100h':
-          return '2.650 €';
+          return '5.000 €';
         default:
           return '';
       }
