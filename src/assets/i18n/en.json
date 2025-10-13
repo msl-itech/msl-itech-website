@@ -637,14 +637,16 @@
           "STANDARD": "Standard",
           "ADVANCED": "Advanced",
           "PREMIUM": "Premium",
-          "VIP": "VIP"
+          "VIP": "VIP",
+          "ELITE": "Elite"
         },
         "TOOLTIPS": {
           "ESSENTIAL": "The basic solution to get started with Odoo, offering essential features for efficient management.",
           "STANDARD": "A complete offer to manage your key processes with more flexibility and optimization.",
           "ADVANCED": "Advanced features for more efficient processes and better operational control.",
           "PREMIUM": "A premium solution for optimized management, with powerful tools adapted to your specific needs.",
-          "VIP": "The high-end option, offering complete customization and dedicated support for optimal business management."
+          "VIP": "The high-end option, offering complete customization and dedicated support for optimal business management.",
+          "ELITE": "Custom solution for the largest companies."
         },
         "RECOMMENDED_FOR": {
           "TITLE": "Recommended for:",
@@ -652,7 +654,8 @@
           "STANDARD": "Discover Odoo",
           "ADVANCED": "Boost your activity",
           "PREMIUM": "Custom solutions",
-          "VIP": "Optimal Performance"
+          "VIP": "Optimal Performance",
+          "ELITE": "Vision 360"
         },
         "FEATURES": {
           "PROJECT_MANAGEMENT": "Project Management",

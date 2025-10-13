@@ -47,6 +47,10 @@ export class TarifOdooComponent implements OnInit {
       usd: 3400,
       mad: 27540,
     },
+    '200h': {
+      usd: 5350,
+      mad: 43335,
+    },
   };
 
   // Définition des prix pour les clients existants (nouveaux prix fournis)
@@ -80,6 +84,12 @@ export class TarifOdooComponent implements OnInit {
       mad: 32400.0,
       madWithDiscount: 32400.0, // Prix direct
       madWithTva: 32400.0, // Prix direct
+    },
+    '200h': {
+      usd: 6668.0,
+      mad: 54020.0,
+      madWithDiscount: 54020.0, // Prix direct
+      madWithTva: 54020.0, // Prix direct
     },
   };
 
@@ -131,13 +141,15 @@ export class TarifOdooComponent implements OnInit {
         case '4h':
           return '400 €';
         case '10h':
-          return '800 €';
+          return '900 €';
         case '25h':
-          return '1.750 €';
+          return '2.000 €';
         case '50h':
-          return '3.200 €';
+          return '3.500 €';
         case '100h':
           return '6.000 €';
+        case '200h':
+          return '10.000 €';
         default:
           return '';
       }
@@ -163,15 +175,17 @@ export class TarifOdooComponent implements OnInit {
       // Prix européens pour les nouveaux clients (anciens prix du système)
       switch (packageKey) {
         case '4h':
-          return '350 €';
+          return '400 €';
         case '10h':
-          return '750 €';
+          return '900 €';
         case '25h':
-          return '1.550 €';
+          return '2.000 €';
         case '50h':
-          return '2.750 €';
+          return '3.500 €';
         case '100h':
-          return '5.000 €';
+          return '5.400 €';
+        case '200h':
+          return '8.500 €';
         default:
           return '';
       }

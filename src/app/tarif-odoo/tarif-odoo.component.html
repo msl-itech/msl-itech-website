@@ -194,6 +194,17 @@
                 <i class="fas fa-info-circle"></i>
               </span>
             </th>
+            <th scope="col" class="bg-dark-subtle">
+              {{ "PAGES.TARIF_ODOO.PACKAGES.PACKAGES_TYPES.ELITE" | translate }}
+              <span
+                class="info-icon"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                [title]="'PAGES.TARIF_ODOO.PACKAGES.TOOLTIPS.ELITE' | translate"
+              >
+                <i class="fas fa-info-circle"></i>
+              </span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -227,6 +238,9 @@
             <td>
               {{ "PAGES.TARIF_ODOO.PACKAGES.RECOMMENDED_FOR.VIP" | translate }}
             </td>
+            <td>
+              {{ "PAGES.TARIF_ODOO.PACKAGES.RECOMMENDED_FOR.ELITE" | translate }}
+            </td>
           </tr>
           <tr>
             <td class="text-start">
@@ -237,6 +251,7 @@
             <td><strong>25 heures</strong></td>
             <td><strong>50 heures</strong></td>
             <td><strong>100 heures</strong></td>
+            <td><strong>200 heures</strong></td>
           </tr>
           <tr>
             <td class="text-start">
@@ -256,6 +271,9 @@
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
           </tr>
           <tr>
             <td class="text-start">
@@ -263,6 +281,9 @@
                 "PAGES.TARIF_ODOO.PACKAGES.FEATURES.MULTICHANNEL_SUPPORT"
                   | translate
               }}
+            </td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
@@ -299,6 +320,9 @@
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
           </tr>
           <tr>
             <td class="text-start">
@@ -307,6 +331,9 @@
               }}
             </td>
             <td></td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
@@ -335,6 +362,9 @@
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
           </tr>
           <tr>
             <td class="text-start">
@@ -345,6 +375,9 @@
             </td>
             <td></td>
             <td></td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
@@ -371,6 +404,9 @@
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
           </tr>
           <tr>
             <td class="text-start">
@@ -379,6 +415,9 @@
             <td></td>
             <td></td>
             <td></td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
@@ -400,6 +439,9 @@
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
           </tr>
           <tr>
             <td class="text-start">
@@ -411,6 +453,9 @@
             <td></td>
             <td></td>
             <td></td>
+            <td>
+              <i class="fas fa-check text-success" aria-label="Disponible"></i>
+            </td>
             <td>
               <i class="fas fa-check text-success" aria-label="Disponible"></i>
             </td>
@@ -451,6 +496,11 @@
                 getNewClientPrice("100h")
               }}</strong>
             </td>
+            <td class="p-3">
+              <strong class="text-success">{{
+                getNewClientPrice("200h")
+              }}</strong>
+            </td>
           </tr>
           <tr class="table-light">
             <td class="text-start">
@@ -473,6 +523,9 @@
             </td>
             <td class="p-3">
               <span class="text-muted">{{ getPrice("100h") }}</span>
+            </td>
+            <td class="p-3">
+              <span class="text-muted">{{ getPrice("200h") }}</span>
             </td>
           </tr>
         </tbody>
