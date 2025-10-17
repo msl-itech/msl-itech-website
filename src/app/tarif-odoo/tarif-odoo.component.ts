@@ -49,7 +49,7 @@ export class TarifOdooComponent implements OnInit {
     },
     '200h': {
       usd: 5350,
-      mad: 43335,
+      mad: 51000,
     },
   };
 
@@ -87,9 +87,9 @@ export class TarifOdooComponent implements OnInit {
     },
     '200h': {
       usd: 6668.0,
-      mad: 54020.0,
-      madWithDiscount: 54020.0, // Prix direct
-      madWithTva: 54020.0, // Prix direct
+      mad: 60000.0,
+      madWithDiscount: 60000.0, // Prix direct
+      madWithTva: 60000.0, // Prix direct
     },
   };
 
