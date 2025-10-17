@@ -439,10 +439,14 @@ img:hover {
   cursor: pointer;
   font-size: 0.9rem;
   color: white;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 }
 
 .info-icon i {
   transition: color 0.2s ease-in-out;
+  display: inline-block;
 }
 
 .info-icon:hover i {
@@ -450,8 +454,15 @@ img:hover {
 }
 
 .table th {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   padding: 1rem;
+  min-width: 140px;
+  vertical-align: middle;
+}
+
+.table thead th {
+  white-space: nowrap;
+  line-height: 1.4;
 }
 
 /* Suppression des traits horizontaux */
@@ -475,24 +486,27 @@ img:hover {
 }
 
 .bg-warning-subtle {
-  background-color: #17a2b8 !important;
-  /* color: #17a2b8; */
+  background: linear-gradient(135deg, #17a2b8, #20c4dd) !important;
 }
 
 .bg-primary-subtle {
-  background-color: #17b817 !important;
+  background: linear-gradient(135deg, #17b817, #28d928) !important;
 }
 
 .bg-danger-subtle {
-  background-color: #d27126 !important;
+  background: linear-gradient(135deg, #d27126, #ff8c42) !important;
 }
 
 .bg-success-subtle {
-  background-color: #b81717 !important;
+  background: linear-gradient(135deg, #b81717, #e22020) !important;
 }
 
 .bg-info-subtle {
-  background: linear-gradient(135deg, #ffd700, #daa520, #b8860b) !important;
+  background: linear-gradient(135deg, #ffd700, #ffed4e, #ffd700) !important;
+}
+
+.bg-dark-subtle {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad, #6c3483) !important;
 }
 
 th {
