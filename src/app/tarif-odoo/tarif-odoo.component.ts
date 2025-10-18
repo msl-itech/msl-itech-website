@@ -26,67 +26,69 @@ export class TarifOdooComponent implements OnInit {
   private readonly usdToCadRate = 1.5;
 
   // Définition des prix pour les nouveaux clients (anciens prix du système)
+  // Prix USD = Prix EUR × 1.10
   newClientPricing: { [key: string]: NewClientPricing } = {
     '4h': {
-      usd: 190,
+      usd: 440, // 400 € × 1.10
       mad: 1539,
     },
     '10h': {
-      usd: 291.67,
+      usd: 990, // 900 € × 1.10
       mad: 3825,
     },
     '25h': {
-      usd: 977,
+      usd: 2200, // 2000 € × 1.10
       mad: 7914,
     },
     '50h': {
-      usd: 1904,
+      usd: 3850, // 3500 € × 1.10
       mad: 15422,
     },
     '100h': {
-      usd: 3400,
+      usd: 5940, // 5400 € × 1.10
       mad: 27540,
     },
     '200h': {
-      usd: 5350,
+      usd: 9350, // 8500 € × 1.10
       mad: 51000,
     },
   };
 
   // Définition des prix pour les clients existants (nouveaux prix fournis)
+  // Prix USD = Prix EUR × 1.10
   packagePricing: { [key: string]: PackagePricing } = {
     '4h': {
-      usd: 223.53,
+      usd: 440, // 400 € × 1.10
       mad: 1811.0,
       madWithDiscount: 1811.0, // Prix direct
       madWithTva: 1811.0, // Prix direct
     },
     '10h': {
-      usd: 350, // Prix non fourni (x dans le tableau)
+      usd: 990, // 900 € × 1.10
       mad: 4500.0,
       madWithDiscount: 4500.0, // Prix direct
       madWithTva: 4500.0, // Prix direct
     },
     '25h': {
-      usd: 1150.0,
+      usd: 2200, // 2000 € × 1.10
       mad: 9315.0,
       madWithDiscount: 9315.0, // Prix direct
       madWithTva: 9315.0, // Prix direct
     },
     '50h': {
-      usd: 2240.0,
+      usd: 3850, // 3500 € × 1.10
       mad: 18144.0,
       madWithDiscount: 18144.0, // Prix direct
       madWithTva: 18144.0, // Prix direct
     },
     '100h': {
-      usd: 4000.0,
+      usd: 6600, // 6000 € × 1.10
       mad: 32400.0,
       madWithDiscount: 32400.0, // Prix direct
       madWithTva: 32400.0, // Prix direct
     },
     '200h': {
-      usd: 6668.0,
+      usd: 11000, // 10000 € × 1.10
       mad: 60000.0,
       madWithDiscount: 60000.0, // Prix direct
       madWithTva: 60000.0, // Prix direct
