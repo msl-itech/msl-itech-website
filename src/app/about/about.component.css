@@ -792,7 +792,7 @@ span {
 .role {
   color: #666;
   font-size: 1.1rem;
-  margin: 0;
+  margin: 0 0 10px 0;
   font-weight: 500;
   line-height: 1.6;
   transition: all 0.3s ease;
@@ -800,6 +800,74 @@ span {
 
 .card-team:hover .role {
   color: #114d5a;
+}
+
+.email-link {
+  display: inline-block;
+  color: #fac83b;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.email-link:hover {
+  color: #114d5a;
+  text-decoration: underline;
+}
+
+.email-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #fac83b 0%, #f0be3d 100%);
+  color: #114d5a;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(250, 200, 59, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.email-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(17, 77, 90, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.email-icon:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.email-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: linear-gradient(135deg, #114d5a 0%, #1a6275 100%);
+  color: #fac83b;
+  box-shadow: 0 8px 25px rgba(17, 77, 90, 0.4);
+}
+
+.email-icon i {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.email-icon:hover i {
+  transform: scale(1.2);
 }
 
 @media (max-width: 1200px) {
