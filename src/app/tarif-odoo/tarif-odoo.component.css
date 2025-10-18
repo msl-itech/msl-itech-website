@@ -486,31 +486,87 @@ img:hover {
 }
 
 .bg-warning-subtle {
-  background: linear-gradient(135deg, #17a2b8, #20c4dd) !important;
+  background: linear-gradient(135deg, #d5653f, #e07856) !important;
 }
 
 .bg-primary-subtle {
-  background: linear-gradient(135deg, #17b817, #28d928) !important;
+  background: linear-gradient(135deg, #5c5b80, #6f6e99) !important;
 }
 
 .bg-danger-subtle {
-  background: linear-gradient(135deg, #d27126, #ff8c42) !important;
+  background: linear-gradient(135deg, #e46f78, #ea8a91) !important;
 }
 
 .bg-success-subtle {
-  background: linear-gradient(135deg, #b81717, #e22020) !important;
+  background: linear-gradient(135deg, #01a09d, #02bbb8) !important;
 }
 
 .bg-info-subtle {
-  background: linear-gradient(135deg, #ffd700, #ffed4e, #ffd700) !important;
+  background: linear-gradient(135deg, #5b899e, #719db0) !important;
 }
 
 .bg-dark-subtle {
-  background: linear-gradient(135deg, #9b59b6, #8e44ad, #6c3483) !important;
+  background: linear-gradient(135deg, #2c3e50, #34495e, #1a252f) !important;
 }
 
 th {
   color: white;
+}
+
+/* Classes pour les icônes colorées par colonne */
+.icon-essential {
+  color: #d5653f !important;
+}
+
+.icon-standard {
+  color: #5c5b80 !important;
+}
+
+.icon-advanced {
+  color: #e46f78 !important;
+}
+
+.icon-premium {
+  color: #01a09d !important;
+}
+
+.icon-vip {
+  color: #5b899e !important;
+}
+
+.icon-elite {
+  color: #2c3e50 !important;
+}
+
+/* Classes pour les fonds de cellules colorés */
+.bg-cell-essential {
+  background: linear-gradient(135deg, #d5653f, #e07856) !important;
+  color: white !important;
+}
+
+.bg-cell-standard {
+  background: linear-gradient(135deg, #5c5b80, #6f6e99) !important;
+  color: white !important;
+}
+
+.bg-cell-advanced {
+  background: linear-gradient(135deg, #e46f78, #ea8a91) !important;
+  color: white !important;
+}
+
+.bg-cell-premium {
+  background: linear-gradient(135deg, #01a09d, #02bbb8) !important;
+  color: white !important;
+}
+
+.bg-cell-vip {
+  background: linear-gradient(135deg, #5b899e, #719db0) !important;
+  color: white !important;
+}
+
+.bg-cell-elite {
+  background: linear-gradient(135deg, #2c3e50, #34495e, #1a252f) !important;
+  color: white !important;
 }
 
 /* Styles améliorés pour les cartes MSL-iTech */

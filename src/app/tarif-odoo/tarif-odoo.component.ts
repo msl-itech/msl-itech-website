@@ -118,7 +118,8 @@ export class TarifOdooComponent implements OnInit {
 
     if (this.isMoroccanUser) {
       const roundedMadWithTva = Math.round(pricing.madWithTva);
-      return `${roundedMadWithTva.toLocaleString('fr-FR')} MAD`;
+      const formattedPrice = roundedMadWithTva.toLocaleString('fr-FR').replace(/\s/g, '.');
+      return `${formattedPrice} MAD`;
     } else if (this.isCanadianUser) {
       if (pricing.usd === 0) {
         return 'x'; // Prix non disponible
@@ -161,7 +162,8 @@ export class TarifOdooComponent implements OnInit {
     if (!pricing) return '';
 
     if (this.isMoroccanUser) {
-      return `${pricing.mad.toLocaleString('fr-FR')} MAD`;
+      const formattedPrice = pricing.mad.toLocaleString('fr-FR').replace(/\s/g, '.');
+      return `${formattedPrice} MAD`;
     } else if (this.isCanadianUser) {
       const cadAmount = pricing.usd * this.usdToCadRate;
       const formattedCad = cadAmount.toLocaleString('en-CA', {
