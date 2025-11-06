@@ -34,6 +34,7 @@ import { SupportComponent } from './support/support.component';
 import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { DevenirPartenaireComponent } from './devenir-partenaire/devenir-partenaire.component';
+import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'sitemap', redirectTo: '/sitemap.xml', pathMatch: 'full' },
@@ -86,6 +87,7 @@ const routes: Routes = [
   { path: 'option-form', component: OptionFormComponent },
   { path: 'smart-alert-order', component: SmartAlertOrderComponent },
   { path: 'devenir-partenaire', component: DevenirPartenaireComponent },
+  { path: 'questionnaire', component: QuestionnaireComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' },
 ];
 @NgModule({

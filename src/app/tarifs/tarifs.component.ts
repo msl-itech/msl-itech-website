@@ -17,6 +17,7 @@ export class TarifsComponent implements OnInit {
   // Prix de base pour la nouvelle interface de comparaison (en EUR)
   basePricesComparison = {
     wp: [900, 2000, 4500], // WordPress : Basique, Pro, Business
+    odoo: [1080, 2400, 5400], // Odoo : Basique, Pro, Business (WordPress +20%)
     js: [3750, 5250, 7500], // JavaScript : Basique, Pro, Business
   };
 
@@ -239,6 +240,14 @@ export class TarifsComponent implements OnInit {
       el.innerHTML = `${formattedPrice}<span class="currency-symbol">${symbol}</span>`;
     });
 
+    // Mettre à jour les prix Odoo
+    document.querySelectorAll('[data-odoo-price]').forEach((el, index) => {
+      const basePrice = this.basePricesComparison.odoo[index];
+      const convertedPrice = Math.round(basePrice * rate);
+      const formattedPrice = this.formatPrice(convertedPrice);
+      el.innerHTML = `${formattedPrice}<span class="currency-symbol">${symbol}</span>`;
+    });
+
     // Mettre à jour les prix JavaScript
     document.querySelectorAll('[data-js-price]').forEach((el, index) => {
       const basePrice = this.basePricesComparison.js[index];
@@ -256,19 +265,10 @@ export class TarifsComponent implements OnInit {
   }
 
   updatePercentageDifferences() {
-    const wpPrices = this.basePricesComparison.wp;
-    const jsPrices = this.basePricesComparison.js;
-
-    const differences = document.querySelectorAll('.price-difference');
-    differences.forEach((el, index) => {
-      const text = el.textContent;
-      if (text && text.includes('vs WordPress')) {
-        const wpPrice = wpPrices[index];
-        const jsPrice = jsPrices[index];
-        const percentage = Math.round(((jsPrice - wpPrice) / wpPrice) * 100);
-        el.textContent = `+${percentage}% vs WordPress`;
-      }
-    });
+    // Ne pas recalculer les pourcentages - ils sont déjà définis correctement dans le HTML
+    // Les prix Odoo sont toujours +20% vs WordPress
+    // Les prix JavaScript varient selon le niveau (Basique, Pro, Business)
+    // Cette méthode n'a plus besoin de faire quoi que ce soit car les pourcentages sont statiques
   }
 
   switchPackage(packageType: string) {

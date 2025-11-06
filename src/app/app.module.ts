@@ -81,6 +81,7 @@ import { ResponsiveImageDirective } from './directives/responsive-image.directiv
 import { PolitiqueConfidentialiteComponent } from './politique-confidentialite/politique-confidentialite.component';
 import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
 import { DevenirPartenaireComponent } from './devenir-partenaire/devenir-partenaire.component';
+import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 
 // Factory function pour le loader de traduction
 export function HttpLoaderFactory(http: HttpClient) {
@@ -145,6 +146,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PolitiqueConfidentialiteComponent,
     CookieBannerComponent,
     DevenirPartenaireComponent,
+    QuestionnaireComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,154 @@
+<div class="questionnaire-container">
+  <!-- 1️⃣ PAGE D'ACCUEIL -->
+  <div class="welcome-screen" *ngIf="currentStep === 'welcome'" [@fadeIn]>
+    <div class="welcome-content">
+      <div class="welcome-icon">
+        <i class="fas fa-compass"></i>
+      </div>
+      <h1 class="welcome-title">Trouvez la solution web parfaite pour vous</h1>
+      <p class="welcome-subtitle">
+        Vous hésitez entre WordPress, Odoo ou une application sur-mesure ?<br />
+        Répondez à 6 questions simples pour découvrir la technologie idéale pour votre projet.
+      </p>
+
+      <div class="welcome-features">
+        <div class="feature-item">
+          <i class="fas fa-clock"></i>
+          <span>2 minutes</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-question-circle"></i>
+          <span>6 questions</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-gift"></i>
+          <span>Résultat instantané</span>
+        </div>
+      </div>
+
+      <button class="btn-start" (click)="startQuestionnaire()">
+        <span>Commencer le test</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
+      <p class="welcome-disclaimer">
+        <i class="fas fa-shield-alt"></i>
+        Aucune donnée n'est collectée sans votre consentement
+      </p>
+    </div>
+  </div>
+
+  <!-- 2️⃣ QUESTIONS -->
+  <div class="questions-screen" *ngIf="currentStep === 'questions'" [@slideAnimation]>
+    <!-- Barre de progression -->
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="getProgress()"></div>
+      </div>
+      <p class="progress-text">Question {{ currentQuestionIndex + 1 }} sur {{ questions.length }}</p>
+    </div>
+
+    <!-- Question actuelle -->
+    <div class="question-container" *ngIf="getCurrentQuestion() as question">
+      <div class="question-header">
+        <h2 class="question-title">{{ question.question }}</h2>
+        <p class="question-objective">{{ question.objective }}</p>
+      </div>
+
+      <!-- Réponses -->
+      <div class="answers-grid">
+        <div
+          class="answer-card"
+          *ngFor="let answer of question.answers; let i = index"
+          [class.selected]="isAnswerSelected(i)"
+          (click)="selectAnswer(i)"
+        >
+          <div class="answer-icon">
+            <i [class]="answer.icon"></i>
+          </div>
+          <div class="answer-text">{{ answer.text }}</div>
+          <div class="answer-check" *ngIf="isAnswerSelected(i)">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="question-navigation">
+        <button
+          class="btn-nav btn-prev"
+          (click)="previousQuestion()"
+          [disabled]="currentQuestionIndex === 0"
+        >
+          <i class="fas fa-arrow-left"></i>
+          <span>Retour</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3️⃣ RÉSULTATS -->
+  <div class="result-screen" *ngIf="currentStep === 'result'" [@fadeIn]>
+    <div class="result-content">
+      <!-- Confetti animation -->
+      <div class="celebration">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+
+      <h1 class="result-title">Votre solution idéale est :</h1>
+
+      <!-- Résultat principal -->
+      <div class="result-main" *ngIf="recommendedResult" [style.border-color]="recommendedResult.color">
+        <div class="result-badge" [style.background-color]="recommendedResult.color">
+          <i [class]="recommendedResult.icon"></i>
+        </div>
+        <h2 class="result-tech-name" [style.color]="recommendedResult.color">
+          {{ recommendedResult.name }}
+        </h2>
+        <div class="result-score">
+          Score de compatibilité : <strong>{{ (recommendedResult.score / 31 * 20).toFixed(1) }}/20</strong>
+        </div>
+        <p class="result-description">{{ recommendedResult.description }}</p>
+
+        <!-- Fonctionnalités -->
+        <div class="result-features">
+          <h3>Ce qui vous convient :</h3>
+          <ul>
+            <li *ngFor="let feature of recommendedResult.features">
+              <i class="fas fa-check-circle"></i>
+              <span>{{ feature }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Prix -->
+        <div class="result-price">
+          <i class="fas fa-tag"></i>
+          <span>{{ recommendedResult.priceRange }}</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="result-actions">
+        <button class="btn-primary" (click)="requestQuote()">
+          <i class="fas fa-paper-plane"></i>
+          <span>Demander un devis gratuit</span>
+        </button>
+        <button class="btn-secondary" (click)="restartQuestionnaire()">
+          <i class="fas fa-redo"></i>
+          <span>Refaire le test</span>
+        </button>
+      </div>
+
+      <!-- Info supplémentaire -->
+      <div class="result-info">
+        <p>
+          <i class="fas fa-info-circle"></i>
+          Nos experts sont là pour vous conseiller et affiner cette recommandation selon vos besoins spécifiques.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
