@@ -36,6 +36,13 @@ export class OdooService {
       );
   }
 
+  updateLead(leadId: number, leadData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/leads/${leadId}`, leadData, { headers: this.headers })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: any) {
     console.error('Une erreur s\'est produite:', error);
     return throwError(() => new Error(error.message || 'Erreur du serveur'));

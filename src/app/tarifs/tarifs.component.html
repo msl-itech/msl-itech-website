@@ -564,6 +564,29 @@
     box-shadow: 0 10px 30px rgba(255, 221, 87, 0.4);
   }
 
+  .btn-questionnaire {
+    background: linear-gradient(135deg, #114d5a, #1a6675);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(17, 77, 90, 0.3);
+  }
+
+  .btn-questionnaire:hover {
+    background: linear-gradient(135deg, #1a6675, #114d5a);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(17, 77, 90, 0.4);
+  }
+
   .image-text-section {
     padding: 80px 0;
   }
@@ -820,6 +843,13 @@
         <p>
           {{ "PAGES.TARIFS.FOUNDATION.DESCRIPTION2" | translate }}
         </p>
+        <div class="mt-4">
+          <a routerLink="/questionnaire" class="btn-questionnaire">
+            <i class="fas fa-compass me-2"></i>
+            {{ "PAGES.TARIFS.FOUNDATION.BUTTON" | translate }}
+            <i class="fas fa-arrow-right ms-2"></i>
+          </a>
+        </div>
       </div>
       <div>
         <img

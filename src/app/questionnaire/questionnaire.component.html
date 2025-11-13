@@ -38,7 +38,82 @@
     </div>
   </div>
 
-  <!-- 2️⃣ QUESTIONS -->
+  <!-- 2️⃣ FORMULAIRE DE CONTACT -->
+  <div class="contact-form-screen" *ngIf="currentStep === 'contact-form'" [@fadeIn]>
+    <div class="contact-form-content">
+      <div class="form-header">
+        <div class="form-icon">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <h2 class="form-title">Avant de commencer...</h2>
+        <p class="form-subtitle">
+          Pour vous accompagner au mieux dans votre projet, merci de nous laisser vos coordonnées.<br />
+          <!-- <strong>Oumnia pourra vous rappeler même si vous ne terminez pas le questionnaire.</strong> -->
+        </p>
+      </div>
+
+      <form class="contact-form" (ngSubmit)="submitContactForm()">
+        <div class="form-group">
+          <label for="name">
+            <i class="fas fa-user"></i>
+            Votre nom complet *
+          </label>
+          <input
+            type="text"
+            id="name"
+            [(ngModel)]="userData.name"
+            name="name"
+            placeholder="Ex: Jean Dupont"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">
+            <i class="fas fa-envelope"></i>
+            Votre adresse email *
+          </label>
+          <input
+            type="email"
+            id="email"
+            [(ngModel)]="userData.email"
+            name="email"
+            placeholder="Ex: jean.dupont@exemple.fr"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">
+            <i class="fas fa-phone"></i>
+            Votre téléphone *
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            [(ngModel)]="userData.phone"
+            name="phone"
+            placeholder="Ex: 06 12 34 56 78"
+            required
+          />
+        </div>
+
+        <div class="form-disclaimer">
+          <i class="fas fa-lock"></i>
+          Vos données sont sécurisées et ne seront utilisées que pour vous recontacter concernant votre projet.
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="isSubmittingContact">
+          <span *ngIf="!isSubmittingContact">Continuer vers le questionnaire</span>
+          <span *ngIf="isSubmittingContact">Enregistrement en cours...</span>
+          <i class="fas fa-arrow-right" *ngIf="!isSubmittingContact"></i>
+          <i class="fas fa-spinner fa-spin" *ngIf="isSubmittingContact"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3️⃣ QUESTIONS -->
   <div class="questions-screen" *ngIf="currentStep === 'questions'" [@slideAnimation]>
     <!-- Barre de progression -->
     <div class="progress-bar-container">
@@ -66,7 +141,10 @@
           <div class="answer-icon">
             <i [class]="answer.icon"></i>
           </div>
-          <div class="answer-text">{{ answer.text }}</div>
+          <div class="answer-content">
+            <div class="answer-text">{{ answer.text }}</div>
+            <div class="answer-description">{{ answer.description }}</div>
+          </div>
           <div class="answer-check" *ngIf="isAnswerSelected(i)">
             <i class="fas fa-check-circle"></i>
           </div>
@@ -87,7 +165,7 @@
     </div>
   </div>
 
-  <!-- 3️⃣ RÉSULTATS -->
+  <!-- 4️⃣ RÉSULTATS -->
   <div class="result-screen" *ngIf="currentStep === 'result'" [@fadeIn]>
     <div class="result-content">
       <!-- Confetti animation -->
