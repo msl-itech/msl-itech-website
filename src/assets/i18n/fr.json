@@ -1878,6 +1878,228 @@
       }
     }
   },
+
+  "QUESTIONNAIRE": {
+    "WELCOME": {
+      "TITLE": "Trouvez la solution web parfaite pour vous",
+      "SUBTITLE": "Vous hésitez entre WordPress, Odoo ou une application sur-mesure ?<br />Répondez à 6 questions simples pour découvrir la technologie idéale pour votre projet.",
+      "FEATURES": {
+        "DURATION": "2 minutes",
+        "QUESTIONS_COUNT": "6 questions",
+        "INSTANT_RESULT": "Résultat instantané"
+      },
+      "START_BUTTON": "Commencer le test",
+      "DISCLAIMER": "Aucune donnée n'est collectée sans votre consentement"
+    },
+    "CONTACT_FORM": {
+      "TITLE": "Avant de commencer...",
+      "SUBTITLE": "Pour vous accompagner au mieux dans votre projet, merci de nous laisser vos coordonnées.",
+      "FIELDS": {
+        "NAME": "Votre nom complet *",
+        "NAME_PLACEHOLDER": "Ex: Jean Dupont",
+        "EMAIL": "Votre adresse email *",
+        "EMAIL_PLACEHOLDER": "Ex: jean.dupont@exemple.fr",
+        "PHONE": "Votre téléphone *",
+        "PHONE_PLACEHOLDER": "Ex: 06 12 34 56 78"
+      },
+      "DISCLAIMER": "Vos données sont sécurisées et ne seront utilisées que pour vous recontacter concernant votre projet.",
+      "SUBMIT_BUTTON": "Continuer vers le questionnaire",
+      "SUBMITTING": "Enregistrement en cours..."
+    },
+    "QUESTIONS": {
+      "PROGRESS": "Question {{current}} sur {{total}}",
+      "Q1": {
+        "QUESTION": "Quel est votre principal objectif ?",
+        "OBJECTIVE": "Déterminer le type de besoin",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Être visible sur Google",
+            "DESC": "Ex: Site vitrine, blog, présentation de services pour attirer des clients via le référencement naturel"
+          },
+          "A2": {
+            "TEXT": "Vendre en ligne / gérer mes devis",
+            "DESC": "Ex: Boutique e-commerce, suivi des commandes, gestion des clients et de la facturation"
+          },
+          "A3": {
+            "TEXT": "Créer une plateforme sur-mesure",
+            "DESC": "Ex: Application métier spécifique, plateforme collaborative, outil avec des fonctionnalités uniques"
+          }
+        }
+      },
+      "Q2": {
+        "QUESTION": "Qui va gérer le contenu du site ?",
+        "OBJECTIVE": "Mesurer autonomie & profil",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Moi-même sans compétence technique",
+            "DESC": "J'ai besoin d'une interface simple pour modifier textes et images sans toucher au code"
+          },
+          "A2": {
+            "TEXT": "Mon équipe commerciale",
+            "DESC": "Mon équipe doit gérer les produits, devis et clients de façon autonome"
+          },
+          "A3": {
+            "TEXT": "Mon équipe technique",
+            "DESC": "Nous avons des développeurs pour maintenir et faire évoluer la plateforme"
+          }
+        }
+      },
+      "Q3": {
+        "QUESTION": "Quel type de croissance visez-vous ?",
+        "OBJECTIVE": "Identifier les priorités stratégiques",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Acquisition rapide de nouveaux clients",
+            "DESC": "Besoin de générer du trafic et des leads rapidement avec un bon référencement naturel"
+          },
+          "A2": {
+            "TEXT": "Optimiser mes processus commerciaux",
+            "DESC": "Améliorer l'efficacité de mon équipe, automatiser les tâches répétitives, gagner du temps"
+          },
+          "A3": {
+            "TEXT": "Innover avec un avantage concurrentiel",
+            "DESC": "Me démarquer avec une solution unique que mes concurrents n'ont pas"
+          }
+        }
+      },
+      "Q4": {
+        "QUESTION": "Souhaitez-vous relier votre site à d'autres outils (CRM, facturation, etc.) ?",
+        "OBJECTIVE": "Vérifier besoin d'intégration",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Non / Peu",
+            "DESC": "Le site est autonome, pas besoin de connexion avec d'autres logiciels métier"
+          },
+          "A2": {
+            "TEXT": "Oui, avec Odoo",
+            "DESC": "J'utilise déjà Odoo ou je veux que tout soit centralisé dans une seule plateforme"
+          },
+          "A3": {
+            "TEXT": "Oui, plusieurs systèmes complexes",
+            "DESC": "Ex: Connexion API avec ERP, systèmes de paiement, bases de données externes, services tiers"
+          }
+        }
+      },
+      "Q5": {
+        "QUESTION": "Quel budget prévoyez-vous pour votre projet web ?",
+        "OBJECTIVE": "Filtrer selon la capacité d'investissement",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Moins de 1 500€",
+            "DESC": "Budget limité, besoin d'une solution économique et rapide à mettre en place"
+          },
+          "A2": {
+            "TEXT": "4 000€ - 5 000€",
+            "DESC": "Budget intermédiaire pour une solution professionnelle avec quelques fonctionnalités avancées"
+          },
+          "A3": {
+            "TEXT": "Plus de 4 000€",
+            "DESC": "Budget confortable pour un projet sur-mesure avec des fonctionnalités complexes et évolutives"
+          }
+        }
+      },
+      "Q6": {
+        "QUESTION": "Quel niveau de personnalisation souhaitez-vous ?",
+        "OBJECTIVE": "Évaluer l'importance du sur-mesure",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Thème standard",
+            "DESC": "Un thème professionnel suffit, l'essentiel est d'être en ligne rapidement"
+          },
+          "A2": {
+            "TEXT": "Personnalisation simple",
+            "DESC": "Adaptation aux couleurs de ma marque, mise en page standard mais personnalisée"
+          },
+          "A3": {
+            "TEXT": "Expérience unique et interactive",
+            "DESC": "Design 100% sur-mesure, animations, parcours utilisateur innovant et différenciant"
+          }
+        }
+      },
+      "NEXT_BUTTON": "Question suivante"
+    },
+    "RESULTS": {
+      "TITLE": "Votre solution recommandée",
+      "COMPATIBILITY_SCORE": "Score de compatibilité : {{score}}/20",
+      "PRICE_FROM": "à partir de {{price}}",
+      "SEE_DETAILS": "Voir les détails",
+      "CONTACT_US": "Nous contacter pour ce projet",
+      "RESTART": "Refaire le test",
+      "OTHER_OPTIONS": "Autres solutions possibles",
+      "PACKAGES": {
+        "BASIC": "Basique",
+        "PROFESSIONAL": "Professionnel",
+        "BUSINESS": "Business"
+      },
+      "WORDPRESS": {
+        "NAME": "WordPress",
+        "TITLE": "Site WordPress",
+        "DESCRIPTION": "Parfait pour être visible rapidement sur Google avec un budget maîtrisé. WordPress est idéal pour les sites vitrines, blogs et PME qui veulent une solution simple et efficace.",
+        "FEATURES": {
+          "F1": "Mise en ligne rapide (2-6 semaines)",
+          "F2": "Gestion autonome du contenu",
+          "F3": "Optimisé pour le référencement SEO",
+          "F4": "Budget accessible (900€ - 4 500€)",
+          "F5": "Grande bibliothèque de thèmes et plugins"
+        },
+        "PRICES": {
+          "BASIC": "900€",
+          "PROFESSIONAL": "2 000€",
+          "BUSINESS": "4 500€"
+        },
+        "PRICE_RANGES": {
+          "BASIC": "900€",
+          "PROFESSIONAL": "900€ - 2 000€",
+          "BUSINESS": "900€ - 4 500€"
+        }
+      },
+      "ODOO": {
+        "NAME": "Odoo Website",
+        "TITLE": "Site Odoo",
+        "DESCRIPTION": "La solution idéale si vous avez besoin d'un site relié à votre gestion (CRM, devis, facturation, e-commerce). Odoo centralise tout votre business dans une seule plateforme.",
+        "FEATURES": {
+          "F1": "Intégration complète avec Odoo CRM/ERP",
+          "F2": "Gestion des devis et factures en ligne",
+          "F3": "E-commerce intégré",
+          "F4": "Suivi clients automatisé",
+          "F5": "Évolutif selon vos besoins"
+        },
+        "PRICES": {
+          "BASIC": "1 080€",
+          "PROFESSIONAL": "2 400€",
+          "BUSINESS": "5 400€"
+        },
+        "PRICE_RANGES": {
+          "BASIC": "1 080€",
+          "PROFESSIONAL": "1 080€ - 2 400€",
+          "BUSINESS": "1 080€ - 5 400€"
+        }
+      },
+      "ANGULAR": {
+        "NAME": "Application Angular",
+        "TITLE": "Application sur-mesure (Angular/React)",
+        "DESCRIPTION": "Pour les projets ambitieux nécessitant une expérience utilisateur exceptionnelle, des fonctionnalités complexes ou une application métier. Solution 100% personnalisée.",
+        "FEATURES": {
+          "F1": "Développement 100% sur-mesure",
+          "F2": "Performance optimale",
+          "F3": "Évolutivité illimitée",
+          "F4": "Intégrations API complexes",
+          "F5": "Expérience utilisateur unique"
+        },
+        "PRICES": {
+          "BASIC": "3 750€",
+          "PROFESSIONAL": "5 250€",
+          "BUSINESS": "7 500€"
+        },
+        "PRICE_RANGES": {
+          "BASIC": "3 750€",
+          "PROFESSIONAL": "3 750€ - 5 250€",
+          "BUSINESS": "3 750€ - 7 500€"
+        }
+      }
+    }
+  },
+
   "COOKIE_BANNER": {
     "TITLE": "Nous utilisons des cookies pour améliorer votre expérience",
     "DESCRIPTION": "Nous souhaitons utiliser des cookies analytiques et fonctionnels pour :",

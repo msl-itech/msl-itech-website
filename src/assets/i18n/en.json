@@ -1857,6 +1857,228 @@
       }
     }
   },
+
+  "QUESTIONNAIRE": {
+    "WELCOME": {
+      "TITLE": "Find the perfect web solution for you",
+      "SUBTITLE": "Are you hesitating between WordPress, Odoo or a custom application?<br />Answer 6 simple questions to discover the ideal technology for your project.",
+      "FEATURES": {
+        "DURATION": "2 minutes",
+        "QUESTIONS_COUNT": "6 questions",
+        "INSTANT_RESULT": "Instant result"
+      },
+      "START_BUTTON": "Start the quiz",
+      "DISCLAIMER": "No data is collected without your consent"
+    },
+    "CONTACT_FORM": {
+      "TITLE": "Before we begin...",
+      "SUBTITLE": "To best support you in your project, please leave us your contact details.",
+      "FIELDS": {
+        "NAME": "Your full name *",
+        "NAME_PLACEHOLDER": "E.g.: John Doe",
+        "EMAIL": "Your email address *",
+        "EMAIL_PLACEHOLDER": "E.g.: john.doe@example.com",
+        "PHONE": "Your phone *",
+        "PHONE_PLACEHOLDER": "E.g.: +1 234 567 8900"
+      },
+      "DISCLAIMER": "Your data is secure and will only be used to contact you about your project.",
+      "SUBMIT_BUTTON": "Continue to questionnaire",
+      "SUBMITTING": "Saving..."
+    },
+    "QUESTIONS": {
+      "PROGRESS": "Question {{current}} of {{total}}",
+      "Q1": {
+        "QUESTION": "What is your main objective?",
+        "OBJECTIVE": "Determine the type of need",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Be visible on Google",
+            "DESC": "E.g.: Showcase website, blog, service presentation to attract customers through natural SEO"
+          },
+          "A2": {
+            "TEXT": "Sell online / manage my quotes",
+            "DESC": "E.g.: E-commerce store, order tracking, customer and billing management"
+          },
+          "A3": {
+            "TEXT": "Create a custom platform",
+            "DESC": "E.g.: Specific business application, collaborative platform, tool with unique features"
+          }
+        }
+      },
+      "Q2": {
+        "QUESTION": "Who will manage the website content?",
+        "OBJECTIVE": "Measure autonomy & profile",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Myself without technical skills",
+            "DESC": "I need a simple interface to modify text and images without touching the code"
+          },
+          "A2": {
+            "TEXT": "My sales team",
+            "DESC": "My team must manage products, quotes and customers autonomously"
+          },
+          "A3": {
+            "TEXT": "My technical team",
+            "DESC": "We have developers to maintain and evolve the platform"
+          }
+        }
+      },
+      "Q3": {
+        "QUESTION": "What type of growth are you targeting?",
+        "OBJECTIVE": "Identify strategic priorities",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Rapid acquisition of new customers",
+            "DESC": "Need to generate traffic and leads quickly with good natural SEO"
+          },
+          "A2": {
+            "TEXT": "Optimize my business processes",
+            "DESC": "Improve my team's efficiency, automate repetitive tasks, save time"
+          },
+          "A3": {
+            "TEXT": "Innovate with a competitive advantage",
+            "DESC": "Stand out with a unique solution that my competitors don't have"
+          }
+        }
+      },
+      "Q4": {
+        "QUESTION": "Do you want to connect your site to other tools (CRM, billing, etc.)?",
+        "OBJECTIVE": "Check integration needs",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "No / Little",
+            "DESC": "The site is autonomous, no need for connection with other business software"
+          },
+          "A2": {
+            "TEXT": "Yes, with Odoo",
+            "DESC": "I already use Odoo or I want everything centralized in one platform"
+          },
+          "A3": {
+            "TEXT": "Yes, multiple complex systems",
+            "DESC": "E.g.: API connection with ERP, payment systems, external databases, third-party services"
+          }
+        }
+      },
+      "Q5": {
+        "QUESTION": "What budget are you planning for your web project?",
+        "OBJECTIVE": "Filter according to investment capacity",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Less than €2,000",
+            "DESC": "Limited budget, need for an economical and quick-to-implement solution"
+          },
+          "A2": {
+            "TEXT": "€2,000 - €5,000",
+            "DESC": "Intermediate budget for a professional solution with some advanced features"
+          },
+          "A3": {
+            "TEXT": "More than €5,000",
+            "DESC": "Comfortable budget for a custom project with complex and scalable features"
+          }
+        }
+      },
+      "Q6": {
+        "QUESTION": "What level of customization do you want?",
+        "OBJECTIVE": "Assess the importance of custom design",
+        "ANSWERS": {
+          "A1": {
+            "TEXT": "Standard theme",
+            "DESC": "A professional theme is enough, the main thing is to be online quickly"
+          },
+          "A2": {
+            "TEXT": "Simple customization",
+            "DESC": "Adaptation to my brand colors, standard but personalized layout"
+          },
+          "A3": {
+            "TEXT": "Unique and interactive experience",
+            "DESC": "100% custom design, animations, innovative and differentiating user journey"
+          }
+        }
+      },
+      "NEXT_BUTTON": "Next question"
+    },
+    "RESULTS": {
+      "TITLE": "Your recommended solution",
+      "COMPATIBILITY_SCORE": "Compatibility score: {{score}}/20",
+      "PRICE_FROM": "from {{price}}",
+      "SEE_DETAILS": "See details",
+      "CONTACT_US": "Contact us for this project",
+      "RESTART": "Retake the quiz",
+      "OTHER_OPTIONS": "Other possible solutions",
+      "PACKAGES": {
+        "BASIC": "Basic",
+        "PROFESSIONAL": "Professional",
+        "BUSINESS": "Business"
+      },
+      "WORDPRESS": {
+        "NAME": "WordPress",
+        "TITLE": "WordPress Website",
+        "DESCRIPTION": "Perfect for being quickly visible on Google with a controlled budget. WordPress is ideal for showcase sites, blogs and SMEs who want a simple and effective solution.",
+        "FEATURES": {
+          "F1": "Rapid deployment (2-6 weeks)",
+          "F2": "Autonomous content management",
+          "F3": "SEO optimized",
+          "F4": "Affordable budget (€900 - €4,500)",
+          "F5": "Large library of themes and plugins"
+        },
+        "PRICES": {
+          "BASIC": "€900",
+          "PROFESSIONAL": "€2,000",
+          "BUSINESS": "€4,500"
+        },
+        "PRICE_RANGES": {
+          "BASIC": "€900",
+          "PROFESSIONAL": "€900 - €2,000",
+          "BUSINESS": "€900 - €4,500"
+        }
+      },
+      "ODOO": {
+        "NAME": "Odoo Website",
+        "TITLE": "Odoo Website",
+        "DESCRIPTION": "The ideal solution if you need a site connected to your management (CRM, quotes, billing, e-commerce). Odoo centralizes all your business in one platform.",
+        "FEATURES": {
+          "F1": "Full integration with Odoo CRM/ERP",
+          "F2": "Online quote and invoice management",
+          "F3": "Integrated e-commerce",
+          "F4": "Automated customer tracking",
+          "F5": "Scalable according to your needs"
+        },
+        "PRICES": {
+          "BASIC": "€1,080",
+          "PROFESSIONAL": "€2,400",
+          "BUSINESS": "€5,400"
+        },
+        "PRICE_RANGES": {
+          "BASIC": "€1,080",
+          "PROFESSIONAL": "€1,080 - €2,400",
+          "BUSINESS": "€1,080 - €5,400"
+        }
+      },
+      "ANGULAR": {
+        "NAME": "Angular Application",
+        "TITLE": "Custom Application (Angular/React)",
+        "DESCRIPTION": "For ambitious projects requiring exceptional user experience, complex features or a business application. 100% personalized solution.",
+        "FEATURES": {
+          "F1": "100% custom development",
+          "F2": "Optimal performance",
+          "F3": "Unlimited scalability",
+          "F4": "Complex API integrations",
+          "F5": "Unique user experience"
+        },
+        "PRICES": {
+          "BASIC": "€3,750",
+          "PROFESSIONAL": "€5,250",
+          "BUSINESS": "€7,500"
+        },
+        "PRICE_RANGES": {
+          "BASIC": "€3,750",
+          "PROFESSIONAL": "€3,750 - €5,250",
+          "BUSINESS": "€3,750 - €7,500"
+        }
+      }
+    }
+  },
+
   "COOKIE_BANNER": {
     "TITLE": "We use cookies to improve your experience",
     "DESCRIPTION": "We would like to use analytical and functional cookies to:",

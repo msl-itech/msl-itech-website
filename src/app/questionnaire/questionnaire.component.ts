@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import confetti from 'canvas-confetti';
 import { OdooService } from '../services/odoo.service';
+import { TranslateService } from '@ngx-translate/core';
 
 // Interfaces
 interface Answer {
@@ -30,6 +31,8 @@ interface Result {
   color: string;
   features: string[];
   priceRange: string;
+  packageLevel?: 'basic' | 'professional' | 'business'; // Niveau de package recommandé
+  packageName?: string; // Nom du package (traduit)
 }
 
 interface UserData {
@@ -82,243 +85,271 @@ export class QuestionnaireComponent implements OnInit {
   recommendedResult: Result | null = null;
   alternativeResults: Result[] = [];
 
-  // Questions du questionnaire
-  questions: Question[] = [
-    {
-      id: 1,
-      question: 'Quel est votre principal objectif ?',
-      objective: 'Déterminer le type de besoin',
-      weight: 3,
-      answers: [
-        {
-          text: 'Être visible sur Google',
-          description: 'Ex: Site vitrine, blog, présentation de services pour attirer des clients via le référencement naturel',
-          icon: 'fas fa-search',
-          technology: 'wordpress',
-          points: 3
-        },
-        {
-          text: 'Vendre en ligne / gérer mes devis',
-          description: 'Ex: Boutique e-commerce, suivi des commandes, gestion des clients et de la facturation',
-          icon: 'fas fa-shopping-cart',
-          technology: 'odoo',
-          points: 3
-        },
-        {
-          text: 'Créer une plateforme sur-mesure',
-          description: 'Ex: Application métier spécifique, plateforme collaborative, outil avec des fonctionnalités uniques',
-          icon: 'fas fa-code',
-          technology: 'angular',
-          points: 3
-        }
-      ]
-    },
-    {
-      id: 2,
-      question: 'Qui va gérer le contenu du site ?',
-      objective: 'Mesurer autonomie & profil',
-      weight: 2,
-      answers: [
-        {
-          text: 'Moi-même sans compétence technique',
-          description: 'J\'ai besoin d\'une interface simple pour modifier textes et images sans toucher au code',
-          icon: 'fas fa-user',
-          technology: 'wordpress',
-          points: 2
-        },
-        {
-          text: 'Mon équipe commerciale',
-          description: 'Mon équipe doit gérer les produits, devis et clients de façon autonome',
-          icon: 'fas fa-users',
-          technology: 'odoo',
-          points: 2
-        },
-        {
-          text: 'Mon équipe technique',
-          description: 'Nous avons des développeurs pour maintenir et faire évoluer la plateforme',
-          icon: 'fas fa-laptop-code',
-          technology: 'angular',
-          points: 2
-        }
-      ]
-    },
-    {
-      id: 3,
-      question: 'Qu\'attendez-vous de votre site ?',
-      objective: 'Identifier les priorités',
-      weight: 2,
-      answers: [
-        {
-          text: 'Attirer des clients / SEO',
-          description: 'Priorité au référencement Google, contenus optimisés, blog et visibilité en ligne',
-          icon: 'fas fa-chart-line',
-          technology: 'wordpress',
-          points: 2
-        },
-        {
-          text: 'Gérer mes ventes et clients',
-          description: 'Centraliser devis, factures, commandes et relation client dans un seul outil',
-          icon: 'fas fa-handshake',
-          technology: 'odoo',
-          points: 2
-        },
-        {
-          text: 'Offrir une expérience interactive unique',
-          description: 'Interface moderne, animations fluides, expérience utilisateur sur-mesure et innovante',
-          icon: 'fas fa-magic',
-          technology: 'angular',
-          points: 2
-        }
-      ]
-    },
-    {
-      id: 4,
-      question: 'Souhaitez-vous relier votre site à d\'autres outils (CRM, facturation, etc.) ?',
-      objective: 'Vérifier besoin d\'intégration',
-      weight: 3,
-      answers: [
-        {
-          text: 'Non / Peu',
-          description: 'Le site est autonome, pas besoin de connexion avec d\'autres logiciels métier',
-          icon: 'fas fa-times-circle',
-          technology: 'wordpress',
-          points: 3
-        },
-        {
-          text: 'Oui, avec Odoo',
-          description: 'J\'utilise déjà Odoo ou je veux que tout soit centralisé dans une seule plateforme',
-          icon: 'fas fa-link',
-          technology: 'odoo',
-          points: 3
-        },
-        {
-          text: 'Oui, plusieurs systèmes complexes',
-          description: 'Ex: Connexion API avec ERP, systèmes de paiement, bases de données externes, services tiers',
-          icon: 'fas fa-network-wired',
-          technology: 'angular',
-          points: 3
-        }
-      ]
-    },
-    {
-      id: 5,
-      question: 'Quel budget prévoyez-vous pour votre projet web ?',
-      objective: 'Filtrer selon la capacité d\'investissement',
-      weight: 1,
-      answers: [
-        {
-          text: 'Moins de 1 000 €',
-          description: 'Budget limité, je cherche une solution économique et rapide à mettre en place',
-          icon: 'fas fa-euro-sign',
-          technology: 'wordpress',
-          points: 1
-        },
-        {
-          text: 'Entre 1 000 € et 3 000 €',
-          description: 'Budget intermédiaire pour une solution complète avec gestion commerciale intégrée',
-          icon: 'fas fa-coins',
-          technology: 'odoo',
-          points: 1
-        },
-        {
-          text: 'Plus de 3 000 €',
-          description: 'Budget conséquent pour un développement sur-mesure et des fonctionnalités avancées',
-          icon: 'fas fa-money-bill-wave',
-          technology: 'angular',
-          points: 1
-        }
-      ]
-    },
-    {
-      id: 6,
-      question: 'Quelle importance accordez-vous à la personnalisation graphique / expérience utilisateur ?',
-      objective: 'Priorité UX / UI',
-      weight: 2,
-      answers: [
-        {
-          text: 'Modèle prêt à l\'emploi',
-          description: 'Un thème professionnel suffit, l\'essentiel est d\'être en ligne rapidement',
-          icon: 'fas fa-layer-group',
-          technology: 'wordpress',
-          points: 2
-        },
-        {
-          text: 'Personnalisation simple',
-          description: 'Adaptation aux couleurs de ma marque, mise en page standard mais personnalisée',
-          icon: 'fas fa-paint-brush',
-          technology: 'odoo',
-          points: 2
-        },
-        {
-          text: 'Expérience unique et interactive',
-          description: 'Design 100% sur-mesure, animations, parcours utilisateur innovant et différenciant',
-          icon: 'fas fa-palette',
-          technology: 'angular',
-          points: 2
-        }
-      ]
-    }
-  ];
+  // Niveau de package basé sur le budget (Question 5)
+  budgetLevel: 'basic' | 'professional' | 'business' = 'basic';
 
-  // Définitions des résultats
-  results: { [key: string]: Result } = {
-    wordpress: {
-      technology: 'wordpress',
-      name: 'WordPress',
-      score: 0,
-      title: 'Site WordPress',
-      description: 'Parfait pour être visible rapidement sur Google avec un budget maîtrisé. WordPress est idéal pour les sites vitrines, blogs et PME qui veulent une solution simple et efficace.',
-      icon: 'fab fa-wordpress',
-      color: '#21759b',
-      features: [
-        'Mise en ligne rapide (2-6 semaines)',
-        'Gestion autonome du contenu',
-        'Optimisé pour le référencement SEO',
-        'Budget accessible (900€ - 4 500€)',
-        'Grande bibliothèque de thèmes et plugins'
-      ],
-      priceRange: 'à partir de 900€'
-    },
-    odoo: {
-      technology: 'odoo',
-      name: 'Odoo Website',
-      score: 0,
-      title: 'Site Odoo',
-      description: 'La solution idéale si vous avez besoin d\'un site relié à votre gestion (CRM, devis, facturation, e-commerce). Odoo centralise tout votre business dans une seule plateforme.',
-      icon: 'fas fa-cube',
-      color: '#714B67',
-      features: [
-        'Intégration complète avec Odoo CRM/ERP',
-        'Gestion des devis et factures en ligne',
-        'E-commerce intégré',
-        'Suivi clients automatisé',
-        'Évolutif selon vos besoins'
-      ],
-      priceRange: 'à partir de 1 080€'
-    },
-    angular: {
-      technology: 'angular',
-      name: 'Application Angular',
-      score: 0,
-      title: 'Application sur-mesure (Angular/React)',
-      description: 'Pour les projets ambitieux nécessitant une expérience utilisateur exceptionnelle, des fonctionnalités complexes ou une application métier. Solution 100% personnalisée.',
-      icon: 'fab fa-angular',
-      color: '#dd0031',
-      features: [
-        'Développement 100% sur-mesure',
-        'Performance optimale',
-        'Évolutivité illimitée',
-        'Intégrations API complexes',
-        'Expérience utilisateur unique'
-      ],
-      priceRange: 'à partir de 3 750€'
-    }
-  };
+  // Questions du questionnaire (chargées dynamiquement depuis les traductions)
+  questions: Question[] = [];
 
-  constructor(private odooService: OdooService) {}
+  // Définitions des résultats (chargées dynamiquement depuis les traductions)
+  results: { [key: string]: Result } = {};
+
+  constructor(
+    private odooService: OdooService,
+    public translate: TranslateService
+  ) {}
 
   ngOnInit() {
-    // Initialisation
+    // Charger les traductions des questions dynamiquement
+    this.loadTranslatedQuestions();
+    this.loadTranslatedResults();
+  }
+
+  // Charger les questions traduites
+  loadTranslatedQuestions() {
+    this.translate.get('QUESTIONNAIRE.QUESTIONS').subscribe((translations: any) => {
+      this.questions = [
+        {
+          id: 1,
+          question: translations.Q1.QUESTION,
+          objective: translations.Q1.OBJECTIVE,
+          weight: 3,
+          answers: [
+            {
+              text: translations.Q1.ANSWERS.A1.TEXT,
+              description: translations.Q1.ANSWERS.A1.DESC,
+              icon: 'fas fa-search',
+              technology: 'wordpress',
+              points: 3
+            },
+            {
+              text: translations.Q1.ANSWERS.A2.TEXT,
+              description: translations.Q1.ANSWERS.A2.DESC,
+              icon: 'fas fa-shopping-cart',
+              technology: 'odoo',
+              points: 3
+            },
+            {
+              text: translations.Q1.ANSWERS.A3.TEXT,
+              description: translations.Q1.ANSWERS.A3.DESC,
+              icon: 'fas fa-code',
+              technology: 'angular',
+              points: 3
+            }
+          ]
+        },
+        {
+          id: 2,
+          question: translations.Q2.QUESTION,
+          objective: translations.Q2.OBJECTIVE,
+          weight: 2,
+          answers: [
+            {
+              text: translations.Q2.ANSWERS.A1.TEXT,
+              description: translations.Q2.ANSWERS.A1.DESC,
+              icon: 'fas fa-user',
+              technology: 'wordpress',
+              points: 2
+            },
+            {
+              text: translations.Q2.ANSWERS.A2.TEXT,
+              description: translations.Q2.ANSWERS.A2.DESC,
+              icon: 'fas fa-users',
+              technology: 'odoo',
+              points: 2
+            },
+            {
+              text: translations.Q2.ANSWERS.A3.TEXT,
+              description: translations.Q2.ANSWERS.A3.DESC,
+              icon: 'fas fa-laptop-code',
+              technology: 'angular',
+              points: 2
+            }
+          ]
+        },
+        {
+          id: 3,
+          question: translations.Q3.QUESTION,
+          objective: translations.Q3.OBJECTIVE,
+          weight: 2,
+          answers: [
+            {
+              text: translations.Q3.ANSWERS.A1.TEXT,
+              description: translations.Q3.ANSWERS.A1.DESC,
+              icon: 'fas fa-rocket',
+              technology: 'wordpress',
+              points: 2
+            },
+            {
+              text: translations.Q3.ANSWERS.A2.TEXT,
+              description: translations.Q3.ANSWERS.A2.DESC,
+              icon: 'fas fa-cogs',
+              technology: 'odoo',
+              points: 2
+            },
+            {
+              text: translations.Q3.ANSWERS.A3.TEXT,
+              description: translations.Q3.ANSWERS.A3.DESC,
+              icon: 'fas fa-trophy',
+              technology: 'angular',
+              points: 2
+            }
+          ]
+        },
+        {
+          id: 4,
+          question: translations.Q4.QUESTION,
+          objective: translations.Q4.OBJECTIVE,
+          weight: 3,
+          answers: [
+            {
+              text: translations.Q4.ANSWERS.A1.TEXT,
+              description: translations.Q4.ANSWERS.A1.DESC,
+              icon: 'fas fa-times-circle',
+              technology: 'wordpress',
+              points: 3
+            },
+            {
+              text: translations.Q4.ANSWERS.A2.TEXT,
+              description: translations.Q4.ANSWERS.A2.DESC,
+              icon: 'fas fa-link',
+              technology: 'odoo',
+              points: 3
+            },
+            {
+              text: translations.Q4.ANSWERS.A3.TEXT,
+              description: translations.Q4.ANSWERS.A3.DESC,
+              icon: 'fas fa-network-wired',
+              technology: 'angular',
+              points: 3
+            }
+          ]
+        },
+        {
+          id: 5,
+          question: translations.Q5.QUESTION,
+          objective: translations.Q5.OBJECTIVE,
+          weight: 3,
+          answers: [
+            {
+              text: translations.Q5.ANSWERS.A1.TEXT,
+              description: translations.Q5.ANSWERS.A1.DESC,
+              icon: 'fas fa-piggy-bank',
+              technology: 'wordpress',
+              points: 3
+            },
+            {
+              text: translations.Q5.ANSWERS.A2.TEXT,
+              description: translations.Q5.ANSWERS.A2.DESC,
+              icon: 'fas fa-balance-scale',
+              technology: 'odoo',
+              points: 3
+            },
+            {
+              text: translations.Q5.ANSWERS.A3.TEXT,
+              description: translations.Q5.ANSWERS.A3.DESC,
+              icon: 'fas fa-gem',
+              technology: 'angular',
+              points: 3
+            }
+          ]
+        },
+        {
+          id: 6,
+          question: translations.Q6.QUESTION,
+          objective: translations.Q6.OBJECTIVE,
+          weight: 2,
+          answers: [
+            {
+              text: translations.Q6.ANSWERS.A1.TEXT,
+              description: translations.Q6.ANSWERS.A1.DESC,
+              icon: 'fas fa-layer-group',
+              technology: 'wordpress',
+              points: 2
+            },
+            {
+              text: translations.Q6.ANSWERS.A2.TEXT,
+              description: translations.Q6.ANSWERS.A2.DESC,
+              icon: 'fas fa-paint-brush',
+              technology: 'odoo',
+              points: 2
+            },
+            {
+              text: translations.Q6.ANSWERS.A3.TEXT,
+              description: translations.Q6.ANSWERS.A3.DESC,
+              icon: 'fas fa-palette',
+              technology: 'angular',
+              points: 2
+            }
+          ]
+        }
+      ];
+    });
+  }
+
+  // Charger les résultats traduits
+  loadTranslatedResults() {
+    this.translate.get('QUESTIONNAIRE.RESULTS').subscribe((translations: any) => {
+      this.results = {
+        wordpress: {
+          technology: 'wordpress',
+          name: translations.WORDPRESS.NAME,
+          score: 0,
+          title: translations.WORDPRESS.TITLE,
+          description: translations.WORDPRESS.DESCRIPTION,
+          icon: 'fab fa-wordpress',
+          color: '#21759b',
+          features: [
+            translations.WORDPRESS.FEATURES.F1,
+            translations.WORDPRESS.FEATURES.F2,
+            translations.WORDPRESS.FEATURES.F3,
+            translations.WORDPRESS.FEATURES.F4,
+            translations.WORDPRESS.FEATURES.F5
+          ],
+          priceRange: '', // Sera mis à jour dans calculateResults()
+          packageLevel: 'basic',
+          packageName: ''
+        },
+        odoo: {
+          technology: 'odoo',
+          name: translations.ODOO.NAME,
+          score: 0,
+          title: translations.ODOO.TITLE,
+          description: translations.ODOO.DESCRIPTION,
+          icon: 'fas fa-cube',
+          color: '#714B67',
+          features: [
+            translations.ODOO.FEATURES.F1,
+            translations.ODOO.FEATURES.F2,
+            translations.ODOO.FEATURES.F3,
+            translations.ODOO.FEATURES.F4,
+            translations.ODOO.FEATURES.F5
+          ],
+          priceRange: '', // Sera mis à jour dans calculateResults()
+          packageLevel: 'basic',
+          packageName: ''
+        },
+        angular: {
+          technology: 'angular',
+          name: translations.ANGULAR.NAME,
+          score: 0,
+          title: translations.ANGULAR.TITLE,
+          description: translations.ANGULAR.DESCRIPTION,
+          icon: 'fab fa-angular',
+          color: '#dd0031',
+          features: [
+            translations.ANGULAR.FEATURES.F1,
+            translations.ANGULAR.FEATURES.F2,
+            translations.ANGULAR.FEATURES.F3,
+            translations.ANGULAR.FEATURES.F4,
+            translations.ANGULAR.FEATURES.F5
+          ],
+          priceRange: '', // Sera mis à jour dans calculateResults()
+          packageLevel: 'basic',
+          packageName: ''
+        }
+      };
+    });
   }
 
   // Effets visuels et sonores
@@ -489,6 +520,18 @@ export class QuestionnaireComponent implements OnInit {
     // Calculer les scores
     this.scores[selectedAnswer.technology] += selectedAnswer.points * currentQuestion.weight;
 
+    // Si c'est la question 5 (budget), déterminer le niveau de package
+    // Question 5 a l'id = 5, index = 4
+    if (currentQuestion.id === 5) {
+      if (answerIndex === 0) {
+        this.budgetLevel = 'basic'; // Moins de 1 500€
+      } else if (answerIndex === 1) {
+        this.budgetLevel = 'professional'; // 4 000€ - 5 000€
+      } else if (answerIndex === 2) {
+        this.budgetLevel = 'business'; // Plus de 4 000€
+      }
+    }
+
     // Passer à la question suivante ou aux résultats
     setTimeout(() => {
       if (this.currentQuestionIndex < this.questions.length - 1) {
@@ -524,6 +567,7 @@ export class QuestionnaireComponent implements OnInit {
     this.alternativeResults = [];
     this.userData = {};
     this.leadId = null;
+    this.budgetLevel = 'basic'; // Réinitialiser le niveau de budget
   }
 
   // Calcul des résultats
@@ -534,6 +578,9 @@ export class QuestionnaireComponent implements OnInit {
     this.results['wordpress'].score = this.scores.wordpress;
     this.results['odoo'].score = this.scores.odoo;
     this.results['angular'].score = this.scores.angular;
+
+    // Assigner le niveau de package et le prix basé sur le budget de l'utilisateur
+    this.assignPackageToResults();
 
     // Trier par score
     const sortedResults = Object.values(this.results).sort((a, b) => b.score - a.score);
@@ -552,6 +599,36 @@ export class QuestionnaireComponent implements OnInit {
       this.launchConfetti();
       this.playSuccessSound();
     }, 500);
+  }
+
+  // Assigner le package et le prix basé sur le niveau de budget
+  assignPackageToResults() {
+    // Obtenir les traductions pour les packages
+    this.translate.get('QUESTIONNAIRE.RESULTS').subscribe((translations: any) => {
+      const packageKey = this.budgetLevel.toUpperCase(); // BASIC, PROFESSIONAL, BUSINESS
+      const packageName = translations.PACKAGES[packageKey];
+
+      // Mettre à jour WordPress
+      this.results['wordpress'].packageLevel = this.budgetLevel;
+      this.results['wordpress'].packageName = packageName;
+      this.results['wordpress'].priceRange = this.translate.instant('QUESTIONNAIRE.RESULTS.PRICE_FROM', {
+        price: translations.WORDPRESS.PRICE_RANGES[packageKey]
+      });
+
+      // Mettre à jour Odoo
+      this.results['odoo'].packageLevel = this.budgetLevel;
+      this.results['odoo'].packageName = packageName;
+      this.results['odoo'].priceRange = this.translate.instant('QUESTIONNAIRE.RESULTS.PRICE_FROM', {
+        price: translations.ODOO.PRICE_RANGES[packageKey]
+      });
+
+      // Mettre à jour Angular
+      this.results['angular'].packageLevel = this.budgetLevel;
+      this.results['angular'].packageName = packageName;
+      this.results['angular'].priceRange = this.translate.instant('QUESTIONNAIRE.RESULTS.PRICE_FROM', {
+        price: translations.ANGULAR.PRICE_RANGES[packageKey]
+      });
+    });
   }
 
   // Mettre à jour le lead avec les résultats du questionnaire

@@ -5,35 +5,32 @@
       <div class="welcome-icon">
         <i class="fas fa-compass"></i>
       </div>
-      <h1 class="welcome-title">Trouvez la solution web parfaite pour vous</h1>
-      <p class="welcome-subtitle">
-        Vous hésitez entre WordPress, Odoo ou une application sur-mesure ?<br />
-        Répondez à 6 questions simples pour découvrir la technologie idéale pour votre projet.
-      </p>
+      <h1 class="welcome-title">{{ "QUESTIONNAIRE.WELCOME.TITLE" | translate }}</h1>
+      <p class="welcome-subtitle" [innerHTML]="'QUESTIONNAIRE.WELCOME.SUBTITLE' | translate"></p>
 
       <div class="welcome-features">
         <div class="feature-item">
           <i class="fas fa-clock"></i>
-          <span>2 minutes</span>
+          <span>{{ "QUESTIONNAIRE.WELCOME.FEATURES.DURATION" | translate }}</span>
         </div>
         <div class="feature-item">
           <i class="fas fa-question-circle"></i>
-          <span>6 questions</span>
+          <span>{{ "QUESTIONNAIRE.WELCOME.FEATURES.QUESTIONS_COUNT" | translate }}</span>
         </div>
         <div class="feature-item">
           <i class="fas fa-gift"></i>
-          <span>Résultat instantané</span>
+          <span>{{ "QUESTIONNAIRE.WELCOME.FEATURES.INSTANT_RESULT" | translate }}</span>
         </div>
       </div>
 
       <button class="btn-start" (click)="startQuestionnaire()">
-        <span>Commencer le test</span>
+        <span>{{ "QUESTIONNAIRE.WELCOME.START_BUTTON" | translate }}</span>
         <i class="fas fa-arrow-right"></i>
       </button>
 
       <p class="welcome-disclaimer">
         <i class="fas fa-shield-alt"></i>
-        Aucune donnée n'est collectée sans votre consentement
+        {{ "QUESTIONNAIRE.WELCOME.DISCLAIMER" | translate }}
       </p>
     </div>
   </div>
@@ -45,10 +42,9 @@
         <div class="form-icon">
           <i class="fas fa-user-circle"></i>
         </div>
-        <h2 class="form-title">Avant de commencer...</h2>
+        <h2 class="form-title">{{ "QUESTIONNAIRE.CONTACT_FORM.TITLE" | translate }}</h2>
         <p class="form-subtitle">
-          Pour vous accompagner au mieux dans votre projet, merci de nous laisser vos coordonnées.<br />
-          <!-- <strong>Oumnia pourra vous rappeler même si vous ne terminez pas le questionnaire.</strong> -->
+          {{ "QUESTIONNAIRE.CONTACT_FORM.SUBTITLE" | translate }}
         </p>
       </div>
 
@@ -56,14 +52,14 @@
         <div class="form-group">
           <label for="name">
             <i class="fas fa-user"></i>
-            Votre nom complet *
+            {{ "QUESTIONNAIRE.CONTACT_FORM.FIELDS.NAME" | translate }}
           </label>
           <input
             type="text"
             id="name"
             [(ngModel)]="userData.name"
             name="name"
-            placeholder="Ex: Jean Dupont"
+            [placeholder]="'QUESTIONNAIRE.CONTACT_FORM.FIELDS.NAME_PLACEHOLDER' | translate"
             required
           />
         </div>
@@ -71,14 +67,14 @@
         <div class="form-group">
           <label for="email">
             <i class="fas fa-envelope"></i>
-            Votre adresse email *
+            {{ "QUESTIONNAIRE.CONTACT_FORM.FIELDS.EMAIL" | translate }}
           </label>
           <input
             type="email"
             id="email"
             [(ngModel)]="userData.email"
             name="email"
-            placeholder="Ex: jean.dupont@exemple.fr"
+            [placeholder]="'QUESTIONNAIRE.CONTACT_FORM.FIELDS.EMAIL_PLACEHOLDER' | translate"
             required
           />
         </div>
@@ -86,26 +82,26 @@
         <div class="form-group">
           <label for="phone">
             <i class="fas fa-phone"></i>
-            Votre téléphone *
+            {{ "QUESTIONNAIRE.CONTACT_FORM.FIELDS.PHONE" | translate }}
           </label>
           <input
             type="tel"
             id="phone"
             [(ngModel)]="userData.phone"
             name="phone"
-            placeholder="Ex: 06 12 34 56 78"
+            [placeholder]="'QUESTIONNAIRE.CONTACT_FORM.FIELDS.PHONE_PLACEHOLDER' | translate"
             required
           />
         </div>
 
         <div class="form-disclaimer">
           <i class="fas fa-lock"></i>
-          Vos données sont sécurisées et ne seront utilisées que pour vous recontacter concernant votre projet.
+          {{ "QUESTIONNAIRE.CONTACT_FORM.DISCLAIMER" | translate }}
         </div>
 
         <button type="submit" class="btn-submit" [disabled]="isSubmittingContact">
-          <span *ngIf="!isSubmittingContact">Continuer vers le questionnaire</span>
-          <span *ngIf="isSubmittingContact">Enregistrement en cours...</span>
+          <span *ngIf="!isSubmittingContact">{{ "QUESTIONNAIRE.CONTACT_FORM.SUBMIT_BUTTON" | translate }}</span>
+          <span *ngIf="isSubmittingContact">{{ "QUESTIONNAIRE.CONTACT_FORM.SUBMITTING" | translate }}</span>
           <i class="fas fa-arrow-right" *ngIf="!isSubmittingContact"></i>
           <i class="fas fa-spinner fa-spin" *ngIf="isSubmittingContact"></i>
         </button>
@@ -120,7 +116,7 @@
       <div class="progress-bar">
         <div class="progress-fill" [style.width.%]="getProgress()"></div>
       </div>
-      <p class="progress-text">Question {{ currentQuestionIndex + 1 }} sur {{ questions.length }}</p>
+      <p class="progress-text">{{ "QUESTIONNAIRE.QUESTIONS.PROGRESS" | translate: {current: currentQuestionIndex + 1, total: questions.length} }}</p>
     </div>
 
     <!-- Question actuelle -->
@@ -175,7 +171,7 @@
         <i class="fas fa-star"></i>
       </div>
 
-      <h1 class="result-title">Votre solution idéale est :</h1>
+      <h1 class="result-title">{{ "QUESTIONNAIRE.RESULTS.TITLE" | translate }}</h1>
 
       <!-- Résultat principal -->
       <div class="result-main" *ngIf="recommendedResult" [style.border-color]="recommendedResult.color">
@@ -185,14 +181,16 @@
         <h2 class="result-tech-name" [style.color]="recommendedResult.color">
           {{ recommendedResult.name }}
         </h2>
-        <div class="result-score">
-          Score de compatibilité : <strong>{{ (recommendedResult.score / 31 * 20).toFixed(1) }}/20</strong>
+        <div class="result-package" *ngIf="recommendedResult.packageName">
+          <i class="fas fa-box"></i>
+          <span>{{ "QUESTIONNAIRE.RESULTS.PACKAGES." + budgetLevel.toUpperCase() | translate }}</span>
         </div>
+        <div class="result-score" [innerHTML]="translate.instant('QUESTIONNAIRE.RESULTS.COMPATIBILITY_SCORE', {score: (recommendedResult.score / 31 * 20).toFixed(1)})"></div>
         <p class="result-description">{{ recommendedResult.description }}</p>
 
         <!-- Fonctionnalités -->
         <div class="result-features">
-          <h3>Ce qui vous convient :</h3>
+          <h3>{{ "QUESTIONNAIRE.RESULTS.SEE_DETAILS" | translate }}</h3>
           <ul>
             <li *ngFor="let feature of recommendedResult.features">
               <i class="fas fa-check-circle"></i>
@@ -212,11 +210,11 @@
       <div class="result-actions">
         <button class="btn-primary" (click)="requestQuote()">
           <i class="fas fa-paper-plane"></i>
-          <span>Demander un devis gratuit</span>
+          <span>{{ "QUESTIONNAIRE.RESULTS.CONTACT_US" | translate }}</span>
         </button>
         <button class="btn-secondary" (click)="restartQuestionnaire()">
           <i class="fas fa-redo"></i>
-          <span>Refaire le test</span>
+          <span>{{ "QUESTIONNAIRE.RESULTS.RESTART" | translate }}</span>
         </button>
       </div>
 
@@ -224,7 +222,7 @@
       <div class="result-info">
         <p>
           <i class="fas fa-info-circle"></i>
-          Nos experts sont là pour vous conseiller et affiner cette recommandation selon vos besoins spécifiques.
+          {{ "QUESTIONNAIRE.RESULTS.OTHER_OPTIONS" | translate }}
         </p>
       </div>
     </div>
