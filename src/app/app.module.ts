@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,7 +20,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 
 // Imports pour ngx-translate
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AboutComponent } from './about/about.component';
@@ -86,6 +86,22 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
 // Factory function pour le loader de traduction
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+// Factory function pour initialiser les traductions avant le démarrage de l'app
+export function appInitializerFactory(translate: TranslateService) {
+  return () => {
+    // Configuration des langues supportées
+    translate.addLangs(['fr', 'en']);
+    translate.setDefaultLang('fr');
+
+    // Déterminer la langue à utiliser
+    const browserLang = translate.getBrowserLang();
+    const lang = browserLang && browserLang.match(/fr|en/) ? browserLang : 'fr';
+
+    // Retourner une promesse qui se résout une fois les traductions chargées
+    return translate.use(lang).toPromise();
+  };
 }
 
 @NgModule({
@@ -172,7 +188,14 @@ export function HttpLoaderFactory(http: HttpClient) {
       timeOut: 3000,
     }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializerFactory,
+      deps: [TranslateService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

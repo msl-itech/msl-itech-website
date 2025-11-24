@@ -15,16 +15,8 @@ export class AppComponent {
     private spinner: NgxSpinnerService,
     private translate: TranslateService
   ) {
-    // Configuration des langues supportées
-    this.translate.addLangs(['fr', 'en']);
-
-    // Définir la langue par défaut
-    this.translate.setDefaultLang('fr');
-
-    // Utiliser la langue du navigateur si disponible, sinon français
-    const browserLang = this.translate.getBrowserLang();
-    const lang = browserLang && browserLang.match(/fr|en/) ? browserLang : 'fr';
-    this.translate.use(lang);
+    // La configuration de la langue est maintenant gérée dans APP_INITIALIZER
+    // pour éviter le flash de contenu non traduit au chargement
   }
 
   ngOnInit() {
