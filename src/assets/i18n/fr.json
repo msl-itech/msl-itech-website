@@ -260,6 +260,11 @@
         "SUBTITLE": "Nous vous mettons en relation avec des experts Odoo",
         "BUSINESS_ANALYTICS": "Business Analytics Odoo",
         "DEVELOPER": "Développeur Odoo"
+      },
+      "QUESTIONNAIRE_CTA": {
+        "TITLE": "Quel type de site web correspond à votre projet ?",
+        "DESCRIPTION": "Répondez à 6 questions simples en 30 secondes et découvrez la solution idéale avec une estimation de budget personnalisée.",
+        "BUTTON": "Commencer le test gratuit"
       }
     },
     "PACK_PERFORMANCE": {
@@ -754,7 +759,7 @@
             }
           },
           "BUSINESS": {
-            "TITLE": "Solution Business",
+            "TITLE": "Solution Entreprise",
             "SUBTITLE": "Pour les entreprises ambitieuses",
             "FEATURES": {
               "ALL_PRO": "Tout de la solution pro",
@@ -1002,7 +1007,7 @@
             "BUTTON": "Démarrer"
           },
           "BUSINESS": {
-            "TITLE": "Pack Business",
+            "TITLE": "Pack Entreprise",
             "SUBTITLE": "Solution complète",
             "VALUES": {
               "ANALYSIS": "Approfondie",
@@ -1879,6 +1884,25 @@
     }
   },
 
+  "QUESTIONNAIRE_PROMO": {
+    "MESSAGE": "Découvrez en 30 secondes le type de site idéal pour vous !",
+    "CTA": "Démarrer maintenant",
+    "CLOSE": "Fermer"
+  },
+
+  "QUESTIONNAIRE_MODAL": {
+    "TITLE": "Quel site web correspond à votre projet ?",
+    "DESCRIPTION": "Répondez à 6 questions simples et obtenez une recommandation personnalisée avec un budget estimé.",
+    "FEATURES": {
+      "DURATION": "30 secondes",
+      "INSTANT": "Résultat instantané",
+      "FREE": "100% gratuit"
+    },
+    "CTA": "Commencer le test",
+    "LATER": "Plus tard",
+    "CLOSE": "Fermer"
+  },
+
   "QUESTIONNAIRE": {
     "WELCOME": {
       "TITLE": "Trouvez la solution web parfaite pour vous",
@@ -2029,7 +2053,7 @@
       "PACKAGES": {
         "BASIC": "Basique",
         "PROFESSIONAL": "Professionnel",
-        "BUSINESS": "Business"
+        "BUSINESS": "Entreprise"
       },
       "WORDPRESS": {
         "NAME": "WordPress",

@@ -850,3 +850,237 @@ video {
   flex-direction: column;
   align-items: center;
 }
+
+/* =========================================
+   QUESTIONNAIRE CTA SECTION
+   ========================================= */
+.questionnaire-cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #114d5a 0%, #1a6675 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.questionnaire-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 221, 87, 0.1);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.questionnaire-cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+.questionnaire-cta-container {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 50px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.cta-content:hover {
+  transform: translateY(-5px);
+}
+
+.cta-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffdd57, #fac83b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(255, 221, 87, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cta-icon i {
+  font-size: 2.5rem;
+  color: #114d5a;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(255, 221, 87, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 221, 87, 0.6);
+  }
+}
+
+.cta-text {
+  flex: 1;
+  color: #fff;
+}
+
+.cta-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.cta-text p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cta-button {
+  background: #ffdd57;
+  color: #114d5a;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 221, 87, 0.4);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  background: #fac83b;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 221, 87, 0.6);
+}
+
+.cta-button i:last-child {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover i:last-child {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+  }
+
+  .cta-text h2 {
+    font-size: 1.7rem;
+  }
+
+  .cta-text p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .questionnaire-cta-section {
+    padding: 60px 0;
+  }
+
+  .cta-content {
+    padding: 35px 25px;
+    gap: 25px;
+  }
+
+  .cta-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cta-icon i {
+    font-size: 2rem;
+  }
+
+  .cta-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-text p {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    padding: 15px 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .questionnaire-cta-section {
+    padding: 50px 0;
+  }
+
+  .cta-content {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .cta-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cta-icon i {
+    font-size: 1.7rem;
+  }
+
+  .cta-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .cta-text p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+  }
+}

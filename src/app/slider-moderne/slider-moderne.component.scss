@@ -1,0 +1,279 @@
+// Variables
+$primary-color: #ffc107;
+$secondary-color: #114D5A;
+$text-light: #ffffff;
+$text-dark: #1a1a1a;
+$transition-speed: 0.8s;
+$glass-bg: rgba(255, 255, 255, 0.1);
+$glass-border: rgba(255, 255, 255, 0.2);
+$glass-blur: 12px;
+
+.slider-moderne {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Inter', sans-serif; // Assuming Inter or similar sans-serif is available
+
+    @media (max-width: 768px) {
+        height: 80vh;
+    }
+}
+
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-speed ease-in-out, visibility $transition-speed;
+    z-index: 1;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+
+        .slide-image {
+            transform: scale(1.05);
+        }
+
+        .content-wrapper {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    // Optional: Add slide effect logic if needed, but fade is cleaner for this style
+}
+
+.image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: transform 6s ease-out; // Slow zoom effect
+    }
+
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right,
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(0, 0, 0, 0.1) 100%);
+    }
+}
+
+.content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s; // Delay for content
+    z-index: 3;
+}
+
+.glass-card {
+    background: $glass-bg;
+    backdrop-filter: blur($glass-blur);
+    -webkit-backdrop-filter: blur($glass-blur);
+    border: 1px solid $glass-border;
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 600px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: $text-light;
+
+    @media (max-width: 768px) {
+        padding: 2rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.slide-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+
+    .highlight {
+        color: $primary-color;
+        display: block; // Or inline-block depending on design preference
+    }
+}
+
+.slide-description {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.modern-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &.primary {
+        background-color: $primary-color;
+        color: $text-dark;
+
+        &:hover {
+            background-color: lighten($primary-color, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba($primary-color, 0.4);
+        }
+    }
+
+    &.secondary {
+        background-color: $secondary-color;
+        border: 2px solid $secondary-color;
+        color: $text-light;
+
+        &:hover {
+            background-color: transparent;
+            color: $text-light;
+            border-color: $text-light;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    .btn-arrow {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .btn-arrow {
+        transform: translateX(5px);
+    }
+}
+
+// Navigation Buttons
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: $text-light;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: $primary-color;
+        color: $text-dark;
+        border-color: $primary-color;
+    }
+
+    &.prev {
+        left: 20px;
+    }
+
+    &.next {
+        right: 20px;
+    }
+
+    @media (max-width: 768px) {
+        display: none; // Hide arrows on mobile
+    }
+}
+
+// Indicators
+.indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &.active {
+        width: 30px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $primary-color;
+        animation: progress 6s linear forwards; // Matches auto-slide interval
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}

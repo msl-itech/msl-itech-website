@@ -1,0 +1,190 @@
+/* =========================================
+   PROMO BAR STYLES
+   ========================================= */
+.promo-bar {
+  background: linear-gradient(135deg, #114d5a 0%, #1a6675 100%);
+  color: #fff;
+  padding: 12px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 999;
+  animation: slideDown 0.5s ease-out;
+  border-bottom: 3px solid #ffdd57;
+}
+
+.promo-bar.closing {
+  animation: slideUp 0.3s ease-in forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+    max-height: 100px;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+.promo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.promo-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.promo-icon {
+  font-size: 1.5rem;
+  color: #ffdd57;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.promo-text {
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1;
+  min-width: 200px;
+  line-height: 1.4;
+}
+
+.promo-cta {
+  background: #ffdd57;
+  color: #114d5a;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(255, 221, 87, 0.3);
+  white-space: nowrap;
+}
+
+.promo-cta:hover {
+  background: #fac83b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 221, 87, 0.4);
+}
+
+.promo-cta i {
+  transition: transform 0.3s ease;
+}
+
+.promo-cta:hover i {
+  transform: translateX(4px);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+  .promo-bar {
+    padding: 10px 0;
+  }
+
+  .promo-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 15px;
+    position: relative;
+  }
+
+  .promo-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding-right: 30px;
+  }
+
+  .promo-text {
+    font-size: 0.9rem;
+    min-width: auto;
+  }
+
+  .promo-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-icon {
+    font-size: 1.2rem;
+  }
+
+  .promo-text {
+    font-size: 0.85rem;
+  }
+
+  .promo-cta {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}

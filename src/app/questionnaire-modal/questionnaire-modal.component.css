@@ -1,0 +1,335 @@
+/* =========================================
+   TOAST NOTIFICATION - BAS DROITE
+   ========================================= */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  max-width: 400px;
+  animation: slideInRight 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toast-notification.closing {
+  animation: slideOutRight 0.3s ease-in forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(450px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(450px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   TOAST CONTENT
+   ========================================= */
+.toast-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow:
+    0 20px 60px rgba(17, 77, 90, 0.25),
+    0 0 0 1px rgba(17, 77, 90, 0.1);
+  position: relative;
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #114d5a, #ffdd57) 1;
+  backdrop-filter: blur(10px);
+}
+
+.toast-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  color: #718096;
+}
+
+.toast-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotate(90deg);
+  color: #2d3748;
+}
+
+.toast-close i {
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   TOAST ICON
+   ========================================= */
+.toast-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #114d5a, #1a6675);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  animation: bounce 1s ease-out;
+  box-shadow: 0 8px 20px rgba(17, 77, 90, 0.3);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+}
+
+.toast-icon i {
+  font-size: 1.5rem;
+  color: #ffdd57;
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* =========================================
+   TOAST TEXT
+   ========================================= */
+.toast-text {
+  margin-bottom: 15px;
+}
+
+.toast-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #114d5a;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  padding-right: 20px;
+}
+
+.toast-description {
+  font-size: 0.85rem;
+  color: #4a5568;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+/* =========================================
+   TOAST BADGES
+   ========================================= */
+.toast-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(17, 77, 90, 0.08);
+  color: #114d5a;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge i {
+  font-size: 0.8rem;
+  color: #ffdd57;
+}
+
+/* =========================================
+   TOAST ACTIONS
+   ========================================= */
+.toast-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-start {
+  background: linear-gradient(135deg, #114d5a, #1a6675);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(17, 77, 90, 0.3);
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-start::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-start:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(17, 77, 90, 0.4);
+}
+
+.btn-start i {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-start span {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+  .toast-notification {
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    max-width: none;
+  }
+
+  .toast-content {
+    padding: 18px;
+  }
+
+  .toast-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .toast-icon i {
+    font-size: 1.3rem;
+  }
+
+  .toast-title {
+    font-size: 1rem;
+  }
+
+  .toast-description {
+    font-size: 0.8rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .btn-start {
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .toast-notification {
+    bottom: 15px;
+    right: 15px;
+    left: 15px;
+  }
+
+  .toast-content {
+    padding: 16px;
+  }
+
+  .toast-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+
+  .toast-icon i {
+    font-size: 1.2rem;
+  }
+
+  .toast-title {
+    font-size: 0.95rem;
+  }
+
+  .toast-description {
+    font-size: 0.75rem;
+  }
+
+  .btn-start {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================================
+   ANIMATION DE PULSATION
+   ========================================= */
+.toast-content {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    box-shadow:
+      0 20px 60px rgba(17, 77, 90, 0.25),
+      0 0 0 1px rgba(17, 77, 90, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 20px 60px rgba(17, 77, 90, 0.35),
+      0 0 0 1px rgba(255, 221, 87, 0.3),
+      0 0 30px rgba(255, 221, 87, 0.1);
+  }
+}
