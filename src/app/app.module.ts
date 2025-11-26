@@ -64,6 +64,7 @@ import { Service5Component } from './service5/service5.component';
 import { Service6Component } from './service6/service6.component';
 import { Service7Component } from './service7/service7.component';
 import { SliderComponent } from './slider/slider.component';
+import { SliderModerneComponent } from './slider-moderne/slider-moderne.component';
 import { SmartAlertOrderComponent } from './smart-alert-order/smart-alert-order.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 import { SupportComponent } from './support/support.component';
@@ -82,6 +83,8 @@ import { PolitiqueConfidentialiteComponent } from './politique-confidentialite/p
 import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
 import { DevenirPartenaireComponent } from './devenir-partenaire/devenir-partenaire.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
+import { QuestionnairePromoBarComponent } from './questionnaire-promo-bar/questionnaire-promo-bar.component';
+import { QuestionnaireModalComponent } from './questionnaire-modal/questionnaire-modal.component';
 
 // Factory function pour le loader de traduction
 export function HttpLoaderFactory(http: HttpClient) {
@@ -110,6 +113,7 @@ export function appInitializerFactory(translate: TranslateService) {
     HeaderComponent,
     AccueilComponent,
     SliderComponent,
+    SliderModerneComponent,
     FeatureComponent,
     PackageMetierComponent,
     BlogComponent,
@@ -163,6 +167,8 @@ export function appInitializerFactory(translate: TranslateService) {
     CookieBannerComponent,
     DevenirPartenaireComponent,
     QuestionnaireComponent,
+    QuestionnairePromoBarComponent,
+    QuestionnaireModalComponent,
   ],
   imports: [
     BrowserModule,

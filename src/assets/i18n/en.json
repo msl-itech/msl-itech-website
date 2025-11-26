@@ -230,6 +230,11 @@
         "SUBTITLE": "We connect you with Odoo experts",
         "BUSINESS_ANALYTICS": "Odoo Business Analytics",
         "DEVELOPER": "Odoo Developer"
+      },
+      "QUESTIONNAIRE_CTA": {
+        "TITLE": "Which type of website fits your project?",
+        "DESCRIPTION": "Answer 6 simple questions in 30 seconds and discover the ideal solution with a personalized budget estimate.",
+        "BUTTON": "Start the free quiz"
       }
     },
     "PACK_PERFORMANCE": {
@@ -1856,6 +1861,25 @@
         }
       }
     }
+  },
+
+  "QUESTIONNAIRE_PROMO": {
+    "MESSAGE": "Discover in 30 seconds the ideal website for you!",
+    "CTA": "Start now",
+    "CLOSE": "Close"
+  },
+
+  "QUESTIONNAIRE_MODAL": {
+    "TITLE": "Which website fits your project?",
+    "DESCRIPTION": "Answer 6 simple questions and get a personalized recommendation with an estimated budget.",
+    "FEATURES": {
+      "DURATION": "30 seconds",
+      "INSTANT": "Instant result",
+      "FREE": "100% free"
+    },
+    "CTA": "Start the quiz",
+    "LATER": "Later",
+    "CLOSE": "Close"
   },
 
   "QUESTIONNAIRE": {

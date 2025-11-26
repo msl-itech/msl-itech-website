@@ -1,0 +1,17 @@
+<div class="promo-bar" *ngIf="isVisible" [class.closing]="isClosing">
+  <div class="promo-container">
+    <div class="promo-content">
+      <i class="fas fa-magic promo-icon"></i>
+      <span class="promo-text">
+        {{ "QUESTIONNAIRE_PROMO.MESSAGE" | translate }}
+      </span>
+      <button class="promo-cta" (click)="navigateToQuestionnaire()">
+        {{ "QUESTIONNAIRE_PROMO.CTA" | translate }}
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+    <button class="close-btn" (click)="closeBar()" [attr.aria-label]="'QUESTIONNAIRE_PROMO.CLOSE' | translate">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+</div>

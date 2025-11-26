@@ -1,0 +1,38 @@
+<div class="toast-notification" *ngIf="isVisible" [class.closing]="isClosing">
+  <div class="toast-content">
+    <button class="toast-close" (click)="closeModal()" [attr.aria-label]="'QUESTIONNAIRE_MODAL.CLOSE' | translate">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <div class="toast-icon">
+      <i class="fas fa-magic"></i>
+    </div>
+
+    <div class="toast-text">
+      <h3 class="toast-title">
+        {{ "QUESTIONNAIRE_MODAL.TITLE" | translate }}
+      </h3>
+      <p class="toast-description">
+        {{ "QUESTIONNAIRE_MODAL.DESCRIPTION" | translate }}
+      </p>
+
+      <div class="toast-badges">
+        <span class="badge">
+          <i class="fas fa-clock"></i>
+          {{ "QUESTIONNAIRE_MODAL.FEATURES.DURATION" | translate }}
+        </span>
+        <span class="badge">
+          <i class="fas fa-gift"></i>
+          {{ "QUESTIONNAIRE_MODAL.FEATURES.FREE" | translate }}
+        </span>
+      </div>
+    </div>
+
+    <div class="toast-actions">
+      <button class="btn-start" (click)="navigateToQuestionnaire()">
+        <i class="fas fa-play-circle"></i>
+        {{ "QUESTIONNAIRE_MODAL.CTA" | translate }}
+      </button>
+    </div>
+  </div>
+</div>
