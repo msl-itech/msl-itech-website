@@ -85,6 +85,9 @@ import { DevenirPartenaireComponent } from './devenir-partenaire/devenir-partena
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { QuestionnairePromoBarComponent } from './questionnaire-promo-bar/questionnaire-promo-bar.component';
 import { QuestionnaireModalComponent } from './questionnaire-modal/questionnaire-modal.component';
+import { TextVideoSectionComponent } from './text-video-section/text-video-section.component';
+import { AccordeonAccueilComponent } from './accordeon-accueil/accordeon-accueil.component';
+import { ExpertSectionAccueilComponent } from './expert-section-accueil/expert-section-accueil.component';
 
 // Factory function pour le loader de traduction
 export function HttpLoaderFactory(http: HttpClient) {
@@ -169,6 +172,9 @@ export function appInitializerFactory(translate: TranslateService) {
     QuestionnaireComponent,
     QuestionnairePromoBarComponent,
     QuestionnaireModalComponent,
+    TextVideoSectionComponent,
+    AccordeonAccueilComponent,
+    ExpertSectionAccueilComponent,
   ],
   imports: [
     BrowserModule,

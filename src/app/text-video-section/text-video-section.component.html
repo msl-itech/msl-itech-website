@@ -1,0 +1,87 @@
+<section class="awwwards-feature-section">
+  <div class="grid-container">
+    
+    <!-- COLONNE CONTENU (Texte) -->
+    <div class="content-column" data-aos="fade-up">
+      <h1 class="headline">
+        {{ "PAGES.HOME.MAIN_TITLE" | translate }}
+        <span class="highlight-wrapper">
+          <span class="highlight-text">{{ "PAGES.HOME.HIGHLIGHT" | translate }}</span>
+          <svg class="underline-vector" viewBox="0 0 200 10" preserveAspectRatio="none">
+            <path d="M0,5 Q100,10 200,5" stroke="currentColor" stroke-width="2" fill="none" />
+          </svg>
+        </span>
+      </h1>
+
+      <div class="features-wrapper">
+        <!-- Item 1 -->
+        <div class="feature-row">
+          <div class="row-header">
+            <span class="index">01</span>
+            <h3>{{ "PAGES.HOME.FEATURES.INTERNATIONAL_PRESENCE.TITLE" | translate }}</h3>
+            <i class="fas fa-arrow-right arrow-icon"></i>
+          </div>
+          <div class="row-body">
+            <p>{{ "PAGES.HOME.FEATURES.INTERNATIONAL_PRESENCE.DESCRIPTION" | translate }}</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="feature-row">
+          <div class="row-header">
+            <span class="index">02</span>
+            <h3>{{ "PAGES.HOME.FEATURES.COMPETITIVE_COSTS.TITLE" | translate }}</h3>
+            <i class="fas fa-arrow-right arrow-icon"></i>
+          </div>
+          <div class="row-body">
+            <p>{{ "PAGES.HOME.FEATURES.COMPETITIVE_COSTS.DESCRIPTION" | translate }}</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="feature-row">
+          <div class="row-header">
+            <span class="index">03</span>
+            <h3>{{ "PAGES.HOME.FEATURES.CERTIFIED_EXPERTISE.TITLE" | translate }}</h3>
+            <i class="fas fa-arrow-right arrow-icon"></i>
+          </div>
+          <div class="row-body">
+            <p>{{ "PAGES.HOME.FEATURES.CERTIFIED_EXPERTISE.DESCRIPTION" | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLONNE VISUELLE -->
+    <div class="visual-column">
+      <div class="image-frame-wrapper">
+        <!-- Main Image/Video -->
+        <div class="main-visual">
+          <app-optimized-image
+            src="../../assets/img/webp/12.webp"
+            alt="Présentation MSL Itech"
+            imageClass="cover-image"
+            loading="eager"
+          ></app-optimized-image>
+          
+          <!-- Play Button Overlay (si c'est une vidéo/présentation) -->
+          <div class="play-trigger">
+            <div class="play-circle">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Glass Cards (Les anciennes graphic-1 et 2) -->
+        <div class="floating-card card-1" data-aos="zoom-in" data-aos-delay="200">
+          <img src="../../assets/img/accueil/graphic-1.jpg.png" alt="Analytics" />
+        </div>
+
+        <div class="floating-card card-2" data-aos="zoom-in" data-aos-delay="400">
+          <img src="../../assets/img/accueil/graphic-2.jpg.png" alt="Performance" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

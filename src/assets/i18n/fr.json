@@ -163,7 +163,7 @@
       "TITLE": "Blog / Astuces",
       "SUBTITLE": "Astuces & Conseils pour optimiser votre gestion d'entreprise.",
       "SEE_MORE": "Voir plus",
-      "LEARN_MORE": "Voir plus →",
+      "LEARN_MORE": "Voir plus",
       "ARTICLES": {
         "ARTICLE1": {
           "TITLE": "Modernisez la gestion de votre trésorerie : suivez votre argent en temps réel avec Odoo",
@@ -1061,6 +1061,8 @@
       "DESCRIPTION": "Notre équipe est certifiée Odoo, garantissant que tous nos travaux respectent ses standards internationaux pour une implémentation de qualité."
     },
     "PACKAGE_METIER_ACCUEIL": {
+      "LABEL": "Package Metier",
+      "MAIN_TITLE": "Optimisez vos processus métier avec notre solution Odoo",
       "POPULAR_BADGE": "Populaire",
       "VIEW_DETAILS": "Voir plus en détails",
       "FEATURES_INCLUDED": "Fonctionnalités incluses :",

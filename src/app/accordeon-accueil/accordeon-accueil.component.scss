@@ -1,0 +1,252 @@
+// Variables
+$bg-green: #114D5A; // Vert très sombre, presque noir
+$green-light: #0f4c3e; // Pour les hovers
+$yellow-accent: #f0c300; // Jaune riche
+$text-white: #ffffff;
+$text-gray: #a7f3d0; // Un vert très clair pour le texte secondaire
+$border-color: rgba(255, 255, 255, 0.15);
+$ease-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
+
+.odoo-section-modern {
+  background-color: $bg-green;
+  color: $text-white;
+  padding: 8rem 5%;
+  position: relative;
+  overflow: hidden;
+
+  .container-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr; // Plus d'espace pour le texte
+    gap: 6rem;
+    align-items: start;
+  }
+
+  // --- HEADER ---
+  .header-block {
+    margin-bottom: 4rem;
+
+    .sub-label {
+      font-family: monospace;
+      color: $text-gray;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        background: $yellow-accent;
+        border-radius: 50%;
+        display: block;
+      }
+    }
+
+    .main-title {
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 700;
+      color: $yellow-accent; // LE TITRE JAUNE DEMANDÉ
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  // --- ACCORDION ---
+  .accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .accordion-item {
+    border-top: 1px solid $border-color;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:last-child {
+      border-bottom: 1px solid $border-color;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    // Header de l'item
+    .item-header {
+      padding: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .item-number {
+        font-family: monospace;
+        color: rgba(255,255,255,0.3);
+        margin-right: 2rem;
+        font-size: 1rem;
+      }
+
+      .item-title {
+        flex-grow: 1;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $text-white;
+        transition: color 0.3s ease;
+      }
+
+      // Croix animée
+      .icon-wrapper {
+        position: relative;
+        width: 20px;
+        height: 20px;
+
+        .line {
+          position: absolute;
+          background-color: $yellow-accent; // Croix jaune
+          transition: transform 0.4s $ease-smooth;
+          
+          &.horizontal { top: 50%; left: 0; width: 100%; height: 2px; transform: translateY(-50%); }
+          &.vertical { left: 50%; top: 0; height: 100%; width: 2px; transform: translateX(-50%); }
+        }
+      }
+    }
+
+    // Contenu masqué
+    .item-body {
+      display: grid;
+      grid-template-rows: 0fr; // Astuce CSS moderne pour l'animation height
+      transition: grid-template-rows 0.5s $ease-smooth;
+      
+      .body-inner {
+        overflow: hidden;
+      }
+
+      p {
+        margin: 0;
+        padding-bottom: 2rem;
+        padding-left: 3.5rem; // Aligné avec le titre (numéro + gap)
+        color: $text-gray;
+        line-height: 1.6;
+        max-width: 90%;
+      }
+    }
+
+    // ÉTAT ACTIF (OUVERT)
+    &.active {
+      .item-title {
+        color: $yellow-accent;
+      }
+
+      .icon-wrapper .line.vertical {
+        transform: translateX(-50%) rotate(90deg); // La barre verticale se couche
+        opacity: 0; // Ou disparait pour faire un "Moins"
+      }
+      
+      .icon-wrapper .line.horizontal {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .item-body {
+        grid-template-rows: 1fr; // Ouvre le contenu
+      }
+    }
+  }
+
+  // --- IMAGE SECTION ---
+  .image-side {
+    position: sticky;
+    top: 100px; // Si la section est grande, l'image suit le scroll
+  }
+
+  .image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden; // Important si l'image dépasse les bords arrondis
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); // Ombre forte pour détacher du fond sombre
+
+    .fluid-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+
+    &:hover .fluid-image {
+      transform: scale(1.03);
+    }
+  }
+
+  // Badge rotatif "Certified"
+  .floating-badge {
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    background: $yellow-accent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 10;
+
+    .rotating-text {
+      width: 100%;
+      height: 100%;
+      animation: rotate 10s linear infinite;
+      
+      text {
+        font-size: 14px;
+        font-family: monospace;
+        font-weight: bold;
+        letter-spacing: 2px;
+        fill: $bg-green; // Texte de la couleur du fond
+      }
+    }
+
+    .center-icon {
+      position: absolute;
+      color: $bg-green;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// Responsive
+@media (max-width: 992px) {
+  .odoo-section-modern {
+    padding: 4rem 5%;
+    
+    .container-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .image-side {
+      order: -1; // Image en premier sur mobile ? Ou laisser en dernier
+      position: static;
+    }
+
+    .header-block .main-title {
+      font-size: 2.5rem;
+    }
+    
+    .floating-badge {
+      width: 90px;
+      height: 90px;
+      bottom: -20px;
+      left: 10px;
+    }
+  }
+}

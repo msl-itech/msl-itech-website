@@ -5,7 +5,7 @@ import { SeoService } from '../seo.service';
 @Component({
   selector: 'app-avantages',
   templateUrl: './avantages.component.html',
-  styleUrl: './avantages.component.css',
+  styleUrl: './avantages.component.scss',
 })
 export class AvantagesComponent {
   constructor(

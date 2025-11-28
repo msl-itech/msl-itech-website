@@ -1,4 +1,4 @@
-<section class="trust-section">
+<!-- <section class="trust-section">
   <div class="container">
     <div class="content">
       <span class="badge">{{ "COMPONENTS.FEATURE.BADGE" | translate }}</span>
@@ -10,6 +10,44 @@
         {{ "BUTTONS.SUBMIT_NEED" | translate }}
         <i class="fas fa-arrow-right"></i>
       </button>
+    </div>
+  </div>
+</section> -->
+<section class="trust-green-section">
+  <!-- Élément décoratif de fond (Grille technique) -->
+  <div class="bg-grid"></div>
+
+  <div class="container">
+    <div class="content-wrapper">
+      
+      <!-- Top : Badge & Title -->
+      <div class="header-group">
+        <div class="badge-pill" data-aos="fade-down">
+          <span class="status-dot"></span>
+          <span class="badge-text">{{ "COMPONENTS.FEATURE.BADGE" | translate }}</span>
+        </div>
+        
+        <h2 class="massive-title" data-aos="fade-up" data-aos-delay="100">
+          {{ "COMPONENTS.FEATURE.TITLE" | translate }}
+        </h2>
+      </div>
+
+      <!-- Bottom : Description & Huge CTA -->
+      <div class="action-group">
+        <div class="description-box" data-aos="fade-up" data-aos-delay="200">
+          <p>{{ "COMPONENTS.FEATURE.DESCRIPTION" | translate }}</p>
+        </div>
+
+        <div class="cta-wrapper" data-aos="zoom-in" data-aos-delay="300">
+          <button class="btn-primary-yellow" routerLink="/reserver-demo">
+            <span class="btn-text">{{ "BUTTONS.SUBMIT_NEED" | translate }}</span>
+            <span class="icon-circle">
+              <i class="fas fa-arrow-right"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

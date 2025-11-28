@@ -1,316 +1,108 @@
-<style>
-  .bg-dark-teal {
-    background-color: #114d5a;
-  }
-  .text-gold {
-    color: #ffc107;
-  }
-  .btn-gold {
-    background-color: #ffc107;
-    color: #333;
-    border: none;
-  }
-  .btn-gold:hover {
-    background-color: #ffc107;
-    color: #000;
-  }
-
-  .feature-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  .feature-list li {
-    margin-bottom: 0.65rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .feature-icon {
-    color: #ffc107;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .package-card {
-    border-radius: 0.5rem;
-    padding: 1.75rem 1.25rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
-
-  .badge-populaire {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: #ffc107;
-    color: #000;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
-    font-weight: bold;
-    border-radius: 0.25rem;
-  }
-
-  .package-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .package-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-  }
-
-  .package-feature-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Carte blanche plus grande et avec une ombre */
-  .package-card-white {
-    background-color: #ffffff;
-    color: #000;
-    position: relative;
-    min-height: 650px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Animation du bouton toutes les 5s (effet pulse) */
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  .animate-btn {
-    animation: pulse 5s infinite;
-  }
-
-  .package-card-yellow-border {
-    border: 2px solid #ffc107; /* Bordure jaune */
-  }
-
-  /* Ajout du style pour centrer les boutons */
-  .btn-center {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-  }
-</style>
-<div class="container py-5" style="max-width: 1200px; margin: 0 auto">
-  <div
-    class="row package-container g-2 align-items-center justify-content-center"
-  >
-    <!-- Package Administratif -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="package-card bg-dark-teal text-light">
-        <div>
-          <div class="package-title">
-            {{
-              "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.TITLE"
-                | translate
-            }}
-          </div>
-          <div class="package-subtitle">
-            {{
-              "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.SUBTITLE"
-                | translate
-            }}
-          </div>
-          <a
-            routerLink="/package-metier/administratif"
-            class="btn btn-gold mb-4 btn-center"
-            >{{ "PAGES.PACKAGE_METIER_ACCUEIL.VIEW_DETAILS" | translate }}</a
-          >
-          <div class="package-feature-title">
-            {{ "PAGES.PACKAGE_METIER_ACCUEIL.FEATURES_INCLUDED" | translate }}
-          </div>
-          <ul class="feature-list">
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.DOCUMENT_MANAGEMENT"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.WORKFLOW_AUTOMATION"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.LEAVE_MANAGEMENT"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.EXPENSE_MANAGEMENT"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.PAYROLL_MANAGEMENT"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.WEBHOOK_SECRET"
-                  | translate
-              }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Package Commerciale (carte blanche plus grande, ombre, et animation sur le bouton) -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div
-        class="package-card package-card-white text-dark position-relative package-card-yellow-border"
-      >
-        <div class="badge-populaire">
-          {{ "PAGES.PACKAGE_METIER_ACCUEIL.POPULAR_BADGE" | translate }}
-        </div>
-        <div>
-          <div class="package-title mt-3">
-            {{
-              "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.TITLE"
-                | translate
-            }}
-          </div>
-          <div class="package-subtitle">
-            {{
-              "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.SUBTITLE"
-                | translate
-            }}
-          </div>
-          <a
-            routerLink="/package-metier/commerciale"
-            class="btn btn-gold mb-4 animate-btn btn-center"
-            >{{ "PAGES.PACKAGE_METIER_ACCUEIL.VIEW_DETAILS" | translate }}</a
-          >
-          <div class="package-feature-title">
-            {{ "PAGES.PACKAGE_METIER_ACCUEIL.FEATURES_INCLUDED" | translate }}
-          </div>
-          <ul class="feature-list">
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.FEATURES.OPPORTUNITY_TRACKING"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.FEATURES.SALES_AUTOMATION"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.FEATURES.CLIENT_FOLLOW_UP"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.FEATURES.ADVANCED_REPORTING"
-                  | translate
-              }}
-            </li>
-          </ul>
-        </div>
-      </div>
+<section class="packages-section-white">
+  <div class="container">
+    
+    <!-- Header de section pour contextualiser -->
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="pill-label">{{ "PAGES.PACKAGE_METIER_ACCUEIL.LABEL" | translate }}</span>
+      <h2 class="section-title">
+        {{ "PAGES.PACKAGE_METIER_ACCUEIL.MAIN_TITLE" | translate }}
+      </h2>
     </div>
 
-    <!-- Package Heroca -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="package-card bg-dark-teal text-light">
-        <div>
-          <div class="package-title">
-            {{
-              "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.TITLE" | translate
-            }}
+    <div class="pricing-grid">
+      
+      <!-- 1. Package Administratif (Minimal) -->
+      <div class="pricing-card minimal" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-content">
+          <div class="header">
+            <h3 class="package-name">{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.TITLE" | translate }}</h3>
+            <p class="package-desc">{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.SUBTITLE" | translate }}</p>
           </div>
-          <div class="package-subtitle">
-            {{
-              "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.SUBTITLE"
-                | translate
-            }}
+          
+          <div class="divider"></div>
+
+          <div class="features-block">
+            <span class="feat-title">{{ "PAGES.PACKAGE_METIER_ACCUEIL.FEATURES_INCLUDED" | translate }}</span>
+            <ul class="feat-list">
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.DOCUMENT_MANAGEMENT" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.WORKFLOW_AUTOMATION" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.LEAVE_MANAGEMENT" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.EXPENSE_MANAGEMENT" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.PAYROLL_MANAGEMENT" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.ADMINISTRATIF.FEATURES.WEBHOOK_SECRET" | translate }}</span></li>
+            </ul>
           </div>
-          <a
-            routerLink="/package-metier/horeca"
-            class="btn btn-gold mb-4 btn-center"
-            >{{ "PAGES.PACKAGE_METIER_ACCUEIL.VIEW_DETAILS" | translate }}</a
-          >
-          <div class="package-feature-title">
-            {{ "PAGES.PACKAGE_METIER_ACCUEIL.FEATURES_INCLUDED" | translate }}
+
+          <div class="action-footer">
+            <a routerLink="/package-metier/administratif" class="btn-outline">
+              {{ "PAGES.PACKAGE_METIER_ACCUEIL.VIEW_DETAILS" | translate }}
+            </a>
           </div>
-          <ul class="feature-list">
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.ADVANCED_SEGMENTATION"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.PERFORMANCE_OPTIMIZATION"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.ACTIVITY_HISTORY"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.ROLE_MANAGEMENT"
-                  | translate
-              }}
-            </li>
-            <li>
-              <span class="feature-icon"><i class="fas fa-check"></i></span>
-              {{
-                "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.TRAFFIC_ALLOWANCE"
-                  | translate
-              }}
-            </li>
-          </ul>
         </div>
       </div>
+
+      <!-- 2. Package Commercial (FEATURED / POPULAR) -->
+      <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+        <!-- Badge Populaire -->
+        <div class="popular-tag">
+          <i class="fas fa-star"></i> {{ "PAGES.PACKAGE_METIER_ACCUEIL.POPULAR_BADGE" | translate }}
+        </div>
+
+        <div class="card-content">
+          <div class="header">
+            <h3 class="package-name">{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.TITLE" | translate }}</h3>
+            <p class="package-desc">{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.SUBTITLE" | translate }}</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="features-block">
+            <span class="feat-title">{{ "PAGES.PACKAGE_METIER_ACCUEIL.FEATURES_INCLUDED" | translate }}</span>
+            <ul class="feat-list">
+              <li><i class="fas fa-check-circle"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.FEATURES.OPPORTUNITY_TRACKING" | translate }}</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.FEATURES.SALES_AUTOMATION" | translate }}</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.FEATURES.CLIENT_FOLLOW_UP" | translate }}</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.COMMERCIAL.FEATURES.ADVANCED_REPORTING" | translate }}</span></li>
+            </ul>
+          </div>
+
+          <div class="action-footer">
+            <a routerLink="/package-metier/commerciale" class="btn-solid-yellow">
+              {{ "PAGES.PACKAGE_METIER_ACCUEIL.VIEW_DETAILS" | translate }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Package Horeca (Minimal) -->
+      <div class="pricing-card minimal" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-content">
+          <div class="header">
+            <h3 class="package-name">{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.TITLE" | translate }}</h3>
+            <p class="package-desc">{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.SUBTITLE" | translate }}</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="features-block">
+            <span class="feat-title">{{ "PAGES.PACKAGE_METIER_ACCUEIL.FEATURES_INCLUDED" | translate }}</span>
+            <ul class="feat-list">
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.ADVANCED_SEGMENTATION" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.PERFORMANCE_OPTIMIZATION" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.ACTIVITY_HISTORY" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.ROLE_MANAGEMENT" | translate }}</span></li>
+              <li><i class="fas fa-check"></i> <span>{{ "PAGES.PACKAGE_METIER_ACCUEIL.PACKAGES.HORECA.FEATURES.TRAFFIC_ALLOWANCE" | translate }}</span></li>
+            </ul>
+          </div>
+
+          <div class="action-footer">
+            <a routerLink="/package-metier/horeca" class="btn-outline">
+              {{ "PAGES.PACKAGE_METIER_ACCUEIL.VIEW_DETAILS" | translate }}
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
+</section>
