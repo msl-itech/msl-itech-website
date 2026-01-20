@@ -19,26 +19,22 @@
   <!-- BACKGROUND LAYER -->
   <div class="background-layer">
     <!-- Remplace par une image abstraite de code, de bureau ou de texture -->
-    <img 
-      src="../../assets/img/accueil/Section.png" 
-      alt="Background Texture" 
-      class="bg-image"
-    />
+    <img src="../../assets/img/accueil/Section.png" alt="Background Texture" class="bg-image" />
     <div class="green-overlay"></div>
   </div>
 
   <div class="container relative-content">
     <div class="cert-grid">
-      
+
       <!-- TEXT COLUMN -->
       <div class="text-content" data-aos="fade-right">
         <div class="label-box">
           <i class="fas fa-award"></i>
           <span>{{ "PAGES.CERTIFICATION.TITLE" | translate }}</span>
         </div>
-        
+
         <h2 class="main-title" [innerHTML]="'PAGES.CERTIFICATION.SUBTITLE' | translate"></h2>
-        
+
         <div class="description-wrapper">
           <div class="vertical-line"></div>
           <p>{{ "PAGES.CERTIFICATION.DESCRIPTION" | translate }}</p>
@@ -48,17 +44,21 @@
         <div class="verified-tag">
           <i class="fas fa-check-circle"></i> Verified Partner
         </div>
+
+        <div class="cta-wrapper">
+          <a href="https://www.odoo.com/fr_FR/partners/msl-itech-15851608?country_id=132" target="_blank"
+            class="cta-button">
+            Voir notre profil Odoo <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
 
       <!-- BADGE COLUMN (Hero Visual) -->
       <div class="badge-visual" data-aos="zoom-out" data-aos-delay="200">
         <div class="glow-effect"></div>
         <div class="glass-pedestal">
-          <img
-            src="../../assets/img/accueil/odoo-18-partner-certified.svg"
-            alt="Odoo 17 Certification"
-            class="badge-img"
-          />
+          <img src="../../assets/img/accueil/odoo-18-partner-certified.svg" alt="Odoo 17 Certification"
+            class="badge-img" />
           <div class="shine-overlay"></div>
         </div>
       </div>

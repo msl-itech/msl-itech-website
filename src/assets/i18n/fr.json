@@ -68,7 +68,6 @@
     "HOME": "Accueil",
     "CLOSE": "Fermer"
   },
-
   "FOOTER": {
     "DESCRIPTION": "Accélérez la transformation numérique de votre entreprise avec MSL-Itech, expert en implémentation et intégration d'Odoo.",
     "NAVIGATION": {
@@ -91,7 +90,7 @@
     "CONTACT": {
       "OFFICES": "Bureaux internationaux : Belgique, Maroc, Canada"
     },
-    "COPYRIGHT": "© 2024 MSL-ITECH • Tous droits réservés",
+    "COPYRIGHT": "© 2025 MSL-ITECH • Tous droits réservés",
     "FOLLOW_US": "Suivez-nous",
     "NEWSLETTER": "Newsletter",
     "SUBSCRIBE": "S'abonner"
@@ -1885,13 +1884,11 @@
       }
     }
   },
-
   "QUESTIONNAIRE_PROMO": {
     "MESSAGE": "Découvrez en 30 secondes le type de site idéal pour vous !",
     "CTA": "Démarrer maintenant",
     "CLOSE": "Fermer"
   },
-
   "QUESTIONNAIRE_MODAL": {
     "TITLE": "Quel site web correspond à votre projet ?",
     "DESCRIPTION": "Répondez à 6 questions simples et obtenez une recommandation personnalisée avec un budget estimé.",
@@ -1904,7 +1901,6 @@
     "LATER": "Plus tard",
     "CLOSE": "Fermer"
   },
-
   "QUESTIONNAIRE": {
     "WELCOME": {
       "TITLE": "Trouvez la solution web parfaite pour vous",
@@ -2125,7 +2121,6 @@
       }
     }
   },
-
   "COOKIE_BANNER": {
     "TITLE": "Nous utilisons des cookies pour améliorer votre expérience",
     "DESCRIPTION": "Nous souhaitons utiliser des cookies analytiques et fonctionnels pour :",
@@ -2175,7 +2170,6 @@
     "EXPORTING": "Export en cours...",
     "NOTICE": "Les données exportées incluent uniquement les informations stockées localement dans votre navigateur. Pour un export complet de toutes vos données, contactez-nous directement."
   },
-
   "PRIVACY_POLICY": {
     "TITLE": "Politique de confidentialité MSL-iTECH",
     "SUBTITLE": "Protection et transparence de vos données personnelles",

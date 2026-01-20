@@ -83,7 +83,7 @@ $text-delay: 0.3s;
     }
 
     .title {
-        font-size: clamp(3rem, 6vw, 5rem);
+        font-size: clamp(2rem, 5vw, 3.5rem);
         font-weight: 800;
         line-height: 1.1;
         margin: 0;
@@ -243,7 +243,7 @@ gap: 1rem;
 @media (max-width: 768px) {
     .awwwards-slider {
         .title {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
         }
 
         .slide-content {
