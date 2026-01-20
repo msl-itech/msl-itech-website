@@ -1,4 +1,4 @@
-<section class="advantages-section">
+<!-- <section class="advantages-section">
   <div class="container">
     <h2 class="section-title">
       {{ "COMPONENTS.AVANTAGES.SECTION_TITLE" | translate }}
@@ -91,6 +91,98 @@
           ></p>
         </div>
       </div>
+    </div>
+  </div>
+</section> -->
+<section class="advantages-green-section">
+  <!-- Fond d'ambiance (Glow central) -->
+  <div class="ambient-glow"></div>
+
+  <div class="container">
+    
+    <!-- HEADER -->
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="main-title">
+        {{ "COMPONENTS.AVANTAGES.SECTION_TITLE" | translate }}
+        <span class="highlight-box">
+          {{ "COMPONENTS.AVANTAGES.HIGHLIGHT" | translate }}
+        </span>
+        {{ "COMPONENTS.AVANTAGES.SUBTITLE" | translate }}
+      </h2>
+      <div class="subtitle-text">
+        <span class="line"></span>
+        {{ "COMPONENTS.AVANTAGES.PARTNER_SUBTITLE" | translate }}
+        <span class="line"></span>
+      </div>
+    </div>
+
+    <!-- GRID 2x2 -->
+    <div class="advantages-grid">
+      
+      <!-- Card 1 -->
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="icon-box">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <span class="index-number">01</span>
+          </div>
+          <div class="card-content">
+            <h3>{{ "COMPONENTS.AVANTAGES.ADVANTAGES.CERTIFIED_EXPERTISE.TITLE" | translate }}</h3>
+            <p [innerHTML]="'COMPONENTS.AVANTAGES.ADVANTAGES.CERTIFIED_EXPERTISE.DESCRIPTION' | translate"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="icon-box">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <span class="index-number">02</span>
+          </div>
+          <div class="card-content">
+            <h3>{{ "COMPONENTS.AVANTAGES.ADVANTAGES.CUSTOM_PERSONALIZATION.TITLE" | translate }}</h3>
+            <p [innerHTML]="'COMPONENTS.AVANTAGES.ADVANTAGES.CUSTOM_PERSONALIZATION.DESCRIPTION' | translate"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="icon-box">
+              <i class="fas fa-globe"></i>
+            </div>
+            <span class="index-number">03</span>
+          </div>
+          <div class="card-content">
+            <h3>{{ "COMPONENTS.AVANTAGES.ADVANTAGES.INTERNATIONAL_PRESENCE.TITLE" | translate }}</h3>
+            <p [innerHTML]="'COMPONENTS.AVANTAGES.ADVANTAGES.INTERNATIONAL_PRESENCE.DESCRIPTION' | translate"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="icon-box">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <span class="index-number">04</span>
+          </div>
+          <div class="card-content">
+            <h3>{{ "COMPONENTS.AVANTAGES.ADVANTAGES.COMPETITIVE_COSTS.TITLE" | translate }}</h3>
+            <p [innerHTML]="'COMPONENTS.AVANTAGES.ADVANTAGES.COMPETITIVE_COSTS.DESCRIPTION' | translate"></p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

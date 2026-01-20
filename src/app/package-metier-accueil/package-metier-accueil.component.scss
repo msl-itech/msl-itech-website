@@ -1,0 +1,273 @@
+// Variables
+$bg-white: #ffffff;
+$bg-light: #f9fafb; // Gris très léger pour les cartes minimales
+$bg-green: #114D5A; // Vert forêt profond
+$accent-yellow: #f0c300;
+$text-dark: #1f2937;
+$text-light: #9ca3af;
+$border-color: #e5e7eb;
+
+.packages-section-white {
+  background-color: $bg-white;
+  padding: 6rem 5%;
+  font-family: 'Helvetica Neue', sans-serif;
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  // --- Header Section ---
+  .section-header {
+    margin-bottom: 4rem;
+
+    .pill-label {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border: 1px solid $bg-green;
+      border-radius: 50px;
+      color: $bg-green;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: $text-dark;
+      margin: 0;
+    }
+  }
+
+  // --- Grid Layout ---
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: center; // Important pour centrer verticalement
+  }
+
+  // --- Generic Card Styles ---
+  .pricing-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .card-content {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .header {
+      margin-bottom: 1.5rem;
+
+      .package-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .package-desc {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        min-height: 3rem; // Aligner les hauteurs
+      }
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .features-block {
+      flex-grow: 1; // Pousse le bouton vers le bas
+      margin-bottom: 2rem;
+
+      .feat-title {
+        display: block;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .feat-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          margin-bottom: 1rem;
+          font-size: 0.95rem;
+          line-height: 1.4;
+
+          i {
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+
+    .action-footer {
+      width: 100%;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  // --- SPECIFIC: Minimal Card (Admin & Horeca) ---
+  .pricing-card.minimal {
+    background-color: $bg-white;
+    border: 1px solid $border-color;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+
+    .package-name {
+      color: $text-dark;
+    }
+
+    .package-desc {
+      color: $text-light;
+    }
+
+    .divider {
+      background-color: $border-color;
+    }
+
+    .feat-title {
+      color: $text-light;
+    }
+
+    .feat-list li {
+      color: $text-dark;
+
+      i {
+        color: $bg-green;
+        opacity: 0.7;
+      }
+    }
+
+    .btn-outline {
+      border: 1px solid $bg-green;
+      color: $bg-green;
+      background: transparent;
+
+      &:hover {
+        background: $bg-green;
+        color: #fff;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      border-color: $bg-green;
+    }
+  }
+
+  // --- SPECIFIC: Featured Card (Commercial) ---
+  .pricing-card.featured {
+    background-color: $bg-green;
+    color: #fff;
+    transform: scale(1.05); // Plus grand par défaut
+    box-shadow: 0 20px 50px rgba(6, 78, 59, 0.25); // Ombre verte diffuse
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .popular-tag {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $accent-yellow;
+      color: $bg-green;
+      padding: 0.5rem 1.5rem;
+      border-bottom-left-radius: 16px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 10;
+    }
+
+    .package-name {
+      color: $accent-yellow;
+      font-size: 1.8rem;
+    }
+
+    .package-desc {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .divider {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .feat-title {
+      color: $accent-yellow;
+    }
+
+    .feat-list li {
+      color: #fff;
+
+      i {
+        color: $accent-yellow;
+      }
+    }
+
+    .btn-solid-yellow {
+      background-color: $accent-yellow;
+      color: $bg-green;
+      border: none;
+      box-shadow: 0 5px 15px rgba(250, 204, 21, 0.3);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(250, 204, 21, 0.5);
+        background-color: lighten($accent-yellow, 5%);
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 992px) {
+  .packages-section-white {
+    padding: 4rem 5%;
+
+    .pricing-grid {
+      grid-template-columns: 1fr; // Une colonne
+      gap: 3rem;
+    }
+
+    .pricing-card.featured {
+      transform: scale(1); // Reset l'échelle
+      order: -1; // Met le populaire en premier sur mobile !
+    }
+  }
+}

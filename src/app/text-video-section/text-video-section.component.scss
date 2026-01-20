@@ -1,0 +1,272 @@
+// Variables (Thème Clair)
+$bg-color: #ffffff;
+$text-primary: #111827; // Gris très foncé
+$text-secondary: rgba(0, 0, 0, 0.6);
+$border-color: rgba(0, 0, 0, 0.1);
+$accent-color: #f59e0b; // Jaune/Or légèrement plus foncé pour contraste
+$font-main: 'Helvetica Neue', sans-serif;
+
+.awwwards-feature-section {
+    background-color: $bg-color;
+    color: $text-primary;
+    padding: 8rem 5%; // Beaucoup d'espace
+    overflow: hidden;
+    font-family: $font-main;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; // 50/50 split
+        gap: 6rem;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    // --- TYPOGRAPHIE ---
+    .headline {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: 4rem;
+        font-weight: 700;
+        color: $text-primary;
+
+        .highlight-wrapper {
+            position: relative;
+            display: inline-block;
+            color: $accent-color;
+
+            .underline-vector {
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 10px;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    // --- ACCORDEON / LISTE ---
+    .features-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feature-row {
+        border-top: 1px solid $border-color;
+        padding: 2rem 0;
+        transition: background 0.3s ease;
+        cursor: pointer;
+
+        &:last-child {
+            border-bottom: 1px solid $border-color;
+        }
+
+        .row-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+
+            .index {
+                font-family: monospace;
+                color: $accent-color;
+                font-size: 0.9rem;
+            }
+
+            h3 {
+                flex-grow: 1;
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 500;
+                transition: transform 0.3s ease;
+                color: $text-primary;
+            }
+
+            .arrow-icon {
+                transform: rotate(-45deg); // Flèche diagonale (très tendance)
+                transition: transform 0.3s ease, color 0.3s ease;
+                font-size: 1.2rem;
+                color: $text-secondary;
+            }
+        }
+
+        .row-body {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+            p {
+                margin-top: 1rem;
+                margin-left: 2.5rem; // Align with title
+                color: $text-secondary;
+                line-height: 1.6;
+                max-width: 90%;
+            }
+        }
+
+        // Interaction Hover
+        &:hover {
+            .row-header h3 {
+                transform: translateX(10px);
+            }
+
+            .arrow-icon {
+                transform: rotate(0deg); // La flèche devient horizontale
+                color: $accent-color;
+            }
+
+            .row-body {
+                max-height: 200px; // Reveal effect
+                opacity: 1;
+            }
+        }
+    }
+
+    // --- PARTIE VISUELLE ---
+    .visual-column {
+        position: relative;
+    }
+
+    .image-frame-wrapper {
+        position: relative;
+        width: 100%;
+        // Aspect ratio vertical élégant
+        aspect-ratio: 4/5;
+    }
+
+    .main-visual {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        // Effet subtil de lueur (plus douce sur fond blanc)
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+        ::ng-deep .cover-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        &:hover ::ng-deep .cover-image {
+            transform: scale(1.05);
+        }
+    }
+
+    // Bouton Play stylisé
+    .play-trigger {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+
+        .play-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2); // Plus clair
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+            i {
+                font-size: 1.5rem;
+                color: #fff;
+                margin-left: 5px;
+            }
+
+            &:hover {
+                background: $accent-color;
+                border-color: $accent-color;
+                transform: scale(1.1);
+
+                i {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    // --- ELEMENTS FLOTTANTS (GLASSMORPHISM CLAIR) ---
+    .floating-card {
+        position: absolute;
+        z-index: 3;
+        background: rgba(255, 255, 255, 0.7); // Fond blanc semi-transparent
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        padding: 10px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); // Ombre plus légère
+        animation: float 6s ease-in-out infinite;
+
+        img {
+            display: block;
+            border-radius: 8px;
+            max-width: 140px;
+        }
+
+        &.card-1 {
+            bottom: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        &.card-2 {
+            top: 15%;
+            right: -10%;
+            animation-delay: 3s; // Décalage pour mouvement asynchrone
+        }
+    }
+}
+
+// Animation de flottement
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+// --- RESPONSIVE ---
+@media (max-width: 992px) {
+    .awwwards-feature-section {
+        padding: 4rem 5%;
+
+        .grid-container {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .headline {
+            font-size: 2.5rem;
+        }
+
+        .image-frame-wrapper {
+            aspect-ratio: 16/9; // Plus horizontal sur mobile
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .floating-card {
+            display: none; // Souvent mieux de masquer les décors complexes sur mobile
+        }
+    }
+}

@@ -1035,6 +1035,8 @@
       "DESCRIPTION": "Our team is Odoo certified, ensuring that all our work meets international standards for quality implementation."
     },
     "PACKAGE_METIER_ACCUEIL": {
+      "LABEL": "Package Metier",
+      "MAIN_TITLE": "Optimize your business with",
       "POPULAR_BADGE": "Popular",
       "VIEW_DETAILS": "View more details",
       "FEATURES_INCLUDED": "Features included:",

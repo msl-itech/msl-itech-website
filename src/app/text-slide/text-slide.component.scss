@@ -1,0 +1,134 @@
+
+$bg-color: #0a0a0a; // Même fond que le slider précédent
+$text-color: #ffffff;
+$accent-color: #fbbf24; // Une touche de jaune/or pour le luxe
+$scroll-speed: 40s; // Ajuster pour la vitesse
+
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  background: $bg-color;
+  border-top: 1px solid rgba(255,255,255,0.1); // Séparateur subtil
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+
+  // Effet de fondu sur les côtés
+  .fade-edge {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+
+    &.left {
+      left: 0;
+      background: linear-gradient(to right, $bg-color, transparent);
+    }
+    &.right {
+      right: 0;
+      background: linear-gradient(to left, $bg-color, transparent);
+    }
+  }
+
+  // La piste qui contient tout
+  .marquee-track {
+    display: flex;
+    width: max-content; // Important: s'adapte au contenu
+    animation: scroll $scroll-speed linear infinite;
+    will-change: transform;
+
+    &:hover {
+      animation-play-state: paused; // Pause au survol pour lire
+    }
+  }
+
+  // Le contenu répété
+  .marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem; // Espace entre les items
+    padding-right: 4rem; // Espace pour connecter avec le clone
+  }
+
+  // Style des éléments
+  .item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    color: $text-color;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+
+    .icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: $accent-color;
+      font-size: 1.1rem;
+    }
+
+    .text {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .separator {
+      margin-left: 4rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    // Le badge de prix moderne
+    .price-tag {
+      display: inline-block;
+      padding: 0.3em 0.8em;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px; // Forme de pilule
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $accent-color;
+        color: #000;
+        border-color: $accent-color;
+      }
+    }
+  }
+}
+
+// Animation
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); // On bouge de 50% car on a 2 copies
+  }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+  .marquee-wrapper {
+    padding: 1rem 0;
+    
+    .item {
+      font-size: 0.9rem;
+      .separator { margin-left: 2rem; }
+    }
+    
+    .marquee-content {
+      gap: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}

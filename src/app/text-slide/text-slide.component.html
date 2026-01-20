@@ -1,23 +1,81 @@
-<div class="scroll-container">
-  <div class="scroll-text">
-    <span class="scroll-item">
-      <i class="fas fa-check-circle"></i>
-      {{ "COMPONENTS.TEXT_SLIDE.INTERNATIONAL_STANDARDS" | translate }}
-    </span>
-    <span class="scroll-item">
-      <i class="fas fa-map-marker-alt"></i>
-      {{ "COMPONENTS.TEXT_SLIDE.MOROCCO" | translate }}
-      <span class="price">100 MAD HTVA/h</span>
-    </span>
-    <span class="scroll-item">
-      <i class="fas fa-map-marker-alt"></i>
-      {{ "COMPONENTS.TEXT_SLIDE.BELGIUM" | translate }}
-      <span class="price">135 € HTVA/h</span>
-    </span>
-    <span class="scroll-item">
-      <i class="fas fa-map-marker-alt"></i>
-      {{ "COMPONENTS.TEXT_SLIDE.CANADA" | translate }}
-      <span class="price">205 CAD HTVA/h</span>
-    </span>
+<div class="marquee-wrapper">
+  <!-- Les dégradés latéraux pour l'effet de profondeur -->
+  <div class="fade-edge left"></div>
+  <div class="fade-edge right"></div>
+
+  <div class="marquee-track">
+    
+    <!-- GROUPE 1 -->
+    <div class="marquee-content">
+      <div class="item">
+        <span class="icon-box"><i class="fas fa-check-circle"></i></span>
+        <span class="text">{{ "COMPONENTS.TEXT_SLIDE.INTERNATIONAL_STANDARDS" | translate }}</span>
+        <span class="separator">•</span>
+      </div>
+
+      <div class="item">
+        <span class="icon-box"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="text">
+          {{ "COMPONENTS.TEXT_SLIDE.MOROCCO" | translate }}
+          <span class="price-tag">100 MAD HTVA/h</span>
+        </span>
+        <span class="separator">•</span>
+      </div>
+
+      <div class="item">
+        <span class="icon-box"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="text">
+          {{ "COMPONENTS.TEXT_SLIDE.BELGIUM" | translate }}
+          <span class="price-tag">135 € HTVA/h</span>
+        </span>
+        <span class="separator">•</span>
+      </div>
+
+      <div class="item">
+        <span class="icon-box"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="text">
+          {{ "COMPONENTS.TEXT_SLIDE.CANADA" | translate }}
+          <span class="price-tag">205 CAD HTVA/h</span>
+        </span>
+        <span class="separator">•</span>
+      </div>
+    </div>
+
+    <!-- GROUPE 2 (Dupliqué pour la boucle infinie - aria-hidden pour l'accessibilité) -->
+    <div class="marquee-content" aria-hidden="true">
+      <div class="item">
+        <span class="icon-box"><i class="fas fa-check-circle"></i></span>
+        <span class="text">{{ "COMPONENTS.TEXT_SLIDE.INTERNATIONAL_STANDARDS" | translate }}</span>
+        <span class="separator">•</span>
+      </div>
+
+      <div class="item">
+        <span class="icon-box"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="text">
+          {{ "COMPONENTS.TEXT_SLIDE.MOROCCO" | translate }}
+          <span class="price-tag">100 MAD HTVA/h</span>
+        </span>
+        <span class="separator">•</span>
+      </div>
+
+      <div class="item">
+        <span class="icon-box"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="text">
+          {{ "COMPONENTS.TEXT_SLIDE.BELGIUM" | translate }}
+          <span class="price-tag">135 € HTVA/h</span>
+        </span>
+        <span class="separator">•</span>
+      </div>
+
+      <div class="item">
+        <span class="icon-box"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="text">
+          {{ "COMPONENTS.TEXT_SLIDE.CANADA" | translate }}
+          <span class="price-tag">205 CAD HTVA/h</span>
+        </span>
+        <span class="separator">•</span>
+      </div>
+    </div>
+
   </div>
 </div>

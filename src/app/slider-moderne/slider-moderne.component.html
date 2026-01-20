@@ -1,52 +1,69 @@
-<div class="slider-moderne" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
-    <div class="slides-container">
-        <div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="currentSlide === i"
-            [class.prev]="i === (currentSlide - 1 + slides.length) % slides.length"
-            [class.next]="i === (currentSlide + 1) % slides.length">
-            <div class="image-wrapper">
-                <img [appResponsiveImage]="slide.imageConfig" [fallbackSrc]="slide.fallbackSrc" class="slide-image"
-                    alt="{{ slide.alt }}" />
-                <div class="image-overlay"></div>
-            </div>
+<div class="awwwards-slider">
+  <!-- Slides Wrapper -->
+  <div class="slides-wrapper">
+    <div
+      class="slide-item"
+      *ngFor="let slide of slides; let i = index"
+      [class.active]="currentSlide === i"
+      [class.prev]="previousSlide === i"
+    >
+      <!-- Image Background with Parallax/Zoom effect -->
+      <div class="slide-bg">
+        <img
+          [appResponsiveImage]="slide.imageConfig"
+          [fallbackSrc]="slide.fallbackSrc"
+          class="bg-image"
+          alt="Slide Background"
+        />
+        <div class="overlay"></div>
+      </div>
 
-            <div class="content-wrapper">
-                <div class="glass-card">
-                    <h2 class="slide-title">
-                        {{ slide.title }} <span class="highlight">{{ slide.highlight }}</span>
-                    </h2>
-                    <p class="slide-description">{{ slide.description }}</p>
+      <!-- Content -->
+      <div class="slide-content container">
+        <div class="text-wrapper">
+          <!-- Overflow hidden for reveal effect -->
+          <div class="reveal-box">
+            <h2 class="title">
+              {{ slide.title }} <span class="highlight">{{ slide.highlight }}</span>
+            </h2>
+          </div>
+          
+          <div class="reveal-box">
+            <p class="description">{{ slide.description }}</p>
+          </div>
 
-                    <div class="buttons-container" *ngIf="slide.buttons.length > 0">
-                        <button *ngFor="let button of slide.buttons" class="modern-btn"
-                            [class.primary]="button.color === 'primary'"
-                            [class.secondary]="button.color === 'secondary'" (click)="navigateTo(button.link)">
-                            {{ button.text }}
-                            <span class="btn-arrow">→</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+          <div class="buttons-wrapper" *ngIf="slide.buttons.length > 0">
+            <button
+              *ngFor="let button of slide.buttons"
+              class="magnetic-btn"
+              [style.--btn-color]="button.color"
+              [style.--btn-text]="button.textColor"
+              (click)="navigateTo(button.link)"
+            >
+              <span class="btn-text">{{ button.text }}</span>
+              <span class="btn-fill"></span>
+            </button>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modern Navigation -->
+  <div class="slider-controls">
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="((currentSlide + 1) / slides.length) * 100"></div>
+    </div>
+    
+    <div class="pagination-numbers">
+      <span class="current">0{{ currentSlide + 1 }}</span>
+      <span class="separator">/</span>
+      <span class="total">0{{ slides.length }}</span>
     </div>
 
-    <button class="nav-btn prev" (click)="prevSlide()" aria-label="Previous Slide">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-        </svg>
-    </button>
-
-    <button class="nav-btn next" (click)="nextSlide()" aria-label="Next Slide">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-        </svg>
-    </button>
-
-    <div class="indicators">
-        <button *ngFor="let slide of slides; let i = index" class="indicator-dot" [class.active]="currentSlide === i"
-            (click)="showSlide(i)" [attr.aria-label]="'Go to slide ' + (i + 1)">
-            <span class="progress-bar" *ngIf="currentSlide === i"></span>
-        </button>
+    <div class="nav-arrows">
+      <button (click)="prev()" class="nav-btn prev" aria-label="Previous Slide">←</button>
+      <button (click)="next()" class="nav-btn next" aria-label="Next Slide">→</button>
     </div>
+  </div>
 </div>

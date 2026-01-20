@@ -1,0 +1,57 @@
+<section class="experts-white-section">
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="section-header" data-aos="fade-up">
+      <div class="label-wrapper">
+        <span class="square-dot"></span>
+        <h2 class="sub-title">{{ "PAGES.HOME.EXPERTS.TITLE" | translate }}</h2>
+      </div>
+      <h1 class="main-title">
+        {{ "PAGES.HOME.EXPERTS.SUBTITLE" | translate }}
+      </h1>
+    </div>
+
+    <!-- GRID EXPERTS -->
+    <div class="experts-grid">
+
+      <!-- Expert 1 -->
+      <div class="expert-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="image-wrapper">
+          <app-optimized-image src="../../assets/img/newImage/6.webp" alt="Expert en Business Analytics"
+            imageClass="portrait-img" loading="lazy"></app-optimized-image>
+          <!-- Overlay jaune au survol -->
+
+        </div>
+
+        <div class="content-wrapper">
+          <div class="role-line"></div>
+          <p class="expert-role">
+            <span class="index">01.</span>
+            {{ "PAGES.HOME.EXPERTS.BUSINESS_ANALYTICS" | translate }}
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Expert 2 -->
+      <div class="expert-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="image-wrapper">
+          <app-optimized-image src="../../assets/img/newImage/2.webp" alt="Développeur Odoo" imageClass="portrait-img"
+            loading="lazy"></app-optimized-image>
+
+        </div>
+
+        <div class="content-wrapper">
+          <div class="role-line"></div>
+          <p class="expert-role">
+            <span class="index">02.</span>
+            {{ "PAGES.HOME.EXPERTS.DEVELOPER" | translate }}
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

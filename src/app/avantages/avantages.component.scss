@@ -1,0 +1,415 @@
+/* .advantages-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #114D5A 0%, #0a2d36 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantages-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 0% 0%, rgba(240, 195, 0, 0.1) 0%, transparent 50%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 70px;
+    color: #ffffff;
+    position: relative;
+}
+
+.section-title .highlight {
+    color: #f0c300;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #f0c300;
+    transform: scaleX(0.8);
+    transition: transform 0.3s ease;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 15px;
+    font-weight: normal;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    perspective: 1000px;
+}
+
+.advantage-card {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 35px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(240, 195, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f0c300, #114D5A);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(240, 195, 0, 0.3);
+}
+
+.advantage-card:hover::before {
+    transform: scaleX(1);
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #114D5A 0%, #1a6b7e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+    border: 2px solid #f0c300;
+    transition: all 0.3s ease;
+}
+
+.icon-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 2px solid rgba(240, 195, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.icon-wrapper i {
+    font-size: 32px;
+    color: #f0c300;
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover .icon-wrapper {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #f0c300 0%, #ffd700 100%);
+}
+
+.advantage-card:hover .icon-wrapper i {
+    color: #114D5A;
+    transform: rotate(360deg);
+}
+
+.content h3 {
+    color: #114D5A;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.content p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.advantage-card:hover .content h3 {
+    color: #f0c300;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .advantage-card {
+        padding: 25px;
+    }
+    
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .icon-wrapper i {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .advantages-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+} */
+// Variables
+$bg-green: #114D5A;
+$bg-card: rgba(255, 255, 255, 0.03); // Très légère transparence
+$border-color: rgba(255, 255, 255, 0.1);
+$accent-yellow: #f0c300;
+$text-white: #ffffff;
+$text-gray: #9ca3af; // ou un vert très clair #a7f3d0
+
+.advantages-green-section {
+  position: relative;
+  background-color: $bg-green;
+  color: $text-white;
+  padding: 8rem 5%;
+  overflow: hidden;
+  font-family: 'Helvetica Neue', sans-serif;
+
+  // Effet de lumière d'ambiance au centre
+  .ambient-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba($accent-yellow, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  // --- HEADER ---
+  .section-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 5rem;
+
+    .main-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+
+      .highlight-box {
+        display: inline-block;
+        color: $accent-yellow;
+        position: relative;
+        padding: 0 5px;
+
+        // Petit soulignement stylisé
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $accent-yellow;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .subtitle-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      font-family: monospace;
+      color: $text-gray;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      .line {
+        width: 40px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  // --- GRID ---
+  .advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 2 par ligne
+    gap: 2rem;
+  }
+
+  // --- CARD DESIGN ---
+  .advantage-card {
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(10px); // Effet verre dépoli subtil
+    cursor: default;
+
+    .card-inner {
+      padding: 3rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+
+      .icon-box {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: $accent-yellow;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+
+        i {
+          transition: transform 0.4s ease;
+        }
+      }
+
+      .index-number {
+        font-family: monospace;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.1); // Très discret
+        transition: color 0.4s ease;
+      }
+    }
+
+    .card-content {
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: $text-white;
+      }
+
+      p {
+        color: $text-gray;
+        line-height: 1.6;
+        margin: 0;
+        font-size: 1rem;
+      }
+    }
+
+    // --- HOVER EFFECT ---
+    &:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba($accent-yellow, 0.5);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+      .icon-box {
+        background: $accent-yellow;
+        color: $bg-green; 
+        border-color: $accent-yellow;
+        transform: rotate(-10deg); 
+
+        i {
+          transform: scale(1.1);
+        }
+      }
+
+      .index-number {
+        color: rgba($accent-yellow, 0.3);
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 992px) {
+  .advantages-green-section {
+    padding: 5rem 5%;
+
+    .advantages-grid {
+      grid-template-columns: 1fr; 
+      gap: 1.5rem;
+    }
+
+    .advantage-card {
+      .card-inner {
+        padding: 2rem;
+      }
+
+      .card-top {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .section-header .main-title {
+      font-size: 2rem;
+    }
+  }
+}

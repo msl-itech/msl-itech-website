@@ -1,0 +1,65 @@
+<section class="odoo-section-modern" data-aos="fade-up">
+  <div class="container-grid">
+    
+    <!-- COLONNE GAUCHE : ACCORDEON -->
+    <div class="content-side">
+      <div class="header-block" data-aos="fade-right">
+        <h2 class="sub-label">
+          <span class="dot"></span> {{ "PAGES.HOME.WHY_ODOO.TITLE" | translate }}
+        </h2>
+        <h1 class="main-title">
+          {{ "PAGES.HOME.WHY_ODOO.SUBTITLE" | translate }}
+        </h1>
+      </div>
+
+      <div class="accordion-wrapper">
+        <div
+          *ngFor="let item of accordionItems; let i = index"
+          class="accordion-item"
+          [class.active]="item.isExpanded"
+          (click)="toggleAccordion(item)"
+        >
+          <div class="item-header">
+            <span class="item-number">0{{ i + 1 }}</span>
+            <h3 class="item-title">{{ item.title }}</h3>
+            <div class="icon-wrapper">
+              <span class="line horizontal"></span>
+              <span class="line vertical"></span>
+            </div>
+          </div>
+          
+          <div class="item-body">
+            <div class="body-inner">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLONNE DROITE : IMAGE -->
+    <div class="image-side" data-aos="zoom-in" data-aos-delay="200">
+      <div class="image-container">
+        <img
+          src="../../assets/img/accueil/Odoo-Themes-Development.png.png"
+          alt="Développement Odoo"
+          class="fluid-image"
+          loading="lazy"
+        />
+        <!-- Badge Décoratif (Style Awwwards) -->
+        <div class="floating-badge">
+          <svg viewBox="0 0 100 100" class="rotating-text">
+            <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent"/>
+            <text>
+              <textPath xlink:href="#curve">
+                ODOO • CERTIFIED • EXPERTS •
+              </textPath>
+            </text>
+          </svg>
+          <div class="center-icon"><i class="fas fa-star"></i></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
