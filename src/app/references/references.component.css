@@ -357,6 +357,11 @@
     color: #7c3aed;
 }
 
+.tag-odoo {
+    background: rgba(113, 75, 103, 0.15);
+    color: #714B67;
+}
+
 .card-title {
     font-size: 1.5rem;
     font-weight: 700;

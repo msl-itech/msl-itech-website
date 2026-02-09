@@ -534,8 +534,8 @@
           }
         },
         "PROJECT3": {
-          "TITLE": "MSL Sales Strategy",
-          "DESCRIPTION": "Basée en Belgique et au Maroc, MSL Sales est spécialisée dans le recrutement et l'accompagnement de partenaires commerciaux indépendants.",
+          "TITLE": "MSALESStrategy",
+          "DESCRIPTION": "Basée en Belgique et au Maroc, MSALESest spécialisée dans le recrutement et l'accompagnement de partenaires commerciaux indépendants.",
           "TAGS": {
             "RECRUITMENT": "Recrutement",
             "TECH": "Commercial"
@@ -548,6 +548,9 @@
             "ACCOUNTING": "Comptabilité",
             "TECH": "Services"
           }
+        },
+        "TAGS": {
+          "ODOO": "Odoo"
         }
       },
       "CTA": {

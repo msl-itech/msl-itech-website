@@ -57,8 +57,23 @@
         <div class="contact-form-container">
             <div class="step-header">
                 <h2 class="form-title">{{ steps[currentStep - 1].title }}</h2>
-                <div class="step-counter">Étape {{ currentStep }} sur {{ totalSteps }}</div>
+                <div class="step-counter" [style.--progress.%]="(currentStep / totalSteps) * 100">Étape {{ currentStep
+                    }} sur {{ totalSteps }}</div>
             </div>
+
+            <!-- Mobile Progress Dots -->
+            <!-- <div class="mobile-progress">
+                <div class="progress-dots">
+                    <div *ngFor="let step of steps; let i = index" class="progress-dot"
+                        [class.active]="i + 1 === currentStep" [class.completed]="i + 1 < currentStep"
+                        (click)="goToStep(i + 1)">
+                        <span class="dot-number">{{ i + 1 }}</span>
+                    </div>
+                </div>
+                <div class="mobile-progress-bar">
+                    <div class="mobile-progress-fill" [style.width.%]="(currentStep / totalSteps) * 100"></div>
+                </div>
+            </div> -->
 
             <form class="step-form" (ngSubmit)="onSubmit(orderForm)" #orderForm="ngForm">
                 <!-- ÉTAPE 1: Informations Générales -->
@@ -539,11 +554,11 @@
                             <small class="form-text text-muted">Budget indicatif pour la création du site</small>
                         </div>
 
-                        <div class="form-group">
-                            <input type="text" id="deadline" name="deadline" [(ngModel)]="formData.deadline"
-                                class="form-control" placeholder=" " />
+                        <div class="form-group date-field">
                             <label for="deadline">Quelle est la date de mise en ligne souhaitée ?</label>
-                            <small class="form-text text-muted">Date approximative ou délai souhaité</small>
+                            <input type="date" id="deadline" name="deadline" [(ngModel)]="formData.deadline"
+                                class="form-control" [min]="minDate" />
+                            <small class="form-text text-muted">Sélectionnez une date approximative</small>
                         </div>
                     </div>
                 </div>

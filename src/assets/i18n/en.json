@@ -504,8 +504,8 @@
           }
         },
         "PROJECT3": {
-          "TITLE": "MSL Sales Strategy",
-          "DESCRIPTION": "Based in Belgium and Morocco, MSL Sales specializes in recruiting and supporting independent sales partners.",
+          "TITLE": "MSALESStrategy",
+          "DESCRIPTION": "Based in Belgium and Morocco, MSALESspecializes in recruiting and supporting independent sales partners.",
           "TAGS": {
             "RECRUITMENT": "Recruitment",
             "TECH": "Sales"
@@ -518,6 +518,9 @@
             "ACCOUNTING": "Accounting",
             "TECH": "Services"
           }
+        },
+        "TAGS": {
+          "ODOO": "Odoo"
         }
       },
       "CTA": {

@@ -13,6 +13,7 @@ export class OrderWebsiteComponent implements OnInit {
     isLoading = false;
     currentStep = 1;
     totalSteps = 9;
+    minDate = new Date().toISOString().split('T')[0]; // Today's date in YYYY-MM-DD format
 
     formData = {
         // 1. Informations générales
