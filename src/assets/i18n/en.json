@@ -12,7 +12,7 @@
   "HEADER": {
     "MENU": {
       "HOME": "Home",
-      "DIGITAL_SOLUTIONS": "Digital Solutions",
+      "DIGITAL_SOLUTIONS": "Solutions",
       "ODOO_APPS": "Odoo Applications",
       "FINANCE": "Finance",
       "SALES": "Sales",
@@ -20,7 +20,7 @@
       "HR": "Human Resources",
       "MARKETING": "Digital Marketing",
       "PROFESSIONAL_SERVICES": "Professional Services",
-      "ORGANIZATIONAL_MODULES": "Organizational Modules",
+      "ORGANIZATIONAL_MODULES": "Organizational",
       "COMMERCIAL": "Commercial",
       "ADMINISTRATIVE": "Administrative",
       "HORECA": "Horeca",
@@ -31,12 +31,13 @@
       "CUSTOM_PRICING": "Custom Pricing",
       "ODOO": "Odoo",
       "WEBSITE": "Website",
-      "SUPPORT": "Support"
+      "SUPPORT": "Support",
+      "REFERENCES": "Our Portfolio"
     },
     "ACTIONS": {
       "SUBMIT_NEED": "Submit a Need",
       "CONTACT_US": "Contact Us",
-      "BOOK_DEMO": "Get your free audit"
+      "BOOK_DEMO": "Free audit"
     }
   },
   "BUTTONS": {
@@ -75,7 +76,6 @@
     "HOME": "Home",
     "CLOSE": "Close"
   },
-
   "FOOTER": {
     "DESCRIPTION": "Accelerate your company's digital transformation with MSL-Itech, expert in Odoo implementation and integration.",
     "NAVIGATION": {
@@ -476,9 +476,89 @@
         }
       }
     },
+    "REFERENCES": {
+      "HERO": {
+        "TITLE": "Our Achievements",
+        "SUBTITLE": "Discover the websites we have created for our clients"
+      },
+      "PORTFOLIO": {
+        "TITLE": "Our Portfolio",
+        "DESCRIPTION": "Tailor-made digital solutions for each client"
+      },
+      "PROJECTS": {
+        "VISIT_SITE": "Visit website",
+        "PROJECT1": {
+          "TITLE": "Odoo Finances Pro",
+          "DESCRIPTION": "Professional financial management platform integrating Odoo to optimize accounting and financial processes.",
+          "TAGS": {
+            "FINANCE": "Finance",
+            "TECH": "Odoo"
+          }
+        },
+        "PROJECT2": {
+          "TITLE": "AIS HECTOR DENIS",
+          "DESCRIPTION": "Non-profit Social Housing Agency, founded in 2000, providing access to housing for low-income individuals with affordable rent in Evere and throughout the Brussels Region.",
+          "TAGS": {
+            "SOCIAL": "Social",
+            "TECH": "Real Estate"
+          }
+        },
+        "PROJECT3": {
+          "TITLE": "MSL Sales Strategy",
+          "DESCRIPTION": "Based in Belgium and Morocco, MSL Sales specializes in recruiting and supporting independent sales partners.",
+          "TAGS": {
+            "RECRUITMENT": "Recruitment",
+            "TECH": "Sales"
+          }
+        },
+        "PROJECT4": {
+          "TITLE": "MFinances",
+          "DESCRIPTION": "Certified Public Accountant in Brussels offering administrative support to address potential omissions in your accounting and avoid loss of deductibility for certain expenses.",
+          "TAGS": {
+            "ACCOUNTING": "Accounting",
+            "TECH": "Services"
+          }
+        }
+      },
+      "CTA": {
+        "TITLE": "Ready to launch your project?",
+        "DESCRIPTION": "Join our satisfied clients and bring your web project to life",
+        "BUTTON_START": "Start my project",
+        "BUTTON_PRICING": "See our prices"
+      }
+    },
     "CONTACT": {
-      "TITLE": "Contact us",
-      "DESCRIPTION": "Feel free to contact us for your projects"
+      "BANNER": {
+        "TITLE": "Contact Us"
+      },
+      "RESERVATION_BUTTONS": {
+        "DEMO": "Book a demo",
+        "APPOINTMENT": "Make an appointment",
+        "PARTNER": "Become Partner"
+      },
+      "INFO": {
+        "TITLE": "MSL-iTECH"
+      },
+      "FORM": {
+        "TITLE": "Contact us",
+        "SUBTITLE": "For anything concerning our company or our services. We will do our best to respond to you as quickly as possible.",
+        "FIELDS": {
+          "NAME": "Your name *",
+          "PHONE": "Phone number *",
+          "EMAIL": "Your email *",
+          "COMPANY": "Your company *",
+          "SUBJECT": "Subject",
+          "MESSAGE": "Your question"
+        },
+        "VALIDATION": {
+          "REQUIRED": "This field is required",
+          "EMAIL_INVALID": "Please enter a valid email address"
+        },
+        "SUBMIT": {
+          "BUTTON": "Submit",
+          "LOADING": "Sending..."
+        }
+      }
     },
     "SUPPORT": {
       "HERO": {
@@ -1073,39 +1153,6 @@
             "ROLE_MANAGEMENT": "Role and permission management.",
             "TRAFFIC_ALLOWANCE": "500 GB Traffic/month"
           }
-        }
-      }
-    },
-    "CONTACT": {
-      "BANNER": {
-        "TITLE": "Contact Us"
-      },
-      "RESERVATION_BUTTONS": {
-        "DEMO": "Book a demo",
-        "APPOINTMENT": "Make an appointment",
-        "PARTNER": "Become Partner"
-      },
-      "INFO": {
-        "TITLE": "MSL-iTECH"
-      },
-      "FORM": {
-        "TITLE": "Contact us",
-        "SUBTITLE": "For anything concerning our company or our services. We will do our best to respond to you as quickly as possible.",
-        "FIELDS": {
-          "NAME": "Your name *",
-          "PHONE": "Phone number *",
-          "EMAIL": "Your email *",
-          "COMPANY": "Your company *",
-          "SUBJECT": "Subject",
-          "MESSAGE": "Your question"
-        },
-        "VALIDATION": {
-          "REQUIRED": "This field is required",
-          "EMAIL_INVALID": "Please enter a valid email address"
-        },
-        "SUBMIT": {
-          "BUTTON": "Submit",
-          "LOADING": "Sending..."
         }
       }
     },
@@ -1864,13 +1911,11 @@
       }
     }
   },
-
   "QUESTIONNAIRE_PROMO": {
     "MESSAGE": "Discover in 30 seconds the ideal website for you!",
     "CTA": "Start now",
     "CLOSE": "Close"
   },
-
   "QUESTIONNAIRE_MODAL": {
     "TITLE": "Which website fits your project?",
     "DESCRIPTION": "Answer 6 simple questions and get a personalized recommendation with an estimated budget.",
@@ -1883,7 +1928,6 @@
     "LATER": "Later",
     "CLOSE": "Close"
   },
-
   "QUESTIONNAIRE": {
     "WELCOME": {
       "TITLE": "Find the perfect web solution for you",
@@ -2104,7 +2148,6 @@
       }
     }
   },
-
   "COOKIE_BANNER": {
     "TITLE": "We use cookies to improve your experience",
     "DESCRIPTION": "We would like to use analytical and functional cookies to:",

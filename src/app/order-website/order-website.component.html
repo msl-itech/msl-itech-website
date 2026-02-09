@@ -1,0 +1,628 @@
+<div class="banner-section2 position-relative">
+    <img src="../../assets/img/horeca/2.webp" alt="Projet Web Banner" />
+    <div class="overlay-text d-flex align-items-center justify-content-center">
+        <div class="text-center text-white px-3">
+            <h2>Créez Votre Site Web Idéal</h2>
+            <p class="lead">Répondez à quelques questions simples et laissez-nous construire la solution digitale
+                parfaite pour votre entreprise</p>
+        </div>
+    </div>
+</div>
+
+<div class="contact-page">
+    <div class="contact-container">
+        <!-- Sidebar avec progression -->
+        <div class="contact-info">
+            <h2 class="info-title">Votre Projet</h2>
+
+            <div class="info-items">
+                <div class="info-item">
+                    <i class="fas fa-rocket"></i>
+                    <p>Un formulaire simple et guidé pour définir votre projet</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-chart-line"></i>
+                    <p>Une solution sur mesure adaptée à vos besoins</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-headset"></i>
+                    <p>Un accompagnement expert à chaque étape</p>
+                </div>
+            </div>
+
+            <!-- Indicateur de progression -->
+            <div class="progress-indicator">
+                <div class="progress-header">
+                    <h4>Progression</h4>
+                    <span class="progress-text">{{ currentStep }}/{{ totalSteps }}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" [style.width.%]="(currentStep / totalSteps) * 100"></div>
+                </div>
+                <div class="steps-list">
+                    <div *ngFor="let step of steps; let i = index" class="step-item"
+                        [class.active]="i + 1 === currentStep" [class.completed]="i + 1 < currentStep"
+                        (click)="goToStep(i + 1)">
+                        <div class="step-number">
+                            <i class="fas fa-check" *ngIf="i + 1 < currentStep"></i>
+                            <span *ngIf="i + 1 >= currentStep">{{ i + 1 }}</span>
+                        </div>
+                        <span class="step-title">{{ step.title }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulaire principal -->
+        <div class="contact-form-container">
+            <div class="step-header">
+                <h2 class="form-title">{{ steps[currentStep - 1].title }}</h2>
+                <div class="step-counter">Étape {{ currentStep }} sur {{ totalSteps }}</div>
+            </div>
+
+            <form class="step-form" (ngSubmit)="onSubmit(orderForm)" #orderForm="ngForm">
+                <!-- ÉTAPE 1: Informations Générales -->
+                <div class="step-content" *ngIf="currentStep === 1">
+                    <div class="step-intro">
+                        <i class="fas fa-building step-icon"></i>
+                        <p>Commençons par faire connaissance ! Partagez-nous vos coordonnées pour que nous puissions
+                            vous accompagner au mieux.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" id="companyName" name="companyName" [(ngModel)]="formData.companyName"
+                                required class="form-control" #companyName="ngModel" placeholder=" " />
+                            <label for="companyName">Nom de votre entreprise *</label>
+                            <small class="text-danger"
+                                *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
+                                Merci de renseigner le nom de votre entreprise
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="contactName" name="contactName" [(ngModel)]="formData.contactName"
+                                required class="form-control" #contactName="ngModel" placeholder=" " />
+                            <label for="contactName">Votre nom et prénom *</label>
+                            <small class="text-danger"
+                                *ngIf="contactName.invalid && (contactName.dirty || contactName.touched)">
+                                Merci de renseigner votre nom
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" [(ngModel)]="formData.email" required email
+                                class="form-control" #email="ngModel" placeholder=" " />
+                            <label for="email">Votre email professionnel *</label>
+                            <small class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                                Merci de renseigner un email valide
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" required
+                                class="form-control" #phone="ngModel" placeholder=" " />
+                            <label for="phone">Votre numéro de téléphone *</label>
+                            <small class="text-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                                Merci de renseigner votre numéro
+                            </small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <input type="text" id="sector" name="sector" [(ngModel)]="formData.sector" required
+                                class="form-control" #sector="ngModel" placeholder=" " />
+                            <label for="sector">Dans quel secteur d'activité évoluez-vous ? *</label>
+                            <small class="text-danger" *ngIf="sector.invalid && (sector.dirty || sector.touched)">
+                                Merci de renseigner votre secteur d'activité
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 2: Objectifs -->
+                <div class="step-content" *ngIf="currentStep === 2">
+                    <div class="step-intro">
+                        <i class="fas fa-bullseye step-icon"></i>
+                        <p>Parlons de vos ambitions ! Comprenons ensemble ce que vous souhaitez accomplir avec votre
+                            site web.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <textarea id="siteGoal" name="siteGoal" [(ngModel)]="formData.siteGoal" class="form-control"
+                                rows="3" placeholder=" "></textarea>
+                            <label for="siteGoal">Quelle est la raison principale pour laquelle vous souhaitez créer ce
+                                site ?</label>
+                            <small class="form-text text-muted">Par exemple : présenter mes services, vendre en ligne,
+                                générer des leads...</small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <textarea id="expectedResults" name="expectedResults" [(ngModel)]="formData.expectedResults"
+                                class="form-control" rows="3" placeholder=" "></textarea>
+                            <label for="expectedResults">Quels résultats concrets attendez-vous de ce site ?</label>
+                            <small class="form-text text-muted">Par exemple : augmenter ma visibilité, recevoir des
+                                devis, vendre 50 produits/mois...</small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <textarea id="targetAudience" name="targetAudience" [(ngModel)]="formData.targetAudience"
+                                class="form-control" rows="3" placeholder=" "></textarea>
+                            <label for="targetAudience">Qui sont les visiteurs que vous souhaitez attirer sur votre site
+                                ?</label>
+                            <small class="form-text text-muted">Par exemple : professionnels B2B, particuliers, jeunes
+                                parents...</small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <textarea id="visitorNeeds" name="visitorNeeds" [(ngModel)]="formData.visitorNeeds"
+                                class="form-control" rows="3" placeholder=" "></textarea>
+                            <label for="visitorNeeds">Que doivent pouvoir faire vos visiteurs sur le site ?</label>
+                            <small class="form-text text-muted">Par exemple : demander un devis, acheter un produit,
+                                prendre rendez-vous...</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 3: Type de Site -->
+                <div class="step-content" *ngIf="currentStep === 3">
+                    <div class="step-intro">
+                        <i class="fas fa-globe step-icon"></i>
+                        <p>Quel type de site web correspond le mieux à votre projet ?</p>
+                    </div>
+
+                    <div class="section-card">
+                        <h5 class="mb-3">Choisissez le type de site qui vous convient</h5>
+                        <div class="checkbox-grid tools-grid">
+                            <div class="checkbox-item">
+                                <input type="radio" id="siteVitrine" name="siteType" value="Vitrine"
+                                    [(ngModel)]="formData.siteType" />
+                                <label for="siteVitrine" class="checkbox-label">
+                                    <i class="fas fa-desktop"></i>
+                                    <div>
+                                        <strong>Site Vitrine</strong>
+                                        <span>Pour présenter votre activité et vos services</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="radio" id="siteEcom" name="siteType" value="E-commerce"
+                                    [(ngModel)]="formData.siteType" />
+                                <label for="siteEcom" class="checkbox-label">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <div>
+                                        <strong>E-commerce</strong>
+                                        <span>Pour vendre vos produits en ligne</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="radio" id="siteBlog" name="siteType" value="Blog"
+                                    [(ngModel)]="formData.siteType" />
+                                <label for="siteBlog" class="checkbox-label">
+                                    <i class="fas fa-newspaper"></i>
+                                    <div>
+                                        <strong>Blog / Média</strong>
+                                        <span>Pour partager du contenu et des articles</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="radio" id="sitePortail" name="siteType" value="Portail"
+                                    [(ngModel)]="formData.siteType" />
+                                <label for="sitePortail" class="checkbox-label">
+                                    <i class="fas fa-globe"></i>
+                                    <div>
+                                        <strong>Portail Web</strong>
+                                        <span>Plateforme avec espace membre et fonctionnalités avancées</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 4: Pages Souhaitées -->
+                <div class="step-content" *ngIf="currentStep === 4">
+                    <div class="step-intro">
+                        <i class="fas fa-sitemap step-icon"></i>
+                        <p>Définissez maintenant la structure de votre site en sélectionnant les pages dont vous avez
+                            besoin.</p>
+                    </div>
+
+                    <div class="section-card">
+                        <h5 class="mb-3">Quelles pages souhaitez-vous avoir sur votre site ?</h5>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pageHome" name="pageHome"
+                                    [(ngModel)]="formData.pages.home" />
+                                <label for="pageHome" class="checkbox-label">
+                                    <i class="fas fa-home"></i>
+                                    <div>
+                                        <strong>Page d'Accueil</strong>
+                                        <span>La première page que vos visiteurs verront</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pageAbout" name="pageAbout"
+                                    [(ngModel)]="formData.pages.about" />
+                                <label for="pageAbout" class="checkbox-label">
+                                    <i class="fas fa-info-circle"></i>
+                                    <div>
+                                        <strong>À propos</strong>
+                                        <span>Présentez votre histoire et vos valeurs</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pageServices" name="pageServices"
+                                    [(ngModel)]="formData.pages.services" />
+                                <label for="pageServices" class="checkbox-label">
+                                    <i class="fas fa-briefcase"></i>
+                                    <div>
+                                        <strong>Services / Produits</strong>
+                                        <span>Détaillez ce que vous proposez</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pageBlog" name="pageBlog"
+                                    [(ngModel)]="formData.pages.blog" />
+                                <label for="pageBlog" class="checkbox-label">
+                                    <i class="fas fa-rss"></i>
+                                    <div>
+                                        <strong>Blog / Actualités</strong>
+                                        <span>Partagez des articles et news</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pageContact" name="pageContact"
+                                    [(ngModel)]="formData.pages.contact" />
+                                <label for="pageContact" class="checkbox-label">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <strong>Contact</strong>
+                                        <span>Permettez à vos visiteurs de vous contacter</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="conditional-input mt-3">
+                            <input type="text" [(ngModel)]="formData.pages.other" name="pagesOther"
+                                placeholder="Autres pages spécifiques (ex: Portfolio, Témoignages, FAQ...)"
+                                class="form-control small-input" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 5: Fonctionnalités -->
+                <div class="step-content" *ngIf="currentStep === 5">
+                    <div class="step-intro">
+                        <i class="fas fa-cogs step-icon"></i>
+                        <p>Enrichissons votre site ! Sélectionnez les fonctionnalités dont vous avez besoin.</p>
+                    </div>
+
+                    <div class="section-card">
+                        <h5 class="mb-3">De quelles fonctionnalités avez-vous besoin ?</h5>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="featForm" name="featForm"
+                                    [(ngModel)]="formData.features.contactForm" />
+                                <label for="featForm" class="checkbox-label">
+                                    <i class="fas fa-file-alt"></i>
+                                    <div>
+                                        <strong>Formulaire de contact</strong>
+                                        <span>Recevez des messages de vos visiteurs</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="featBooking" name="featBooking"
+                                    [(ngModel)]="formData.features.booking" />
+                                <label for="featBooking" class="checkbox-label">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <div>
+                                        <strong>Réservation en ligne</strong>
+                                        <span>Permettez la prise de rendez-vous automatique</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="featPay" name="featPay"
+                                    [(ngModel)]="formData.features.payment" />
+                                <label for="featPay" class="checkbox-label">
+                                    <i class="fas fa-credit-card"></i>
+                                    <div>
+                                        <strong>Paiement en ligne</strong>
+                                        <span>Acceptez les paiements par carte bancaire</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="featMember" name="featMember"
+                                    [(ngModel)]="formData.features.memberArea" />
+                                <label for="featMember" class="checkbox-label">
+                                    <i class="fas fa-user-lock"></i>
+                                    <div>
+                                        <strong>Espace membre</strong>
+                                        <span>Zone privée avec connexion pour vos clients</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="featChat" name="featChat"
+                                    [(ngModel)]="formData.features.chat" />
+                                <label for="featChat" class="checkbox-label">
+                                    <i class="fas fa-comments"></i>
+                                    <div>
+                                        <strong>Chat en ligne</strong>
+                                        <span>Discutez en direct avec vos visiteurs</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="featNews" name="featNews"
+                                    [(ngModel)]="formData.features.newsletter" />
+                                <label for="featNews" class="checkbox-label">
+                                    <i class="fas fa-envelope-open-text"></i>
+                                    <div>
+                                        <strong>Newsletter</strong>
+                                        <span>Collectez des emails et envoyez des actualités</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 6: Contenu Fourni -->
+                <div class="step-content" *ngIf="currentStep === 6">
+                    <div class="step-intro">
+                        <i class="fas fa-folder-open step-icon"></i>
+                        <p>Parlons maintenant des contenus. Quels éléments pouvez-vous nous fournir pour votre site ?
+                        </p>
+                    </div>
+
+                    <div class="section-card">
+                        <h5 class="mb-3">Quels contenus pouvez-vous nous fournir ?</h5>
+                        <small class="form-text text-muted mb-3 d-block">Cela nous aidera à estimer le temps nécessaire
+                            pour créer votre site</small>
+                        <div class="checkbox-grid tools-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contText" name="contText"
+                                    [(ngModel)]="formData.contentProvided.text" />
+                                <label for="contText" class="checkbox-label">
+                                    <i class="fas fa-file-alt"></i>
+                                    <div>
+                                        <strong>Textes</strong>
+                                        <span>Descriptions, présentations</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contImg" name="contImg"
+                                    [(ngModel)]="formData.contentProvided.images" />
+                                <label for="contImg" class="checkbox-label">
+                                    <i class="fas fa-images"></i>
+                                    <div>
+                                        <strong>Images</strong>
+                                        <span>Photos de qualité</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contLogo" name="contLogo"
+                                    [(ngModel)]="formData.contentProvided.logo" />
+                                <label for="contLogo" class="checkbox-label">
+                                    <i class="fas fa-star"></i>
+                                    <div>
+                                        <strong>Logo</strong>
+                                        <span>Logo de votre marque</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contVideo" name="contVideo"
+                                    [(ngModel)]="formData.contentProvided.video" />
+                                <label for="contVideo" class="checkbox-label">
+                                    <i class="fas fa-video"></i>
+                                    <div>
+                                        <strong>Vidéos</strong>
+                                        <span>Contenu vidéo professionnel</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 7: Design -->
+                <div class="step-content" *ngIf="currentStep === 7">
+                    <div class="step-intro">
+                        <i class="fas fa-paint-brush step-icon"></i>
+                        <p>Créons l'identité visuelle de votre site. Parlez-nous de vos préférences en matière de
+                            design.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <input type="text" id="designStyle" name="designStyle" [(ngModel)]="formData.designStyle"
+                                class="form-control" placeholder=" " />
+                            <label for="designStyle">Quel style visuel recherchez-vous ?</label>
+                            <small class="form-text text-muted">Par exemple : moderne et épuré, coloré et dynamique,
+                                sobre et professionnel...</small>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="hasBranding" name="hasBranding" [(ngModel)]="formData.hasBranding"
+                                class="form-control select-control">
+                                <option [value]="null">Sélectionnez...</option>
+                                <option [value]="true">Oui, j'ai déjà une charte graphique</option>
+                                <option [value]="false">Non, j'ai besoin d'aide pour la créer</option>
+                            </select>
+                            <label for="hasBranding">Disposez-vous déjà d'une charte graphique ?</label>
+                            <small class="form-text text-muted">Logo, couleurs, typographies définies</small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <textarea id="likedSites" name="likedSites" [(ngModel)]="formData.likedSites"
+                                class="form-control" rows="2" placeholder=" "></textarea>
+                            <label for="likedSites">Avez-vous des sites web que vous aimez en référence ?</label>
+                            <small class="form-text text-muted">Partagez les URLs de sites qui vous inspirent</small>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-item mt-3">
+                        <input type="checkbox" id="seoNeeded" name="seoNeeded" [(ngModel)]="formData.seoNeeded" />
+                        <label for="seoNeeded" class="checkbox-label">
+                            <i class="fas fa-search"></i>
+                            <div>
+                                <strong>Référencement SEO</strong>
+                                <span>Optimisez votre visibilité sur Google et les moteurs de recherche</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 8: Aspects Techniques & Budget -->
+                <div class="step-content" *ngIf="currentStep === 8">
+                    <div class="step-intro">
+                        <i class="fas fa-flag-checkered step-icon"></i>
+                        <p>Derniers détails techniques et budgétaires pour finaliser votre projet.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <select id="domainExists" name="domainExists" [(ngModel)]="formData.domainExists"
+                                class="form-control select-control">
+                                <option [value]="null">Sélectionnez...</option>
+                                <option [value]="true">Oui, j'ai déjà un nom de domaine</option>
+                                <option [value]="false">Non, j'ai besoin d'en créer un</option>
+                            </select>
+                            <label for="domainExists">Disposez-vous d'un nom de domaine ?</label>
+                            <small class="form-text text-muted">Ex: www.monentreprise.com</small>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="hostingExists" name="hostingExists" [(ngModel)]="formData.hostingExists"
+                                class="form-control select-control">
+                                <option [value]="null">Sélectionnez...</option>
+                                <option [value]="true">Oui, j'ai déjà un hébergement</option>
+                                <option [value]="false">Non, j'ai besoin d'un hébergement</option>
+                            </select>
+                            <label for="hostingExists">Disposez-vous d'un hébergement web ?</label>
+                            <small class="form-text text-muted">Serveur où votre site sera hébergé</small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="budget" name="budget" [(ngModel)]="formData.budget"
+                                class="form-control" placeholder=" " />
+                            <label for="budget">Quel est votre budget estimé ?</label>
+                            <small class="form-text text-muted">Budget indicatif pour la création du site</small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="deadline" name="deadline" [(ngModel)]="formData.deadline"
+                                class="form-control" placeholder=" " />
+                            <label for="deadline">Quelle est la date de mise en ligne souhaitée ?</label>
+                            <small class="form-text text-muted">Date approximative ou délai souhaité</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 9: Support & Formation -->
+                <div class="step-content" *ngIf="currentStep === 9">
+                    <div class="step-intro">
+                        <i class="fas fa-headset step-icon"></i>
+                        <p>Comment souhaitez-vous être accompagné après la mise en ligne de votre site ?</p>
+                    </div>
+
+                    <div class="section-card">
+                        <h5 class="mb-3">Services d'accompagnement</h5>
+                        <small class="form-text text-muted mb-4 d-block">Sélectionnez les services qui vous intéressent
+                            pour assurer le succès de votre site web</small>
+
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="maintenanceNeeded" name="maintenanceNeeded"
+                                    [(ngModel)]="formData.maintenanceNeeded" />
+                                <label for="maintenanceNeeded" class="checkbox-label">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <div>
+                                        <strong>Formation</strong>
+                                        <span>Apprenez à gérer votre site en toute autonomie (gestion du contenu, ajout
+                                            de pages, etc.)</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="monthlySupport" name="monthlySupport"
+                                    [(ngModel)]="formData.monthlySupport" />
+                                <label for="monthlySupport" class="checkbox-label">
+                                    <i class="fas fa-headset"></i>
+                                    <div>
+                                        <strong>Support mensuel</strong>
+                                        <span>Bénéficiez d'une assistance continue pour vos mises à jour et
+                                            corrections</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card mt-4" style="background: #fff9e6; border-left-color: #f0c300;">
+                        <h5 style="color: #114d5a;"><i class="fas fa-lightbulb"
+                                style="color: #f0c300; margin-right: 10px;"></i>Pourquoi ces services ?</h5>
+                        <ul style="margin: 1rem 0 0 0; padding-left: 1.5rem; color: #64748b;">
+                            <li style="margin-bottom: 0.75rem;"><strong>Formation :</strong> Devenez autonome dans la
+                                gestion quotidienne de votre site</li>
+                            <li style="margin-bottom: 0.75rem;"><strong>Support mensuel :</strong> Garantissez la
+                                performance et la sécurité de votre site avec une équipe dédiée</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="step-navigation">
+                    <button type="button" class="nav-btn prev-btn" [disabled]="currentStep === 1" (click)="prevStep()"
+                        *ngIf="currentStep > 1">
+                        <i class="fas fa-arrow-left"></i>
+                        Précédent
+                    </button>
+
+                    <button type="button" class="nav-btn next-btn" (click)="nextStep(orderForm)"
+                        *ngIf="currentStep < totalSteps">
+                        Suivant
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <button type="submit" class="submit-btn" [class.loading]="isLoading" [disabled]="isLoading"
+                        *ngIf="currentStep === totalSteps">
+                        <span>{{ isLoading ? "Envoi en cours..." : "Envoyer mon projet" }}</span>
+                        <i class="fas fa-paper-plane" *ngIf="!isLoading"></i>
+                        <i class="fas fa-spinner fa-spin" *ngIf="isLoading"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
