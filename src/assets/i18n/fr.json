@@ -549,6 +549,14 @@
             "TECH": "Services"
           }
         },
+        "PROJECT5": {
+          "TITLE": "Novatrait",
+          "DESCRIPTION": "Votre partenaire numérique. Novatrait accompagne les Dirigeant.e.s de PME et les entrepreneurs à clarifier, structurer et piloter leurs projets digitaux. Grâce à leur expertise technique et leur sens pratique, ils transforment vos idées en solutions concrètes – sans jargon et en toute transparence.",
+          "TAGS": {
+            "DIGITAL": "Digital",
+            "TECH": "Consulting"
+          }
+        },
         "TAGS": {
           "ODOO": "Odoo"
         }

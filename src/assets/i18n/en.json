@@ -519,6 +519,14 @@
             "TECH": "Services"
           }
         },
+        "PROJECT5": {
+          "TITLE": "Novatrait",
+          "DESCRIPTION": "Your digital partner. Novatrait supports SME managers and entrepreneurs in clarifying, structuring and managing their digital projects. With their technical expertise and practical approach, they transform your ideas into concrete solutions – without jargon and with full transparency.",
+          "TAGS": {
+            "DIGITAL": "Digital",
+            "TECH": "Consulting"
+          }
+        },
         "TAGS": {
           "ODOO": "Odoo"
         }

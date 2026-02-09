@@ -203,6 +203,10 @@
     animation-delay: 0.4s;
 }
 
+.portfolio-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
 .portfolio-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 50px rgba(17, 77, 90, 0.2);
@@ -360,6 +364,11 @@
 .tag-odoo {
     background: rgba(113, 75, 103, 0.15);
     color: #714B67;
+}
+
+.tag-digital {
+    background: rgba(6, 182, 212, 0.1);
+    color: #0891b2;
 }
 
 .card-title {
