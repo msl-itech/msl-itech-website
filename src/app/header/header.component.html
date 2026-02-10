@@ -856,7 +856,7 @@
 <header>
   <!-- Top Bar -->
   <div class="top-bar">
-     <app-questionnaire-promo-bar></app-questionnaire-promo-bar>
+     <!-- <app-questionnaire-promo-bar></app-questionnaire-promo-bar> -->
     <div class="container">
       <app-language-selector></app-language-selector>
     </div>
@@ -928,7 +928,7 @@
             </li>
             <li role="none">
               <a
-                routerLink="/service2"
+                routerLink="/finances"
                 (click)="isMobile && closeMenu()"
                 role="menuitem"
                 >{{ "HEADER.MENU.FINANCE" | translate }}</a
@@ -936,7 +936,7 @@
             </li>
             <li role="none">
               <a
-                routerLink="/service3"
+                routerLink="/ventes"
                 (click)="isMobile && closeMenu()"
                 role="menuitem"
                 >{{ "HEADER.MENU.SALES" | translate }}</a
@@ -1032,6 +1032,16 @@
             (click)="closeMenu()"
           >
             {{ "HEADER.MENU.ABOUT" | translate }}
+          </a>
+        </li>
+
+         <li>
+          <a
+            routerLink="/references"
+            routerLinkActive="actived"
+            (click)="closeMenu()"
+          >
+            {{ "HEADER.MENU.REFERENCES" | translate }}
           </a>
         </li>
 

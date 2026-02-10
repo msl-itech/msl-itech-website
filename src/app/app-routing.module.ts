@@ -35,6 +35,8 @@ import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { DevenirPartenaireComponent } from './devenir-partenaire/devenir-partenaire.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
+import { OrderWebsiteComponent } from './order-website/order-website.component';
+import { ReferencesComponent } from './references/references.component';
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'sitemap', redirectTo: '/sitemap.xml', pathMatch: 'full' },
@@ -43,8 +45,8 @@ const routes: Routes = [
   { path: 'blog/:slug', component: BlogDetailComponent },
   { path: 'package-metier', component: PagePackageComponent },
   { path: 'serviceOdoo', component: Service1Component },
-  { path: 'service2', component: Service2Component },
-  { path: 'service3', component: Service3Component },
+  { path: 'finances', component: Service2Component }, //Finances
+  { path: 'ventes', component: Service3Component }, // Ventes
   { path: 'fabrication', component: Service4Component },
   { path: 'ressources-humaines', component: Service5Component },
   { path: 'marketing-digital', component: Service6Component },
@@ -88,6 +90,8 @@ const routes: Routes = [
   { path: 'smart-alert-order', component: SmartAlertOrderComponent },
   { path: 'devenir-partenaire', component: DevenirPartenaireComponent },
   { path: 'questionnaire', component: QuestionnaireComponent },
+  { path: 'order-website', component: OrderWebsiteComponent },
+  { path: 'references', component: ReferencesComponent },
   { path: '**', redirectTo: 'accueil', pathMatch: 'full' },
 ];
 @NgModule({
@@ -98,4 +102,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

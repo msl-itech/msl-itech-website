@@ -66,7 +66,7 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
     private odooService: OdooService,
     private toastr: ToastrService,
     private translate: TranslateService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadTranslations();
@@ -439,45 +439,74 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
 
     this.isLoading = true;
 
-    // Assemblage de la description complète
+    // Assemblage de la description complète avec HTML amélioré
     const descriptionParts = [
-      `<h3>Informations de contact</h3>`,
-      `<p><strong>Société:</strong> ${this.company}</p>`,
-      `<p><strong>Nom:</strong> ${this.contact_name}</p>`,
-      `<p><strong>Téléphone:</strong> ${this.phone}</p>`,
-      `<p><strong>Email:</strong> ${this.email_from}</p>`,
+      `<h3>🎬 Demande de démonstration Odoo</h3>`,
 
-      `<h3>🎯 Objectifs principaux avec Odoo</h3>`,
-      `<ul>${this.getSelectedObjectifs()
-        .map((obj) => `<li>${obj}</li>`)
-        .join('')}</ul>`,
+      // Section 1: Informations de contact
+      `<div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #114d5a;">`,
+      `<h4 style="color: #114d5a; margin-top: 0;">🏢 1. Informations de contact</h4>`,
+      `<table style="width: 100%; border-collapse: collapse;">`,
+      `<tr><td style="padding: 5px 10px; color: #6c757d;">Société:</td><td style="padding: 5px 10px;"><strong>${this.company}</strong></td></tr>`,
+      `<tr><td style="padding: 5px 10px; color: #6c757d;">Nom:</td><td style="padding: 5px 10px;"><strong>${this.contact_name}</strong></td></tr>`,
+      `<tr><td style="padding: 5px 10px; color: #6c757d;">Email:</td><td style="padding: 5px 10px;"><a href="mailto:${this.email_from}">${this.email_from}</a></td></tr>`,
+      `<tr><td style="padding: 5px 10px; color: #6c757d;">Téléphone:</td><td style="padding: 5px 10px;"><a href="tel:${this.phone}">${this.phone}</a></td></tr>`,
+      `</table>`,
+      `</div>`,
 
-      `<h3>🔍 Processus qui prennent le plus de temps</h3>`,
-      `<ul>${this.getSelectedProcessus()
-        .map((proc) => `<li>${proc}</li>`)
-        .join('')}</ul>`,
+      // Section 2: Objectifs
+      `<div style="background: #d4edda; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #28a745;">`,
+      `<h4 style="color: #28a745; margin-top: 0;">🎯 2. Objectifs principaux avec Odoo</h4>`,
+      `<ul style="margin: 0; padding-left: 20px;">`,
+      ...this.getSelectedObjectifs().map(obj => `<li style="margin: 5px 0;">${obj}</li>`),
+      `</ul>`,
+      `</div>`,
 
-      `<h3>🛠️ Outils actuellement utilisés</h3>`,
-      `<ul>${this.getSelectedOutils()
-        .map((outil) => `<li>${outil}</li>`)
-        .join('')}</ul>`,
+      // Section 3: Processus chronophages
+      `<div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ffc107;">`,
+      `<h4 style="color: #856404; margin-top: 0;">⏱️ 3. Processus qui prennent le plus de temps</h4>`,
+      `<ul style="margin: 0; padding-left: 20px;">`,
+      ...this.getSelectedProcessus().map(proc => `<li style="margin: 5px 0;">${proc}</li>`),
+      `</ul>`,
+      `</div>`,
 
-      `<h3>🚧 Principal défi opérationnel</h3>`,
-      `<p>${this.getDefiOperationnel()}</p>`,
+      // Section 4: Outils actuels
+      `<div style="background: #e7f5ff; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #0d6efd;">`,
+      `<h4 style="color: #0d6efd; margin-top: 0;">🛠️ 4. Outils actuellement utilisés</h4>`,
+      `<p style="margin: 0;">`,
+      ...this.getSelectedOutils().map(outil => `<span style="background: #0d6efd; color: white; padding: 3px 10px; border-radius: 12px; font-size: 12px; margin: 2px; display: inline-block;">${outil}</span>`),
+      `</p>`,
+      `</div>`,
+
+      // Section 5: Défi opérationnel
+      `<div style="background: #f8d7da; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #dc3545;">`,
+      `<h4 style="color: #dc3545; margin-top: 0;">🚧 5. Principal défi opérationnel</h4>`,
+      `<p style="margin: 0; font-size: 16px;"><strong>${this.getDefiOperationnel()}</strong></p>`,
+      `</div>`,
     ];
 
+    // Section bonus si remplie
     if (this.problemePrincipal.trim()) {
       descriptionParts.push(
-        `<h3>✨ Problème principal à résoudre</h3>`,
-        `<p>${this.problemePrincipal}</p>`
+        `<div style="background: #e2e3e5; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #6c757d;">`,
+        `<h4 style="color: #495057; margin-top: 0;">✨ Problème principal à résoudre</h4>`,
+        `<p style="margin: 0; white-space: pre-wrap; line-height: 1.6;">${this.problemePrincipal}</p>`,
+        `</div>`
       );
     }
+
+    descriptionParts.push(
+      `<hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">`,
+      `<p style="color: #6c757d; font-size: 12px; text-align: center;">`,
+      `<em>📅 Demande de démo reçue le ${new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</em>`,
+      `</p>`
+    );
 
     const fullDescription = descriptionParts.join('');
 
     // Créer l'objet de données pour l'envoi
     const leadData = {
-      name: this.contact_name,
+      name: `🎬 Démo Odoo - ${this.contact_name} (${this.company})`,
       phone: this.phone,
       email_from: this.email_from,
       description: fullDescription,

@@ -1,0 +1,361 @@
+// :host {
+//   --primary: #114d5a;
+//   --accent: #fac83b;
+//   --text: #333;
+//   --white: #ffffff;
+//   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+// }
+
+// header {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   z-index: 1000;
+//   background: var(--white);
+//   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+//   // Permettre aux dropdowns de dépasser
+//   @media (min-width: 1101px) {
+//     overflow: visible;
+//   }
+// }
+
+// .main-nav {
+//   // Permettre aux dropdowns de dépasser
+//   @media (min-width: 1101px) {
+//     overflow: visible;
+//   }
+// }
+
+// .top-bar {
+//   background: var(--primary);
+//   color: white;
+//   padding: 5px 0;
+//   font-size: 0.85rem;
+
+//   .container {
+//     display: flex;
+//     justify-content: flex-end;
+//     width: 90%;
+//     margin: 0 auto;
+//   }
+// }
+
+// .container {
+//   max-width: 1400px;
+//   margin: 0 auto;
+//   padding: 0 20px;
+
+//   // Permettre aux dropdowns de dépasser
+//   @media (min-width: 1101px) {
+//     overflow: visible;
+//   }
+// }
+
+// .nav-wrapper {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   height: 80px;
+
+//   // S'assurer que les dropdowns ne sont pas coupés
+//   @media (min-width: 1101px) {
+//     overflow: visible;
+//   }
+// }
+
+// .logo img {
+//   height: 50px;
+//   width: auto;
+//   transition: var(--transition);
+// }
+
+// /* --- NAVIGATION LINKS --- */
+// .nav-links {
+//   display: flex;
+//   list-style: none;
+//   gap: 25px;
+//   align-items: center;
+
+//   // S'assurer que les dropdowns ne sont pas coupés
+//   @media (min-width: 1101px) {
+//     overflow: visible;
+//   }
+
+//   li a {
+//     text-decoration: none;
+//     color: var(--text);
+//     font-weight: 600;
+//     font-size: 0.9rem;
+//     transition: var(--transition);
+//     cursor: pointer;
+
+//     &:hover,
+//     &.active {
+//       color: var(--accent);
+//     }
+//   }
+// }
+
+// /* --- DROPDOWNS DESKTOP --- */
+// .dropdown {
+//   position: relative;
+
+//   .dropdown-trigger {
+//     display: flex;
+//     align-items: center;
+//     gap: 5px;
+//   }
+
+//   // Zone de hover invisible pour éviter que le menu se ferme
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     right: 0;
+//     height: 10px;
+//     display: none;
+//   }
+
+//   @media (min-width: 1101px) {
+//     &::before {
+//       display: block;
+//     }
+//   }
+
+//   .dropdown-menu {
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     background: var(--white);
+//     min-width: 240px;
+//     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+//     padding: 10px 0;
+//     margin-top: 10px;
+//     opacity: 0;
+//     visibility: hidden;
+//     transform: translateY(-10px);
+//     transition: var(--transition);
+//     list-style: none;
+//     z-index: 10000;
+//     pointer-events: none;
+
+//     li a {
+//       padding: 12px 20px;
+//       display: block;
+//       font-weight: 400;
+
+//       &:hover {
+//         background: #f8f9fa;
+//         color: var(--primary);
+//       }
+//     }
+//   }
+
+//   // Hover et clic sur desktop
+//   @media (min-width: 1101px) {
+//     &:hover .dropdown-menu,
+//     &.open .dropdown-menu {
+//       opacity: 1;
+//       visibility: visible;
+//       transform: translateY(0);
+//       pointer-events: auto;
+//     }
+
+//     &:hover .icon-arrow,
+//     &.open .icon-arrow {
+//       transform: rotate(180deg);
+//     }
+//   }
+// }
+
+// .icon-arrow {
+//   font-size: 0.7rem;
+//   margin-left: 5px;
+//   transition: var(--transition);
+// }
+
+// .badge {
+//   background: var(--accent);
+//   color: var(--primary);
+//   font-size: 0.65rem;
+//   padding: 2px 6px;
+//   border-radius: 4px;
+//   margin-left: 5px;
+// }
+
+// /* --- BUTTONS --- */
+// .actions {
+//   display: flex;
+//   gap: 12px;
+// }
+
+// .btn-primary {
+//   background: var(--primary);
+//   color: var(--accent) !important;
+//   padding: 10px 20px;
+//   border-radius: 6px;
+//   text-decoration: none;
+//   font-weight: bold;
+//   font-size: 0.85rem;
+//   transition: var(--transition);
+
+//   &:hover {
+//     opacity: 0.9;
+//     transform: translateY(-2px);
+//   }
+// }
+
+// .btn-outline {
+//   border: 2px solid var(--accent);
+//   color: var(--text) !important;
+//   padding: 8px 18px;
+//   border-radius: 6px;
+//   text-decoration: none;
+//   font-weight: bold;
+//   font-size: 0.85rem;
+//   transition: var(--transition);
+
+//   &:hover {
+//     background: var(--accent);
+//   }
+// }
+
+// /* --- MOBILE RESPONSIVE --- */
+// .burger {
+//   display: none;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   width: 30px;
+//   height: 24px;
+//   background: transparent;
+//   border: none;
+//   cursor: pointer;
+//   z-index: 1002;
+
+//   span {
+//     width: 30px;
+//     height: 3px;
+//     background: var(--primary);
+//     border-radius: 10px;
+//     transition: var(--transition);
+//   }
+
+//   &.active span {
+//     &:nth-child(1) {
+//       transform: rotate(45deg) translate(5px, 5px);
+//     }
+
+//     &:nth-child(2) {
+//       opacity: 0;
+//     }
+
+//     &:nth-child(3) {
+//       transform: rotate(-45deg) translate(7px, -7px);
+//     }
+//   }
+// }
+
+// /* Hide mobile elements on desktop */
+// .mobile-only-actions {
+//   display: none;
+// }
+
+// .menu-overlay {
+//   display: none;
+// }
+
+// @media (max-width: 1100px) {
+//   .burger {
+//     display: flex;
+//   }
+
+//   .actions {
+//     display: none;
+//   }
+
+//   .menu-overlay {
+//     display: block;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0, 0, 0, 0.5);
+//     backdrop-filter: blur(4px);
+//     opacity: 0;
+//     visibility: hidden;
+//     transition: var(--transition);
+//     z-index: 999;
+
+//     &.active {
+//       opacity: 1;
+//       visibility: visible;
+//     }
+//   }
+
+//   .nav-links {
+//     position: fixed;
+//     top: 0;
+//     right: -100%;
+//     width: 80%;
+//     max-width: 350px;
+//     height: 100vh;
+//     background: var(--white);
+//     flex-direction: column;
+//     align-items: flex-start;
+//     padding: 100px 30px;
+//     transition: var(--transition);
+//     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+//     overflow-y: auto;
+//     gap: 0;
+//     z-index: 1001;
+
+//     &.active {
+//       right: 0;
+//     }
+
+//     li {
+//       width: 100%;
+//       border-bottom: 1px solid #eee;
+//     }
+
+//     li a {
+//       display: flex;
+//       justify-content: space-between;
+//       padding: 15px 0;
+//       font-size: 1.1rem;
+//     }
+//   }
+
+//   .dropdown {
+//     .dropdown-menu {
+//       position: static;
+//       opacity: 1;
+//       visibility: visible;
+//       display: none;
+//       transform: none;
+//       box-shadow: none;
+//       padding-left: 20px;
+//       background: #f9f9f9;
+//     }
+
+//     &.open .dropdown-menu {
+//       display: block;
+//     }
+
+//     &.open .icon-arrow {
+//       transform: rotate(180deg);
+//     }
+//   }
+
+//   .mobile-only-actions {
+//     margin-top: 30px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 15px;
+//     border: none !important;
+//   }
+// }

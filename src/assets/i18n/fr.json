@@ -12,7 +12,7 @@
   "HEADER": {
     "MENU": {
       "HOME": "Accueil",
-      "DIGITAL_SOLUTIONS": "Solutions digitales",
+      "DIGITAL_SOLUTIONS": "Solutions",
       "ODOO_APPS": "Application Odoo",
       "FINANCE": "Finances",
       "SALES": "Ventes",
@@ -20,7 +20,7 @@
       "HR": "Ressources Humaines",
       "MARKETING": "Marketing Digital",
       "PROFESSIONAL_SERVICES": "Services Professionnels",
-      "ORGANIZATIONAL_MODULES": "Modules organisationnels",
+      "ORGANIZATIONAL_MODULES": "Modules",
       "COMMERCIAL": "Commerciale",
       "ADMINISTRATIVE": "Administratif",
       "HORECA": "Horeca",
@@ -28,15 +28,16 @@
       "SMART_ALERT": "SmartAlert",
       "EXCLUSIVE_SERVICES": "Services Exclusifs",
       "ABOUT": "À propos",
-      "CUSTOM_PRICING": "Tarifs personnalisés",
+      "CUSTOM_PRICING": "Nos Tarifs",
       "ODOO": "Odoo",
       "WEBSITE": "Site Internet",
-      "SUPPORT": "Support"
+      "SUPPORT": "Support",
+      "REFERENCES": "Nos Réalisations"
     },
     "ACTIONS": {
       "SUBMIT_NEED": "Soumettre un besoin",
       "CONTACT_US": "Contactez-nous",
-      "BOOK_DEMO": "Obtenez votre audit gratuit"
+      "BOOK_DEMO": "Audit gratuit"
     }
   },
   "BUTTONS": {
@@ -503,6 +504,68 @@
             "ROLE": "Le Chef d'Orchestre des Projets"
           }
         }
+      }
+    },
+    "REFERENCES": {
+      "HERO": {
+        "TITLE": "Nos Réalisations",
+        "SUBTITLE": "Découvrez les sites web que nous avons créés pour nos clients"
+      },
+      "PORTFOLIO": {
+        "TITLE": "Notre Portfolio",
+        "DESCRIPTION": "Des solutions digitales sur mesure pour chaque client"
+      },
+      "PROJECTS": {
+        "VISIT_SITE": "Visiter le site",
+        "PROJECT1": {
+          "TITLE": "Odoo Finances Pro",
+          "DESCRIPTION": "Plateforme de gestion financière professionnelle intégrant Odoo pour optimiser les processus comptables et financiers.",
+          "TAGS": {
+            "FINANCE": "Finance",
+            "TECH": "Odoo"
+          }
+        },
+        "PROJECT2": {
+          "TITLE": "AIS HECTOR DENIS",
+          "DESCRIPTION": "Agence Immobilière Sociale à but non lucratif, fondée en 2000, qui fournit un accès au logement aux personnes à revenus modestes avec un loyer abordable à Evere et sur l'ensemble de la Région Bruxelloise.",
+          "TAGS": {
+            "SOCIAL": "Social",
+            "TECH": "Immobilier"
+          }
+        },
+        "PROJECT3": {
+          "TITLE": "MSALES Strategy",
+          "DESCRIPTION": "Basée en Belgique et au Maroc, MSALESest spécialisée dans le recrutement et l'accompagnement de partenaires commerciaux indépendants.",
+          "TAGS": {
+            "RECRUITMENT": "Recrutement",
+            "TECH": "Commercial"
+          }
+        },
+        "PROJECT4": {
+          "TITLE": "MFinances",
+          "DESCRIPTION": "Expert Comptable à Bruxelles offrant un soutien administratif pour pallier d'éventuelles omissions dans votre comptabilité et éviter la perte de déductibilité de certaines dépenses.",
+          "TAGS": {
+            "ACCOUNTING": "Comptabilité",
+            "TECH": "Services"
+          }
+        },
+        "PROJECT5": {
+          "TITLE": "Novatrait",
+          "DESCRIPTION": "Votre partenaire numérique. Novatrait accompagne les Dirigeant.e.s de PME et les entrepreneurs à clarifier, structurer et piloter leurs projets digitaux. Grâce à leur expertise technique et leur sens pratique, ils transforment vos idées en solutions concrètes – sans jargon et en toute transparence.",
+          "TAGS": {
+            "DIGITAL": "Digital",
+            "TECH": "Consulting"
+          }
+        },
+        "TAGS": {
+          "ODOO": "Odoo"
+        }
+      },
+      "CTA": {
+        "TITLE": "Prêt à lancer votre projet ?",
+        "DESCRIPTION": "Rejoignez nos clients satisfaits et donnez vie à votre projet web",
+        "BUTTON_START": "Démarrer mon projet",
+        "BUTTON_PRICING": "Voir nos prix"
       }
     },
     "SUPPORT": {
