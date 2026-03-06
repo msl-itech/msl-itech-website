@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { SeoService } from '../seo.service';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-accueil',
@@ -83,24 +83,26 @@ export class AccueilComponent implements OnInit, OnDestroy {
       this.loadAccordionItems();
     });
 
-    this.seoService.updateTitle(
-      'MSL Itech - Partenaire Certifié Odoo en Belgique, Canada et Maroc'
-    );
-    this.seoService.updateMetaTags([
-      {
-        name: 'description',
-        content:
-          "MSL Itech est un partenaire certifié Odoo offrant des services d'implémentation, de personnalisation et de support ERP en Belgique, Canada et Maroc pour les PME et les entreprises en croissance.",
-      },
-      {
-        name: 'keywords',
-        content:
-          'partenaire Odoo, consultant Odoo, implémentation Odoo, développement Odoo, services Odoo, solutions Odoo, intégrateur Odoo, MSL Itech Odoo, Belgique, Canada, Maroc',
-      },
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'MSL iTech - Consulting Odoo & Solutions ERP',
+      description: 'Expert en consulting Odoo et implémentation ERP sur mesure. Découvrez nos packages métier spécialisés pour PME belges : Finance, Ventes, RH, Fabrication. Démo gratuite.',
+      keywords: 'Odoo Belgique, ERP, consulting Odoo, implémentation Odoo, CRM, comptabilité, gestion entreprise, package métier',
+      url: '/accueil',
+      type: 'website',
+      image: 'https://www.msl-itech.com/assets/img/accueil/hero-image.jpg'
+    });
+
+    // Ajouter BreadcrumbList schema
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' }
     ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
   }
 
   ngOnDestroy(): void {
     this.translateSubscription.unsubscribe();
+    // Nettoyer les schemas ajoutés
+    this.seoService.removeAllJsonLdSchemas();
   }
 }

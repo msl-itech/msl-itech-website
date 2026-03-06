@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { ConsentService } from '../services/consent.service';
 import { OdooService } from '../services/odoo.service';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
   contact_name: string = '';
   phone: string = '';
@@ -25,8 +26,30 @@ export class ContactComponent {
     private odooService: OdooService,
     private toastr: ToastrService,
     private consentService: ConsentService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private seoService: SeoService
   ) { }
+
+  ngOnInit(): void {
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Contact MSL iTech - Demandez votre Démo Odoo Gratuite',
+      description: 'Contactez MSL iTech pour une démo gratuite d\'Odoo. Nos experts répondent à vos questions. Téléphone, email, formulaire disponibles.',
+      keywords: 'contact MSL iTech, démo Odoo, rendez-vous, consultation gratuite, contact Odoo Belgique',
+      url: '/contact',
+      type: 'website'
+    });
+
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Contact', url: '/contact' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
+  }
 
   onSubmit(form: NgForm): void {
     if (form.invalid) {
