@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { SeoService } from '../seo.service';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-accordeon-accueil',

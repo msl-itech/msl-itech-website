@@ -1,59 +1,53 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
-import { SeoService } from '../seo.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-page-package',
   templateUrl: './page-package.component.html',
   styleUrl: './page-package.component.css'
 })
-export class PagePackageComponent implements OnInit{
-  pageTitle: string = 'Offres Tarifaires Flexibles | MSL Itech - Partenaire Odoo';
-  pageDescription: string = 'Découvrez nos offres tarifaires flexibles et adaptées à vos besoins métier avec MSL Itech, partenaire certifié Odoo.';
-  pageKeywords: string = 'offres tarifaires, MSL Itech, Odoo, ERP, tarifs flexibles, développeur Odoo, respect des délais, qualité 100%';
+export class PagePackageComponent implements OnInit, OnDestroy {
 
-  constructor(
-    private seoService: SeoService,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
+  constructor(private seoService: SeoService) {}
 
   ngOnInit(): void {
-    // Mise à jour du SEO avec SeoService
-    this.seoService.updateTitle(this.pageTitle);
-    this.seoService.updateMetaTags([
-      { name: 'description', content: this.pageDescription },
-      { name: 'keywords', content: this.pageKeywords },
-      { name: 'robots', content: 'index, follow' },
-      { name: 'author', content: 'MSL Itech' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    ]);
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Packages Métier Odoo - Solutions Clés en Main',
+      description: 'Découvrez nos packages métier Odoo clés en main : Horeca, Commerce, Administration. Solutions pré-configurées et prêtes à l\'emploi.',
+      keywords: 'package Odoo, solution clé en main, Odoo Horeca, package métier, solution pré-configurée, tarifs Odoo',
+      url: '/package-metier',
+      type: 'website'
+    });
 
-    // Ajouter les données structurées JSON-LD
-    this.addStructuredData();
-  }
-
-  // Méthode pour ajouter des données structurées JSON-LD
-  private addStructuredData(): void {
-    const structuredData = {
+    // Ajouter Product schema
+    const productSchema = {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": "Offres Tarifaires ERP Odoo",
+      "name": "Packages Métier ERP Odoo",
       "brand": {
         "@type": "Organization",
-        "name": "MSL Itech"
+        "name": "MSL iTech"
       },
-      "description": "Des offres tarifaires flexibles et adaptées aux besoins métier avec MSL Itech, partenaire Odoo.",
+      "description": "Des packages métier flexibles et adaptés aux besoins spécifiques avec MSL iTech, partenaire Odoo.",
       "offers": {
         "@type": "Offer",
-        "priceCurrency": "MAD",
-        "eligibleRegion": ["BE", "CA", "MA"],
+        "priceCurrency": "EUR",
+        "eligibleRegion": "BE",
         "url": "https://www.msl-itech.com/package-metier"
       }
     };
+    this.seoService.addJsonLdSchema(productSchema);
 
-    const script = this.document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(structuredData);
-    this.document.head.appendChild(script);
+    // Ajouter BreadcrumbList
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Packages Métier', url: '/package-metier' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
   }
 }
