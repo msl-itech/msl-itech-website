@@ -1,10 +1,39 @@
 {
-  "buildCommand": "ng build --configuration production",
+  "buildCommand": "npm run build:ssr",
   "outputDirectory": "dist/msl-website/browser",
-  "rewrites": [
+  "framework": null,
+  "functions": {
+    "dist/msl-website/server/server.mjs": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 30
+    }
+  },
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/assets/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot))",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/$1"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/msl-website/server/server.mjs"
     }
   ],
   "headers": [
@@ -32,23 +61,9 @@
           "value": "1; mode=block"
         }
       ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
     }
   ],
   "redirects": [
-    {
-      "source": "/serviceOdoo",
-      "destination": "/serviceOdoo",
-      "permanent": false
-    },
     {
       "source": "/aboutus",
       "destination": "/about",
@@ -62,6 +77,16 @@
     {
       "source": "/jobb",
       "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/service2",
+      "destination": "/finances",
+      "permanent": true
+    },
+    {
+      "source": "/service3",
+      "destination": "/ventes",
       "permanent": true
     }
   ]

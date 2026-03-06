@@ -1,10 +1,11 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule, APP_INITIALIZER, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {
   FaIconLibrary,
   FontAwesomeModule,
@@ -97,18 +98,25 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 // Factory function pour initialiser les traductions avant le démarrage de l'app
-export function appInitializerFactory(translate: TranslateService) {
+export function appInitializerFactory(translate: TranslateService, platformId: Object) {
   return () => {
     // Configuration des langues supportées
     translate.addLangs(['fr', 'en']);
     translate.setDefaultLang('fr');
 
     // Déterminer la langue à utiliser
-    const browserLang = translate.getBrowserLang();
-    const lang = browserLang && browserLang.match(/fr|en/) ? browserLang : 'fr';
+    let lang = 'fr';
+    if (isPlatformBrowser(platformId)) {
+      const browserLang = translate.getBrowserLang();
+      lang = browserLang && browserLang.match(/fr|en/) ? browserLang : 'fr';
 
-    // Retourner une promesse qui se résout une fois les traductions chargées
-    return translate.use(lang).toPromise();
+      // Retourner une promesse UNIQUEMENT côté client pour éviter de bloquer SSR
+      return translate.use(lang).toPromise();
+    } else {
+      // Côté serveur, utiliser 'fr' sans bloquer sur une requête HTTP locale
+      translate.use('fr');
+      return Promise.resolve();
+    }
   };
 }
 
@@ -182,7 +190,6 @@ export function appInitializerFactory(translate: TranslateService) {
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
     NgxSpinnerModule,
@@ -208,9 +215,12 @@ export function appInitializerFactory(translate: TranslateService) {
     {
       provide: APP_INITIALIZER,
       useFactory: appInitializerFactory,
-      deps: [TranslateService],
+      deps: [TranslateService, PLATFORM_ID],
       multi: true,
     },
+    provideAnimationsAsync(),
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
   ],
   bootstrap: [AppComponent],
 })

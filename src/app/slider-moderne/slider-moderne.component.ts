@@ -1,4 +1,5 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -23,7 +24,8 @@ export class SliderModerneComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
   ngOnInit() {
@@ -143,9 +145,11 @@ export class SliderModerneComponent implements OnInit, OnDestroy {
   }
 
   private startAutoPlay() {
-    this.intervalId = setInterval(() => {
-      this.next();
-    }, this.autoPlayDelay);
+    if (isPlatformBrowser(this.platformId)) {
+      this.intervalId = setInterval(() => {
+        this.next();
+      }, this.autoPlayDelay);
+    }
   }
 
   private stopAutoPlay() {

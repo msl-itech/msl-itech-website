@@ -7,17 +7,12 @@ import { SeoService } from '../services/seo.service';
   styleUrl: './avantages.component.scss',
 })
 export class AvantagesComponent implements OnInit, OnDestroy {
-  constructor(private seoService: SeoService) {}
+  constructor(private seoService: SeoService) { }
 
   ngOnInit(): void {
-    // Configuration SEO
-    this.seoService.updateMetaTags({
-      title: 'Avantages MSL iTech - Pourquoi Nous Choisir',
-      description: 'Découvrez les 4 raisons de collaborer avec MSL iTech, votre partenaire certifié Odoo. Expertise, personnalisation, présence internationale, et coûts compétitifs.',
-      keywords: 'MSL iTech, Odoo, partenaire Odoo, consulting Odoo, développement Odoo, intégration Odoo, ERP Odoo, Belgique',
-      url: '/avantages',
-      type: 'website'
-    });
+    // Configuration SEO retirée car ce composant est utilisé comme enfant
+    // Les meta tags doivent être gérés par la page hôte (ex: AccueilComponent)
+
 
     // Ajouter Service schema
     const serviceSchema = {
@@ -43,6 +38,6 @@ export class AvantagesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.seoService.removeAllJsonLdSchemas();
+    // Ne pas supprimer les schemas globalement depuis un composant enfant
   }
 }
