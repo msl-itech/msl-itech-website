@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { BlogArticle, BlogService } from '../services/blog.service';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-blog-page',
@@ -19,10 +20,27 @@ export class BlogPageComponent implements OnInit, OnDestroy {
   constructor(
     private blogService: BlogService,
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private seoService: SeoService
   ) {}
 
   ngOnInit(): void {
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Blog MSL iTech - Actualités Odoo & ERP',
+      description: 'Découvrez nos articles sur Odoo, les ERP, les bonnes pratiques, études de cas et actualités du monde des solutions de gestion d\'entreprise.',
+      keywords: 'blog Odoo, actualités ERP, études de cas, bonnes pratiques Odoo, tutoriels ERP, conseils gestion',
+      url: '/blog',
+      type: 'website'
+    });
+
+    // Ajouter BreadcrumbList
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Blog', url: '/blog' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+
     this.loadArticles();
 
     // S'abonner aux changements de langue
@@ -35,6 +53,7 @@ export class BlogPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.seoService.removeAllJsonLdSchemas();
     this.subscription.unsubscribe();
   }
 

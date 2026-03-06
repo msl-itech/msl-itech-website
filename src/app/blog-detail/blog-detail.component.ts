@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { BlogArticle, BlogService } from '../services/blog.service';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -20,7 +21,8 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private blogService: BlogService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private seoService: SeoService
   ) {}
 
   ngOnInit(): void {
@@ -46,6 +48,7 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.seoService.removeAllJsonLdSchemas();
     this.subscription.unsubscribe();
   }
 
@@ -75,6 +78,35 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
           this.error = true;
           console.error('Article non trouvé pour le slug:', slug);
         } else {
+          // Configuration SEO dynamique basée sur l'article
+          this.seoService.updateMetaTags({
+            title: `${this.article.title} | Blog MSL iTech`,
+            description: this.article.description,
+            keywords: this.article.tags.join(', '),
+            url: `/blog/${this.article.slug}`,
+            type: 'article',
+            image: this.article.image
+          });
+
+          // Ajouter Article schema
+          const articleSchema = this.seoService.generateArticleSchema({
+            title: this.article.title,
+            description: this.article.description,
+            image: this.article.image,
+            datePublished: this.article.date,
+            dateModified: this.article.date,
+            author: this.article.author || 'MSL iTech'
+          });
+          this.seoService.addJsonLdSchema(articleSchema);
+
+          // Ajouter BreadcrumbList
+          const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+            { name: 'Accueil', url: '/accueil' },
+            { name: 'Blog', url: '/blog' },
+            { name: this.article.title, url: `/blog/${this.article.slug}` }
+          ]);
+          this.seoService.addJsonLdSchema(breadcrumbSchema);
+
           this.loadRelatedArticles();
           // Scroll to top when new article loads
           window.scrollTo(0, 0);

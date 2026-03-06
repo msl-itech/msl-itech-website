@@ -1,11 +1,43 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-service7',
   templateUrl: './service7.component.html',
   styleUrl: './service7.component.css'
 })
-export class Service7Component {
+export class Service7Component implements OnInit, OnDestroy {
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit(): void {
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Odoo Services Professionnels - Gestion de Projets',
+      description: 'Module Odoo pour les services professionnels : gestion de projets, feuilles de temps, assistance, planning, rendez-vous. Optimisez vos services.',
+      keywords: 'Odoo services, gestion projets, feuilles temps, helpdesk, planning, rendez-vous, services sur site',
+      url: '/services-professionnels',
+      type: 'service'
+    });
+
+    // Ajouter Service schema
+    const serviceSchema = this.seoService.generateServiceSchema(
+      'Services Professionnels et Gestion de Projets Odoo',
+      'Module Odoo pour les services professionnels : gestion de projets, feuilles de temps, helpdesk, planning et rendez-vous'
+    );
+    this.seoService.addJsonLdSchema(serviceSchema);
+
+    // Ajouter BreadcrumbList
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Services Professionnels', url: '/services-professionnels' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.updateDynamicImage();
