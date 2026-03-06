@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -11,21 +12,26 @@ export class LanguageService {
 
   private readonly STORAGE_KEY = 'selected-language';
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
     this.initializeLanguage();
   }
 
   private initializeLanguage(): void {
-    // Récupérer la langue stockée ou utiliser la langue du navigateur
-    const savedLanguage = localStorage.getItem(this.STORAGE_KEY);
-    const browserLang = this.translate.getBrowserLang();
-
     let language = 'fr'; // Langue par défaut
 
-    if (savedLanguage && this.isLanguageSupported(savedLanguage)) {
-      language = savedLanguage;
-    } else if (browserLang && this.isLanguageSupported(browserLang)) {
-      language = browserLang;
+    if (isPlatformBrowser(this.platformId)) {
+      // Récupérer la langue stockée ou utiliser la langue du navigateur
+      const savedLanguage = localStorage.getItem(this.STORAGE_KEY);
+      const browserLang = this.translate.getBrowserLang();
+
+      if (savedLanguage && this.isLanguageSupported(savedLanguage)) {
+        language = savedLanguage;
+      } else if (browserLang && this.isLanguageSupported(browserLang)) {
+        language = browserLang;
+      }
     }
 
     this.setLanguage(language);
@@ -39,7 +45,10 @@ export class LanguageService {
     if (this.isLanguageSupported(language)) {
       this.translate.use(language);
       this.currentLanguageSubject.next(language);
-      localStorage.setItem(this.STORAGE_KEY, language);
+      // Sauvegarder uniquement côté browser
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem(this.STORAGE_KEY, language);
+      }
     }
   }
 

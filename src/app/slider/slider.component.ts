@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -21,8 +22,9 @@ export class SliderComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private translate: TranslateService,
-    private responsiveImageService: ResponsiveImageService
-  ) {}
+    private responsiveImageService: ResponsiveImageService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
 
   ngOnInit() {
     this.loadSlides();
@@ -121,7 +123,9 @@ export class SliderComponent implements OnInit, OnDestroy {
 
   // Commencer le défilement automatique
   startAutoSlide() {
-    this.intervalId = setInterval(() => this.nextSlide(), 6000);
+    if (isPlatformBrowser(this.platformId)) {
+      this.intervalId = setInterval(() => this.nextSlide(), 6000);
+    }
   }
 
   // Arrêter le défilement automatique

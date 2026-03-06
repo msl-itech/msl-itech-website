@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-service2',
@@ -261,11 +262,38 @@ import { Component, HostListener } from '@angular/core';
     `,
   ],
 })
-export class Service2Component {
-  constructor() {}
+export class Service2Component implements OnInit, OnDestroy {
+  constructor(private seoService: SeoService) {}
 
   ngOnInit(): void {
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Odoo Finances & Comptabilité - Gestion Financière Complète',
+      description: 'Solution Odoo pour la gestion financière et comptable : facturation, comptabilité générale, analytique, rapports financiers. Automatisez votre gestion comptable avec Odoo.',
+      keywords: 'Odoo finances, comptabilité Odoo, facturation Odoo, gestion financière, comptabilité Belgique, ERP financier',
+      url: '/finances',
+      type: 'service'
+    });
+
+    // Ajouter Service schema
+    const serviceSchema = this.seoService.generateServiceSchema(
+      'Gestion Financière et Comptabilité Odoo',
+      'Module Odoo pour la gestion complète de vos finances : comptabilité générale, analytique, facturation, rapports financiers et budget'
+    );
+    this.seoService.addJsonLdSchema(serviceSchema);
+
+    // Ajouter BreadcrumbList
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Finances', url: '/finances' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+
     this.updateDynamicImage();
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
   }
 
   @HostListener('window:scroll', [])

@@ -1,11 +1,43 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-service4',
   templateUrl: './service4.component.html',
   styleUrl: './service4.component.css',
 })
-export class Service4Component {
+export class Service4Component implements OnInit, OnDestroy {
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit(): void {
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Odoo Fabrication & Production - Gestion Industrielle',
+      description: 'Module Odoo pour la gestion de fabrication : MRP, ordres de production, inventaire, PLM, maintenance, qualité. Optimisez votre production industrielle.',
+      keywords: 'Odoo fabrication, MRP Odoo, gestion production, inventaire, PLM, maintenance industrielle, contrôle qualité',
+      url: '/fabrication',
+      type: 'service'
+    });
+
+    // Ajouter Service schema
+    const serviceSchema = this.seoService.generateServiceSchema(
+      'Gestion de Fabrication et Production Odoo',
+      'Module Odoo pour la gestion industrielle complète : MRP, ordres de production, inventaire, PLM, maintenance et contrôle qualité'
+    );
+    this.seoService.addJsonLdSchema(serviceSchema);
+
+    // Ajouter BreadcrumbList
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Fabrication', url: '/fabrication' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.updateDynamicImage();

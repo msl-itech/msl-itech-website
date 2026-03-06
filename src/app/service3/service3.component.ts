@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-service3',
@@ -259,7 +260,38 @@ import { Component, HostListener } from '@angular/core';
     `,
   ],
 })
-export class Service3Component {
+export class Service3Component implements OnInit, OnDestroy {
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit(): void {
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Odoo Ventes & CRM - Gestion Commerciale Optimisée',
+      description: 'Module Odoo pour optimiser vos ventes : CRM, devis, commandes, suivi clients, pipeline de ventes. Augmentez votre chiffre d\'affaires avec Odoo.',
+      keywords: 'Odoo ventes, CRM Odoo, gestion commerciale, pipeline ventes, devis Odoo, commandes Odoo, relation client',
+      url: '/ventes',
+      type: 'service'
+    });
+
+    // Ajouter Service schema
+    const serviceSchema = this.seoService.generateServiceSchema(
+      'Gestion des Ventes et CRM Odoo',
+      'Module Odoo pour la gestion complète de vos ventes : CRM, devis, commandes, suivi de pipeline et automatisation commerciale'
+    );
+    this.seoService.addJsonLdSchema(serviceSchema);
+
+    // Ajouter BreadcrumbList
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Ventes', url: '/ventes' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const header = document.getElementById('header');

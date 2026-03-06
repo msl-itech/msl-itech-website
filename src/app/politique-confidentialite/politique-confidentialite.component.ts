@@ -1,4 +1,5 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { ConsentService } from '../services/consent.service';
 
 @Component({
@@ -29,9 +30,15 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
   readingProgress: number = 0;
   showBackToTop: boolean = false;
 
-  constructor(private consentService: ConsentService) {}
+  constructor(
+    private consentService: ConsentService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private documentRef: Document
+  ) { }
 
   ngOnInit() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     // Charger la date du dernier export si elle existe
     const lastExport = localStorage.getItem('msl_last_export');
     if (lastExport) {
@@ -46,7 +53,7 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
     // Nettoyage si nécessaire
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll() {
     this.calculateReadingProgress();
     this.updateBackToTopButton();
@@ -63,43 +70,31 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
    * Navigation fluide vers une section
    */
   scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
+    if (!isPlatformBrowser(this.platformId)) return;
+    const element = this.documentRef.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.offsetTop - 100; // Offset pour le header fixe
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
+      const offsetTop = element.offsetTop - 100;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
   }
 
-  /**
-   * Retour en haut de page
-   */
   scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    if (!isPlatformBrowser(this.platformId)) return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   /**
    * Calcul de la progression de lecture
    */
   private calculateReadingProgress() {
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    this.readingProgress = Math.round(scrolled);
+    if (!isPlatformBrowser(this.platformId)) return;
+    const winScroll = this.documentRef.body.scrollTop || this.documentRef.documentElement.scrollTop;
+    const height = this.documentRef.documentElement.scrollHeight - this.documentRef.documentElement.clientHeight;
+    this.readingProgress = height ? Math.round((winScroll / height) * 100) : 0;
   }
 
-  /**
-   * Mise à jour du bouton retour en haut
-   */
   private updateBackToTopButton() {
+    if (!isPlatformBrowser(this.platformId)) return;
     this.showBackToTop = window.pageYOffset > 300;
   }
 
@@ -107,20 +102,14 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
    * Impression de la page
    */
   printPage() {
-    // Temporairement développer toutes les sections pour l'impression
+    if (!isPlatformBrowser(this.platformId)) return;
     const originalState = { ...this.expandedSections };
     Object.keys(this.expandedSections).forEach((key) => {
       this.expandedSections[key] = true;
     });
-
-    // Attendre un moment pour que les sections s'affichent
     setTimeout(() => {
       window.print();
-
-      // Restaurer l'état original après impression
-      setTimeout(() => {
-        this.expandedSections = originalState;
-      }, 100);
+      setTimeout(() => { this.expandedSections = originalState; }, 100);
     }, 100);
   }
 
@@ -128,25 +117,18 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
    * Partage de la page
    */
   sharePage() {
+    if (!isPlatformBrowser(this.platformId)) return;
     if (navigator.share) {
-      // API Web Share native (mobile principalement)
-      navigator
-        .share({
-          title: 'Politique de confidentialité MSL-iTECH',
-          text: 'Découvrez notre politique de protection des données personnelles',
-          url: window.location.href,
-        })
-        .catch((err) => console.log('Erreur de partage:', err));
+      navigator.share({
+        title: 'Politique de confidentialité MSL-iTECH',
+        text: 'Découvrez notre politique de protection des données personnelles',
+        url: window.location.href,
+      }).catch((err) => console.log('Erreur de partage:', err));
     } else {
-      // Fallback : copier le lien dans le presse-papier
-      navigator.clipboard
-        .writeText(window.location.href)
-        .then(() => {
-          alert('Lien copié dans le presse-papier !');
-        })
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => { alert('Lien copié dans le presse-papier !'); })
         .catch((err) => {
           console.error('Erreur de copie:', err);
-          // Fallback ultime : sélectionner le texte
           this.fallbackCopyToClipboard(window.location.href);
         });
     }
@@ -156,59 +138,42 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
    * Fallback pour copier dans le presse-papier
    */
   private fallbackCopyToClipboard(text: string) {
-    const textArea = document.createElement('textarea');
+    if (!isPlatformBrowser(this.platformId)) return;
+    const textArea = this.documentRef.createElement('textarea');
     textArea.value = text;
-    textArea.style.position = 'fixed';
-    textArea.style.left = '-999999px';
-    textArea.style.top = '-999999px';
-    document.body.appendChild(textArea);
+    textArea.style.cssText = 'position:fixed;left:-999999px;top:-999999px';
+    this.documentRef.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-
     try {
-      document.execCommand('copy');
+      this.documentRef.execCommand('copy');
       alert('Lien copié dans le presse-papier !');
     } catch (err) {
       console.error('Erreur de copie:', err);
     }
-
-    document.body.removeChild(textArea);
+    this.documentRef.body.removeChild(textArea);
   }
 
   /**
    * Export des données utilisateur
    */
   exportUserData() {
+    if (!isPlatformBrowser(this.platformId)) return;
     this.isExporting = true;
-
     try {
-      // Export des données locales (immédiat)
       const userData = this.consentService.exportUserData('local');
-
-      // Créer le fichier JSON
       const dataStr = JSON.stringify(userData, null, 2);
       const dataBlob = new Blob([dataStr], { type: 'application/json' });
-
-      // Créer le lien de téléchargement
       const url = window.URL.createObjectURL(dataBlob);
-      const link = document.createElement('a');
+      const link = this.documentRef.createElement('a');
       link.href = url;
-      link.download = `msl-itech-donnees-locales-${
-        new Date().toISOString().split('T')[0]
-      }.json`;
-
-      // Déclencher le téléchargement
-      document.body.appendChild(link);
+      link.download = `msl-itech-donnees-locales-${new Date().toISOString().split('T')[0]}.json`;
+      this.documentRef.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
+      this.documentRef.body.removeChild(link);
       window.URL.revokeObjectURL(url);
-
-      // Sauvegarder la date d'export
       this.lastExportDate = new Date();
-      localStorage.setItem(
-        'msl_last_export',
-        this.lastExportDate.toISOString()
-      );
+      localStorage.setItem('msl_last_export', this.lastExportDate.toISOString());
     } catch (error) {
       console.error("Erreur lors de l'export des données:", error);
       alert("Une erreur est survenue lors de l'export. Veuillez réessayer.");
@@ -243,14 +208,14 @@ export class PolitiqueConfidentialiteComponent implements OnInit, OnDestroy {
       .then((response) => {
         alert(
           `Votre demande d'export complet a été envoyée. ` +
-            `Vous recevrez vos données par email dans un délai de 30 jours maximum.`
+          `Vous recevrez vos données par email dans un délai de 30 jours maximum.`
         );
       })
       .catch((error) => {
         console.error("Erreur lors de la demande d'export:", error);
         alert(
           'Une erreur est survenue. Veuillez nous contacter directement à info@msl-itech.com ' +
-            "pour faire votre demande d'export de données."
+          "pour faire votre demande d'export de données."
         );
       })
       .finally(() => {

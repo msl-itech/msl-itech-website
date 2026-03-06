@@ -1,11 +1,43 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-service6',
   templateUrl: './service6.component.html',
   styleUrl: './service6.component.css'
 })
-export class Service6Component {
+export class Service6Component implements OnInit, OnDestroy {
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit(): void {
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Odoo Marketing Digital - Automation & Campagnes',
+      description: 'Module Odoo Marketing pour vos campagnes digitales : email marketing, SMS, réseaux sociaux, événements, sondages. Automatisez votre marketing.',
+      keywords: 'Odoo marketing, email marketing, SMS marketing, automation marketing, campagnes digitales, réseaux sociaux',
+      url: '/marketing-digital',
+      type: 'service'
+    });
+
+    // Ajouter Service schema
+    const serviceSchema = this.seoService.generateServiceSchema(
+      'Marketing Digital et Automation Odoo',
+      'Module Odoo pour le marketing digital : automation, email marketing, SMS, réseaux sociaux, gestion événements et sondages'
+    );
+    this.seoService.addJsonLdSchema(serviceSchema);
+
+    // Ajouter BreadcrumbList
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Marketing Digital', url: '/marketing-digital' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.updateDynamicImage();

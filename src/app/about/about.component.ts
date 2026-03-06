@@ -1,11 +1,12 @@
 import { ElementRef, QueryList } from '@angular/core';
-import { Component, ViewChildren } from '@angular/core';
+import { Component, ViewChildren, OnInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit, OnDestroy {
   @ViewChildren('carouselSlide') carouselSlides!: QueryList<ElementRef>;
   slides = [
     {
@@ -42,10 +43,25 @@ export class AboutComponent {
   totalSlides: number = 0;
   visibleSlides: number = 3; // Ajusté à 3 pour permettre plus de déplacements
 
-  constructor() {}
+  constructor(private seoService: SeoService) {}
 
   ngOnInit(): void {
     this.totalSlides = this.slides.length;
+
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'À Propos de MSL iTech - Notre Équipe & Expertise Odoo',
+      description: 'Découvrez MSL iTech, votre partenaire Odoo en Belgique. Notre équipe d\'experts certifiés accompagne votre transformation digitale depuis 2020.',
+      keywords: 'MSL iTech, à propos, équipe, expertise Odoo, partenaire Odoo Belgique, certifications',
+      url: '/about',
+      type: 'website'
+    });
+
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'À Propos', url: '/about' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
   }
 
   ngAfterViewInit(): void {
@@ -67,5 +83,9 @@ export class AboutComponent {
     }
 
     this.translateX = `translateX(-${this.currentIndex * this.slideWidth}px)`;
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
   }
 }

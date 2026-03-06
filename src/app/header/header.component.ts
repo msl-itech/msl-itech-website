@@ -1,38 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
   isMenuOpen = false;
-  activeDropdown: string | null = null; // Pour gérer quel sous-menu est ouvert
+  activeDropdown: string | null = null;
   isMobile: boolean = false;
 
-  constructor() {}
+  private resizeListener: (() => void) | null = null;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit() {
-    this.checkScreenSize();
-    window.addEventListener('resize', this.checkScreenSize.bind(this));
+    if (isPlatformBrowser(this.platformId)) {
+      this.checkScreenSize();
+      this.resizeListener = this.checkScreenSize.bind(this);
+      window.addEventListener('resize', this.resizeListener);
+    }
   }
 
   ngOnDestroy() {
-    window.removeEventListener('resize', this.checkScreenSize.bind(this));
+    if (isPlatformBrowser(this.platformId) && this.resizeListener) {
+      window.removeEventListener('resize', this.resizeListener);
+    }
   }
 
   checkScreenSize() {
-    this.isMobile = window.innerWidth < 1201; // Ajustez la valeur selon vos besoins
-    if (!this.isMobile) {
-      this.isMenuOpen = false;
-      this.activeDropdown = null;
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile = window.innerWidth < 1201;
+      if (!this.isMobile) {
+        this.isMenuOpen = false;
+        this.activeDropdown = null;
+      }
     }
   }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     if (!this.isMenuOpen) {
-      this.activeDropdown = null; // Fermer tous les sous-menus lorsque le menu principal est fermé
+      this.activeDropdown = null;
     }
   }
 
@@ -51,7 +61,9 @@ export class HeaderComponent {
 
   openHorecaLink(event: Event): void {
     event.preventDefault();
-    window.open('https://horeca.msl-itech.com', '_blank');
+    if (isPlatformBrowser(this.platformId)) {
+      window.open('https://horeca.msl-itech.com', '_blank');
+    }
     if (this.isMobile) {
       this.closeMenu();
     }

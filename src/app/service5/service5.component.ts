@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-service5',
@@ -259,7 +260,38 @@ import { Component, HostListener } from '@angular/core';
     `,
   ],
 })
-export class Service5Component {
+export class Service5Component implements OnInit, OnDestroy {
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit(): void {
+    // Configuration SEO
+    this.seoService.updateMetaTags({
+      title: 'Odoo Ressources Humaines - Gestion RH Complète',
+      description: 'Module Odoo RH pour la gestion des employés : recrutement, présences, congés, évaluations, paie. Simplifiez la gestion de vos ressources humaines.',
+      keywords: 'Odoo RH, gestion ressources humaines, recrutement Odoo, congés, présences, évaluations, SIRH',
+      url: '/ressources-humaines',
+      type: 'service'
+    });
+
+    // Ajouter Service schema
+    const serviceSchema = this.seoService.generateServiceSchema(
+      'Gestion des Ressources Humaines Odoo',
+      'Module Odoo pour la gestion RH complète : recrutement, présences, congés, évaluations, feuilles de temps et gestion de paie'
+    );
+    this.seoService.addJsonLdSchema(serviceSchema);
+
+    // Ajouter BreadcrumbList
+    const breadcrumbSchema = this.seoService.generateBreadcrumbSchema([
+      { name: 'Accueil', url: '/accueil' },
+      { name: 'Ressources Humaines', url: '/ressources-humaines' }
+    ]);
+    this.seoService.addJsonLdSchema(breadcrumbSchema);
+  }
+
+  ngOnDestroy() {
+    this.seoService.removeAllJsonLdSchemas();
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.updateDynamicImage();
