@@ -1,6 +1,4 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+module.exports = async (req, res) => {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -112,7 +110,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({ success: true, data: odooResult });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error('[API] Erreur lors du traitement du lead:', error);
     return res.status(500).json({
       success: false,
@@ -121,4 +119,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       stack: process.env['NODE_ENV'] === 'development' ? error.stack : undefined
     });
   }
-}
+};
