@@ -11,7 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class RecaptchaService {
   readonly siteKey = '6Ld59pgsAAAAAB50gGD8ei7IfKUPhsr9WyYPIro-';
   private isBrowser: boolean;
-  private widgetId: number | null = null;
+  private widgetId: number = -1;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -103,7 +103,7 @@ export class RecaptchaService {
    * Réinitialise le widget reCAPTCHA
    */
   resetRecaptcha(): void {
-    if (!this.isBrowser || this.widgetId === null) {
+    if (!this.isBrowser || this.widgetId === -1) {
       return;
     }
 
