@@ -3,6 +3,12 @@
   "buildCommand": "npm run build:ssr",
   "installCommand": "npm install",
   "outputDirectory": "dist/msl-website/browser",
+  "functions": {
+    "api/**/*.ts": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
   "headers": [
     {
       "source": "/assets/(.*)",
