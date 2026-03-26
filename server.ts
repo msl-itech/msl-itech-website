@@ -34,13 +34,11 @@ export function app(): express.Express {
         return;
       }
 
-      // Configuration reCAPTCHA Enterprise
+      // Configuration reCAPTCHA v2
       const RECAPTCHA_SECRET = process.env['RECAPTCHA_SECRET_KEY'];
-      const RECAPTCHA_PROJECT_ID = process.env['RECAPTCHA_PROJECT_ID'];
-      const RECAPTCHA_SITE_KEY = '6Ld59pgsAAAAAB50gGD8ei7IfKUPhsr9WyYPIro-';
 
-      if (!RECAPTCHA_SECRET || !RECAPTCHA_PROJECT_ID) {
-        console.error('Variables d\'environnement reCAPTCHA manquantes');
+      if (!RECAPTCHA_SECRET) {
+        console.error('Variable RECAPTCHA_SECRET_KEY manquante');
         res.status(500).json({
           success: false,
           error: 'Configuration reCAPTCHA manquante'
@@ -48,40 +46,22 @@ export function app(): express.Express {
         return;
       }
 
-      // Validation du token avec Google reCAPTCHA Enterprise
-      const assessmentUrl = `https://recaptchaenterprise.googleapis.com/v1/projects/${RECAPTCHA_PROJECT_ID}/assessments?key=${RECAPTCHA_SECRET}`;
+      // Validation du token avec Google reCAPTCHA v2
+      const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET}&response=${recaptcha_token}`;
 
-      const recaptchaResponse = await fetch(assessmentUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event: {
-            token: recaptcha_token,
-            siteKey: RECAPTCHA_SITE_KEY,
-            expectedAction: 'submit'
-          }
-        })
+      const recaptchaResponse = await fetch(verifyUrl, {
+        method: 'POST'
       });
 
       const recaptchaResult = await recaptchaResponse.json();
 
       // Vérifier la validité du token
-      if (!recaptchaResult.tokenProperties?.valid) {
-        console.error('Token reCAPTCHA invalide:', recaptchaResult);
+      if (!recaptchaResult.success) {
+        console.error('Token reCAPTCHA invalide:', recaptchaResult['error-codes']);
         res.status(403).json({
           success: false,
-          error: 'Vérification reCAPTCHA échouée'
-        });
-        return;
-      }
-
-      // Vérifier le score (0.0 = bot, 1.0 = humain)
-      const score = recaptchaResult.riskAnalysis?.score || 0;
-      if (score < 0.5) {
-        console.warn('Score reCAPTCHA trop faible:', score);
-        res.status(403).json({
-          success: false,
-          error: 'Score de sécurité insuffisant'
+          error: 'Vérification reCAPTCHA échouée',
+          details: recaptchaResult['error-codes']
         });
         return;
       }

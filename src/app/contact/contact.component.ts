@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
@@ -12,7 +12,7 @@ import { RecaptchaService } from '../services/recaptcha.service';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
-export class ContactComponent implements OnInit, OnDestroy {
+export class ContactComponent implements OnInit, OnDestroy, AfterViewInit {
   isLoading: boolean = false;
   contact_name: string = '';
   phone: string = '';
@@ -49,6 +49,11 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.seoService.addJsonLdSchema(breadcrumbSchema);
   }
 
+  ngAfterViewInit(): void {
+    // Rendre le widget reCAPTCHA après l'initialisation de la vue
+    this.recaptchaService.renderRecaptcha('recaptcha-widget-contact');
+  }
+
   ngOnDestroy() {
     this.seoService.removeAllJsonLdSchemas();
   }
@@ -60,25 +65,15 @@ export class ContactComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.isLoading = true;
-
-    // Vérification reCAPTCHA
-    let recaptchaToken: string;
-    try {
-      recaptchaToken = await this.recaptchaService.executeRecaptcha('contact_form');
-
-      if (!recaptchaToken) {
-        this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
-        this.isLoading = false;
-        this.consentService.trackFormSubmission('contact_form', false);
-        return;
-      }
-    } catch (error) {
-      this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
-      this.isLoading = false;
+    // Vérification reCAPTCHA v2
+    const recaptchaToken = this.recaptchaService.getResponse();
+    if (!recaptchaToken) {
+      this.toastr.error('Veuillez cocher la case reCAPTCHA', 'Erreur');
       this.consentService.trackFormSubmission('contact_form', false);
       return;
     }
+
+    this.isLoading = true;
 
     const formValue = form.value;
 
@@ -130,6 +125,7 @@ export class ContactComponent implements OnInit, OnDestroy {
         this.toastr.success('Votre message a été envoyé avec succès', 'Succès');
         this.consentService.trackFormSubmission('contact_form', true);
         form.resetForm();
+        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
       error: (error) => {
@@ -138,6 +134,7 @@ export class ContactComponent implements OnInit, OnDestroy {
           'Erreur'
         );
         this.consentService.trackFormSubmission('contact_form', false);
+        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
     });

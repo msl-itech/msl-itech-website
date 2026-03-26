@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ConsentService } from '../services/consent.service';
@@ -10,7 +10,7 @@ import { RecaptchaService } from '../services/recaptcha.service';
   templateUrl: './devenir-partenaire.component.html',
   styleUrl: './devenir-partenaire.component.css',
 })
-export class DevenirPartenaireComponent implements OnInit {
+export class DevenirPartenaireComponent implements OnInit, AfterViewInit {
   // Gestion des étapes
   currentStep: number = 1;
   totalSteps: number = 6;
@@ -86,6 +86,11 @@ export class DevenirPartenaireComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    // Rendre le widget reCAPTCHA après l'initialisation de la vue
+    this.recaptchaService.renderRecaptcha('recaptcha-widget-partner');
+  }
 
   // Navigation entre les étapes
   nextStep(): void {
@@ -368,25 +373,15 @@ export class DevenirPartenaireComponent implements OnInit {
       return;
     }
 
-    this.isLoading = true;
-
-    // Vérification reCAPTCHA
-    let recaptchaToken: string;
-    try {
-      recaptchaToken = await this.recaptchaService.executeRecaptcha('partner_form');
-
-      if (!recaptchaToken) {
-        this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
-        this.isLoading = false;
-        this.consentService.trackFormSubmission('partner_form', false);
-        return;
-      }
-    } catch (error) {
-      this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
-      this.isLoading = false;
+    // Vérification reCAPTCHA v2
+    const recaptchaToken = this.recaptchaService.getResponse();
+    if (!recaptchaToken) {
+      this.toastr.error('Veuillez cocher la case reCAPTCHA', 'Erreur');
       this.consentService.trackFormSubmission('partner_form', false);
       return;
     }
+
+    this.isLoading = true;
 
     // Assemblage de la description complète
     const descriptionParts = [
@@ -440,6 +435,7 @@ export class DevenirPartenaireComponent implements OnInit {
         );
         this.consentService.trackFormSubmission('partner_form', true);
         this.resetForm(form);
+        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
       error: () => {
@@ -448,6 +444,7 @@ export class DevenirPartenaireComponent implements OnInit {
           'Erreur'
         );
         this.consentService.trackFormSubmission('partner_form', false);
+        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
     });

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -10,7 +10,7 @@ import { RecaptchaService } from '../services/recaptcha.service';
   templateUrl: './option-form.component.html',
   styleUrls: ['./option-form.component.css'],
 })
-export class OptionFormComponent implements OnInit {
+export class OptionFormComponent implements OnInit, AfterViewInit {
   isLoading = false;
   optionName = '';
   optionPrice = '';
@@ -56,29 +56,25 @@ export class OptionFormComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(): void {
+    // Rendre le widget reCAPTCHA après l'initialisation de la vue
+    this.recaptchaService.renderRecaptcha('recaptcha-widget-option');
+  }
+
   async onSubmit(form: NgForm): Promise<void> {
     if (form.invalid) {
       this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
       return;
     }
 
-    this.isLoading = true;
-
-    // Vérification reCAPTCHA
-    let recaptchaToken: string;
-    try {
-      recaptchaToken = await this.recaptchaService.executeRecaptcha('option_form');
-
-      if (!recaptchaToken) {
-        this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
-        this.isLoading = false;
-        return;
-      }
-    } catch (error) {
-      this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
-      this.isLoading = false;
+    // Vérification reCAPTCHA v2
+    const recaptchaToken = this.recaptchaService.getResponse();
+    if (!recaptchaToken) {
+      this.toastr.error('Veuillez cocher la case reCAPTCHA', 'Erreur');
       return;
     }
+
+    this.isLoading = true;
 
     const descriptionParts = [
       `Option commandée: ${this.optionName}`,
@@ -104,6 +100,7 @@ export class OptionFormComponent implements OnInit {
           'Votre commande a été envoyée avec succès',
           'Succès'
         );
+        this.recaptchaService.resetRecaptcha();
         this.router.navigate(['/horeca-formules']);
         this.isLoading = false;
       },
@@ -112,6 +109,7 @@ export class OptionFormComponent implements OnInit {
           "Une erreur est survenue lors de l'envoi de la commande",
           'Erreur'
         );
+        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
     });

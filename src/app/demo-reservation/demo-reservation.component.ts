@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
@@ -11,7 +11,7 @@ import { RecaptchaService } from '../services/recaptcha.service';
   templateUrl: './demo-reservation.component.html',
   styleUrls: ['./demo-reservation.component.css'],
 })
-export class DemoReservationComponent implements OnInit, OnDestroy {
+export class DemoReservationComponent implements OnInit, OnDestroy, AfterViewInit {
   // Gestion des étapes
   currentStep: number = 1;
   totalSteps: number = 5;
@@ -75,6 +75,11 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
     this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
       this.loadTranslations();
     });
+  }
+
+  ngAfterViewInit(): void {
+    // Rendre le widget reCAPTCHA après l'initialisation de la vue
+    this.recaptchaService.renderRecaptcha('recaptcha-widget-demo');
   }
 
   ngOnDestroy(): void {
@@ -439,23 +444,14 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.isLoading = true;
-
-    // Vérification reCAPTCHA
-    let recaptchaToken: string;
-    try {
-      recaptchaToken = await this.recaptchaService.executeRecaptcha('demo_form');
-
-      if (!recaptchaToken) {
-        this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
-        this.isLoading = false;
-        return;
-      }
-    } catch (error) {
-      this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
-      this.isLoading = false;
+    // Vérification reCAPTCHA v2
+    const recaptchaToken = this.recaptchaService.getResponse();
+    if (!recaptchaToken) {
+      this.toastr.error('Veuillez cocher la case reCAPTCHA', 'Erreur');
       return;
     }
+
+    this.isLoading = true;
 
     // Assemblage de la description complète avec HTML amélioré
     const descriptionParts = [
@@ -538,6 +534,7 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
           'Succès'
         );
         this.resetForm(form);
+        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
       error: (error) => {
@@ -545,6 +542,7 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
           "Une erreur est survenue lors de l'envoi de la demande",
           'Erreur'
         );
+        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
     });
