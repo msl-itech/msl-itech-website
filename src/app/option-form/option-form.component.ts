@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { OdooService } from '../services/odoo.service';
+import { RecaptchaService } from '../services/recaptcha.service';
 
 @Component({
   selector: 'app-option-form',
@@ -27,7 +28,8 @@ export class OptionFormComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private odooService: OdooService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private recaptchaService: RecaptchaService
   ) {}
 
   ngOnInit(): void {
@@ -54,13 +56,29 @@ export class OptionFormComponent implements OnInit {
     });
   }
 
-  onSubmit(form: NgForm): void {
+  async onSubmit(form: NgForm): Promise<void> {
     if (form.invalid) {
       this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
       return;
     }
 
     this.isLoading = true;
+
+    // Vérification reCAPTCHA
+    let recaptchaToken: string;
+    try {
+      recaptchaToken = await this.recaptchaService.executeRecaptcha('option_form');
+
+      if (!recaptchaToken) {
+        this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
+        this.isLoading = false;
+        return;
+      }
+    } catch (error) {
+      this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
+      this.isLoading = false;
+      return;
+    }
 
     const descriptionParts = [
       `Option commandée: ${this.optionName}`,
@@ -77,6 +95,7 @@ export class OptionFormComponent implements OnInit {
       phone: this.formData.phone,
       email_from: this.formData.email,
       description: descriptionParts.join('\n'),
+      recaptcha_token: recaptchaToken
     };
 
     this.odooService.createLead(leadData).subscribe({

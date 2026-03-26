@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { OdooService } from '../services/odoo.service';
+import { RecaptchaService } from '../services/recaptcha.service';
 
 @Component({
   selector: 'app-demo-reservation',
@@ -65,7 +66,8 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
   constructor(
     private odooService: OdooService,
     private toastr: ToastrService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private recaptchaService: RecaptchaService
   ) { }
 
   ngOnInit(): void {
@@ -431,13 +433,29 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
     return isValid;
   }
 
-  onSubmit(form: NgForm): void {
+  async onSubmit(form: NgForm): Promise<void> {
     if (!this.validateStepsUpToSilent(this.totalSteps)) {
       this.toastr.error('Veuillez compléter toutes les étapes', 'Erreur');
       return;
     }
 
     this.isLoading = true;
+
+    // Vérification reCAPTCHA
+    let recaptchaToken: string;
+    try {
+      recaptchaToken = await this.recaptchaService.executeRecaptcha('demo_form');
+
+      if (!recaptchaToken) {
+        this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
+        this.isLoading = false;
+        return;
+      }
+    } catch (error) {
+      this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
+      this.isLoading = false;
+      return;
+    }
 
     // Assemblage de la description complète avec HTML amélioré
     const descriptionParts = [
@@ -510,6 +528,7 @@ export class DemoReservationComponent implements OnInit, OnDestroy {
       phone: this.phone,
       email_from: this.email_from,
       description: fullDescription,
+      recaptcha_token: recaptchaToken
     };
 
     this.odooService.createLead(leadData).subscribe({

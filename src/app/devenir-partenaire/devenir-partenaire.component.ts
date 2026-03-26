@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ConsentService } from '../services/consent.service';
 import { OdooService } from '../services/odoo.service';
+import { RecaptchaService } from '../services/recaptcha.service';
 
 @Component({
   selector: 'app-devenir-partenaire',
@@ -80,8 +81,9 @@ export class DevenirPartenaireComponent implements OnInit {
   constructor(
     private odooService: OdooService,
     private toastr: ToastrService,
-    private consentService: ConsentService
-  ) {}
+    private consentService: ConsentService,
+    private recaptchaService: RecaptchaService
+  ) { }
 
   ngOnInit(): void {}
 
@@ -360,13 +362,31 @@ export class DevenirPartenaireComponent implements OnInit {
   }
 
 
-  onSubmit(form: NgForm): void {
+  async onSubmit(form: NgForm): Promise<void> {
     if (!this.validateStepsUpToSilent(this.totalSteps)) {
       this.toastr.error('Veuillez compléter toutes les étapes', 'Erreur');
       return;
     }
 
     this.isLoading = true;
+
+    // Vérification reCAPTCHA
+    let recaptchaToken: string;
+    try {
+      recaptchaToken = await this.recaptchaService.executeRecaptcha('partner_form');
+
+      if (!recaptchaToken) {
+        this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
+        this.isLoading = false;
+        this.consentService.trackFormSubmission('partner_form', false);
+        return;
+      }
+    } catch (error) {
+      this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
+      this.isLoading = false;
+      this.consentService.trackFormSubmission('partner_form', false);
+      return;
+    }
 
     // Assemblage de la description complète
     const descriptionParts = [
@@ -409,6 +429,7 @@ export class DevenirPartenaireComponent implements OnInit {
       email_from: this.email_from,
       description: fullDescription,
       tags: ['Demande de partenariat'],
+      recaptcha_token: recaptchaToken
     };
 
     this.odooService.createLead(leadData).subscribe({

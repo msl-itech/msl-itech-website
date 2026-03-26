@@ -2,22 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OdooService {
-  private apiUrl = environment.odooApiUrl;
+  // Utiliser l'endpoint local qui gère la validation reCAPTCHA
+  private apiUrl = '/api';
   private headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'x-signature': environment.xSignature,
-    'x-client-id': environment.xClientId
+    'Content-Type': 'application/json'
   });
 
   constructor(private http: HttpClient) { }
 
   createLead(leadData: any): Observable<any> {
+    // L'endpoint local /api/leads gère la validation reCAPTCHA et transfère à Odoo
     return this.http.post(`${this.apiUrl}/leads`, leadData, { headers: this.headers })
       .pipe(
         catchError(this.handleError)
@@ -25,12 +24,8 @@ export class OdooService {
   }
 
   createLeadWithFile(formData: FormData): Observable<any> {
-    const headers = new HttpHeaders({
-      'x-signature': environment.xSignature,
-      'x-client-id': environment.xClientId
-    });
-
-    return this.http.post(`${this.apiUrl}/leads`, formData, { headers })
+    // Pas besoin de headers spécifiques, l'endpoint local gère tout
+    return this.http.post(`${this.apiUrl}/leads`, formData)
       .pipe(
         catchError(this.handleError)
       );

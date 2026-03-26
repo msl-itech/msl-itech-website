@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ConsentService } from '../services/consent.service';
 import { OdooService } from '../services/odoo.service';
 import { SeoService } from '../services/seo.service';
+import { RecaptchaService } from '../services/recaptcha.service';
 
 @Component({
   selector: 'app-contact',
@@ -27,7 +28,8 @@ export class ContactComponent implements OnInit, OnDestroy {
     private toastr: ToastrService,
     private consentService: ConsentService,
     private translate: TranslateService,
-    private seoService: SeoService
+    private seoService: SeoService,
+    private recaptchaService: RecaptchaService
   ) { }
 
   ngOnInit(): void {
@@ -51,7 +53,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.seoService.removeAllJsonLdSchemas();
   }
 
-  onSubmit(form: NgForm): void {
+  async onSubmit(form: NgForm): Promise<void> {
     if (form.invalid) {
       this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
       this.consentService.trackFormSubmission('contact_form', false);
@@ -59,6 +61,25 @@ export class ContactComponent implements OnInit, OnDestroy {
     }
 
     this.isLoading = true;
+
+    // Vérification reCAPTCHA
+    let recaptchaToken: string;
+    try {
+      recaptchaToken = await this.recaptchaService.executeRecaptcha('contact_form');
+
+      if (!recaptchaToken) {
+        this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
+        this.isLoading = false;
+        this.consentService.trackFormSubmission('contact_form', false);
+        return;
+      }
+    } catch (error) {
+      this.toastr.error('Erreur de vérification de sécurité. Veuillez réessayer.', 'Erreur');
+      this.isLoading = false;
+      this.consentService.trackFormSubmission('contact_form', false);
+      return;
+    }
+
     const formValue = form.value;
 
     // Assemblage de la description complète avec HTML
@@ -101,6 +122,7 @@ export class ContactComponent implements OnInit, OnDestroy {
       phone: formValue.phone,
       email_from: formValue.email_from,
       description: fullDescription,
+      recaptcha_token: recaptchaToken
     };
 
     this.odooService.createLead(leadData).subscribe({
