@@ -1,17 +1,16 @@
-import { Component, OnDestroy, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { OdooService } from '../services/odoo.service';
-import { RecaptchaService } from '../services/recaptcha.service';
 
 @Component({
   selector: 'app-demo-reservation',
   templateUrl: './demo-reservation.component.html',
   styleUrls: ['./demo-reservation.component.css'],
 })
-export class DemoReservationComponent implements OnInit, OnDestroy, AfterViewInit {
+export class DemoReservationComponent implements OnInit, OnDestroy {
   // Gestion des étapes
   currentStep: number = 1;
   totalSteps: number = 5;
@@ -66,8 +65,7 @@ export class DemoReservationComponent implements OnInit, OnDestroy, AfterViewIni
   constructor(
     private odooService: OdooService,
     private toastr: ToastrService,
-    private translate: TranslateService,
-    private recaptchaService: RecaptchaService
+    private translate: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -75,11 +73,6 @@ export class DemoReservationComponent implements OnInit, OnDestroy, AfterViewIni
     this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
       this.loadTranslations();
     });
-  }
-
-  ngAfterViewInit(): void {
-    // Rendre le widget reCAPTCHA après l'initialisation de la vue
-    this.recaptchaService.renderRecaptcha('recaptcha-widget-demo');
   }
 
   ngOnDestroy(): void {
@@ -444,13 +437,6 @@ export class DemoReservationComponent implements OnInit, OnDestroy, AfterViewIni
       return;
     }
 
-    // Vérification reCAPTCHA v2
-    const recaptchaToken = this.recaptchaService.getResponse();
-    if (!recaptchaToken) {
-      this.toastr.error('Veuillez cocher la case reCAPTCHA', 'Erreur');
-      return;
-    }
-
     this.isLoading = true;
 
     // Assemblage de la description complète avec HTML amélioré
@@ -523,26 +509,23 @@ export class DemoReservationComponent implements OnInit, OnDestroy, AfterViewIni
       name: `🎬 Démo Odoo - ${this.contact_name} (${this.company})`,
       phone: this.phone,
       email_from: this.email_from,
-      description: fullDescription,
-      recaptcha_token: recaptchaToken
+      description: fullDescription
     };
 
     this.odooService.createLead(leadData).subscribe({
-      next: (response) => {
+      next: () => {
         this.toastr.success(
           'Votre demande de démonstration a été envoyée avec succès',
           'Succès'
         );
         this.resetForm(form);
-        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
-      error: (error) => {
+      error: () => {
         this.toastr.error(
           "Une erreur est survenue lors de l'envoi de la demande",
           'Erreur'
         );
-        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
     });

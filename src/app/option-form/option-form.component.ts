@@ -1,16 +1,15 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { OdooService } from '../services/odoo.service';
-import { RecaptchaService } from '../services/recaptcha.service';
 
 @Component({
   selector: 'app-option-form',
   templateUrl: './option-form.component.html',
   styleUrls: ['./option-form.component.css'],
 })
-export class OptionFormComponent implements OnInit, AfterViewInit {
+export class OptionFormComponent implements OnInit {
   isLoading = false;
   optionName = '';
   optionPrice = '';
@@ -28,8 +27,7 @@ export class OptionFormComponent implements OnInit, AfterViewInit {
     private route: ActivatedRoute,
     private router: Router,
     private odooService: OdooService,
-    private toastr: ToastrService,
-    private recaptchaService: RecaptchaService
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -56,21 +54,9 @@ export class OptionFormComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    // Rendre le widget reCAPTCHA après l'initialisation de la vue
-    this.recaptchaService.renderRecaptcha('recaptcha-widget-option');
-  }
-
   async onSubmit(form: NgForm): Promise<void> {
     if (form.invalid) {
       this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
-      return;
-    }
-
-    // Vérification reCAPTCHA v2
-    const recaptchaToken = this.recaptchaService.getResponse();
-    if (!recaptchaToken) {
-      this.toastr.error('Veuillez cocher la case reCAPTCHA', 'Erreur');
       return;
     }
 
@@ -90,8 +76,7 @@ export class OptionFormComponent implements OnInit, AfterViewInit {
       name: `Commande ${this.optionName} - ${this.formData.contact_name}`,
       phone: this.formData.phone,
       email_from: this.formData.email,
-      description: descriptionParts.join('\n'),
-      recaptcha_token: recaptchaToken
+      description: descriptionParts.join('\n')
     };
 
     this.odooService.createLead(leadData).subscribe({
@@ -100,7 +85,6 @@ export class OptionFormComponent implements OnInit, AfterViewInit {
           'Votre commande a été envoyée avec succès',
           'Succès'
         );
-        this.recaptchaService.resetRecaptcha();
         this.router.navigate(['/horeca-formules']);
         this.isLoading = false;
       },
@@ -109,7 +93,6 @@ export class OptionFormComponent implements OnInit, AfterViewInit {
           "Une erreur est survenue lors de l'envoi de la commande",
           'Erreur'
         );
-        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
     });

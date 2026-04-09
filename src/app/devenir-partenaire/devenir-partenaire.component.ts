@@ -1,16 +1,15 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ConsentService } from '../services/consent.service';
 import { OdooService } from '../services/odoo.service';
-import { RecaptchaService } from '../services/recaptcha.service';
 
 @Component({
   selector: 'app-devenir-partenaire',
   templateUrl: './devenir-partenaire.component.html',
   styleUrl: './devenir-partenaire.component.css',
 })
-export class DevenirPartenaireComponent implements OnInit, AfterViewInit {
+export class DevenirPartenaireComponent implements OnInit {
   // Gestion des étapes
   currentStep: number = 1;
   totalSteps: number = 6;
@@ -81,16 +80,10 @@ export class DevenirPartenaireComponent implements OnInit, AfterViewInit {
   constructor(
     private odooService: OdooService,
     private toastr: ToastrService,
-    private consentService: ConsentService,
-    private recaptchaService: RecaptchaService
+    private consentService: ConsentService
   ) { }
 
   ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
-    // Rendre le widget reCAPTCHA après l'initialisation de la vue
-    this.recaptchaService.renderRecaptcha('recaptcha-widget-partner');
-  }
 
   // Navigation entre les étapes
   nextStep(): void {
@@ -373,14 +366,6 @@ export class DevenirPartenaireComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    // Vérification reCAPTCHA v2
-    const recaptchaToken = this.recaptchaService.getResponse();
-    if (!recaptchaToken) {
-      this.toastr.error('Veuillez cocher la case reCAPTCHA', 'Erreur');
-      this.consentService.trackFormSubmission('partner_form', false);
-      return;
-    }
-
     this.isLoading = true;
 
     // Assemblage de la description complète
@@ -423,8 +408,7 @@ export class DevenirPartenaireComponent implements OnInit, AfterViewInit {
       phone: this.phone,
       email_from: this.email_from,
       description: fullDescription,
-      tags: ['Demande de partenariat'],
-      recaptcha_token: recaptchaToken
+      tags: ['Demande de partenariat']
     };
 
     this.odooService.createLead(leadData).subscribe({
@@ -435,7 +419,6 @@ export class DevenirPartenaireComponent implements OnInit, AfterViewInit {
         );
         this.consentService.trackFormSubmission('partner_form', true);
         this.resetForm(form);
-        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
       error: () => {
@@ -444,7 +427,6 @@ export class DevenirPartenaireComponent implements OnInit, AfterViewInit {
           'Erreur'
         );
         this.consentService.trackFormSubmission('partner_form', false);
-        this.recaptchaService.resetRecaptcha();
         this.isLoading = false;
       },
     });
