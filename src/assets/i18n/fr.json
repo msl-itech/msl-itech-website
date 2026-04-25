@@ -502,6 +502,10 @@
           "ROMEO": {
             "NAME": "Romeo KAHOU",
             "ROLE": "Le Chef d'Orchestre des Projets"
+          },
+          "MANAL": {
+            "NAME": "Manal AIT AYAD",
+            "ROLE": "Spécialiste en Machine Learning"
           }
         }
       }
