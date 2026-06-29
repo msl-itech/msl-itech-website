@@ -70,7 +70,6 @@ import { SmartAlertOrderComponent } from './smart-alert-order/smart-alert-order.
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 import { SupportComponent } from './support/support.component';
 import { TableauCRMVENTEComponent } from './tableau-crm-vente/tableau-crm-vente.component';
-import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { TextSlideComponent } from './text-slide/text-slide.component';
 import { TimelineHorecaComponent } from './timeline-horeca/timeline-horeca.component';
@@ -154,7 +153,6 @@ export function appInitializerFactory(translate: TranslateService, platformId: O
     PackAdministratifComponent,
     PackHorecaComponent,
     TimelineHorecaComponent,
-    TarifOdooComponent,
     PackageMetierAccueilComponent,
     HorecaFormulesComponent,
     HorecaSmartAlertComponent,

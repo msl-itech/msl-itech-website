@@ -1046,38 +1046,14 @@
         </li>
 
         <!-- Dropdown "Tarifs" -->
-        <li
-          class="dropdown"
-          [ngClass]="{ open: isDropdownOpen('tarifs') }"
-          (click)="isMobile && toggleDropdown('tarifs')"
-        >
+        <li>
           <a
-            role="button"
-            aria-haspopup="menu"
-            [attr.aria-expanded]="isDropdownOpen('tarifs')"
-            aria-controls="tarifs-menu"
+            routerLink="/tarif"
+            routerLinkActive="actived"
+            (click)="closeMenu()"
           >
-            {{ "HEADER.MENU.CUSTOM_PRICING" | translate }}
-            <i class="fas fa-chevron-down"></i>
+            {{ "HEADER.MENU.WEBSITE" | translate }}
           </a>
-          <ul class="dropdown-menu" id="tarifs-menu" role="menu">
-            <li role="none">
-              <a
-                routerLink="/tarif-Odoo"
-                (click)="isMobile && closeMenu()"
-                role="menuitem"
-                >{{ "HEADER.MENU.ODOO" | translate }}</a
-              >
-            </li>
-            <li role="none">
-              <a
-                routerLink="/tarif"
-                (click)="isMobile && closeMenu()"
-                role="menuitem"
-                >{{ "HEADER.MENU.WEBSITE" | translate }}</a
-              >
-            </li>
-          </ul>
         </li>
 
         <!-- Ajout du lien Support dans le menu de navigation -->

@@ -31,7 +31,6 @@ import { Service7Component } from './service7/service7.component';
 import { SmartAlertOrderComponent } from './smart-alert-order/smart-alert-order.component';
 import { SoumettreBesoinComponent } from './soumettre-besoin/soumettre-besoin.component';
 import { SupportComponent } from './support/support.component';
-import { TarifOdooComponent } from './tarif-odoo/tarif-odoo.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { DevenirPartenaireComponent } from './devenir-partenaire/devenir-partenaire.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
@@ -56,7 +55,6 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent, title: 'Contactez MSL iTech - Echangeons Formellement' },
   { path: 'besoin', component: SoumettreBesoinComponent, title: 'Soumettre un Besoin - MSL iTech' },
   { path: 'tarif', component: TarifsComponent, title: 'Tarifs MSL iTech - Nos abonnements' },
-  { path: 'tarif-Odoo', component: TarifOdooComponent, title: 'Tarifs d\'intégration Odoo | MSL iTech' },
   { path: 'pricing', component: PricingOdooComponent, title: 'Pricing Odoo | MSL iTech' },
   {
     path: 'politique-confidentialite',
