@@ -1,4 +1,66 @@
-User-agent: *
-Disallow:
+# robots.txt — msl-itech.com
+# Mise à jour : Août 2026
 
+# ─── BOTS STANDARDS ──────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /option-form
+Disallow: /smart-alert-order
+Disallow: /order-website
+Crawl-delay: 1
+
+# ─── GOOGLE ──────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+# ─── GOOGLE GEO (Gemini / Google SGE / AI Overviews) ─
+User-agent: Google-Extended
+Allow: /
+
+# ─── OPENAI (ChatGPT / GPT-4) ────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ─── ANTHROPIC (Claude) ──────────────────────────────
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# ─── PERPLEXITY ──────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+# ─── META (Llama) ────────────────────────────────────
+User-agent: FacebookBot
+Allow: /
+
+# ─── MICROSOFT (Bing / Copilot) ──────────────────────
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# ─── AUTRES BOTS IA ──────────────────────────────────
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ─── SITEMAP ─────────────────────────────────────────
 Sitemap: https://www.msl-itech.com/sitemap.xml

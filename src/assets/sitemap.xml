@@ -2,148 +2,200 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Page de redirection par défaut (Accueil) -->
+  <!-- ─── Pages principales ─── -->
   <url>
     <loc>https://www.msl-itech.com/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Page d'accueil -->
   <url>
     <loc>https://www.msl-itech.com/accueil</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Package Métier -->
+  <!-- ─── Packages Métier ─── -->
   <url>
     <loc>https://www.msl-itech.com/package-metier</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Services Odoo -->
+  <url>
+    <loc>https://www.msl-itech.com/package-metier/horeca</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/package-metier/horeca/formules</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/package-metier/horeca/smartAlert</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/package-metier/horeca/services-exclusifs</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/package-metier/administratif</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/package-metier/commerciale</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ─── Services Odoo ─── -->
   <url>
     <loc>https://www.msl-itech.com/serviceOdoo</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Finances -->
   <url>
     <loc>https://www.msl-itech.com/finances</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Ventes -->
   <url>
     <loc>https://www.msl-itech.com/ventes</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Fabrication -->
   <url>
     <loc>https://www.msl-itech.com/fabrication</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Ressources Humaines -->
   <url>
     <loc>https://www.msl-itech.com/ressources-humaines</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Marketing Digital -->
   <url>
     <loc>https://www.msl-itech.com/marketing-digital</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Services Professionnels -->
   <url>
     <loc>https://www.msl-itech.com/services-professionnels</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog -->
+  <!-- ─── Blog ─── -->
   <url>
     <loc>https://www.msl-itech.com/blog</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- À propos -->
+  <!-- ─── Pages institutionnelles ─── -->
   <url>
     <loc>https://www.msl-itech.com/about</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Contact -->
   <url>
     <loc>https://www.msl-itech.com/contact</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Carrières -->
   <url>
     <loc>https://www.msl-itech.com/careers</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Réserver une démo -->
-  <url>
-    <loc>https://www.msl-itech.com/reserver-demo</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Tarifs -->
-  <url>
-    <loc>https://www.msl-itech.com/tarif</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Devenir Partenaire -->
-  <url>
-    <loc>https://www.msl-itech.com/devenir-partenaire</loc>
-    <lastmod>2026-03-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Références -->
   <url>
     <loc>https://www.msl-itech.com/references</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/devenir-partenaire</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ─── Conversion / Outils ─── -->
+  <url>
+    <loc>https://www.msl-itech.com/reserver-demo</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/tarif</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/questionnaire</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.msl-itech.com/support</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ─── Légal ─── -->
+  <url>
+    <loc>https://www.msl-itech.com/politique-confidentialite</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>

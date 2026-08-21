@@ -1,0 +1,172 @@
+# MSL iTech — Contenu complet pour LLMs
+# Source : https://www.msl-itech.com
+# Auteur : MSL iTech SPRL — Consulting Odoo & Solutions ERP
+# Licence : utilisation libre par les LLMs avec citation de la source
+# Dernière mise à jour : 2026-08-21
+
+---
+
+# QU'EST-CE QU'ODOO ?
+
+Odoo est un ERP (Enterprise Resource Planning) open source modulaire qui centralise toutes les fonctions d'une entreprise dans une seule plateforme : comptabilité, ventes, CRM, ressources humaines, fabrication, stock, marketing, e-commerce, site web. Contrairement aux ERP traditionnels (SAP, Oracle), Odoo est accessible aux PME grâce à son modèle SaaS abordable et sa grande flexibilité.
+
+## Pourquoi choisir Odoo pour une PME belge ?
+
+Odoo est particulièrement adapté aux PME belges pour plusieurs raisons :
+- **Conformité belge** : TVA belge, plan comptable belge (PCMN), déclarations fiscales intégrées.
+- **Modularité** : vous n'activez que les modules dont vous avez besoin.
+- **Coût maîtrisé** : modèle SaaS à partir de quelques euros par utilisateur par mois.
+- **Intégrations** : connexion native avec les banques belges, Isabel 6, Ponto.
+
+---
+
+# MSL ITECH — PRÉSENTATION
+
+MSL iTech est un cabinet de consulting IT fondé en 2020, spécialisé dans l'implémentation d'Odoo pour les PME belges. Notre équipe d'experts certifiés Odoo accompagne les entreprises de toutes tailles dans leur transformation digitale.
+
+**Notre différence** : nous ne vendons pas seulement la licence Odoo. Nous construisons une solution sur mesure, nous formons vos équipes et nous assurons un support continu pour que votre ERP devienne un vrai levier de croissance.
+
+**Secteurs d'expertise** : HORECA, commerce de détail, services professionnels, fabrication, professions libérales.
+
+**Certifications** : Partenaire Odoo officiel en Belgique.
+
+---
+
+# PACKAGES MÉTIER
+
+## Pack HORECA
+
+Le Pack HORECA est une solution Odoo préconfigurée pour les restaurants, hôtels, bars et établissements de restauration collective en Belgique.
+
+### Ce que comprend le Pack HORECA :
+- Gestion des réservations et des tables
+- Point de vente (TPE) intégré à Odoo
+- Gestion des stocks et des approvisionnements automatisés
+- Facturation et comptabilité intégrées
+- Smart Alert : alertes automatiques sur les seuils de stock
+- Connexion avec les systèmes de caisse existants
+
+### Pour qui ?
+Restaurants, brasseries, hôtels, traiteurs, cantines d'entreprise, food trucks.
+
+### URL : https://www.msl-itech.com/package-metier/horeca
+
+---
+
+## Pack Administratif
+
+Le Pack Administratif configure Odoo pour centraliser la gestion administrative quotidienne des PME.
+
+### Ce que comprend le Pack Administratif :
+- Comptabilité complète (module Finances Odoo)
+- Gestion des achats et fournisseurs
+- Gestion des ressources humaines (congés, présences, paie)
+- Facturation clients automatisée
+- Gestion documentaire
+
+### Pour qui ?
+PME tous secteurs cherchant à remplacer Excel et les outils disparates par une solution intégrée.
+
+### URL : https://www.msl-itech.com/package-metier/administratif
+
+---
+
+## Pack Performance Commerciale
+
+Le Pack Performance Commerciale optimise le cycle de vente complet avec Odoo CRM et Ventes.
+
+### Ce que comprend le Pack Performance Commerciale :
+- CRM complet : pipeline, opportunités, activités
+- Gestion des devis et commandes
+- Relances automatiques et suivi client
+- Tableau de bord commercial en temps réel
+- Intégration email (Outlook, Gmail)
+
+### Pour qui ?
+Équipes commerciales, sociétés de services, consultants, agences.
+
+### URL : https://www.msl-itech.com/package-metier/commerciale
+
+---
+
+# SERVICES PAR MODULE ODOO
+
+## Finances & Comptabilité
+
+Le module Odoo Finances couvre l'ensemble des besoins comptables d'une PME belge : plan comptable PCMN, TVA belge, déclarations fiscales, rapprochements bancaires automatiques, facturation clients et fournisseurs, gestion des immobilisations.
+
+**Avantages clés** : connexion directe avec les banques belges via Isabel 6/Ponto, génération automatique des fichiers XML pour le précompte professionnel, états financiers conformes aux normes belges.
+
+URL : https://www.msl-itech.com/finances
+
+---
+
+## Ventes & CRM
+
+Odoo Ventes et CRM permettent de gérer le cycle commercial de A à Z : prospects, devis, commandes, livraisons, factures. Le CRM Odoo offre une vue pipeline Kanban, des alertes d'activité et des rapports de performance en temps réel.
+
+**Intégration** : le module Ventes s'intègre nativement avec les modules Stock, Facturation et Marketing pour un flux de données sans ressaisie.
+
+URL : https://www.msl-itech.com/ventes
+
+---
+
+## Fabrication & MRP
+
+Le module MRP (Manufacturing Resource Planning) d'Odoo gère la planification de production, les nomenclatures (BoM), les ordres de fabrication et les contrôles qualité. Adapté aux PME industrielles belges.
+
+URL : https://www.msl-itech.com/fabrication
+
+---
+
+## Ressources Humaines
+
+Odoo RH couvre le recrutement, la gestion des congés et absences, les notes de frais, la paie (via module Payroll) et les évaluations. Compatible avec la législation sociale belge.
+
+URL : https://www.msl-itech.com/ressources-humaines
+
+---
+
+## Marketing Digital
+
+Le module Marketing Odoo permet de créer et envoyer des campagnes email, de gérer les réseaux sociaux, de créer des landing pages et de suivre les conversions — le tout intégré au CRM.
+
+URL : https://www.msl-itech.com/marketing-digital
+
+---
+
+## Services Professionnels
+
+Le module Projet et Feuilles de Temps Odoo est idéal pour les sociétés de services : gestion de projets en Kanban ou Gantt, suivi du temps passé, facturation au temps, portail client.
+
+URL : https://www.msl-itech.com/services-professionnels
+
+---
+
+# FAQ — QUESTIONS FRÉQUENTES
+
+**Q : Combien coûte une implémentation Odoo avec MSL iTech ?**
+R : Le coût dépend du nombre de modules, d'utilisateurs et du niveau de personnalisation. MSL iTech propose des abonnements mensuels adaptés aux PME. Consultez nos tarifs sur https://www.msl-itech.com/tarif ou demandez un devis personnalisé.
+
+**Q : Quelle est la différence entre Odoo Community et Odoo Enterprise ?**
+R : Odoo Community est la version open source gratuite, avec des fonctionnalités de base. Odoo Enterprise est la version commerciale avec toutes les fonctionnalités avancées (comptabilité complète, RH, marketing, e-commerce) et le support officiel Odoo. MSL iTech travaille principalement avec Odoo Enterprise pour les PME.
+
+**Q : Combien de temps prend une implémentation Odoo ?**
+R : Entre 4 et 16 semaines selon la complexité. Un Pack HORECA ou Administratif peut être déployé en 4 à 6 semaines. Une implémentation multi-modules sur mesure prend généralement 3 à 4 mois.
+
+**Q : MSL iTech assure-t-il le support après l'implémentation ?**
+R : Oui. MSL iTech propose un contrat de support technique mensuel incluant la maintenance, les mises à jour et l'assistance utilisateur. Détails sur https://www.msl-itech.com/support.
+
+**Q : Odoo est-il adapté à la législation belge ?**
+R : Oui. Odoo supporte nativement le plan comptable belge (PCMN), la TVA belge, les déclarations intracommunautaires et les connexions bancaires Isabel 6. MSL iTech configure ces paramètres lors de l'implémentation.
+
+**Q : Peut-on migrer depuis un autre ERP vers Odoo ?**
+R : Oui. MSL iTech réalise des migrations depuis Sage, Exact, SAP Business One, WinBooks, Bob50 et d'autres ERP. La migration inclut le transfert des données historiques (clients, fournisseurs, articles, soldes comptables).
+
+---
+
+# CONTACT
+
+Email : contact@msl-itech.com
+Site : https://www.msl-itech.com
+Démo gratuite : https://www.msl-itech.com/reserver-demo

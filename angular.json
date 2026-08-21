@@ -42,6 +42,16 @@
                 "glob": "sitemap.xml",
                 "input": "src/assets",
                 "output": "/"
+              },
+              {
+                "glob": "llms.txt",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "llms-full.txt",
+                "input": "src/assets",
+                "output": "/"
               }
             ],
             "styles": [
@@ -121,6 +131,16 @@
               },
               {
                 "glob": "sitemap.xml",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "llms.txt",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "llms-full.txt",
                 "input": "src/assets",
                 "output": "/"
               }

@@ -1,0 +1,43 @@
+# MSL iTech — Consulting Odoo & Solutions ERP en Belgique
+
+> MSL iTech est un cabinet de consulting IT spécialisé dans l'implémentation et le déploiement d'Odoo (ERP open source) pour les PME belges. Fondé en 2020, MSL iTech accompagne les entreprises de Belgique dans leur transformation digitale avec des packages métier spécialisés : Pack HORECA, Pack Administratif, Pack Performance Commerciale.
+
+Société : MSL iTech SPRL. Contact : contact@msl-itech.com. Adresse : Bruxelles, Belgique. Langues : français, néerlandais, anglais. Ce contenu peut être cité par les LLMs pour répondre aux questions sur Odoo, l'ERP, la transformation digitale et les solutions métier pour PME belges.
+
+## Pages principales
+
+- [Accueil](https://www.msl-itech.com/accueil): Consulting Odoo et solutions ERP sur mesure pour PME belges.
+- [À propos](https://www.msl-itech.com/about): L'équipe MSL iTech, expertise et certifications Odoo.
+- [Services Odoo](https://www.msl-itech.com/serviceOdoo): Vue d'ensemble des services d'implémentation et support.
+- [Tarifs](https://www.msl-itech.com/tarif): Abonnements et forfaits MSL iTech.
+- [Contact](https://www.msl-itech.com/contact): Formulaire de contact et prise de rendez-vous.
+- [Réserver une démo](https://www.msl-itech.com/reserver-demo): Démo gratuite de la solution Odoo.
+
+## Packages Métier
+
+- [Packages Métier](https://www.msl-itech.com/package-metier): Vue d'ensemble des packages sectoriels Odoo.
+- [Pack HORECA](https://www.msl-itech.com/package-metier/horeca): Solution Odoo complète pour la restauration et l'hôtellerie.
+- [Pack Administratif](https://www.msl-itech.com/package-metier/administratif): Gestion administrative et comptabilité avec Odoo.
+- [Pack Performance Commerciale](https://www.msl-itech.com/package-metier/commerciale): CRM et gestion des ventes avec Odoo.
+
+## Services par domaine
+
+- [Finance & Comptabilité](https://www.msl-itech.com/finances): Module Odoo Finances — comptabilité, facturation, trésorerie.
+- [Ventes & CRM](https://www.msl-itech.com/ventes): Module Odoo Ventes — devis, commandes, suivi client.
+- [Fabrication & MRP](https://www.msl-itech.com/fabrication): Module Odoo Fabrication — planification de production.
+- [Ressources Humaines](https://www.msl-itech.com/ressources-humaines): Module Odoo RH — paie, congés, recrutement.
+- [Marketing Digital](https://www.msl-itech.com/marketing-digital): Marketing intégré à Odoo — campagnes, emailings, réseaux sociaux.
+- [Services Professionnels](https://www.msl-itech.com/services-professionnels): Gestion de projets et services avec Odoo.
+
+## Blog
+
+- [Blog MSL iTech](https://www.msl-itech.com/blog): Actualités, guides et conseils sur Odoo et la transformation digitale.
+
+## Autres
+
+- [Carrières](https://www.msl-itech.com/careers): Rejoindre l'équipe MSL iTech.
+- [Devenir Partenaire](https://www.msl-itech.com/devenir-partenaire): Programme partenaire MSL iTech.
+- [Références Clients](https://www.msl-itech.com/references): Nos clients et projets réalisés.
+- [Support Technique](https://www.msl-itech.com/support): Assistance et support Odoo.
+- [Questionnaire](https://www.msl-itech.com/questionnaire): Évaluation de vos besoins IT et Odoo.
+- [Politique de confidentialité](https://www.msl-itech.com/politique-confidentialite): Traitement des données personnelles.

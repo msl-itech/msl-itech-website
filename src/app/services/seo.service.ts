@@ -12,6 +12,12 @@ export interface SEOConfig {
   type?: string;
   keywords?: string;
   author?: string;
+  article?: {
+    publishedTime: string;
+    modifiedTime?: string;
+    author: string;
+    section: string;
+  };
 }
 
 @Injectable({
@@ -96,6 +102,17 @@ export class SeoService {
       name: 'robots',
       content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
     });
+
+    // Article Open Graph (blog uniquement)
+    if (config.article) {
+      this.meta.updateTag({ property: 'og:type', content: 'article' });
+      this.meta.updateTag({ property: 'article:published_time', content: config.article.publishedTime });
+      this.meta.updateTag({ property: 'article:author', content: config.article.author });
+      this.meta.updateTag({ property: 'article:section', content: config.article.section });
+      if (config.article.modifiedTime) {
+        this.meta.updateTag({ property: 'article:modified_time', content: config.article.modifiedTime });
+      }
+    }
   }
 
   /**
@@ -130,16 +147,25 @@ export class SeoService {
   }
 
   /**
-   * Supprime tous les schemas JSON-LD existants (browser uniquement)
+   * Supprime tous les schemas JSON-LD injectés dynamiquement (browser uniquement).
+   * Conserve le schema Organization statique défini dans index.html.
    */
   removeAllJsonLdSchemas(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
     const scripts = this.document.querySelectorAll('script[type="application/ld+json"]');
     scripts.forEach(script => {
-      if (script.parentNode && !script.textContent?.includes('"@type": "Organization"')) {
-        // Garder le schema Organization du index.html
-        script.parentNode.removeChild(script);
+      try {
+        const data = JSON.parse(script.textContent || '{}');
+        const type = data['@type'];
+        // Garder uniquement le schema Organization du index.html
+        const isOrg = type === 'Organization' || (Array.isArray(type) && type.includes('Organization'));
+        if (!isOrg && script.parentNode) {
+          script.parentNode.removeChild(script);
+        }
+      } catch {
+        // Si le JSON est invalide, supprimer le script par sécurité
+        if (script.parentNode) script.parentNode.removeChild(script);
       }
     });
   }
@@ -183,7 +209,7 @@ export class SeoService {
   }
 
   /**
-   * Génère le schema Article pour le blog
+   * Génère le schema Article pour le blog (version complète avec mainEntityOfPage)
    */
   generateArticleSchema(article: {
     title: string,
@@ -191,16 +217,24 @@ export class SeoService {
     image: string,
     datePublished: string,
     dateModified: string,
-    author: string
+    author: string,
+    url?: string
   }): any {
+    const pageUrl = article.url ? this.baseUrl + article.url : this.baseUrl + this.router.url;
     return {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": article.title,
       "description": article.description,
-      "image": article.image,
+      "image": {
+        "@type": "ImageObject",
+        "url": article.image,
+        "width": 1200,
+        "height": 630
+      },
       "datePublished": article.datePublished,
       "dateModified": article.dateModified,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
       "author": {
         "@type": "Person",
         "name": article.author
@@ -208,11 +242,86 @@ export class SeoService {
       "publisher": {
         "@type": "Organization",
         "name": this.siteName,
+        "@id": this.baseUrl + "/#organization",
         "logo": {
           "@type": "ImageObject",
           "url": this.baseUrl + "/assets/img/logo.png"
         }
       }
     };
+  }
+
+  /**
+   * Génère le schema FAQPage pour les accordéons Q/R
+   * Pattern GEO/AEO — cité par ChatGPT, Perplexity, Google AI Overviews
+   */
+  generateFaqSchema(faqs: Array<{ question: string; answer: string }>): any {
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.answer
+        }
+      }))
+    };
+  }
+
+  /**
+   * Génère le schema WebApplication pour les outils interactifs (démo, questionnaire)
+   */
+  generateWebApplicationSchema(opts: {
+    name: string;
+    description: string;
+    url: string;
+    applicationCategory?: string;
+    price?: string;
+  }): any {
+    return {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": opts.name,
+      "description": opts.description,
+      "url": this.baseUrl + opts.url,
+      "applicationCategory": opts.applicationCategory || "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": opts.price || "0",
+        "priceCurrency": "EUR"
+      },
+      "provider": {
+        "@type": "Organization",
+        "@id": this.baseUrl + "/#organization",
+        "name": this.siteName
+      }
+    };
+  }
+
+  /**
+   * Injecte les balises hreflang pour le multilingue (fr/nl/en)
+   * À appeler dans les composants qui supportent plusieurs langues
+   */
+  setHreflang(path: string = ''): void {
+    const langs = [
+      { lang: 'fr-be', url: this.baseUrl + path },
+      { lang: 'nl-be', url: this.baseUrl + path },
+      { lang: 'en',    url: this.baseUrl + path },
+      { lang: 'x-default', url: this.baseUrl + path },
+    ];
+
+    // Supprimer les anciens hreflang
+    this.document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+
+    langs.forEach(({ lang, url }) => {
+      const link = this.renderer.createElement('link');
+      this.renderer.setAttribute(link, 'rel', 'alternate');
+      this.renderer.setAttribute(link, 'hreflang', lang);
+      this.renderer.setAttribute(link, 'href', url);
+      this.renderer.appendChild(this.document.head, link);
+    });
   }
 }
